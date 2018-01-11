@@ -20,13 +20,15 @@ Add the following to the `registry` array:
 ----
 registry:
   - type: "dockerhub"
-    name: "dh"
+    name: "aerogearcatalog"
     url: "https://registry.hub.docker.com"
     org: "aerogearcatalog"
     tag: "latest"
     white_list:
       - ".*-apb$"
 ----
+
+NOTE: The `name` must be different for each registry entry.
 
 == Redeploy the Broker
 
