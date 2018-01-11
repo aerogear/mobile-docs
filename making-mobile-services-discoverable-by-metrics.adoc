@@ -70,7 +70,7 @@ oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"="/m
 oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"="/metrics"
 ----
 
-Prometheus constantly monitors Kubernetes and will be notified about this change. It will start getting the metrics
+Prometheus constantly monitors Kubernetes and will be notified about this change. It will start collecting the metrics
 immediately.
 
 == How auto-discovery works
@@ -78,9 +78,9 @@ immediately.
 As per https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config[Prometheus Kubernetes SD documentation],
 Prometheus stays synchronized with the cluster state.
 
-In this case, it checks the annotations of services and compares it with the annotations that is defined in the Prometheus configuration,
-i.e. `org.aerogear.metrics/plain_endpoint` and `org.aerogear.metrics/ssl_endpoint`. Once there is a service found with that annotation,
-it is picked up as a scrape target and the value of the annotation is used as the scrape endpoint path.
+In this case, it checks the annotations of services and compares them with the annotations that are defined in the Prometheus configuration,
+i.e. `org.aerogear.metrics/plain_endpoint` and `org.aerogear.metrics/ssl_endpoint`. Once there is a service found with one of those annotations,
+the service is picked up as a scrape target and the value of the matched annotation is used as the scrape endpoint path.
 
 All of this is done in
 https://github.com/aerogearcatalog/metrics-apb/blob/master/roles/provision-metrics-apb/templates/prometheus-config-map.yml.j2[AeroGear metrics APB].
@@ -99,4 +99,4 @@ oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"-
 
 Please note that Prometheus queries for the metrics from the service might be returning the last value of a metric
 for a while. This means, you might see some value in your graphs for a while, even though the annotation was removed
-and scraping has stopped.
+and scraping was stopped.
