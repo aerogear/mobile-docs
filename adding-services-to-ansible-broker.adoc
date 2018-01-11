@@ -1,0 +1,73 @@
+= Adding Mobile Services to the OpenShift Ansible Broker
+
+== Prerequesites
+
+* OpenShift Origin >= 3.7
+** https://docs.openshift.org/latest/install_config/index.html
+* OpenShift Ansible Broker
+** https://docs.openshift.org/latest/install_config/install/advanced_install.html#configuring-openshift-ansible-broker
+
+== Reconfigure the Broker
+
+[source,bash]
+----
+oc edit configmap broker-config -n ansible-service-broker
+----
+
+Add the following to the `registry` array:
+
+[source,yaml]
+----
+registry:
+  - type: "dockerhub"
+    name: "aerogearcatalog"
+    url: "https://registry.hub.docker.com"
+    org: "aerogearcatalog"
+    tag: "latest"
+    white_list:
+      - ".*-apb$"
+----
+
+NOTE: The `name` must be different for each registry entry.
+
+== Redeploy the Broker
+
+Trigger a rollout to force a redeploy.
+
+[source,bash]
+----
+oc rollout latest asb -n ansible-service-broker
+----
+
+Verify the ASB Pod is running before continuing
+
+[source,bash]
+----
+oc get po -l app=ansible-service-broker
+----
+
+== Relist the Catalog
+
+For this step, the `apb` tool is used. This can be installed on your system, or used from a docker image.
+See https://github.com/ansibleplaybookbundle/ansible-playbook-bundle/blob/master/docs/apb_cli.md#installing-the-apb-tool for information on installing it.
+Then run this command:
+
+[source,bash]
+----
+apb relist
+----
+
+Alternatively, if using the docker image, run:
+
+[source,bash]
+----
+docker run --rm --privileged -v $HOME/.kube:/.kube -v /var/run/docker.sock:/var/run/docker.sock -u 1000 docker.io/ansibleplaybookbundle/apb-tools:latest relist
+----
+
+NOTE: You will need to be logged into your OpenShift cluster with a user who has the necessary permissions to relist the catalog. The `cluster-admin` role should have all necessary permissions.
+
+== Verify Mobile Services are shown in the Catalog
+
+In the OpenShift Catalog, additional Services should now be shown. These will appear either in the 'Other' category, or in a 'Mobile' category, if that is available in your OpenShift cluster.
+
+
