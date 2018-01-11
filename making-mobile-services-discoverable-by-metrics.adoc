@@ -33,11 +33,15 @@ org.aerogear.metrics/ssl_endpoint: "/rest/metrics"
 This endpoint mustn't have any authentication currently. This is subject to change in the future.
 
 Also, the endpoint should be accessible by the Prometheus instance. There should be a route for the endpoint
-that Prometheus can access. This means, service should be in the same project as Prometheus.
+that Prometheus can access. As Prometheus is using Kubernetes DNS name, the service needs to be in the same
+project as Prometheus. An advanced scenario with separate projects is possible, where the project networks would be linked.
+
+More information is available on
+https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config[Prometheus Kubernetes SD documentation].
 
 Here is an example piece of code taken from
-https://github.com/aerogearcatalog/fh-sync-server-apb[FH-Sync Server
-Ansible Playbook Bundle], that creates an `fh-sync-server` service which
+https://github.com/aerogearcatalog/fh-sync-server-apb[FH-Sync Server Ansible Playbook Bundle],
+that creates an `fh-sync-server` service which
 is auto-discoverable.
 
 [source,yaml]
@@ -55,4 +59,44 @@ objects:
     ...
 ----
 
-TODO: will document `oc patch`
+Another possibility is adding the label after the service is created.
+
+An example of doing that with `oc` CLI:
+
+[source,bash]
+----
+oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"="/metrics"
+# OR
+oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"="/metrics"
+----
+
+Prometheus constantly monitors Kubernetes and will be notified about this change. It will start getting the metrics
+immediately.
+
+== How auto-discovery works
+
+As per https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config[Prometheus Kubernetes SD documentation],
+Prometheus stays synchronized with the cluster state.
+
+In this case, it checks the annotations of services and compares it with the annotations that is defined in the Prometheus configuration,
+i.e. `org.aerogear.metrics/plain_endpoint` and `org.aerogear.metrics/ssl_endpoint`. Once there is a service found with that annotation,
+it is picked up as a scrape target and the value of the annotation is used as the scrape endpoint path.
+
+All of this is done in
+https://github.com/aerogearcatalog/metrics-apb/blob/master/roles/provision-metrics-apb/templates/prometheus-config-map.yml.j2[AeroGear metrics APB].
+
+== Disable metrics scraping
+
+If you would like to disable metrics scraping for a service, just remove the annotation.
+Prometheus will stop collecting the metrics immediately.
+
+[source,bash]
+----
+oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"-
+# OR
+oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"-
+----
+
+Please note that Prometheus queries for the metrics from the service might be returning the last value of a metric
+for a while. This means, you might see some value in your graphs for a while, even though the annotation was removed
+and scraping has stopped.
