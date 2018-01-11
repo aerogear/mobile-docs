@@ -1,0 +1,58 @@
+= Making mobile services auto-discoverable by the metrics service
+
+In order to make a service auto-discoverable by the metrics service:
+
+* Service has to have one of `org.aerogear.metrics/plain_endpoint` or
+`org.aerogear.metrics/ssl_endpoint` annotations.
+
+* Metrics endpoint should have no authentication.
+
+* Metrics endpoint should be accessible by Prometheus instance.
+
+
+Presence of one of the `org.aerogear.metrics/plain_endpoint` or `org.aerogear.metrics/ssl_endpoint`
+annotations makes the service auto-discoverable.
+Value of the annotation will inform metrics service about where to look for metrics data when scraping.
+
+For example, if a service is exposing an HTTP metrics endpoint at
+`/metrics`, the annoation would be:
+
+[source,yaml]
+----
+org.aerogear.metrics/plain_endpoint: "/metrics"
+----
+
+If a service is exposing an HTTPS metrics endpoint at `/rest/metrics`,
+the annoation would be:
+
+[source,yaml]
+----
+org.aerogear.metrics/ssl_endpoint: "/rest/metrics"
+----
+
+This endpoint mustn't have any authentication currently. This is subject to change in the future.
+
+Also, the endpoint should be accessible by the Prometheus instance. There should be a route for the endpoint
+that Prometheus can access. This means, service should be in the same project as Prometheus.
+
+Here is an example piece of code taken from
+https://github.com/aerogearcatalog/fh-sync-server-apb[FH-Sync Server
+Ansible Playbook Bundle], that creates an `fh-sync-server` service which
+is auto-discoverable.
+
+[source,yaml]
+----
+objects:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: fh-sync-server
+    annotations:
+      org.aerogear.metrics/plain_endpoint: "/metrics"
+    labels:
+      ...
+  spec:
+    ...
+----
+
+TODO: will document `oc patch`
