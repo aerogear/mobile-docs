@@ -1,0 +1,9 @@
+= Mobile Services Documentation
+
+== Getting Started
+
+The OpenShift Ansible Broker is used to provision Mobile Services to an OpenShift cluster. To add the Aerogear Mobile Services APBs (Ansible Playbook Bundles) to your OpenShift cluster, follow the guide for link:adding-services-to-ansible-broker.adoc[Adding Mobile Services to the OpenShift Ansible Broker]. This will allow you to provision services, such as the Metrics Service, from the OpenShift Catalog.
+
+== Metrics Service
+
+The Metrics Service consists of Prometheus, with an OAuth Proxy for authentication and authorization. Mobile Services in your Project will automatically have metrics collected and available in Prometheus. You can configure your own custom services to also have metrics be collected by Prometheus. See the guide for link:making-mobile-services-discoverable-by-metrics.adoc[Making Services auto-discoverable by the Metrics Service] to do that.
