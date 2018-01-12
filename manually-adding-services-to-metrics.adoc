@@ -30,6 +30,8 @@ The endpoint must:
 * Not have any authentication requirements
 * Be visible by the Prometheus instance
 
+In the case of our Grafana instance, its metrics endpoint is accessible to Prometheus without authentication information through an additional `grafana-internal` service in OpenShift, whereas the main `grafana` service accessible via a public-facing route is protected by an instance of the https://github.com/openshift/oauth-proxy/[OpenShift OAuth Proxy].
+
 === Adding a new scraping configuration to the Prometheus instance
 
 In this example we will edit the existing Prometheus configuration to
@@ -50,16 +52,16 @@ documentation on scrape_config] for more details.
 image:img/manually-adding-services-to-metrics/myprojects.png[My
 projects]
 
-1.  Navigate to Prometheus' Config Map via
+2.  Navigate to Prometheus' Config Map via
 `Resources > Config Maps > prometheus-configmap`
 
 image:img/manually-adding-services-to-metrics/configmap.png[Config Map]
 
-1.  Enter editing mode through `Actions > Edit YAML`
+3.  Enter editing mode through `Actions > Edit YAML`
 
 image:img/manually-adding-services-to-metrics/edit.png[Edit YAML]
 
-1.  Include a new `scrape_config` targetting the Grafana service:
+4.  Include a new `scrape_config` targetting the Grafana service:
 
 [source,yaml]
 ----
@@ -76,22 +78,27 @@ data:
           - targets:
             - "localhost:9090"
       - job_name: grafana
-        scheme: https
+        metrics_path: "/metrics" # default value
         static_configs:
           - targets:
-            - "grafana.myproject.svc:4181"
-        metrics_path: "/metrics"
+            - "grafana-internal:80"
         # other configuration
 ----
 
 The `target` of the config should point to the internally-resolvable
 name of the service, visible by navigating to
-`Applications > Services > grafana` and has the format
+`Applications > Services > grafana-internal` and has the format
 `{Hostname}:{Target Port}`.
 
-1.  Trigger a manual deployment of the `prometheus` service to inject
+NOTE: The `grafana` service requires authentication through the OpenShift OAuth proxy, thus preventing connection from the unauthenticated Prometheus client, so the `grafana-internal` should be our target instead.
+
+5.  Trigger a manual deployment of the `prometheus` service to inject
 the updated Config Map by going to
 `Applications > Deployments > prometheus` and clicking `Deploy`.
+
+6. Verify the new target by navigating to the list of targets in Prometheus at https://prometheus-{project_name}.192.168.37.1.nip.io/targets, or by acessing the Prometheus web interface and navigating to `Status > Targets`:
+
+image:img/manually-adding-services-to-metrics/grafana-target.png[Grafana Target]
 
 === Via the `oc` cli
 
