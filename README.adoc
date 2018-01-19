@@ -49,7 +49,7 @@ For a fuller list of asciidoc syntax, see link:http://asciidoctor.org/docs/ascii
 --
 This page acts as example of documentation best practises:
 
-* introducing some terms
+* introducing terms
 * a single  procedure
-* some reference material
+* reference material
 --
