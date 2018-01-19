@@ -1,9 +1,55 @@
-= Mobile Services Documentation
+= Mobile Docs
 
-== Getting Started
+Our goal is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
 
-The OpenShift Ansible Broker is used to provision Mobile Services to an OpenShift cluster. To add the Aerogear Mobile Services APBs (Ansible Playbook Bundles) to your OpenShift cluster, follow the guide for link:adding-services-to-ansible-broker.adoc[Adding Mobile Services to the OpenShift Ansible Broker]. This will allow you to provision services, such as the Metrics Service, from the OpenShift Catalog.
+This readme introduces the standards for AeroGear docs.
 
-== Metrics Service
+:toc: 1
 
-The Metrics Service consists of Prometheus, with an OAuth Proxy for authentication and authorization. Mobile Services in your Project will automatically have metrics collected and available in Prometheus. You can configure your own custom services to also have metrics be collected by Prometheus. See the guide for link:making-mobile-services-discoverable-by-metrics.adoc[Making Services auto-discoverable by the Metrics Service] to do that.
+== Concepts, Procedures and Reference
+
+Concept::
+An introduction to a new term, process, module or component. For example, "Mobile Service" : what is it? why do I care? and how does it fit into my development environment?
+
+Procedure::
+The important information that gets me using AeroGear software, for example, write your procedure by answering the following questions:
++
+. What do I need to know and/or do before installing or provisioning the software?
+. What do I need to do to provision the software?
+. What are the minimum configuration tasks that I need to do to get value from the software?
+
+Reference::
+Information I might need to debug or extend the normal usage of AeroGear software. For example:
++
+* API syntax and definitions
+* Configuration optionss 
+
+
+== Writing AeroGear Documentation
+
+. Contact the docs team to plan your work. For example, make a PR against this repo.
+. Break the writing task down into components, how many procedures do you need to write? can the reference material be generated from code? Is it reasonable to expect users to understand the commponents, or should there be an introduction to the concepts?
+. Determine which functionality is this documentation related to?
++
+* Push
+* Sync
+* Common to all mobile services
+
+With this information, you should be able to make a PR against the appropriate repo. F
+
+== Asciidoc
+
+For a fuller list of asciidoc syntax, see link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the quick reference], note the following syntax to avoid:
+
+* Headings using --, ~~, ^^, ++ syntax
+* Markdown
+* Source block without syntax. Try to use syntax highlighting where possible, for example `[source, bash]`
+
+[NOTE]
+--
+This page acts as example of documentation best practises:
+
+* introducing some terms
+* a single  procedure
+* some reference material
+--
