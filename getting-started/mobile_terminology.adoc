@@ -1,0 +1,20 @@
+= Terminology
+
+Service Catalog::
+    An OpenShift feature that allows you choose the xref:mobile-service[Mobile Service] and xref:mobile-client[Mobile Client] that you want to implement. It is an implementation of the Open Service Broker API (OSB API) for Kubernetes that allows users to connect any of their applications deployed in OpenShift to a wide variety of service brokers.
+
+[[mobile-service]]Mobile Service:: A mobile service is any feature of {mobile.next} that you want to implement, including:
+
+* Sync
+* Push
+* Auth
+* Metrics
+* API Management
+* CI/CD for Mobile Apps
+
+[[mobile-client]]Mobile Client:: A mobile client is the representation on OpenShift of the Mobile App that you want to implement, including:
+
+* Android
+* iOS 
+* Cordova
+
