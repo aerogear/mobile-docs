@@ -1,3 +1,5 @@
+include::shared/attributes.adoc[]
 = Overview of {mobile.next}
 
-After completing the installation
+{mobile.next} extends OpenShift to allow you create mobile apps and services from the OpenShift service catalog:
+image::overview.png[]
