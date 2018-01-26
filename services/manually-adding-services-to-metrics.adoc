@@ -1,6 +1,6 @@
 = Manually making a service visible to the Metrics Service
 
-== Prerequesites
+== Prerequisites
 
 * OpenShift Origin >= 3.7
 ** https://docs.openshift.org/latest/install_config/index.html
@@ -35,7 +35,7 @@ In the case of our Grafana instance, its metrics endpoint is accessible to Prome
 === Adding a new scraping configuration to the Prometheus instance
 
 In this example we will edit the existing Prometheus configuration to
-include a new `scrape_config` targetting our service.
+include a new `scrape_config` targeting our service.
 
 This example will target the Grafana instance deployed alongside
 Prometheus, which exposes a metrics endpoint in the default `/metrics`
@@ -61,7 +61,7 @@ image:img/manually-adding-services-to-metrics/configmap.png[Config Map]
 
 image:img/manually-adding-services-to-metrics/edit.png[Edit YAML]
 
-4.  Include a new `scrape_config` targetting the Grafana service:
+4.  Include a new `scrape_config` targeting the Grafana service:
 
 [source,yaml]
 ----
@@ -96,7 +96,7 @@ NOTE: The `grafana` service requires authentication through the OpenShift OAuth 
 the updated Config Map by going to
 `Applications > Deployments > prometheus` and clicking `Deploy`.
 
-6. Verify the new target by navigating to the list of targets in Prometheus at https://prometheus-{project_name}.192.168.37.1.nip.io/targets, or by acessing the Prometheus web interface and navigating to `Status > Targets`:
+6. Verify the new target by navigating to the list of targets in Prometheus at https://prometheus-{project_name}.192.168.37.1.nip.io/targets, or by accessing the Prometheus web interface and navigating to `Status > Targets`:
 
 image:img/manually-adding-services-to-metrics/grafana-target.png[Grafana Target]
 
