@@ -1,3 +1,4 @@
+:org: AeroGear
 
 = Setting up Minishift
 
@@ -29,6 +30,7 @@ minishift addons enable mobilecore
 ----
 
 . Set the following environment variables, replacing `aerogearcatalog` with your own Dockerhub organization if required:
++
 ----
 export DOCKERHUB_USERNAME=<docker hub username>
 export DOCKERHUB_PASSWORD=<docker hub password>
@@ -36,12 +38,12 @@ export DOCKERHUB_ORG=aerogearcatalog
 ----
 
 . Configure Minishift for AeroGear:
-
++
 ----
 minishift config set addon-env DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME},DOCKERHUB_PASSWORD="${DOCKERHUB_PASSWORD}",DOCKERHUB_ORG=${DOCKERHUB_ORG}
 ----
 
-. Configure Minishift
+. Configure Minishift resources
 +
 {Org} recommends configuring Minishift to start with extra CPUs and RAM:
 +
@@ -64,6 +66,7 @@ minishift start --openshift-version 3.7.0 --service-catalog
 ----
 +
 If you did not enable the addon, you need to apply it manually:
++
 ----
 minishift addons apply mobilecore
 ----
