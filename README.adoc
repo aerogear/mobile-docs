@@ -58,3 +58,7 @@ This page acts as example of documentation best practises:
 * a single  procedure
 * reference material
 --
+
+== Modular Docs
+
+For more information and some useful templates, see link:https://redhat-documentation.github.io/modular-docs/[Modular Docs]
