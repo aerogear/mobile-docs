@@ -14,9 +14,13 @@ An introduction to a new term, process, module or component. For example, "Mobil
 Procedure::
 The important information that gets me using AeroGear software, for example, write your procedure by answering the following questions:
 +
+. Who should perform this procedure?
+. Why am I performing this procedure? benefits or context in a higher level user story
+. What is the object of the task? eg adding a dashboard.. to what?
 . What do I need to know and/or do before installing or provisioning the software?
 . What do I need to do to provision the software?
 . What are the minimum configuration tasks that I need to do to get value from the software?
+. What additional information would be useful after completing procedure (eg, next steps)
 
 Reference::
 Information I might need to debug or extend the normal usage of AeroGear software. For example:
@@ -34,8 +38,9 @@ Information I might need to debug or extend the normal usage of AeroGear softwar
 * Push
 * Sync
 * Common to all mobile services
+. Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
 
-With this information, you should be able to make a PR against the appropriate repo. F
+With this information, you should be able to make a PR against the appropriate repo. 
 
 == Asciidoc
 
