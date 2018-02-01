@@ -1,11 +1,15 @@
 :org: AeroGear
+//source: https://github.com/aerogear/minishift-mobilecore-addon/blob/master/README.md
 
+
+[[setting-up-minishift]]
 = Setting up Minishift
 
 . link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[Install Minishift]
 +
 Check Minishift version is at least 1.11.0:
 +
+[source,bash]
 ----
 $ minishift version
 minishift v1.11.0+4459917
@@ -15,6 +19,7 @@ minishift v1.11.0+4459917
 
 . Enable Minishift experimental addons:
 +
+[source,bash]
 ----
 export MINISHIFT_ENABLE_EXPERIMENTAL=y
 ----
@@ -24,6 +29,7 @@ export MINISHIFT_ENABLE_EXPERIMENTAL=y
 
 . Add minishift-mobilecore to the minishift add-ons catalog:
 +
+[source,bash]
 ----
 minishift addon install -f minishift-mobilecore-addon/
 minishift addons enable mobilecore
@@ -31,6 +37,7 @@ minishift addons enable mobilecore
 
 . Set the following environment variables, replacing `aerogearcatalog` with your own Dockerhub organization if required:
 +
+[source,bash]
 ----
 export DOCKERHUB_USERNAME=<docker hub username>
 export DOCKERHUB_PASSWORD=<docker hub password>
@@ -39,6 +46,7 @@ export DOCKERHUB_ORG=aerogearcatalog
 
 . Configure Minishift for AeroGear:
 +
+[source,bash]
 ----
 minishift config set addon-env DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME},DOCKERHUB_PASSWORD="${DOCKERHUB_PASSWORD}",DOCKERHUB_ORG=${DOCKERHUB_ORG}
 ----
@@ -47,6 +55,7 @@ minishift config set addon-env DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME},DOCKERHU
 +
 {Org} recommends configuring Minishift to start with extra CPUs and RAM:
 +
+[source,bash]
 ----
 minishift config set cpus 4
 minishift config set memory 4096
@@ -54,6 +63,7 @@ minishift config set memory 4096
 
 . Clear Minishift to enable mobile core:
 +
+[source,bash]
 ----
 minishift stop
 minishift delete
@@ -61,100 +71,127 @@ minishift delete
 
 . Create a new Minishift cluster with service catalog and mobile core:
 +
+[source,bash]
 ----
 minishift start --openshift-version 3.7.0 --service-catalog
 ----
 +
 If you did not enable the addon, you need to apply it manually:
 +
+[source,bash]
 ----
 minishift addons apply mobilecore
 ----
 
 == Troubleshooting
 
-=== Service Catalog Flag is not Recognized
+. Try resolving the issue by deleting the Minishift VM and restarting:
++
+[source,bash]
+----
+minishift stop
+minishift delete
+minishift start --openshift-version 3.7.0 --service-catalog
+----
+
+. Confirm the addon-env config values are correct:
++
+[source,bash]
+----
+minishift config get addon-env
+----
++
+If values are incorrect, follow the instructions in xref:setting-up-minishift[Setting up Minishift].
+
+. Review the following scenarios:
++
+* xref:service-catalog-not-recognized[]
+* xref:mobile-tab-not-appearing[]
+* xref:apbs-not-showing[]
+* xref:errors-when-stopping[]
+
+
+[[service-catalog-not-recognized]]
+.Service catalog flag is not recognized
 This is an error output by Minishift when it is running without the `MINISHIFT_ENABLE_EXPERIMENTAL` environment variable set to 'y'. To correct this run the following in your current shell:
 
 ----
 export MINISHIFT_ENABLE_EXPERIMENTAL=y
 ----
+[[mobile-tab-not-appearing]]
+.Mobile tab not appearing in the service catalog
 
-=== Mobile Tab not Present in the Catalog
-
-This can have 2 causes:
-
-==== The Ansible Service Broker Is Not Running.
-To check if this is the case, login to your Minishift cluster as admin:
+. Make sure the Ansible Service Broker is running:
++
+.. Log into your Minishift cluster as admin:
++
+[source,bash]
 ----
 oc login -u system:admin
 ----
 
-And check if the asb pod is running correctly in the `ansible-service-broker` namespace:
+.. Check that the asb pod is running correctly in the `ansible-service-broker` namespace:
++
+[source,bash]
 ----
 oc get pods -n ansible-service-broker
 ----
-
-You should see output like:
++
+If the asb pos is running correctly, you see something similar to the following:
++
+[source,bash]
 ----
 NAME               READY     STATUS    RESTARTS   AGE
 asb-1-8n4b6        1/1       Running   0          46m
 asb-etcd-1-ptzmp   1/1       Running   0          46m
 ----
 
-If the asb pods are not running you can correct them by running either of:
+.. If the asb pods are not running, start them using either of the following commands:
++
+[source,bash]
 ----
 oc rollout latest asb
 oc rollout latest asb-etcd
 ----
 
-This should correct the issue, if it doesn't then go to the "If All Else Fails" section below.
+. Make sure the Ansible Service Broker can find the Mobile APBs by following the procedure in xref:apbs-not-showing[]
 
-==== The Ansible Service Broker Cannot Find the Mobile APBs
-This is most likely caused by a misconfiguration of the docker credentials or orgaisation name, see the section "APBs Not Showing in Catalog" for instructions on how to correct this issue.
+[[apbs-not-showing]]
+.APBs not displayed in service catalog
 
-=== APBs Not Showing in Catalog
+This issue is typically caused by incorrect values for the DOCKERHUB_USER, DOCKERHUB_PASSWORD or DOCKERHUB_ORG.
 
-This is usually because incorrect values have been entered for the DOCKERHUB_USER, DOCKERHUB_PASSWORD or DOCKERHUB_ORG.
+To check the values:
 
-You can check the currently used values for these by running:
-
+[source,bash]
 ----
 minishift config get addon-env
 ----
 
-If these values are incorrect then once you have corrected them. They will not immediately take effect until you have run the following commands:
+After correcting any values, you need to delete and restart the Minishift VM:
 
+[source,bash]
 ----
 minishift stop
 minishift delete
 minishift start --openshift-version 3.7.0 --service-catalog
 ----
 
-=== Errors When Stopping or Deleting Minishift
+[[errors-when-stopping]]
+.Errors displayed when stopping or deleting Minishift
 
-Check the Minishift documentation for specific results, but this is generally caused by a problems in the Minishift config directory (which defaults to `~/.minishift`). If there are Minishift profiles that you care about keeping, then you can try and work around this issue by correcting the permissions problems.
+. Check any links to Minishift documentation displayed in the errors.
 
-This can be caused if you have tried to execute `minishift delete` before executing `minishift stop`. In that case you can try running `minishift stop` and retrying `minishift delete`. If this does not correct the issue, then the simplest solution is to destroy the Minishift configuration directory and recreate it. Do that with the following commands:
+. Check the Minishift configuration, typically `~/.minishift` for any possible permission issues. 
 
+. Try running `minishift stop` and retrying `minishift delete`. 
+
+. If the issue is still occurring, delete the Minishift configuration directory and recreate it:
++
+[source,bash]
 ----
 sudo rm -rf ~/.minishift
 minishift addons install -f /path/to/minishift-mobilecore-addon
 minishift addons enable mobilecore
 ----
 
-=== General Troubleshooting
-
-Generally most issues with this plugin can be resolved by doing a stop and delete, i.e.:
-
-----
-minishift stop
-minishift delete
-minishift start --openshift-version 3.7.0 --service-catalog
-----
-
-It is also possible that the addon-env config value is misconfigured, to confirm the values are correct you can review them by running:
-
-----
-minishift config get addon-env
-----
