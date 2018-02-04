@@ -23,6 +23,8 @@ minishift v1.11.0+4459917
 ----
 export MINISHIFT_ENABLE_EXPERIMENTAL=y
 ----
++
+NOTE: If this variable is not set, you might be see errors similar to `Error: unknown flag: --service-catalog`.
 
 . Clone the link:https://github.com/aerogear/minishift-mobilecore-addon[minishift-mobilecore-addon] repo.
 
