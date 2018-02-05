@@ -1,6 +1,8 @@
-= Sharing access to a Metrics service
+= Sharing access to the Metrics service
 
 == Overview
+
+The metric service URL is only accessible by users who have *edit* permission for the project. By default, a project owner already has permission.
 
 The metrics service creates routes to access Grafana and Prometheus. To protect these routes there is an OAuth reverse proxy sidecar container in front 
 of the Grafana and Prometheus containers to enforce authentication. The authentication is based on Openshift permissions and is configured as part of the 
@@ -18,7 +20,7 @@ routes. This rule is defined by the `openshift-sar` option. For the Prometheus s
 
 To authenticate against the OAuth proxy, a user must have  
 sufficient permissions to update the *deploymentConfig* resource named `prometheus` in the current Openshift namespace. 
-The *deploymentConfig* resource for Grafana contains the same Subject Access Review rule for the resource named `grafana`.
+The *deploymentConfig* resource for Grafana contains the same Subject Access Review rule for the `grafana` resource.
 
 
 NOTE: Giving a user update permissions on a resource allows them to modify that resource object.
