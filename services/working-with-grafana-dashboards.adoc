@@ -1,53 +1,39 @@
-= Working with Grafana Dashboards
+= Using dashboards to display metrics service data
 
 == Prerequisites
 
-* OpenShift Origin >= 3.7
-** https://docs.openshift.org/latest/install_config/index.html
-* Metrics service deployment from the Service Catalog
-** https://github.com/aerogearcatalog/metrics-apb
+An AeroGear metrics service instance, created from the OpenShift service catalog as described in link:{creating-metrics-service}[Creating the Metrics Service]
 
-== Grafana Dashboards
+== Overview of dashboards
 
-The metrics service is made up of https://prometheus.io/[Prometheus] and https://grafana.com/[Grafana]. 
-Prometheus is used to gather metrics data from other services and Grafana is used to visualise the metrics.
+The metrics service uses https://prometheus.io/[Prometheus] to gather metrics data from other mobile services and https://grafana.com/[Grafana] to display that data.
 
 A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics. 
-Please consult Grafana's http://docs.grafana.org/guides/getting_started/[Getting Started] guide for an introduction to dashboards. 
+See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started] guide for an introduction to dashboards.
 
-By default, any time you provision an AeroGear service from the OpenShift Service Catalog, a dashboard that shows metrics about that service will be added to Grafana.
-In addition, you can create and modify your own dashboards.
+When you create an instance of an AeroGear service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana. You can also create and modify custom dashboards to:
 
-Here are some reasons why you might create your own dashboard:
+* visualize metrics from apps and backend services that are not mobile services
+* monitor additional metrics from mobile services that are not displayed by default
+* monitor additional metrics from OpenShift that are not displayed by default
 
-* You want to visualize metrics from your own apps and backend services.
-* You want additional metrics from AeroGear services that are not displayed by default.
-* You want additional metrics from OpenShift that are not displayed by default.
+== Creating dashboards in Grafana
 
-== Creating Grafana Dashboards
+You can create dashboards using *Drag and Drop* in Grafana. 
+See the http://docs.grafana.org/[Grafana Documentation] to learn about building Grafana dashboards. 
 
-Creating Dashboards for Grafana is an interactive process. Dashboards are created in a 'Drag and Drop' fashion using the Grafana UI.
-Please consult the http://docs.grafana.org/[Official Grafana Documentation] to learn about building Grafana dashboards. 
-The Grafana documentation provides plenty of tutorials and videos for creating dashboards.
+== Importing dashboards
 
-== Importing Grafana Dashboards
+All Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using that JSON definition as described in the link:http://docs.grafana.org/reference/export_import/[importing and exporting dashboards] Grafana documentation.
 
-Under the hood, all Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using the JSON definition.
-See the Grafana documentation on http://docs.grafana.org/reference/export_import/[importing and exporting dashboards] through the Grafana UI.
+== Customizing the mobile services dashboards
 
-== Customising the AeroGear Dashboards
+When you provision a mobile service from the service catalog, a dashboard showing metrics about that service is added to Grafana.
 
-As mentioned previously, any time you deploy an AeroGear service from the Service Catalog, a dashboard that shows metrics about that service is added to Grafana.
+NOTE: If you edit the default mobile service dashboards, your changes will be lost whenever the associated mobile service is updated.
 
-**You should not edit these dashboards directly.** Instead you should clone the dashboard and make your changes to the cloned dashboard.
+Before editing the dashboard, clone it as follows:
 
-There is a good reason for this. Over time, the AeroGear services on the Service Catalog are updated which may also include updates to the provided dashboards. 
-If you modify these dashboards directly, your changes will be lost when you receive an update.
-
-=== Cloning a Dashboard
-
-* Open the Dashboard you wish to clone.
-* Click the settings icon in the dashboard controls. This brings you to a settings screen.
-* Select the 'Save As' option and enter in a new name for the dashboard.
-* You now have a copy of the original dashboard.
-
+. Open the Dashboard you want to clone.
+. Click the settings icon in the dashboard controls to show the *Settings* screen.
+. Select the *Save As* option and enter in a name for the new dashboard, for example `Copy of Sync Service Dashboard`.
