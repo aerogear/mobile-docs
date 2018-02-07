@@ -26,7 +26,7 @@ image:img/keycloak-dashboard/keycloak-dashboard-overview.png[keycloak-dashboard]
 
 == Dashboard's panels description
 
-Keycloak dasboard consists of several panels which give you overview of the specific
+Keycloak dashboard consists of several panels which give you overview of the specific
 events, such as number of registered users, memory usage etc.
 
 See below for the detailed description of each panel and its values
