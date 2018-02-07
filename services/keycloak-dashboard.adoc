@@ -13,8 +13,8 @@
 
 *Note*
 
-Metrics service and Keycloak service must be provisioned within the same project,
-otherwise the Keycloak's metrics endpoint won't reachable for Prometheus and no data will be displayed
+Metrics service and Keycloak service must be provisioned within the same namespace,
+otherwise the Keycloak's metrics endpoint won't be reachable for Prometheus and no data will be displayed.
 
 == Overview
 
@@ -39,7 +39,7 @@ Total number of registered (non-admin) users. This number comprises all successf
 
 ==== Total Logins
 
-Total number of successful logins (only non-admin users). Also includes logins via various providers.
+Total number of successful logins (only non-admin users) over all providers.
 
 ==== Total Login Errors
 
