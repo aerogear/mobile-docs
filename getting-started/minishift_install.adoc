@@ -45,8 +45,9 @@ NOTE: On subsequent installs, make sure to update the `minishift-mobilecore-addo
 ----
 export DOCKERHUB_USERNAME=<docker hub username>
 export DOCKERHUB_PASSWORD=<docker hub password>
-export DOCKERHUB_ORG=aerogearcatalog
 ----
++
+NOTE: If you use a Docker Hub organization, set a variable for it using `export DOCKERHUB_ORG=<your docker hub org>`, otherwise the addon will default the value to `aerogearcatalog`.
 
 . Configure Minishift for AeroGear:
 +
