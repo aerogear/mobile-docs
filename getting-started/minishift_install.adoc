@@ -47,7 +47,7 @@ export DOCKERHUB_USERNAME=<docker hub username>
 export DOCKERHUB_PASSWORD=<docker hub password>
 ----
 +
-NOTE: If you use a Docker Hub organization, set a variable for it using `export DOCKERHUB_ORG=<your docker hub org>`, otherwise the addon will default the value to `aerogearcatalog`.
+NOTE: If you use a Docker Hub organization, set a variable for it using `export DOCKERHUB_ORG=<your docker hub org>`, otherwise next command below defaults the value to `aerogearcatalog`.
 
 . Configure Minishift for AeroGear:
 +
