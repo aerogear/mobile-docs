@@ -62,3 +62,10 @@ This page acts as example of documentation best practises:
 == Modular Docs
 
 For more information and some useful templates, see link:https://redhat-documentation.github.io/modular-docs/[Modular Docs]
+
+== Remote Repos
+The mobile docs are collected from remote repos, eg https://github.com/aerogear/aerogear-android-sdk. To build an asciibinder site from that remote repo:
+
+. <TODO> 
+
+
