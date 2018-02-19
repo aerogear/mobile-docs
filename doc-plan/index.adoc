@@ -1,0 +1,57 @@
+
+|===
+|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+|
+//row 
+Overview
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+|link:..\getting-started\[]
+|link:..\getting-started\[]
+|link:..\getting-started\[]
+|link:..\getting-started\[]
+
+NOTE: You need to run another service first.
+
+|link:..\getting-started\[]
+
+NOTE:You need to run another service first.
+
+|link:..\getting-started\[]
+
+NOTE: You need to run another service first.
+|
+//row 
+Service 
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+|link:\aerogear\mobile-sync\docs\getting-started[]
+|link:\aerogear\mobile-push\docs\getting-started[]
+||||
+|
+//row
+Tutorial
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+||||||
+|
+//row
+*iOS*
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+||||||
+|
+//row
+*Android*  
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+
+||||||
+|
+//row 
+*Cordova* 
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+
+||||||
+|
+//row
+Xamarin 
+//|         | *Sync* |*Push*|*Auth*|*Build* |Metrics|*Custom*
+
+||||||
+|===
