@@ -1,12 +1,12 @@
 runtime:
   cache_dir: ./.cache/antora
 site:
-  title: AeroGear Docs
-  url: https://docs.aerogear.org
+  title: AeroGear
+  url: https://www.aerogear.org
   start_page: aerogear::index
 content:
   sources:
-  - url: .
+  - url: git@github.com:finp/mobile-docs.git
     branches: antora-init
   - url: git@github.com:aerogearcatalog/metrics-apb.git
     branches: AEROGEAR-2475

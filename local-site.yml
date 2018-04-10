@@ -1,8 +1,8 @@
 runtime:
   cache_dir: ./.cache/antora
 site:
-  title: AeroGear Docs
-  url: https://docs.aerogear.org
+  title: AeroGear
+  url: https://www.aerogear.org
   start_page: aerogear::index
 content:
   sources:

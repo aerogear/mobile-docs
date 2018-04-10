@@ -2,4 +2,4 @@
 
 {mobile-next} extends OpenShift or Kubernetes  to allow you create mobile apps and services from the OpenShift service catalog:
 
-image::img/overview.png[]
+image::overview.png[]
