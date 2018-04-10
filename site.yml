@@ -8,7 +8,7 @@ content:
   sources:
   - url: git@github.com:finp/mobile-docs.git
     branches: antora-init
-  - url: git@github.com:aerogearcatalog/metrics-apb.git
+  - url: git@github.com:finp/metrics-apb.git
     branches: AEROGEAR-2475
     start_path: docs
 asciidoc:
