@@ -8,7 +8,7 @@ content:
   sources:
   - url: .
     branches: antora-init
-  - url: ../metrics-apb
+  - url: git@github.com:aerogearcatalog/metrics-apb.git
     branches: AEROGEAR-2475
     start_path: docs
 asciidoc:
