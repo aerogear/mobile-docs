@@ -1,0 +1,33 @@
+== Create an Android Mobile Client in OpenShift
+
+This guide demonstrates how to create an Android
+link:./mobile-clients-in-openshift.adoc[Mobile Client in OpenShift].
+
+== Procedure
+
+* From the OpenShift web console, select or create a new project.
+* From the project overview page, use the 'Search Catalog' bar to searh
+for 'Android App'
+
+image:./images/search-android-app.png[Android App in Service Catalog]
+
+* Follow the wizard and fill out the application name and the package
+name and click 'Create.' The package name should be the Android bundle
+ID, for example, `com.aerogear.myapp`.
+
+image:./images/create-android-app.png[Android Mobile Client Wizard]
+
+The Android Mobile Client is now visible in the project overview page.
+Click on the Mobile Client to expand and reveal the configuration.
+
+image:./images/mobile-client-config-blank.png[Android Mobile Client
+Configuration]
+
+== Next Steps
+
+Now that the Android Mobile Client is available, it is now possible to
+start integrating your Android App with other services. Check out some
+of these guides:
+
+* link:./integrate-android-app-with-custom-service.md[Integrate an
+Android Application with your own backend service in OpenShift]
