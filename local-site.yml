@@ -11,6 +11,11 @@ content:
   - url: ../metrics-apb
     branches: AEROGEAR-2475
     start_path: docs
+  - url: ../unifiedpush-apb
+    branches: MOBDOC-10
+    start_path: docs
+  - url: ../processes
+    branches: AEROGEAR-2480    
 asciidoc:
   attributes:
     experimental: ''
