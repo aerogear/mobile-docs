@@ -48,6 +48,23 @@ Now the Aerogear SDK can be used to get the configuration for your custom servic
 
 [source,java]
 ---
-// code example goes here once I can collaborate with Ali
+// get the service URL
+final ServiceConfiguration serviceConfiguration = mobileCore.getServiceConfiguration("custom-runtime-connector");
+final String serviceUrl = serviceConfiguration.getUrl();
+
+// make the request
+HttpRequest httpRequest = mobileCore.getHttpLayer().newRequest();
+httpRequest.post(serviceUrl, "THE PAYLOAD".getBytes("UTF-8"));
+HttpResponse httpResponse = httpRequest.execute();
+
+httpResponse.onError(() -> {
+    // handle error
+});
+httpResponse.onSuccess(() -> {
+    // handle success
+});
+httpResponse.onComplete(() -> {
+    // called regardless success or error
+});
 ---
 
