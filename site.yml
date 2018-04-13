@@ -11,11 +11,11 @@ content:
   - url: git@github.com:finp/metrics-apb.git
     branches: AEROGEAR-2475
     start_path: docs
-  - url: git@github.com:finp/unifiedpush-apb.git
-    branches: MOBDOC-10
+  - url: git@github.com:aerogear/unifiedpush-apb.git
+    branches: master
     start_path: docs
-  - url: git@github.com:finp/processes.git
-    branches: AEROGEAR-2480    
+  - url: git@github.com:aerogear/processes.git
+    branches: master    
 asciidoc:
   attributes:
     experimental: ''
