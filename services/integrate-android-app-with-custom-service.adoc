@@ -47,7 +47,7 @@ Take a copy of the JSON configuration from the mobile client and save it in `app
 Now the Aerogear SDK can be used to get the configuration for your custom service and it is possible to make requests. Please look at the example code below:
 
 [source,java]
----
+--
 // get the service URL
 final ServiceConfiguration serviceConfiguration = mobileCore.getServiceConfiguration("custom-runtime-connector");
 final String serviceUrl = serviceConfiguration.getUrl();
@@ -60,11 +60,13 @@ HttpResponse httpResponse = httpRequest.execute();
 httpResponse.onError(() -> {
     // handle error
 });
+
 httpResponse.onSuccess(() -> {
     // handle success
 });
+
 httpResponse.onComplete(() -> {
     // called regardless success or error
 });
----
+--
 
