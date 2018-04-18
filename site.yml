@@ -12,10 +12,13 @@ content:
     branches: AEROGEAR-2475
     start_path: docs
   - url: git@github.com:aerogearcatalog/unifiedpush-apb.git
-    branches: master
+    branches: MOBDOC-10
     start_path: docs
   - url: git@github.com:aerogear/processes.git
-    branches: master    
+    branches: master
+  - url: git@github.com:aerogear/aerogear-android-sdk.git
+    branches: AEROGEAR-2512
+    start_path: docs
 asciidoc:
   attributes:
     experimental: ''

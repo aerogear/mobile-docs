@@ -15,7 +15,11 @@ content:
     branches: MOBDOC-10
     start_path: docs
   - url: ../processes
-    branches: AEROGEAR-2480    
+    branches: master
+    tags: v*
+  - url: ../aerogear-android-sdk
+    branches: AEROGEAR-2512
+    start_path: docs
 asciidoc:
   attributes:
     experimental: ''
