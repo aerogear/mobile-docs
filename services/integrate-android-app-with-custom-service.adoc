@@ -13,16 +13,18 @@ This document describes the steps needed to configure the Aerogear Android SDK t
 
 For demonstration, this guide uses the example Python application which can be found in the OpenShift Service Catalog. The same steps can be followed any HTTP web service running in OpenShift that has a publicly accessible route.
 
+Pictured below is the example Python application, and the Android mobile client provisioned in OpenShift.
+
 image:./images/custom-service-py.png[Custom Service and Android Client in OpenShift]
 
-== Provision the Custom Runtime Connector
+=== Provision the Custom Runtime Connector
 
-We can connect our mobile client to this service by provisioning a **Custom Runtime Connector** from the OpenShift Service Catalog.
+We can connect our mobile client to our backend service by provisioning a **Custom Runtime Connector** from the OpenShift Service Catalog.
 
-* Select the Custom Runtime Connector from the Service Catalog
-* Put the service name in the service name field. This name will be used in the SDK to retrieve details about the service
+* Select the Custom Runtime Connector from the Service Catalog.
+* Put the service name in the service name field. This name will be used in the SDK to retrieve details about the service.
 * Put the publicly accessible url of the service in the Service URL field.
-* In the Service Config field, place any additional configuration that might be needed by the mobile app in order to communicate with the backend service. **This must be a valid JSON format**
+* In the Service Config field, place any additional configuration that might be needed by the mobile app in order to communicate with the backend service. **This must be a valid JSON format**.
 * Click 'Create'.
 
 image:./images/create-crc.png[Provisioning a Custom Runtime Connector]
@@ -40,7 +42,7 @@ image:./images/mobile-client-select-crc.png[Mobile Client Config Blank]
 
 image:./images/mobile-client-custom-runtime.png[Mobile Client Config with Custom Service]
 
-== Integrate your Android Application with the Custom Service
+=== Integrate your Android Application with the Custom Service
 
 Take a copy of the JSON configuration from the mobile client and save it in `app/src/main/assets/mobile-services.json` in your Android application's source code.
 
@@ -54,7 +56,7 @@ final String serviceUrl = serviceConfiguration.getUrl();
 
 // make the request
 HttpRequest httpRequest = mobileCore.getHttpLayer().newRequest();
-httpRequest.post(serviceUrl, "THE PAYLOAD".getBytes("UTF-8"));
+httpRequest.get(serviceUrl);
 HttpResponse httpResponse = httpRequest.execute();
 
 httpResponse.onError(() -> {

@@ -7,7 +7,7 @@ link:./mobile-clients-in-openshift.adoc[Mobile Client in OpenShift].
 
 * From the OpenShift web console, select or create a new project.
 * From the project overview page, use the 'Search Catalog' bar to searh
-for 'Android App'
+for 'Android App.'
 
 image:./images/search-android-app.png[Android App in Service Catalog]
 
