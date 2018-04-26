@@ -1,3 +1,6 @@
+// after https://github.com/aerogear/minishift-mobilecore-addon/pull/16
+// update to raw.githubusercontent.com/aerogear/minishift-mobilecore-addon/master/docs/minishift_install.adoc
+
 :org: AeroGear
 //source: https://github.com/aerogear/minishift-mobilecore-addon/blob/master/README.md
 
@@ -33,8 +36,8 @@ NOTE: If this variable is not set, you might be see errors similar to `Error: un
 +
 [source,bash]
 ----
-minishift addon install -f minishift-mobilecore-addon/
-minishift addons enable mobilecore
+minishift addons install -f minishift-mobilecore-addon/
+minishift addons enable minishift-mobilecore-addon
 ----
 +
 NOTE: On subsequent installs, make sure to update the `minishift-mobilecore-addon` repo (`git pull`) before running these commands to ensure the addon and *mobile-core* versions are compatibile.
@@ -43,18 +46,24 @@ NOTE: On subsequent installs, make sure to update the `minishift-mobilecore-addo
 +
 [source,bash]
 ----
-export DOCKERHUB_USERNAME=<docker hub username>
-export DOCKERHUB_PASSWORD=<docker hub password>
+export CONTAINER_REPO_USERNAME=<docker hub username>
+export CONTAINER_REPO_PASSWORD=<docker hub password>
 ----
 +
-NOTE: If you use a Docker Hub organization, set a variable for it using `export DOCKERHUB_ORG=<your docker hub org>`, otherwise next command below defaults the value to `aerogearcatalog`.
+NOTE: If you use a Docker Hub organization, set a variable for it using `export CONTAINER_REPO_ORG=<your docker hub org>`. If you don't specify CONTAINER_REPO_ORG in the next step, the `aerogearcatalog` organization is used.
 
 . Configure Minishift for AeroGear:
 +
 [source,bash]
 ----
-minishift config set addon-env DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME},DOCKERHUB_PASSWORD="${DOCKERHUB_PASSWORD}",DOCKERHUB_ORG=${DOCKERHUB_ORG}
+minishift config set addon-env CONTAINER_REPO_USERNAME=${CONTAINER_REPO_USERNAME},CONTAINER_REPO_PASSWORD=${CONTAINER_REPO_PASSWORD}
 ----
++
+Other options include:
++
+* CONTAINER_REPO_ORG: defaults to 'aerogearcatalog', specifies where to search for service catalog items.
+* CORE_REPO: defaults to 'aerogear', specifies the organziation or user in github to install the mobile-core component, that is, https://github.com/<CORE_REPO>/mobile-core.git.
+* CORE_BRANCH defaults to 'master', specifies the branch in the the CORE_REPO to install.
 
 . Configure Minishift resources
 +
@@ -78,14 +87,14 @@ minishift delete
 +
 [source,bash]
 ----
-minishift start --openshift-version 3.7.0 --service-catalog
+minishift start --openshift-version 3.9.0 --service-catalog
 ----
 +
 If you did not enable the addon, you need to apply it manually:
 +
 [source,bash]
 ----
-minishift addons apply mobilecore
+minishift addons apply minishift-mobilecore-addon
 ----
 +
 When the installation is complete you are prompted to login using either the `oc` CLI or the OpenShift web console:
@@ -119,7 +128,7 @@ mobile core successfully enabled
 ----
 minishift stop
 minishift delete
-minishift start --openshift-version 3.7.0 --service-catalog
+minishift start --openshift-version 3.9.0 --service-catalog
 ----
 
 . Confirm the addon-env config values are correct:
@@ -187,7 +196,7 @@ oc rollout latest asb-etcd
 [[apbs-not-showing]]
 === APBs not displayed in service catalog
 
-This issue is typically caused by incorrect values for the DOCKERHUB_USER, DOCKERHUB_PASSWORD or DOCKERHUB_ORG.
+This issue is typically caused by incorrect values for the CONTAINER_REPO_USER, CONTAINER_REPO_PASSWORD or CONTAINER_REPO_ORG.
 
 . Check the Docker hub values:
 +
@@ -202,7 +211,7 @@ minishift config get addon-env
 ----
 minishift stop
 minishift delete
-minishift start --openshift-version 3.7.0 --service-catalog
+minishift start --openshift-version 3.9.0 --service-catalog
 ----
 
 [[errors-when-stopping]]
