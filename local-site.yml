@@ -1,0 +1,35 @@
+runtime:
+  cache_dir: ./.cache/antora
+site:
+  title: AeroGear
+  url: https://www.aerogear.org
+  start_page: aerogear::index
+content:
+  sources:
+  - url: .
+    branches: antora-init
+  - url: ../metrics-apb
+    branches: AEROGEAR-2475
+    start_path: docs
+  - url: ../unifiedpush-apb
+    branches: MOBDOC-10
+    start_path: docs
+  - url: ../processes
+    branches: master
+    tags: v*
+  - url: ../aerogear-android-sdk
+    branches: AEROGEAR-2512
+    start_path: docs
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    linkattrs: ''
+    mobile-next: 'AeroGear Mobile Services'
+    mobile-client: 'mobile client '
+ui:
+  bundle:
+    url: ../antora-ui/build/ui-bundle.zip
+    snapshot: true
+

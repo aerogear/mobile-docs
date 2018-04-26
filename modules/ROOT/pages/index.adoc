@@ -1,5 +1,3 @@
-include::shared/attributes.adoc[]
-
 == Overview of {mobile-next}
 
 {mobile-next} extends OpenShift or Kubernetes  to allow you create mobile apps and services from the OpenShift service catalog:

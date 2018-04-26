@@ -1,4 +1,0 @@
-//asciidoctor -a allow-uri-read 
-
-include::https://raw.githubusercontent.com/aerogear/minishift-mobilecore-addon/master/README.md[]
-
