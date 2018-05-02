@@ -16,6 +16,6 @@ The `mobile-services.json` file is generated in the OpenShift web console and is
 
 To learn how to create a mobile client in OpenShift, please follow one of the appropriate guides:
 
-* link:./create-an-android-mobile-client.adoc[Create an Android Mobile Client in OpenShift]
+* link:./create-android-client-openshift.adoc[Create an Android Mobile Client in OpenShift]
 * link:#[Create an iOS Mobile Client in OpenShift]
 * link:#[Create a Cordova Mobile Client in OpenShift]

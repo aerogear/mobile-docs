@@ -7,7 +7,7 @@ This document describes the steps needed to configure the Aerogear Android SDK t
 
 == Prerequisites
 
-* link:./create-android-client-on-openshift.adoc[Create an Android Mobile Client in OpenShift]
+* link:./create-android-client-openshift.adoc[Create an Android Mobile Client in OpenShift]
 
 == Procedure
 
