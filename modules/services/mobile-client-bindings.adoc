@@ -45,7 +45,8 @@ image:./images/keycloak-binding-modal.png[Keycloak Integration Enabled]
 
 Enter the Client ID of your application, which can be found in the configuration details under `clientId`. In this case, `myapp-android` is the ID of the example Android application.
 
-The client type dropdown allows you to choose the type of Keycloak client (bearer-only or public) that will be created for your application during the binding process. For more information about these two client types, see link:#[here].
+The client type dropdown allows you to choose the type of Keycloak client (bearer-only or public) that will be created for your application during the binding process. The `public` client option should be chosen for client bindings.
+For more information about these two client types, see link:https://github.com/aerogear/mobile-core/blob/master/docs/walkthroughs/provision-keycloak-apb.adoc#client-types[here].
 
 ==== Enabled
 
