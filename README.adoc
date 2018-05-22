@@ -31,16 +31,23 @@ Information I might need to debug or extend the normal usage of AeroGear softwar
 
 == Writing AeroGear Documentation
 
-. Contact the docs team to plan your work. For example, make a PR against this repo.
-. Break the writing task down into components, how many procedures do you need to write? can the reference material be generated from code? Is it reasonable to expect users to understand the commponents, or should there be an introduction to the concepts?
+. If the documentation relates to a single sdk or service, make a PR against that repo. Note all adoc files that get published are located in the /docs directory and must conform to Antora standards.
+. If you make a filename change (eg adding or renaming a file), you must update the appropriate nav.adoc file. 
+. Test your changes xref:#using-antora[using Antora]
 . Determine which functionality is this documentation related to?
 +
 * Push
 * Sync
 * Common to all mobile services
+* Common to all services or SDKs but with some information that is specific to each.
++
+With this information, you should be able to make a PR against the appropriate repo. For, example, a doc relating to all services is best placed in this repo.
++
+If you have a mix of common and specific information, raise an issue on this repo to address.
+
+
 . Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
 
-With this information, you should be able to make a PR against the appropriate repo. 
 
 == Asciidoc
 
@@ -63,9 +70,66 @@ This page acts as example of documentation best practises:
 
 For more information and some useful templates, see link:https://redhat-documentation.github.io/modular-docs/[Modular Docs]
 
-== Remote Repos
-The mobile docs are collected from remote repos, eg https://github.com/aerogear/aerogear-android-sdk. 
+[[using-antora]]
+== Using Antora to convert asciidoc to html
 
-To build a preview of the docs in that remote repo see link:process/antora.adoc[Using Antora].
+After modifying documentation, you can validate your changes and preview the results by:
+
+. Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
++
+NOTE: As part of Antora installation, you should install site-generator globally.
+
+. Change to the `docs` directory of the repo you want to convert. For some repos, eg `mobile-docs` and `processes`, use the root directory of the repo. 
+
+. Modify the site definition as required. If you are working on a branch, you'll want to specify that branch in the `local-site.yml` file. For example:
++
+----
+site:
+  title: AeroGear
+  url: https://www.aerogear.org
+  start_page: processes::index
+content:
+  sources:
+  - url: .
+    branches: AEROGEAR-2480
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    linkattrs: ''
+    mobile-next: 'AeroGear Mobile Services'
+    mobile-client: '{mobile-client} '
+ui:
+  bundle:
+    url: https://github.com/finp/antora-ui/raw/master/build/ui-bundle.zip
+    snapshot: true
+
+----
+
+. Run antora:
++
+----
+antora local-site.yml
+----
+
+If you encounter a libcurl error on linux, follow the Option 1 instructions at:
+https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
+
+== Remote Repos
+
+The following repos are used to publish the documentation:
+
+* mobile-docs
+* metrics-apb
+* unifiedpush-apb
+* aerogear-digger-apb
+* keycloak-apb
+* custom-runtime-connector-apb
+* aerogear-android-sdk
+* aerogear-ios-sdk
+* aerogear-js-sdk
+* aerogear-xamarin-sdk
+
 
 
