@@ -76,14 +76,10 @@ For more information and some useful templates, see link:https://redhat-document
 After modifying documentation, you can validate your changes and preview the results by:
 
 . Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
++
+NOTE: As part of Antora installation, you should install site-generator globally.
+
 . Change to the `docs` directory of the repo you want to convert. For some repos, eg `mobile-docs` and `processes`, use the root directory of the repo. 
-. Install the `site-generator`:
-+
-----
-npm i @antora/site-generator-default
-----
-+
-NOTE: As part of Antora installation, you should have already installed site-generator globally.
 
 . Modify the site definition as required. If you are working on a branch, you'll want to specify that branch in the `local-site.yml` file. For example:
 +
