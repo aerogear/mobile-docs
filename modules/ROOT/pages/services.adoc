@@ -1,0 +1,50 @@
+= About Mobile Services
+
+To navigate to the documentation for a specific service, choose the service from the menu above. As new versions of services are released, the menu in the lower left corner allows you to navigate to the version of the documentation you require. 
+
+The following services are available:
+
+[role="primary"]
+.Metrics
+
+****
+
+include::remote/metrics-index.inc-rantora.adoc[tags=about-metrics]
+
+****
+
+[role="secondary"]
+.Unified Push
+****
+
+include::remote/push-index.inc-rantora.adoc[tags=about-push]
+
+****
+
+[role="secondary"]
+.Auth
+****
+
+include::remote/auth-index.inc-rantora.adoc[tags=about-auth]
+
+****
+[role="secondary"]
+.Custom Runtime Connector
+****
+
+include::remote/custom-index.inc-rantora.adoc[tags=about-custom]
+
+****
+[role="secondary"]
+.CI/CD
+****
+
+include::remote/build-index.inc-rantora.adoc[tags=about-build]
+
+****
+
+
+== Additional Information
+
+* See xref:provisioning-services.adoc[Provisioning Mobile Services]
+

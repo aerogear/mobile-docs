@@ -1,33 +1,51 @@
 runtime:
   cache_dir: ./.cache/antora
 site:
-  title: AeroGear
+  title: AeroGear Mobile Services
   url: https://www.aerogear.org
   start_page: aerogear::index
 content:
   sources:
   - url: .
-    branches: antora-init
+    branches: HEAD
   - url: ../metrics-apb
-    branches: AEROGEAR-2475
+    branches: HEAD
     start_path: docs
   - url: ../unifiedpush-apb
-    branches: MOBDOC-10
+    branches: HEAD
     start_path: docs
-  - url: ../processes
-    branches: master
-    tags: v*
+  - url: ../aerogear-digger-apb
+    branches: HEAD
+    start_path: docs
+  - url: ../keycloak-apb
+    branches: HEAD
+    start_path: docs
+  - url: ../custom-runtime-connector-apb
+    branches: HEAD
+    start_path: docs
   - url: ../aerogear-android-sdk
-    branches: AEROGEAR-2512
+    branches: HEAD
+    start_path: docs
+  - url: ../aerogear-ios-sdk
+    branches: HEAD
+    start_path: docs
+  - url: ../aerogear-js-sdk
+    branches: HEAD
+    start_path: docs
+  - url: ../aerogear-xamarin-sdk
+    branches: HEAD
     start_path: docs
 asciidoc:
+  extensions:
+  - ./lib/remote-include-processor
   attributes:
     experimental: ''
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
     mobile-next: 'AeroGear Mobile Services'
-    mobile-client: 'mobile client '
+    mobile-client: 'mobile app record'
+    keycloack: 'Auth'
 ui:
   bundle:
     url: ../antora-ui/build/ui-bundle.zip

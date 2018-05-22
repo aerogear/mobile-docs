@@ -1,0 +1,1 @@
+include::https://raw.githubusercontent.com/finp/unifiedpush-apb/MOBDOC-23/docs/modules/ROOT/pages/provisioning.adoc[]

@@ -1,0 +1,12 @@
+= Connecting Mobile Apps to Mobile Services
+
+AeroGear Mobile Services provide features described in <link>.
+
+The workflow for connecting your mobile app to mobile services can be summarized as:
+
+image::3steps.png[]
+
+. xref:provisioning-services.adoc[Provision and configure a mobile service]
+. xref:registering-a-mobile-app.adoc[Register a mobile app]
+. xref:binding-mobile-app-record-to-mobile-services.adoc[Bind a mobile app record to a mobile service]
+. xref:configuring-app-dev-env.adoc[Configure your mobile app development environment for mobile services]

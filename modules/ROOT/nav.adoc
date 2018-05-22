@@ -1,5 +1,39 @@
-* xref:index.adoc[Overview]
-* xref:mobile_terminology.adoc[Terminology]
-//* xref:mobile_architecture.adoc[Architecture]
-* xref:minishift_install.inc.adoc[Installing]
-* xref:debugging_guide.adoc[Debugging]
+* xref:index.adoc[Getting Started]
+** xref:mobile_terminology.adoc[Terminology]
+** xref:mobile_architecture.adoc[Architecture]
+** xref:minishift_install.inc.adoc[Installing]
+** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
+** xref:workflow.adoc[Mobile Apps & Services Workflow]
+
+* xref:services.adoc[Mobile Services]
+** xref:provisioning-services.adoc[Provisioning]
+** xref:integrating-services.adoc[Binding Services]
+
+* xref:apps.adoc[Mobile Apps]
+** xref:registering-a-mobile-app.adoc[Registering an App]
+** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
+** xref:configuring-app-dev-env.adoc[Configuring mobile app development environment]
+** xref:building-apps-using-cicd.adoc[Building Apps using CI/CD]
+** xref:writing-your-first-app.adoc[Writing your first app]
+
+* xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
+
+* Solutions
+** xref:monitoring-your-app-usage.adoc[Monitoring your App Usage]
+** xref:adding-security-checks-to-your-app.adoc[Adding Security Checks to your App]
+** xref:adding-authentication-to-your-app.adoc[Adding Authentication to your App]
+** xref:protecting-your-backend-app-with-keycloak.adoc[Protecting your Backend App with Keycloak]
+** xref:adding-push-notifications.adoc[Adding Push Notifications]
+
+
+* ---------------------
+* xref:ref_api.adoc[API Reference]
+* xref:mobile-cli.inc.adoc[Mobile CLI]
+* ---------------------
+
+* link:/metrics/latest/[Using the Metrics Service]
+* link:/push/latest/[Using the Unified Push Service]
+* link:/keycloak/latest/[Using the Auth Service]
+* link:/custom/latest/[Using the Custom Runtime Connector Service]
+* link:/build/latest/[Using the CI/CD Service]
+

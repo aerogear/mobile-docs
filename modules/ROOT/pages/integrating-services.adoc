@@ -1,0 +1,5 @@
+= Integrating Mobile Services
+
+Typically, you want mobile services to be able to communicate with each other. For example, if you have a backend app (custom service) and you are using the Auth service, you want to protect that backend app using the Auth service to prevent anonymous access.
+
+<include this process as example>

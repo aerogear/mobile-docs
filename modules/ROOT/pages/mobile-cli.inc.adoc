@@ -1,0 +1,1 @@
+include::https://raw.githubusercontent.com/finp/mobile-cli/MOBDOC-23/docs/modules/ROOT/pages/index.adoc[]

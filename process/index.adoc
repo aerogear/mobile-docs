@@ -1,0 +1,13 @@
+= AeroGear Processes for Documentation
+
+== Overview 
+
+The AeroGear documentation is written in asciidoc and located in github code repos. The two github organizations where docs are located are:
+
+* link:https://github.com/aerogearcatalog[aerogearcatalog] - each mobile service is represented by a code repo, and the docs for that service are in the `docs` directory.
+
+* link:https://github.com/aerogear[aerogear] - each mobile sdk is represented by a code repo, and the docs for that sdk are in the `docs` directory. This organization also includes the `mobile-docs` and `processes` repo that is exclusively documentation and is generic to all services and sdks.
+
+The main controller for publishing is located in https://github.com/aerogear/mobile-docs
+
+

@@ -1,0 +1,26 @@
+= Using mobile-services.json File
+
+The  `mobile-services.json` file contains all the information your code needs to use mobile services. 
+
+
+Prerequisites:
+
+* [x] You have installed Minishift with the mobilecore addon as described in xref:ROOT:minishift_install.inc.adoc[Setting Up].
+* [x] You have xref:provisioning-services.adoc[provisioned at least one mobile service]
+* [x] You have xref:connecting-mobile-clients-to-mobile-services.adoc[associated your {mobile-client} with a mobile service]
+
+To download the `mobile-services.json` file:
+
+. Navigate to your Project Overview in OpenShift
+
+. Copy the contents of *Config Info* field.
+
+. Save the file as `mobile-services.json`.
+
+
+The process for using the `mobile-services.json` file is different for each mobile platform:
+
+* Android native
+* iOS native
+* Cordova
+* Xamarin
