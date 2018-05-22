@@ -1,0 +1,1 @@
+include::https://raw.githubusercontent.com/finp/metrics-apb/MOBDOC-23/docs/modules/ROOT/pages/index.adoc[]

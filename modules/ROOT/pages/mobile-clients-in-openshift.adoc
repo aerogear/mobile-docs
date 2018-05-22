@@ -1,0 +1,21 @@
+= {mobile-client}s in OpenShift
+
+A {mobile-client} is a **representation** of your mobile application (Android, iOS, Cordova) in OpenShift. It allows your mobile application to use the Aerogear SDKs to integrate with the following:
+
+* Aerogear Services running in OpenShift.
+* Your own backend services running in OpenShift.
+* External web services available on the internet.
+
+== mobile-services.json
+
+The {mobile-client} provides all of the configuration needed by a mobile application using the Aerogear SDKs. This configuration is known as `mobile-services.json`.
+
+The `mobile-services.json` file is generated in the OpenShift web console and is consumed by the various Aerogear SDKs, allowing your application to access the web services it needs.
+
+== Create a {mobile-client} in OpenShift
+
+To learn how to create a {mobile-client} in OpenShift, please follow one of the appropriate guides:
+
+* link:./create-android-client-openshift.adoc[Create an Android {mobile-client} in OpenShift]
+* link:#[Create an iOS {mobile-client} in OpenShift]
+* link:#[Create a Cordova {mobile-client} in OpenShift]

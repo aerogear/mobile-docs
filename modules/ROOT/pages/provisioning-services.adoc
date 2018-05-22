@@ -1,0 +1,73 @@
+== Provisioning Mobile Services
+
+
+Prerequisites:
+
+* [x] You have installed Minishift with the mobilecore addon as described in xref:ROOT:minishift_install.inc.adoc[Setting Up].
+
+TIP: If you have provisioned a {mobile-client}, you can navigate to that {mobile-client} and see what mobile services are available to provision.  
+
+To provision a mobile service:
+
+. Log into the OpenShift console.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the mobile service
+
+. Follow the wizard for provisioning that service. 
+
+
+[role="primary"]
+.Metrics
+
+****
+
+include::remote/metrics-provisioning.inc-rantora.adoc[tags=provisioning-metrics]
+
+****
+
+[role="secondary"]
+.Unified Push
+****
+
+include::remote/push-provisioning.inc-rantora.adoc[tags=provisioning-push]
+
+****
+
+[role="secondary"]
+.Auth
+****
+
+include::remote/auth-provisioning.inc-rantora.adoc[tags=provisioning-auth]
+
+****
+[role="secondary"]
+.Custom Runtime Connector
+****
+
+include::remote/custom-provisioning.inc-rantora.adoc[tags=provisioning-custom]
+
+****
+[role="secondary"]
+.CI/CD
+****
+
+include::remote/build-provisioning.inc-rantora.adoc[tags=provisioning-build]
+
+****
+
+NOTE: If you have already registered a mobile app, you can also bind to that mobile app during the provisioning process. 
+
+See the xref:services.adoc[list of all available services] and navigate to the documentation for the service you require.
+
+After the service has been provisioned, you should then be able to see the service's secret and config map created during provision
+within the project's resources.
+
+To edit the service configuration, go to *Resources* -> *Config Maps* and select the service's config map.
+Press the *[Actions]* button in the upper right corner and choose *[Edit]* or *[Edit YAML]*. This
+allows you to edit the service's configuration directly which is then exposed to your mobile application.
+
+== Deprovisioning
+In order to delete a provisioned service, select the service menu and click *Delete*. A notification 
+appears that the service has now been *Marked for Deletion*.
