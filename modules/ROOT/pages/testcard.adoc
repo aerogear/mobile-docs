@@ -1,0 +1,21 @@
+
+* {product-name}
+* {mobile-client}
+* {metrics-service}
+* {grafana-ui}
+* {prometheus-ui}
+
+* {keycloak-service}
+* {keycloak-ui}
+* {keycloak-dashboard}
+
+* {unifiedpush-service}
+* {push-ui}
+* {digger-service}
+* {custom-service}
+* {SDK}
+* {ios-sdk}
+* {android-sdk}
+
+* {js-sdk}
+* {xamarin-sdk}

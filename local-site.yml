@@ -35,6 +35,11 @@ content:
   - url: ../aerogear-xamarin-sdk
     branches: HEAD
     start_path: docs
+ui:
+  bundle:
+    url: ../antora-ui/build/ui-bundle.zip
+    snapshot: true
+
 asciidoc:
   extensions:
   - ./lib/remote-include-processor
@@ -43,11 +48,32 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
-    mobile-next: 'AeroGear Mobile Services'
-    mobile-client: 'mobile app record'
-    keycloack: 'Auth'
-ui:
-  bundle:
-    url: ../antora-ui/build/ui-bundle.zip
-    snapshot: true
+    product-name: 'Mobile Services'
 
+    mobile-client: 'mobile app record'
+
+    metrics-service: 'Metrics Service'
+    grafana-ui: 'Grafana'
+    prometheus-ui: 'Prometheus'
+    
+    keycloak-service: 'Auth Service'
+    keycloak-ui: 'Keycloak admin UI'
+    keycloak-dashboard: 'Auth Dashboard'
+    
+    unifiedpush-service: 'Unified Push Service'
+    push-ui: 'Unified Push admin UI'
+   
+    digger-service: 'CI\CD Service'
+
+    custom-service: 'Custom Runtime Connector Service'
+
+
+    SDK: 'AeroGear SDK'
+
+    ios-sdk: 'AeroGear SDK for iOS'
+
+    android-sdk: 'AeroGear SDK for Android'
+    
+    js-sdk: 'AeroGear SDK for Cordova'
+ 
+    xamarin-sdk: 'AeroGear SDK for Xamarin'
