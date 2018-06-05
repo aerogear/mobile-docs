@@ -6,19 +6,40 @@ site:
   start_page: aerogear::index
 content:
   sources:
-  - url: git@github.com:aerogear/mobile-docs.git
-    branches: antora-init
-  - url: git@github.com:finp/metrics-apb.git
-    branches: AEROGEAR-2475
-    start_path: docs
-  - url: git@github.com:finp/unifiedpush-apb.git
-    branches: MOBDOC-10
-    start_path: docs
-  - url: git@github.com:aerogear/processes.git
+  - url: git@github.com:aerogearcatalog/keycloak-apb.git
     branches: master
-  - url: git@github.com:finp/aerogear-android-sdk.git
-    branches: AEROGEAR-2512
     start_path: docs
+  
+  - url: git@github.com:aerogearcatalog/metrics-apb.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogearcatalog/unifiedpush-apb.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogearcatalog/aerogear-digger-apb.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogear/aerogear-android-sdk.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogear/aerogear-js-sdk.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogear/aerogear-xamarin-sdk.git
+    branches: master
+    start_path: docs
+
+  - url: git@github.com:aerogear/aerogear-ios-sdk.git
+    branches: master 
+    start_path: docs
+
+  - url: .
+    branches: master
 asciidoc:
   attributes:
     experimental: ''
@@ -29,6 +50,6 @@ asciidoc:
     mobile-client: '{mobile-client} '
 ui:
   bundle:
-    url: https://github.com/finp/antora-ui/raw/master/build/ui-bundle.zip
+    url: https://github.com/aerogear/antora-ui/raw/master/build/ui-bundle.zip
     snapshot: true
 
