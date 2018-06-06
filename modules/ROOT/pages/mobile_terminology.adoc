@@ -8,3 +8,24 @@ Service Catalog::
 [[mobile-client]]{mobile-client}:: A {mobile-client} is the representation on OpenShift of the Mobile App that you want to implement. For more information, see xref:workflow:clients.adoc[Provisioning and Configuring {mobile-client}s].
 
 [[mobile-app]]Mobile App:: A mobile app is your code for your mobile platform. For more information, see see xref:workflow:apps.adoc[Provisioning and Configuring {mobile-client}s].
+
+
+//Info taken from existing upstream content
+
+Binding a Service to a Mobile App:: It is possible to bind a Service in OpenShift to a Mobile App. This allows your applications to interact with service provisioned in your namespace.
+
+mobile-services.json:: `mobile-services.json` contains all the information your Mobile App needs to use Mobile Services.
+
+//Need explanation from devs
+
+AeroGear core component:: What function do I provide in the context of mobile? (modules/ROOT/pages/apps.adoc)
+
+Backend Service:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/create-android-client-openshift.adoc)
+
+Aerogear Services:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/mobile-clients-in-openshift.adoc)
+
+Mobile Addon:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/getting-started-with-openshift.adoc)
+
+Runtime Connector Service:: What function do I provide in the context of mobile? (modules/ROOT/pages/integrate-android-app-with-custom-service.adoc)
+
+Registering a Mobile App:: What function do I provide in the context of mobile? (modules/ROOT/pages/registering-a-mobile-app.adoc)
