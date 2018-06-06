@@ -1,23 +1,16 @@
-== Provisioning Mobile Services
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Push Notifications
+
+= Provisioning Mobile Services
+
+== Prerequisites
 
 
-Prerequisites:
+* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
 
-* [x] You have installed Minishift with the mobilecore addon as described in xref:ROOT:minishift_install.inc.adoc[Setting Up].
+include::{partialsdir}/generic-provisioning.adoc[]
 
-TIP: If you have provisioned a {mobile-client}, you can navigate to that {mobile-client} and see what mobile services are available to provision.  
-
-To provision a mobile service:
-
-. Log into the OpenShift console.
-. Click *Add to Project* and choose *Browse Catalog* from the options.
-+
-You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
-. Click *Services* and choose the mobile service
-
-. Follow the wizard for provisioning that service. 
-
-//TODO push wizard
 
 NOTE: If you have already registered a mobile app, you can also bind to that mobile app during the provisioning process. 
 

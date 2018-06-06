@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 == Overview of {product-name}
 
 {product-name} extends OpenShift or Kubernetes  to allow you create mobile apps using mobile services from the OpenShift service catalog:

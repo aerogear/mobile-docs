@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = {mobile-client}s in OpenShift
 
 A {mobile-client} is a **representation** of your mobile application (Android, iOS, Cordova) in OpenShift. It allows your mobile application to use the Aerogear SDKs to integrate with the following:

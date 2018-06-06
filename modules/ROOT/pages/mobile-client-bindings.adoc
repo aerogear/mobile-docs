@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Binding {mobile-client}s to Services in OpenShift
 
 {mobile-client}s in OpenShift may be bound to particular services provisioned in the namespace to allow communication between them. 

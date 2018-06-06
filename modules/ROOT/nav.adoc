@@ -1,9 +1,9 @@
-
+include::{partialsdir}/attributes.adoc[]
 
 * xref:index.adoc[Getting Started]
+** xref:installing-mobile-services.adoc[Installing]
 ** xref:mobile_terminology.adoc[Terminology]
-** xref:mobile_architecture.adoc[Architecture]
-** xref:minishift_install.inc.adoc[Installing]
+// ** xref:mobile_architecture.adoc[Architecture]
 ** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
 ** xref:workflow.adoc[Mobile Apps & Services Workflow]
 
@@ -16,9 +16,9 @@
 ** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
 ** xref:configuring-app-dev-env.adoc[Configuring mobile app development environment]
 
-* xref:push:index.adoc[{unifiedpush-service}]
-** xref:push:provisioning-services.adoc[Provisioning]
-** xref:push:binding-mobile-app-record-to-mobile-services.adoc[Binding]
+* xref:push/index.adoc[{unifiedpush-service}]
+** xref:push/provisioning.adoc[Provisioning]
+** xref:push/binding-mobile-app-record-to-mobile-services.adoc[Binding]
 
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
 ** xref:testcard.adoc[{metrics-service} for the Showcase App]

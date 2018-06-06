@@ -1,0 +1,25 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Setting up AeroGear {product-name} on OpenShift
+
+To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see https://www.openshift.org/.
+
+NOTE: {org-name} recommends running OpenShift using the method described here. However there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[].
+
+== Prerequisites
+
+* MacOS or Linux
+
+* Docker
+
+. Install OpenShift using the instructions at https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md
+
+
+
+== Next Steps
+
+* Provision a Mobile Service
+
+* Register a Mobile App
+
+

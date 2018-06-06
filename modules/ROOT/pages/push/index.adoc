@@ -1,8 +1,4 @@
-// ---
-// layout: post
-// title: UnifiedPush Server - Overview
-// section: guides
-// ---
+include::{partialsdir}/attributes.adoc[]
 
 [[overview]]
 == Overview

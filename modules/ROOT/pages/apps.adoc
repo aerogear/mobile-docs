@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Configuring my Mobile App to use Mobile Services
 
 To use mobile services, you must include the following in your development environment:

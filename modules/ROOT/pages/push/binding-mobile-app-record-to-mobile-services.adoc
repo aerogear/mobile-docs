@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Binding a Mobile App Record with Mobile Services
 
 To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client} and that {mobile-client} must be associated with the mobile service.
