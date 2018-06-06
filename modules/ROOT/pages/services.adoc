@@ -9,7 +9,7 @@ The following services are available:
 
 ****
 
-include::remote/metrics-index.inc-rantora.adoc[tags=about-metrics]
+include::{partialsdir}/metrics-index.inc-rantora.adoc[tags=about-metrics]
 
 ****
 
@@ -17,7 +17,7 @@ include::remote/metrics-index.inc-rantora.adoc[tags=about-metrics]
 .Unified Push
 ****
 
-include::remote/push-index.inc-rantora.adoc[tags=about-push]
+include::{partialsdir}/push-index.inc-rantora.adoc[tags=about-push]
 
 ****
 
@@ -25,21 +25,21 @@ include::remote/push-index.inc-rantora.adoc[tags=about-push]
 .Auth
 ****
 
-include::remote/auth-index.inc-rantora.adoc[tags=about-auth]
+include::{partialsdir}/auth-index.inc-rantora.adoc[tags=about-auth]
 
 ****
 [role="secondary"]
 .Custom Runtime Connector
 ****
 
-include::remote/custom-index.inc-rantora.adoc[tags=about-custom]
+include::{partialsdir}/custom-index.inc-rantora.adoc[tags=about-custom]
 
 ****
 [role="secondary"]
 .CI/CD
 ****
 
-include::remote/build-index.inc-rantora.adoc[tags=about-build]
+include::{partialsdir}/build-index.inc-rantora.adoc[tags=about-build]
 
 ****
 

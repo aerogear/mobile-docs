@@ -23,7 +23,7 @@ You can filter the catalog items to only show mobile specific items by clicking 
 
 ****
 
-include::remote/metrics-provisioning.inc-rantora.adoc[tags=provisioning-metrics]
+include::{partialsdir}/metrics-provisioning.inc-rantora.adoc[tags=provisioning-metrics]
 
 ****
 
@@ -31,7 +31,7 @@ include::remote/metrics-provisioning.inc-rantora.adoc[tags=provisioning-metrics]
 .Unified Push
 ****
 
-include::remote/push-provisioning.inc-rantora.adoc[tags=provisioning-push]
+include::{partialsdir}/push-provisioning.inc-rantora.adoc[tags=provisioning-push]
 
 ****
 
@@ -39,21 +39,21 @@ include::remote/push-provisioning.inc-rantora.adoc[tags=provisioning-push]
 .Auth
 ****
 
-include::remote/auth-provisioning.inc-rantora.adoc[tags=provisioning-auth]
+include::{partialsdir}/auth-provisioning.inc-rantora.adoc[tags=provisioning-auth]
 
 ****
 [role="secondary"]
 .Custom Runtime Connector
 ****
 
-include::remote/custom-provisioning.inc-rantora.adoc[tags=provisioning-custom]
+include::{partialsdir}/custom-provisioning.inc-rantora.adoc[tags=provisioning-custom]
 
 ****
 [role="secondary"]
 .CI/CD
 ****
 
-include::remote/build-provisioning.inc-rantora.adoc[tags=provisioning-build]
+include::{partialsdir}/build-provisioning.inc-rantora.adoc[tags=provisioning-build]
 
 ****
 
