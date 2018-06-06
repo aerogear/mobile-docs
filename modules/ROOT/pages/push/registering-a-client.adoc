@@ -1,9 +1,11 @@
+include::{partialsdir}/attributes.adoc[]
+= Registering a {push-service} client
+
 This document describes the functionality of a client SDK that works
 with the AeroGear UnifiedPush Server.
 
 [[motivation-purpose]]
-Motivation / Purpose
-~~~~~~~~~~~~~~~~~~~~
+== Motivation / Purpose
 
 The https://github.com/aerogear/aerogear-unifiedpush-server[AeroGear
 UnifiedPush Server] is accessible via HTTP. Instead of having to
@@ -14,8 +16,8 @@ client library should be offered.
 (`Installation`) with the UnifiedPush Server.
 
 [[background-push-network-token]]
-Background: Push Network Token
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Background: Push Network Token
+
 
 To receive native push notifications from a Push Network (e.g. APNs, GCM
 or SimplePush), the mobile device is identified with a unique
@@ -28,8 +30,7 @@ The `device-token` needs to be registered with the _AeroGear UnifiedPush
 Server_, to indicate there is a new `Installation` for a `Variant`.
 
 [[functionality]]
-Functionality
-~~~~~~~~~~~~~
+== Functionality
 
 *WARNING:* _The focus of this specification is to describe the generic
 minimum and not any platform-specific requirements_
@@ -41,8 +42,7 @@ The client SDK offers the following features:
 restrictions)
 
 [[registration-and-updating-of-a-installation]]
-Registration and Updating of a Installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Registration and Updating of a Installation
 
 Everytime when a mobile application launches it receives the above
 mentioned `device-token`, via a _platform-specific_ method (or
@@ -71,7 +71,6 @@ to send updates to the SimplePush server._
 
 [[reachability]]
 Reachability
-++++++++++++
 
 Internally, the client SDK needs to check if the device can establish a
 connection to the internet (PushNetwork and UnifiedPush Server). It
@@ -80,7 +79,6 @@ of the services.
 
 [[unregistration-of-client-device-information]]
 Unregistration of client device information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 _Optional_ method that helps to unregister the client device information
 with the Unified Push Server.
@@ -96,7 +94,6 @@ tokens. Tokens, with Apple, are _inactive_ when the user:
 
 [[reachability-1]]
 Reachability
-++++++++++++
 
 Internally, the client SDK needs to check if the device can establish a
 connection to the internet (PushNetwork and UnifiedPush Server). It
@@ -105,7 +102,6 @@ of the services.
 
 [[platform-specific-details]]
 Platform specific details
-~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every client platform has its own base APIs, to receive Push Message
 from its Push Network. The AeroGear client SDK _may_ offer utilities to

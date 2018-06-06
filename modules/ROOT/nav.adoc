@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
 ** xref:workflow.adoc[Mobile Apps & Services Workflow]
 
-* xref:services.adoc[Mobile Services]
+* xref:con_services.adoc[Mobile Services]
 ** xref:provisioning-services.adoc[Provisioning]
 ** xref:integrating-services.adoc[Binding Services]
 
@@ -29,5 +29,5 @@ include::{partialsdir}/attributes.adoc[]
 
 .Reference
 * xref:ref_api.adoc[API Reference]
-* xref:mobile-cli.inc.adoc[Mobile CLI]
+* xref:mobile-cli.adoc[Mobile CLI]
 
