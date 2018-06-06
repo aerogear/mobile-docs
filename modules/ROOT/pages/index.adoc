@@ -1,15 +1,15 @@
-== Overview of {mobile-next}
+== Overview of {product-name}
 
-{mobile-next} extends OpenShift or Kubernetes  to allow you create mobile apps using mobile services from the OpenShift service catalog:
+{product-name} extends OpenShift or Kubernetes  to allow you create mobile apps using mobile services from the OpenShift service catalog:
 
-You can use {mobile-next} to create apps for a number of mobile-platorms:
+You can use {product-name} to create apps for a number of mobile-platorms:
 
 image::overview.png[]
 
-See xref:clients.adoc[{mobile-client}s] for more information on the represenation of your mobile app in OpenShift.
+See xref:registering-a-mobile-app.adoc[Registering a Mobile App] for more information on the represenation of your mobile app in OpenShift.
 
 The following mobile services can be integrated into your apps and workflow:
 
 image::services.png[]
 
-See xref:services.adoc[mobile services] for more information about the services available.
+See xref:services.adoc[Mobile Services] for more information about the services available.

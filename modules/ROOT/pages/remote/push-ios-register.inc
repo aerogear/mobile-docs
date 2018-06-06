@@ -1,0 +1,1 @@
+include::https://raw.githubusercontent.com/finp/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
