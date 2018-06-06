@@ -12,20 +12,28 @@ Service Catalog::
 
 //Info taken from existing upstream content
 
-Binding a Service to a Mobile App:: It is possible to bind a Service in OpenShift to a Mobile App. This allows your applications to interact with service provisioned in your namespace.
+Binding a Service to a Mobile App:: You can associate a Mobile Service with a Mobile App to allow your Mobile Apps to communicate with that service.
 
 mobile-services.json:: `mobile-services.json` contains all the information your Mobile App needs to use Mobile Services.
 
 //Need explanation from devs
 
-AeroGear core component:: What function do I provide in the context of mobile? (modules/ROOT/pages/apps.adoc)
+//AeroGear core component:: What function do I provide in the context of mobile? (modules/ROOT/pages/apps.adoc)
+// should not be mentioned
 
-Backend Service:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/create-android-client-openshift.adoc)
+//Backend Service:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/create-android-client-openshift.adoc)
+// not sure about service, needs review
 
-Aerogear Services:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/mobile-clients-in-openshift.adoc)
+Back-end:: Your server-side code, typically Node.js or Java. You can register the url for each service as a custom runtime connector service, and thereby pass the url to a mobile app using the mobile-services.json file.
 
-Mobile Addon:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/getting-started-with-openshift.adoc)
+//Aerogear Services:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/mobile-clients-in-openshift.adoc)
+// should always be {product-name}
 
-Runtime Connector Service:: What function do I provide in the context of mobile? (modules/ROOT/pages/integrate-android-app-with-custom-service.adoc)
 
-Registering a Mobile App:: What function do I provide in the context of mobile? (modules/ROOT/pages/registering-a-mobile-app.adoc)
+//Mobile Addon:: Generic 1 liner to give the reader some context is all that is required here (modules/ROOT/pages/getting-started-with-openshift.adoc)
+// going to remove mentions of this
+
+
+Custom Runtime Connector Service:: Allows you connect your Back-end with a mobile app.
+
+Registering a Mobile App:: Allows mobile services communicate with your mobile app.
