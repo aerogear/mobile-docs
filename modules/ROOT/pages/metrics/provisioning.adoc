@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Push Notifications
+:service-name: Metrics
 
 = Provisioning {service-name} Service
 
@@ -11,6 +11,15 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
+
+When provisioning a metrics service, you are prompted to set the following:
+
+
+* Grafana Storage Size (Gb)
+* Prometheus Storage Size (Gb)
+* Postgres Storage Size (Gb)
+* Postgres User
+* Postgres Password
 
 NOTE: If you have already registered a mobile app, you can also bind to that mobile app during the provisioning process. 
 

@@ -1,0 +1,39 @@
+= Using dashboards to display metrics service data
+
+== Prerequisites
+
+An AeroGear metrics service instance, created from the OpenShift service catalog as described in link:{creating-metrics-service}[Creating the Metrics Service]
+
+== Overview of dashboards
+
+The metrics service uses https://prometheus.io/[Prometheus] to gather metrics data from other mobile services and https://grafana.com/[Grafana] to display that data.
+
+A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics. 
+See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started] guide for an introduction to dashboards.
+
+When you create an instance of an AeroGear service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana. You can also create and modify custom dashboards to:
+
+* visualize metrics from apps and backend services that are not mobile services
+* monitor additional metrics from mobile services that are not displayed by default
+* monitor additional metrics from OpenShift that are not displayed by default
+
+== Creating dashboards in Grafana
+
+You can create dashboards using *Drag and Drop* in Grafana. 
+See the http://docs.grafana.org/[Grafana Documentation] to learn about building Grafana dashboards. 
+
+== Importing dashboards
+
+All Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using that JSON definition as described in the link:http://docs.grafana.org/reference/export_import/[importing and exporting dashboards] Grafana documentation.
+
+== Customizing the mobile services dashboards
+
+When you provision a mobile service from the service catalog, a dashboard showing metrics about that service is added to Grafana.
+
+NOTE: If you edit the default mobile service dashboards, your changes will be lost whenever the associated mobile service is updated.
+
+Before editing the dashboard, clone it as follows:
+
+. Open the Dashboard you want to clone.
+. Click the settings icon in the dashboard controls to show the *Settings* screen.
+. Select the *Save As* option and enter in a name for the new dashboard, for example `Copy of Sync Service Dashboard`.

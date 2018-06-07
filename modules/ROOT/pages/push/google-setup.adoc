@@ -1,5 +1,7 @@
+include::{partialsdir}/attributes.adoc[]
+
 [[google-setup]]
-== Obtaining Firebase Cloud Messaging Credentials
+= Obtaining Firebase Cloud Messaging Credentials
 
 Before the Android application is able to receive the notifications, you must set up access to Firebase Cloud Messaging. Luckily, this is both easy and free to do, and does not require much setup. As with iOS, you are only able to test out your push notifications in a real device. This section shows you how to obtain the credentials necessary to set up Firebase Cloud Messaging for your app, including:
 
@@ -7,7 +9,7 @@ Before the Android application is able to receive the notifications, you must se
 * the **Sender ID**
 * the `google-services.json` file containing the credentials required to connect your app to Firebase and Google services.
 
-=== Project Setup and App Registration using the Firebase Console
+== Project Setup and App Registration using the Firebase Console
 
 First, register with the Firebase Cloud Messaging (FCM) platform, formerly known as Google Cloud Messaging (GCM). You need a Google Account to do this. Start by opening the https://console.firebase.google.com[Firebase Console].
 
