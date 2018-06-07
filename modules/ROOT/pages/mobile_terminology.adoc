@@ -1,10 +1,24 @@
 = Terminology
 
-Service Catalog::
-    An OpenShift feature that allows you choose the xref:mobile-service[Mobile Service] and xref:mobile-client[{mobile-client}] that you want to implement. It is an implementation of the Open Service Broker API (OSB API) for Kubernetes that allows users to connect any of their applications deployed in OpenShift to a wide variety of service brokers.
+Service Catalog:: An OpenShift feature that allows you choose the xref:mobile-service[Mobile Service] and xref:mobile-client[{mobile-client}] that you want to implement.
+It is an implementation of the Open Service Broker API (OSB API) for Kubernetes that allows users to connect any of their applications deployed in OpenShift to a wide variety of service brokers.
 
-[[mobile-service]]Mobile Service:: A mobile service is provides features that you can include in your mobile app, for example, Push notifications. For more information, see xref:workflow:services.adoc[Provisioning and Configuring Mobile Services].
+[[mobile-service]]Mobile Service:: A Mobile Service provides features that you can include in your Mobile App, for example, Push notifications.
+For more information, see xref:workflow:services.adoc[Provisioning and Configuring Mobile Services].
 
-[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation on OpenShift of the Mobile App that you want to implement. For more information, see xref:workflow:clients.adoc[Provisioning and Configuring {mobile-client}s].
+[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation on OpenShift of the Mobile App that you want to implement.
+For more information, see xref:workflow:clients.adoc[Provisioning and Configuring {mobile-client}s].
 
-[[mobile-app]]Mobile App:: A mobile app is your code for your mobile platform. For more information, see see xref:workflow:apps.adoc[Provisioning and Configuring {mobile-client}s].
+[[mobile-app]]Mobile App:: A Mobile App is your code for your Mobile Platform.
+For more information, see xref:workflow:apps.adoc[Provisioning and Configuring {mobile-client}s].
+
+Binding a Service to a Mobile App:: You can associate a Mobile Service with a Mobile App to allow your Mobile Apps to communicate with that service.
+
+mobile-services.json:: `mobile-services.json` contains all the information your Mobile App needs to use Mobile Services.
+
+Back-end:: Your server-side code, typically Node.js or Java.
+You can register the url for each service as a Custom Runtime Connector Service, and thereby pass the url to a mobile app using the `mobile-services.json` file.
+
+Custom Runtime Connector Service:: Allows you connect your Mobile App to a Back-end Application using a Back-end Service.
+
+Registering a Mobile App:: Allows Mobile Services communicate with your Mobile App.
