@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+//include::{partialsdir}/attributes.adoc[]
 
 
 image::testcard.png[optional alt text]
