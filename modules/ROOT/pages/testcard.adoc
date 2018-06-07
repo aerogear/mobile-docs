@@ -1,5 +1,8 @@
 include::{partialsdir}/attributes.adoc[]
 
+
+image::testcard.png[optional alt text]
+
 * {product-name}
 * {mobile-client}
 * {metrics-service}

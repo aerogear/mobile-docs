@@ -3,7 +3,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Binding a {mobile-client} with the {service-name} service
 
-// include::{partialsdir}/generic-binding.adoc[]
+include::{partialsdir}/generic-binding.adoc[]
 
 . Specify 
 
