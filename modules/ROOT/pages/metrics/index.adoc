@@ -1,0 +1,18 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-metrics
+
+[id='{context}_con_introduction-to-metrics']
+= Introduction To Metrics
+
+The metrics service provides monitoring and metrics for provisioned mobile services.
+The service consists of Prometheus and Grafana with an OAuth Proxy tied to openshift permissions, for authentication and authorization.
+It automates the gathering and display of service metrics by using features in Openshift, annotations and configMaps, to allow the discovery of service metrics and visualization of data.
+The metrics service makes it easy to monitor provisioned mobile services and custom services in your project.
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* For more information, see the link:https://prometheus.io/docs/introduction/overview/[Prometheus Documentation].
+* For more information, see the link:http://docs.grafana.org/[Grafana Documentation].

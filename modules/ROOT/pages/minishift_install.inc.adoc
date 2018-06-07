@@ -1,1 +1,0 @@
-include::https://raw.githubusercontent.com/aerogear/minishift-mobilecore-addon/master/docs/minishift_install.adoc[]

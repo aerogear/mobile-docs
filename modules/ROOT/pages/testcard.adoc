@@ -1,3 +1,4 @@
+include::{partialsdir}/attributes.adoc[]
 
 * {product-name}
 * {mobile-client}

@@ -1,0 +1,11 @@
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
+
+. Follow the wizard for provisioning that service. 
++
+NOTE: When prompted to *Create a Binding*, choose *Do not bind at this time*

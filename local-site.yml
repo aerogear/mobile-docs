@@ -8,33 +8,6 @@ content:
   sources:
   - url: .
     branches: HEAD
-  - url: ../metrics-apb
-    branches: HEAD
-    start_path: docs
-  - url: ../unifiedpush-apb
-    branches: HEAD
-    start_path: docs
-  - url: ../aerogear-digger-apb
-    branches: HEAD
-    start_path: docs
-  - url: ../keycloak-apb
-    branches: HEAD
-    start_path: docs
-  - url: ../custom-runtime-connector-apb
-    branches: HEAD
-    start_path: docs
-  - url: ../aerogear-android-sdk
-    branches: HEAD
-    start_path: docs
-  - url: ../aerogear-ios-sdk
-    branches: HEAD
-    start_path: docs
-  - url: ../aerogear-js-sdk
-    branches: HEAD
-    start_path: docs
-  - url: ../aerogear-xamarin-sdk
-    branches: HEAD
-    start_path: docs
 ui:
   bundle:
     url: ../antora-ui/build/ui-bundle.zip
@@ -48,32 +21,3 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
-    product-name: 'Mobile Services'
-
-    mobile-client: 'mobile app record'
-
-    metrics-service: 'Metrics Service'
-    grafana-ui: 'Grafana'
-    prometheus-ui: 'Prometheus'
-    
-    keycloak-service: 'Auth Service'
-    keycloak-ui: 'Keycloak admin UI'
-    keycloak-dashboard: 'Auth Dashboard'
-    
-    unifiedpush-service: 'Unified Push Service'
-    push-ui: 'Unified Push admin UI'
-   
-    digger-service: 'CI\CD Service'
-
-    custom-service: 'Custom Runtime Connector Service'
-
-
-    SDK: 'AeroGear SDK'
-
-    ios-sdk: 'AeroGear SDK for iOS'
-
-    android-sdk: 'AeroGear SDK for Android'
-    
-    js-sdk: 'AeroGear SDK for Cordova'
- 
-    xamarin-sdk: 'AeroGear SDK for Xamarin'

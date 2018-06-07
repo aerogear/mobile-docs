@@ -1,39 +1,48 @@
+include::{partialsdir}/attributes.adoc[]
+
 * xref:index.adoc[Getting Started]
+** xref:installing-mobile-services.adoc[Installing]
 ** xref:mobile_terminology.adoc[Terminology]
-** xref:mobile_architecture.adoc[Architecture]
-** xref:minishift_install.inc.adoc[Installing]
+// ** xref:mobile_architecture.adoc[Architecture]
 ** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
 ** xref:workflow.adoc[Mobile Apps & Services Workflow]
 
-* xref:services.adoc[Mobile Services]
+* xref:con_services.adoc[About Mobile Services]
 ** xref:provisioning-services.adoc[Provisioning]
 ** xref:integrating-services.adoc[Binding Services]
 
-* xref:apps.adoc[Mobile Apps]
+* xref:apps.adoc[About Mobile Apps]
 ** xref:registering-a-mobile-app.adoc[Registering an App]
 ** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
-** xref:configuring-app-dev-env.adoc[Configuring mobile app development environment]
-** xref:building-apps-using-cicd.adoc[Building Apps using CI/CD]
-** xref:writing-your-first-app.adoc[Writing your first app]
+** xref:configuring-dev-env.adoc[Configuring development environment]
+
+* Using Mobile Services
+** xref:push/index.adoc[{unifiedpush-service}]
+*** xref:push/provisioning.adoc[Provisioning]
+*** xref:push/binding-mobile-app-record-to-mobile-services.adoc[Binding]
+*** xref:configuring-dev-env.adoc[Configuring development environment]
+*** xref:push/coding.adoc[Adding Code]
+*** xref:push/sending-push-notifications.adoc[Sending Push Notifications]
+*** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
+*** xref:push/apple-setup.adoc[Apple Push Network]
+*** xref:push/google-setup.adoc[Firebase Cloud Messaging]
+
+** xref:metrics/index.adoc[{metrics-service}]
+*** xref:metrics/provisioning.adoc[Provisioning]
+*** xref:metrics/binding-mobile-app-record-to-mobile-services.adoc[Binding]
+*** xref:configuring-dev-env.adoc[Configuring development environment]
+*** xref:metrics/coding.adoc[Adding Code]
+*** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
+*** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
 
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
+** xref:testcard.adoc[{metrics-service} for the Showcase App]
+** xref:testcard.adoc[{keycloak-service} for the Showcase App]
+** xref:testcard.adoc[{digger-service} for the Showcase App]
+** xref:testcard.adoc[{custom-service} for the Showcase App]
+** xref:testcard.adoc[{unifiedpush-service} for the Showcase App]
 
-* Solutions
-** xref:monitoring-your-app-usage.adoc[Monitoring your App Usage]
-** xref:adding-security-checks-to-your-app.adoc[Adding Security Checks to your App]
-** xref:adding-authentication-to-your-app.adoc[Adding Authentication to your App]
-** xref:protecting-your-backend-app-with-keycloak.adoc[Protecting your Backend App with Keycloak]
-** xref:adding-push-notifications.adoc[Adding Push Notifications]
-
-
-* ---------------------
+.Reference
 * xref:ref_api.adoc[API Reference]
-* xref:mobile-cli.inc.adoc[Mobile CLI]
-* ---------------------
-
-* link:/metrics/latest/[Using the Metrics Service]
-* link:/push/latest/[Using the Unified Push Service]
-* link:/keycloak/latest/[Using the Auth Service]
-* link:/custom/latest/[Using the Custom Runtime Connector Service]
-* link:/build/latest/[Using the CI/CD Service]
+* xref:mobile-cli.adoc[Mobile CLI]
 

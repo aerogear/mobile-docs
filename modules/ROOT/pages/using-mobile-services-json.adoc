@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Using mobile-services.json File
 
 The  `mobile-services.json` file contains all the information your code needs to use mobile services. 

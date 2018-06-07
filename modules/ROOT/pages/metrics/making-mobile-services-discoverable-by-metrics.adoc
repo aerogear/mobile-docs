@@ -1,0 +1,105 @@
+= Making Services auto-discoverable by the Metrics Service
+
+Mobile Services that expose a metrics endpoint will already be auto-discovered by the Metrics Service.
+No additional steps are needed for Prometheus to poll for metrics from Mobile Services.
+
+However, if you would like the Metrics Services to also gather metrics from your own Service, you will need the following:
+
+* Service has to have one of `org.aerogear.metrics/plain_endpoint` or
+`org.aerogear.metrics/ssl_endpoint` annotations.
+
+* Metrics endpoint should have no authentication.
+
+* Metrics endpoint should be accessible by Prometheus instance.
+
+
+Presence of one of the `org.aerogear.metrics/plain_endpoint` or `org.aerogear.metrics/ssl_endpoint`
+annotations makes the service auto-discoverable.
+Value of the annotation will inform metrics service about where to look for metrics data when scraping.
+
+For example, if a service is exposing an HTTP metrics endpoint at
+`/metrics`, the annoation would be:
+
+[source,yaml]
+----
+org.aerogear.metrics/plain_endpoint: "/metrics"
+----
+
+If a service is exposing an HTTPS metrics endpoint at `/rest/metrics`,
+the annoation would be:
+
+[source,yaml]
+----
+org.aerogear.metrics/ssl_endpoint: "/rest/metrics"
+----
+
+This endpoint mustn't have any authentication currently. This is subject to change in the future.
+
+Also, the endpoint should be accessible by the Prometheus instance. There should be a route for the endpoint
+that Prometheus can access. As Prometheus is using Kubernetes DNS name, the service needs to be in the same
+project as Prometheus. An advanced scenario with separate projects is possible, where the project networks would be linked.
+
+More information is available on
+https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config[Prometheus Kubernetes SD documentation].
+
+Here is an example piece of code taken from
+https://github.com/aerogearcatalog/fh-sync-server-apb[FH-Sync Server Ansible Playbook Bundle],
+that creates an `fh-sync-server` service which
+is auto-discoverable.
+
+[source,yaml]
+----
+objects:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: fh-sync-server
+    annotations:
+      org.aerogear.metrics/plain_endpoint: "/metrics"
+    labels:
+      ...
+  spec:
+    ...
+----
+
+Another possibility is adding the label after the service is created.
+
+An example of doing that with `oc` CLI:
+
+[source,bash]
+----
+oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"="/metrics"
+# OR
+oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"="/metrics"
+----
+
+Prometheus constantly monitors Kubernetes and will be notified about this change. It will start collecting the metrics
+immediately.
+
+== How auto-discovery works
+
+As per https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config[Prometheus Kubernetes SD documentation],
+Prometheus stays synchronized with the cluster state.
+
+In this case, it checks the annotations of services and compares them with the annotations that are defined in the Prometheus configuration,
+i.e. `org.aerogear.metrics/plain_endpoint` and `org.aerogear.metrics/ssl_endpoint`. Once there is a service found with one of those annotations,
+the service is picked up as a scrape target and the value of the matched annotation is used as the scrape endpoint path.
+
+All of this is done in
+https://github.com/aerogearcatalog/metrics-apb/blob/master/roles/provision-metrics-apb/templates/prometheus-config-map.yml.j2[AeroGear metrics APB].
+
+== Disable metrics scraping
+
+If you would like to disable metrics scraping for a service, just remove the annotation.
+Prometheus will stop collecting the metrics immediately.
+
+[source,bash]
+----
+oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"-
+# OR
+oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"-
+----
+
+Please note that Prometheus queries for the metrics from the service might be returning the last value of a metric
+for a while. This means, you might see some value in your graphs for a while, even though the annotation was removed
+and scraping was stopped.

@@ -1,4 +1,4 @@
-= Architecture of {mobile-next}
+= Architecture of {product-name}
 
 image::arch.png[]
 

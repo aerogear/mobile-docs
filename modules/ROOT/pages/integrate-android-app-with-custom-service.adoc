@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Integrate an Android Application with Custom Services Running in OpenShift
 
 This document describes the steps needed to configure the Aerogear Android SDK to allow your Android app to interact with:
