@@ -11,6 +11,10 @@ This readme introduces the standards for AeroGear docs.
 Concept::
 An introduction to a new term, process, module or component. For example, "Mobile Service" : what is it? why do I care? and how does it fit into my development environment?
 
+* Name file by slugifying title
+
+* Prefix filenames with con_
+
 Procedure::
 The important information that gets me using AeroGear software, for example, write your procedure by answering the following questions:
 +
@@ -22,28 +26,35 @@ The important information that gets me using AeroGear software, for example, wri
 . What are the minimum configuration tasks that I need to do to get value from the software?
 . What additional information would be useful after completing procedure (eg, next steps)
 
+* Name file by slugifying title
+
+* no prefix on filenames
+
 Reference::
 Information I might need to debug or extend the normal usage of AeroGear software. For example:
 +
 * API syntax and definitions
 * Configuration optionss 
 
+* Name file by slugifying title
+
+* Prefix filenames with ref_
+
 
 == Writing AeroGear Documentation
 
-. If the documentation relates to a single sdk or service, make a PR against that repo. Note all adoc files that get published are located in the /docs directory and must conform to Antora standards.
-. If you make a filename change (eg adding or renaming a file), you must update the appropriate nav.adoc file. 
+. If you make a filename change (eg adding or renaming a file), you must update the appropriate modules/ROOT/nav.adoc file. 
 . Test your changes xref:#using-antora[using Antora]
 . Determine which functionality is this documentation related to?
 +
 * Push
-* Sync
+* Metrics
 * Common to all mobile services
 * Common to all services or SDKs but with some information that is specific to each.
 +
-With this information, you should be able to make a PR against the appropriate repo. For, example, a doc relating to all services is best placed in this repo.
+With this information, you should be able to determine where the file should be located in the repo, eg modules/ROOT/push
 +
-If you have a mix of common and specific information, raise an issue on this repo to address.
+If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include`
 
 
 . Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
@@ -78,58 +89,30 @@ After modifying documentation, you can validate your changes and preview the res
 . Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
 +
 NOTE: As part of Antora installation, you should install site-generator globally.
-
-. Change to the `docs` directory of the repo you want to convert. For some repos, eg `mobile-docs` and `processes`, use the root directory of the repo. 
-
-. Modify the site definition as required. If you are working on a branch, you'll want to specify that branch in the `local-site.yml` file. For example:
 +
-----
-site:
-  title: AeroGear
-  url: https://www.aerogear.org
-  start_page: processes::index
-content:
-  sources:
-  - url: .
-    branches: AEROGEAR-2480
-asciidoc:
-  attributes:
-    experimental: ''
-    idprefix: ''
-    idseparator: '-'
-    linkattrs: ''
-    mobile-next: 'AeroGear Mobile Services'
-    mobile-client: '{mobile-client} '
-ui:
-  bundle:
-    url: https://github.com/finp/antora-ui/raw/master/build/ui-bundle.zip
-    snapshot: true
+If you encounter a libcurl error on linux, follow the Option 1 instructions at:
+https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
 
-----
+
+. Fork this repo and set up origin and upstream remotes.
+
+. Change to the `mobile-docs` directory.
 
 . Run antora:
 +
 ----
-antora local-site.yml
+./bin/build.sh local-site.yml
+----
++ 
+After building for the first time, you can use the following command for subsequent builds:
++
+----
+./bin/build.sh local-site.yml
 ----
 
-If you encounter a libcurl error on linux, follow the Option 1 instructions at:
-https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
 
 == Remote Repos
 
-The following repos are used to publish the documentation:
-
-* mobile-docs
-* metrics-apb
-* unifiedpush-apb
-* aerogear-digger-apb
-* keycloak-apb
-* custom-runtime-connector-apb
-* aerogear-android-sdk
-* aerogear-ios-sdk
-* aerogear-js-sdk
-* aerogear-xamarin-sdk
-
+No remote repos were harmed in the production of this documentation ;)
 
 
