@@ -12,10 +12,10 @@ The {push-ui} allows you to send a Push Notification to devices.
 
 . Open a PushApplication and click on the "Send Notification" button. The _Send Push_ dialog is displayed.
 
-. In the +Send Push+ dialog, enter text in the +Message+ text field. 
+. In the dialog, enter text in the +Message+ text field.
 
 . Click the +Send Push Notification+ button.
 
-NOTE: It is possible to filter the list of receivers, using +Alias+, +Device Types+ and +Category+. 
+NOTE: It is possible to filter the list of receivers by selecting specific variants using the +Variants+ drop-down and adding values to +Alias+, +Device Types+ and +Category+.
 
 Your message is delivered by the 3rd party Push Network to your device.
