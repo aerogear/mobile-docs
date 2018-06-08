@@ -12,9 +12,6 @@ include::{partialsdir}/attributes.adoc[]
 include::{partialsdir}/generic-provisioning.adoc[]
 
 
-NOTE: If you have already registered a mobile app, you can also bind to that mobile app during the provisioning process. 
-
-See the xref:services.adoc[list of all available services] and navigate to the documentation for the service you require.
 
 After the service has been provisioned, you should then be able to see the service's secret and config map created during provision
 within the project's resources.

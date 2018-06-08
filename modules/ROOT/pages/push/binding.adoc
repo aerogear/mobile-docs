@@ -1,0 +1,9 @@
+include::{partialsdir}/attributes.adoc[]
+:service-name: Push Notifications
+
+= Binding a {mobile-client} with the {service-name} service
+
+include::{partialsdir}/generic-binding.adoc[]
+
+. Specify 
+

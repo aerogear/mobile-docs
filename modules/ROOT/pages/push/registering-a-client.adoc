@@ -1,5 +1,5 @@
 include::{partialsdir}/attributes.adoc[]
-= Registering a {push-service} client
+= Registering a {unifiedpush-service} client
 
 This document describes the functionality of a client SDK that works
 with the AeroGear UnifiedPush Server.

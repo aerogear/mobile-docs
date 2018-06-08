@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Manually making a service visible to the Metrics Service
 
 == Prerequisites
@@ -47,22 +49,22 @@ documentation on scrape_config] for more details.
 
 === Via the OpenShift Console
 
-1.  Select your project in the `My Projects` sidebar
+.  Select your project in the `My Projects` sidebar
 
 image::manually-adding-services-to-metrics/myprojects.png[My
 projects]
 
-2.  Navigate to Prometheus' Config Map via
+.  Navigate to Prometheus' Config Map via
 `Resources > Config Maps > prometheus-configmap`
-
++
 image::manually-adding-services-to-metrics/configmap.png[Config Map]
 
-3.  Enter editing mode through `Actions > Edit YAML`
-
+.  Enter editing mode through `Actions > Edit YAML`
++
 image::manually-adding-services-to-metrics/edit.png[Edit YAML]
 
-4.  Include a new `scrape_config` targeting the Grafana service:
-
+.  Include a new `scrape_config` targeting the Grafana service:
++
 [source,yaml]
 ----
 apiVersion: v1
@@ -84,20 +86,20 @@ data:
             - "grafana-internal:80"
         # other configuration
 ----
-
++
 The `target` of the config should point to the internally-resolvable
 name of the service, visible by navigating to
 `Applications > Services > grafana-internal` and has the format
-`{Hostname}:{Target Port}`.
-
+`\{Hostname\}:\{Target Port\}`.
++
 NOTE: The `grafana` service requires authentication through the OpenShift OAuth proxy, thus preventing connection from the unauthenticated Prometheus client, so the `grafana-internal` should be our target instead.
 
-5.  Trigger a manual deployment of the `prometheus` service to inject
+.  Trigger a manual deployment of the `prometheus` service to inject
 the updated Config Map by going to
 `Applications > Deployments > prometheus` and clicking `Deploy`.
 
-6. Verify the new target by navigating to the list of targets in Prometheus at https://prometheus-{project_name}.192.168.37.1.nip.io/targets, or by accessing the Prometheus web interface and navigating to `Status > Targets`:
-
+. Verify the new target by navigating to the list of targets in Prometheus at https://prometheus-<project_name>.192.168.37.1.nip.io/targets, or by accessing the Prometheus web interface and navigating to `Status > Targets`:
++
 image::manually-adding-services-to-metrics/grafana-target.png[Grafana Target]
 
 === Via the `oc` cli

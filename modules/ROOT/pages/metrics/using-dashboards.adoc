@@ -1,8 +1,10 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Using dashboards to display metrics service data
 
 == Prerequisites
 
-An AeroGear metrics service instance, created from the OpenShift service catalog as described in link:{creating-metrics-service}[Creating the Metrics Service]
+[x] A provisioned {metrics-service} as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service]
 
 == Overview of dashboards
 
