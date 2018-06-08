@@ -1,3 +1,4 @@
+:toc:
 
 :org-name: AeroGear
 

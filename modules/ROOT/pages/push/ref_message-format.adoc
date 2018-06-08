@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-== About the {push-service} message format
+== About the {unifiedpush-service} message format
 
 
 

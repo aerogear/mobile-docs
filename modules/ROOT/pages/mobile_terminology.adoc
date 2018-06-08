@@ -2,25 +2,26 @@ include::{partialsdir}/attributes.adoc[]
 
 = Terminology
 
-Service Catalog:: An OpenShift feature that allows you choose the xref:mobile-service[Mobile Service] and xref:mobile-client[{mobile-client}] that you want to implement.
-It is an implementation of the Open Service Broker API (OSB API) for Kubernetes that allows users to connect any of their applications deployed in OpenShift to a wide variety of service brokers.
+The following terms describe some of the key components of {product-name} to help you get started. For more information on individual services, see:
 
-[[mobile-service]]Mobile Service:: A Mobile Service provides features that you can include in your Mobile App, for example, Push notifications.
-For more information, see xref:workflow:services.adoc[Provisioning and Configuring Mobile Services].
+* xref:push/index.adoc[{unifiedpush-service}]
+* xref:metrics/index.adoc[{metrics-service}]
 
-[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation on OpenShift of the Mobile App that you want to implement.
-For more information, see xref:workflow:clients.adoc[Provisioning and Configuring {mobile-client}s].
 
-[[mobile-app]]Mobile App:: A Mobile App is your code for your Mobile Platform.
-For more information, see xref:workflow:apps.adoc[Provisioning and Configuring {mobile-client}s].
+[[mobile-service]]Mobile Service:: A mobile service accelerates your mobile app development by providing solutions for common mobile development use cases such as Push notifications. Mobile services are hosted on OpenShift and you use the OpenShift console to provision and associate services with your mobile apps.
+For more information, see xref:con_services.adoc[Mobile Services].
 
-Binding a Service to a Mobile App:: You can associate a Mobile Service with a Mobile App to allow your Mobile Apps to communicate with that service.
+[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation the mobile app in an OpenShift project. This allows you connect and disconnect an app with any mobile service in the same OpenShift project.
+For more information, see xref:registering-a-mobile-app.adoc[Registering a mobile app].
 
-mobile-services.json:: `mobile-services.json` contains all the information your Mobile App needs to use Mobile Services.
+[[mobile-app]]mobile app:: A mobile app is your code for Android, iOS, Cordova or Xamarin that uses {product-name}.
+
+Binding:: You can associate a Mobile Service with a mobile app to allow your mobile app use the mobile service.
+
+Mobile Services configuration file:: The `mobile-services.json` file provides the information your mobile app needs to use {product-name}.
 
 Back-end:: Your server-side code, typically Node.js or Java.
-You can register the url for each service as a Custom Runtime Connector Service, and thereby pass the url to a mobile app using the `mobile-services.json` file.
+You can register the URL for each back-end service while provisioning the {custom-service} service. This URL is available to the mobile app from the `mobile-services.json` file.
 
-Custom Runtime Connector Service:: Allows you connect your Mobile App to a Back-end Application using a Back-end Service.
 
-Registering a Mobile App:: Allows Mobile Services communicate with your Mobile App.
+
