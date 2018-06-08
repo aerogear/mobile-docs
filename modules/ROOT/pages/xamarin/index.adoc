@@ -1,0 +1,3 @@
+include::{partialsdir}/attributes.adoc[]
+
+= {xamarin-sdk}
