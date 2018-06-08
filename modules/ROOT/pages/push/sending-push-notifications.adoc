@@ -4,7 +4,6 @@ include::{partialsdir}/attributes.adoc[]
 
 The {push-ui} allows you to send a Push Notification to devices.
 
-
 == Prerequisites
 
 [x] Access to the {push-ui}.
