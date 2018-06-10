@@ -5,5 +5,4 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-binding.adoc[]
 
-. Specify 
 

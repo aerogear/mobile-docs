@@ -1,0 +1,22 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: CI/CD
+
+= Provisioning {service-name} Service
+
+== Prerequisites
+
+
+* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
+
+include::{partialsdir}/generic-provisioning.adoc[]
+
+
+When provisioning a {digger-service} service, you are prompted to set the following:
+
+* *Android SDK License Agreement
+ (required)*: Enter `yes` to accept the link:https://developer.android.com/studio/terms.html[Android SDK License Agreement].
+* Android SDK Auto Package Install (required)*: Choose whether to automatically install packages
+* *Android SDK package config*: Add any configuration details you require for the SDK config file.
+
+ include::{partialsdir}/generic-provisioning-end.adoc[]

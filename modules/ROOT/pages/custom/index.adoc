@@ -1,20 +1,13 @@
 include::{partialsdir}/attributes.adoc[]
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: con_introduction-to-metrics
+:context: con_introduction-to-custom
 
-[id='{context}_con_introduction-to-metrics']
-= About {metrics-service}
+[id='{context}_con_introduction-to-custom']
+= About the {custom-service} Service
 
-video::xWFWUcuZPaQ[youtube]
-
-
-The {metrics-service} allows you monitor mobile apps, devices and mobile services.
-
-* Monitor usage by version of mobile app
-* Monitor identity management
-* Extend monitoring to include your custom requirement
-
+The {custom-service} allows you associate your back-end application with mobile services.
+* Easily switch Dev, Test and Prod  back-end services
 
 
 [id='{context}_additional-resources-{context}']

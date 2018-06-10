@@ -1,5 +1,3 @@
-:toc:
-
 :org-name: AeroGear
 
 :product-name: Mobile Services
@@ -18,7 +16,7 @@
 :keycloak-ui: Keycloak admin UI
 :keycloak-dashboard: Auth Dashboard
     
-:unifiedpush-service: Push Notifications
+:unifiedpush-service: Push
 :push-ui: Unified Push admin UI
    
 :digger-service: CI\CD

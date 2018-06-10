@@ -7,11 +7,11 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
 ** xref:workflow.adoc[Mobile Apps & Services Workflow]
 
-* xref:con_services.adoc[About Mobile Services]
+* xref:con_services.adoc[Introducing Mobile Services]
 ** xref:provisioning-services.adoc[Provisioning]
 ** xref:integrating-services.adoc[Binding Services]
 
-* xref:apps.adoc[About Mobile Apps]
+* xref:apps.adoc[Integrating Mobile Apps]
 ** xref:registering-a-mobile-app.adoc[Registering an App]
 ** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
 ** xref:configuring-dev-env.adoc[Configuring development environment]
@@ -35,6 +35,18 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:metrics/coding.adoc[Adding Code]
 *** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
 *** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+
+** xref:keycloak/index.adoc[{keycloak-service}]
+*** xref:keycloak/provisioning.adoc[Provisioning]
+*** xref:keycloak/binding.adoc[Binding]
+
+** xref:digger/index.adoc[{digger-service}]
+*** xref:digger/provisioning.adoc[Provisioning]
+*** xref:digger/binding.adoc[Binding]
+
+** xref:custom/index.adoc[{custom-service}]
+*** xref:custom/provisioning.adoc[Provisioning]
+*** xref:custom/binding.adoc[Binding]
 
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
 ** xref:testcard.adoc[{metrics-service} for the Showcase App]

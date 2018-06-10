@@ -1,0 +1,26 @@
+== Getting Started with AeroGear Services Xamarin SDK
+
+The following guide provides general information for starting with AeroGear Services SDK.
+
+== Prerequisites
+
+You will need the following installed on your system
+
+* Visual Studio Tools for Xamarin from https://www.visualstudio.com/xamarin/[Microsoft]
+
+Depending on your desired platform, it is recommended to have the following installed:
+
+* The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
+* The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple]
+
+== Using a Published SDK
+
+```
+TODO
+```
+
+== Using the SDK
+
+```
+TODO
+```

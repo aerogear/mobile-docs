@@ -1,0 +1,117 @@
+= iOS Security - Self Defence Checks
+
+AeroGear iOS SDK offers a set of security features that will make sure that your application is meeting the modern OWASP recomendations. All security features are available as part of the separate `AGSSecurity` package. This package offers multiple security checks that can be used to analyse the security of the device. This can be useful for developers to detect vulnerablities and react accordingly. For example, if the app detects security issue *X* then do *Y*, where *X* could be no lock screen is set and *Y* is show a system prompt to setup the lock screen.
+
+This package offers:
+
+1. A suite of self-defence checks to detect an insecure or hostile environment.
+2. Ability to implement custom self-defence checks.
+3. Interfaces to access the results of self-defence checks and take appropriate action in application code.
+4. Integration with the AeroGear Services Metrics SDK to report self-defence checks data.
+
+== Usage
+
+=== Adding Dependency
+
+Add dependency to your Podfile:
+
+```
+pod 'AGSSecurity'
+```
+
+To begin using the self defence checks in your app, you'll need to import and retrieve an instance of `AGSSecurity`:
+
+[source,swift]
+----
+import AGSSecurity
+
+let security = AGSSecurity()
+----
+
+== Provided Self Defence Checks
+
+The following are the self defence checks provided by the SDK.
+
+*Important* A successful `check` means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
+
+For example, the Jailbroken Detection check `IsJailbrokenCheck` should return `true` when it is *not* jailbroken, since this would be the more secure condition.
+
+=== Emulator Detection Check (IsEmulatorCheck)
+
+To detect if the app is being run on an emulator the `IsEmulatorCheck` function can be used. If the device is *not* running in an emulator then the check will pass.
+
+=== Jailbroken Detection Check (IsJailbrokenCheck)
+
+To help prevent your app running in a device that has been jailbroken the `IsJailbrokenCheck` function can be used. If the device is *not* jailbroken then the check will pass.
+
+=== Debug Mode Check (IsDebuggerCheck)
+
+To detect if the app is runing in debug mode the `IsDebuggerCheck` function can be used. If the device is *not* running in debug mode then the check will pass.
+
+=== Device Lock Check (IsDeviceLockCheck)
+
+To detect if a device has a lock screen set the `IsDeviceLockCheck` function can be used. If the device *has* a screen lock enabled then this check will pass.
+
+=== Defining a Custom Self Defence Check
+Custom self defence checks can be used with the `AGSSecurity SDK`. Custom self defence checks must implement the `SecurityCheck` interface.
+
+[source,swift]
+----
+public class CustomCheck: SecurityCheck {
+    public let name = "Custom Check"
+
+    public init(){}
+    
+    public func check() -> SecurityCheckResult {
+        // implement check logic
+    }
+}
+----
+
+=== Invoking a Single Self Defence Check
+The `AGSSecurity.check` function is used to invoke a security check which returns the result of type `SecurityCheckResult`. The check function takes a paramater of type `SecurityCheck` which will specify the type of check to be invoked:
+
+[source,swift]
+----
+// security check to detect if device lock is set
+let result = security.check(IsDeviceLockCheck())
+----
+
+=== Invoking Multiple Self Defence Checks
+To invoke multiple checks the `AGSSecurity.checkMany` function is used. This returns an array of `SecurityCheckResult` objects in the order they`re provided in:
+
+[source,swift]
+----
+let checks = [IsDeviceLockCheck(), IsEmulatorCheck()]
+let results = security.checkMany(checks)
+----
+
+== Publishing the Security Check Metrics
+This SDK provides functions which allow the developer to perform security checks and publish the results to the metrics server. To configure this, provide the metrics server configuration in the mobile-services.json file. If no 
+configuration is provided then the metrics publishing will fail silently and metrics will not be published.
+
+=== Security Check Result Metrics Structure
+
+- *id*: The metric id
+- *name*: The name of the metric
+- *passed*: Whether or not the check result passed
+
+=== Invoking a Single Self Defence Check and publishing the Metrics
+Similar to the `AGSSecurity.check` the `AGSSecurity.checkAndPublishMetric` function is used to invoke a security check which returns the result of type `SecurityCheckResult`. 
+While it performs the security check, it also attempts to publish the result to the metrics service. The check function takes a paramater of type `SecurityCheck` which will specify the type of check to be invoked:
+
+[source,swift]
+----
+// security check to detect if device lock is set
+let result = security.checkAndPublishMetric(IsDeviceLockCheck())
+----
+
+=== Invoking Multiple Self Defence Checks and publishing the Metrics
+To invoke multiple checks the `AGSSecurity.checkManyAndPublishMetric` function is used. This returns an array of `SecurityCheckResult`. 
+While it performs the security checks, it also attempts to publish the results to the metrics service. The checkManyAndPublishMetric function takes an array of type `SecurityCheck` which will specify checks to be invoked
+
+[source,swift]
+----
+let checks = [IsDeviceLockCheck(), IsEmulatorCheck()]
+let results = security.checkManyAndPublishMetric(checks)
+----

@@ -1,0 +1,31 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Identity Management
+
+= Provisioning {service-name} Service
+
+== Prerequisites
+
+
+* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
+
+include::{partialsdir}/generic-provisioning.adoc[]
+
+
+When provisioning a {keycloak-service} service, you are prompted to set the following:
+
+* *Keycloak admin username*: Username for Keycloak administration
+
+* *Keycloak admin password*: Password for the Keycloak admin user
+
+* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
+
+NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
+
+* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
+
+* *URL of the shared service*: Enter a value if you want to use an existing shared service.
+
+ 
+
+ include::{partialsdir}/generic-provisioning-end.adoc[]

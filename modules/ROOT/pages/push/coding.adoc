@@ -1,0 +1,73 @@
+= Registering Device
+
+Use the following code to register a device with the {push-service} service:
+
+
+
+[role="primary"]
+.Android
+
+****
+
+
+[source,java]
+----
+pushService.registerDevice()
+  .requestOn(new AppExecutors().mainThread())
+  .respondWith(new Responder<Boolean>() {
+    @Override
+    public void onResult(Boolean value) { // Yay }
+
+    @Override
+    public void onException(Exception exception) { // Oops! }
+});
+
+----
+
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+[source,swift]
+----
+func application(_ application: UIApplication,
+                 didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    var config = UnifiedPushConfig()
+    AgsPush.instance.register(
+        deviceToken,
+        config,
+        success: {
+           print("Successfully registered to Unified Push Server")
+        },
+        failure: { (error: Error!) in
+           print("Failure to register for on Unified Push Server: \(error)")
+        }
+    )
+}
+----
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+[source,javascript]
+----
+// Registration handler
+pushObject.on('registration').subscribe(data => {
+  // PushRegistration will handle the device registration with the Unifiedpush Server
+  new PushRegistration().register(data.registrationId).then(() => {
+    // Registration with UPS successful, you can now send push notifications from the UPS UI
+  }).catch(err => {
+    // Error on device registration
+  });
+});
+----
+
+

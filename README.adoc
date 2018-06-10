@@ -104,7 +104,18 @@ https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
 ./bin/build.sh local-site.yml
 ----
 + 
-After building for the first time, you can use the same command for subsequent builds.
+After building for the first time, you can run the following command for subsequent builds:
++
+----
+./bin/quick-build.sh <site-file>.yml
+----
++
+Note: <site-file> refers to either:
++
+* local-site - your current directory
+* site.yml - the master branch of the github repo
+
+
 
 
 == Remote Repos

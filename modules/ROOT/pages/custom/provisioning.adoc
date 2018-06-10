@@ -1,0 +1,24 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Custom Runtime Connector
+
+= Provisioning {service-name} Service
+
+== Prerequisites
+
+* [x] You are running a back-end service that is exposed to the internet with a known URL.  
+* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
+
+include::{partialsdir}/generic-provisioning.adoc[]
+
+When prompted, enter the following:
+
+
+* *Service Name (required)*: Service name to be exposed to the mobile application.
+* *Service URL (required)*: Service url where the service is running.
+* *Service JSON Configuration*: Service configuration in a valid JSON format.
+
+
+include::{partialsdir}/generic-provisioning-end.adoc[]
+
+
