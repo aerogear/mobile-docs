@@ -1,0 +1,21 @@
+= AeroGear Services Metrics documentation
+
+This document explains how to use the AeroGear Metrics SDK on the IOS platform and integrate it with an App.
+
+== Provided metrics
+
+The default metrics contain App metrics, Device metrics and possibly other types in the future.
+A Client ID and a timestamp are added to the top level of the Metrics object for categorization and visualization purposes. 
+The Client ID will be generated and stored on the device when the App is started the first time.
+
+=== App metrics
+
+- *App ID*: The package name of your App
+- *App version*: The version of your App
+- *SDK version*: The version of the Aerogear SDK that is used
+- *Framework*: Framework used for development (native)
+
+=== Device metrics
+
+- *Platform*: Hardcoded to `ios`
+- *Platform Version*: Version of the platform (IOS10 etc.)
