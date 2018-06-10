@@ -1,0 +1,12 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-build
+
+[id='{context}_con_introduction-to-build']
+= About {digger-service}
+
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+

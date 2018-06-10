@@ -1,5 +1,3 @@
-:toc:
-
 :org-name: AeroGear
 
 :product-name: Mobile Services
