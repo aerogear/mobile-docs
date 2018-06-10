@@ -10,7 +10,6 @@
 
 antora $1
 
-#fix html
+# fix html
 
-./bin/fixDiv.sh
-
+./bin/fix-div.sh
