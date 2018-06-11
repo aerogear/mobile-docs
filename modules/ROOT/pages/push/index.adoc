@@ -38,32 +38,9 @@ Different use-cases and scenarios are supported. Below are a few to give an idea
 
 **__Motivation:__** Easy use of Push Notifications for any (JBoss/AeroGear powered) mobile application, that is backed by JBoss technology (e.g. LiveOak, Drools, etc.).
 
-=== Useful Terminology
-
-Before we get into details, it’s important that we have a good lexicon.
-
-==== PushApplication
-
-A logical construct that represents an overall mobile application (e.g. Mobile HR).
-
-==== Variant
-
-A variant of the PushApplication, representing a specific mobile platform, like iOS or Android, or even more fine grain differentiation like iPad or iPhone. There can be multiple variants for a single PushApplication (e.g. HR Android, HR iPad, HR iPhone free or HR iPhone premium). Each supported variant type contains some platform specific properties, such as a Google API key (Android) or passphrase and certificate (Apple).
-
-==== Installation
-
-Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.
-
-==== Push Notification Message
-
-A simple message to be sent to a PushApplication.
-
-==== Sender Endpoint API
-
-A RESTful API that receives Push Notification Message requests for a PushApplication or some of its different Variants. The Server translate this request into the platform specific details and delivers the payload to the 3rd party cloud provides, which eventually might deliver the message to the physical device.
+include::./ref_terminology.adoc[Push Terminology]
 
 === How the UnifiedPush Server Works
-
 
 The AeroGear UnifiedPush Server can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks. The graphic below gives a little overview:
 
