@@ -1,13 +1,5 @@
 
-After the service has been provisioned, you should then be able to see the service's secret and config map created during provision
-within the project's resources.
-
-To edit the service configuration:
-
-. Log into the OpenShift Console
-. Navigate to *Resources* -> *Config Maps* and select the service's config map.
-. Press the *[Actions]* button in the upper right corner and choose *[Edit]* or *[Edit YAML]*. This
-allows you to edit the service's configuration directly which is then exposed to your mobile app.
+After the service has been provisioned, you should then be able to see it in the project overview.
 
 == Deprovisioning
 In order to delete a provisioned service, select the service menu and click *Delete*. A notification 
