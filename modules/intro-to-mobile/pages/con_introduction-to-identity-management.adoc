@@ -1,0 +1,16 @@
+include::shared/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-identity-management
+
+[id='{context}_con_introduction-to-identity-management']
+= Introduction To Identity Management
+
+Introduction To Identity Management
+
+[id='{context}_additional-resources']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
+* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].

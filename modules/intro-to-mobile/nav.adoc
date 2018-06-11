@@ -1,0 +1,7 @@
+* xref:index.adoc[Android]
+** xref:android-app.adoc[]
+** xref:google-setup.adoc[]
+** xref:guides.adoc[]
+** xref:push-notification.adoc[]
+** xref:register-device.adoc[]
+** xref:troubleshooting.adoc[]
