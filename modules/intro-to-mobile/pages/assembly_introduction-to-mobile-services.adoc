@@ -1,0 +1,37 @@
+include::shared/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: assembly_introducing-mobile-services
+
+[id='{context}_assembly_introduction-to-mobile-services']
+= Introduction to {ProductName}
+
+{ProductName} is a suite of mobile services that run natively on OpenShift and are available from the OpenShift Service Catalog.
+The available mobile services are:
+
+image:mobile-services.png[mobile services]
+
+{ProductName} allows a user to easily integrate the mobile services into the following mobile platforms:
+
+image:mobile-apps.png[mobile apps]
+
+This section provides a brief overview of the foundational concepts that apply to {ProductName}.
+
+[id='{context}_prerequisites']
+== Prerequisites
+
+* A technical background
+
+include::con_introduction-to-security.adoc[leveloffset=+1]
+include::con_introduction-to-push-notification.adoc[leveloffset=+1]
+include::con_introduction-to-data-sync.adoc[leveloffset=+1]
+include::con_introduction-to-metrics.adoc[leveloffset=+1]
+include::con_introduction-to-identity-management.adoc[leveloffset=+1]
+include::con_introduction-to-cicd.adoc[leveloffset=+1]
+
+[id='{context}_additional-resources']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
+* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].

@@ -1,0 +1,14 @@
+include::shared/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-security
+
+[id='{context}_con_introduction-to-security']
+= Introduction To Security
+
+Introduction To Security
+
+[id='{context}_additional-resources']
+== Additional resources
+
+* For more information, see the link:https://access.redhat.com/documentation/en-US/red-hat-single-sign-on[Red Hat Single Sign-On].

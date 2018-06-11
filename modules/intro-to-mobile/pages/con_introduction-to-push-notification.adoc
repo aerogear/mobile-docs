@@ -1,0 +1,18 @@
+include::shared/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-push-notification
+
+[id='{context}_con_introduction-to-push-notification']
+= Introduction To Push Notification
+
+The AeroGear UnifiedPush Server offers a unified Notification Service API to the above mentioned Push Network Services.
+When a push message request is sent to the UnifiedPush Server, it is internally translated into the format of these 3rd party networks.
+This gives a server the ability to send Push notifications to different mobile platforms.
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
+* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
