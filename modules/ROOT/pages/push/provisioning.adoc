@@ -11,5 +11,4 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
-
- include::{partialsdir}/generic-provisioning-end.adoc[]
+include::{partialsdir}/generic-provisioning-end.adoc[]
