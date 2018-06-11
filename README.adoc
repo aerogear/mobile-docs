@@ -107,12 +107,10 @@ https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
 After building for the first time, you can use the following command for subsequent builds:
 +
 ----
-./bin/build.sh local-site.yml
+./bin/quick-build.sh local-site.yml
 ----
 
 
 == Remote Repos
 
 No remote repos were harmed in the production of this documentation ;)
-
-
