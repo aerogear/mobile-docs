@@ -24,7 +24,6 @@ For analytic purposes on our link:#_dashboard[Dashboard] we store the content of
 
 === Use-cases and scenarios
 
-
 Different use-cases and scenarios are supported. Below are a few to give an idea how the UnifiedPush Server can be used:
 
 * MyWarehouseInc-backend can send _notification messages_ to different groups (e.g. discounts for only iOS (or only Android) users)
@@ -38,7 +37,7 @@ Different use-cases and scenarios are supported. Below are a few to give an idea
 
 **__Motivation:__** Easy use of Push Notifications for any (JBoss/AeroGear powered) mobile application, that is backed by JBoss technology (e.g. LiveOak, Drools, etc.).
 
-include::./ref_terminology.adoc[Push Terminology]
+include::./ref_terminology.adoc[leveloffset=+1]
 
 === How the UnifiedPush Server Works
 
