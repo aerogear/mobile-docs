@@ -21,8 +21,6 @@ Before using {unifiedpush-service} with iOS, you must complete the following act
 [discrete]
 == Procedure
 
-== Certificate Signing Request
-
 1. Submit a request for a new digital certificate, which is based on a public/private key.
 
 2. Once you have acquired a new digital certificate, open the *KeyChain Access* tool found in *Applications > Utilities* folder on your Mac.
@@ -106,4 +104,4 @@ image::apns-pushcert-export.png[Export to .p12 format]
 [discrete]
 == Additional Resources
 
-* For more information about {unifiedpush-service}, see >modules/ROOT/pages/push/ref_terminology.adoc<
+* For more information, see xref:push/index.adoc[{unifiedpush-service}].
