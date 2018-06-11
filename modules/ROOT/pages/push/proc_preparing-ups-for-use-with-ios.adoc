@@ -15,6 +15,8 @@ Before using {unifiedpush-service} with iOS, you must complete the following act
 == Prerequisites
 
 * An Apple developer account
+* An Apple computer for development
+* An Apple device for testing real notifications
 
 [discrete]
 == Procedure
@@ -104,6 +106,4 @@ image::apns-pushcert-export.png[Export to .p12 format]
 [discrete]
 == Additional Resources
 
-* A bulleted list of links to other material closely related to the contents of the procedure module.
-* For more details on writing procedure modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* For more information about {unifiedpush-service}, see >modules/ROOT/pages/push/ref_terminology.adoc<
