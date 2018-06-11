@@ -1,0 +1,12 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{unifiedpush-service}
+
+[id='{context}_ref_terminology']
+
+= Reference material
+
+This section describes terminology that is associated with {unifiedpush-service}.
+
+APNs:: link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[Apple Push Notification service].

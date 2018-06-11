@@ -25,7 +25,7 @@ include::{partialsdir}/attributes.adoc[]
 *** More...
 **** xref:push/sending-push-notifications.adoc[Sending Push Notifications]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
-**** xref:push/apple-setup.adoc[Apple Push Network]
+**** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
 **** xref:push/google-setup.adoc[Firebase Cloud Messaging]
 
 ** xref:metrics/index.adoc[{metrics-service}]
