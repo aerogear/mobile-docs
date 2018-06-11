@@ -2,20 +2,29 @@ include::{partialsdir}/attributes.adoc[]
 
 = Sending Push Notifications
 
-The {push-ui} allows you to send a Push Notification to devices.
+The {push-ui} allows you to send {push-notifications} to devices.
 
 == Prerequisites
 
-[x] Access to the {push-ui}.
+- Access to the {push-ui}.
+- An application with at least 1 binding or variant.
 
 == Procedure
 
-. Open a PushApplication and click on the "Send Notification" button. The _Send Push_ dialog is displayed.
+Once in the {push-ui}:
 
-. In the dialog, enter text in the +Message+ text field.
+. Select the target application from the home page and click on *Send Notification To This App*.
 
-. Click the +Send Push Notification+ button.
+. In the displayed dialog, enter some text in the *Message* form. 
 
-NOTE: It is possible to filter the list of receivers by selecting specific variants using the +Variants+ drop-down and adding values to +Alias+, +Device Types+ and +Category+.
+. Click on *Send Push Notification* button.
 
-Your message is delivered by the 3rd party Push Network to your device.
+Your message is now delivered by the 3rd party Push Network to your device.
+
+TIP: You can give a higher priority to a push message by setting its priority to 'high' instead of 'normal'.
+
+== Filtering recipients
+
+It is possible to select a more specific set of recipients by adding additional values to *Variants*, *Alias*, *Device Types* and *Category*.
+
+In order to filter it, a {mobile-client} has to be associated with at least 1 or more of these parameters. This is done while xref:ROOT:push/coding.adoc[Registering a Device].
