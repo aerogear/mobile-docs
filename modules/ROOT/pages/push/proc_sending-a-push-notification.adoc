@@ -37,4 +37,4 @@ NOTE: The 3rd party Push Network is responsible for delivering the Push Notifica
 
 It is possible to select a more specific set of recipients by adding additional values to *Variants*, *Alias*, *Device Types* and *Category*.
 A {mobile-client} must be associated with one or more of these parameters in order for the filtering to work.
-Filtering is done when you xref:ROOT:push/coding.adoc[Register a Device].
+Set the additional values when you xref:ROOT:push/coding.adoc[Register a Device].
