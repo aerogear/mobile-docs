@@ -21,7 +21,7 @@ Once in the {push-ui}:
 
 Your message is now delivered by the 3rd party Push Network to your device.
 
-TIP: You can give a higher priority to a push message by setting its priority to 'high' instead of 'normal'.
+TIP: You can give a higher priority to a push message by changing *Priority* to 'high' instead of 'normal'.
 
 == Filtering recipients
 

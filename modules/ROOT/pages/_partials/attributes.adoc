@@ -16,7 +16,6 @@
     
 :push-ui: Unified Push admin UI
 :push-notification: push notification
-:push-notifications: push notifications
 
 :metrics-service: Metrics
 :unifiedpush-service: Push
