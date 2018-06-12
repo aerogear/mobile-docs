@@ -23,7 +23,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:configuring-dev-env.adoc[Configuring development environment]
 *** xref:push/coding.adoc[Adding Code]
 *** More...
-**** xref:push/sending-push-notifications.adoc[Sending Push Notifications]
+**** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
 **** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
 **** xref:push/google-setup.adoc[Firebase Cloud Messaging]
@@ -58,4 +58,3 @@ include::{partialsdir}/attributes.adoc[]
 .Reference
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]
-
