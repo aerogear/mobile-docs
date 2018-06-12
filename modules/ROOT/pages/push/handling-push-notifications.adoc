@@ -1,3 +1,54 @@
 include::{partialsdir}/attributes.adoc[]
 
 = Handling Push Notifications
+
+Follow the next steps to handle incoming {push-notification}s in your foregrounded application.
+
+NOTE: {push-notification}s that arrive when the application is in the background will always be handled by the OS.
+
+[role="primary"]
+.Android
+****
+Add your implementation of *MessageHandler* to your application's manifest.
+
+[source,xml]
+----
+<meta-data
+    android:name="DEFAULT_MESSAGE_HANDLER_KEY"
+    android:value=".MyMessageHandler" />
+----
+****
+
+
+[role="secondary"]
+.iOS
+****
+[source,swift]
+----
+TODO
+----
+****
+
+
+[role="secondary"]
+.Cordova
+****
+[source,javascript]
+----
+import { Push } from "@ionic-native/push";
+
+const pushObject = new Push().init({
+    android: {},
+    ios: {
+      alert: true,
+      badge: true,
+      sound: true
+    }
+});
+
+pushObject.on("notification")
+  .subscribe(notification => {
+    // Handle notification...
+  });
+----
+****
