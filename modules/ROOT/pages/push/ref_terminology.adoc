@@ -21,4 +21,6 @@ Each supported variant type contains some platform specific properties, such as 
 
 APNs:: link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[Apple Push Notification service].
 
-Installation :: Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.
+Installation:: Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.
+
+Administrative User Interface:: Can someone replace this text with some top quality content? (term taking from 'modules/ROOT/pages/push/admin-ui.adoc', now 'con_accessing-push-through-the-ui.adoc')

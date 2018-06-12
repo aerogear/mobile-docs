@@ -1,19 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
-[[admin-ui]]
-== Using the Admin UI
-
-The Unified Push Server can be accessed via its RESTful endpoints, as well over an administrative user interface.
-
-=== Login and landing page
-
-Once you have the Unified Push Server running, click on it's route in OpenShift and login with your OpenShift credentials. You will see one PushApplication already created. The PushApplication is a logical construct, that represents an overall mobile application container for its _different_ mobile platforms, which are called Variants.
-
-The _Variants_ tab of the PushApplication gives a list of all existing variants. It shows details about the variant, such as the number of sent messages and registered devices. It also contains more details about the involved 3rd party Push Network.
+include::./con_accessing-push-using-the-ui.adoc[leveloffset=+1]
 
 === Managing registered device
 
-The details view of a specific variant shows a list of the registered devices at the bottom: 
+The details view of a specific variant shows a list of the registered devices at the bottom:
 
 image::ups-admin-devices1.png[Device list]
 
@@ -21,7 +12,7 @@ The table shows the metadata of each device, including the device token, subscri
 
 === Importing Device Metadata
 
-For various reasons, e.g. migrating from a custom solution to the Unified Push Server, it is possible to import devices and their metadata, including their devicetoken, into a variant. This is possible via cURL and on the UI. For that, on a specific variant, click on the _More_ menu you have the choice to select the _Import_ option.  
+For various reasons, e.g. migrating from a custom solution to the Unified Push Server, it is possible to import devices and their metadata, including their devicetoken, into a variant. This is possible via cURL and on the UI. For that, on a specific variant, click on the _More_ menu you have the choice to select the _Import_ option.
 
 The following dialog allows you to upload a JSON file, containing the device metadata.
 
@@ -53,11 +44,11 @@ Besides Java, the UI contains snippets for Node.js and cURL.
 
 === PushApplication Analytics
 
-The Unified Push Server provides some metrics and analytics which are presented on a dasboard : 
+The Unified Push Server provides some metrics and analytics which are presented on a dasboard :
 
 image::ups-admin-analytics-clean.png[Push Activity]
 
-The upper part shows some *key* numbers : 
+The upper part shows some *key* numbers :
 
 * _Push Messages_ : The total number of push messages sent to UnifiedPush Server for dispatching to registered devices.
 * _Notification Dispatched_ : The total number of notifications dispatched via Push Networks to registered devices.
@@ -66,12 +57,12 @@ The upper part shows some *key* numbers :
 
 The _Performance_ chart show for each Push Notification the number of targeted devices, the number of opened apps. The x-axis legend shows the _alert_ value of the Push Notification payload.
 
-Finally, the _Push Networks_ chart shows the split between the different Push Networks. 
+Finally, the _Push Networks_ chart shows the split between the different Push Networks.
 
 To get the _Notifications Opened_ metric activated, it needs to be "turned on" on the different client SDKs :
 
 * For iOS, please refer to link:https://aerogear.org/docs/specs/aerogear-ios-push/Classes/AGPushAnalytics.html[this document].
-* For Android, please check the _org.jboss.aerogear.android.unifiedpush.metrics_ package  in link:https://aerogear.org/docs/specs/aerogear-android-push/[the JavaDoc]. 
+* For Android, please check the _org.jboss.aerogear.android.unifiedpush.metrics_ package  in link:https://aerogear.org/docs/specs/aerogear-android-push/[the JavaDoc].
 * For Cordova, please refer to the _Metrics_ section of link:https://aerogear.org/docs/guides/aerogear-cordova/AerogearCordovaPush/[this document].
 
 NOTE: The collected metadata and payload is _automatically_ deleted after 30 days, using a nightly job within the Unified Push Server.

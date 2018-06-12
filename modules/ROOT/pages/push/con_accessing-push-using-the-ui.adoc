@@ -1,0 +1,26 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_accessing-push-using-the-ui
+
+[id='{context}_con_accessing-push-using-the-ui']
+= Accessing {unifiedpush-service} using the User Interface
+
+The Administrative User Interface (AUI):
+
+* Displays all existing Push Applications.
+* Displays the _Variants_ tab of a Push Application
+** Details such as the number of sent messages and the amount of registered devices are display.
+* Displays details about the 3rd party Push Network.
+* Allows you to manage a registered device
+* Allows you to import and export device metadata
+* Send a Push Notification from (what?) code
+* Access {unifiedpush-service} analytics
+* Access {unifiedpush-service} activity
+
+To access {unifiedpush-service} using the AUI, it must be running and you also require OpenShift credentials to log in.
+
+[discrete]
+== Additional resources
+
+* To access {unifiedpush-service} using the RESTful endpoints, see ***TODO***.
