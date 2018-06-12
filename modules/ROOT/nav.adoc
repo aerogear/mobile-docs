@@ -22,7 +22,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push/binding.adoc[Binding]
 *** xref:configuring-dev-env.adoc[Configuring development environment]
 *** xref:push/coding.adoc[Adding Code]
-*** xref:push/assembly_push-administrative-user-interface.adoc[Administrative User Interface]
+*** xref:push/admin-ui.adoc[Administrative User Interface]
 *** More...
 **** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
