@@ -23,9 +23,17 @@ Add your implementation of *MessageHandler* to your application's manifest.
 [role="secondary"]
 .iOS
 ****
+Add an observer to NotificationCenter from AGSPush:
 [source,swift]
 ----
-TODO
+override func viewDidLoad() {
+    super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(MyPushView.messageReceived(_:)), name: Notification.Name(rawValue: "message_received"), object: nil)
+}
+
+@objc func messageReceived(_ notification: Notification) {
+    // Handle notification...
+}
 ----
 ****
 
