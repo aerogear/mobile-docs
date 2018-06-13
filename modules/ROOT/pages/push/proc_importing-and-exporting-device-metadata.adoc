@@ -3,7 +3,7 @@ include::{partialsdir}/attributes.adoc[]
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: proc_importing-and-exporting-device-metadata
 
-[id='{context}_importing-and-exporting-device-metadata']
+[id='{context}_proc_importing-and-exporting-device-metadata']
 = Importing and Exporting Device Metadata
 
 You can use the AUI to import devices and their metadata (including a devicetoken) into a Variant.

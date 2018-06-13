@@ -1,0 +1,10 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_monitoring-push-activity
+
+[id='{context}_ref_monitoring-push-activity']
+
+= Monitoring {unifiedpush-service} Activity
+
+The Unified Push Server provides some metrics and analytics which are presented on a dasboard :
