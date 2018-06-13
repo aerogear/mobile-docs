@@ -1,0 +1,25 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_sending-a-push-notification-from-code
+
+[id='{context}_sending-a-push-notification-from-code']
+
+= Sending a Push Notification from Code
+
+The {push-ui} allows you to send {push-notification}s to devices from code.
+
+WARNING: Due to security reasons, do not store the *Application ID* and the *Master Secret* on a mobile device.
+
+[discrete]
+== Prerequisites
+
+* Access to the {push-ui}.
+* An application with at least one binding or variant.
+
+[discrete]
+== Procedure
+
+. Open the {push-ui} in a browser.
+
+. //***TODO*** - We need more info on this for sure
