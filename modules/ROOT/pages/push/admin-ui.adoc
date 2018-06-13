@@ -1,25 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
+= {push-ui}
+
 include::./con_accessing-push-using-the-ui.adoc[leveloffset=+1]
 
-=== Managing registered device
-
-The details view of a specific variant shows a list of the registered devices at the bottom:
-
-image::ups-admin-devices1.png[Device list]
-
-The table shows the metadata of each device, including the device token, subscribed categories or - if present - the used alias. On this screen you could also exclude a specific device from receiving Push Notifications, by unchecking the _Receiving_ check-box.
-
-include::./proc_importing-and-exporting-device-metadata.adoc[leveloffset=+1]
-
 include::./proc_sending-a-push-notification.adoc[leveloffset=+1]
-
-include::./proc_sending-a-push-notification-from-code.adoc[leveloffset=+1]
-
-include::./ref_understanding-analytics.adoc[leveloffset=+1]
-
-include::./ref_understanding-variants.adoc[leveloffset=+1]
-
-include::./ref_understanding-sender-api.adoc[leveloffset=+1]
-
-include::./ref_understanding-activity-logs.adoc[leveloffset=+1]
