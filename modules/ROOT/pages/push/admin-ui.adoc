@@ -26,21 +26,9 @@ Starting the export will generate a JSON file, which is being downloaded to your
 
 === Sending a Push Notification from code
 
-While sending a Push Notification from the AdminUI is a nice feature, in a real world scenario, the Push Notification is triggered by a backend, as explained in link:#_server_integration_tutorials[Server Integration Tutorials].
-
-The Unified Push Server comes with APIs for link:../../../unifiedpush/GetStartedwithJavaSender/[Java] and link:https://github.com/aerogear/aerogear-unifiedpush-nodejs-client#examples[Node.js]. Due to its RESTful architecture any backend, written in any language that supports HTTP(S), can link:../../../specs/aerogear-unifiedpush-rest/sender/index.html[send Push Notification requests] to it. On the details page of a PushApplication you find the required +Server URL+ and credentials (+Application ID+ and +Master Secret+).
-
-For the supported SDKs the Unified Push Server has a feature to generate code snippets for the backend part as well:
-
-image::ups-admin-send3.png[Backend push integration]
+While sending a Push Notification from the AdminUI is a nice feature, in a real world scenario, the Push Notification is triggered by a backend. Due to its RESTful architecture any backend, written in any language that supports HTTP(S), can link:../../../specs/aerogear-unifiedpush-rest/sender/index.html[send Push Notification requests] to it. On the details page of a PushApplication you find the required +Server URL+ and credentials (+Application ID+ and +Master Secret+).
 
 WARNING: Due to security reasons the +Application ID+ and the +Master Secret+ should be never stored on a mobile device! Push Notification requests should _never_ be triggered directly from a mobile device.
-
-The visible Java code above can be used in any JavaSE or JavaEE application that needs to send Push Notification requests to the Unified Push Server, like shown in the diagram below:
-
-image::ups-admin-sending-sd.png[Sending Push from Backend]
-
-Besides Java, the UI contains snippets for Node.js and cURL.
 
 === PushApplication Analytics
 

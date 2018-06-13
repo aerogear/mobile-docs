@@ -8,19 +8,15 @@ include::{partialsdir}/attributes.adoc[]
 
 The Administrative User Interface (AUI):
 
-* Displays all existing Push Applications.
-* Displays the _Variants_ tab of a Push Application
-** Details such as the number of sent messages and the amount of registered devices are display.
-* Displays details about the 3rd party Push Network.
-* Allows you to manage a registered device
-* Allows you to import and export device metadata
-* Send a Push Notification through a REST API.
-* Access {unifiedpush-service} analytics
-* Access {unifiedpush-service} activity
+* Allows you to send Push Notifications
+* Allows you to view and manage registered devices
+* Provides metrics, analytics and activity log for Push Notifications
 
-To access {unifiedpush-service} using the AUI, it must be running and you also require OpenShift credentials to log in.
+To access {unifiedpush-service} using the AUI, make sure it is xref:push/provisioning.adoc[provisioned], then click on it's route in OpenShift and login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
 
 [discrete]
 == Additional resources
 
-* To access {unifiedpush-service} using the RESTful endpoints, see link:https://aerogear.org/docs/specs/aerogear-unifiedpush-rest/index.html[Endpoint For Exporting As Json File Device Installations For A Given Variant].
+* To access {unifiedpush-service} using the RESTful endpoints, see link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].
