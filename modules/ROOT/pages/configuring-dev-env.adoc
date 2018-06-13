@@ -12,7 +12,7 @@ include::{partialsdir}/attributes.adoc[]
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
 . Copy the configuration to your clipboard.
-. Save the contents of the clipboard to  `mobile-services.json` in the following location:
+. Save the contents of the clipboard to `mobile-services.json` in the following location:
 
 [role="primary"]
 .Android
