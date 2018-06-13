@@ -10,19 +10,7 @@ image::ups-admin-devices1.png[Device list]
 
 The table shows the metadata of each device, including the device token, subscribed categories or - if present - the used alias. On this screen you could also exclude a specific device from receiving Push Notifications, by unchecking the _Receiving_ check-box.
 
-=== Importing Device Metadata
-
-For various reasons, e.g. migrating from a custom solution to the Unified Push Server, it is possible to import devices and their metadata, including their devicetoken, into a variant. This is possible via cURL and on the UI. For that, on a specific variant, click on the _More_ menu you have the choice to select the _Import_ option.
-
-The following dialog allows you to upload a JSON file, containing the device metadata.
-
-NOTE: The API for the JSON importer is described link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest-1.0.x/registry/device/importer/index.html#POST[here].
-
-=== Exporting Device Metadata
-
-Similar, the Unified Push Server has an option to export the device metadata of a variant. This is handy when you want to move from one Unified Push Server instance to a different one. On the _More_ menu of a specific variant, you have the choice to select the _Export_ option.
-
-Starting the export will generate a JSON file, which is being downloaded to your machine.
+include::./proc_importing-and-exporting-device-metadata.adoc[leveloffset=+1]
 
 === Sending a Push Notification from code
 

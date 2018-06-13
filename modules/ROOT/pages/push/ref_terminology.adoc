@@ -23,4 +23,4 @@ APNs:: link:https://developer.apple.com/library/archive/documentation/Networking
 
 Installation:: Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.
 
-Administrative User Interface:: The {unifiedpush-service} Web UI that allows you manage Push Applications and Variants, view statistics and send Push Notifications to devices.
+Administrative User Interface:: (AUI) The {unifiedpush-service} Web UI that allows you manage Push Applications and Variants, view statistics and send Push Notifications to devices.

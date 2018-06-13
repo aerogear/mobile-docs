@@ -1,0 +1,44 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_importing-and-exporting-device-metadata
+
+[id='{context}_importing-and-exporting-device-metadata']
+= Importing and Exporting Device Metadata
+
+You can use the AUI to import devices and their metadata (including a devicetoken) into a Variant.
+You can also export a Variant's device metadata.
+
+[discrete]
+== Prerequisites
+
+* Access to the {push-ui}.
+* An Mobile Application with at least one binding or Variant.
+
+[discrete]
+== Procedure
+
+To import device metadata:
+
+. Open the AUI.
+
+. Select the *More* menu.
+
+. Click *Import* to import the device metadata.
+
+To export device metadata:
+
+. Open the AUI.
+
+. For the Variant's device metadata you want to export, select the *More* menu.
+
+. Click *Export* to export the device metadata.
++
+NOTE: A JSON file is created and is downloaded to your machine.
+
+[discrete]
+== Additional Resources
+
+=== JSON File Format for Importing
+
+link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest-1.0.x/registry/device/importer/index.html#POST[The API for the JSON importer].
