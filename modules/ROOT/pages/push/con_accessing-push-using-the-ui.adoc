@@ -14,7 +14,7 @@ The Administrative User Interface (AUI):
 * Displays details about the 3rd party Push Network.
 * Allows you to manage a registered device
 * Allows you to import and export device metadata
-* Send a Push Notification from (what?) code
+* Send a Push Notification through a REST API.
 * Access {unifiedpush-service} analytics
 * Access {unifiedpush-service} activity
 
@@ -23,4 +23,4 @@ To access {unifiedpush-service} using the AUI, it must be running and you also r
 [discrete]
 == Additional resources
 
-* To access {unifiedpush-service} using the RESTful endpoints, see ***TODO***.
+* To access {unifiedpush-service} using the RESTful endpoints, see link:https://aerogear.org/docs/specs/aerogear-unifiedpush-rest/index.html[Endpoint For Exporting As Json File Device Installations For A Given Variant].
