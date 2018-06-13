@@ -1,3 +1,0 @@
-include::.././configuring-dev-env.adoc[leveloffset=+1]
-
-Metrics will be sent automatically from the mobile once any of the components from {SDK} are installed.
