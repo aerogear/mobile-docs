@@ -16,6 +16,10 @@ include::./proc_sending-a-push-notification.adoc[leveloffset=+1]
 
 include::./proc_sending-a-push-notification-from-code.adoc[leveloffset=+1]
 
-include::./ref_understanding-push-analytics.adoc[leveloffset=+1]
+include::./ref_understanding-analytics.adoc[leveloffset=+1]
 
-include::./ref_monitoring-push-activity.adoc[leveloffset=+1]
+include::./ref_understanding-variants.adoc[leveloffset=+1]
+
+include::./ref_understanding-sender-api.adoc[leveloffset=+1]
+
+include::./ref_understanding-activity-logs.adoc[leveloffset=+1]

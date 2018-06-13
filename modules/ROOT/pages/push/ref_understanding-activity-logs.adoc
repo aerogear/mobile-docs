@@ -1,13 +1,13 @@
 include::{partialsdir}/attributes.adoc[]
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_monitoring-push-activity
+:context: ref_understanding-activity-logs
 
-[id='{context}_ref_monitoring-push-activity']
+[id='{context}_ref_understanding-activity-logs']
 
-= Monitoring {unifiedpush-service} Activity
+= Understanding Activity Logs
 
-{unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Activity screen.
+{unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Activity Logs screen.
 
 IMPORTANT: {unifiedpush-service} *automatically* deletes the collected metadata and payload after 30 days by an out-of-hours batch job.
 

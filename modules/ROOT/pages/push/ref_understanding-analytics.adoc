@@ -1,11 +1,11 @@
 include::{partialsdir}/attributes.adoc[]
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_understanding-push-analytics
+:context: ref_understanding-analytics
 
-[id='{context}_ref_understanding-push-analytics']
+[id='{context}_ref_understanding-analytics']
 
-= Understanding {unifiedpush-service} Analytics
+= Understanding Analytics
 
 {unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Analytics screen.
 
