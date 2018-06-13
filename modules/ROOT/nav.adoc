@@ -48,6 +48,13 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
 
+** xref:security/index.adoc[{device-security-service}]
+*** xref:security/proc_performing-device-checks.adoc[Device Checks]
+*** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
+*** xref:security/proc_adding_secure_storage.adoc[Secure Storage]
+
+
+
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
 ** xref:testcard.adoc[{metrics-service} for the Showcase App]
 ** xref:testcard.adoc[{keycloak-service} for the Showcase App]

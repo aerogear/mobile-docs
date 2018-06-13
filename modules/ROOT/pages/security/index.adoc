@@ -1,0 +1,19 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-device-security
+
+[id='{context}_con_introduction-to-device-security']
+= About {device-security-service}
+
+NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
+
+Using {device-security-service} allows you monitor mobile apps, devices and mobile services.
+
+* Perform checks on the mobile device, such as checking if the device is rooted.
+* Encrypt all data that is stored on the device by your mobile app
+* Distribute certificates with a mobile app to create a direct chain of trust (certificate pinning)
+
+
+[id='{context}_additional-resources-{context}']
+== Additional resources

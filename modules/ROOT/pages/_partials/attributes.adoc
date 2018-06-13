@@ -7,20 +7,29 @@
 :mobile-client: mobile app record
 :mobile-cli: Mobile CLI
 
+// Metrics Service
+:metrics-service: Metrics
 :grafana-ui: Grafana
 :prometheus-ui: Prometheus
-    
+
+// IDM Service
 :keycloak-service: Identity Management
 :keycloak-ui: Keycloak admin UI
 :keycloak-dashboard: Auth Dashboard
-    
+
+// Push Service
+:unifiedpush-service: Push  
 :push-ui: Unified Push admin UI
 :push-notification: push notification
 
-:metrics-service: Metrics
-:unifiedpush-service: Push
+// Build Service
 :digger-service: CI\CD
-:custom-service: Custom Runtime Connector
+
+// Custom Runtime Service
+:custom-service: Runtime Connector
+
+// Device Security 
+:device-security-service: Device Security
 
 :SDK: AeroGear SDK
 :ios-sdk: AeroGear SDK for iOS
