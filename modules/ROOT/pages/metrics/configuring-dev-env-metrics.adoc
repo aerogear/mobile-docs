@@ -1,0 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
+include::{partialsdir}/generic-configuring-dev-env.adoc[]
+
+Metrics will be sent automatically from the mobile once any of the components from {SDK} are installed.
