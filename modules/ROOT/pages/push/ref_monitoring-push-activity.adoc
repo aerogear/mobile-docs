@@ -7,4 +7,10 @@ include::{partialsdir}/attributes.adoc[]
 
 = Monitoring {unifiedpush-service} Activity
 
-The Unified Push Server provides some metrics and analytics which are presented on a dasboard :
+{unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Activity screen.
+
+IMPORTANT: {unifiedpush-service} *automatically* deletes the collected metadata and payload after 30 days by an out-of-hours batch job.
+
+The Activity screen can been seen in the following image:
+
+image::ups-admin-activity1.png[{unifiedpush-service} Activity screen]

@@ -7,13 +7,13 @@ include::{partialsdir}/attributes.adoc[]
 
 = Understanding {unifiedpush-service} Analytics
 
-{unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Analytics.
+{unifiedpush-service} collects metadata and payload, and this is accessed using {unifiedpush-service} Analytics screen.
 
 IMPORTANT: {unifiedpush-service} *automatically* deletes the collected metadata and payload after 30 days by an out-of-hours batch job.
 
 The Analytics screen can been seen in the following image:
 
-image::ups-admin-analytics-clean.png[{unifiedpush-service} Analytics]
+image::ups-admin-analytics-clean.png[{unifiedpush-service} Analytics screen]
 
 .App Analytics
 [options="header"]

@@ -18,17 +18,4 @@ include::./proc_sending-a-push-notification-from-code.adoc[leveloffset=+1]
 
 include::./ref_understanding-push-analytics.adoc[leveloffset=+1]
 
-=== PushApplication Activity
-
-On the _Activity log_ tab of a PushApplication you see a list of Push notifications that have been sent to the server:
-
-image::ups-admin-activity1.png[Push Activity - Details]
-
-Each Push Notification can be expanded to see parts of the payload. While being in this view and opening the link:#_sending_a_push_notification[Send Push Notification] Dialog to send a Push Notification, you will see the __Pending...__ status afterwards, until the message was delivered to all involved 3rd party Push Networks:
-
-NOTE: The collected metadata and payload is _automatically_ deleted after 30 days, using a nightly job within the Unified Push Server.
-
-=== Next Steps
-
-Now that you are familiar with the AdminUI of the Unified Push Server, you can learn about its Administrative UI link:#server-administration[here].
-If you want to dive straight into some mobile development, you can find a list of different tutorials and guides link:#next-steps[here].
+include::./ref_monitoring-push-activity.adoc[leveloffset=+1]
