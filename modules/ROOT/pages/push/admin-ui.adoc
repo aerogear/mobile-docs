@@ -12,6 +12,8 @@ The table shows the metadata of each device, including the device token, subscri
 
 include::./proc_importing-and-exporting-device-metadata.adoc[leveloffset=+1]
 
+include::./proc_sending-a-push-notification.adoc[leveloffset=+1]
+
 === Sending a Push Notification from code
 
 While sending a Push Notification from the AdminUI is a nice feature, in a real world scenario, the Push Notification is triggered by a backend. Due to its RESTful architecture any backend, written in any language that supports HTTP(S), can link:../../../specs/aerogear-unifiedpush-rest/sender/index.html[send Push Notification requests] to it. On the details page of a PushApplication you find the required +Server URL+ and credentials (+Application ID+ and +Master Secret+).

@@ -4,15 +4,15 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_accessing-push-using-the-ui
 
 [id='{context}_con_accessing-push-using-the-ui']
-= Accessing {unifiedpush-service} using the User Interface
+= Accessing {unifiedpush-service} using the {push-ui} User Interface
 
-The Administrative User Interface (AUI):
+The {push-ui} Administrative User Interface (AUI):
 
 * Allows you to send Push Notifications
 * Allows you to view and manage registered devices
 * Provides metrics, analytics and activity log for Push Notifications
 
-To access {unifiedpush-service} using the AUI, make sure it is xref:push/provisioning.adoc[provisioned], then click on it's route in OpenShift and login with your OpenShift credentials.
+To access {unifiedpush-service} using the {push-ui} AUI, make sure it is xref:push/provisioning.adoc[provisioned], then click on its route in OpenShift and login with your OpenShift credentials.
 
 NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
 

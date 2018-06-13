@@ -21,12 +21,18 @@ The {push-ui} allows you to send {push-notification}s to devices.
 . Open the {push-ui} in a browser.
 
 . Select the target application from the home page and click *Send Notification To This App*.
++
+image::send1.png[Send a Push]
 
-. Enter text in the *Message* form.
+. When the _Send Push_ dialog displays, enter text in the *Message* form.
 +
 NOTE: The default priority of a Push Notification is `normal`. To increase the priority, change *Priority* to `high`.
++
+image::send2.png[Enter the payload]
 
 . Click *Send Push Notification* to send the message to the target application.
++
+image::PushMessage.png[You got a notification!]
 
 NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
 
