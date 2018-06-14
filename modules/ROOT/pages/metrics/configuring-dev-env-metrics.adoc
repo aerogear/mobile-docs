@@ -1,5 +1,14 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::{partialsdir}/generic-configuring-dev-env.adoc[]
+:service-name: Metrics
+
+= Configuring your Development Environment for the {service-name} Service
+
+* [x] You have provisioned one of the {product-name} as described in xref:provisioning.adoc[Provisioning Services].
+* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding].
+
+include::{partialsdir}/generic-saving-a-config-file.adoc[]
 
 Metrics will be sent automatically from the mobile once any of the components from {SDK} are installed.
+
+== Adding AeroGear SDK modules for the {service-name} Service

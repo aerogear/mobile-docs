@@ -1,13 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Configuring your Development Environment
-
-
-* [x] You have provisioned one of the {product-name} as described in xref:provisioning.adoc[Provisioning Services].
-* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding].
-
-
-== Saving the {product-name} configuration file
+= Saving the {product-name} configuration file
 
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
@@ -49,7 +42,3 @@ include::{partialsdir}/attributes.adoc[]
 `Resources/mobile-services.json`
 
 ****
-
-== Adding Adding AeroGear SDK modules
-
-
