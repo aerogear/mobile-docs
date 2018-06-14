@@ -7,14 +7,16 @@ include::{partialsdir}/attributes.adoc[]
 .Android
 
 ****
-You need an Apple Developer account and a provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
+* [x] A Google account
+* [x] Access to the Firebase console. See link:google-setup.html[Firebase Setup] to get started.
 ****
 
 [role="secondary"]
 .iOS
 
 ****
-A Google account and access to the Firebase console. See link:google-setup.html[Firebase Setup] to get started.
+* [x] An Apple Developer account
+* [x] A provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
 ****
 
 == Binding a {mobile-client} with the {service-name} service
