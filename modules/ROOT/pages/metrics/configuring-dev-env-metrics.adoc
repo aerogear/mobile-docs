@@ -1,0 +1,5 @@
+include::{partialsdir}/generic-configuring-dev-env.adoc[]
+
+No further steps are needed in order to send metrics from your device, as long as the {SDK} is properly installed and the configuration file is in place, metrics will be sent automatically.
+
+NOTE: Mind that depending on the platform some SDK might require a initialization step.
