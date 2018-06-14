@@ -35,10 +35,6 @@ implementation "org.aerogear:aerogear-push:[version]"
 implementation "com.google.firebase:firebase-messaging:[version]"
 ----
 +
-.Firebase setup
-+
-In order to receive push messages you need to setup the Firebase in your project.
-+
 . Create a new project in link:https://console.firebase.google.com[Firebase console]
 . Add link:https://developers.google.com/android/guides/google-services-plugin[The Google Services Gradle Plugin] in your root `build.gradle` file
 [source,groovy]
@@ -59,7 +55,26 @@ In order to receive push messages you need to setup the Firebase in your project
 .iOS
 
 ****
-To import the SDK just use:
+
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSPush', '~> [VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
 ----
 import AGSAuth
 ----
@@ -159,17 +174,52 @@ func application(_ application: UIApplication,
 
 ****
 
+*Using plain Cordova*
+
 [source,javascript]
 ----
+const push = PushNotification.init({
+    android: {},
+    ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+    }
+});
+
 // Registration handler
-pushObject.on('registration').subscribe(data => {
-  // PushRegistration will handle the device registration with the Unifiedpush Server
-  new PushRegistration().register(data.registrationId).then(() => {
-    // Registration with UPS successful, you can now send push notifications from the UPS UI
-  }).catch(err => {
-    // Error on device registration
-  });
+push.on('registration', data => {
+    // PushRegistration is part of @aerogear/push
+    new PushRegistration().register(data.registrationId).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        // Error on device registration
+    });
 });
 ----
 
+*Using Ionic*
 
+[source,javascript]
+----
+import { Push } from "@ionic-native/push";
+
+const pushObject = new Push().init({
+    android: {},
+    ios: {
+        alert: true,
+        badge: true,
+        sound: true
+    }
+});
+
+pushObject.on('registration').subscribe(data => {
+    new PushRegistration().register(data.registrationId, PUSH_ALIAS).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        //Error on device registration
+    });
+});
+----
+
+****
