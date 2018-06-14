@@ -3,24 +3,42 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-For *iOS*: you need an Apple Developer account and a provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
+[role="primary"]
+.Android
 
-For *Android*: A Google account and access to the Firebase console. See link:google-setup.html[Firebase Setup] to get started.
+****
+You need an Apple Developer account and a provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
+****
+
+[role="secondary"]
+.iOS
+
+****
+A Google account and access to the Firebase console. See link:google-setup.html[Firebase Setup] to get started.
+****
 
 == Binding a {mobile-client} with the {service-name} service
 
 include::{partialsdir}/generic-binding.adoc[]
 
 When you bind a mobile client to {service-name} a variant is created to store the credentials required to communicate with a push network.
-Those credentials need to be provided in the binding dialog. First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
+Those credentials need to be provided in the binding dialog.
 
-== Android Clients
+First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
 
-You need to provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console under *Project Settings / Cloud Messaging*. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
 
-== iOS Clients
+[role="primary"]
+.Android
 
-You need a mobile provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for instructions on how to obtain one. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
+****
+You need to provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console under *Project Settings > Cloud Messaging*. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need a mobile provisioning certificate. Have a look at link:apple-setup.html[APNs Setup] for instructions on how to obtain one. Make sure that you have selected `iOS` in the `Mobile Client Type` dropdown.
 The certificate needs to be encoded in base64 before copying it into the field labelled `iOS .p12 file`. If you're on Mac OS run:
 
 ----
@@ -33,4 +51,4 @@ If you're on Linux chances are that you're using a version of the base64 tool th
 cat <path/to/your/.p12> | base64 --wrap=0
 ----
 
-After clicking Bind your variant will be created in UPS and you should see a new binding for your mobile client.
+After clicking Bind your variant will be created in UPS and you should see a new binding for your mobile client.****
