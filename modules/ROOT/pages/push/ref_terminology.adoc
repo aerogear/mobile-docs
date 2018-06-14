@@ -1,0 +1,24 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{unifiedpush-service}
+
+[id='{context}_ref_terminology']
+
+= Reference material
+
+This section describes terminology that is associated with {unifiedpush-service}.
+
+Push Application:: A logical construct that represents an Mobile App, for example, _Mobile HR_.
+
+Push Notification Message:: A simple message to be sent to a Push Application.
+
+Sender Endpoint API:: A RESTful API that receives Push Notification Message requests for a PushApplication or some of its different Variants. The Server translate this request into the platform specific details and delivers the payload to the 3rd party cloud provides, which eventually might deliver the message to the physical device.
+
+Variant:: A variant of the Push Application, representing a specific mobile platform, like iOS or Android, or even more fine grain differentiation like iPad or iPhone.
+There can be multiple variants for a single Push Application (for example, _Mobile HR Android_, _Mobile HR iPad_, _Mobile HR iOS free_ or _Mobile HR iOS premium).
+Each supported variant type contains some platform specific properties, such as a Google API key (Android) or passphrase and certificate (Apple).
+
+APNs:: link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[Apple Push Notification service].
+
+Installation :: Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.

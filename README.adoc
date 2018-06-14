@@ -116,10 +116,59 @@ Note: <site-file> refers to either:
 * site.yml - the master branch of the github repo
 
 
-
+NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
 
 == Remote Repos
 
 No remote repos were harmed in the production of this documentation ;)
+
+However, references to code maybe be included as follows:
+
+
+1. Decide on a name for the snippet, eg push-ios-register 
+
+2. Create a partial in mobile-docs, eg
+https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/push-ios-register.inc
+
+3. Reference the code file you want to use (with a tags filter):
++
+----
+ include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
+----
+
+4. Add tags to the code repo, eg 
++
+----
+// tag::push-ios-register[]
+    public func registerUPS(_ deviceToken: Data) {
+        AgsCore.logger.info("Registered for notifications with token")
+
+        var config = UnifiedPushConfig()
+        config.alias = "Example App"
+        config.categories = ["iOS", "Example"]
+
+        AgsPush.instance.register(
+            deviceToken,
+            config,
+            success: {
+                AgsCore.logger.info("Successfully registered to Unified Push Server")
+            },
+            failure: { (error: Error!) in
+                AgsCore.logger.error("Failure to register for on Unified Push Server: \(error)")
+            }
+        )
+    }
+// end::push-ios-register[]
+
+----
+
+5. Edit adoc file with the following to display the content:
++
+----
+ include::{partialsdir}/push-ios-register.inc-rantora.adoc[]
+----
++
+NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
+
 
 

@@ -23,9 +23,9 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:configuring-dev-env.adoc[Configuring development environment]
 *** xref:push/coding.adoc[Adding Code]
 *** More...
-**** xref:push/sending-push-notifications.adoc[Sending Push Notifications]
+**** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
-**** xref:push/apple-setup.adoc[Apple Push Network]
+**** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
 **** xref:push/google-setup.adoc[Firebase Cloud Messaging]
 
 ** xref:metrics/index.adoc[{metrics-service}]
@@ -48,6 +48,13 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
 
+** xref:security/index.adoc[{device-security-service}]
+*** xref:security/proc_performing-device-checks.adoc[Device Checks]
+*** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
+*** xref:security/proc_adding_secure_storage.adoc[Secure Storage]
+
+
+
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
 ** xref:testcard.adoc[{metrics-service} for the Showcase App]
 ** xref:testcard.adoc[{keycloak-service} for the Showcase App]
@@ -58,4 +65,3 @@ include::{partialsdir}/attributes.adoc[]
 .Reference
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]
-

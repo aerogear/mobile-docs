@@ -1,0 +1,36 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_preparing-ups-for-use-with-ios
+
+[id='{context}_preparing-ups-for-use-with-ios']
+= Enable Push Notifications for iOS App
+
+The following guide helps you to enable Push Notifications for your iOS application.
+
+[discrete]
+== Prerequisites
+
+* An Apple developer account
+* A Mac
+
+[discrete]
+== Procedure
+
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide] to enable push notifications for your Xcode project.
+
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
++
+NOTE: Make sure to protect the p12 file with a password.
++
+NOTE: The exported p12 file with the password will be used later when binding your {mobile-client} to the {unifiedpush-service}.
+
+[discrete]
+== Next Steps
+
+* xref:push/binding.adoc[Bind your {mobile-client} to the {unifiedpush-service}].
+
+[discrete]
+== Additional Resources
+
+* For more information, see xref:push/index.adoc[{unifiedpush-service}].
