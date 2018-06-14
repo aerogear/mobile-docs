@@ -4,9 +4,9 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-identity-management
 
 [id='{context}_con_introduction-to-identity-management']
-= Introduction to {identitymanagement-service}
+= Introduction to {keycloak-service}
 
-The {identitymanagement-service} service allows you to add authentication and authorization to your mobile app.
+The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
 
 * Secure your mobile app using the industry standard OpenID Connect protocol.
 * Add access control to your app based on user’s group membership.
@@ -18,5 +18,3 @@ The {identitymanagement-service} service allows you to add authentication and au
 == Additional resources
 
 * A bulleted list of links to other material closely related to the contents of the concept module.
-* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
