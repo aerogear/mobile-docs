@@ -5,8 +5,8 @@ include::introduction/con_introduction-to-mobile-services.adoc[leveloffset=+1]
 include::introduction/con_introduction-to-push-notification.adoc[leveloffset=+1]
 
 include::introduction/con_introduction-to-security.adoc[leveloffset=+1]
-
-include::introduction/con_introduction-to-data-sync.adoc[leveloffset=+1]
+//Not for community release
+//include::introduction/con_introduction-to-data-sync.adoc[leveloffset=+1]
 
 include::introduction/con_introduction-to-metrics.adoc[leveloffset=+1]
 
