@@ -4,11 +4,12 @@
 
 :service-name:  
 
-:mobile-client: mobile app record
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
 :mobile-cli: Mobile CLI
 
 // Metrics Service
-:metrics-service: Metrics
+:metrics-service: Mobile Metrics
 :grafana-ui: Grafana
 :prometheus-ui: Prometheus
 
@@ -18,12 +19,12 @@
 :keycloak-dashboard: Auth Dashboard
 
 // Push Service
-:unifiedpush-service: Push  
+:unifiedpush-service: Push Notifications  
 :push-ui: Unified Push admin UI
 :push-notification: push notification
 
 // Build Service
-:digger-service: CI\CD
+:digger-service: Mobile CI\CD
 
 // Custom Runtime Service
 :custom-service: Runtime Connector
