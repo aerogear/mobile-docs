@@ -31,7 +31,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:metrics/index.adoc[{metrics-service}]
 *** xref:metrics/provisioning.adoc[Provisioning]
 *** xref:metrics/binding.adoc[Binding]
-*** xref:metrics/configuring-dev-env-metrics.adoc[Configuring development environment]
+*** xref:metrics/prepare-app-metrics.adoc[Configuring your app]
 *** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
 *** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
 

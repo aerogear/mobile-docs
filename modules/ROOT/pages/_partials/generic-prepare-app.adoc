@@ -1,0 +1,72 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Preparing your Application to use {service-name}
+
+* [x] You have provisioned one of the {product-name} as described in xref:provisioning.adoc[Provisioning Services].
+* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding].
+
+
+== Getting the {product-name} configuration file
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
+
+[role="primary"]
+.Android
+
+****
+
+Locate this file at the following location in your application project:
+
+`src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Locate this file at the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Locate this file in your application project and import it using `require`.
+
+[source,javascript]
+----
+const aerogearConfig = require("./mobile-services.json");
+----
+
+Alternatively you can create a JavaScript object and use directly:
+
+[source,javascript]
+----
+const aerogearConfig = /* Paste here the contents of the clipboard */;
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Locate this file at the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+
+== Adding AeroGear the SDK module
+

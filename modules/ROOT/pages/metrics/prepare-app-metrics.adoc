@@ -1,0 +1,57 @@
+include::{partialsdir}/generic-prepare-app.adoc[]
+
+
+[role="primary"]
+.Android
+
+****
+
+SDK is initialized on startup, no further steps required.
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+SDK is initialized on startup, no further steps required.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Open a terminal and go to your application project root folder.
+. Run the following command:
++
+[source,bash]
+----
+npm install @aerogear/app
+----
++
+. In your application's entry point, add the following code:
++
+[source,javascript]
+----
+import { init } from "@aerogear/app";
+
+init(aerogearConfig);
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+SDK is initialized on startup, no further steps required.
+
+****
+
+== Sending Metrics from your Application
+
+Now that the {SDK} is properly installed and initialized, metrics are sent automatically.
