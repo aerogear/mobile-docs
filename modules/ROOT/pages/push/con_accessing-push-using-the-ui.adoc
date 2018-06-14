@@ -8,11 +8,15 @@ include::{partialsdir}/attributes.adoc[]
 
 The {push-ui} allows you to send Push Notifications.
 
-To access {unifiedpush-service} using the {push-ui}, make sure it is xref:push/provisioning.adoc[provisioned], then click on its route in OpenShift and login with your OpenShift credentials.
+To access {unifiedpush-service} using the {push-ui}, you will need to:
+
+ * Make sure it is xref:push/provisioning.adoc[provisioned].
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
 
 NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
 
 [discrete]
 == Additional resources
 
-* To access {unifiedpush-service} using the RESTful endpoints, see link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].
+* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].
