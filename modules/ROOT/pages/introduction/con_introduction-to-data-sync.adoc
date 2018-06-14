@@ -1,14 +1,14 @@
-include::shared/attributes.adoc[]
+include::{partialsdir}/attributes.adoc[]
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: con_introduction-to-identity-management
+:context: con_introduction-to-data-sync
 
-[id='{context}_con_introduction-to-identity-management']
-= Introduction To Identity Management
+[id='{context}_con_introduction-to-data-sync']
+= Introduction To Data Sync
 
-Introduction To Identity Management
+Introduction To Data Sync
 
-[id='{context}_additional-resources']
+[id='{context}_additional-resources-{context}']
 == Additional resources
 
 * A bulleted list of links to other material closely related to the contents of the concept module.
