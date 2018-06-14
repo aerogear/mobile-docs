@@ -21,7 +21,7 @@ A Google account and access to the Firebase console. See link:google-setup.html[
 
 include::{partialsdir}/generic-binding.adoc[]
 
-When you bind a mobile client to {service-name} a variant is created to store the credentials required to communicate with a push network.
+When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
 Those credentials need to be provided in the binding dialog.
 
 First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
