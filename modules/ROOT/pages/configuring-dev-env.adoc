@@ -51,7 +51,7 @@ available you can also paste the contents of this file directly.
 
 ****
 
-test
+`Resources/mobile-services.json`
 
 ****
 
