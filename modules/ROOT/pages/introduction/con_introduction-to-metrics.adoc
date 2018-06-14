@@ -1,12 +1,15 @@
-include::shared/attributes.adoc[]
+include::{partialsdir}/attributes.adoc[]
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: con_introduction-to-cicd
+:context: con_introduction-to-metrics
 
-[id='{context}_con_introduction-to-cicd']
-= Introduction To CI/CD
+[id='{context}_con_introduction-to-metrics']
+= Introduction to {metrics-service}
 
-The CI/CD mobile service allows you automate building of iOS apps, allowing you to concentrate on developing the app.
+The {metrics-service} service allows you gather metrics on mobile apps, & device versions, device security checks and back- end mobile service usage.
+
+* Monitor usage by version of mobile app, platform and SDK.
+* Monitor interactions with the Identity Management service.
 
 [id='{context}_additional-resources-{context}']
 == Additional resources
