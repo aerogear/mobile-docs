@@ -5,4 +5,4 @@ include::{partialsdir}/attributes.adoc[]
 * [x] You have provisioned a Mobile Service as described in xref:provisioning-services.adoc[Provisioning {product-name}].
 * [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services].
 
-include::{partialsdir}/generic-saving-a-config-file.adoc[]
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[]
