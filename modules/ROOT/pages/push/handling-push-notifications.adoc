@@ -14,7 +14,7 @@ Add to your project an implementation of *MessageHandler*:
 
 [source,java]
 ----
-public class NotificationBarMessageHandler implements MessageHandler {
+public class MyMessageHandler implements MessageHandler {
 
     @Override
     public void onMessage(Context context, Map<String, String> message) {
