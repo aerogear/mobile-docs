@@ -1,0 +1,23 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-cicd
+
+[id='{context}_con_introduction-to-cicd']
+= Introduction to {mobilecicd-service}
+
+The {mobilecicd-service} service allows you automate the building of your native and hybrid mobile app for both Android and iOS.
+
+* Based on Jenkins for build management and automation.
+* Containerised builds on OpenShift for Android.
+* Support for integrating OSX as build slaves for iOS builds.
+* Catch build errors early using automated builds.
+* Push your mobile apps to the Play and App Store.
+* Review build status in same context as reviewing associated mobile services.
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
+* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].

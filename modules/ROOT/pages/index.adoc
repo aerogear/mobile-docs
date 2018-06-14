@@ -1,17 +1,15 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Overview of {product-name}
+include::introduction/con_introduction-to-mobile-services.adoc[leveloffset=+1]
 
-{product-name} extends OpenShift or Kubernetes  to allow you create mobile apps using mobile services from the OpenShift service catalog:
+include::introduction/con_introduction-to-push-notification.adoc[leveloffset=+1]
 
-You can use {product-name} to create apps for a number of mobile-platorms:
+include::introduction/con_introduction-to-security.adoc[leveloffset=+1]
 
-image::overview.png[]
+include::introduction/con_introduction-to-data-sync.adoc[leveloffset=+1]
 
-See xref:registering-a-mobile-app.adoc[Registering a Mobile App] for more information on the represenation of your mobile app in OpenShift.
+include::introduction/con_introduction-to-metrics.adoc[leveloffset=+1]
 
-The following mobile services can be integrated into your apps and workflow:
+include::introduction/con_introduction-to-identity-management.adoc[leveloffset=+1]
 
-image::services.png[]
-
-See xref:services.adoc[Mobile Services] for more information about the services available.
+include::introduction/con_introduction-to-cicd.adoc[leveloffset=+1]

@@ -1,0 +1,16 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-data-sync
+
+[id='{context}_con_introduction-to-data-sync']
+= Introduction To Data Sync
+
+Introduction To Data Sync
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
+* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
