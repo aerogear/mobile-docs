@@ -1,8 +1,8 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::introduction/con_introduction-to-push-notification.adoc[leveloffset=+1]
-
 include::introduction/con_introduction-to-mobile-services.adoc[leveloffset=+1]
+
+include::introduction/con_introduction-to-push-notification.adoc[leveloffset=+1]
 
 include::introduction/con_introduction-to-security.adoc[leveloffset=+1]
 
