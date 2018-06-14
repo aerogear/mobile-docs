@@ -41,7 +41,8 @@ include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[]
 
 ****
 
-`src/mobile-services.json`
+We suggest to include `mobile-services.json` in your app and `require` it for usage with app init. If `require` is not
+available you can also paste the contents of this file directly.
 
 ****
 
