@@ -9,7 +9,22 @@ NOTE: {push-notification}s that arrive when the application is in the background
 [role="primary"]
 .Android
 ****
-Add your implementation of *MessageHandler* to your application's manifest.
+
+Add to your project an implementation of *MessageHandler*:
+
+[source,java]
+----
+public class NotificationBarMessageHandler implements MessageHandler {
+
+    @Override
+    public void onMessage(Context context, Map<String, String> message) {
+        // Handle incoming message
+    }
+
+}
+----
+
+Add it to your application's manifest.
 
 [source,xml]
 ----
@@ -17,46 +32,24 @@ Add your implementation of *MessageHandler* to your application's manifest.
     android:name="DEFAULT_MESSAGE_HANDLER_KEY"
     android:value=".MyMessageHandler" />
 ----
+
 ****
 
 
 [role="secondary"]
 .iOS
 ****
-Add an observer to NotificationCenter from AGSPush:
-[source,swift]
-----
-override func viewDidLoad() {
-    super.viewDidLoad()
-    NotificationCenter.default.addObserver(self, selector: #selector(MyPushView.messageReceived(_:)), name: Notification.Name(rawValue: "message_received"), object: nil)
-}
 
-@objc func messageReceived(_ notification: Notification) {
-    // Handle notification...
-}
-----
+The {SDK} for iOS does not provide a way to handle incoming messages. Instead, follow the link:https://developer.apple.com/notifications/[Apple's official documentation] about notifications.
+
 ****
 
 
 [role="secondary"]
 .Cordova
 ****
+
+The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin].
 [source,javascript]
-----
-import { Push } from "@ionic-native/push";
 
-const pushObject = new Push().init({
-    android: {},
-    ios: {
-      alert: true,
-      badge: true,
-      sound: true
-    }
-});
-
-pushObject.on("notification")
-  .subscribe(notification => {
-    // Handle notification...
-  });
-----
 ****
