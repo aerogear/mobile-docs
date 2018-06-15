@@ -21,6 +21,7 @@ You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple
 ****
 
 == Importing the libraries
+include::{partialsdir}/attributes.adoc[]
 
 [role="primary"]
 .Android
@@ -29,9 +30,9 @@ You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple
 
 . Add the push dependency to your application module
 +
-[source,groovy]
+[source,groovy,subs="attributes"]
 ----
-implementation "org.aerogear:aerogear-push:[version]"
+implementation "org.aerogear:aerogear-push:{release-number}"
 implementation "com.google.firebase:firebase-messaging:[version]"
 ----
 +
@@ -47,7 +48,6 @@ implementation "com.google.firebase:firebase-messaging:[version]"
 [source,groovy]
   // ADD THIS AT THE BOTTOM
   apply plugin: 'com.google.gms.google-services'
-. Download `google-services.json` an copy it to your app folder. For more details see link:google-setup.html[Google setup].
 
 ****
 
@@ -85,22 +85,22 @@ import AGSAuth
 
 ****
 
-Just install `cordova-plugin-aerogear-push`, it already includes the platform push plugin:
-
+. Install `cordova-plugin-aerogear-push`:
++
 [source,bash]
 ----
-$ cordova plugin add @aerogear/cordova-plugin-aerogear-push
+cordova plugin add @aerogear/cordova-plugin-aerogear-push
 ----
 
-Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library]
-
+. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library]
++
 [source,bash]
 ----
 npm install --save @ionic-native/push
 ----
 
-Finally you need to install the Unified Push Server package needed for device registration:
-
+. Install the Unified Push Server package needed for device registration:
++
 [source,bash]
 ----
 npm install --save @aerogear/push

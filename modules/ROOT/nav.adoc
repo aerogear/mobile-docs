@@ -49,6 +49,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
 
+// Security
 ** xref:security/index.adoc[{device-security-service}]
 *** xref:security/proc_performing-device-checks.adoc[Device Checks]
 *** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
