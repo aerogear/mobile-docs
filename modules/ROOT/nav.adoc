@@ -68,6 +68,8 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:testcard.adoc[{custom-service} for the Showcase App]
 ** xref:testcard.adoc[{unifiedpush-service} for the Showcase App]
 
+* xref:local_development.adoc[Setting up {org-name} {product-name} locally]
+
 .Reference
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]

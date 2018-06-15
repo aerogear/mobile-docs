@@ -10,6 +10,8 @@ A project is automatically created for you, and typically you use that project t
 
 When you start OpenShift for the first time, the mobile addon may require some time to complete and mobile services might not appear in the service catalog for a few minutes. 
 
+See the guide on how to xref:local_development.adoc[Set up a local installation of {org-name} {product-name}] 
+
 == Related Information
 
 * xref:workflow.adoc[Overview of Using Mobile Services]

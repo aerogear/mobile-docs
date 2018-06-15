@@ -2,7 +2,9 @@
 
 :product-name: Mobile Services
 
-:service-name:
+:release-number: 1.0.0-alpha
+
+:service-name:  
 
 :mobile-client: mobile app record
 :mobile-cli: Mobile CLI
