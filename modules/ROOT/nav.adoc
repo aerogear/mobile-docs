@@ -17,7 +17,6 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:configuring-dev-env.adoc[Configuring a Dev Environment]
 
 * Using Mobile Services
-
 // PUSH
 ** xref:push/index.adoc[{unifiedpush-service}]
 *** xref:push/provisioning.adoc[Provisioning]
