@@ -176,10 +176,27 @@ init(appConfig);
 
 ****
 
-.Install the AeroGear SDK
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
 
+. Install the Core package:
++
+[source,bash,subs="attributes"]
 ----
-TODO
+dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. For Android install:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+----
+
+. For iOS install:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
 ----
 
 ****
