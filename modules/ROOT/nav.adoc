@@ -48,10 +48,12 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:custom/index.adoc[{custom-service}]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
-// SECURITY
+
+// Security
 ** xref:security/index.adoc[{device-security-service}]
 *** xref:security/proc_performing-device-checks.adoc[Device Checks]
 *** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
+*** xref:security/proc_self-signed-certs.adoc[Self Signed Certificates]
 *** xref:security/proc_adding_secure_storage.adoc[Secure Storage]
 
 // SHOWCASE APPS
