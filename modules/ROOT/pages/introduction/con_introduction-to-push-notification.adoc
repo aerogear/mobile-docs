@@ -4,9 +4,9 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-push-notification
 
 [id='{context}_con_introduction-to-push-notification']
-= Introduction to {pushnotification-service}
+= Introduction to {unifiedpush-service}
 
-The {pushnotification-service} service allows you send native push notifications to different mobile operating systems.
+The {unifiedpush-service} service allows you send native push notifications to different mobile operating systems.
 
 * Code once and push notifications to iOS and Android.
 * Push notifications to defined groups.
@@ -18,5 +18,3 @@ The {pushnotification-service} service allows you send native push notifications
 == Additional resources
 
 * A bulleted list of links to other material closely related to the contents of the concept module.
-* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].

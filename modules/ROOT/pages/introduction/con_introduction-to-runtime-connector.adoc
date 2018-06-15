@@ -4,9 +4,9 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-runtime-connector
 
 [id='{context}_con_introduction-to-runtime-connector']
-= Introduction to {runtimeconnector-service}
+= Introduction to {custom-service}
 
-The {runtimeconnector-service} service allows you connect your mobile apps to your own backend API servers.
+The {custom-service} service allows you connect your mobile apps to your own backend API servers.
 
 * Bind your mobile app to multiple backend API services.
 * Integrated authentication and authorization across mobile and API services.
@@ -17,5 +17,3 @@ The {runtimeconnector-service} service allows you connect your mobile apps to yo
 == Additional resources
 
 * A bulleted list of links to other material closely related to the contents of the concept module.
-* For more details on writing assemblies, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
