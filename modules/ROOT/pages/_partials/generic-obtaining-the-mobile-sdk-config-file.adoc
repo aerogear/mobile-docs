@@ -5,12 +5,15 @@ include::{partialsdir}/attributes.adoc[]
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
 . Copy the configuration to your clipboard.
-. Save the contents of the clipboard to  `mobile-services.json` in the following location:
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
+. Follow the next specific additional instructions depending on your platform:
 
 [role="primary"]
 .Android
 
 ****
+
+Locate this file at the following location in your application project:
 
 `src/main/assets/mobile-services.json`
 
@@ -21,6 +24,8 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 
+Locate this file at the following location in your application project:
+
 `Resources/mobile-services.json`
 
 ****
@@ -30,7 +35,19 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 
-`src/mobile-services.json`
+Locate this file in your application project and import it using `require`.
+
+[source,javascript]
+----
+const aerogearConfig = require("./mobile-services.json");
+----
+
+Alternatively you can create a JavaScript object and use directly:
+
+[source,javascript]
+----
+const aerogearConfig = /* Paste here the contents of the clipboard */;
+----
 
 ****
 
@@ -38,6 +55,8 @@ include::{partialsdir}/attributes.adoc[]
 .Xamarin
 
 ****
+
+Locate this file at the following location in your application project:
 
 `Resources/mobile-services.json`
 

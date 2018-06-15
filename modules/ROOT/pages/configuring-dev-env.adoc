@@ -1,3 +1,0 @@
-include::{partialsdir}/attributes.adoc[]
-
-include::{partialsdir}/generic-configuring-dev-env.adoc[]
