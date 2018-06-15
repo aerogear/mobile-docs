@@ -9,8 +9,8 @@ certificate authority. This cert must be installed on the client device
 to ensure that the client trusts server certificates that are signed by
 the CA.
 
-Normally, this is not an issue and is done automatically. In a
-development environment, such as a local OpenShift cluster which uses
+When the certificate is using a trusted root CA this is not an issue and is done automatically.
+In a development environment, such as a local OpenShift cluster which uses
 self-signed certificates, this is not the case. However we have the
 ability to easily extract the root certificate from the cluster allowing
 us to install it on the device and mark it as trusted, allowing our

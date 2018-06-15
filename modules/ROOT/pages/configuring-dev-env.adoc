@@ -134,6 +134,7 @@ To use the AeroGear SDK for iOS, you will need the following installed on your d
 
 * iOS 9 or later
 * Xcode 9 or later
+* A recent installation of link:https://www.ruby-lang.org/en/documentation/installation[Ruby]
 * link:https://cocoapods.org/[CocoaPods]
 
 To get started with the AeroGear iOS SDK, you can set up the SDK in your existing or new project. The SDK is written in Swift.
@@ -154,7 +155,7 @@ pod setup
 [source,ruby]
 ----
 source 'https://github.com/CocoaPods/Specs.git'
-+
+
 platform :ios, '9.0'
 use_frameworks!
 
@@ -174,11 +175,10 @@ pod install
 +
 . Open up `.xcworkspace` with Xcode and start using the SDK.
 +
-> Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
+NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
 +
-. Import SDK you want to use in the application
-For example:
-
+. Import the SDK you want to use in the application. For example:
++
 [source,swift]
 ----
    import AGSAuth
@@ -193,14 +193,16 @@ For example:
 
 *Prerequisites*
 
-Before installing the SDK you will need in your system, at least:
+Before installing the SDK you will need on your system, at least:
 
-* link:https://nodejs.org/[Node.js] runtime and NPM
-* link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI]
+* link:https://nodejs.org/[Node.js] runtime and npm (at least version 5).
+* link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI] (we recommend to use at least version 8.0.0 and the latest versions of cordova-ios or cordova-android depending on the target).
+
+NOTE: when using link:https://ionicframework.com[Ionic] you don't need to install Cordova as it comes already included. Our own link:https://github.com/aerogear/cordova-showcase-template[Showcase template] is based on Ionic.
 
 *Add AeroGear SDK*
 
-1. Get your app's configuration from the link:https://github.com/aerogear/mobile-cli[AeroGear Mobile CLI]. This JSON file contains custom confguration data for your project and shouldn't be changed manually. Every time a new service is provisioned the file has to be replaced by a new one.
+1. Get a copy of `mobile-services.json` from the `Config Info` tab in your Openshift project. This JSON file contains custom configuration data for your project and shouldn't be changed manually. Every time a new service is provisioned the file has to be replaced with a new one.
 
 2. Install the AeroGear SDK base project "app" in your Javascript project, which is available on NPM under the @aerogear org. Run the following command on your terminal:
 +
@@ -228,8 +230,6 @@ Once this method is called, the SDK will be ready to use.
 
 ****
 
-*Prerequisites*
-
 You will need the following installed on your system
 
 * Visual Studio Tools for Xamarin from https://www.visualstudio.com/xamarin/[Microsoft]
@@ -239,10 +239,10 @@ Depending on your desired platform, it is recommended to have the following inst
 * The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
 * The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple]
 
-*Using a Published SDK*
+*Importing and using the SDK*
 
-```
+----
 TODO
-```
+----
 
 ****

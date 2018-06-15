@@ -47,7 +47,7 @@ implementation "com.google.firebase:firebase-messaging:[version]"
 [source,groovy]
   // ADD THIS AT THE BOTTOM
   apply plugin: 'com.google.gms.google-services'
-. Download `google-services.json` an drop it in your app folder. For more details see link:google-setup.html[Google setup].
+. Download `google-services.json` an copy it to your app folder. For more details see link:google-setup.html[Google setup].
 
 ****
 
@@ -61,7 +61,7 @@ implementation "com.google.firebase:firebase-messaging:[version]"
 [source,ruby]
 ----
 target '[TARGET NAME]' do
-    pod 'AGSPush', '~> [VERSION]'
+    pod 'AGSPush', '[VERSION]'
 end
 ----
 
@@ -99,7 +99,7 @@ Ionic Apps require an additional dependency, the link:https://ionicframework.com
 npm install --save @ionic-native/push
 ----
 
-Finally you need to install a small wrapper library needed for registration:
+Finally you need to install the Unified Push Server package needed for device registration:
 
 [source,bash]
 ----
@@ -214,7 +214,7 @@ const pushObject = new Push().init({
 });
 
 pushObject.on('registration').subscribe(data => {
-    new PushRegistration().register(data.registrationId, PUSH_ALIAS).then(() => {
+    new PushRegistration().register(data.registrationId).then(() => {
         // Registration with UPS successful, you can now send push notifications from the UPS UI
     }).catch(err => {
         //Error on device registration
