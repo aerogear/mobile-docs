@@ -2,6 +2,8 @@
 
 :product-name: Mobile Services
 
+:release-number: 1.0.0-alpha
+
 :service-name:  
 
 :mobile-client: Mobile Client
@@ -19,6 +21,7 @@
 :keycloak-dashboard: Auth Dashboard
 
 // Push Service
+
 :unifiedpush-service: Push Notifications  
 :push-ui: Unified Push admin UI
 :push-notification: push notification
@@ -29,11 +32,11 @@
 // Custom Runtime Service
 :custom-service: Runtime Connector
 
-// Device Security 
+// Device Security
 :device-security-service: Device Security
 
 :SDK: AeroGear SDK
 :ios-sdk: AeroGear SDK for iOS
-:android-sdk: AeroGear SDK for Android    
+:android-sdk: AeroGear SDK for Android
 :js-sdk: AeroGear SDK for Cordova
 :xamarin-sdk: AeroGear SDK for Xamarin

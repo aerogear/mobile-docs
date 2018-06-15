@@ -1,0 +1,22 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_accessing-push-using-the-ui
+
+[id='{context}_con_accessing-push-using-the-ui']
+= Accessing {unifiedpush-service} using the {push-ui}
+
+The {push-ui} allows you to send Push Notifications.
+
+To access {unifiedpush-service} using the {push-ui}, you will need to:
+
+ * Make sure it is xref:push/provisioning.adoc[provisioned].
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
+
+[discrete]
+== Additional resources
+
+* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].

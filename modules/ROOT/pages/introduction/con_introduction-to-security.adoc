@@ -1,0 +1,16 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-security
+
+[id='{context}_con_introduction-to-security']
+= Introduction to {device-security-service}
+
+The {device-security-service} service allows you to easily configure and manage device security, and trust checks for your mobile application.
+
+* Perform a range of device trust checks on the mobile device, such as checking if the device is rooted, and allows you take proactive action based on the results.
+
+[id='{context}_additional-resources']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

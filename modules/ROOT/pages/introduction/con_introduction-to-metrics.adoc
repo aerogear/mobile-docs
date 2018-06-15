@@ -1,0 +1,17 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-metrics
+
+[id='{context}_con_introduction-to-metrics']
+= Introduction to {metrics-service}
+
+The {metrics-service} service allows you gather metrics on mobile apps, & device versions, device security checks and back- end mobile service usage.
+
+* Monitor usage by version of mobile app, platform and SDK.
+* Monitor interactions with the Identity Management service.
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

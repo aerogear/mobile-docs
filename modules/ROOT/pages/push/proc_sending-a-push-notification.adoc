@@ -3,7 +3,7 @@ include::{partialsdir}/attributes.adoc[]
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: proc_sending-a-push-notification
 
-[id='{context}_sending-a-push-notification']
+[id='{context}_proc_sending-a-push-notification']
 
 = Sending a Push Notification
 
@@ -13,7 +13,7 @@ The {push-ui} allows you to send {push-notification}s to devices.
 == Prerequisites
 
 * Access to the {push-ui}.
-* An application with at least one binding or variant.
+* xref:push/binding.adoc[Binding] created.
 
 [discrete]
 == Procedure
@@ -21,20 +21,15 @@ The {push-ui} allows you to send {push-notification}s to devices.
 . Open the {push-ui} in a browser.
 
 . Select the target application from the home page and click *Send Notification To This App*.
-
-. Enter text in the *Message* form.
 +
-NOTE: The default priority of a Push Notification is `normal`. To increase the priority, change *Priority* to `high`.
+image::send1.png[Send a Push]
+
+. When the _Send Push_ dialog displays, enter text in the *Message* form.
++
+image::send2.png[Enter the payload]
 
 . Click *Send Push Notification* to send the message to the target application.
++
+image::PushMessage.png[You got a notification!]
 
 NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
-
-[discrete]
-== Additional Resources
-
-=== Filtering recipients
-
-It is possible to select a more specific set of recipients by adding additional values to *Variants*, *Alias*, *Device Types* and *Category*.
-A {mobile-client} must be associated with one or more of these parameters in order for the filtering to work.
-Set the additional values when you xref:ROOT:push/coding.adoc[Register a Device].

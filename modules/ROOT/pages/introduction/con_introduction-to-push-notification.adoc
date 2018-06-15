@@ -1,0 +1,20 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-push-notification
+
+[id='{context}_con_introduction-to-push-notification']
+= Introduction to {unifiedpush-service}
+
+The {unifiedpush-service} service allows you send native push notifications to different mobile operating systems.
+
+* Code once and push notifications to iOS and Android.
+* Push notifications to defined groups.
+* Push notifications to either iOS only or Android only.
+* Push notifications to different variants of a mobile app.
+* Push notifications from different back-end apps to the same mobile app.
+
+[id='{context}_additional-resources-{context}']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

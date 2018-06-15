@@ -1,0 +1,19 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-runtime-connector
+
+[id='{context}_con_introduction-to-runtime-connector']
+= Introduction to {custom-service}
+
+The {custom-service} service allows you connect your mobile apps to your own backend API servers.
+
+* Bind your mobile app to multiple backend API services.
+* Integrated authentication and authorization across mobile and API services.
+* Ability to configure custom headers for specific backend requests.
+
+
+[id='{context}_additional-resources']
+== Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

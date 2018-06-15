@@ -1,10 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
 
-To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client} and that {mobile-client} must be associated with the mobile service. 
-After binding a {mobile-client} to the {service-name} service, your mobile app can use that service immediately. 
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client} and that {mobile-client} must be associated with the mobile service.
+This association is called a binding and once it's done, your mobile app can use that service immediately.
 
-Note: The association between a {mobile-client} and {service-name} service uses the xref:https://blog.openshift.com/asynchronous-bind-with-the-automation-broker/[OpenShift bind] feature.
+NOTE: The association between a {mobile-client} and {service-name} service uses the link:https://blog.openshift.com/asynchronous-bind-with-the-automation-broker/[Service Broker bind] feature.
 
 To associate a {mobile-client} with a mobile service:
 
@@ -19,5 +19,6 @@ NOTE: Your mobile app will be represented by two items in OpenShift, an item in 
 . Choose the {service-name} service from the *Integrations* list. If an option is not available, you can provision that service by choosing that option and associate the {mobile-client} later.
 
 . Follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} service. 
-When prompted for a *{mobile-client} ID*, enter the value you noted from the previous step.
+When prompted for a *Mobile Client ID*, enter the value you noted from the previous step.
 
+. Fill out the binding parameters required by the service
