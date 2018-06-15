@@ -23,4 +23,13 @@ When provisioning a metrics service, you are prompted to set the following:
 |Postgres Password|Password to connect to Postgres (generated if blank)
 |====
 
+[NOTE]
+====
+If Postgres Password is generated you can retrieve it with:
+[source,bash]
+----
+oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
+----
+====
+
 include::{partialsdir}/generic-provisioning-end.adoc[]
