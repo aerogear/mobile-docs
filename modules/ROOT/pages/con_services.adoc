@@ -5,7 +5,7 @@ To navigate to the documentation for a specific service, choose the service from
 The following services are available:
 
 [role="primary"]
-.Metrics
+.{metrics-service}
 
 ****
 
@@ -14,7 +14,7 @@ include::{partialsdir}/metrics-index.inc-rantora.adoc[tags=about-metrics]
 ****
 
 [role="secondary"]
-.Unified Push
+.{push-service}
 ****
 
 include::{partialsdir}/push-index.inc-rantora.adoc[tags=about-push]
@@ -22,21 +22,21 @@ include::{partialsdir}/push-index.inc-rantora.adoc[tags=about-push]
 ****
 
 [role="secondary"]
-.Auth
+.{keycloak-service}
 ****
 
 include::{partialsdir}/auth-index.inc-rantora.adoc[tags=about-auth]
 
 ****
 [role="secondary"]
-.Custom Runtime Connector
+.{custom-service}
 ****
 
 include::{partialsdir}/custom-index.inc-rantora.adoc[tags=about-custom]
 
 ****
 [role="secondary"]
-.CI/CD
+.{build-service}
 ****
 
 include::{partialsdir}/build-index.inc-rantora.adoc[tags=about-build]
