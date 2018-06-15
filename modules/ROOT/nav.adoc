@@ -29,7 +29,6 @@ include::{partialsdir}/attributes.adoc[]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
 **** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
 **** xref:push/google-setup.adoc[Firebase Cloud Messaging]
-
 // METRICS
 ** xref:metrics/index.adoc[{metrics-service}]
 *** xref:metrics/provisioning.adoc[Provisioning]
@@ -37,22 +36,18 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:metrics/configuring-dev-env-metrics.adoc[Configuring a Dev environment]
 *** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
 *** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
-
 // KEYCLOAK
 ** xref:keycloak/index.adoc[{keycloak-service}]
 *** xref:keycloak/provisioning.adoc[Provisioning]
 *** xref:keycloak/binding.adoc[Binding]
-
 // DIGGER
 ** xref:digger/index.adoc[{digger-service}]
 *** xref:digger/provisioning.adoc[Provisioning]
 *** xref:digger/binding.adoc[Binding]
-
 // CUSTOM
 ** xref:custom/index.adoc[{custom-service}]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
-
 // SECURITY
 ** xref:security/index.adoc[{device-security-service}]
 *** xref:security/proc_performing-device-checks.adoc[Device Checks]
