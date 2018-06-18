@@ -162,11 +162,11 @@ npm install @aerogear/app
 ----
 import { init } from "@aerogear/app";
 
-const appConfig = {
+const aerogearConfig = {
     // Replace with your own configuration
 };
 
-init(appConfig);
+init(aerogearConfig);
 ----
 
 ****
