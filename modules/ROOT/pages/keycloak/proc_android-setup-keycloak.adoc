@@ -1,0 +1,26 @@
+include::{partialsdir}/attributes.adoc[]
+
+:context: proc_android-setup-keycloak
+
+[id='{context}']
+
+= Setup Keycloak
+
+The following guide helps you to configure schema of the redirect url and web origin for a client in Keycloak. This is required to use the Auth SDK.
+
+[discrete]
+== Procedure
+
+. Choose the schema of a redirect url.
++
+NOTE: It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts.
+
+. Open Keycloak Administration Console by selecting route in OpenShift.
+
+. Open `Clients` from the menu.
+
+. Open your Android client.
+
+. Add the schema to `Valid Redirect URIs`.
+
+. Add `*` to `Web Origins`.
