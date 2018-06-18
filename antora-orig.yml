@@ -3,7 +3,7 @@ title: AeroGear Docs
 version: 'latest'
 start_ROOT: ROOT:index.adoc
 nav:
-- modules/ROOT/nav-paul.adoc
+- modules/ROOT/nav.adoc
 
     
 
