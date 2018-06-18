@@ -223,3 +223,7 @@ pushObject.on('registration').subscribe(data => {
 ----
 
 ****
+
+== Next Steps
+
+xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
