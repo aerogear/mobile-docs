@@ -11,8 +11,10 @@ include::{partialsdir}/attributes.adoc[]
 
 NOTE: You may skip creating a binding if only interested in metrics from other services but not from a {mobile-client}.
 
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[]
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 
 Metrics will be sent automatically from the Mobile Application once any of the components from {SDK} are installed.
 
 == Adding AeroGear SDK modules for the {service-name} Service
+
+//***TODO***
