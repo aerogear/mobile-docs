@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Setting up AeroGear {product-name} on OpenShift
+= Setting up {org-name} {product-name} on OpenShift
 
 To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see https://www.openshift.org/.
 
@@ -14,20 +14,20 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 
 * link:https://www.openshift.org/download.html[Openshift client tools] version 3.9 or later
 
-* Docker is a requirement, and must be version 17.09.1 in order to be compatible with the latest release of OpenShift, depending on your OS this is downloaded from different places:
+* Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
 
 [role="primary"]
 .MacOS
 
 ****
-On Darwin / MacOSX operating systems, you must install version link:https://download.docker.com/mac/stable/19543/Docker.dmg[17.09.1] of Docker.
+You can download Docker CE for MacOS version 17.09.1 link:https://download.docker.com/mac/stable/19543/Docker.dmg[here].
 ****
 
 [role="secondary"]
 .Linux
 
 ****
-On Linux you must install version 17.09.1 of Docker which is available link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here].
+You can download Docker CE version 17.09.1 for rpm based distros from link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here]. Otherwise have a look link:https://docs.docker.com/install[here].
 ****
 
 == Local development
@@ -53,15 +53,15 @@ cloned in the requirements section - with the following command:
 ./installer/install.sh
 ----
 +
-This validates that ansible, docker and the OpenShift Client Tools
+This validates that Ansible, Docker and the OpenShift Client Tools
 are installed and are the right version.
 +
-Once verified it prompts you for your docker hub login credentials, which
+Once verified it prompts you for your Docker Hub login credentials, which
 must be valid for the installation to continue.
 +
 The next set of values are optional and can be left with the default values:
 +
-[source,bash]
+[source,bash,subs="attributes"]
 ----
 DockerHub Tag (Defaults to {release-number}):
 DockerHub Organisation (Defaults to aerogearcatalog):
@@ -83,8 +83,8 @@ In order to allow communication between your mobile device and the cluster, the
 cluster IP must be in the same c-block as your local network.
 +
 i.e. If your local router which both your workstation and mobile are connected to
-a router using the 10.0.0.x c-block, then you should set the cluster IP to something
-in the 10.0.0.x c-block too, such as 10.0.0.135.
+a router using the `10.0.0.x` c-block, then you should set the cluster IP to an IP
+in the `10.0.0.x` c-block too, such as `10.0.0.135`.
 
 . *Finishing the installation*
 +
