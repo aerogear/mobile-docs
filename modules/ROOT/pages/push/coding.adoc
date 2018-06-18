@@ -32,7 +32,7 @@ include::{partialsdir}/attributes.adoc[]
 +
 [source,groovy,subs="attributes"]
 ----
-implementation "org.aerogear:aerogear-push:{release-number}"
+implementation "org.aerogear:aerogear-push:{installer-release-number} "
 implementation "com.google.firebase:firebase-messaging:[version]"
 ----
 +

@@ -28,10 +28,10 @@ link:https://www.openshift.org/download.html[here].
 We configure the local development installation of {org-name} {product-name}
 using ansible scripts in our link:https://github.com/aerogear/mobile-core[mobile-core] repo.
 
-Clone this repo to your local machine and check out the {release-number} tag using:
+Clone this repo to your local machine and check out the {installer-release-number}  tag using:
 ```
 git clone git@github.com:aerogear/mobile-core.git
-git checkout {release-number}
+git checkout {installer-release-number} 
 ```
 
 === Docker
@@ -66,7 +66,7 @@ must be valid for the installation to continue.
 
 The next set of values are optional and can be left with the default values:
 ```
-DockerHub Tag (Defaults to {release-number}): 
+DockerHub Tag (Defaults to {installer-release-number} ): 
 DockerHub Organisation (Defaults to aerogearcatalog): 
 Cluster IP (Defaults to 192.168.37.1): 
 Wildcard DNS Host (Defaults to nip.io): 
