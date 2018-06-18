@@ -1,15 +1,134 @@
-= Registering Device
+include::{partialsdir}/attributes.adoc[]
 
-Use the following code to register a device with the {push-service} service:
+= Setting up {unifiedpush-service} service SDK
 
+This guide will help you to set up the {unifiedpush-service} service SDK in your App.
 
+== Prerequisites
+
+[role="primary"]
+.Android
+
+****
+You need a Firebase account. See link:google-setup.html[Google setup] to get started.
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple setup] to get started.
+****
+
+== Importing the libraries
+include::{partialsdir}/attributes.adoc[]
 
 [role="primary"]
 .Android
 
 ****
 
+. Add the push dependency to your application module
++
+[source,groovy,subs="attributes"]
+----
+implementation "org.aerogear:aerogear-push:{release-number}"
+implementation "com.google.firebase:firebase-messaging:[version]"
+----
++
+. Create a new project in link:https://console.firebase.google.com[Firebase console]
+. Add link:https://developers.google.com/android/guides/google-services-plugin[The Google Services Gradle Plugin] in your root `build.gradle` file
+[source,groovy]
+  buildscript {
+      dependencies {
+          classpath 'com.google.gms:google-services:[version]'
+      }
+  }
+. Apply the plugin in your app `build.gradle` file
+[source,groovy]
+  // ADD THIS AT THE BOTTOM
+  apply plugin: 'com.google.gms.google-services'
 
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSPush', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSAuth
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Install `cordova-plugin-aerogear-push`:
++
+[source,bash]
+----
+cordova plugin add @aerogear/cordova-plugin-aerogear-push
+----
+
+. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library]
++
+[source,bash]
+----
+npm install --save @ionic-native/push
+----
+
+. Install the Unified Push Server package needed for device registration:
++
+[source,bash]
+----
+npm install --save @aerogear/push
+----
+
+****
+
+
+
+== Device registration
+
+To make use of the {unifiedpush-service} service devices need to be registered by calling an endpoint of the server.
+The SDKs will handle this for you and the following steps will give you everything you need to start working with push notifications.
+
+[role="primary"]
+.Android
+
+****
+
+. Getting an instance of the PushService
++
+[source,java]
+----
+PushService pushService = new PushService.Builder().openshift().build();
+----
+
+. Registration request
++
 [source,java]
 ----
 pushService.registerDevice()
@@ -21,9 +140,7 @@ pushService.registerDevice()
     @Override
     public void onException(Exception exception) { // Oops! }
 });
-
 ----
-
 
 ****
 
@@ -57,17 +174,52 @@ func application(_ application: UIApplication,
 
 ****
 
+*Using plain Cordova*
+
 [source,javascript]
 ----
+const push = PushNotification.init({
+    android: {},
+    ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+    }
+});
+
 // Registration handler
-pushObject.on('registration').subscribe(data => {
-  // PushRegistration will handle the device registration with the Unifiedpush Server
-  new PushRegistration().register(data.registrationId).then(() => {
-    // Registration with UPS successful, you can now send push notifications from the UPS UI
-  }).catch(err => {
-    // Error on device registration
-  });
+push.on('registration', data => {
+    // PushRegistration is part of @aerogear/push
+    new PushRegistration().register(data.registrationId).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        // Error on device registration
+    });
 });
 ----
 
+*Using Ionic*
 
+[source,javascript]
+----
+import { Push } from "@ionic-native/push";
+
+const pushObject = new Push().init({
+    android: {},
+    ios: {
+        alert: true,
+        badge: true,
+        sound: true
+    }
+});
+
+pushObject.on('registration').subscribe(data => {
+    new PushRegistration().register(data.registrationId).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        //Error on device registration
+    });
+});
+----
+
+****

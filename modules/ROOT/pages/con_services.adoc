@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = About Mobile Services
 
 To navigate to the documentation for a specific service, choose the service from the menu above. As new versions of services are released, the menu in the lower left corner allows you to navigate to the version of the documentation you require. 
@@ -5,46 +7,53 @@ To navigate to the documentation for a specific service, choose the service from
 The following services are available:
 
 [role="primary"]
-.Metrics
+.{metrics-service}
 
 ****
 
-include::{partialsdir}/metrics-index.inc-rantora.adoc[tags=about-metrics]
-
-****
-
-[role="secondary"]
-.Unified Push
-****
-
-include::{partialsdir}/push-index.inc-rantora.adoc[tags=about-push]
+include::{partialsdir}/generic-service-intros.adoc[tags=metrics-service]
 
 ****
 
 [role="secondary"]
-.Auth
+.{unifiedpush-service}
 ****
 
-include::{partialsdir}/auth-index.inc-rantora.adoc[tags=about-auth]
+include::{partialsdir}/generic-service-intros.adoc[tags=pushnotification-service]
+
+****
+
+[role="secondary"]
+.{keycloak-service}
+****
+
+include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
 
 ****
 [role="secondary"]
-.Custom Runtime Connector
+.{custom-service}
 ****
 
-include::{partialsdir}/custom-index.inc-rantora.adoc[tags=about-custom]
+include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service]
 
 ****
 [role="secondary"]
-.CI/CD
+.{digger-service}
 ****
 
-include::{partialsdir}/build-index.inc-rantora.adoc[tags=about-build]
+include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
+
+****
+[role="secondary"]
+.{device-security-service}
+****
+
+include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
 ****
 
 
-== Additional Information
+== Next Steps
 
 * See xref:provisioning-services.adoc[Provisioning Mobile Services]
 

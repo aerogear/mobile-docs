@@ -17,13 +17,6 @@ installation scripts on your local machine, follow the
 installation steps
 link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[here].
 
-=== Node.js
-
-Node.js version 8 or later and the bundled package manager 'npm' 
-are a requirement for certain scripts in the installation process, 
-install these with the instructions:
-link:https://nodejs.org/en/download/package-manager/[here].
-
 === OpenShift Client Tools
 
 The OpenShift client tools are a requirement and must be 3.9 or greater,
@@ -65,7 +58,7 @@ cloned in the requirements section - with the following command:
 ./installer/install.sh
 ```
 
-This validates that ansible, npm, docker and the OpenShift Client Tools
+This validates that ansible, docker and the OpenShift Client Tools
 are installed and are the right version.
 
 Once verified it prompts you for your docker hub login credentials, which
