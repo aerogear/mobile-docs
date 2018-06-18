@@ -1,4 +1,5 @@
 include::{partialsdir}/attributes.adoc[]
+
 :service-name: Push Notifications
 
 == Prerequisites
@@ -27,7 +28,6 @@ When you bind a mobile client to the {unifiedpush-service} service, a variant is
 Those credentials need to be provided in the binding dialog.
 
 First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
-
 
 [role="primary"]
 .Android

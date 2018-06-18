@@ -4,61 +4,12 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-* [x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
-* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services].
+[x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
+[x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services].
 
-[role="primary"]
-.Android
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
-****
-* Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google]
-* (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
-****
-
-[role="secondary"]
-.iOS
-
-****
-* iOS 9 or later
-* Xcode 9 or later
-* A recent installation of link:https://www.ruby-lang.org/en/documentation/installation[Ruby]
-* link:https://cocoapods.org/[CocoaPods] needs to be installed:
-
-[source,bash]
-----
-gem install cocoapods
-pod setup
-----
-
-****
-
-
-[role="secondary"]
-.Cordova
-
-****
-* link:https://nodejs.org/[Node.js] runtime and npm (at least version 5).
-* link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI] (we recommend to use at least version 8.0.0 and the latest versions of cordova-ios or cordova-android depending on the target).
-
-NOTE: When using link:https://ionicframework.com[Ionic] you don't need to install Cordova as it's included. Our own link:https://github.com/aerogear/cordova-showcase-template[Showcase template] is based on Ionic.
-****
-
-[role="secondary"]
-.Xamarin
-
-****
-* Visual Studio Tools for Xamarin from https://www.visualstudio.com/xamarin/[Microsoft]
-
-Depending on your desired platform, it is recommended to have the following installed:
-
-* The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
-* The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple]
-****
-
-
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[]
-
-== Adding AeroGear SDK modules
+== Adding AeroGear SDK modules for the Mobile Platforms
 
 [role="primary"]
 .Android
