@@ -1,9 +1,9 @@
 include::{partialsdir}/attributes.adoc[]
 
-== Create an Android {mobile-client} in OpenShift
+== Create an Android {mobile-client-openshift}
 
 This guide demonstrates how to create an Android
-link:./mobile-clients-in-openshift.adoc[{mobile-client} in OpenShift].
+link:./mobile-clients-in-openshift.adoc[{mobile-client-openshift}].
 
 == Procedure
 

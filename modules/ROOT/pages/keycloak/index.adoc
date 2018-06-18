@@ -3,10 +3,15 @@ include::{partialsdir}/attributes.adoc[]
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: con_introduction-to-keycloak
 
-[id='{context}_con_introduction-to-keycloak']
+[id='{context}']
 = About {keycloak-service}
 
+include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
+
+include::./ref_terminology.adoc[leveloffset=+1]
 
 [id='{context}_additional-resources-{context}']
+
 == Additional resources
 
+See the link:https://www.keycloak.org/documentation.html[Keycloak documentation] for more info.

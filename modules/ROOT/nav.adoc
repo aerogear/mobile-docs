@@ -6,26 +6,23 @@ include::{partialsdir}/attributes.adoc[]
 // ** xref:mobile_architecture.adoc[Architecture]
 ** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
 ** xref:workflow.adoc[Mobile Apps & Services Workflow]
-
 * xref:con_services.adoc[Introducing Mobile Services]
 ** xref:provisioning-services.adoc[Provisioning]
 ** xref:integrating-services.adoc[Binding Services]
-
 * xref:apps.adoc[Integrating Mobile Apps]
 ** xref:registering-a-mobile-app.adoc[Registering an App]
 ** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
 ** xref:configuring-dev-env.adoc[Configuring a Dev Environment]
-
 * Using Mobile Services
 // PUSH
 ** xref:push/index.adoc[{unifiedpush-service}]
 *** xref:push/provisioning.adoc[Provisioning]
 *** xref:push/binding.adoc[Binding]
-*** xref:configuring-dev-env.adoc[Configuring a Dev Environment]
+*** xref:push/configuring-dev-env-push.adoc[Configuring a Dev Environment]
 *** xref:push/coding.adoc[Adding Code]
-*** xref:push/admin-ui.adoc[{push-ui}]
+*** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
 *** More...
-**** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
+**** xref:push/admin-ui.adoc[{push-ui}]
 **** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
 **** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
 **** xref:push/google-setup.adoc[Firebase Cloud Messaging]
@@ -45,16 +42,21 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:digger/index.adoc[{digger-service}]
 *** xref:digger/provisioning.adoc[Provisioning]
 *** xref:digger/binding.adoc[Binding]
+*** xref:digger/configuring-dev-env-digger.adoc[Configuring a Dev environment]
 // CUSTOM
 ** xref:custom/index.adoc[{custom-service}]
 *** xref:custom/provisioning.adoc[Provisioning]
 *** xref:custom/binding.adoc[Binding]
+*** xref:custom/configuring-dev-env-custom.adoc[Configuring a Dev environment]
 // SECURITY
 ** xref:security/index.adoc[{device-security-service}]
+*** xref:security/provisioning.adoc[Provisioning]
+*** xref:security/binding.adoc[Binding]
+*** xref:security/configuring-dev-env-security.adoc[Configuring a Dev environment]
 *** xref:security/proc_performing-device-checks.adoc[Device Checks]
 *** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
+*** xref:security/proc_self-signed-certs.adoc[Self Signed Certificates]
 *** xref:security/proc_adding_secure_storage.adoc[Secure Storage]
-
 // SHOWCASE APPS
 * xref:using-the-showcase-apps.adoc[Using the Showcase Apps]
 ** xref:testcard.adoc[{metrics-service} for the Showcase App]
@@ -62,9 +64,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:testcard.adoc[{digger-service} for the Showcase App]
 ** xref:testcard.adoc[{custom-service} for the Showcase App]
 ** xref:testcard.adoc[{unifiedpush-service} for the Showcase App]
-
 * xref:local_development.adoc[Setting up {org-name} {product-name} locally]
-
 .Reference
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]

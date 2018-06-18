@@ -4,11 +4,150 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-* [x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
-* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services].
+[x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
+[x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services].
 
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[]
+== Adding AeroGear SDK modules for the Mobile Platforms
 
+[role="primary"]
+.Android
 
-== Adding AeroGear SDK modules for the {service-name} Service
+****
+
+. To use the SDK add jcenter to the `build.grade` file in your project's root directory
++
+[source, groovy]
+----
+allprojects {
+    repositories {
+        jcenter() // <-- Add This line
+        google()
+    }
+}
+----
+
+. In the build.gradle file of your app you can begin adding dependencies provided by the SDK.
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    ...
+    implementation 'org.aerogear:android-push:{release-number}'
+    implementation 'org.aerogear:android-auth:{release-number}'
+    implementation 'org.aerogear:android-security:{release-number}'
+}
+----
+
+. For push you also need to add a dependency to the Firebase SDK:
++
+[source,groovy]
+----
+dependencies {
+    ...
+    implementation "com.google.firebase:firebase-messaging:[version]"
+}
+----
+
+NOTE: To implement certificate pinning in the individual SDKs, see link:certificate-pinning.html[the certificate pinning guide].
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
++
+[source,ruby]
+----
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target :'YourTarget' do
+    ## Require one of the AeroGear SDK's here
+    pod 'AGSPush'
+    pod 'AGSAuth'
+end
+----
++
+. Then run the following command:
++
+[source,bash]
+----
+pod install
+----
++
+. Open up `.xcworkspace` with Xcode and start using the SDK.
++
+NOTE: Do not use `.xcodeproj`. If you open a project file instead of a workspace, dependencies will not be correctly configured.
++
+. Import the SDK you want to use in the application. For example:
++
+[source,swift]
+----
+   import AGSAuth
+----
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Open a terminal and navigate to your appplication project root folder.
+
+. Install the AeroGear SDK base project:
++
+[source.bash]
+npm install @aerogear/app
++
+. In your application, import and call the "init" method:
++
+[source,javascript]
+----
+import { init } from "@aerogear/app";
+
+const aerogearConfig = {
+    // Replace with your own configuration
+};
+
+init(aerogearConfig);
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
+
+. Install the Core package:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. For Android install:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+----
+
+. For iOS install:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+----
+
+****
