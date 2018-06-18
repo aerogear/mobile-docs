@@ -61,7 +61,7 @@ public class CustomCheck: SecurityCheck {
     public let name = "Custom Check"
 
     public init(){}
-    
+
     public func check() -> SecurityCheckResult {
         // implement check logic
     }
@@ -87,8 +87,9 @@ let results = security.checkMany(checks)
 ----
 
 == Publishing the Security Check Metrics
-This SDK provides functions which allow the developer to perform security checks and publish the results to the metrics server. To configure this, provide the metrics server configuration in the mobile-services.json file. If no 
-configuration is provided then the metrics publishing will fail silently and metrics will not be published.
+This SDK provides functions which allow the developer to perform security checks and publish the results to the metrics server.
+To configure this, provide the metrics server configuration in the mobile-services.json file.
+If no configuration is provided then the metrics publishing will fail silently and metrics will not be published.
 
 === Security Check Result Metrics Structure
 
@@ -97,7 +98,7 @@ configuration is provided then the metrics publishing will fail silently and met
 - *passed*: Whether or not the check result passed
 
 === Invoking a Single Self Defence Check and publishing the Metrics
-Similar to the `AGSSecurity.check` the `AGSSecurity.checkAndPublishMetric` function is used to invoke a security check which returns the result of type `SecurityCheckResult`. 
+Similar to the `AGSSecurity.check` the `AGSSecurity.checkAndPublishMetric` function is used to invoke a security check which returns the result of type `SecurityCheckResult`.
 While it performs the security check, it also attempts to publish the result to the metrics service. The check function takes a paramater of type `SecurityCheck` which will specify the type of check to be invoked:
 
 [source,swift]
@@ -107,7 +108,7 @@ let result = security.checkAndPublishMetric(IsDeviceLockCheck())
 ----
 
 === Invoking Multiple Self Defence Checks and publishing the Metrics
-To invoke multiple checks the `AGSSecurity.checkManyAndPublishMetric` function is used. This returns an array of `SecurityCheckResult`. 
+To invoke multiple checks the `AGSSecurity.checkManyAndPublishMetric` function is used. This returns an array of `SecurityCheckResult`.
 While it performs the security checks, it also attempts to publish the results to the metrics service. The checkManyAndPublishMetric function takes an array of type `SecurityCheck` which will specify checks to be invoked
 
 [source,swift]

@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Push Notifications
+:service-name: Security
 
 = Provisioning {service-name} Service
 
@@ -10,4 +10,6 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
-include::{partialsdir}/generic-provisioning-end.adoc[]
+///***TODO***
+
+ include::{partialsdir}/generic-provisioning-end.adoc[]
