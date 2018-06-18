@@ -37,7 +37,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:keycloak/index.adoc[{keycloak-service}]
 *** xref:keycloak/provisioning.adoc[Provisioning]
 *** xref:keycloak/binding.adoc[Binding]
-*** xref:keycloak/configuring-dev-env-keycloak.adoc[Configuring a Dev environment]
+*** xref:keycloak/android.adoc[Android]
 // DIGGER
 ** xref:digger/index.adoc[{digger-service}]
 *** xref:digger/provisioning.adoc[Provisioning]
