@@ -87,8 +87,9 @@ let results = security.checkMany(checks)
 ----
 
 == Publishing the Security Check Metrics
-This SDK provides functions which allow the developer to perform security checks and publish the results to the metrics server. To configure this, provide the metrics server configuration in the mobile-services.json file. If no
-configuration is provided then the metrics publishing will fail silently and metrics will not be published.
+This SDK provides functions which allow the developer to perform security checks and publish the results to the metrics server.
+To configure this, provide the metrics server configuration in the mobile-services.json file.
+If no configuration is provided then the metrics publishing will fail silently and metrics will not be published.
 
 === Security Check Result Metrics Structure
 
