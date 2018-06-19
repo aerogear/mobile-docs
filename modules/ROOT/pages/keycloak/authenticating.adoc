@@ -66,4 +66,15 @@ The callback provided in `AuthService#login` will be invoked.
 .Cordova
 ****
 
+As noted in xref:keycloak/coding.adoc#initializing-the-sdk[initializing the SDK] Auth service initialization also
+performs the authentication action.
+
+However, for perfoming that manually, invoke the login function:
+
+[source,javascript]
+----
+authService.login()
+----
+
+User will be redirected to the login screen.
 ****
