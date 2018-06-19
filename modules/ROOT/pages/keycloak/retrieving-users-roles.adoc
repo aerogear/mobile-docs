@@ -2,14 +2,14 @@ include::{partialsdir}/attributes.adoc[]
 
 = Retrieving a users roles
 
-[role="primary"]
-.Android
-****
 Once a `UserPrincipal` has been retrieved the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles] of the user can be listed and checked. This can
 be used to perform client side access control, such as hiding UI components related to actions the
 user doesn't have permissions to perform.
 
-To list a users roles the `UserPrincipal#getRoles` method can be invoked.
+[role="primary"]
+.Android
+****
+To list a user's roles, `UserPrincipal#getRoles` method can be invoked.
 
 Roles are divided into two types. Resource roles which belong to the client the user has
 authenticated against, and Realm roles which belong to the realm the client is in.
@@ -48,5 +48,25 @@ if (isModerator) {
 [role="secondary"]
 .Cordova
 ****
+To list a user's roles, `Auth#getRealmRoles` method can be invoked.
+
+In order to check if a user has a specific role you can invoke the `Auth#hasRealmRole` method and provide the role name to check for.
+
+[source,javascript]
+----
+if (this.auth.isAuthenticated()) {
+    this.auth.loadUserProfile().then((userProfile) => {
+        // print the roles
+        var realmRoles = this.auth.getRealmRoles();
+        console.log(realmRoles);
+
+        boolean hasAdminPermissions = this.auth.hasRealmRole("user_admin");
+        if (hasAdminPermissions) {
+            // Show some component.
+        }
+
+    }).catch((err) => console.error("Error retrieving user profile", err));
+}
+----
 
 ****

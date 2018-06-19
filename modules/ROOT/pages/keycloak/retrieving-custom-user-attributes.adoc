@@ -2,13 +2,14 @@ include::{partialsdir}/attributes.adoc[]
 
 = Retrieving Custom User Attributes
 
-[role="primary"]
-.Android
-****
 A walkthrough has been provided in the link:./auth-user-attributes.adoc[Keycloak Custom User Attributes] document to show how you can allow custom user attributes in Keycloak to be available in the Identity token.
 
 You can then retrieve the custom attributes from the current user.
 
+
+[role="primary"]
+.Android
+****
 [source,java]
 ----
 boolean booleanAttribute = currentUser.getCustomBooleanAttribute("booleanAttribute");
@@ -27,5 +28,13 @@ String stringAttribute = currentUser.getCustomStringAttribute("stringAttribute")
 [role="secondary"]
 .Cordova
 ****
+[source,javascript]
+----
+if (this.auth.isAuthenticated()) {
+    this.auth.loadUserProfile().then((userProfile) => {
+        var customAttributeValue = userProfile.attributes['customAttributeKey'];
+    }).catch((err) => console.error("Error retrieving user profile", err));
+}
+----
 
 ****
