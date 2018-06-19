@@ -44,5 +44,27 @@ Follow xref:keycloak/retrieving-custom-user-attributes.adoc[this guide] to retri
 [role="secondary"]
 .Cordova
 ****
+To retrieve the current authenticated user the `loadUserProfile` function can be invoked. This will be `null`
+if there is no user authenticated. To check if a user is authenticated the `isAuthenticated` function can be invoked.
 
+[source,javascript]
+----
+if (this.auth.isAuthenticated()) {
+    // user is authenticated, retrieve the profile
+    this.auth.loadUserProfile().then((userProfile) => {
+        // get username
+        let username = userProfile.username;
+        // get users first name
+        let firstName = userProfile.firstName;
+        // get users last name
+        let lastName = userProfile.lastName;
+        // get users Id
+        let userId = userProfile.id;
+        // get users email
+        let email = userProfile.email;
+    }).catch((err) => console.error("Error retrieving user profile", err));
+} else {
+    // not authenticated
+}
+----
 ****

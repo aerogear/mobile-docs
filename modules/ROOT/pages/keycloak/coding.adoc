@@ -38,7 +38,7 @@ pod 'AGSAuth'
 [role="secondary"]
 .Cordova
 ****
-. Install the auth package
+* Install the auth package
 
 [source,bash]
 ----
