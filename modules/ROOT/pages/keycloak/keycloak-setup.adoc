@@ -21,6 +21,11 @@ It is recommended to use the Bundle Identifier of the iOS app followed by `:/cal
 ****
 The schema of the redirect url should be `\http://localhost/*`.
 ****
+[role="secondary"]
+.Xamarin
+****
+Depending on the platform set the redirect as described in either the Android or the iOS tab.
+****
 
 === Configure Keycloak
 

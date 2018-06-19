@@ -1,12 +1,14 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Authenticating
+= User authentication
+
+This section describes how to perform user authentication for the supported platforms. On authentication a browser window will open and prompt the user for login credentials.
 
 [role="primary"]
 .Android
 ****
-To start the authentication invoke the `AuthService#login` method.
-
+. To start the authentication invoke the `login` method.
++
 [source,java]
 ----
 // authService already initialized.
@@ -34,13 +36,8 @@ Callback authCallback = new Callback<UserPrincipal>() {
 authService.login(options, authCallback);
 ----
 
-Once the browser returns to the app the result can be handled. In the activity provided to the
-`login` method override `onActivityResult`. This handler should always invoke
-`AuthService#handleAuthResponse`, providing the `Intent`. This will exchange the temporary tokens
-returned from `AuthService#login` for long-life tokens and will provide a `UserPrincipal` which can
-be used to access a users details. If this is not invoked you will not have access to the
-`UserPrincipal`.
-
+. Override `handleAuthResult` to handle the result from the browser
++
 [source,java]
 ----
 @Override
@@ -52,13 +49,137 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 }
 ----
++
+NOTE: This handler should always invoke `handleAuthResult`, providing the `Intent`. This will exchange the temporary tokens returned from `login` for long-lived tokens and will provide a `UserPrincipal` which can be used to access a users details. If this is not invoked you will not have access to the `UserPrincipal`.
 
-The callback provided in `AuthService#login` will be invoked.
+. The callback provided to `login` will be invoked.
 ****
 
 [role="secondary"]
 .iOS
 ****
+. Use the `login` function to trigger the authentication flow:
++
+[source,swift]
+----
+try AgsAuth.instance.login(presentingViewController: self, onCompleted: onLoginComplete)
+
+// handle the authentication result
+func onLoginComplete(user: User?, err: Error?) {
+    // login failed
+    if let error = err {
+        // login error
+        return
+    }
+    // login succeeded
+    let currentUser = user
+}
+----
+
+. Allow your application to handle the redirect in `AppDelegate`:
++
+[source,swift]
+----
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+    do {
+        return try AgsAuth.instance.resumeAuth(url: url as URL)
+    } catch AgsAuth.Errors.serviceNotConfigured {
+        print("AeroGear auth service is not configured")
+    } catch {
+        fatalError("Unexpected error: \(error).")
+    }
+    return false
+}
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Authentication will be performed on initialization as described xref:keycloak/coding.adoc[here]. To manually redirect to the login screen use:
+[code,javascript]
+----
+authService.login()
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Get an instance of `IAuthService`:
++
+[source,csharp]
+----
+IAuthService service = MobileCore.Instance.GetInstance<IAuthService>();
+----
+
+. Use the `Authenticate` method to start the auth flow:
++
+[source,csharp]
+----
+var authOptions = DependencyService.Get<IAuthenticateOptionsProvider>().GetOptions();
+service.Authenticate(authOptions).ContinueWith(result =>
+{
+    // load some view
+});
+----
+****
+
+== Logging out
+
+The following section describes how to perform a logout.
+
+[role="primary"]
+.Android
+****
+To logout, invoke the `logout` method. This accepts the UserPrincipal that was provided by `handleAuthResult` and has a callback to determine if the logout to the Keycloak or OpenID Connect server was successful.
+
+[source,java]
+----
+
+
+// authService already initialized.
+AuthService authService = MobileCore.getInstance().getService(AuthService.class);
+UserPrincipal currentUser = authService.currentUser();
+
+authService.logout(currentUser, new Callback<UserPrincipal>() {
+    @Override
+    public void onSuccess() {
+        // User Logged Out Successfully and Local Auth Tokens were Deleted
+    }
+
+    @Override
+    public void onError(Throwable error) {
+        // An error occurred during logout
+    }
+});
+
+----
+
+****
+
+[role="secondary"]
+.iOS
+****
+. To logout invoke the `logout` method:
++
+[source,swift]
+----
+do {
+    try AgsAuth.instance.logout(onCompleted: self.onLogoutComplete)
+} catch {
+    fatalError("Error logging out: \(error).")
+}
+----
+
+. Handle any post-logout actions in the callback:
++
+[source,swift]
+----
+func onLogoutComplete(_: Error?) {
+    // post-logout actions
+}
+----
 
 ****
 
@@ -66,4 +187,31 @@ The callback provided in `AuthService#login` will be invoked.
 .Cordova
 ****
 
+To logout invoke the `logout` function:
+
+[source,javascript]
+----
+authService.logout()
+----
+
+By default, the local tokens obtained during authentication are only deleted when the logout succeeded against the authentication server.
+
 ****
+
+[role="secondary"]
+.Xamarin
+****
+To logout invoke the `Logout` method:
+[source,csharp]
+----
+// auth service already initialised
+
+var authService = MobileCore.Instance.GetInstance<IAuthService>();
+authService.Logout(authService.CurrentUser()).ContinueWith(result =>
+{
+    // post-logout actions
+});
+----
+****
+
+NOTE: To perform backchannel or federated logouts, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under OIDC Identity Providers.

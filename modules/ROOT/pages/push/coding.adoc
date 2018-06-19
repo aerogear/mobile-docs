@@ -80,7 +80,7 @@ $ pod install
 +
 [source,swift]
 ----
-import AGSAuth
+import AGSPush
 ----
 ****
 
