@@ -38,6 +38,12 @@ pod 'AGSAuth'
 [role="secondary"]
 .Cordova
 ****
+. Install the auth package
+
+[source,bash]
+----
+npm install @aerogear/auth
+----
 
 ****
 
@@ -89,5 +95,41 @@ try! AgsAuth.instance.configure(authConfig: authenticationConfig)
 [role="secondary"]
 .Cordova
 ****
+Once the AeroGear SDK is initialized, you can import and initialize Auth:
+
+[source,javascript]
+----
+import { Auth } from "@aerogear/auth";
+
+const authService = new Auth();
+
+const initOptions = { onLoad: "login-required" };
+authService.init(initOptions)
+    .then(() => {
+        // successful init & authentication
+    })
+    .catch((err) => {
+        // initialization error
+    });
+----
+
+You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the
+client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only
+authenticate the client if the user is already logged in. If the user is not logged in the browser
+will be redirected back to the application and remain unauthenticated.
+
+By default, the `check-sso` option is used. To enable the `login-required` action, simply pass it in the `init` function:
+
+[source,javascript]
+----
+authService.init({ onLoad: "login-required" })
+----
+
+
+NOTE: Calling `Auth#init()` will also perform the authentication action.
+
+NOTE: In AngularJS, it is necessary to initialise the Auth SDK before bootstrapping Angular to prevent redirect looping
+issues after authentication. An example of how to perform this in Angular 4 is available in the Aerogear
+Cordova Showcase App’s link:https://github.com/aerogear/cordova-showcase-template/blob/master/src/app/main.ts[main.ts].
 
 ****
