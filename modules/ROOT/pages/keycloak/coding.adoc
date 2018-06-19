@@ -1,0 +1,93 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Setting up {keycloak-service} service SDK
+
+This guide will help you to set up the {keycloak-service} service SDK in your App.
+
+== Prerequisites
+
+* xref:keycloak/provisioning.adoc[Provisioned {keycloak-service} service].
+* xref:keycloak/binding.adoc[Binding] created.
+* xref:keycloak/configuring-dev-env-keycloak.adoc[Configured dev environment].
+* xref:keycloak/keycloak-setup.adoc[Configured Keycloak].
+
+== Importing the libraries
+
+[role="primary"]
+.Android
+****
+. Import Core module.
+
+. Specify the schema of the redirect url for your Android project in `android.defaultConfig.manifestPlaceholders` of the apps `build.gradle` file.
++
+NOTE: It should match the schema specified in the `Valid Redirect URIs` section for the client in Keycloak.
+
+. TODO: Import auth module.
+****
+
+[role="secondary"]
+.iOS
+****
+* Add dependency to your Podfile:
++
+----
+pod 'AGSAuth'
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+
+****
+
+== Initializing the SDK
+
+[role="primary"]
+.Android
+****
+`AuthService` can be retrieved using the `MobileCore#getInstance` method.
+
+[source,java]
+----
+AuthService authService = MobileCore.getInstance().getService(AuthService.class);
+----
+
+Any subsequent `getService` call will return the same instance of `AuthService`.
+
+Before the `AuthService` can be used `AuthService#init` must be invoked once in an app.
+
+[source,java]
+----
+// Specify redirect URI. It is recommended to use the package name of your app.
+AuthServiceConfiguration authServiceConfig = new AuthServiceConfiguration
+    .AuthConfigurationBuilder()
+    .withRedirectUri("org.aerogear.mobile.example:/callback")
+    .build();
+
+// You only need to invoke this once every subsequent retrieval of the AuthService
+// will retrieve the same instance.
+authService.init(context, authServiceConfig);
+----
+
+Follow xref:keycloak/android-additional-configuration.adoc[this guide] for additional configuration.
+****
+
+[role="secondary"]
+.iOS
+****
+The Auth SDK can be initialised with configuration options. Use the redirect URL xref:keycloak/keycloak-setup.adoc[configured in Keycloak].
+
+[source,swift]
+----
+// create the authentication config
+let authenticationConfig = AuthenticationConfig(redirectURL: "org.aerogear.mobile.example:/callback")
+try! AgsAuth.instance.configure(authConfig: authenticationConfig)
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+
+****
