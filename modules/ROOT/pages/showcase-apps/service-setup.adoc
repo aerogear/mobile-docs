@@ -1,2 +1,36 @@
 include::{partialsdir}/attributes.adoc[]
 
+= Setting up Services for Showcase Apps
+
+Showcase apps demonstrate many features and they need their backend counterpart to work with.
+
+First of all, xref:registering-a-mobile-app.adoc[register an app] for the mobile platform of your choice.
+
+== Setting up {metrics-service} service
+
+In order to be able to send metrics from the showcase apps, you need to perform the following steps on the backend side:
+
+. xref:metrics/provisioning.adoc[Provision] {metrics-service} service.
+
+. xref:metrics/binding.adoc[Create a binding] for the mobile app for the {metrics-service} service.
+
+
+== Setting up {keycloak-service} service
+
+Showcase apps provide authentication functionality against {keycloak-service} service.
+
+. xref:keycloak/provisioning.adoc[Provision] {keycloak-service} service.
+
+. xref:keycloak/keycloak-setup.adoc[Setup] {keycloak-service}.
+
+. xref:keycloak/binding.adoc[Create a binding] for the mobile app for the {keycloak-service} service.
+
+
+== Setting up {unifiedpush-service} service
+
+Showcase apps demonstrate push notification functionality as well. These are the steps to perform
+on the backend side:
+
+. xref:push/provisioning.adoc[Provision] {unifiedpush-service} service.
+
+. xref:push/binding.adoc[Create a binding] for the mobile app for the {unifiedpush-service} service.
