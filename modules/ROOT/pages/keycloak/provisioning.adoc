@@ -24,5 +24,8 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
 
- include::{partialsdir}/generic-provisioning-end.adoc[]
+include::{partialsdir}/generic-provisioning-end.adoc[]
  
+== Next steps
+
+xref:keycloak/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
