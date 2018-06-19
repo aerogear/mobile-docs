@@ -50,7 +50,6 @@ include::{partialsdir}/attributes.adoc[]
 // DIGGER
 ** xref:digger/index.adoc[{digger-service}]
 *** xref:digger/provisioning.adoc[Provisioning]
-*** xref:digger/binding.adoc[Binding]
 *** xref:digger/configuring-dev-env-digger.adoc[Configuring a Dev environment]
 // CUSTOM
 ** xref:custom/index.adoc[{custom-service}]
