@@ -1,0 +1,2 @@
+include::{partialsdir}/attributes.adoc[]
+
