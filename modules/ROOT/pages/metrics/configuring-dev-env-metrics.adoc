@@ -12,7 +12,3 @@ include::{partialsdir}/attributes.adoc[]
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
 Metrics will be sent automatically from the Mobile Application once any of the components from {SDK} are installed.
-
-== Adding AeroGear SDK modules for the {service-name} Service
-
-//***TODO***

@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Mobile Services dashboard in Grafana
 
 == Prerequesites

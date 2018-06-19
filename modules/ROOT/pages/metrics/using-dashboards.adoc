@@ -1,10 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Using dashboards to display metrics service data
+= Using dashboards to display {metrics-service} service data
 
 == Prerequisites
 
-[x] A provisioned {metrics-service} as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service]
+[x] A provisioned {metrics-service} service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service]
 
 == Overview of dashboards
 

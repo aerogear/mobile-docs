@@ -1,9 +1,11 @@
-= Making Services auto-discoverable by the Metrics Service
+include::{partialsdir}/attributes.adoc[]
 
-Mobile Services that expose a metrics endpoint will already be auto-discovered by the Metrics Service.
+= Making Services auto-discoverable by the {metrics-service}
+
+Mobile Services that expose a metrics endpoint will already be auto-discovered by the {metrics-service} service.
 No additional steps are needed for Prometheus to poll for metrics from Mobile Services.
 
-However, if you would like the Metrics Services to also gather metrics from your own Service, you will need the following:
+However, if you would like the {metrics-service} service to also gather metrics from your own Service, you will need the following:
 
 * Service has to have one of `org.aerogear.metrics/plain_endpoint` or
 `org.aerogear.metrics/ssl_endpoint` annotations.

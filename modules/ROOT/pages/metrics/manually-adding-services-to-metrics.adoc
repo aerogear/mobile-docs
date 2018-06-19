@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Manually making a service visible to the Metrics Service
+= Manually making a service visible to the {metrics-service}
 
 == Prerequisites
 
@@ -8,12 +8,12 @@ include::{partialsdir}/attributes.adoc[]
 ** https://docs.openshift.org/latest/install_config/index.html
 * OpenShift Ansible Broker
 ** https://docs.openshift.org/latest/install_config/install/advanced_install.html#configuring-openshift-ansible-broker
-* Metrics service deployment from the Service Catalog
+* {metrics-service} service deployment from the Service Catalog
 ** https://github.com/aerogearcatalog/metrics-apb
 
-== Adding a service to the Metrics Service
+== Adding a service to the {metrics-service} Service
 
-The Metrics Service is composed of both https://grafana.com/[Grafana]
+The {metrics-service} Service is composed of both https://grafana.com/[Grafana]
 for data visualization and https://prometheus.io/[Prometheus] for
 gathering of metrics data, so including a new service involves
 configuring the Prometheus instance to include scraping of metrics
