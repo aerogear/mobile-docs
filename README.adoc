@@ -30,6 +30,8 @@ The important information that gets me using AeroGear software, for example, wri
 
 * no prefix on filenames
 
+See link:https://redhat-documentation.github.io/modular-docs/#creating-procedure-modules[Creating Procedures]
+
 Reference::
 Information I might need to debug or extend the normal usage of AeroGear software. For example:
 +
@@ -101,19 +103,20 @@ https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
 . Run antora:
 +
 ----
-./bin/build.sh local-site.yml
-----
-+ 
-After building for the first time, you can run the following command for subsequent builds:
-+
-----
-./bin/quick-build.sh <site-file>.yml
+./bin/quick-build.sh local-site.yml
 ----
 +
 Note: <site-file> refers to either:
 +
 * local-site - your current directory
 * site.yml - the master branch of the github repo
++ 
+When building for publication use:
++
+----
+./bin/build.sh
+----
++
 
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
@@ -123,8 +126,16 @@ NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], yo
 
 Currently, the publishing process is manual:
 
-. Run antora as described above.
+. Run antora using following command:
++
+----
+./bin/build.sh
+----
+
 . Review the output (`build\site\index.html`) for errors. Correct if required.
++
+NOTE: Check for correct styling changes too.
++
 . Make a PR against  https://github.com/aerogear/docs.aerogear.org
 . Merge PR as required.
 

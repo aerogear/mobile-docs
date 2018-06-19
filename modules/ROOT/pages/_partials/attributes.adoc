@@ -27,7 +27,7 @@
 :push-notification: push notification
 
 // Build Service
-:digger-service: Mobile CI\CD
+:digger-service: Mobile CI/CD
 
 // Custom Runtime Service
 :custom-service: Runtime Connector
