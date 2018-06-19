@@ -2,6 +2,8 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Push Notifications
 
+= Binding a {mobile-client} with the {service-name} service
+
 == Prerequisites
 
 [role="primary"]
@@ -20,7 +22,6 @@ include::{partialsdir}/attributes.adoc[]
 * [x] An APNs client TLS certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
 ****
 
-== Binding a {mobile-client} with the {service-name} service
 
 include::{partialsdir}/generic-binding.adoc[]
 
@@ -56,3 +57,8 @@ cat <path/to/your/.p12> | base64 --wrap=0
 ****
 
 After clicking Bind your variant will be created in UPS and you should see a new binding for your mobile client.
+
+== Next Steps
+
+xref:push/configuring-dev-env-push.adoc[Configuring your Development Environment for the {service-name} Service]
+

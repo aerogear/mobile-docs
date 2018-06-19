@@ -118,6 +118,16 @@ Note: <site-file> refers to either:
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
 
+[[publishing]]
+== Publishing
+
+Currently, the publishing process is manual:
+
+. Run antora as described above.
+. Review the output (`build\site\index.html`) for errors. Correct if required.
+. Make a PR against  https://github.com/aerogear/docs.aerogear.org
+. Merge PR as required.
+
 == Remote Repos
 
 No remote repos were harmed in the production of this documentation ;)
