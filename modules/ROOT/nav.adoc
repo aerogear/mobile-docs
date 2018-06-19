@@ -34,7 +34,7 @@ include::{partialsdir}/attributes.adoc[]
 **** xref:metrics/configuring-dev-env-metrics.adoc[Configuring a Dev environment]
 **** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
 *** Service metrics
-**** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+**** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
 *** More...
 **** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
 **** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
