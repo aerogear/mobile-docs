@@ -1,7 +1,0 @@
-include::{partialsdir}/attributes.adoc[]
-
-:service-name: Digger
-
-= Binding a {mobile-client} with the {service-name} Service
-
-include::{partialsdir}/generic-binding.adoc[]
