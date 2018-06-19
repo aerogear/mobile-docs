@@ -74,7 +74,6 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:showcase-apps/device-security.adoc[Device Security]
 *** xref:showcase-apps/push-notifications.adoc[Push Notifications]
 *** xref:showcase-apps/metrics.adoc[Metrics]
-*** xref:showcase-apps/runtime-connectors.adoc[Runtime Connectors]
 ** Running Locally
 *** xref:showcase-apps/running-android-showcase-app-locally.adoc[Android]
 *** xref:showcase-apps/running-ios-showcase-app-locally.adoc[iOS]
