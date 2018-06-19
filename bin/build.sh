@@ -4,11 +4,12 @@
 
 # get files from other repos using ruby version of asciidoctor
 
-./bin/ant-include.sh
+# Removed as not pulling from remotes anymore
+# ./bin/ant-include.sh
 
-# generate html
+# generate html with pull for latest https://github.com/aerogear/antora-ui
 
-antora $1
+antora --clean --pull site.yml
 
 # fix html
 
