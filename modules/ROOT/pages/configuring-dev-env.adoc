@@ -34,9 +34,9 @@ allprojects {
 ----
 dependencies {
     ...
-    implementation 'org.aerogear:android-push:{release-number}'
-    implementation 'org.aerogear:android-auth:{release-number}'
-    implementation 'org.aerogear:android-security:{release-number}'
+    implementation 'org.aerogear:android-push:{installer-release-number} '
+    implementation 'org.aerogear:android-auth:{installer-release-number} '
+    implementation 'org.aerogear:android-security:{installer-release-number} '
 }
 ----
 
@@ -133,21 +133,21 @@ init(aerogearConfig);
 +
 [source,bash,subs="attributes"]
 ----
-dotnet add package AeroGear.Mobile.Core --version {release-number}
+dotnet add package AeroGear.Mobile.Core --version {installer-release-number} 
 ----
 
 . For Android install:
 +
 [source,bash,subs="attributes"]
 ----
-dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {installer-release-number} 
 ----
 
 . For iOS install:
 +
 [source,bash,subs="attributes"]
 ----
-dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {installer-release-number} 
 ----
 
 ****

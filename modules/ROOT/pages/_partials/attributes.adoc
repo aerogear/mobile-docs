@@ -2,7 +2,7 @@
 
 :product-name: Mobile Services
 
-:release-number: 1.0.0-alpha
+:installer-release-number: 1.0.0-alpha
 
 :service-name:  
 
