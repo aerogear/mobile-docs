@@ -218,6 +218,8 @@ NOTE: To perform backchannel or federated logouts, you must enable the Backchann
 
 == Additional resources
 
+xref:keycloak/android-additional-configuration.adoc[Additional configuration for Android]
+
 link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[Keycloak OICD Providers]
 
 == Next steps
