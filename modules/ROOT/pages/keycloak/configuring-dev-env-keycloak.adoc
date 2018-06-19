@@ -11,3 +11,6 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
+== Next Steps
+
+* xref:keycloak/coding.adoc[Setting up the {service name} service SDK]
