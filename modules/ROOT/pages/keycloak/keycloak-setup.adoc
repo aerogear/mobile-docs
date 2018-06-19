@@ -1,10 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Keycloak Setup
+== Keycloak Setup
 
 The following guide helps you to configure schema of the redirect url and web origin for a client in Keycloak. This is required to use the Auth SDK.
 
-== Choose the schema of a redirect url
+=== Choose the schema of a redirect url
 
 [role="primary"]
 .Android
@@ -22,7 +22,7 @@ It is recommended to use the Bundle Identifier of the iOS app followed by `:/cal
 The schema of the redirect url should be `\http://localhost/*`.
 ****
 
-== Configure Keycloak
+=== Configure Keycloak
 
 . Open Keycloak Administration Console by selecting route in OpenShift.
 . Open `Clients` from the menu.
