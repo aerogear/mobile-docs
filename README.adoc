@@ -133,6 +133,9 @@ Currently, the publishing process is manual:
 ----
 
 . Review the output (`build\site\index.html`) for errors. Correct if required.
++
+NOTE: Check for correct styling changes too.
++
 . Make a PR against  https://github.com/aerogear/docs.aerogear.org
 . Merge PR as required.
 
