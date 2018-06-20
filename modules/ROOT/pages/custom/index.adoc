@@ -9,7 +9,3 @@ include::{partialsdir}/attributes.adoc[]
 include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service]
 
 [id='{context}_additional-resources-{context}']
-== Additional resources
-
-* For more information, see the link:https://prometheus.io/docs/introduction/overview/[Prometheus Documentation].
-* For more information, see the link:http://docs.grafana.org/[Grafana Documentation].
