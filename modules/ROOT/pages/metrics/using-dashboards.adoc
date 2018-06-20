@@ -2,18 +2,17 @@ include::{partialsdir}/attributes.adoc[]
 
 = Using dashboards to display {metrics-service} service data
 
-== Prerequisites
-
-[x] A provisioned {metrics-service} service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service]
-
 == Overview of dashboards
 
-The metrics service uses https://prometheus.io/[Prometheus] to gather metrics data from other mobile services and https://grafana.com/[Grafana] to display that data.
+The metrics service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana] to display that data.
 
 A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics. 
 See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started] guide for an introduction to dashboards.
 
-When you create an instance of an AeroGear service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana. You can also create and modify custom dashboards to:
+When you create an instance of a {product-name} service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana.
+Also, when you configure your {mobile-client} to use metrics, you can see the metrics in Grafana.
+
+In addition to those, you can create and modify custom dashboards to:
 
 * visualize metrics from apps and backend services that are not mobile services
 * monitor additional metrics from mobile services that are not displayed by default

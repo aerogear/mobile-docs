@@ -9,7 +9,7 @@ include::{partialsdir}/attributes.adoc[]
 The {metrics-service} service URL is only accessible by users who have *edit* permission for the project. By default, a project owner already has permission.
 
 The {metrics-service} service creates routes to access Grafana and Prometheus. To protect these routes there is an OAuth reverse proxy sidecar container in front
-of the Grafana and Prometheus containers to enforce authentication. The authentication is based on Openshift permissions and is configured as part of the 
+of the Grafana and Prometheus containers to enforce authentication. The authentication is based on OpenShift permissions and is configured as part of the 
 provisioning of the metrics service. See the link:https://github.com/openshift/oauth-proxy[documentation for the proxy container] for 
 more information about configuring the proxy. 
 
@@ -23,7 +23,7 @@ routes. This rule is defined by the `openshift-sar` option. For the Prometheus s
 ----
 
 To authenticate against the OAuth proxy, a user must have  
-sufficient permissions to update the *deploymentConfig* resource named `prometheus` in the current Openshift namespace. 
+sufficient permissions to update the *deploymentConfig* resource named `prometheus` in the current OpenShift namespace. 
 The *deploymentConfig* resource for Grafana contains the same Subject Access Review rule for the `grafana` resource.
 
 
@@ -36,9 +36,7 @@ Access to the Prometheus and Grafana routes requires permissions to completely e
 . In the membership screen click on *Edit Membership*.
 +
 . From the *Add Another Role* list, select *edit* and click *add* to assign the role to a user.
-+
-image::giving-access-to-metrics/new-user.png[creating new-user]
-+
+
 The user can now access the Metrics routes.
 
 == Granting user permissions using the CLI
@@ -58,12 +56,12 @@ oc adm policy add-cluster-role-to-user edit <user>
 +
 The user can now access the Metrics routes.
 
-== Using the OAuth proxy to access the {metrics-service} service
+== Using the OAuth proxy to access the {metrics-service} Service
 
-When the {metrics-service} service is provisioned there is a route for Grafana and a route for Prometheus.
+When the {metrics-service} Service is provisioned there is a route for Grafana and a route for Prometheus.
 When you access one of the routes you will see the OAuth proxy landing screen.
 image::giving-access-to-metrics/proxy.png[OAuth Proxy landing page]
-Click *Log in with Openshift* and log in. If you have sufficient permission to access the route
+Click *Log in with OpenShift* and log in. If you have sufficient permission to access the route
 you are prompted to allow the service account access your account.
 image::giving-access-to-metrics/authorize.png[OAuth proxy service account authorize access]
 Click *Allow selected permissions*. The OAuth proxy redirects you to the requested route.
@@ -71,5 +69,5 @@ Click *Allow selected permissions*. The OAuth proxy redirects you to the request
 
 == Additional Resources
 
-* link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[Openshift Authorization]
-* link:https://github.com/openshift/oauth-proxy[Openshift OAuth Proxy container]
+* link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[OpenShift Authorization]
+* link:https://github.com/openshift/oauth-proxy[OpenShift OAuth Proxy container]

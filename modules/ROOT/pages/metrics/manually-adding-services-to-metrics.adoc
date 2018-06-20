@@ -1,15 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Manually making a service visible to the {metrics-service}
-
-== Prerequisites
-
-* OpenShift Origin >= 3.7
-** https://docs.openshift.org/latest/install_config/index.html
-* OpenShift Ansible Broker
-** https://docs.openshift.org/latest/install_config/install/advanced_install.html#configuring-openshift-ansible-broker
-* {metrics-service} service deployment from the Service Catalog
-** https://github.com/aerogearcatalog/metrics-apb
+= Manually making a service visible to the {metrics-service} Service
 
 == Adding a service to the {metrics-service} Service
 

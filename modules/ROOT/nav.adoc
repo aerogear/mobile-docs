@@ -35,12 +35,11 @@ include::{partialsdir}/attributes.adoc[]
 **** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
 *** Service metrics
 **** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
-*** More...
-**** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
-**** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
-**** xref:metrics/manually-adding-services-to-metrics.adoc[Manual discovery]
-**** xref:metrics/using-dashboards.adoc[Using dashboards]
-**** xref:metrics/using-mobile-services-dashboard.adoc[Mobile Services dashboard]
+//*** More...
+//**** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
+//**** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
+//**** xref:metrics/manually-adding-services-to-metrics.adoc[Manual discovery]
+//**** xref:metrics/using-dashboards.adoc[Using dashboards]
 // KEYCLOAK
 ** xref:keycloak/index.adoc[{keycloak-service}]
 *** xref:keycloak/provisioning.adoc[Provisioning]

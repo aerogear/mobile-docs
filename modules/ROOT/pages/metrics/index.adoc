@@ -9,13 +9,13 @@ include::{partialsdir}/attributes.adoc[]
 video::xWFWUcuZPaQ[youtube]
 
 
-The {metrics-service} service allows you monitor mobile apps, devices and mobile services.
+The {metrics-service} Service allows you monitor mobile apps, devices and mobile services.
 
 * Monitor usage by version of mobile app
 * Monitor identity management
 * Extend monitoring to include your custom requirement
 
-Identity management is monitored by the {metrics-service} service when it is provisioned. No configuration is needed.
+Identity management is monitored by the {metrics-service} Service when it is provisioned. No configuration is needed.
 
 To collect metrics from mobile apps, you need to create a binding which is described in the next sections.
 
