@@ -1,21 +1,20 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Monitoring {keycloak-service}
+= Monitoring {keycloak-service} Service
 
 == Prerequisites
 
+* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
+* [x] You have provisioned the {keycloak-service} Service as described in xref:keycloak/provisioning.adoc[Provisioning {keycloak-service} Service].
 
-*Note*
 
-The {metrics-service} service and {keycloak-service} service must be provisioned in the same OpenShift project to access data.
+NOTE: The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
 
 == Overview
 
-After the Metrics service (includes Grafana tool and Prometheus monitoring system) and Keycloak service are provisioned, 
+After the {metrics-service} Service (includes Grafana tool and Prometheus monitoring system) and {keycloak-service} Service are provisioned,
 you should be able to see the "Keycloak Metrics" in the list of available dashboards 
-(navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*)
-
-image::keycloak-dashboard/keycloak-dashboard-overview.png[keycloak-dashboard]
+(navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
 
 == Dashboard's panels description
 
@@ -24,7 +23,7 @@ events, such as number of registered users, memory usage etc.
 
 See below for the detailed description of each panel and its values
 
-=== link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panels]
+=== Singlestat Panels
 
 ==== Total Registrations
 
@@ -40,9 +39,9 @@ Total number of failed login attempts.
 
 ==== Current Memory
 
-The amount of memory currently used by the Keycloak service
+The amount of memory currently used by the {keycloak-service} Service
 
-=== link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph panels]
+=== Graph panels
 
 ==== Logins
 
@@ -56,12 +55,12 @@ Overview of the failed login attempts over time
 
 The values in this graph represents the following:
 
-. *Used* - The amount of memory currently used by the Keycloak service
+. *Used* - The amount of memory currently used by the {keycloak-service} Service
 . *Commited* - The amount of memory that is guaranteed to be available for use (by JVM)
 . *Max* - The maximum amount of memory that can be used for memory management
 
 
-=== link:https://grafana.com/plugins/grafana-piechart-panel[Pie Charts]
+=== Pie Charts
 
 ==== Logins Per Provider
 
@@ -69,4 +68,11 @@ Overview of the successful (non-admin) user logins per provider
 
 ==== Registrations Per Provider
 
-Overview of the successful (non-admin) user registrations per provider
+Overview of the successful (non-admin) user registrations per provider.
+
+
+== External resources
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]

@@ -29,10 +29,17 @@ include::{partialsdir}/attributes.adoc[]
 // METRICS
 ** xref:metrics/index.adoc[{metrics-service}]
 *** xref:metrics/provisioning.adoc[Provisioning]
-*** xref:metrics/binding.adoc[Binding]
-*** xref:metrics/configuring-dev-env-metrics.adoc[Configuring a Dev environment]
-*** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
-*** xref:monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+*** Client metrics
+**** xref:metrics/binding.adoc[Binding]
+**** xref:metrics/configuring-dev-env-metrics.adoc[Configuring a Dev environment]
+**** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
+*** Service metrics
+**** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+//*** More...
+//**** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
+//**** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
+//**** xref:metrics/manually-adding-services-to-metrics.adoc[Manual discovery]
+//**** xref:metrics/using-dashboards.adoc[Using dashboards]
 // KEYCLOAK
 ** xref:keycloak/index.adoc[{keycloak-service}]
 *** xref:keycloak/provisioning.adoc[Provisioning]
@@ -72,7 +79,6 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:testcard.adoc[{digger-service} for the Showcase App]
 ** xref:testcard.adoc[{custom-service} for the Showcase App]
 ** xref:testcard.adoc[{unifiedpush-service} for the Showcase App]
-* xref:local_development.adoc[Setting up {org-name} {product-name} locally]
 .Reference
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]
