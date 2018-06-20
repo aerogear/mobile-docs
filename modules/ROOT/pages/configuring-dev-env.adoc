@@ -61,7 +61,7 @@ NOTE: To implement certificate pinning in the individual SDKs, see link:certific
 
 . In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
 +
-[source,ruby]
+[source,ruby,subs="attributes"]
 ----
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -70,8 +70,8 @@ use_frameworks!
 
 target :'YourTarget' do
     ## Require one of the AeroGear SDK's here
-    pod 'AGSPush'
-    pod 'AGSAuth'
+    pod 'AGSPush', '{release-number}'
+    pod 'AGSAuth', '{release-number}'
 end
 ----
 +

@@ -5,3 +5,9 @@ include::{partialsdir}/attributes.adoc[]
 = Binding a {mobile-client} with the {service-name} Service
 
 include::{partialsdir}/generic-binding.adoc[]
+
+After the binding is finished the {mobile-client} has been updated with the custom configuration.
+
+== Next steps
+
+* xref:custom/usage.adoc[Using] the custom runtime connector in an App

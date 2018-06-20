@@ -1,0 +1,74 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Using {custom-service} in an App
+
+== Prerequisites
+
+* [x] The {custom-service} is provisioned as described in xref:custom/provisioning.adoc[Provisioning {custom-service} Service].
+* [x] You have created a xref:custom/binding.adoc[binding] to a {mobile-client}
+* [x] Imported the `Core` module of the Aerogear SDK in your App
+
+NOTE: Have a look at xref:configuring-dev-env.adoc[Development Environment Setup] to learn how to import the Aerogear SDK modules in your App.
+
+== Retrieving the custom configuration in a {mobile-client}
+
+This section shows how to retrieve the configuration of the custom service in a {mobile-client} by using the Core module of the Aerogear SDK.
+
+[role="primary"]
+.Android
+****
+. If you don't use any other module of the Aerogear SDK make sure that the `android-core` is in the dependencies of you app modules `build.gradle`:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-core:{release-number}'
+}
+----
+
+. Use the `getServiceConfigurationsByType` method to get the service configuration associated with your custom service
++
+[source,java]
+----
+ServiceConfiguration config = MobileCore.getInstance().getServiceConfigurationById("[SERVICE NAME]");
+----
+
+. Get the URL of the custom service:
++
+[source,java]
+----
+String url = config.getUrl();
+----
+
+. Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
++
+[source,java]
+----
+String url = config.getProperty("[PROPERTY NAME]");
+----
+
+****
+
+[role="secondary"]
+.iOS
+****
+. If you don't use any other module of the Aerogear SDK make sure that the `AGSCore` is in your `Podfile`:
++
+[source,ruby,subs="attributes"]
+----
+target :'YourTarget' do
+    pod 'AGSCore', '{release-number}'
+end
+----
+
+****
+
+[role="secondary"]
+.Cordova
+****
+****
+
+[role="secondary"]
+.Xamarin
+****
+****
