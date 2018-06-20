@@ -44,7 +44,7 @@ String url = config.getUrl();
 +
 [source,java]
 ----
-String url = config.getProperty("[PROPERTY NAME]");
+String property = config.getProperty("[PROPERTY NAME]");
 ----
 
 ****
@@ -59,6 +59,27 @@ String url = config.getProperty("[PROPERTY NAME]");
 target :'YourTarget' do
     pod 'AGSCore', '{release-number}'
 end
+----
+
+. Use the `getConfigurationById` function to get the service configuration associated with your custom service:
++
+[source,swift]
+----
+let config = AgsCore.instance.getConfigurationById("[SERVICE NAME]")
+----
+
+. Get the URL of the custom service:
++
+[source,swift]
+----
+let url = config.url
+----
+
+. Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
++
+[source,swift]
+----
+let property: JSONValue = config.config["[PROPERTY NAME]"]
 ----
 
 ****
