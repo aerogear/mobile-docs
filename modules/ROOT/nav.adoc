@@ -1,85 +1,79 @@
 include::{partialsdir}/attributes.adoc[]
 
 * xref:index.adoc[Getting Started]
-** xref:installing-mobile-services.adoc[Installing]
-** xref:mobile_terminology.adoc[Terminology]
-// ** xref:mobile_architecture.adoc[Architecture]
-** xref:getting-started-with-openshift.adoc[Getting Started with OpenShift]
-** xref:workflow.adoc[Mobile Apps & Services Workflow]
-* xref:con_services.adoc[Introducing Mobile Services]
-** xref:provisioning-services.adoc[Provisioning]
-** xref:integrating-services.adoc[Binding Services]
-* xref:apps.adoc[Integrating Mobile Apps]
-** xref:registering-a-mobile-app.adoc[Registering an App]
-** xref:binding-mobile-app-record-to-mobile-services.adoc[Binding an App to a Service]
-** xref:configuring-dev-env.adoc[Configuring a Dev Environment]
-* Using Mobile Services
+** xref:registering-a-mobile-app.adoc[Registering a Mobile App]
+** xref:configuring-dev-env.adoc[Dev Environment Setup]
+
+* xref:con_services.adoc[Mobile Services]
+
+// KEYCLOAK
+* xref:keycloak/index.adoc[{keycloak-service}]
+** xref:keycloak/provisioning.adoc[Provisioning]
+** xref:keycloak/binding.adoc[Binding]
+** xref:keycloak/coding.adoc[Coding]
+** xref:keycloak/authenticating.adoc[User Authentication]
+** xref:keycloak/retrieving-users-roles.adoc[Access Control]
+** xref:keycloak/sso.adoc[Single Sign On]
+** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+
+
+
+// SECURITY
+* xref:security/index.adoc[{device-security-service}]
+** xref:security/proc_performing-device-checks.adoc[Device Trust Checks]
+** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
+
+
 // PUSH
-** xref:push/index.adoc[{unifiedpush-service}]
-*** xref:push/provisioning.adoc[Provisioning]
-*** xref:push/binding.adoc[Binding]
-*** xref:push/configuring-dev-env-push.adoc[Configuring a Dev Environment]
-*** xref:push/coding.adoc[Adding Code]
+* xref:push/index.adoc[{unifiedpush-service}]
+** xref:push/provisioning.adoc[Provisioning]
+** xref:push/binding.adoc[Binding]
+** xref:push/coding.adoc[Coding]
+** More...
 *** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
-*** More...
-**** xref:push/admin-ui.adoc[{push-ui}]
-**** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
-**** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
-**** xref:push/google-setup.adoc[Firebase Cloud Messaging]
+*** xref:push/admin-ui.adoc[{push-ui}]
+*** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
+*** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
+*** xref:push/google-setup.adoc[Firebase Cloud Messaging]
 // METRICS
-** xref:metrics/index.adoc[{metrics-service}]
-*** xref:metrics/provisioning.adoc[Provisioning]
-*** Client metrics
-**** xref:metrics/binding.adoc[Binding]
-**** xref:metrics/configuring-dev-env-metrics.adoc[Configuring a Dev environment]
-**** xref:metrics/analysing-app-usage.adoc[Analysing App Usage]
-*** Service metrics
-**** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+* xref:metrics/index.adoc[{metrics-service}]
+** xref:metrics/provisioning.adoc[Provisioning]
+** xref:metrics/binding.adoc[Binding]
+** xref:metrics/configuring-dev-env-metrics.adoc[Coding an App to use {metrics-service}]
+** xref:metrics/analysing-app-usage.adoc[Analysing Apps and Devices]
+
 //*** More...
 //**** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
 //**** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
 //**** xref:metrics/manually-adding-services-to-metrics.adoc[Manual discovery]
 //**** xref:metrics/using-dashboards.adoc[Using dashboards]
-// KEYCLOAK
-** xref:keycloak/index.adoc[{keycloak-service}]
-*** xref:keycloak/provisioning.adoc[Provisioning]
-*** xref:keycloak/binding.adoc[Binding]
-*** xref:keycloak/configuring-dev-env-keycloak.adoc[Configuring a Dev environment]
-*** xref:keycloak/coding.adoc[Adding Code]
-*** More...
-**** xref:keycloak/keycloak-setup.adoc[Keycloak Setup]
-**** xref:keycloak/android-additional-configuration.adoc[Additional Configuration for Android]
-**** xref:keycloak/retrieving-current-user.adoc[Retrieving Current User]
-**** xref:keycloak/retrieving-custom-user-attributes.adoc[Retrieving Custom User Attributes]
-**** xref:keycloak/authenticating.adoc[Authenticating]
-**** xref:keycloak/retrieving-users-roles.adoc[Retrieving Users Roles]
-**** xref:keycloak/logging-out.adoc[Logging Out]
-// DIGGER
-** xref:digger/index.adoc[{digger-service}]
-*** xref:digger/provisioning.adoc[Provisioning]
-*** xref:digger/configuring-dev-env-digger.adoc[Configuring a Dev environment]
+
 // CUSTOM
-** xref:custom/index.adoc[{custom-service}]
-*** xref:custom/provisioning.adoc[Provisioning]
-*** xref:custom/binding.adoc[Binding]
-*** xref:custom/configuring-dev-env-custom.adoc[Configuring a Dev environment]
-// SECURITY
-** xref:security/index.adoc[{device-security-service}]
-*** xref:security/provisioning.adoc[Provisioning]
-*** xref:security/binding.adoc[Binding]
-*** xref:security/configuring-dev-env-security.adoc[Configuring a Dev environment]
-*** xref:security/proc_performing-device-checks.adoc[Device Checks]
-*** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
-*** xref:security/proc_self-signed-certs.adoc[Self Signed Certificates]
-*** xref:security/proc_adding_secure_storage.adoc[Secure Storage]
+* xref:custom/index.adoc[{custom-service}]
+** xref:custom/provisioning.adoc[Provisioning]
+** xref:custom/binding.adoc[Binding]
+** xref:custom/configuring-dev-env-custom.adoc[Using Runtime Connectors in an App]
+
+// DIGGER
+* xref:digger/index.adoc[{digger-service}]
+** xref:digger/provisioning.adoc[Provisioning]
+** xref:digger/creating-a-build-configuration.adoc[Creating a Build Configuration]
+** xref:digger/running-a-build.adoc[Building Apps]
+** xref:digger/deploy-the-app.adoc[Deploying Apps]
+
+
+* xref:ref_api.adoc[API Reference]
+** xref:ref_api.adoc#android[Android]
+** xref:ref_api.adoc#ios[iOS]
+** xref:ref_api.adoc#cordova[Cordova]
+** xref:ref_api.adoc#xamarin[Xamarin]
+
+
 // SHOWCASE APPS
 * xref:showcase-apps/index.adoc[Showcase Apps]
 ** xref:showcase-apps/service-setup.adoc[Service Setup]
-** xref:showcase-apps/identity-management.adoc[{keycloak-service}]
+** xref:showcase-apps/identity-management.adoc[Identity Management]
 ** xref:showcase-apps/device-security.adoc[Device Security]
-** xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
-** xref:showcase-apps/metrics.adoc[{metrics-service}]
-** xref:testcard.adoc[Runtime Connectors]
-.Reference
-* xref:ref_api.adoc[API Reference]
+** xref:showcase-apps/push-notifications.adoc[Push Notifications]
+** xref:showcase-apps/metrics.adoc[Metrics]
 * xref:mobile-cli.adoc[Mobile CLI]

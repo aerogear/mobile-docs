@@ -1,42 +1,30 @@
 = AeroGear API Reference
 
+[[android]]
+== Android API Reference
 
-[role="primary"]
-.Android
-****
 The Android API documentation is published as 
 link:http://www.javadoc.io/doc/org.jboss.aerogear/aerogear-android-push/[Javadoc].
 
-****
+[[ios]]
+== iOS API Reference
 
-[role="secondary"]
-.iOS
-****
 iOS API documentation is available for:
 
 * link:/api/ios/latest/core/[Core]
 * link:/api/ios/latest/push/[Push]
 * link:/api/ios/latest/auth/[Auth]
 
-****
+[[cordova]]
+== Cordova API Reference
 
-
-[role="secondary"]
-.Cordova
-****
 Cordova API documentation is available for:
 
 * link:/api/cordova/latest/core/[Core]
 * link:/api/cordova/latest/cordova-plugin-aerogear-metrics/[Metrics]
 * link:/api/cordova/latest/auth/[Auth]
 
-****
+[[xamarin]]
+== Xamarin  API Reference
 
-
-
-[role="secondary"]
-.Xamarin
-****
 See the link:/api/xamarin/latest/[Xamarin API documentation]
-
-****

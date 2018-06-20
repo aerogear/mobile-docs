@@ -151,3 +151,6 @@ dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
 ----
 
 ****
+
+include::security/proc_self-signed-certs.adoc[]
+
