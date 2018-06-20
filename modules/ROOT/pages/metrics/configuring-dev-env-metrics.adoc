@@ -6,13 +6,13 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-* [x] You have provisioned one of the {product-name} as described in xref:metrics/provisioning.adoc[Provisioning {service-name} Service].
-* [x] You have associated the service with a {mobile-client} as described in xref:metrics/binding.adoc[Binding a {mobile-client} with the {service-name} Service] if you want to monitor usage by version of mobile app, platform and SDK.
+* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
+* [x] You have associated the service with a {mobile-client} as described in xref:metrics/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
-Metrics will be sent automatically from the Mobile Application once any of the components from {SDK} are installed.
+Metrics will be sent automatically from the mobile app once any of the components from {SDK} are installed.
 
-== Adding AeroGear SDK modules for the {service-name} Service
+== Next Steps
 
-//***TODO***
+* xref:metrics/analysing-app-usage.adoc[Analyzing App Usage]
