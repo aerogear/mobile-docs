@@ -55,6 +55,6 @@ include::provisioning-services.adoc[leveloffset=1]
 // include::integrating-services.adoc[leveloffset=1]
 
 
-== Binding a Mobile App Record with Mobile Services
+== Binding a {mobile-client} with Mobile Services
 
 include::{partialsdir}/generic-binding.adoc[leveloffset=1]

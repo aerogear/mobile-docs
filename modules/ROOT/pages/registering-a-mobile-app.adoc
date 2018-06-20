@@ -19,4 +19,4 @@ After the {mobile-client} is provisioned, you can navigate to it from Project Ov
 == Related Information
 
 * xref:provisioning-services.adoc[Provisioning Mobile Services]
-* xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a Mobile App Record with Mobile Services]
+* xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services]
