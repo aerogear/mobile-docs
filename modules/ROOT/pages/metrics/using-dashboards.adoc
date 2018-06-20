@@ -1,10 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Using dashboards to display {metrics-service} service data
+= Using dashboards to display {metrics-service} Service data
 
 == Overview of dashboards
 
-The metrics service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana] to display that data.
+The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana] to display that data.
 
 A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics. 
 See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started] guide for an introduction to dashboards.

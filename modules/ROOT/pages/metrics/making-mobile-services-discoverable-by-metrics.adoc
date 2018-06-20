@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 Mobile Services that expose a metrics endpoint will already be auto-discovered by the {metrics-service} Service.
 No additional steps are needed for Prometheus to poll for metrics from Mobile Services.
 
-However, to setup the {metrics-service} service to gather metrics from your service:
+However, to setup the {metrics-service} Service to gather metrics from your service:
 
 * Service has to have one of `org.aerogear.metrics/plain_endpoint` or
 `org.aerogear.metrics/ssl_endpoint` annotations.
@@ -17,7 +17,7 @@ However, to setup the {metrics-service} service to gather metrics from your serv
 
 Presence of one of the `org.aerogear.metrics/plain_endpoint` or `org.aerogear.metrics/ssl_endpoint`
 annotations makes the service auto-discoverable.
-Value of the annotation will inform metrics service about where to look for metrics data when scraping.
+Value of the annotation will inform {metrics-service} Service about where to look for metrics data when scraping.
 
 For example, if a service is exposing an HTTP metrics endpoint at
 `/metrics`, the annoation would be:

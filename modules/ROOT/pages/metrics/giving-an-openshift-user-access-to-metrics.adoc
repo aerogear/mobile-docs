@@ -2,15 +2,15 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Metrics
 
-= Sharing access to the {metrics-service}
+= Sharing access to the {metrics-service} Service
 
 == Overview
 
-The {metrics-service} service URL is only accessible by users who have *edit* permission for the project. By default, a project owner already has permission.
+The {metrics-service} Service URL is only accessible by users who have *edit* permission for the project. By default, a project owner already has permission.
 
-The {metrics-service} service creates routes to access Grafana and Prometheus. To protect these routes there is an OAuth reverse proxy sidecar container in front
+The {metrics-service} Service creates routes to access Grafana and Prometheus. To protect these routes there is an OAuth reverse proxy sidecar container in front
 of the Grafana and Prometheus containers to enforce authentication. The authentication is based on OpenShift permissions and is configured as part of the 
-provisioning of the metrics service. See the link:https://github.com/openshift/oauth-proxy[documentation for the proxy container] for 
+provisioning of the {metrics-service} Service. See the link:https://github.com/openshift/oauth-proxy[documentation for the proxy container] for
 more information about configuring the proxy. 
 
 == About OAuth proxy permissions

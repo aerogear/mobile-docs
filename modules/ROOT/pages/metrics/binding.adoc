@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-* [x] You have provisioned the {metrics-service} service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
+* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
 
 include::{partialsdir}/generic-binding.adoc[]
 
