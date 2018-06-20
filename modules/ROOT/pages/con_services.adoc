@@ -1,8 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
-= About Mobile Services
 
-To navigate to the documentation for a specific service, choose the service from the menu above. As new versions of services are released, the menu in the lower left corner allows you to navigate to the version of the documentation you require. 
+= About Mobile Services
 
 The following services are available:
 
@@ -52,8 +51,10 @@ include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
 ****
 
+include::provisioning-services.adoc[leveloffset=1]
+// include::integrating-services.adoc[leveloffset=1]
 
-== Next Steps
 
-* See xref:provisioning-services.adoc[Provisioning Mobile Services]
+== Binding a {mobile-client} with Mobile Services
 
+include::{partialsdir}/generic-binding.adoc[leveloffset=1]

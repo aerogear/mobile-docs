@@ -4,9 +4,9 @@ include::{partialsdir}/attributes.adoc[]
 
 Prerequisites:
 
-* [x] You have installed Minishift with the mobilecore addon as described in xref:minishift_install.inc.adoc[Getting Started].
+* [x] You have installed OpenShift with {product-name} as described in xref:index.adoc[Getting Started].
 
-You register a mobile app by creating a mobile app record in OpenShift:
+You register a mobile app by creating a {mobile-client-openshift}:
 
 . Log into the OpenShift console.
 . Click *Add to Project* and choose *Browse Catalog* from the options.
@@ -18,5 +18,5 @@ After the {mobile-client} is provisioned, you can navigate to it from Project Ov
 
 == Related Information
 
-* xref:provisioning-services.adoc[provisioning a mobile service]
-* xref:binding-mobile-app-record-to-mobile-services.adoc[binding a mobile app record with a mobile service]
+* xref:provisioning-services.adoc[Provisioning Mobile Services]
+* xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services]

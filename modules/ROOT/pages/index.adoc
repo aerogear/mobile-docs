@@ -1,15 +1,18 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::introduction/con_introduction-to-mobile-services.adoc[leveloffset=+1]
+:toc:
+:toclevels: 1
 
-include::introduction/con_introduction-to-push-notification.adoc[leveloffset=+1]
+= Getting Started with {product-name}
 
-include::introduction/con_introduction-to-security.adoc[leveloffset=+1]
-//Not for community release
-//include::introduction/con_introduction-to-data-sync.adoc[leveloffset=+1]
+For an introduction to {product-name}, see xref:con_services.adoc[About {product-name}].
 
-include::introduction/con_introduction-to-metrics.adoc[leveloffset=+1]
+include::installing-mobile-services.adoc[leveloffset=1]
 
-include::introduction/con_introduction-to-identity-management.adoc[leveloffset=+1]
+include::mobile_terminology.adoc[leveloffset=1]
 
-include::introduction/con_introduction-to-cicd.adoc[leveloffset=+1]
+// include::getting-started-with-openshift.adoc[leveloffset=1]
+
+include::workflow.adoc[leveloffset=1]
+
+
