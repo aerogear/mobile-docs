@@ -1,0 +1,20 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Deploying the App
+
+== Prerequisites
+
+* [x] xref:digger/provisioning.adoc[Provision {digger-service}].
+* [x] A mobile client, either xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
+* [x] A xref:digger/creating-a-build-configuration.adoc[build config has been created].
+* [x] A xref:digger/running-a-build.adoc[completed build].
+
+== Build History
+
+You can see your client’s previous builds by going into the Build tab of your client’s overview page.
+
+The build history for each build can be seen by clicking on Show build history under the Builds section of the selected build.
+
+From here, you can view a build’s logs, check it’s status, duration and when it was created. Each build is linked to the openshift build view with further information.
+
+The artefact for each successful builds can also be retrieved from here by clicking on the Download button associated with the build you wish to download.
