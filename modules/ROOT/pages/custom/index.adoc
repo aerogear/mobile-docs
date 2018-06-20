@@ -6,9 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-custom']
 = About the {custom-service} Service
 
-The {custom-service} allows you associate your back-end application with mobile services.
-* Easily switch Dev, Test and Prod  back-end services
-
+include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service]
 
 [id='{context}_additional-resources-{context}']
 == Additional resources
