@@ -30,21 +30,21 @@ dependencies {
 +
 [source,java]
 ----
-ServiceConfiguration config = MobileCore.getInstance().getServiceConfigurationById("[SERVICE NAME]");
+ServiceConfiguration customConfig = MobileCore.getInstance().getServiceConfigurationById("[SERVICE NAME]");
 ----
 
 . Get the URL of the custom service:
 +
 [source,java]
 ----
-String url = config.getUrl();
+String url = customConfig.getUrl();
 ----
 
 . Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
 +
 [source,java]
 ----
-String property = config.getProperty("[PROPERTY NAME]");
+String property = customConfig.getProperty("[PROPERTY NAME]");
 ----
 
 ****
@@ -65,21 +65,21 @@ end
 +
 [source,swift]
 ----
-let config = AgsCore.instance.getConfigurationById("[SERVICE NAME]")
+let customConfig = AgsCore.instance.getConfigurationById("[SERVICE NAME]")
 ----
 
 . Get the URL of the custom service:
 +
 [source,swift]
 ----
-let url = config.url
+let url = customConfig.url
 ----
 
 . Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
 +
 [source,swift]
 ----
-let property: JSONValue = config.config["[PROPERTY NAME]"]
+let property: JSONValue = customConfig.config["[PROPERTY NAME]"]
 ----
 
 ****
@@ -87,9 +87,54 @@ let property: JSONValue = config.config["[PROPERTY NAME]"]
 [role="secondary"]
 .Cordova
 ****
+. Use the `getConfigById` function to get the service configuration associated with your custom service:
++
+[source,javascript,subs="attributes"]
+----
+const core = require("@aerogear/core").INSTANCE;
+const customConfig = core.getConfigById("[SERVICE NAME]");
+----
++
+NOTE: `@aerogear/core` is a dependency of `@aerogear/app` which should always be installed because it contains the `init`function to initialize all other SDK modules.
+
+. Get the URL of the custom service:
++
+[source,javascript]
+----
+const url = customConfig.url;
+----
+
+. Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
++
+[source,javascript]
+----
+// customConfig.config contains the parsed Service JSON Configuration
+const property = customConfig.config["[PROPERTY NAME]"];
+----
+
 ****
 
 [role="secondary"]
 .Xamarin
 ****
+. Use the `GetServiceConfigurationById` function to get the service configuration associated with your custom service:
++
+[source,csharp]
+----
+var customConfig = MobileCore.Instance.GetServiceConfigurationById("[SERVICE NAME]");
+----
+
+. Get the URL of the custom service:
++
+[source,csharp]
+----
+var url = customConfig.Url;
+----
+
+. Get custom configuration properties (specified in *Service JSON Configuration* at provision time):
++
+[source,csharp]
+----
+var property = customConfig["[PROPERTY NAME]"];
+----
 ****
