@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-== Obtaining the Mobile SDK Configuration File
+= Obtaining the Mobile SDK Configuration File
 
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
