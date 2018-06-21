@@ -13,7 +13,7 @@ The build history for each build is also captured.
 == Prerequisites
 
 * xref:digger/provisioning.adoc[A provisioned {digger-service} service].
-** One of the following mobile clients: xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
+* One of the following mobile clients: xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
 * xref:digger/proc_creating-a-build-configuration.adoc[Created a Build Configuration].
 * xref:digger/proc_building-a-mobile-app.adoc[Built a Mobile App].
 
