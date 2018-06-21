@@ -6,8 +6,8 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_proc_deploying-a-mobile-app']
 = Deploying a Mobile App
 
-You can use the OpenShift UI to deploy a mobile app.
-The build history for each build is also captured.
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device, this binary can be downloaded for any succesful build in 
+the build history.
 
 [discrete]
 == Prerequisites
@@ -22,7 +22,13 @@ The build history for each build is also captured.
 
 . Open the OpenShift UI.
 
-. Open the "Build tab".
+. In the mobile overview for the mobile client open the "Build tab".
+
+. Expand the pipeline which you wish to deploy.
+
+. Click 'Download' on the build you wish to deploy.
+
+. Download the binary, either by the URL or scan the QR code from your mobile device.
 
 [discrete]
 == Additional Resources
