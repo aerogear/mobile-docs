@@ -24,11 +24,9 @@ This binary can be downloaded for any successful build in the build history.
 
 . In the mobile overview screen for the mobile client, open the *Build tab*.
 
-. Expand the buildconfig which you want to deploy.
+. Expand the *buildconfig* that you want to deploy and click *Download*.
 
-. Click *Download* on the build you want to deploy.
-
-. Download the binary, either by scanning the QR code using your mobile device or using the URL.
+. To download the binary to your mobile device, scan the QR code using your mobile device.
 
 [discrete]
 == Additional Resources
