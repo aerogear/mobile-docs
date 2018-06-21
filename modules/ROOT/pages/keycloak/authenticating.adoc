@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= User authentication
+= Adding User Authentication to your Mobile App
 
 This section describes how to perform user authentication for the supported platforms. On authentication a browser window will open and prompt the user for login credentials.
 
@@ -131,7 +131,7 @@ authService.Authenticate(authOptions).ContinueWith(user =>
 ----
 ****
 
-== Logging out
+== Adding Log Out Option to your Mobile App
 
 The following section describes how to perform a logout.
 

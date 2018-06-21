@@ -61,7 +61,7 @@ import AGSAuth
 Install the auth package:
 [source,bash]
 ----
-npm install @aerogear/auth
+$ npm install @aerogear/auth
 ----
 ****
 
@@ -167,7 +167,7 @@ NOTE: Initialization will also perform authentication
 .Xamarin
 ****
 
-. Create an link:[intent filter] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is manual for Xamarin Android targets and is needed to allow the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
+. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
 +
 [source,xml]
 ----
