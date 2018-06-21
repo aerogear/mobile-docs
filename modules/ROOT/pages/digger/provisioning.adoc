@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Digger
+:service-name: Mobile CI/CD
 
 = Provisioning {service-name} Service
 
@@ -17,4 +17,4 @@ When provisioning a {digger-service} service, you are prompted to set the follow
 * Android SDK Auto Package Install (required)*: Choose whether to automatically install packages
 * *Android SDK package config*: Add any configuration details you require for the SDK config file.
 
- include::{partialsdir}/generic-provisioning-end.adoc[]
+include::{partialsdir}/generic-provisioning-end.adoc[]

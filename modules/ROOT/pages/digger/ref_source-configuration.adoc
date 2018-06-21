@@ -1,0 +1,71 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_source-configuration
+
+[id='{context}_ref_source-configuration']
+
+= Source Configuration Reference material
+
+To build your mobile client, you need to provide source configuration.
+This section describes aspects of a mobile client's source configuration.
+
+== Repository
+
+Add Git Repository URL:: To provide additional advanced information such as a different git ref (default is master), or Jenkinsfile path (default is the root of the repo), use the advanced options.
+Authentication Type Public:: Use this for public repos that require no authentication.
+Authentication Type Basic:: Username/password credentials, use this for https/http repo urls that require authentication.
+Authentication Type SSH:: SSH Private Key Authentication, use this for ssh repo urls (git@).
+
+NOTE: When adding credentials for Authentication Type Basic, ensure the name is unique.
+
+== Advanced Options
+
+Selecting *Advanced Options* in the source configuration section displays a number of additional options:
+Git Reference:: Optional branch, tag, or commit to checkout, default is master. This option can be used to select different branches of you application repo for different builds, for example, release vs develop.
+Jenkins file path:: Optional path to where the Jenkinsfile is located in your application repo. The default is the root of the repo.
+
+== Build Configuration
+
+Add configuration relating to the type of build being created e.g debug or release.
+The type of information required here will depend on the type of application being built.
+
+=== Android
+Add Build Type:
+Debug:: An Android debug build, no additional information required
+Release:: An Android release build, requires an upload of a password protected PKCS12 file containing a key protected by the same password.
+
+==== Release Build Type
+
+As a release build will need to be signed, you need to specify the keystore and private key passwords.
+
+==== Keystore located in source code
+
+If your keystore is checked into your source code, you will need to take the password value in your build script as an environmental variable. This will allow you to set this environmental variable as part of your client build from within the OpenShift UI. This can be done directly when creating the mobile client build or afterwards by editing the build config.
+
+==== External keystore
+
+If you have an external keystore, you should ensure to select the checkbox to use an external keystore once this is done, you will be asked for the following additional information:
+
+Name:: A unique name for the android credentials you are adding e.g. my-android-release-cert
+KeyStore Password:: The password for the android keystore and the PKCS12 archive (The password for the archive and the keystore must be the same)
+KeyStore Alias:: The entry name of the private key/certificate chain you want to use to sign your APK(s). This entry must exist in the key store uploaded. If your key store contains only one key entry, which is the most common case, you can leave this field blank.
+Android KeyStore:: Password protected PKCS12 file containing a key protected by the same password.
+
+The PKSC12 archive of your android keystore certificate can be generated using the following command:
+[source,bash]
+----
+keytool -importkeystore -srckeystore <your-android-cert.keystore> -destkeystore <your-android-cert>.p12 -deststoretype PKCS12 -srcalias <your-android-cert-alias>
+----
+
+=== iOS
+
+Build Type:: Build type value to be used by xcodebuild
+Name:: The unique credential name to be used in jenkins
+Apple Developer Profile:: An xcode zip generated file that contains all required files (certificate, private key and provisioning profile) to sign an iOS app. For more information, see this documentation on exporting developer accounts in XCode.
+Apple Developer Profile Password:: The developer profile password to be used by jenkins when importing the developer profiles private key.
+
+=== Cordova
+
+Platform:: The platform that the app will target.
+Build Type:: The build type value (debug or release). Depending on the platform selected, this may result in additional parameters to be required.

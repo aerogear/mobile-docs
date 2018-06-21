@@ -1,0 +1,42 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_building-a-mobile-app
+
+[id='{context}_proc_building-a-mobile-app']
+= Building a Mobile App
+
+You can use the OpenShift UI to build a mobile app.
+
+[discrete]
+== Prerequisites
+
+* xref:digger/provisioning.adoc[A provisioned {digger-service} service].
+* One of the following mobile clients: xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
+* xref:digger/proc_creating-a-build-configuration.adoc[Created a Build Configuration].
+
+== Start a Build
+
+. Open the OpenShift UI.
+
+. Browse to the *Details Page* screen.
+
+. From the *Builds Tab*, select the mobile app you want to build click *Start Build*.
++
+NOTE: Expanding the build section will show the current status of this build.
+
+. Check the mobile app build status by expanding the mobile client box.
++
+NOTE: This box lists the last 5 builds for this client.
+
+. To view the mobile app as a pipeline build, from the left menu, click *Builds > Pipeline*.
++
+Each build step is displayed (along with the current step status: completed, error or running) based on the stages in your Jenkinsfile code.
+
+.  To view the full build log, click *view log* which redirects you to your Jenkins instance.
+
+[discrete]
+== Additional Resources
+
+* For more information, see xref:digger/ref_source-configuration.adoc[Source Configuration Reference material].
+* For more information, see xref:digger/ref_terminology.adoc[{digger-service} Reference material].
