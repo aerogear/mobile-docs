@@ -24,7 +24,7 @@ This binary can be downloaded for any successful build in the build history.
 
 . In the mobile overview screen for the mobile client, open the *Build tab*.
 
-. Expand the pipeline which you want to deploy.
+. Expand the buildconfig which you want to deploy.
 
 . Click *Download* on the build you want to deploy.
 
