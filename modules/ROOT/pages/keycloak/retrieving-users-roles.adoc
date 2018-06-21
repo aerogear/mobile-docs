@@ -100,4 +100,4 @@ bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
 
 == Next steps
 
-xref:keycloak/single-sign-on.adoc[Single Sign On]
+xref:keycloak/sso.adoc[Single Sign On]
