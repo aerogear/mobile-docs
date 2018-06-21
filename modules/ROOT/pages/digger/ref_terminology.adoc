@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 
 [id='{context}_ref_terminology']
 
-= Reference material
+= {digger-service} Reference material
 
 This section describes terminology that is associated with {digger-service}.
 
@@ -18,4 +18,3 @@ Build:: A single run of Jenkins against a source code repository.
 Artifact:: The result of a succesful build in Jenkins, this is the binary that can be installed on to a mobile device.
 
 Jenkinsfile:: This is a file contained in the source code repository which instructs Jenkins on how to build an artifact with this source code.
-

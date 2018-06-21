@@ -3,14 +3,19 @@ include::{partialsdir}/attributes.adoc[]
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: con_introduction-to-build
 
-
 [id='{context}_con_introduction-to-build']
 = About {digger-service}
 
 include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 
-include::./ref_terminology.adoc[leveloffset=+1]
+include::./proc_creating-a-build-configuration.adoc[leveloffset=+1]
+
+include::./proc_building-a-mobile-app.adoc[leveloffset=+1]
+
+include::./proc_deploying-a-mobile-app.adoc[leveloffset=+1]
 
 [id='{context}_additional-resources-{context}']
 == Additional resources
 
+include::./ref_source-configuration.adoc[Source Configuration Reference material]
+include::./ref_terminology.adoc[{digger-service} Reference material]

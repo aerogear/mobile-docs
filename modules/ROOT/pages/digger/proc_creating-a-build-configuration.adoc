@@ -1,0 +1,35 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_creating-a-build-configuration
+
+[id='{context}_proc_creating-a-build-configuration']
+= Creating a Build Configuration
+
+You can use the OpenShift UI to create a new client build for an existing mobile client.
+
+[discrete]
+== Prerequisites
+
+* xref:digger/provisioning.adoc[A provisioned {digger-service} service].
+* One of the following mobile clients: xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
+* To build your mobile client, you need to provide source configuration.
+
+[discrete]
+== Procedure
+
+. Open the OpenShift UI.
+
+. Browse to the *Project Overview* screen and find the mobile client you want to build.
+
+. Click on the name of the mobile client to open the details view.
+
+. At the top right of the screen, click the *drop down* and select *Create Build*.
+
+. When the *Client Build Form* screen opens, give the new build a unique name.
+
+[discrete]
+== Additional Resources
+
+* For more information, see xref:digger/ref_source-configuration.adoc[Source Configuration Reference material].
+* For more information, see xref:digger/ref_terminology.adoc[{digger-service} Reference material].
