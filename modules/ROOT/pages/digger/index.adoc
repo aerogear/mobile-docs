@@ -8,14 +8,8 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 
-include::./proc_creating-a-build-configuration.adoc[leveloffset=+1]
-
-include::./proc_building-a-mobile-app.adoc[leveloffset=+1]
-
-include::./proc_deploying-a-mobile-app.adoc[leveloffset=+1]
-
 [id='{context}_additional-resources-{context}']
 == Additional resources
 
-include::./ref_source-configuration.adoc[Source Configuration Reference material]
-include::./ref_terminology.adoc[{digger-service} Reference material]
+include::./ref_source-configuration.adoc[leveloffset=+1]
+include::./ref_terminology.adoc[leveloffset=+1]
