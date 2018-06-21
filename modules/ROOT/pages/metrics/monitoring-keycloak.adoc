@@ -7,71 +7,56 @@ include::{partialsdir}/attributes.adoc[]
 * [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
 * [x] You have provisioned the {keycloak-service} Service as described in xref:keycloak/provisioning.adoc[Provisioning {keycloak-service} Service].
 
-
 NOTE: The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
 
 == Overview
 
-After the {metrics-service} Service (includes Grafana tool and Prometheus monitoring system) and {keycloak-service} Service are provisioned,
-you should be able to see the "Keycloak Metrics" in the list of available dashboards 
-(navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
+After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
+you should be able to see the "Keycloak Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
 
-== Dashboard's panels description
+== Dashboard panel descriptions
 
-Keycloak dashboard consists of several panels which give you overview of the specific
-events, such as number of registered users, memory usage etc.
+The Keycloak dashboard consists of several panels which give you an overview of the specific
+events, such as the number of registered users, memory usage etc.
 
-See below for the detailed description of each panel and its values
+Below you will find a detailed description of each panel and its values.
 
-=== Singlestat Panels
+== Singlestat Panels
 
-==== Total Registrations
+Singlestat panels show you the main summary of a single data series.
 
-Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
 
-==== Total Logins
+* *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
 
-Total number of successful logins (only non-admin users) over all providers.
+* *Total Login Errors*: Total number of failed login attempts.
 
-==== Total Login Errors
+* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
 
-Total number of failed login attempts.
+== Graph panels
 
-==== Current Memory
+Used to show how certain values change over time, e.g. the number of successful logins.
 
-The amount of memory currently used by the {keycloak-service} Service
+* *Logins*: Overview of the successful logins over time
 
-=== Graph panels
+* *Login Errors*: Overview of the failed login attempts over time
 
-==== Logins
+* *Memory Usage*: The values in this graph represents the following:
 
-Overview of the successful logins over time
-
-==== Login Errors
-
-Overview of the failed login attempts over time
-
-==== Memory Usage
-
-The values in this graph represents the following:
-
-. *Used* - The amount of memory currently used by the {keycloak-service} Service
-. *Commited* - The amount of memory that is guaranteed to be available for use (by JVM)
-. *Max* - The maximum amount of memory that can be used for memory management
+** *Used*: The amount of memory currently used by the {keycloak-service} Service
+** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
+** *Max*: The maximum amount of memory that can be used for memory management
 
 
-=== Pie Charts
+== Pie Charts
 
-==== Logins Per Provider
+Used to show the distribution of data, e.g. the number of logins per identity provider.
 
-Overview of the successful (non-admin) user logins per provider
+* *Logins Per Provider*: Overview of the successful (non-admin) user logins per provider
 
-==== Registrations Per Provider
+* *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
 
-Overview of the successful (non-admin) user registrations per provider.
-
-
-== External resources
+== Additional resources
 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
