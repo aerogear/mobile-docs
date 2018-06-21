@@ -4,8 +4,8 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-[x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
-[x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
+* [x] You have provisioned one of the {product-name} as described in xref:provisioning-services.adoc[Provisioning {product-name}].
+* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
@@ -61,7 +61,7 @@ NOTE: To implement certificate pinning in the individual SDKs, see link:certific
 
 . In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
 +
-[source,ruby]
+[source,ruby,subs="attributes"]
 ----
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -70,8 +70,8 @@ use_frameworks!
 
 target :'YourTarget' do
     ## Require one of the AeroGear SDK's here
-    pod 'AGSPush'
-    pod 'AGSAuth'
+    pod 'AGSPush', '{release-number}'
+    pod 'AGSAuth', '{release-number}'
 end
 ----
 +
@@ -136,20 +136,53 @@ init(aerogearConfig);
 dotnet add package AeroGear.Mobile.Core --version {release-number}
 ----
 
-. For Android install:
+. Android
+.. Install the platform module:
 +
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
 ----
 
-. For iOS install:
+.. Initialize Core (for Xamarin.Forms):
++
+[source,bash,subs="attributes"]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+LoadApplication(app);
+----
+
+.. Initialize Core (for Legacy Xamarin):
++
+[source,bash,subs="attributes"]
+----
+MobileCoreAndroid.Init(ApplicationContext);
+----
+
+. iOS
+.. Install the platform module:
 +
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
 ----
 
+.. Initialize Core (for Xamarin Forms):
++
+[source,bash,subs="attributes"]
+----
+var app = new App();
+MobileCoreIOS.Init(app.GetType().Assembly);
+LoadApplication(app);
+----
+
+.. Core (for Legacy Xamarin):
++
+[source,bash,subs="attributes"]
+----
+MobileCoreIOS.Init();
+----
 ****
 
 include::security/proc_self-signed-certs.adoc[]

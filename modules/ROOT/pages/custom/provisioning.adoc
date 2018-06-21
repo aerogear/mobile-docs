@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Custom Runtime Connector
 
-= Provisioning {service-name} Service
+= Provisioning the {service-name} Service
 
 == Prerequisites
 
@@ -18,3 +18,7 @@ When prompted, enter the following:
 * *Service JSON Configuration*: Service configuration in a valid JSON format.
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
+
+== Next steps
+
+xref:custom/binding.adoc[Binding] to the {service-name} Service
