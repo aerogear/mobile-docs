@@ -39,6 +39,7 @@ We configure the local development installation of {org-name} {product-name} usi
 [source,bash,subs="attributes"]
 ----
 git clone git@github.com:aerogear/mobile-core.git
+cd mobile-core
 git checkout {release-number}
 ----
 
