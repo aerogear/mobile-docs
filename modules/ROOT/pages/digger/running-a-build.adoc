@@ -1,0 +1,25 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Building a Mobile App
+
+== Prerequisites
+
+* [x] xref:digger/provisioning.adoc[Provision {digger-service}].
+* [x] A mobile client, either xref:android/index.adoc[Android], xref:cordova/index.adoc[Cordova], xref:xamarin/index.adoc[xamarin] or xref:ios/index.adoc[ios].
+* [x] A xref:digger/creating-a-build-configuration.adoc[build config has been created].
+
+== Start a Build
+
+On the mobile client details page, the builds tab shows the available builds for this mobile client. Find the build to run and select "Start Build", expanding the build section will show the current status of this build.
+
+== Build Status
+
+=== Mobile Client Overview
+
+You can check your mobile build status by expanding a mobile client box. This box lists the last 5 builds for this client. This allows you to either click on one specific build or check all pipeline builds for this mobile client app.
+
+=== Openshift Pipeline
+
+Mobile client builds are just openshift pipeline builds which are listed in Builds > Pipeline from the left menu.
+
+Each build step will be displayed (along with the current step status: completed, error or running) based on the defined stages in your Jenkinsfile code. You can check the full build log by clicking on "view log" which will redirect you to your Jenkins instance.

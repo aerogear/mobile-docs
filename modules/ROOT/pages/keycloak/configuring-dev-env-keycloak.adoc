@@ -11,6 +11,3 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
-== Adding AeroGear SDK modules for the {service-name} Service
-
-//***TODO***

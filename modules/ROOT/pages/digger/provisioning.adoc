@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Digger
+:service-name: Mobile CI/CD
 
 = Provisioning {service-name} Service
 

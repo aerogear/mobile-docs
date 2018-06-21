@@ -1,17 +1,28 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Setting up {keycloak-service} service SDK
+= Coding an App to Use Identity Management
+
+include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=1]
+include::keycloak/keycloak-setup.adoc[leveloffset=1]
+include::keycloak/android-additional-configuration.adoc[leveloffset=1]
+include::keycloak/retrieving-current-user.adoc[leveloffset=1]
+include::keycloak/retrieving-custom-user-attributes.adoc[leveloffset=1]
+
+include::keycloak/logging-out.adoc[leveloffset=1]
+
+
+== Setting up {keycloak-service} service SDK
 
 This guide will help you to set up the {keycloak-service} service SDK in your App.
 
-== Prerequisites
+=== Prerequisites
 
 * xref:keycloak/provisioning.adoc[Provisioned {keycloak-service} service].
 * xref:keycloak/binding.adoc[Binding] created.
 * xref:keycloak/configuring-dev-env-keycloak.adoc[Configured dev environment].
 * xref:keycloak/keycloak-setup.adoc[Configured Keycloak].
 
-== Importing the libraries
+=== Importing the libraries
 
 [role="primary"]
 .Android
@@ -91,3 +102,4 @@ try! AgsAuth.instance.configure(authConfig: authenticationConfig)
 ****
 
 ****
+

@@ -1,10 +1,14 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Setting up {unifiedpush-service} service SDK
+= Coding a Push Notifications App
+
+include::push/configuring-dev-env-push.adoc[leveloffset=1]
+
+== Setting up {unifiedpush-service} service SDK
 
 This guide will help you to set up the {unifiedpush-service} service SDK in your App.
 
-== Prerequisites
+=== Prerequisites
 
 [role="primary"]
 .Android
@@ -20,7 +24,7 @@ You need a Firebase account. See link:google-setup.html[Google setup] to get sta
 You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple setup] to get started.
 ****
 
-== Importing the libraries
+=== Importing the libraries
 include::{partialsdir}/attributes.adoc[]
 
 [role="primary"]
@@ -110,7 +114,7 @@ npm install --save @aerogear/push
 
 
 
-== Device registration
+=== Device registration
 
 To make use of the {unifiedpush-service} service devices need to be registered by calling an endpoint of the server.
 The SDKs will handle this for you and the following steps will give you everything you need to start working with push notifications.
