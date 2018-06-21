@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-== Provisioning {product-name}
+= Provisioning {product-name}
 
 
 == Prerequisites
