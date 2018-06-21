@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 = Deploying a Mobile App
 
 You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device.
-This binary can be downloaded for any succesfult build in the build history.
+This binary can be downloaded for any successful build in the build history.
 
 [discrete]
 == Prerequisites
