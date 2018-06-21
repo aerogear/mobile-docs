@@ -10,4 +10,4 @@ After the binding is finished the {mobile-client} has been updated with the cust
 
 == Next steps
 
-* xref:custom/usage.adoc[Using] the custom runtime connector in an App
+* xref:custom/configuring-dev-env-custom.adoc[Using] the custom runtime connector in an App
