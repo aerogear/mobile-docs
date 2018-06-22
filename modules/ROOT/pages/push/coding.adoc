@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Coding a Push Notifications App
 
-include::push/configuring-dev-env-push.adoc[leveloffset=1]
+include::configuring-dev-env-push.adoc[leveloffset=1]
 
 == Setting up {unifiedpush-service} service SDK
 
