@@ -9,6 +9,7 @@ Prerequisites:
 You register a mobile app by creating a {mobile-client-openshift}:
 
 . Log into the OpenShift console.
+. Choose your project.
 . Click *Add to Project* and choose *Browse Catalog* from the options.
 +
 You can filter the catalog items to only show mobile specific items by clicking the *Other* tab.
