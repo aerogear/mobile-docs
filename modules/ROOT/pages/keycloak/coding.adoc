@@ -1,18 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Coding an App to Use Identity Management
-
-include::configuring-dev-env-keycloak.adoc[leveloffset=1]
-
-include::keycloak-setup.adoc[leveloffset=1]
-
-//include::keycloak/android-additional-configuration.adoc[leveloffset=1]
-
-include::retrieving-current-user.adoc[leveloffset=1]
-
-include::retrieving-custom-user-attributes.adoc[leveloffset=1]
-
-include::logging-out.adoc[leveloffset=1]
+include::./configuring-dev-env-keycloak.adoc[]
 
 == Setting up {keycloak-service} service SDK
 
@@ -20,39 +8,88 @@ This guide will help you to set up the {keycloak-service} service SDK in your Ap
 
 === Prerequisites
 
-* xref:keycloak/provisioning.adoc[Provisioned {keycloak-service} service].
-* xref:keycloak/binding.adoc[Binding] created.
-* xref:keycloak/configuring-dev-env-keycloak.adoc[Configured dev environment].
-* xref:keycloak/keycloak-setup.adoc[Configured Keycloak].
+* [x] xref:keycloak/provisioning.adoc[Provisioned {keycloak-service} service].
+* [x] xref:keycloak/binding.adoc[Binding] created.
+* [x] xref:keycloak/configuring-dev-env-keycloak.adoc[Configured dev environment].
+* [x] Read the xref:configuring-dev-env.adoc[general app setup guide].
 
 === Importing the libraries
 
 [role="primary"]
 .Android
 ****
-. Import Core module.
-
-. Specify the schema of the redirect url for your Android project in `android.defaultConfig.manifestPlaceholders` of the apps `build.gradle` file.
+. Import the auth module
 +
-NOTE: It should match the schema specified in the `Valid Redirect URIs` section for the client in Keycloak.
-
-. TODO: Import auth module.
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation "org.aerogear:aerogear-auth:{release-number}"
+}
+----
 ****
 
 [role="secondary"]
 .iOS
 ****
-* Add dependency to your Podfile:
+. Add the dependency to your Podfile
 +
+[source,ruby,subs="attributes"]
 ----
-pod 'AGSAuth'
+target '[TARGET NAME]' do
+    pod 'AGSAuth', '{release-number}'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSAuth
 ----
 ****
 
 [role="secondary"]
 .Cordova
 ****
+Install the auth package:
+[source,bash]
+----
+$ npm install @aerogear/auth
+----
+****
 
+[role="secondary"]
+.Xamarin
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
+
+. Install the Core package:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. For Android run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+----
+
+. For iOS run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+----
 ****
 
 == Initializing the SDK
@@ -60,37 +97,35 @@ pod 'AGSAuth'
 [role="primary"]
 .Android
 ****
-`AuthService` can be retrieved using the `MobileCore#getInstance` method.
 
+. Retrieve the auth service
++
 [source,java]
 ----
 AuthService authService = MobileCore.getInstance().getService(AuthService.class);
 ----
 
-Any subsequent `getService` call will return the same instance of `AuthService`.
-
-Before the `AuthService` can be used `AuthService#init` must be invoked once in an app.
-
-[source,java]
+. Specify the redirect URL. It is recommended to use the package name of your app.
++
 ----
-// Specify redirect URI. It is recommended to use the package name of your app.
 AuthServiceConfiguration authServiceConfig = new AuthServiceConfiguration
     .AuthConfigurationBuilder()
     .withRedirectUri("org.aerogear.mobile.example:/callback")
     .build();
-
-// You only need to invoke this once every subsequent retrieval of the AuthService
-// will retrieve the same instance.
-authService.init(context, authServiceConfig);
 ----
 
-Follow xref:keycloak/android-additional-configuration.adoc[this guide] for additional configuration.
+. Before the auth service can be used `init` must be invoked once in an app
++
+[source,java]
+----
+authService.init(context, authServiceConfig);
+----
 ****
 
 [role="secondary"]
 .iOS
 ****
-The Auth SDK can be initialised with configuration options. Use the redirect URL xref:keycloak/keycloak-setup.adoc[configured in Keycloak].
+Set your custom configuration to the auth service instance, making sure the redirect URL matches the App's Bundle Id.
 
 [source,swift]
 ----
@@ -104,4 +139,75 @@ try! AgsAuth.instance.configure(authConfig: authenticationConfig)
 .Cordova
 ****
 
+Import and initialize Auth:
+
+[source,javascript]
+----
+const Auth = require('@aerogear/auth').Auth;
+
+const authService = new Auth();
+const initOptions = { onLoad: "login-required" };
+
+authService.init(initOptions)
+    .then(() => {
+        // successful init & authentication
+    })
+    .catch((err) => {
+        // initialization error
+    });
+----
+
+You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
+
+NOTE: Initialization will also perform authentication
+
 ****
+
+[role="secondary"]
+.Xamarin
+****
+
+. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
++
+[source,xml]
+----
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity" android:exported="true"  android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="org.aerogear.mobile.example" />
+    </intent-filter>
+</activity>
+----
+
+. Initialize the Auth module
+.. For an Android app (MainActivity.cs):
++
+[source,csharp]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
++
+NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app].
+
+.. For an iOS app (AppDelegate.cs):
++
+[source,swift]
+----
+var app = new App();
+MobileCore core = MobileCoreIOS.Init(app.GetType().Assembly);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
+
+****
+
+== Next steps
+
+xref:keycloak/authenticating.adoc[User authentication]
