@@ -1,2 +1,20 @@
 include::{partialsdir}/attributes.adoc[]
 
+= {unifiedpush-service}
+
+[discrete]
+== Prerequisites
+
+* [x] You have setup the services as described in xref:showcase-apps/service-setup.adoc[Service Setup].
+* [x] You have setup the showcase app locally as described in xref:showcase-apps/service-setup.adoc[Service Setup].
+
+== Giving {unifiedpush-service} a try
+
+. In order to test push notifications, you need to send push notification first as described in
+xref:push/admin-ui.adoc[{push-ui}]
+. Once you have sent a push notification, you will see the the notification in your device that runs
+the showcase app.
+
+== Next Steps
+
+* xref:showcase-apps/metrics.adoc[{metrics-service}]

@@ -1,2 +1,17 @@
 include::{partialsdir}/attributes.adoc[]
 
+= {metrics-service}
+
+[discrete]
+== Prerequisites
+
+* [x] You have setup the services as described in xref:showcase-apps/service-setup.adoc[Service Setup].
+* [x] You have setup the showcase app locally as described in xref:showcase-apps/service-setup.adoc[Service Setup].
+
+== Giving {metrics-service} a try
+
+When you launch the showcase app it automatically sends xref:metrics/analysing-app-usage.adoc[app and device metrics].
+You should be able see app and device data in Grafana.
+
+Also, when you perform xref:showcase-apps/device-security.adoc[device security] checks, metrics are also sent and available
+for inspection on Grafana.
