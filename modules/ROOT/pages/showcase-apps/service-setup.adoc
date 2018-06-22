@@ -50,7 +50,7 @@ For more information about features, see xref:keycloak/index.adoc[{keycloak-serv
 . To demonstrate {unifiedpush-service}, xref:push/provisioning.adoc[Provision the {unifiedpush-service} service]. For more information about features, see xref:push/index.adoc[{unifiedpush-service} Service]
 
 [[setting-up-the-showcase-app]]
-== Setting Up the Showcase App 
+== Setting Up the Showcase App
 
 === Prerequisites
 
@@ -251,7 +251,12 @@ $ npm run ionic:build
 .Xamarin
 
 ****
-TODO
+Run this command to install dependencies (optional):
+
+[source,bash]
+----
+$ nuget restore
+----
 ****
 
 [start=2]
@@ -308,9 +313,20 @@ $ ionic cordova run android --emulator    # run on the Android emulator
 .Xamarin
 
 ****
-TODO
+1. Open up `xamarin-showcase-template.sln` with VisualStudio.
+2. If you didn't run `nuget restore` before, right click on the solution in the left pane then click on `Restore Nuget Packages`.
+3. In the top bar, select the project to run: `Example.Android` or `Example.iOS`
+4. Again in the top bar, select the correct configuration:
+    * Debug/Release: for compiling Example.Android
+    * [Debug|Release]|iPhoneSimulator: to compile and run Example.iOS on the iPhoneSimulator
+    * [Debug|Release]|iPhone: to compile and run Example.iOS on a real iPhone device
+5. At the right of the configuration, select the target device (the android or iPhone version)
+6. Click on *Build -> Rebuild All*
+7. Click on the *Run* button in the top left
+
+NOTE: If no android devices are selectable, it could mean that no virtual android devices has been configured. To add one, click on *Tools->Device Manager->Add Device*
 ****
 
 == Next Steps
 
-* Create your own mobile app that uses the features of {product-name}. 
+* Create your own mobile app that uses the features of {product-name}.
