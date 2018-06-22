@@ -1,0 +1,67 @@
+[[using-self-signed-certificates-in-mobile-clients]]
+= Using Self-Signed Certificates in Mobile Apps
+
+Throughout the development lifecycle of a mobile apps, a common
+requirement is to integrate and connect with back-end
+services in a secure manner. However in order for the client
+device to connect over SSL/TLS, it needs to trust the root
+certificate authority. This cert must be installed on the client device
+to ensure that the client trusts server certificates that are signed by
+the certificate authority.
+
+When the certificate uses a trusted root certificate authority the cert is installed automatically.
+In a development environment, such as a local OpenShift cluster which uses
+self-signed certificates, you must extract the root certificate from the cluster, install it on the device and mark it as trusted.
+
+[[extracting-root-ca]]
+== Extracting the OpenShift Root Certificate Authority Cert
+
+. Log into OpenShift as the admin user. If you followed the steps in the xref:index.adoc[Getting Started], you can log in using `admin/admin`.
+
+. Run the following command:
++
+[source,bash]
+----
+oc get secret router-certs --template='{{index .data "tls.crt"}}' -n default  |  \
+base64 --decode | sed -e '1,/^-----END RSA PRIVATE KEY-----$/ d'  > /tmp/localcluster.crt
+----
++
+The resulting file is located in the `/tmp` directory.
+
+[[installing-on-device]]
+== Installing the OpenShift Root Certificate Authority Cert on a Device
+
+. Configure a pin to ensure the certificate can be installed.
+
+. Copy the file to your device using one of the following methods:
++
+* USB *(Android only)* - Attach the device to the machine hosting
+OpenShift via USB and drag the certificate to the devices file system
+* Email attachment - Simply email the certificate to an address
+accessible from the device and download the attachment.
+* Cloud service - Use a cloud storage service such as Dropbox or Google
+Drive which is accessible from the device, browse to the certificate and
+proceed to download it.
+
+. Configure your device:
+
+[role="primary"]
+.Android
+
+****
+Go to Settings > Security > Install from storage. It should detect the
+certificate and let you add it to the device.
+****
+
+[role="secondary"]
+.iOS
+
+****
+When you download the certificate, the
+device should automatically detect a profile. Simply follow the on
+screen instructions to install it.
+
+Versions iOS 10.3 and later require an additional step to trust the now
+installed certificate. Instructions can be found on the
+https://support.apple.com/en-us/HT204477[Apple support site]
+****
