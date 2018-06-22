@@ -125,7 +125,7 @@ username: developer
 password: password
 ----
 
-.. Once logged in look for the "mobile" category across the top of the catalog package which indicates that the mobile features of {org-name} {product-name} have been succesfully installed.
+.. Once logged in look for the "Mobile" category across the top of the catalog package which indicates that the mobile features of {org-name} {product-name} have been succesfully installed.
 
 == Next Steps
 
