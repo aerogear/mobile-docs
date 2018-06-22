@@ -129,9 +129,9 @@ password: password
 
 == Next Steps
 
-* xref:con_services.adoc[Provision] a Mobile Service
+* xref:registering-a-mobile-app.adoc[Register] a Mobile App
 
-* xref:apps.adoc[Register] a Mobile App
+* xref:con_services.adoc[Provision] a Mobile Service
 
 == Troubleshooting
 
