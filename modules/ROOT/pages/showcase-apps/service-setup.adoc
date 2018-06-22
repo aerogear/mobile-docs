@@ -1,2 +1,295 @@
 include::{partialsdir}/attributes.adoc[]
 
+= Setting up Services for Showcase Apps
+
+Showcase apps demonstrate many features and they need their backend counterpart to work with.
+
+First of all, xref:registering-a-mobile-app.adoc[register an app] for the mobile platform of your choice.
+
+== Setting up {metrics-service} service
+
+To be able to send metrics from the showcase apps, you need to perform the following steps on the backend side:
+
+. xref:metrics/provisioning.adoc[Provision] {metrics-service} service.
+
+. xref:metrics/binding.adoc[Create a binding] for the mobile app for the {metrics-service} service.
+
+
+== Setting up {keycloak-service} service
+
+Showcase apps provide authentication functionality against {keycloak-service} service.
+
+. xref:keycloak/provisioning.adoc[Provision] {keycloak-service} service.
+
+. xref:keycloak/keycloak-setup.adoc[Setup] {keycloak-service}.
+
+. xref:keycloak/binding.adoc[Create a binding] for the mobile app for the {keycloak-service} service.
+
+. Create a user account in {keycloak-service} to use when logging in within the showcase app. To do that:
+
+** Open OpenShift console.
+** Click the URL for the {keycloak-service}.
+** Login with your OpenShift credentials.
+** Click *Users* item in the navigation menu.
+** Click *Add User*.
+** Fill in the details of the user as you wish. Make sure *User Enabled* toggle is active.
+** Click *Save*
+** You will be taken to details view for the user you have just added.
+** Click *Credentials*.
+** Type in a password in *New Password* and *Password Confirmation* inputs.
+** Uncheck the *Temporary* toggle so that you do not have to reset password on first login.
+** Press *Reset Password*
+
+
+== Setting up {unifiedpush-service} service
+
+Showcase apps demonstrate push notification functionality as well. These are the steps to perform
+on the backend side:
+
+. xref:push/provisioning.adoc[Provision] {unifiedpush-service} service.
+
+. xref:push/binding.adoc[Create a binding] for the mobile app for the {unifiedpush-service} service.
+
+== Setting up showcase app [TO BE MOVED TO SEPARATE PAGE]
+
+=== Prerequisites
+
+[role="primary"]
+.Android
+
+****
+You need the following installed on your machine:
+
+* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google]
+* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need the following installed on your machine:
+
+* [x] iOS 9 or later
+* [x] Xcode 9 or later
+* [x] link:https://cocoapods.org[CocoaPods]
+
+The AeroGear SDK for iOS is available using the CocoaPods package manager.
+If you have not installed CocoaPods, install it by running the command:
+
+[source,bash]
+----
+gem install cocoapods
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+You need the following installed on your machine:
+
+* [x] link:https://nodejs.org/[Node.js] runtime and NPM
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI]
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+You need the following installed on your system:
+
+* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft]
+* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK], if you would like to install the showcase app on an Android device or emulator
+* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple], if you would like to install the showcase app on an iOS device or emulator
+****
+
+
+
+=== Building and installing showcase apps
+
+. Clone the showcase app and checkout the release tag {release-number}
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+git clone https://github.com/aerogear/android-showcase-template.git
+cd android-showcase-template
+git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+[source,bash,subs="attributes"]
+----
+git clone https://github.com/aerogear/ios-showcase-template.git
+cd ios-showcase-template
+git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+git clone https://github.com/aerogear/cordova-showcase-template.git
+cd cordova-showcase-template
+git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+[source,bash,subs="attributes"]
+----
+git clone https://github.com/aerogear/xamarin-showcase-template.git
+cd xamarin-showcase-template
+git checkout {release-number}
+----
+****
+
+* Configure the Mobile SDK as described in xref:configuring-dev-env.adoc#obtaining-the-mobile-sdk-configuration-file[Obtaining the Mobile SDK Configuration File]
+
+* If using xref:push/google-setup.adoc[Firebase Cloud Messaging] for push notifications, copy `google-services.json` file over.
+
+[role="primary"]
+.Android
+
+****
+Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+xref:push/google-setup.adoc[Firebase Cloud Messaging] console.
+****
+
+[role="secondary"]
+.iOS
+
+****
+Firebase Cloud Messaging is not supported on iOS.
+****
+
+[role="secondary"]
+.Cordova
+
+****
+Overwrite the file `/google-services.json` with the `google-services.json` file you downloaded from
+xref:push/google-setup.adoc[Firebase Cloud Messaging] console.
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+{unifiedpush-service} Service is not supported on Xamarin.
+****
+
+* Build the application
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+./gradlew buildDebug
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+Run this command to install dependencies:
+
+[source,bash]
+----
+pod install
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+npm install
+npm run ionic:build
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+TODO
+****
+
+* Run the application
+
+[role="primary"]
+.Android
+
+****
+Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
+no connected device, it installs and runs the application on the emulator.
+
+[source,bash,subs="attributes"]
+----
+./gradlew installDebug
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
+
+NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+To run the showcase app, use these commands:
+
+[source,bash,subs="attributes"]
+----
+npm run ionic:android # to run on an Android device or emulator
+npm run ionic:ios # to run on an iOS device or emulator
+----
+
+These commands would run the app on a device if connected or on the emulator if no device is connected.
+
+Alternatively, you can use Cordova commands directly to specify the target:
+
+[source,bash,subs="attributes"]
+----
+ionic cordova run android --device      # run on a connected device
+ionic cordova run android --emulator    # run on the Android emulator
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+TODO
+****
+
+== Next Steps
+
+* xref:showcase-apps/identity-management.adoc[{keycloak-service}]
