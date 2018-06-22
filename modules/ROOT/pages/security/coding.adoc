@@ -1,0 +1,119 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Coding an App to Use Device Security
+
+include::configuring-dev-env-security.adoc[leveloffset=1]
+
+== Setting up {device-security-service} service SDK
+
+This guide will help you to set up the {device-security-service} service SDK in your App.
+
+=== Importing the libraries
+
+[role="primary"]
+.Android
+
+****
+
+. Add `jcenter` to your project's *build.grade*:
++
+[source, groovy]
+----
+allprojects {
+    repositories {
+        jcenter() // <-- Add This line
+        google()
+    }
+}
+----
+
+. In your app's *build.gradle*, add the following dependency:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-security:{release-number}'
+}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. Add the dependency to your *Podfile*:
++
+[source,ruby]
+----
+target :'[YourTarget]' do
+    pod 'AGSSecurity', '{release-number}'
+end
+----
++
+. Update the dependencies by running in your terminal:
++
+[source,bash]
+----
+$ pod install
+----
++
+. Import and get an instance of `AGSSecurity` to start using the SDK:
++
+[source,swift]
+----
+import AGSSecurity
+
+let security = AGSSecurity()
+----
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+. Install the Security package from NPM:
++
+[source,bash]
+----
+$ npm install @aerogear/security
+----
++
+. Add the AeroGear Security plugin for Cordova:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-security
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security] package from link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security --version {release-number}
+----
++
+. For Android install:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.Android --version {release-number}
+----
++
+. For iOS install:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {release-number}
+----
+
+****
+
