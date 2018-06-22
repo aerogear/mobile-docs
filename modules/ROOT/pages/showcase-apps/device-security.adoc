@@ -1,21 +1,21 @@
 include::{partialsdir}/attributes.adoc[]
 
-= {device-security-service}
+= Demonstrating {device-security-service}
 
 [discrete]
 == Prerequisites
 
-* [x] You have setup the services as described in xref:showcase-apps/service-setup.adoc[Service Setup].
-* [x] You have setup the showcase app locally as described in xref:showcase-apps/service-setup.adoc[Service Setup].
+* [x] You have completed all the steps in xref:showcase-apps/service-setup.adoc[Using the Showcase Apps].
 
-== Giving {device-security-service} a try
+[discrete]
+== Procedure
 
-In the showcase app:
+From the showcase app:
 
-. Press *Device Security* menu item.
-. Device security checks will be performed and you will see the results.
-. Device security metrics will be sent to {metrics-service} and you will be able to inspect these metrics on Grafana.
+. Press the *Device Security* menu item.
+. View the results of the Device security checks.
+. Navigate to the {grafana-ui}, and view the metrics as described in xref:metrics/analysing-app-usage.adoc[Analyzing App Usage]
 
 == Next Steps
 
-* xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
+* Demonstrating xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
