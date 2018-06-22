@@ -84,4 +84,6 @@ The {device-security-service} service allows you to easily configure and manage 
 * Perform a range of device trust checks on the mobile device, such as checking if the device is rooted, and allows you take proactive action based on the results
 * Distribute SSL certificates with a mobile app to create a direct chain of trust (certificate pinning)
 
+NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
+
 //end::device-security-service[]

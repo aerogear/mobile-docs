@@ -6,13 +6,10 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-device-security']
 = About {device-security-service}
 
-Using {device-security-service} allows you monitor mobile apps, devices and mobile services.
+include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
-* Perform checks on the mobile device, such as checking if the device is rooted.
-* Encrypt all data that is stored on the device by your mobile app
-* Distribute certificates with a mobile app to create a direct chain of trust (certificate pinning)
-
-NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
+include::./ref_terminology.adoc[leveloffset=+1]
 
 [id='{context}_additional-resources-{context}']
-== Additional resources
+
+//== Additional resources
