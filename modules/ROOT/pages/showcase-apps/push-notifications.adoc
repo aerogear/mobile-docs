@@ -1,2 +1,19 @@
 include::{partialsdir}/attributes.adoc[]
 
+= {unifiedpush-service}
+
+[discrete]
+== Prerequisites
+
+* [x] You have completed all the steps in xref:showcase-apps/service-setup.adoc[Using the Showcase Apps].
+
+[discrete]
+== Procedure
+
+. Send a push notification as described in
+xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
+. Launch the showcase app and view the notification.
+
+== Next Steps
+
+* xref:showcase-apps/metrics.adoc[{metrics-service}]
