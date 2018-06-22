@@ -20,6 +20,7 @@ include::{partialsdir}/attributes.adoc[]
 
 // SECURITY
 * xref:security/index.adoc[{device-security-service}]
+** xref:security/coding.adoc[Coding]
 ** xref:security/proc_performing-device-checks.adoc[Device Trust Checks]
 ** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
 
