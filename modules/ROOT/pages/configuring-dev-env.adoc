@@ -71,9 +71,9 @@ use_frameworks!
 
 target :'YourTarget' do
     ## Require one of the AeroGear SDK's here
+    pod 'AGSCore', '{release-number}'
     pod 'AGSPush', '{release-number}'
     pod 'AGSAuth', '{release-number}'
-    pod 'AGSCore', '{release-number}'
     pod 'AGSSecurity', '{release-number}'
 end
 ----
