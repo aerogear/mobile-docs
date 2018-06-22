@@ -34,6 +34,7 @@ allprojects {
 ----
 dependencies {
     ...
+    implementation 'org.aerogear:android-core:{release-number}'
     implementation 'org.aerogear:android-push:{release-number}'
     implementation 'org.aerogear:android-auth:{release-number}'
     implementation 'org.aerogear:android-security:{release-number}'
