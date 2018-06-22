@@ -13,7 +13,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:keycloak/coding.adoc[Coding]
 ** xref:keycloak/authenticating.adoc[User Authentication]
 ** xref:keycloak/retrieving-users-roles.adoc[Access Control]
-** xref:keycloak/sso.adoc[Single Sign On]
+//** xref:keycloak/sso.adoc[Single Sign On] //404
 ** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
 
 

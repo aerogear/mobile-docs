@@ -2,13 +2,13 @@ include::{partialsdir}/attributes.adoc[]
 
 = Coding an App to Use Identity Management
 
-include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=1]
-include::keycloak/keycloak-setup.adoc[leveloffset=1]
-include::keycloak/android-additional-configuration.adoc[leveloffset=1]
-include::keycloak/retrieving-current-user.adoc[leveloffset=1]
-include::keycloak/retrieving-custom-user-attributes.adoc[leveloffset=1]
+include::configuring-dev-env-keycloak.adoc[leveloffset=1]
+include::keycloak-setup.adoc[leveloffset=1]
+include::android-additional-configuration.adoc[leveloffset=1]
+include::retrieving-current-user.adoc[leveloffset=1]
+include::retrieving-custom-user-attributes.adoc[leveloffset=1]
 
-include::keycloak/logging-out.adoc[leveloffset=1]
+include::logging-out.adoc[leveloffset=1]
 
 
 == Setting up {keycloak-service} service SDK
