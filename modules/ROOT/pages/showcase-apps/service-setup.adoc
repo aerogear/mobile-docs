@@ -1,6 +1,9 @@
 include::{partialsdir}/attributes.adoc[]
 
+
+
 = Using the Showcase Apps
+
 
 Showcase apps demonstrate many features of {product-name}. To see these features:
 
@@ -8,17 +11,18 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 . Set up the mobile app as described in xref:setting-up-the-showcase-app[].
 . Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
 . Bind your {mobile-client} to the appropriate services as described in xref:binding[]
-. Copy the `mobile-services.json` file to your IDE.
+. Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
 . Build and run your showcase app  as described in xref:building-and-deploying-the-showcase-apps[].
 
 [[setting-up-mobile-services-to-demonstrate-showcase-apps]]
 == Setting up Mobile Services to Demonstrate Showcase Apps
 
-
+[discrete]
 === Prerequisites
 
 * [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
 
+[discrete]
 === Procedure
 
 . To demonstrate metrics, xref:metrics/provisioning.adoc[Provision the {metrics-service} service] For more information about features, see xref:metrics/index.adoc[{metrics-service} Service]
@@ -52,6 +56,7 @@ For more information about features, see xref:keycloak/index.adoc[{keycloak-serv
 [[setting-up-the-showcase-app]]
 == Setting Up the Showcase App 
 
+[discrete]
 === Prerequisites
 
 [role="primary"]
@@ -104,6 +109,7 @@ You need the following installed on your system:
 * [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple], if you would like to install the showcase app on an iOS device or emulator
 ****
 
+[discrete]
 === Procedure
 
 1. Clone the showcase app and checkout the release tag {release-number}
@@ -207,9 +213,11 @@ xref:push/google-setup.adoc[Firebase Cloud Messaging] console.
 +
 NOTE: This step also creates a variant as described in xref:push/index.adoc[ {unifiedpush-service} Service] terminology.
 
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+
 
 [[building-and-deploying-the-showcase-apps]]
-=== Building and Running the Showcase Apps
+== Building and Running the Showcase Apps
 
 
 1. Build the Mobile App
@@ -311,6 +319,10 @@ $ ionic cordova run android --emulator    # run on the Android emulator
 TODO
 ****
 
+
+include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
+
+[discrete]
 == Next Steps
 
 * Create your own mobile app that uses the features of {product-name}. 
