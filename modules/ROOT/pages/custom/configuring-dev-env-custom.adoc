@@ -17,7 +17,7 @@ This section shows how to retrieve the configuration of the custom service in a 
 [role="primary"]
 .Android
 ****
-. If you don't use any other module of the Aerogear SDK make sure that the `android-core` is in the dependencies of you app modules `build.gradle`:
+. If you do not use any other modules of the Aerogear SDK, make sure that the `android-core` is in the dependencies of your `app` module's `build.gradle`:
 +
 [source,groovy,subs="attributes"]
 ----
@@ -26,7 +26,7 @@ dependencies {
 }
 ----
 
-. Use the `getServiceConfigurationsByType` method to get the service configuration associated with your custom service
+. Use the `getServiceConfigurationById` method to get the service configuration associated with your custom service
 +
 [source,java]
 ----
@@ -52,7 +52,7 @@ String property = customConfig.getProperty("[PROPERTY NAME]");
 [role="secondary"]
 .iOS
 ****
-. If you don't use any other module of the Aerogear SDK make sure that the `AGSCore` is in your `Podfile`:
+. If you do not use any other modules of the Aerogear SDK, make sure that the `AGSCore` is in your `Podfile`:
 +
 [source,ruby,subs="attributes"]
 ----
