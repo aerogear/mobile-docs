@@ -87,7 +87,7 @@ i.e. If your local router which both your workstation and mobile are connected t
 a router using the `10.0.0.x` c-block, then you should set the cluster IP to an IP
 in the `10.0.0.x` c-block too, such as `10.0.0.135`.
 
-. Check installation logs:
+. Check the installation logs:
 +
 The following installation can take a while the first time it runs as it pulls a number of docker images. Once completed successfully, this will end with output similar to:
 +
@@ -112,7 +112,7 @@ Which signifies that your installation has completed successfully.
 
 . Verify the installation:
 +
-.. Open a browser and (accepting the self-signed certificate) navigate to:
+.. Open a browser and (accepting the self-signed certificate) login:
 +
 ----
 https://192.168.37.1:8443/console/
@@ -125,13 +125,13 @@ username: developer
 password: password
 ----
 
-.. Once logged in look for the "mobile" category across the top of the catalog package which indicates that the mobile features of {org-name} {product-name} have been succesfully installed.
+.. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
 
 == Next Steps
 
-* xref:con_services.adoc[Provision] a Mobile Service
+* xref:registering-a-mobile-app.adoc[Register a Mobile App]
 
-* xref:apps.adoc[Register] a Mobile App
+* xref:con_services.adoc[Provision a Mobile Service]
 
 == Troubleshooting
 
