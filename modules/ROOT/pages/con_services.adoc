@@ -54,6 +54,7 @@ include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 include::provisioning-services.adoc[leveloffset=1]
 // include::integrating-services.adoc[leveloffset=1]
 
+include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 
 == Binding a {mobile-client} with Mobile Services
 

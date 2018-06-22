@@ -34,6 +34,7 @@ allprojects {
 ----
 dependencies {
     ...
+    implementation 'org.aerogear:android-core:{release-number}'
     implementation 'org.aerogear:android-push:{release-number}'
     implementation 'org.aerogear:android-auth:{release-number}'
     implementation 'org.aerogear:android-security:{release-number}'
@@ -70,8 +71,10 @@ use_frameworks!
 
 target :'YourTarget' do
     ## Require one of the AeroGear SDK's here
+    pod 'AGSCore', '{release-number}'
     pod 'AGSPush', '{release-number}'
     pod 'AGSAuth', '{release-number}'
+    pod 'AGSSecurity', '{release-number}'
 end
 ----
 +

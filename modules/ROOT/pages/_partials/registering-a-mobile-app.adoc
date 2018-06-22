@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Registering a Mobile App
 
-== Prerequisites:
+Prerequisites:
 
 * [x] You have installed OpenShift with {product-name} as described in xref:index.adoc[Getting Started].
 

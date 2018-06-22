@@ -2,15 +2,10 @@ include::{partialsdir}/attributes.adoc[]
 
 = Mobile Terminology
 
-The following terms describe some of the key components of {product-name} to help you get started. For more information on individual services, see:
-
-* xref:push/index.adoc[{unifiedpush-service}]
-* xref:metrics/index.adoc[{metrics-service}]
-
 [[mobile-service]]Mobile Service:: A mobile service accelerates your mobile app development by providing solutions for common mobile development use cases such as Push notifications. Mobile services are hosted on OpenShift and you use the OpenShift console to provision and associate services with your mobile apps.
 For more information, see xref:con_services.adoc[Mobile Services].
 
-[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation the mobile app in an OpenShift project. This allows you connect and disconnect an app with any mobile service in the same OpenShift project.
+[[mobile-client]]{mobile-client}:: A {mobile-client} is the representation of a mobile app in an OpenShift project. This allows you connect and disconnect an app with any mobile service in the same OpenShift project.
 For more information, see xref:registering-a-mobile-app.adoc[Registering a mobile app].
 
 [[mobile-app]]mobile app:: A mobile app is your code for Android, iOS, Cordova or Xamarin that uses {product-name}.
