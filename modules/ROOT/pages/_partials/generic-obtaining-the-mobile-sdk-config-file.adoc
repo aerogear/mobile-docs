@@ -3,7 +3,7 @@ include::{partialsdir}/attributes.adoc[]
 = Obtaining the Mobile SDK Configuration File
 
 . Navigate to your project in OpenShift.
-. On the *Overview* screen, expand your {mobile-client} to view the *CONFIG INFO*.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
 . Copy the configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 . Follow the next specific additional instructions depending on your platform:
