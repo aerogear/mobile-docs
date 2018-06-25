@@ -32,7 +32,7 @@ For analytic purposes on our link:#_dashboard[Dashboard] we store the content of
 
 == How the UnifiedPush Server Works
 
-The AeroGear UnifiedPush Server offers a unified Notification Service API to the above mentioned Push Network Services.
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
 It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
 
 
