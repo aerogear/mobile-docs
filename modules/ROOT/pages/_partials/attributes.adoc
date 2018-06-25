@@ -17,17 +17,18 @@
 
 // IDM Service
 :keycloak-service: Identity Management
-:keycloak-ui: Keycloak admin UI
+:keycloak-ui: Keycloak Admin UI
 :keycloak-dashboard: Auth Dashboard
 
 // Push Service
 
 :unifiedpush-service: Push Notifications  
-:push-ui: Unified Push admin UI
+:push-ui: Unified Push Admin UI
 :push-notification: push notification
 
 // Build Service
 :digger-service: Mobile CI/CD
+:digger-ui: Jenkins UI
 
 // Custom Runtime Service
 :custom-service: Runtime Connector

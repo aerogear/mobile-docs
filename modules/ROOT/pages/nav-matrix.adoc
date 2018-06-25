@@ -1,0 +1,61 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Using Mobile Services
+
+[discrete]
+== Prerequisites
+
+* [x] You have xref:ROOT:index.adoc[set up AeroGear Mobile Services on OpenShift].
+
+* [x] You have xref:registering-a-mobile-app.adoc[registered a mobile app] to create a {mobile-client}.
+
+
+== Procedure 
+
+After choosing a mobile service, use the following table to navigate to the step you want to perform (click the service name to view a description of that service) :
+
+.Mobile Services
+|===
+|Service |Provisioning |Binding| Coding |Service Consoles 
+
+|xref:keycloak/index.adoc[{keycloak-service}]
+|xref:keycloak/provisioning.adoc[Provisioning {keycloak-service}] 
+|xref:keycloak/binding.adoc[Binding to {keycloak-service}] 
+|xref:keycloak/coding.adoc[Coding for Authenication]
+|xref:keycloak/{keycloak-ui}.adoc[{keycloak-ui}]
+
+
+| xref:security/index.adoc[{device-security-service}]
+| N/A
+| N/A 
+| Device Trust Checks and Certificate Pinning
+| N/A
+
+|xref:push/index.adoc[{unifiedpush-service}]
+|xref:push/provisioning.adoc[Provisioning {keycloak-service}] 
+|xref:push/binding.adoc[Binding to {unifiedpush-service}] 
+|xref:push/coding.adoc[Coding for {unifiedpush-service}]
+|xref:push/admin-ui.adoc[{push-ui}]
+
+|xref:metrics/index.adoc[{metrics-service}]
+|xref:metrics/provisioning.adoc[Provisioning {metrics-service}] 
+|xref:metrics/binding.adoc[Binding to {metrics-service}] 
+|xref:metrics/configuring-dev-env-metrics.adoc[Adding Metrics to your App]
+|xref:metrics/grafana-ui.adoc[{grafana-ui}] and xref:metrics/prometheus-ui.adoc[{prometheus-ui}]
+
+|xref:custom/index.adoc[{custom-service}]
+|xref:custom/provisioning.adoc[Provisioning {custom-service}] 
+|xref:custom/binding.adoc[Binding to {custom-service}] 
+|xref:custom/configuring-dev-env-custom.adoc[Using a {custom-service}]
+|N/A
+
+
+|xref:digger/index.adoc[{digger-service}]
+|xref:digger/provisioning.adoc[Provisioning {digger-service}] 
+|N/A
+|xref:digger/running-a-build.adoc[Building an App]
+|xref:digger/digger-ui.adoc[{digger-ui}]
+
+
+
+|===

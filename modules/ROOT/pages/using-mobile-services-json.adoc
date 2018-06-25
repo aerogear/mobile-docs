@@ -4,12 +4,12 @@ include::{partialsdir}/attributes.adoc[]
 
 The  `mobile-services.json` file contains all the information your code needs to use mobile services. 
 
-
+[discrete]
 Prerequisites:
 
-* [x] You have installed Minishift with the mobilecore addon as described in xref:ROOT:minishift_install.inc.adoc[Setting Up].
+* [x] You have xref:ROOT:index.adoc[set up AeroGear Mobile Services on OpenShift].
 * [x] You have xref:provisioning-services.adoc[provisioned at least one mobile service]
-* [x] You have xref:connecting-mobile-clients-to-mobile-services.adoc[associated your {mobile-client} with a mobile service]
+* [x] You have xref:connecting-mobile-clients-to-mobile-services.adoc[bound your {mobile-client} with a mobile service]
 
 To download the `mobile-services.json` file:
 

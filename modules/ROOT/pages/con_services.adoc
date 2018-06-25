@@ -1,61 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
+include::nav-matrix.adoc[leveloffset=1]
 
-= About Mobile Services
 
-The following services are available:
-
-[role="primary"]
-.{metrics-service}
-
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=metrics-service]
-
-****
-
-[role="secondary"]
-.{unifiedpush-service}
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=pushnotification-service]
-
-****
-
-[role="secondary"]
-.{keycloak-service}
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
-
-****
-[role="secondary"]
-.{custom-service}
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service]
-
-****
-[role="secondary"]
-.{digger-service}
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
-
-****
-[role="secondary"]
-.{device-security-service}
-****
-
-include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
-
-****
-
-include::provisioning-services.adoc[leveloffset=1]
 // include::integrating-services.adoc[leveloffset=1]
 
-include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-
-== Binding a {mobile-client} with Mobile Services
-
-include::{partialsdir}/generic-binding.adoc[leveloffset=1]
