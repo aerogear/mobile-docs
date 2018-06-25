@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Push Notifications
+:service-name: Unified Push Server
 
 = Provisioning {service-name} Service
 
@@ -13,5 +13,7 @@ include::{partialsdir}/generic-provisioning.adoc[]
 include::{partialsdir}/generic-provisioning-end.adoc[]
 
 == Next Steps
+
+xref:registering-a-mobile-app.adoc[Registering a {mobile-client}]
 
 xref:push/binding.adoc[Binding a {mobile-client} with the {unifiedpush-service} Service]
