@@ -130,62 +130,18 @@ init(aerogearConfig);
 
 ****
 
-. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
+. In your VisualStudio project expand `Dependencies > NuGet`
 
-. Install the Core package:
-+
-[source,bash,subs="attributes"]
-----
-dotnet add package AeroGear.Mobile.Core --version {release-number}
-----
+. Click on `Add packages...`
 
-. Android
-.. Install the platform module:
-+
-[source,bash,subs="attributes"]
-----
-dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
-----
+. Select `AeroGear.Mobile.Core` and depending on your target platforms:
 
-.. Initialize Core (for Xamarin.Forms):
-+
-[source,bash,subs="attributes"]
-----
-var app = new App();
-MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
-LoadApplication(app);
-----
+.. for Android also pick `AeroGear.Mobile.Core.Platform.Android`
 
-.. Initialize Core (for Legacy Xamarin):
-+
-[source,bash,subs="attributes"]
-----
-MobileCoreAndroid.Init(ApplicationContext);
-----
+.. for iOS also pick `AeroGear.Mobile.Core.Platform.iOS`
 
-. iOS
-.. Install the platform module:
-+
-[source,bash,subs="attributes"]
-----
-dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
-----
+. Click on `Add Packages`
 
-.. Initialize Core (for Xamarin Forms):
-+
-[source,bash,subs="attributes"]
-----
-var app = new App();
-MobileCoreIOS.Init(app.GetType().Assembly);
-LoadApplication(app);
-----
-
-.. Core (for Legacy Xamarin):
-+
-[source,bash,subs="attributes"]
-----
-MobileCoreIOS.Init();
-----
 ****
 
 include::{partialsdir}/proc_self-signed-certs.adoc[]
