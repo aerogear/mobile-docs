@@ -27,7 +27,7 @@ Locate this file at the following location in your application project:
 
 Locate this file at the following location in your application project:
 
-`Resources/mobile-services.json`
+`<app directory>/mobile-services.json`
 
 ****
 

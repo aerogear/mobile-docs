@@ -33,3 +33,7 @@ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
 ====
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
+
+== Next Steps
+
+* xref:metrics/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
