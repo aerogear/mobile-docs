@@ -50,6 +50,26 @@ new SecurityService()
 ----
 ****
 
+[role="secondary"]
+.Xamarin
+****
+Use `NOT_ROOTED` for Android:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_ROOTED);
+----
+
+Use `NOT_JAILBROKEN` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_JAILBROKEN);
+----
+****
+
 == Developer Mode Detection
 
 Use this to detect if Developer Mode has been enabled on the device.
@@ -75,6 +95,18 @@ This check is not available for iOS. TODO: or is it?
 .Cordova
 ****
 This check is not available for Cordova. TODO: or is it?
+****
+
+[role="secondary"]
+.Xamarin
+****
+NOTE: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEVELOPER_MODE);
+----
 ****
 
 
@@ -117,6 +149,17 @@ new SecurityService()
 ----
 ****
 
+[role="secondary"]
+.Xamarin
+****
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEBUGGER);
+----
+****
+
 == Emulator Detection
 
 Use this to detect if the app is being run on an emulator.
@@ -156,6 +199,16 @@ new SecurityService()
 ----
 ****
 
+[role="secondary"]
+.Xamarin
+****
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_IN_EMULATOR);
+----
+****
 
 == Device Lock Detection
 
@@ -197,6 +250,17 @@ new SecurityService()
 ----
 ****
 
+[role="secondary"]
+.Xamarin
+****
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.SCREEN_LOCK_ENABLED);
+----
+****
+
 == App Data Backup Detection
 
 Use this to detect whether the application’s data is configured to be synchronized across devices.
@@ -222,6 +286,18 @@ This check is not available for iOS.
 .Cordova
 ****
 This is not available for Cordova.
+****
+
+[role="secondary"]
+.Xamarin
+****
+NOTE: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.ALLOW_BACKUP_DISABLED);
+----
 ****
 
 == Device Encryption Detection
@@ -251,6 +327,18 @@ This check is not available for iOS.
 This is not available for Cordova.
 ****
 
+[role="secondary"]
+.Xamarin
+****
+NOTE: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(SecurityChecks.HAS_ENCRYPTION_ENABLED);
+----
+****
+
 
 
 
@@ -264,7 +352,6 @@ Security Checks can be run in group, both synchronously and asynchronously.
 [role="primary"]
 .Android
 ****
-
 . Get a `SyncCheckExecutor` from `SecurityService`:
 +
 [source, java]
@@ -311,6 +398,24 @@ const results = await securityService.checkMany(
 );
 ----
 NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Build a `SyncSecurityCheckExecutor` from `SecurityService` and execute:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithSecurityCheck(SecurityChecks.NOT_ROOTED)
+                        .WithSecurityCheck(SecurityChecks.NO_DEVELOPER_MODE)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, SecurityCheckResult> results = checkExecutor.Execute();
+----
 ****
 
 === Asynchronously
@@ -361,6 +466,11 @@ const checkResults = securityService.checkMany(
 NOTE: This method returns a Promise with an array containing all `SecurityCheckResult` objects in the same order they were provided.
 ****
 
+[role="secondary"]
+.Xamarin
+****
+Executing multiple checks asynchronously is not supported at the moment for this platform.
+****
 
 
 == Additional Resources
@@ -438,6 +548,79 @@ let security = AGSSecurity()
 let result = security.check(MyCustomCheck())
 ----
 ****
+
+[role="secondary"]
+.Cordova
+****
+. Implement the `SecurityCheck` interface:
++
+[source, javascript]
+----
+class CustomSecurityCheck implements SecurityCheck {
+
+    get name(): string {
+        return "My Custom Check";
+    }
+
+    public check(): Promise<SecurityCheckResult> {
+        // Implement security check logic here
+        return null;
+    }
+
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, javascript]
+----
+const securityService = new SecurityService();
+
+securityService.check(new CustomSecurityCheck())
+    .then(result => {
+        // Handle result
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Implement the `ISecurityCheck` interface:
++
+[source, c#]
+----
+class CustomSecurityCheck : ISecurityCheck
+{
+	public string GetName()
+	{
+		return "Custom check";
+	}
+
+	public string GetId()
+	{
+		return typeof(CustomSecurityCheck).FullName;
+	}
+
+	public SecurityCheckResult Check()
+	{
+		// Implement security check logic here
+		return null;
+	}
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+SecurityCheckResult result = securityService.Check(new CustomSecurityCheck());
+----
+****
+
+
 
 
 

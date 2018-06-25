@@ -24,6 +24,16 @@ dependencies {
     implementation 'org.aerogear:android-security:{release-number}'
 }
 ----
+
+. Get an instance of `SecurityService` to start using the SDK.
++
+[source,swift]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+----
++
+NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
+
 ****
 
 [role="secondary"]
@@ -45,7 +55,7 @@ end
 $ pod install
 ----
 
-. Import and get an instance of `AGSSecurity` to start using the SDK
+. Import `AGSSecurity` and get an instance of the `SecurityService` to start using the SDK
 +
 [source,swift]
 ----
@@ -53,6 +63,8 @@ import AGSSecurity
 
 let security = AGSSecurity()
 ----
++
+NOTE: Any subsequent call to AGSSecurity returns the same instance of the `SecurityService`.
 ****
 
 [role="secondary"]
@@ -80,6 +92,8 @@ const SecurityService = require("@aerogear/security");
 
 const securityService = new SecurityService();
 ----
++
+NOTE: Any new instantiation of `SecurityService` returns the same instance.
 ****
 
 [role="secondary"]
@@ -131,6 +145,15 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     // ...
 }
 ----
+
+. Get an instance of `SecurityService` to start using the SDK:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+----
++
+NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
 ****
 
 == Next steps
