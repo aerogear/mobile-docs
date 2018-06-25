@@ -11,7 +11,7 @@ This section describes terminology that is associated with {keycloak-service}.
 
 SSO:: _Single Sign On_, the ability to share a login between multiple services
 
-OpenID Connect:: a standard for providing identity on top of OAUth 2.0
+OpenID Connect:: a standard for providing identity on top of OAuth 2.0
 
 Keycloak:: Red Hat's implementation of _SSO_ and _OpenID_ used as the identity provider
 
