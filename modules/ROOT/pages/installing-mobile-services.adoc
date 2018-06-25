@@ -32,6 +32,27 @@ You can download Docker CE for MacOS version 17.09.1 link:https://download.docke
 You can download Docker CE version 17.09.1 for rpm based distros from link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here]. Otherwise have a look link:https://docs.docker.com/install[here].
 ****
 
+[[firewall-requirements]]
+== Firewall Requirements (Required)
+
+. Configure the Docker registry _and_ ports required as part
+of the cluster setup:
++
+* Linux: Follow steps 2 _and_ 3
+https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux[here]
+* Mac: Follow steps 2 _and_ 3
+https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[here]
+
+. For Linux (Fedora) we also need to add an extra port to the `dockerc`
+zone:
++
+[source,sh]
+----
+firewall-cmd --permanent --zone dockerc --add-port 443/tcp
+firewall-cmd --reload
+----
+
+
 == Local development
 
 . Clone the Mobile-core installer:
@@ -60,7 +81,8 @@ are installed and are the right version.
 Once verified it prompts you for your Docker Hub login credentials, which
 must be valid for the installation to continue.
 +
-The next set of values are optional and can be left with the default values:
+The next set of values are optional and can be left with the default values. However, if you wish to have your local cluster accessible from a mobile device, you must set the *Cluster IP* value shown here to match that of your local machine that you are performing the installation on. *Note:* Your mobile device must be on the same network as your local machine.
+
 +
 [source,bash,subs="attributes"]
 ----
@@ -75,17 +97,8 @@ resulting cluster to look at other docker registries or tags to fetch the
 APBs from, but unless you are already familiar with editing these values,
 the defaults are the safest option.
 +
-The following 2 options alter what IP address and wildcard DNS host you wish
+The *Wildcard DNS Host* option alters the wildcard DNS host you wish
 to use.
-
-. Check the Cluster IP:
-+
-In order to allow communication between your mobile device and the cluster, the
-cluster IP must be in the same c-block as your local network.
-+
-i.e. If your local router which both your workstation and mobile are connected to
-a router using the `10.0.0.x` c-block, then you should set the cluster IP to an IP
-in the `10.0.0.x` c-block too, such as `10.0.0.135`.
 
 . Check the installation logs:
 +
