@@ -18,7 +18,7 @@ Use this to help prevent your app running in a device that has been rooted/jailb
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -29,10 +29,24 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_ROOTED)
 [role="secondary"]
 .iOS
 ****
-[source,java]
+[source, swift]
 ----
 let security = AGSSecurity()
 let result = security.check(IsJailbrokenCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(SecurityCheckType.notRooted)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
 ----
 ****
 
@@ -43,7 +57,7 @@ Use this to detect if Developer Mode has been enabled on the device.
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -54,21 +68,24 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEVELOPE
 [role="secondary"]
 .iOS
 ****
-[source,java]
-----
-let security = AGSSecurity()
-let result = security.check(IsDebuggerCheck())
-----
+This check is not available for iOS. TODO: or is it?
 ****
+
+[role="secondary"]
+.Cordova
+****
+This check is not available for Cordova. TODO: or is it?
+****
+
 
 == Debugger Detection
 
-Use this to detect if an Android debugger is attached to the app.
+Use this to detect if a debugger is attached to the app.
 
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -79,7 +96,25 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEBUGGER
 [role="secondary"]
 .iOS
 ****
-This check is not available for iOS.
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(IsDebuggerCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(SecurityCheckType.notDebugMode)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
 ****
 
 == Emulator Detection
@@ -89,7 +124,7 @@ Use this to detect if the app is being run on an emulator.
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -100,10 +135,24 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_IN_EMUL
 [role="secondary"]
 .iOS
 ****
-[source,java]
+[source, swift]
 ----
 let security = AGSSecurity()
 let result = security.check(IsEmulatorCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(SecurityCheckType.notEmulated)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
 ----
 ****
 
@@ -115,7 +164,7 @@ Use this to detect if a device has a lock screen set (with pin, fingerprint, pat
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -126,13 +175,27 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.SCREEN_LOCK
 [role="secondary"]
 .iOS
 ****
-[source,java]
+[source, swift]
 ----
 let security = AGSSecurity()
 let result = security.check(IsDeviceLockCheck())
 ----
 ****
 
+[role="secondary"]
+.Cordova
+****
+NOTE: For iOS devices this check requires iOS 8 or above.
+[source, javascript]
+----
+new SecurityService()
+    .check(SecurityCheckType.hasDeviceLock)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+****
 
 == App Data Backup Detection
 
@@ -141,7 +204,7 @@ Use this to detect whether the application’s data is configured to be synchron
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -155,6 +218,12 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.ALLOW_BACKU
 This check is not available for iOS.
 ****
 
+[role="secondary"]
+.Cordova
+****
+This is not available for Cordova.
+****
+
 == Device Encryption Detection
 
 Use this to detect whether the devices filesystem is encrypted.
@@ -162,7 +231,7 @@ Use this to detect whether the devices filesystem is encrypted.
 [role="primary"]
 .Android
 ****
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -174,6 +243,12 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.HAS_ENCRYPT
 .iOS
 ****
 This check is not available for iOS.
+****
+
+[role="secondary"]
+.Cordova
+****
+This is not available for Cordova.
 ****
 
 
@@ -192,7 +267,7 @@ Security Checks can be run in group, both synchronously and asynchronously.
 
 . Get a `SyncCheckExecutor` from `SecurityService`:
 +
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
@@ -200,7 +275,7 @@ SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor()
 
 . Add your checks and execute synchronously:
 +
-[source,java]
+[source, java]
 ----
 Map<String, SecurityCheckResult> results = syncCheckExecutor
     .addCheck(SecurityCheckType.<check_type>)
@@ -214,12 +289,27 @@ Map<String, SecurityCheckResult> results = syncCheckExecutor
 ****
 Invoke multiple checks using the `checkMany` function:
 +
-[source,swift]
+[source, swift]
 ----
 let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
 let results = security.checkMany(checks)
 ----
 +
+NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
+****
+
+[role="secondary"]
+.Cordova
+****
+Executing multiple checks synchronously is not directly supported. Instead, it's possible to use the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await[await] operator.
+[source, javascript]
+----
+const results = await securityService.checkMany(
+    SecurityCheckType.notRooted,
+    SecurityCheckType.notEmulated,
+    // Add more checks here
+);
+----
 NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
 ****
 
@@ -230,7 +320,7 @@ NOTE: `SecurityCheckResult` objects in the returning array stay in the same orde
 ****
 . Get an `AsyncCheckExecutor` from `SecurityService`:
 +
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
@@ -238,7 +328,7 @@ AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExe
 
 . Add your checks and execute synchronously:
 +
-[source,java]
+[source, java]
 ----
 Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor
     .addCheck(SecurityCheckType.<check_type>)
@@ -253,7 +343,23 @@ Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor
 Executing multiple checks asynchronously is not supported at the moment for this platform.
 ****
 
-
+[role="secondary"]
+.Cordova
+****
+Invoke multiple checks using the `checkMany` method:
+[source, javascript]
+----
+const checkResults = securityService.checkMany(
+    SecurityCheckType.notRooted,
+    SecurityCheckType.notEmulated,
+    // Add more checks here
+)
+.then(results => {
+    // Handle results
+});
+----
+NOTE: This method returns a Promise with an array containing all `SecurityCheckResult` objects in the same order they were provided.
+****
 
 
 
@@ -269,7 +375,7 @@ Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_termi
 
 . Extend the `AbstractSecurityCheck` interface:
 +
-[source,java]
+[source, java]
 ----
 class CustomSecurityCheck extends AbstractSecurityCheck {
 
@@ -284,7 +390,7 @@ class CustomSecurityCheck extends AbstractSecurityCheck {
 
 . Instantiate it to execute it, using the instance of `SecurityService`:
 +
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -294,7 +400,7 @@ SecurityCheckResult result = securityService.check(customSecurityCheck);
 +
 Alternatively, you can add it to an existing `AsyncCheckExecutor` or `SyncCheckExecutor`:
 +
-[source,java]
+[source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
@@ -308,7 +414,7 @@ asyncCheckExecutor.addCheck(new customSecurityCheck());
 ****
 . Implement the `SecurityCheck` interface:
 +
-[source,swift]
+[source, swift]
 ----
 public class MyCustomCheck: SecurityCheck {
     
@@ -326,7 +432,7 @@ public class MyCustomCheck: SecurityCheck {
 
 . Use the `check` function as usual:
 +
-[source,swift]
+[source, swift]
 ----
 let security = AGSSecurity()
 let result = security.check(MyCustomCheck())
@@ -384,5 +490,36 @@ Or alternatively report multiple checks using the `checkManyAndPublishMetric` fu
 ----
 let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
 let results = security.checkManyAndPublishMetric(checks)
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Report individual checks via the `checkAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService()
+    .checkAndPublishMetric(SecurityCheckType.notRooted)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService()
+    .checkManyAndPublishMetric(
+        SecurityCheckType.notRooted,
+        SecurityCheckType.notEmulated,
+        // Add more checks here
+    )
+    .then(results => {
+        // Handle the security results array
+    });
 ----
 ****

@@ -72,6 +72,14 @@ $ npm install @aerogear/security
 $ cordova plugin add @aerogear/cordova-plugin-aerogear-security
 ----
 
+. Import and get an instance of `SecurityService` to start using the SDK:
++
+[source,javascript]
+----
+const SecurityService = require("@aerogear/security");
+
+const securityService = new SecurityService();
+----
 ****
 
 [role="secondary"]
