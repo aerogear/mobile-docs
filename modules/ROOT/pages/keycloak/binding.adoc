@@ -9,3 +9,7 @@ include::{partialsdir}/generic-binding.adoc[]
 . Choose the *Keycloak client type*. The default is `public` which allows the client to request tokens while type `bearer` should be used to bind to services that only need to verify tokens.
 +
 NOTE: The `public` client type should be used to bind to {mobile-client}s because they only need to request tokens, but not verify them. When binding to other services you should use client type `bearer` unless they also need to authenticate.
+
+== Next Steps
+
+xref:keycloak/coding.adoc[Configuring your Development Environment for the {keycloak-service} Service]
