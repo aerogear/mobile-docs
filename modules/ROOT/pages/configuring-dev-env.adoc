@@ -136,11 +136,45 @@ init(aerogearConfig);
 
 . Select `AeroGear.Mobile.Core` and depending on your target platforms:
 
-.. for Android also pick `AeroGear.Mobile.Core.Platform.Android`
+. for Android:
 
-.. for iOS also pick `AeroGear.Mobile.Core.Platform.iOS`
+.. also pick `AeroGear.Mobile.Core.Platform.Android`
 
-. Click on `Add Packages`
+.. Initialize Core (for Xamarin.Forms):
++
+[souce,csharp]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+LoadApplication(app);
+----
+
+.. Initialize Core (for Legacy Xamarin):
++
+[souce,csharp]
+----
+MobileCoreAndroid.Init(ApplicationContext);
+----
+
+. for iOS:
+
+.. also pick `AeroGear.Mobile.Core.Platform.iOS`
+
+.. Initialize Core (for Xamarin.Forms):
++
+[souce,csharp]
+----
+var app = new App();
+MobileCoreIOS.Init(app.GetType().Assembly);
+LoadApplication(app);
+----
+
+.. Initialize Core (for Legacy Xamarin):
++
+[souce,csharp]
+----
+MobileCoreIOS.Init();
+----
 
 ****
 
