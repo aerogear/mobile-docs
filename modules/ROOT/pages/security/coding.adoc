@@ -102,24 +102,42 @@ $ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {release-nu
 
 ****
 
-== Initializing the SDK
+ == Initializing the SDK
 
-To start using Device Trust Checks in your Device, follow the next steps depending on your platform:
+You may start using Device Trust Checks right away, no further initialization steps are required.
 
-[role="primary"]
-.Android
-****
-Retrieve an instance of `SecurityService`:
+// To start using Device Trust Checks in your Device, follow the next steps depending on your platform:
 
-[source,java]
-----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-----
+// [role="primary"]
+// .Android
+// ****
+// Retrieve an instance of `SecurityService`:
 
-Any subsequent `MobileCore#getInstance` method will return the same instance of SecurityService.
-****
+// [source,java]
+// ----
+// SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+// ----
 
+// Any subsequent `MobileCore#getInstance` method will return the same instance of SecurityService.
+// ****
 
+// [role="secondary"]
+// .iOS
+// ****
+// No further steps are required.
+// ****
+
+// [role="secondary"]
+// .Cordova
+// ****
+// No further steps are required.
+// ****
+
+// [role="secondary"]
+// .Xamarin
+// ****
+// No further steps are required.
+// ****
 
 == Next steps
 

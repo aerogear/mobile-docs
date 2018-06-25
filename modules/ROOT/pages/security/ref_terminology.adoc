@@ -1,19 +1,33 @@
-include::{partialsdir}/attributes.adoc[]
 
-//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_terminology_{device-security-service}
-
-[id='{context}_ref_terminology']
-
-= Provided Self Defence Checks
-
-The following are the self defence checks provided by the SDK.
-
-NOTE: A *successful* check means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
-For example, the `Root Access Detection Check NOT_ROOTED` should return `true` when it is _not rooted_, since this would be the more secure condition.
 
 Root Access Detection (NOT_ROOTED)::
-To help prevent your app running in a device that has been rooted/jailbroken the `SecurityCheckType#NOT_ROOTED` function can be used. This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer] library to check if root access is present on the device.
+Use it to help prevent your app running in a device that has been rooted/jailbroken. A device is considered rooted if *any* of the following are true:
+
+- A custom key has been used to sign the kernel
+- The `su` binaries are present
+
+[role="primary"]
+.Android
+****
+`SecurityChecks.NOT_ROOTED`.
+
+This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer] library to check if root access is present on the device.
+****
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
+[role="secondary"]
+.Cordova
+****
+This check is not available for iOS.
+****
+[role="secondary"]
+.Xamarin
+****
+This check is not available for iOS.
+****
 
 Developer Mode Detection (NO_DEVELOPER_MODE)::
 To detect if Developer Mode has been enabled on the device the `SecurityCheckType#NO_DEVELOPER_MODE` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[`Settings`] class.

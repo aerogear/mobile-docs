@@ -8,8 +8,10 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
-include::./ref_terminology.adoc[leveloffset=+1]
-
 [id='{context}_additional-resources-{context}']
 
 //== Additional resources
+
+== Next steps
+
+xref:security/coding.adoc[Configuring your Development Environment for the Security Service]

@@ -2,97 +2,179 @@ include::{partialsdir}/attributes.adoc[]
 
 = Performing Device Trust Checks in your Device
 
-== Invoking a Single Check
+This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Security Checks can be performed either individually or together.
+
+NOTE: A *successful* check means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
+For example, the `Root Access Detection Check NOT_ROOTED` should return `true` when it is _not rooted_, since this would be the more secure condition.
+
+
+
+
+
+== Root Access Detection
+
+Use this to help prevent your app running in a device that has been rooted/jailbroken.
 
 [role="primary"]
 .Android
 ****
-The `SecurityService#check` method can be used to run a single self defence check. It expects either `SecurityCheckType` or `SecurityCheck` as a parameter and returns `SecurityCheckResult`.
-
 [source,java]
 ----
-SecurityCheckResult result = securityService.check(SecurityCheckType.<check_type>);
-----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-== Invoking Multiple Checks
-
-To invoke multiple self defence checks a security check executor must be used.  There are two types of security check executors: link:javadoc[`SyncSecurityCheckExecutor`], where self defence checks are executed synchronously, and link:javadoc[`AsyncSecurityCheckExecutor`], where self defence checks are executed asynchronously.
-
-=== Synchronously
-
-To run multiple self defence checks _synchronously_, you'll first need to invoke the link:javadoc[`SecurityService#getCheckExecutor`] method.  This methods returns link:javadoc[`SyncSecurityCheckExecutor`] where checks can be added (chained) to the executor and executed synchronously.
-
-
-[source, java]
-----
-SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
-----
-
-=== Asynchronously
-
-To run multiple self defence checks _asynchronously_, you’ll first need to invoke the link:javadoc[`SecurityService#getAsyncCheckExecutor`] method. This methods returns link:javadoc[`AsyncSecurityCheckExecutor`] where checks can be added (chained) to the executor and executed asynchronously.
-
-[source, java]
-----
-AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
-----
-
-=== Adding Checks to Self Defence Check Executors
-
-Both the link:javadoc[`SyncSecurityCheckExecutor`] and link:javadoc[`AsyncSecurityCheckExecutor`] have an `addCheck` method.  This method expects either link:javadoc[`SecurityCheckType`]  or link:javadoc[`SecurityCheck`] as a paramater. +
-
-If you are invoking the `addCheck` method on a link:javadoc[`SyncSecurityCheckExecutor`] then it will return link:javadoc[`SyncSecurityCheckExecutor`]. +
-
-If you are invoking the `addCheck` method on an link:javadoc[`AsyncSecurityCheckExecutor`] then it will return link:javadoc[`AsyncSecurityCheckExecutor`].
-
-[source, java]
-----
-// adding self defence checks to a SyncSecurityCheckExecutor
-
-// add two provided self defence checks to the syncCheckExecutor
-syncCheckExecutor.addCheck(SecurityCheckType.<check_type>).addCheck(SecurityCheckType.<check_type>);
-// add the CustomSecurityCheck to the syncCheckExecutor
-syncCheckExecutor.addCheck(new customSecurityCheck());
-
-
-// adding self defence checks to a AsyncSecurityCheckExecutor
-
-// add two provided self defence checks to the asyncCheckExecutor
-asyncCheckExecutor.addCheck(SecurityCheckType.<check_type>).addCheck(SecurityCheckType.<check_type>);
-// add the CustomSecurityCheck to the asyncCheckExecutor
-asyncCheckExecutor.addCheck(new customSecurityCheck());
-----
-
-=== Executing Self Defence Checks on Executors
-
-Both link:javadoc[`SyncSecurityCheckExecutor`] and link:javadoc[`AsyncSecurityCheckExecutor`] have an `execute` method that executes all self defence checks that have been added. +
-
-The `execute` method for link:javadoc[`SyncSecurityCheckExecutor`] returns a `Map` where the key is the name of the self defence check being tested (`String`) and the value is  link:javadoc[`SecurityCheckResult`]. +
-
-The `execute` method for link:javadoc[`AsyncSecurityCheckExecutor`] returns a `Map` where the key is the result of the `getName` method on the `SecurityCheck` instance being tested and the value is a `Map` of type `Future` with link:javadoc[`SecurityCheckResult`].
-
-[source, java]
-----
-// execute self defence checks on the syncCheckExecutor
-Map<String, SecurityCheckResult> results = syncCheckExecutor.execute();
-
-// execute self defence checks on the asyncCheckExecutor
-Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor.execute();
-----
-
-Both link:javadoc[`SyncSecurityCheckExecutor`] and link:javadoc[`AsyncSecurityCheckExecutor`] allow for multiple checks to be chained so the above examples can be refactored to:
-
-[source, java]
-----
-// adding self defence checks and executing these checks synchronously
-Map<String, SecurityCheckResult> results = securityService.getCheckExecutor().addCheck(new customSecurityCheck()).addCheck(SecurityCheckType.<check_type>).addCheck(SecurityCheckType.<check_type>).execute();
-
-// adding self defence checks and executing these checks asynchronously
-Map<String, Future<SecurityCheckResult> results = securityService.getAsyncCheckExecutor().addCheck(new customSecurityCheck()).addCheck(SecurityCheckType.<check_type>).addCheck(SecurityCheckType.<check_type>).execute();
+SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_ROOTED);
 ----
 ****
 
-== Adding Custom Self Defence Checks
+
+== Developer Mode Detection
+
+Use this to detect if Developer Mode has been enabled on the device.
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEVELOPER_MODE);
+----
+****
+
+
+== Debugger Detection
+
+Use this to detect if an Android debugger is attached to the app.
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEBUGGER);
+----
+****
+
+
+== Emulator Detection
+
+Use this to detect if the app is being run on an emulator.
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_IN_EMULATOR);
+----
+****
+
+
+== Device Lock Detection
+
+Use this to detect if a device has a lock screen set (with pin, fingerprint, pattern...).
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.SCREEN_LOCK_ENABLED);
+----
+****
+
+
+== App Data Backup Detection
+
+Use this to detect whether the application’s data is configured to be synchronized across devices.
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.ALLOW_BACKUP_DISABLED);
+----
+****
+
+
+== Device Encryption Detection
+
+Use this to detect whether the devices filesystem is encrypted.
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheckResult result = securityService.check(SecurityCheckType.HAS_ENCRYPTION_ENABLED);
+----
+****
+
+
+
+
+
+
+== Invoking Multiple Self Defence Checks
+
+Security Checks can be run in group, both synchronously and asynchronously.
+
+=== Synchronously
+
+[role="primary"]
+.Android
+****
+
+To run multiple self defence checks synchronously, you’ll first need to invoke the SecurityService#getCheckExecutor method. This methods returns SyncSecurityCheckExecutor where checks can be added (chained) to the executor and executed synchronously.
+
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
+Map<String, SecurityCheckResult> results = syncCheckExecutor
+    .addCheck(SecurityCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+****
+
+=== Asynchronously
+
+[role="primary"]
+.Android
+****
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor
+    .addCheck(SecurityCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+****
+
+
+
+
+
+== Additional Resources
+
+=== Adding Custom Self Defence Checks
 
 Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Self Defence Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
 
@@ -100,44 +182,60 @@ Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_termi
 .Android
 ****
 
-Extend the `AbstractSecurityCheck` interface:
-
+. Extend the `AbstractSecurityCheck` interface:
++
 [source,java]
 ----
 class CustomSecurityCheck extends AbstractSecurityCheck {
 
-    /**
-     * Custom security check.
-     *
-     * @param context Context to be used by the check.
-     * @return <code>true</code> or <code>false</code>
-     */
     @Override
     protected boolean execute(@NonNull final Context context) {
-        // Implement security check in customSecurityCheck()
-        boolean result = customSecurityCheck();
-        return result;
+        // Implement security check logic here and return result
+        return false;
     }
 
 }
 ----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+SecurityCheck customSecurityCheck = new CustomSecurityCheck();
+SecurityCheckResult result = securityService.check(customSecurityCheck);
+----
++
+Alternatively, you can add it to an existing `AsyncCheckExecutor` or `SyncCheckExecutor`:
++
+[source,java]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
+AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+asyncCheckExecutor.addCheck(new customSecurityCheck());
+----
 ****
 
-== Additional Resources
+
+
+
 
 === Reporting Self Defence Checks Results Via the Metrics Service
 
 [role="primary"]
 .Android
 ****
-In order to report the results of Self Defence utilize the link:./metrics[Metrics] service in conjunction with the link:javadoc[SecurityService].
+In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics].
 
 Individual checks can be reported via the `checkAndSendMetric` method:
 
 [source, java]
 ----
-MetricsService metricsService = mobileCore.getInstance(MetricsService.class);
-SecurityService securityService = activity.mobileCore.getInstance(SecurityService.class);
+MetricsService metricsService = MobileCore.getInstance(MetricsService.class);
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+
 SecurityCheckResult result = securityService.checkAndSendMetric(SecurityCheckType.<check_type>, metricsService);
 ----
 
@@ -148,8 +246,9 @@ Reporting the results for multiple checks can be done via an `Executor` that is 
 MetricsService metricsService = mobileCore.getInstance(MetricsService.class);
 Map<String, SecurityCheckResult> results = SecurityCheckExecutor.Builder.newSyncExecutor(this.getContext())
     .withSecurityCheck(SecurityCheckType.<check_type>)
-    // other checks...
+    // Add other checks...
     .withMetricsService(metricsService)
-    .build().execute();
+    .build()
+    .execute();
 ----
 ****
