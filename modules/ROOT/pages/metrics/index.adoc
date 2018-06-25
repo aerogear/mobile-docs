@@ -1,5 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
+:service-name: Metrics
+
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: con_introduction-to-metrics
 
@@ -24,3 +26,7 @@ To collect metrics from mobile apps, you need to create a binding which is descr
 
 * For more information, see the link:https://prometheus.io/docs/introduction/overview/[Prometheus Documentation].
 * For more information, see the link:http://docs.grafana.org/[Grafana Documentation].
+
+== Next Steps
+
+* xref:metrics/provisioning.adoc[Provisioning {service-name} Service]
