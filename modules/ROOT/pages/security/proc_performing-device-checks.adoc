@@ -26,6 +26,15 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_ROOTED)
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+[source,java]
+----
+let security = AGSSecurity()
+let result = security.check(IsJailbrokenCheck())
+----
+****
 
 == Developer Mode Detection
 
@@ -42,6 +51,15 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEVELOPE
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+[source,java]
+----
+let security = AGSSecurity()
+let result = security.check(IsDebuggerCheck())
+----
+****
 
 == Debugger Detection
 
@@ -58,6 +76,11 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEBUGGER
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
 
 == Emulator Detection
 
@@ -71,6 +94,16 @@ Use this to detect if the app is being run on an emulator.
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
 SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_IN_EMULATOR);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+[source,java]
+----
+let security = AGSSecurity()
+let result = security.check(IsEmulatorCheck())
 ----
 ****
 
@@ -90,6 +123,16 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.SCREEN_LOCK
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+[source,java]
+----
+let security = AGSSecurity()
+let result = security.check(IsDeviceLockCheck())
+----
+****
+
 
 == App Data Backup Detection
 
@@ -106,6 +149,11 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.ALLOW_BACKU
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
 
 == Device Encryption Detection
 
@@ -122,6 +170,11 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.HAS_ENCRYPT
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
 
 
 
@@ -137,13 +190,18 @@ Security Checks can be run in group, both synchronously and asynchronously.
 .Android
 ****
 
-To run multiple self defence checks synchronously, you’ll first need to invoke the SecurityService#getCheckExecutor method. This methods returns SyncSecurityCheckExecutor where checks can be added (chained) to the executor and executed synchronously.
-
+. Get a `SyncCheckExecutor` from `SecurityService`:
++
 [source,java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-
 SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source,java]
+----
 Map<String, SecurityCheckResult> results = syncCheckExecutor
     .addCheck(SecurityCheckType.<check_type>)
     // Add more checks here
@@ -151,21 +209,48 @@ Map<String, SecurityCheckResult> results = syncCheckExecutor
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+Invoke multiple checks using the `checkMany` function:
++
+[source,swift]
+----
+let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkMany(checks)
+----
++
+NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
+****
+
 === Asynchronously
 
 [role="primary"]
 .Android
 ****
+. Get an `AsyncCheckExecutor` from `SecurityService`:
++
 [source,java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-
 AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source,java]
+----
 Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor
     .addCheck(SecurityCheckType.<check_type>)
     // Add more checks here
     .execute();
 ----
+****
+
+[role="secondary"]
+.iOS
+****
+Executing multiple checks asynchronously is not supported at the moment for this platform.
 ****
 
 
@@ -190,7 +275,7 @@ class CustomSecurityCheck extends AbstractSecurityCheck {
 
     @Override
     protected boolean execute(@NonNull final Context context) {
-        // Implement security check logic here and return result
+        // Implement security check logic here
         return false;
     }
 
@@ -218,18 +303,48 @@ asyncCheckExecutor.addCheck(new customSecurityCheck());
 ----
 ****
 
+[role="secondary"]
+.iOS
+****
+. Implement the `SecurityCheck` interface:
++
+[source,swift]
+----
+public class MyCustomCheck: SecurityCheck {
+    
+    public let name = "Custom Check"
+
+    public init() {}
+
+    public func check() -> SecurityCheckResult {
+        // Implement security check logic here
+        return nil
+    }
+
+}
+----
+
+. Use the `check` function as usual:
++
+[source,swift]
+----
+let security = AGSSecurity()
+let result = security.check(MyCustomCheck())
+----
+****
+
 
 
 
 
 === Reporting Self Defence Checks Results Via the Metrics Service
 
+In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics].
+
 [role="primary"]
 .Android
 ****
-In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics].
-
-Individual checks can be reported via the `checkAndSendMetric` method:
+Report individual checks via the `checkAndSendMetric` method:
 
 [source, java]
 ----
@@ -239,7 +354,7 @@ SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 SecurityCheckResult result = securityService.checkAndSendMetric(SecurityCheckType.<check_type>, metricsService);
 ----
 
-Reporting the results for multiple checks can be done via an `Executor` that is passed a reference to the `MetricsService`:
+Or alternatively report multiple checks using a `CheckExecutor`:
 
 [source, java]
 ----
@@ -250,5 +365,24 @@ Map<String, SecurityCheckResult> results = SecurityCheckExecutor.Builder.newSync
     .withMetricsService(metricsService)
     .build()
     .execute();
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Report individual checks via the `checkAndPublishMetric` function:
+
+[source, swift]
+----
+let result = security.checkAndPublishMetric(IsDeviceLockCheck())
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` function:
+
+[source, swift]
+----
+let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkManyAndPublishMetric(checks)
 ----
 ****
