@@ -33,7 +33,7 @@ You can download Docker CE version 17.09.1 for rpm based distros from link:https
 ****
 
 [[firewall-requirements]]
-== Firewall Requirements (Required)
+=== Firewall Requirements (Required)
 
 . Configure the Docker registry _and_ ports required as part
 of the cluster setup:
