@@ -26,7 +26,7 @@ dependencies {
 }
 ----
 
-. Use the `getServiceConfigurationById` method to get the service configuration associated with your custom service
+. Use the `getServiceConfigurationById` method to get the service configuration associated with your custom service:
 +
 [source,java]
 ----
