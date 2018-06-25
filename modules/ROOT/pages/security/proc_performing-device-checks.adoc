@@ -100,7 +100,7 @@ This check is not available for Cordova. TODO: or is it?
 [role="secondary"]
 .Xamarin
 ****
-NOTE: This check is available for Android only.
+WARNING: This check is available for Android only.
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
@@ -291,7 +291,7 @@ This is not available for Cordova.
 [role="secondary"]
 .Xamarin
 ****
-NOTE: This check is available for Android only.
+WARNING: This check is available for Android only.
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
@@ -330,7 +330,7 @@ This is not available for Cordova.
 [role="secondary"]
 .Xamarin
 ****
-NOTE: This check is available for Android only.
+WARNING: This check is available for Android only.
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
@@ -375,13 +375,11 @@ Map<String, SecurityCheckResult> results = syncCheckExecutor
 .iOS
 ****
 Invoke multiple checks using the `checkMany` function:
-+
 [source, swift]
 ----
 let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
 let results = security.checkMany(checks)
 ----
-+
 NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
 ****
 
@@ -507,16 +505,6 @@ SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 SecurityCheck customSecurityCheck = new CustomSecurityCheck();
 SecurityCheckResult result = securityService.check(customSecurityCheck);
 ----
-+
-Alternatively, you can add it to an existing `AsyncCheckExecutor` or `SyncCheckExecutor`:
-+
-[source, java]
-----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-
-AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
-asyncCheckExecutor.addCheck(new customSecurityCheck());
-----
 ****
 
 [role="secondary"]
@@ -592,21 +580,21 @@ securityService.check(new CustomSecurityCheck())
 ----
 class CustomSecurityCheck : ISecurityCheck
 {
-	public string GetName()
-	{
-		return "Custom check";
-	}
+    public string GetName()
+    {
+        return "Custom check";  
+    }
 
-	public string GetId()
-	{
-		return typeof(CustomSecurityCheck).FullName;
-	}
+    public string GetId()
+    {
+        return typeof(CustomSecurityCheck).FullName;    
+    }
 
-	public SecurityCheckResult Check()
-	{
-		// Implement security check logic here
-		return null;
-	}
+    public SecurityCheckResult Check()
+    {
+        // Implement security check logic here  
+        return null;    
+    }
 }
 ----
 
@@ -628,7 +616,7 @@ SecurityCheckResult result = securityService.Check(new CustomSecurityCheck());
 
 === Reporting Self Defence Checks Results Via the Metrics Service
 
-In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics].
+In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
 
 [role="primary"]
 .Android
@@ -705,4 +693,10 @@ new SecurityService()
         // Handle the security results array
     });
 ----
+****
+
+[role="secondary"]
+.Cordova
+****
+TODO: Xamarin docs not updated, need more info
 ****
