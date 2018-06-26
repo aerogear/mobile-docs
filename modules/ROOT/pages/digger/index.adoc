@@ -10,3 +10,7 @@ include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 
 include::./ref_terminology.adoc[leveloffset=+1]
 include::./ref_source-configuration.adoc[leveloffset=+1]
+
+== Next steps
+
+xref:digger/provisioning.adoc[Provisioning {digger-service} Service]

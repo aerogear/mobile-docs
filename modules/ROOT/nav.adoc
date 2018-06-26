@@ -57,7 +57,7 @@ include::{partialsdir}/attributes.adoc[]
 // DIGGER
 * xref:digger/index.adoc[{digger-service}]
 ** xref:digger/provisioning.adoc[Provisioning]
-** xref:digger/creating-a-build-configuration.adoc[Creating a Build Configuration]
+** xref:digger/proc_creating-a-build-configuration.adoc[Creating a Build Configuration]
 ** xref:digger/running-a-build.adoc[Building Apps]
 ** xref:digger/deploy-the-app.adoc[Deploying Apps]
 
