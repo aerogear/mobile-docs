@@ -12,9 +12,13 @@ include::{partialsdir}/generic-provisioning.adoc[]
 
 When provisioning a {digger-service} service, you are prompted to set the following:
 
-* *Android SDK License Agreement
+. *Android SDK License Agreement
  (required)*: Enter `yes` to accept the link:https://developer.android.com/studio/terms.html[Android SDK License Agreement].
-* Android SDK Auto Package Install (required)*: Choose whether to automatically install packages
-* *Android SDK package config*: Add any configuration details you require for the SDK config file.
+
+. *Android SDK package config*: Add any configuration details you require for the SDK config file. Default values are provided but you should review and adapt them to your needs.
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
+
+== Next steps
+
+xref:digger/proc_creating-a-build-configuration.adoc[Creating a Build Configuration]
