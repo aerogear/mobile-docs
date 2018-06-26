@@ -55,7 +55,7 @@ end
 $ pod install
 ----
 
-. Import `AGSSecurity` and get an instance of the `SecurityService` to start using the SDK
+. Import `AGSSecurity` and instantiate the `SecurityService` to start using the SDK
 +
 [source,swift]
 ----
@@ -84,7 +84,7 @@ $ npm install @aerogear/security
 $ cordova plugin add @aerogear/cordova-plugin-aerogear-security
 ----
 
-. Import and get an instance of `SecurityService` to start using the SDK:
+. Import and instantiate `SecurityService` to start using the SDK:
 +
 [source,javascript]
 ----

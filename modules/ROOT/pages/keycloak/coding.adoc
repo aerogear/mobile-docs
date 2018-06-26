@@ -40,14 +40,14 @@ target '[TARGET NAME]' do
 end
 ----
 
-. Update the dependencies by running in your terminal:
+. Update the dependencies:
 +
 [source,bash]
 ----
 $ pod install
 ----
 
-. Import and get an instance of `AGSAuth` to start using the SDK:
+. Import and instantiate `AGSAuth` to start using the SDK:
 +
 [source,swift]
 ----
