@@ -25,7 +25,7 @@ $ oc adm policy add-cluster-role-to-user access-asb-role <your user>
 $ oc adm policy add-cluster-role-to-user cluster-admin <your user>
 ----
 
-After that you should be able to open the `ansible-service-broker` project the OpenShift UI. Go to Resouces -> Config Maps. You should see one Config Map named `broker-config`.
+After that you should be able to open the `ansible-service-broker` project the OpenShift UI. Go to Resources -> Config Maps. You should see one Config Map named `broker-config`.
 Open it for editing and locate the registry section. Add another registry of the `dockerhub` type:
 
 [source,yaml]

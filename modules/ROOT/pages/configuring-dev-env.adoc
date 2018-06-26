@@ -142,7 +142,7 @@ init(aerogearConfig);
 
 .. Initialize Core (for Xamarin.Forms):
 +
-[souce,csharp]
+[source,csharp]
 ----
 var app = new App();
 MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
@@ -151,7 +151,7 @@ LoadApplication(app);
 
 .. Initialize Core (for Legacy Xamarin):
 +
-[souce,csharp]
+[source,csharp]
 ----
 MobileCoreAndroid.Init(ApplicationContext);
 ----
@@ -162,7 +162,7 @@ MobileCoreAndroid.Init(ApplicationContext);
 
 .. Initialize Core (for Xamarin.Forms):
 +
-[souce,csharp]
+[source,csharp]
 ----
 var app = new App();
 MobileCoreIOS.Init(app.GetType().Assembly);
@@ -171,7 +171,7 @@ LoadApplication(app);
 
 .. Initialize Core (for Legacy Xamarin):
 +
-[souce,csharp]
+[source,csharp]
 ----
 MobileCoreIOS.Init();
 ----
