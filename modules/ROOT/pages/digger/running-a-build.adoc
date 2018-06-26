@@ -42,4 +42,4 @@ Each build step is displayed (along with the current step status: completed, err
 
 == Next steps
 
-xref:digger/deploy-the-app.adoc[Deploying Apps]
+xref:digger/proc_deploying-a-mobile-app.adoc[Deploying Apps]

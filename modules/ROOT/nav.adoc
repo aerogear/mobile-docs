@@ -59,7 +59,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:digger/provisioning.adoc[Provisioning]
 ** xref:digger/proc_creating-a-build-configuration.adoc[Creating a Build Configuration]
 ** xref:digger/running-a-build.adoc[Building Apps]
-** xref:digger/deploy-the-app.adoc[Deploying Apps]
+** xref:digger/proc_deploying-a-mobile-app.adoc[Deploying Apps]
 
 
 * xref:ref_api.adoc[API Reference]
