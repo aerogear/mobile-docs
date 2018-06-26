@@ -8,8 +8,5 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 
-[id='{context}_additional-resources-{context}']
-== Additional resources
-
 include::./ref_terminology.adoc[leveloffset=+1]
 include::./ref_source-configuration.adoc[leveloffset=+1]
