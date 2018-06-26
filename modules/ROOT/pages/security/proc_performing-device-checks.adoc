@@ -88,13 +88,13 @@ SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEVELOPE
 [role="secondary"]
 .iOS
 ****
-This check is not available for iOS. TODO: or is it?
+This check is not available for iOS.
 ****
 
 [role="secondary"]
 .Cordova
 ****
-This check is not available for Cordova. TODO: or is it?
+This check is not available for Cordova.
 ****
 
 [role="secondary"]
@@ -698,5 +698,9 @@ new SecurityService()
 [role="secondary"]
 .Cordova
 ****
-TODO: Xamarin docs not updated, need more info
+Self Defence reports are not yet available for Xamarin.
 ****
+
+== Next steps
+
+xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
