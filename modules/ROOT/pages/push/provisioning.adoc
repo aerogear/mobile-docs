@@ -1,8 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Unified Push Server
-
-= Provisioning {service-name} Service
+= Provisioning {unifiedpush-service} Service
 
 == Prerequisites
 
