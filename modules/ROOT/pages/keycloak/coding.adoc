@@ -23,7 +23,7 @@ This guide will help you to set up the {keycloak-service} service SDK in your Ap
 [source,groovy,subs="attributes"]
 ----
 dependencies {
-    implementation "org.aerogear:aerogear-auth:{release-number}"
+    implementation "org.aerogear:android-auth:{release-number}"
 }
 ----
 ****
