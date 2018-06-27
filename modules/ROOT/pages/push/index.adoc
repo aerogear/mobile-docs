@@ -19,25 +19,9 @@ Currently the service supports:
 * link:https://developer.apple.com/notifications/[Apple Push Notification Service]
 * link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging]
 
-== Use-cases and scenarios
-
-Different use-cases and scenarios are supported. Below are a few to give an idea how the UnifiedPush Server can be used:
-
-* MyWarehouseInc-backend can send _notification messages_ to different groups (e.g. discounts for only iOS (or only Android) users)
-* MyInsuranceCorp-backend can send “notification messages” to different variants of its mobile Applications:
-  ** App for the Customers
-  ** App for the employed Sales Agents
-* Publishing Company:
-  ** MyPublishing-Company-backend sends update “notification messages” to all of its apps (free and premium - regardless of the mobile OS)
-  ** Targeting: Sending push messages to different groups of users. For instance, availability of “advanced content” is only notified to the paying customers (e.g. those that run the premium app).
-* A company has different backends (small/simple apps for different tasks) - and these different backends could be able to reach all (or some) of the company’s mobile apps.
-
-**__Motivation:__** Easy use of Push Notifications for any (JBoss/AeroGear powered) mobile application, that is backed by JBoss technology (e.g. LiveOak, Drools, etc.).
-
 include::./ref_terminology.adoc[leveloffset=+1]
 
-
-=== Privacy note
+== Privacy note
 
 As explained in the _link:#_how_the_unifiedpush_server_works[How the UnifiedPush Server works]_ section, the payload of the push notification is delivered to 3rd party Push Network providers, like Google or Apple.
 
@@ -46,21 +30,13 @@ WARNING: It is highly recommended to not sent any send sensitive personal or con
 For analytic purposes on our link:#_dashboard[Dashboard] we store the content of the +alert+ key sent to the UnifiedPush Server. The content of the +alert+ key belongs to the metadata, which is deleted after 30 days, using a nightly job within the UnifiedPush Server.
 
 
-=== How the UnifiedPush Server Works
+== How the UnifiedPush Server Works
 
-The AeroGear UnifiedPush Server offers a unified Notification Service API to the above mentioned Push Network Services. When a push message request is sent to the UnifiedPush Server, it is internally translated into the format of these 3rd party networks. This gives a server the ability to send Push notifications to different mobile platforms.
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
+It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
+
 
 NOTE: When using the UnifiedPush Server, please keep in mind that Push notification is a signalling mechanism and that it is not suitable to be used as a data carrying system (e.g. use in a chat application).
-
-The AeroGear UnifiedPush Server can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks. The graphic below gives a little overview:
-
-image:./img/aerogear_unified_push_server.png[How it works]
-
-1. One PushApplication and at least one mobile platform variant must be created (link:#admin-ui[see Using the Admin UI]).
-2. The variant credentials that are generated and stored by the UnifiedPush Server must be added to the mobile application source, enabling the application running on the mobile device to register with the UnifiedPush Server once it is installed on mobile devices (see link:#next-steps[tutorials]).
-3. Sending a push message can happen in different ways: The AdminUI can be used to send a (test) message to registered devices, as explained in link:#sending_a_push_notification[Sending a Push Notification]. However, in a real-world scenario the Push Notification Message request is triggered from a backend application, which sends its requests using the _Sender API_. Different SDKs for different languages are supported (see link:#_sending_a_push_notification_from_code[Sending a Push Notification from Code]).
-4. The push request is then translated into platform specific details for the required variant Push Network. The Dashboard of the AdminUI gives a status report if a message is sent to the Push Network, as described in link:#_dashboard[Dashboard].
-5. The UnifiedPush Server does not directly deliver the message to the mobile device. This is done by the appropriate variant Push Network. __Note__: There can be latency in the actual delivery. Most Push Networks, such as APNs or GCM, do not guarantee to deliver messages to mobile devices.
 
 == Next Steps
 
