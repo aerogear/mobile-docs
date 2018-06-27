@@ -1,0 +1,161 @@
+include::{partialsdir}/attributes.adoc[]
+
+include::configuring-dev-env-security.adoc[]
+
+== Setting up {device-security-service} service SDK
+
+This guide will help you to set up the {device-security-service} service SDK in your App.
+
+=== Prerequisites
+
+* [x] You have xref:security/configuring-dev-env-security.adoc[configured your dev environment].
+* [x] You have read the xref:configuring-dev-env.adoc[general app setup guide].
+
+=== Importing the libraries
+
+[role="primary"]
+.Android
+****
+. Add the following dependency in your app's *build.gradle*:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-security:{release-number}'
+}
+----
+
+. Get an instance of `SecurityService` to start using the SDK.
++
+[source,swift]
+----
+SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+----
++
+NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
+
+****
+
+[role="secondary"]
+.iOS
+****
+. Add the dependency to your *Podfile*
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSecurity', '{release-number}'
+end
+----
+
+. Update the dependencies by running in your terminal
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import `AGSSecurity` and instantiate the `SecurityService` to start using the SDK
++
+[source,swift]
+----
+import AGSSecurity
+
+let security = AGSSecurity()
+----
++
+NOTE: Any subsequent call to AGSSecurity returns the same instance of the `SecurityService`.
+****
+
+[role="secondary"]
+.Cordova
+****
+. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM]
++
+[source,bash]
+----
+$ npm install @aerogear/security
+----
+
+. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin] for Cordova:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-security
+----
+
+. Import and instantiate `SecurityService` to start using the SDK:
++
+[source,javascript]
+----
+const SecurityService = require("@aerogear/security");
+
+const securityService = new SecurityService();
+----
++
+NOTE: Any new instantiation of `SecurityService` returns the same instance.
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security] package
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security --version {release-number}
+----
+
+. Install the specific packages for Android:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.Android --version {release-number}
+----
++
+And for iOS:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {release-number}
+----
+
+. Initialize the SDK by adding the following line to your Android application's *MainActivity.cs*:
++
+[source,c#]
+----
+protected override void OnCreate(Bundle savedInstanceState)
+{
+    base.OnCreate(savedInstanceState);
+
+    SecurityService.InitializeService();
+    // ...
+}
+----
++
+And to your iOS application's *AppDelegate.cs*:
++
+[source,c#]
+----
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+    SecurityService.InitializeService();
+    // ...
+}
+----
+
+. Get an instance of `SecurityService` to start using the SDK:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+----
++
+NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
+****
+
+== Next steps
+
+xref:security/proc_performing-device-checks.adoc[Device Trust Checks]
