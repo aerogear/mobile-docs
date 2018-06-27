@@ -9,7 +9,7 @@ The following guide helps you to configure schema of the redirect url and web or
 [role="primary"]
 .Android
 ****
-It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+It is recommended to use the package name of the Android app followed by `:/callback` as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
 ****
 [role="secondary"]
 .iOS
