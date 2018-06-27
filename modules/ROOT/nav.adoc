@@ -6,6 +6,9 @@ include::{partialsdir}/attributes.adoc[]
 
 * xref:con_services.adoc[Mobile Services]
 
+* Mobile Services
+//** xref:identity-management.adoc[{keycloak-service}]
+
 // KEYCLOAK
 * xref:keycloak/index.adoc[{keycloak-service}]
 ** xref:keycloak/provisioning.adoc[Provisioning]
