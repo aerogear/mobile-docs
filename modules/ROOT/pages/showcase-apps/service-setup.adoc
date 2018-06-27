@@ -37,7 +37,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 +
 ... Open OpenShift console.
 ... Click the URL for the {keycloak-service}.
-... Login with your OpenShift credentials.
+... Login with your Keycloak credentials.
 ... Click *Users* item in the navigation menu.
 ... Click *Add User*.
 ... Fill in the details of the user as you wish. Make sure *User Enabled* toggle is active.
@@ -228,7 +228,7 @@ include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[levelof
 ****
 [source,bash,subs="attributes"]
 ----
-$ ./gradlew buildDebug
+$ ./gradlew assembleDebug
 ----
 ****
 
