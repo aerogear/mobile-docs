@@ -106,8 +106,8 @@ To allow communication between your mobile device and the cluster, the
 cluster IP must be the same as your local machines IP address.
 +
 For example, if your workstation has the IP address: "192.168.0.2" and your mobile device 
-has the IP `192.168.0.3` set the cluster IP to: `192.168.0.2` so 
-that your mobile is able to access the cluster.
+has the IP `192.168.0.3`, set the cluster IP to: `192.168.0.2` so 
+that your mobile device is able to access the cluster.
 
 . Check the installation logs:
 +
