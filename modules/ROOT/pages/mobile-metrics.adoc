@@ -1,0 +1,6 @@
+
+include::metrics/index.adoc[leveloffset=1]
+include::metrics/provisioning.adoc[leveloffset=1]
+include::metrics/binding.adoc[leveloffset=1]
+include::metrics/configuring-dev-env-metrics.adoc[leveloffset=1]
+include::metrics/analysing-app-usage.adoc[leveloffset=1]

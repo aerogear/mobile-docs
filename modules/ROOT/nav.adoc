@@ -7,63 +7,14 @@ include::{partialsdir}/attributes.adoc[]
 * xref:con_services.adoc[Mobile Services]
 
 * Mobile Services
-//** xref:identity-management.adoc[{keycloak-service}]
-
-// KEYCLOAK
-* xref:keycloak/index.adoc[{keycloak-service}]
-** xref:keycloak/provisioning.adoc[Provisioning]
-** xref:keycloak/binding.adoc[Binding]
-** xref:keycloak/coding.adoc[Coding]
-** xref:keycloak/authenticating.adoc[User Authentication]
-** xref:keycloak/retrieving-users-roles.adoc[Access Control]
-** xref:keycloak/sso.adoc[Single Sign On]
-** xref:metrics/monitoring-keycloak.adoc[Monitoring {keycloak-service}]
+** xref:identity-management.adoc[{keycloak-service}]
+** xref:push-notifications.adoc[{unifiedpush-service}]
+** xref:runtime-connector.adoc[{custom-service}]
+** xref:mobile-metrics.adoc[{metrics-service}]
+** xref:mobile-cicd.adoc[{digger-service}]
+** xref:device-security.adoc[{device-security-service}]
 
 
-
-// SECURITY
-* xref:security/index.adoc[{device-security-service}]
-** xref:security/coding.adoc[Coding]
-** xref:security/proc_performing-device-checks.adoc[Device Trust Checks]
-** xref:security/proc_pinning-certificates.adoc[Certificate Pinning]
-
-
-// PUSH
-* xref:push/index.adoc[{unifiedpush-service}]
-** xref:push/provisioning.adoc[Provisioning]
-** xref:push/binding.adoc[Binding]
-** xref:push/coding.adoc[Coding]
-** More...
-*** xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
-*** xref:push/admin-ui.adoc[{push-ui}]
-*** xref:push/handling-push-notifications.adoc[Handling Push Notifications]
-*** xref:push/proc_preparing-ups-for-use-with-ios.adoc[Apple Push Network]
-*** xref:push/google-setup.adoc[Firebase Cloud Messaging]
-// METRICS
-* xref:metrics/index.adoc[{metrics-service}]
-** xref:metrics/provisioning.adoc[Provisioning]
-** xref:metrics/binding.adoc[Binding]
-** xref:metrics/configuring-dev-env-metrics.adoc[Coding an App to use {metrics-service}]
-** xref:metrics/analysing-app-usage.adoc[Analysing Apps and Devices]
-
-//*** More...
-//**** xref:metrics/giving-an-openshift-user-access-to-metrics.adoc[Sharing access]
-//**** xref:metrics/making-mobile-services-discoverable-by-metrics.adoc[Auto-discovery]
-//**** xref:metrics/manually-adding-services-to-metrics.adoc[Manual discovery]
-//**** xref:metrics/using-dashboards.adoc[Using dashboards]
-
-// CUSTOM
-* xref:custom/index.adoc[{custom-service}]
-** xref:custom/provisioning.adoc[Provisioning]
-** xref:custom/binding.adoc[Binding]
-** xref:custom/configuring-dev-env-custom.adoc[Using Runtime Connectors in an App]
-
-// DIGGER
-* xref:digger/index.adoc[{digger-service}]
-** xref:digger/provisioning.adoc[Provisioning]
-** xref:digger/proc_creating-a-build-configuration.adoc[Creating a Build Configuration]
-** xref:digger/running-a-build.adoc[Building Apps]
-** xref:digger/proc_deploying-a-mobile-app.adoc[Deploying Apps]
 
 
 * xref:ref_api.adoc[API Reference]

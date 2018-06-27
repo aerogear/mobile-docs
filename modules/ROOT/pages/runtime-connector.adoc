@@ -1,0 +1,4 @@
+include::custom/index.adoc[{custom-service}]
+include::custom/provisioning.adoc[Provisioning]
+include::custom/binding.adoc[Binding]
+include::custom/configuring-dev-env-custom.adoc[Using Runtime Connectors in an App]

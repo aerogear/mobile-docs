@@ -1,0 +1,6 @@
+
+include::security/index.adoc[{device-security-service}]
+include::security/coding.adoc[Coding]
+include::security/proc_performing-device-checks.adoc[Device Trust Checks]
+include::security/proc_pinning-certificates.adoc[Certificate Pinning]
+
