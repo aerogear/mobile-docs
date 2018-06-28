@@ -3,14 +3,14 @@ runtime:
 site:
   title: AeroGear Mobile Services
   url: https://www.aerogear.org
-  start_page: aerogear::getting-started
+  start_page: aerogear::index
 content:
   sources:
   - url: .
     branches: HEAD
 ui:
   bundle:
-    url: https://github.com/aerogear/antora-ui/raw/master/build/ui-bundle.zip
+    url: ../antora-ui/build/ui-bundle.zip
     snapshot: true
 
 asciidoc:

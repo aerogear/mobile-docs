@@ -1,12 +1,11 @@
 include::{partialsdir}/attributes.adoc[]
 
 * xref:getting-started.adoc[Getting Started]
-** xref:getting-started.adoc#prerequisites[Prerequisites]
-** xref:getting-started.adoc#procedure[Setting up]
+** xref:getting-started.adoc#procedure[Setting Up]
 ** xref:getting-started.adoc#registering[Registering a Mobile Client]
 ** xref:getting-started.adoc#provisioning[Provisioning a Service]
 ** xref:getting-started.adoc#binding[Binding Client/Service]
-** xref:getting-started.adoc#localdev[Your Development Environment]
+** xref:getting-started.adoc#localdev[Setting Up Development Environment]
 ** xref:getting-started.adoc#running[Running the mobile app]
 
 

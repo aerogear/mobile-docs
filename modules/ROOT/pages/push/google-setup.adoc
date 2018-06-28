@@ -1,5 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
+:toc: 
+
 [[google-setup]]
 = Obtaining Firebase Cloud Messaging Credentials
 

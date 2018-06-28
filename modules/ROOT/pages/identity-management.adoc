@@ -1,5 +1,4 @@
-// :toc: 1
-
+= Using the Identity Management Mobile Service
 include::keycloak/index.adoc[leveloffset=1]
 [[setup]]
 include::keycloak/provisioning.adoc[leveloffset=1]

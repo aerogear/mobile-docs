@@ -1,9 +1,8 @@
-= Getting Started with {org-name} {product-name}
+= Getting Started with AeroGear Mobile Services
 include::installing-mobile-services.adoc[leveloffset=1]
+include::{partialsdir}/getting-started-with-openshift.adoc[leveloffset=2]
 [[registering]]
 include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-[[openshift]]
-include::getting-started-with-openshift[leveloffset=1]
 [[provisioning]]
 = Provisioning your First Service
 include::keycloak/provisioning.adoc[leveloffset=2]

@@ -1,7 +1,7 @@
 name: aerogear
 title: 
 version: 'latest'
-start_ROOT: ROOT:index.adoc
+start_ROOT: ROOT:getting-started.adoc
 nav:
 - modules/ROOT/nav.adoc
 
