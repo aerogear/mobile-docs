@@ -149,23 +149,6 @@ password: password
 
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
 
-== Shutting down and restoring your cluster
-
-To shut down the local cluster run
-
-[source,bash]
-----
- oc cluster down
-----
-
-To bring the cluster back with the state in tact run the following commands replacing `<IP_ADDRESS>` with your clusters IP
-
-[source,bash]
-----
-export CORE_LOC=$(pwd)
-oc cluster up --host-data-dir=$CORE_LOC/ui/openshift-data --routing-suffix=<IP_ADDRESS>.nip.io --public-hostname=<IP_ADDRESS> --version=v3.9.0 --image=openshift/origin
-----
-
 == Next Steps
 
 * xref:registering-a-mobile-app.adoc[Register a Mobile App]
