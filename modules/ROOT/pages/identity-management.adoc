@@ -1,4 +1,4 @@
-
+// :toc: 1
 
 include::keycloak/index.adoc[leveloffset=1]
 [[setup]]

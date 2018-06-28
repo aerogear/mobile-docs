@@ -46,4 +46,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:showcase-apps/device-security.adoc[{device-security-service}]
 ** xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
 ** xref:showcase-apps/metrics.adoc[{metrics-service}]
+
+
 * xref:mobile-cli.adoc[Mobile CLI]
+* xref:glossary.adoc[Glossary]
