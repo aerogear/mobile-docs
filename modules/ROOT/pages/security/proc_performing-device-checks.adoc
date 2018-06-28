@@ -696,7 +696,7 @@ new SecurityService()
 ****
 
 [role="secondary"]
-.Cordova
+.Xamarin
 ****
 Self Defence reports are not yet available for Xamarin.
 ****
