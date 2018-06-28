@@ -15,18 +15,46 @@ include::{partialsdir}/attributes.adoc[]
 
 * xref:con_services.adoc[Mobile Services]
 
+//keycloak
 ** xref:identity-management.adoc[{keycloak-service}]
-*** xref:identity-management.adoc#setup[Setup]
+*** xref:identity-management.adoc#setup[Setting Up]
 *** xref:identity-management.adoc#user-auth[User Authentication]
 *** xref:identity-management.adoc#access[Access Control]
 *** xref:identity-management.adoc#sso[Single Sign On]
 *** xref:identity-management.adoc#monitoring[Monitoring Identity Management]
 
+//push
 ** xref:push-notifications.adoc[{unifiedpush-service}]
+*** xref:push-notifications.adoc#setup[Setting Up]
+*** xref:push-notifications.adoc#push-ui[Using the Push Admin UI]
+*** xref:push-notifications.adoc#sending[Sending a Notification]
+*** xref:push-notifications.adoc#handling[Handling a Notification]
+
+
+//custom
 ** xref:runtime-connector.adoc[{custom-service}]
+*** xref:runtime-connector.adoc#setup[Setting Up]
+*** xref:runtime-connector.adoc#creating[Creating an API Server]
+*** xref:runtime-connector.adoc#connecting[Connecting to an API Server]
+*** xref:runtime-connector.adoc#calling[Calling APIs]
+*** xref:runtime-connector.adoc#updating[Updating Runtime Parameters]
+*** xref:runtime-connector.adoc#securing[Securing an API Server]
+
+
+//metrics
 ** xref:mobile-metrics.adoc[{metrics-service}]
+*** xref:mobile-metrics.adoc#setup[Setting Up]
+
+
+
+//digger
 ** xref:mobile-cicd.adoc[{digger-service}]
+*** xref:mobile-cicd.adoc#setup[Setting Up]
+
+
+//security
 ** xref:device-security.adoc[{device-security-service}]
+*** xref:device-security.adoc#setup[Setting Up]
 
 
 

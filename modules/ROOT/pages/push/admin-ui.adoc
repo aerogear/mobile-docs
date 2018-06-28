@@ -1,5 +1,3 @@
-include::{partialsdir}/attributes.adoc[]
-
 = {push-ui}
 
 include::./con_accessing-push-using-the-ui.adoc[leveloffset=+1]

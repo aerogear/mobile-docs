@@ -42,8 +42,13 @@ include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 
 = Running your First Mobile App
 
-include::showcase-apps/service-setup.adoc[leveloffset=2]
-include::showcase-apps/identity-management.adoc[leveloffset=2]
+== Clone the showcase app:
+
+include::{partialsdir}/cloning-showcase-app.adoc[]
+
+include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=2]
+
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 
 == Running the Mobile App in an Emulator
 

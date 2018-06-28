@@ -1,4 +1,18 @@
 include::custom/index.adoc[{custom-service}]
+[#setup]
 include::custom/provisioning.adoc[Provisioning]
 include::custom/binding.adoc[Binding]
 include::custom/configuring-dev-env-custom.adoc[Using Runtime Connectors in an App]
+[#creating]
+include::custom/creating-an-api-server.adoc[leveloffset=1]
+[#connecting]
+include::custom/connecting-to-an-api-server.adoc[leveloffset=1]
+[#calling]
+include::custom/calling-apis.adoc[leveloffset=1]
+[updating]
+include::custom/updating-runtime-parameters.adoc[leveloffset=1]
+[securing]
+include::custom/securing-an-api-server.adoc[leveloffset=1]
+
+
+
