@@ -1,0 +1,48 @@
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/android-showcase-template.git
+$ cd android-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/ios-showcase-template.git
+$ cd ios-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/cordova-showcase-template.git
+$ cd cordova-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/xamarin-showcase-template.git
+$ cd xamarin-showcase-template
+$ git checkout {release-number}
+----
+****

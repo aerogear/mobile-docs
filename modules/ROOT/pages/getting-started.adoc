@@ -1,3 +1,5 @@
+include::{partialsdir}/attributes.adoc[]
+
 = Getting Started with AeroGear Mobile Services
 include::installing-mobile-services.adoc[leveloffset=1]
 include::{partialsdir}/getting-started-with-openshift.adoc[leveloffset=2]
@@ -5,11 +7,43 @@ include::{partialsdir}/getting-started-with-openshift.adoc[leveloffset=2]
 include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 [[provisioning]]
 = Provisioning your First Service
+
+Mobile Services provide commonly required features for mobile app development.
+
+The following services are available with this release:
+
+* xref:identity-management.adoc[{keycloak-service}]
+* xref:push-notifications.adoc[{unifiedpush-service}]
+* xref:runtime-connector.adoc[{custom-service}]
+* xref:mobile-metrics.adoc[{metrics-service}]
+* xref:mobile-cicd.adoc[{digger-service}]
+* xref:device-security.adoc[{device-security-service}]
+
+
+This guide introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service. 
+
 include::keycloak/provisioning.adoc[leveloffset=2]
 [[binding]]
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
-include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=1]
+= Setting Up your Local Development Environment
+
+== Supported Environments
+
+{product-name} supports mobile app development for the following:
+
+* Android
+* iOS
+* Cordova
+* Xamarin
+
+include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 [[running]]
-include::showcase-apps/service-setup.adoc[leveloffset=1]
-include::showcase-apps/identity-management.adoc[leveloffset=1]
+
+= Running your First Mobile App
+
+include::showcase-apps/service-setup.adoc[leveloffset=2]
+include::showcase-apps/identity-management.adoc[leveloffset=2]
+
+== Running the Mobile App in an Emulator
+

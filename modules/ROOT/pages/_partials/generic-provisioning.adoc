@@ -9,4 +9,4 @@ You can filter the catalog items to only show mobile specific items by clicking 
 
 . Follow the wizard for provisioning that service. 
 +
-NOTE: When prompted to *Create a Binding*, choose *Do not bind at this time*
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*

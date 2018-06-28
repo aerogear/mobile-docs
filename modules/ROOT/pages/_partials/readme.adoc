@@ -1,6 +1,5 @@
 = Remote File
-This directory is used to store temporary files during the build process. Do not commit adoc files in this directory with content.
-
+This directory is used to store generic files and temporary files during the build process.
 A reference file typically is named `rantora-metrics-index.inc` and contains:
 
 ----

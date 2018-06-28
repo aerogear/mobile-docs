@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 == Prerequisites
 
 * [x] You have provisioned one of the {product-name} as described in xref:keycloak/provisioning.adoc[Provisioning {service-name} Service].
-* [x] (Optional) You have associated the service with a {mobile-client} as described in xref:keycloak/binding.adoc[Binding a {mobile-client} with the {service-name} Service].
+* [x] You have associated the service with a {mobile-client} as described in xref:keycloak/binding.adoc[Binding a {mobile-client} with the {service-name} Service].
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
