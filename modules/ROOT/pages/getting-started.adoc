@@ -1,0 +1,16 @@
+= Getting Started with {org-name} {product-name}
+include::installing-mobile-services.adoc[leveloffset=1]
+[[registering]]
+include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
+[[openshift]]
+include::getting-started-with-openshift[leveloffset=1]
+[[provisioning]]
+= Provisioning your First Service
+include::keycloak/provisioning.adoc[leveloffset=2]
+[[binding]]
+include::keycloak/binding.adoc[leveloffset=1]
+[[localdev]]
+include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=1]
+[[running]]
+include::showcase-apps/service-setup.adoc[leveloffset=1]
+include::showcase-apps/identity-management.adoc[leveloffset=1]
