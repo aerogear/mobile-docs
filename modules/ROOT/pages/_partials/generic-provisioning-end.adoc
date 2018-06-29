@@ -1,6 +1,2 @@
 
-After the service is provisioned, you can see it in the project overview.
-
-== Additional Information
-In order to delete a provisioned service, select the service menu and click *Delete*. A notification 
-appears that the service has now been *Marked for Deletion*.
+Once the wizard steps are completed navigate to the Project Overview in OpenShift to see the newly provisioned service.
