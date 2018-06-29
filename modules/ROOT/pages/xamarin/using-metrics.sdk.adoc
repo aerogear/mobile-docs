@@ -1,0 +1,39 @@
+= AeroGear Services Metrics SDK
+
+This document explains how to use the AeroGear Metrics SDK on the Android platform and integrate it with an App.
+
+== Provided metrics
+
+The default metrics contain App metrics, Device metrics and possibly other types in the future.
+A Client ID and a timestamp are added to the top level of the Metrics object for categorization and visualization purposes.
+The Client ID will be generated and stored on the device when the App is started the first time.
+
+=== App metrics
+
+- *App ID*: The package name of your App
+- *App version*: The version of your App as defined in the Manifest `versionName` tag
+- *SDK version*: The version of the Aerogear SDK that is used
+- *Framework*: Framework used for development (`Xamarin.Android` or `Xamarin.iOS`)
+
+NOTE: App metrics are sent automatically once the metric service is configured.
+
+=== Device metrics
+
+- *Platform*: Hardcoded to `android` or `iOS`
+- *Platform Version*: The API level of the device on Android or, on iOS, the  version of the platform (11.4, etc.)
+
+==== Sending Device metrics
+
+To send Device metrics, the metric service must be passed to the Device check executor object:
+
+```csharp
+   // Get the metric service object
+   var metricsService = MobileCore.Instance.GetService<MetricsService>();
+   var checkExecutor = SecurityCheckExecutor
+						.newSyncExecutor()
+						.WithSecurityCheck(mysecuritycheck)   // repeat this call for each check to execute
+						.WithMetricsService(metricsService)   // pass the metric service
+						.Build();
+   // Execute the checks
+   var checkResults = checkExecutor.Execute();
+```
