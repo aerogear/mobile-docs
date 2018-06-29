@@ -11,4 +11,4 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
-include::./keycloak-setup.adoc[]
+include::./keycloak-setup.adoc[leveloffset=1]

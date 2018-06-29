@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 The  `mobile-services.json` file contains all the information your code needs to use mobile services. 
 
 [discrete]
-Prerequisites:
+== Prerequisites
 
 * [x] You have xref:ROOT:index.adoc[set up AeroGear Mobile Services on OpenShift].
 * [x] You have xref:provisioning-services.adoc[provisioned at least one mobile service]

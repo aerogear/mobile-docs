@@ -155,7 +155,3 @@ var securityService = MobileCore.GetService<SecurityService>();
 +
 NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
 ****
-
-== Next steps
-
-xref:security/proc_performing-device-checks.adoc[Device Trust Checks]

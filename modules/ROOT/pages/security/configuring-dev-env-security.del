@@ -1,8 +1,6 @@
-include::{partialsdir}/attributes.adoc[]
+= Configuring your Development Environment for the {device-security-service} Service
 
 :service-name: Security
-
-= Configuring your Development Environment for the {service-name} Service
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 

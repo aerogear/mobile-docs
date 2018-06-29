@@ -59,14 +59,11 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:device-security.adoc[{device-security-service}]
 *** xref:device-security.adoc#setup[Setting Up]
 
-
-
-
 * xref:ref_api.adoc[API Reference]
-** xref:ref_api.adoc#android[Android]
-** xref:ref_api.adoc#ios[iOS]
-** xref:ref_api.adoc#cordova[Cordova]
-** xref:ref_api.adoc#xamarin[Xamarin]
+//** xref:ref_api.adoc#android[Android]
+//** xref:ref_api.adoc#ios[iOS]
+//** xref:ref_api.adoc#cordova[Cordova]
+//** xref:ref_api.adoc#xamarin[Xamarin]
 
 
 // SHOWCASE APPS

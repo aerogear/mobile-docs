@@ -1,9 +1,26 @@
 include::{partialsdir}/attributes.adoc[]
-
-= Test Card
-
+= Doing Stuff
 
 image::testcard.png[optional alt text]
+
+
+[discrete]
+== Prerequisites
+
+* [x] minimal prereqs
+
+[discrete]
+== Procedure
+
+. numbered list
+
+
+[discrete]
+== Additional Information
+
+Any links are better placed here.
+
+Attributes include:
 
 * {product-name}
 * {mobile-client}
