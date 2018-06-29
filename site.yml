@@ -3,7 +3,7 @@ runtime:
 site:
   title: AeroGear Mobile Services
   url: https://www.aerogear.org
-  start_page: aerogear::index
+  start_page: aerogear::getting-started
 content:
   sources:
   - url: git@github.com:aerogear/mobile-docs.git

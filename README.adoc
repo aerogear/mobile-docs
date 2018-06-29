@@ -121,6 +121,16 @@ When building for publication use:
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
 
+
+== Editing
+
+After reviewing a html file, you might identify a change. When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. For example, when editing the `registering-an-app.adoc`, avoid problems by: 
+
+. Regex search for `include.*registering-an-app` across the whole repo.
+. Review the list of files from this search to understand of the context of the content.
+. Use your judgement when editing the file to make sure the content is appropriate for each rendering of that content. 
+
+
 [[publishing]]
 == Publishing
 
