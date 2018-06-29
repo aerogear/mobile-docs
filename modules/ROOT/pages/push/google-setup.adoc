@@ -1,6 +1,5 @@
-include::{partialsdir}/attributes.adoc[]
-
-[[google-setup]]
+//include::{partialsdir}/attributes.adoc[]
+//[[google-setup]]
 = Obtaining Firebase Cloud Messaging Credentials
 
 Before the Android application is able to receive the notifications, you must set up access to Firebase Cloud Messaging. As with iOS, you are only able to test out your push notifications in a real device. This section shows you how to obtain the credentials necessary to set up Firebase Cloud Messaging for your app, including:

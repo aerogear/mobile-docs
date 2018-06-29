@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-[[downloading-the-mobile-services-configuration-file]]
+//[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
 . Navigate to your project in OpenShift.

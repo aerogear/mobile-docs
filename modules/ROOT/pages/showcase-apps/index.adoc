@@ -2,15 +2,8 @@ include::{partialsdir}/attributes.adoc[]
 
 = Showcase Apps
 
+== Introduction
 Showcase apps demonstrate many features of {product-name}.
 
 These mobile apps are ready to work with the mobile services provisioned and they present an easy
 starting point for the developers.
-
-After completing all the steps in xref:showcase-apps/service-setup.adoc[Using the Showcase Apps], you can demonstrate:
-
-* xref:showcase-apps/identity-management.adoc[{keycloak-service}]
-* xref:showcase-apps/device-security.adoc[{device-security-service}]
-* xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
-* xref:showcase-apps/metrics.adoc[{metrics-service}]
-

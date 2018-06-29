@@ -1,6 +1,13 @@
 include::{partialsdir}/attributes.adoc[]
+= {mobile-client}s in OpenShift
 
-= Binding {mobile-client}s to Services in OpenShift
+== What is a Mobile Client in your OpenShift Project
+
+Typically, when you develop a mobile app you connect directly to services such as authentication, and push networks. As these services change, you update your code,
+
+With {product-name}, you create a representation of your mobile app in OpenShift and this *mobile client* becomes the conduit by which you connect to services in OpenShift and external services.
+
+== Binding 
 
 {mobile-client}s in OpenShift may be bound to particular services provisioned in the namespace to allow communication between them. 
 The result of an binding produces a JSON configuration file (`mobile-services.json`) for your application which may be consumed by the Aerogear SDKs, allowing it to access the service (or services) it needs.
@@ -59,9 +66,3 @@ image:./images/keycloak-client-config.png[Client Bindings Config]
 To delete the binding, simply click on the trash can icon next to the service name. 
 
 image:./images/keycloak-enabled.png[Keycloak Integration Enabled]
-
-== Next steps
-
-For in depth examples of binding your app to various services, see some of the following guides:
-
-* link:./integrate-android-app-with-custom-service.adoc[Integrate an Android Application with your own backend service in OpenShift]

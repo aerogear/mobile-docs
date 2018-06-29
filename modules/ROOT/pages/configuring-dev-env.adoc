@@ -178,5 +178,5 @@ MobileCoreIOS.Init();
 
 ****
 
-include::{partialsdir}/proc_self-signed-certs.adoc[]
+//include::{partialsdir}/proc_self-signed-certs.adoc[]
 

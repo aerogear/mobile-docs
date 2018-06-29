@@ -1,0 +1,19 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Doing Stuff
+
+[discrete]
+== Prerequisites
+
+* [x] minimal prereqs
+
+[discrete]
+== Procedure
+
+. numbered list
+
+
+[discrete]
+== Additional Information
+
+Any links are better placed here.

@@ -1,15 +1,15 @@
-= Single Sign-On (SSO)
+= Adding Single Sign-On (SSO) to your Mobile App
 
 The Auth SDK uses OpenID Connect http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.
 
 == Prerequisites
 
-. A running AeroGear Auth service (Keycloak)
-. Two apps on the same device that are both using the Auth SDK module
+* Two {mobile-client}s bound to the {keycloak-service} service
+* Two mobile apps built and running on the same device that are using the AeroGear SDK Auth module
 
-== Steps to achieve SSO via a device browser
+== Using SSO with the Device Browser
 
-For this guide, let's assume that your two apps are called **Email App** and **Messaging App**.
+For this guide, assume that your two apps are called **Email App** and **Messaging App**.
 
 . Ensure the "Remember Me" option in Keycloak is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
 

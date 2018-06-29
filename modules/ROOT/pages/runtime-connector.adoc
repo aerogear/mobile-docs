@@ -1,0 +1,21 @@
+:toc:
+include::custom/index.adoc[{custom-service}]
+[#setup]
+= Setting Up the Runtime Connector Mobile Service
+
+include::custom/provisioning.adoc[leveloffset=1]
+include::custom/binding.adoc[leveloffset=1]
+include::custom/configuring-dev-env-custom.adoc[leveloffset=1]
+[#creating]
+include::custom/creating-an-api-server.adoc[leveloffset=1]
+[#connecting]
+include::custom/connecting-to-an-api-server.adoc[leveloffset=1]
+[#calling]
+include::custom/calling-apis.adoc[leveloffset=1]
+[#updating]
+include::custom/updating-runtime-parameters.adoc[leveloffset=1]
+[#securing]
+include::custom/securing-an-api-server.adoc[leveloffset=1]
+
+
+

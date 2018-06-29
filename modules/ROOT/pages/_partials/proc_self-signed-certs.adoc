@@ -1,4 +1,4 @@
-[[using-self-signed-certificates-in-mobile-clients]]
+//[[using-self-signed-certificates-in-mobile-clients]]
 = Using Self-Signed Certificates in Mobile Apps
 
 Throughout the development lifecycle of a mobile apps, a common

@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 
 [id='{context}_ref_terminology']
 
-= Reference material
+= {unifiedpush-service} Terminology
 
 This section describes terminology that is associated with {unifiedpush-service}.
 

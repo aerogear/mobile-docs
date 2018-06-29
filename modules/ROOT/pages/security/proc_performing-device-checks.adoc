@@ -1,15 +1,10 @@
-include::{partialsdir}/attributes.adoc[]
-
+//include::{partialsdir}/attributes.adoc[]
 = Performing Device Trust Checks in your Device
 
 This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Security Checks can be performed either individually or together.
 
 NOTE: A *successful* check means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
 For example, the `Root Access Detection Check NOT_ROOTED` should return `true` when it is _not rooted_, since this would be the more secure condition.
-
-
-
-
 
 == Root Access Detection
 

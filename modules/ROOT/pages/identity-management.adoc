@@ -1,0 +1,16 @@
+:toc:
+
+include::keycloak/index.adoc[leveloffset=0]
+[[setup]]
+== Setting Up the Identity Management Mobile Service
+include::keycloak/provisioning.adoc[leveloffset=2]
+include::keycloak/binding.adoc[leveloffset=2]
+include::keycloak/coding.adoc[leveloffset=2]
+[[user-auth]]
+include::keycloak/authenticating.adoc[leveloffset=1]
+[[access]]
+include::keycloak/retrieving-users-roles.adoc[leveloffset=1]
+[[sso]]
+include::keycloak/sso.adoc[leveloffset=1]
+[[monitoring]]
+include::metrics/monitoring-keycloak.adoc[leveloffset=1]

@@ -1,6 +1,6 @@
 
-After the service has been provisioned, you should then be able to see it in the project overview.
+After the service is provisioned, you can see it in the project overview.
 
-== Deprovisioning
+== Additional Information
 In order to delete a provisioned service, select the service menu and click *Delete*. A notification 
 appears that the service has now been *Marked for Deletion*.

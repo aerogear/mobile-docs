@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Registering a Mobile App
+= Registering a {mobile-client}
 
 [discrete]
 == Prerequisites:
@@ -10,7 +10,7 @@ include::{partialsdir}/attributes.adoc[]
 [discrete]
 == Procedure
 
-You register a mobile app by creating a {mobile-client-openshift}:
+To create a {mobile-client-openshift}:
 
 . Log into the OpenShift console.
 . Choose your project.
@@ -24,5 +24,4 @@ After the {mobile-client} is provisioned, you can navigate to it from Project Ov
 [discrete]
 == Related Information
 
-* xref:provisioning-services.adoc[Provisioning Mobile Services]
-* xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services]
+After registering a {mobile-client}, you must bind it to a mobile service and use the AeroGear SDK to avail of the mobile service features. 

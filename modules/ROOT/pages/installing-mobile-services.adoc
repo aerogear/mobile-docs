@@ -6,9 +6,11 @@ To use {product-name}, you must run OpenShift and install an add-on which enable
 
 NOTE: {org-name} recommends running OpenShift using the method described here. However there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[].
 
+[[prerequisites]]
 == Prerequisites
 
 * MacOS or Linux
+* A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
 
@@ -52,8 +54,8 @@ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
 firewall-cmd --reload
 ----
 
-
-== Local development
+[[procedure]]
+== Procedure
 
 . Clone the Mobile-core installer:
 +
