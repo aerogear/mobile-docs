@@ -1,3 +1,4 @@
+:toc:
 
 include::security/index.adoc[leveloffset=1]
 include::security/coding.adoc[leveloffset=1]

@@ -1,3 +1,5 @@
+:toc:
+
 include::keycloak/index.adoc[leveloffset=0]
 [[setup]]
 == Setting Up the Identity Management Mobile Service

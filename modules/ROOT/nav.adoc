@@ -4,14 +4,11 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:getting-started.adoc#procedure[Setting Up]
 ** xref:getting-started.adoc#registering[Registering a Mobile Client]
 ** xref:getting-started.adoc#provisioning[Provisioning a Service]
-** xref:getting-started.adoc#binding[Binding Client/Service]
+** xref:getting-started.adoc#binding[Binding Client Service]
 ** xref:getting-started.adoc#localdev[Setting Up Development Environment]
 ** xref:getting-started.adoc#running[Running the mobile app]
 
-
-
-
-
+* xref:mobile-clients.adoc[Mobile Clients]
 
 * xref:con_services.adoc[Mobile Services]
 
@@ -67,13 +64,14 @@ include::{partialsdir}/attributes.adoc[]
 
 
 // SHOWCASE APPS
-* xref:showcase-apps/index.adoc[Showcase Apps]
-** xref:showcase-apps/service-setup.adoc[Service Setup]
-** xref:showcase-apps/identity-management.adoc[{keycloak-service}]
-** xref:showcase-apps/device-security.adoc[{device-security-service}]
-** xref:showcase-apps/push-notifications.adoc[{unifiedpush-service}]
-** xref:showcase-apps/metrics.adoc[{metrics-service}]
-
+* xref:showcase-apps.adoc[Showcase Apps]
+** xref:showcase-apps.adoc#features[Showcase App Features]
+** xref:showcase-apps.adoc#setup[Service Setup]
+** xref:showcase-apps.adoc#app[Showcase App Setup]
+** xref:showcase-apps.adoc#binding[Service Binding]
+** xref:showcase-apps.adoc#json[Downloading the service-config file]
+** xref:showcase-apps.adoc#build[Building and Running the Showcase Apps]
+** xref:showcase-apps.adoc#certs[Using Self Signed Certs]
 
 * xref:mobile-cli.adoc[Mobile CLI]
 * xref:glossary.adoc[Glossary]

@@ -1,3 +1,5 @@
+:toc:
+
 include::metrics/index.adoc[leveloffset=1]
 [#setup]
 == Setting Up the Mobile Metrics Service

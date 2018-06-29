@@ -1,3 +1,4 @@
+:toc:
 include::custom/index.adoc[{custom-service}]
 [#setup]
 = Setting Up the Runtime Connector Mobile Service

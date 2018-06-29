@@ -1,6 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
 = Getting Started with AeroGear Mobile Services
+:toc:
 include::installing-mobile-services.adoc[leveloffset=1]
 include::{partialsdir}/getting-started-with-openshift.adoc[leveloffset=2]
 [[registering]]
@@ -11,6 +12,7 @@ include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 Mobile Services provide commonly required features for mobile app development.
 
 The following services are available with this release:
+
 
 * xref:identity-management.adoc[{keycloak-service}]
 * xref:push-notifications.adoc[{unifiedpush-service}]
