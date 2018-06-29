@@ -44,6 +44,9 @@ include::{partialsdir}/attributes.adoc[]
 //metrics
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#setup[Setting Up]
+*** xref:mobile-metrics.adoc#app[App and Device]
+*** xref:mobile-metrics.adoc#setup[Device Trust]
+*** xref:mobile-metrics.adoc#setup[Identity Management]
 
 
 

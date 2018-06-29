@@ -1,6 +1,16 @@
 
 include::metrics/index.adoc[leveloffset=1]
+[#setup]
+= Setting Up the Mobile Metrics Service
+
 include::metrics/provisioning.adoc[leveloffset=1]
 include::metrics/binding.adoc[leveloffset=1]
 include::metrics/configuring-dev-env-metrics.adoc[leveloffset=1]
+[#app]
 include::metrics/analysing-app-usage.adoc[leveloffset=1]
+[#trust]
+include::metrics/analysing-trust-checks.adoc[leveloffset=1]
+[#identity]
+include::metrics/monitoring-keycloak.adoc[leveloffset=1]
+
+
