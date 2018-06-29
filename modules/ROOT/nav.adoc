@@ -12,7 +12,6 @@ include::{partialsdir}/attributes.adoc[]
 
 * xref:con_services.adoc[Mobile Services]
 
-//keycloak
 ** xref:identity-management.adoc[{keycloak-service}]
 *** xref:identity-management.adoc#setup[Setting Up]
 *** xref:identity-management.adoc#user-auth[User Authentication]
@@ -20,7 +19,6 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:identity-management.adoc#sso[Single Sign On]
 *** xref:identity-management.adoc#monitoring[Monitoring Identity Management]
 
-//push
 ** xref:push-notifications.adoc[{unifiedpush-service}]
 *** xref:push-notifications.adoc#setup[Setting Up]
 *** xref:push-notifications.adoc#push-ui[Using the Push Admin UI]
@@ -28,7 +26,6 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push-notifications.adoc#handling[Handling a Notification]
 
 
-//custom
 ** xref:runtime-connector.adoc[{custom-service}]
 *** xref:runtime-connector.adoc#setup[Setting Up]
 *** xref:runtime-connector.adoc#creating[Creating an API Server]
@@ -38,32 +35,18 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:runtime-connector.adoc#securing[Securing an API Server]
 
 
-//metrics
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#setup[Setting Up]
 *** xref:mobile-metrics.adoc#app[App and Device]
 *** xref:mobile-metrics.adoc#setup[Device Trust]
 *** xref:mobile-metrics.adoc#setup[Identity Management]
 
-
-
-//digger
 ** xref:mobile-cicd.adoc[{digger-service}]
 *** xref:mobile-cicd.adoc#setup[Setting Up]
 
-
-//security
 ** xref:device-security.adoc[{device-security-service}]
 *** xref:device-security.adoc#setup[Setting Up]
 
-* xref:ref_api.adoc[API Reference]
-//** xref:ref_api.adoc#android[Android]
-//** xref:ref_api.adoc#ios[iOS]
-//** xref:ref_api.adoc#cordova[Cordova]
-//** xref:ref_api.adoc#xamarin[Xamarin]
-
-
-// SHOWCASE APPS
 * xref:showcase-apps.adoc[Showcase Apps]
 ** xref:showcase-apps.adoc#features[Showcase App Features]
 ** xref:showcase-apps.adoc#setup[Service Setup]
@@ -73,5 +56,6 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:showcase-apps.adoc#build[Building and Running the Showcase Apps]
 ** xref:showcase-apps.adoc#certs[Using Self Signed Certs]
 
+* xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]
 * xref:glossary.adoc[Glossary]
