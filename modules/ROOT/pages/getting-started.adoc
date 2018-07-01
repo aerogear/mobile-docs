@@ -3,7 +3,6 @@ include::{partialsdir}/attributes.adoc[]
 = Getting Started with AeroGear Mobile Services
 :toc:
 include::installing-mobile-services.adoc[leveloffset=1]
-include::{partialsdir}/getting-started-with-openshift.adoc[leveloffset=2]
 [[registering]]
 include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 [[provisioning]]
