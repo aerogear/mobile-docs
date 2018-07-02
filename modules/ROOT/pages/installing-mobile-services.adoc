@@ -39,14 +39,6 @@ You can download Docker CE version 17.09.1 for rpm based distros from link:https
 [[firewall-requirements]]
 === Firewall Requirements (Required)
 
-. Configure the Docker registry _and_ ports required as part
-of the cluster setup:
-+
-* Linux: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux[here]
-* Mac: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[here]
-
 . For Linux (Fedora) we also need to add an extra port to the `dockerc`
 zone:
 +
