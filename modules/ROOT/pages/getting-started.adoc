@@ -31,12 +31,12 @@ include::keycloak/binding.adoc[leveloffset=1]
 
 === Supported Environments
 
-{product-name} supports mobile app development for the following:
+In order to perform local development, you will need to have set up a local development environment or IDE. {product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin. For information on how to set up your local development environment for these technologies, please see the links below:
 
-* Android
-* iOS
-* Cordova
-* Xamarin
+* link:https://developer.android.com/studio/install[Android]
+* link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS]
+* link:https://cordova.apache.org/#getstarted[Cordova]
+* link:https://developer.xamarin.com/getting-started/[Xamarin]
 
 include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 [[running]]
