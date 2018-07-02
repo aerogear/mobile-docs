@@ -34,37 +34,38 @@ The resulting file is located in the `/tmp` directory.
 .Android
 
 ****
-.. Enable PIN protection on the mobile device to ensure the certificate can be installed.
+.. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to ensure the certificate can be installed.
 
 .. Copy the file to your device using one of the following methods:
 +
-* USB - Attach the device to the machine hosting
-OpenShift via USB and drag the certificate to the devices file system
-* Email attachment - Simply email the certificate to an address
+* Email attachment (Recommended) - Simply email the certificate to an address
 accessible from the device and download the attachment.
 * Cloud service - Use a cloud storage service such as Dropbox or Google
 Drive which is accessible from the device, browse to the certificate and
 proceed to download it.
-.. Configure your device:
+* USB - Attach the device to the machine hosting
+OpenShift via USB and drag the certificate to the devices file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
+.. Add the certificate to your device:
 +
-Go to Settings > Security > Install from storage. It should detect the
-certificate and let you add it to the device.
+If you are using the email or cloud service approach, once the certificate file is downloaded, you will be prompted by the Android system automatically to install the file. You can simply follow the instructions to complete the process.
++
+However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and and Android system should detect the
+certificate and let you add it to the device. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
 ****
 
 [role="secondary"]
 .iOS
 
 ****
-.. Enable Passcode or TouchID protection on the mobile device to ensure the certificate can be installed.
-
+.. Enable https://support.apple.com/en-us/ht204060[Passcode] or https://support.apple.com/en-us/ht201371[TouchID] protection on the mobile device to ensure the certificate can be installed.
 .. Copy the file to your device using one of the following methods:
 +
-* Email attachment - Simply email the certificate to an address
+* Email attachment (Recommended) - Simply email the certificate to an address
 accessible from the device and download the attachment.
 * Cloud service - Use a cloud storage service such as Dropbox or Google
 Drive which is accessible from the device, browse to the certificate and
 proceed to download it.
-.. Configure your device:
+.. Add the certificate to your device:
 +
 When you download the certificate, the
 device should automatically detect a profile. Simply follow the on
