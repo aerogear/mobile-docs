@@ -156,6 +156,8 @@ password: password
 
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
 
+image:mobile-platforms.png[]
+
 == Next Steps
 
 * xref:registering-a-mobile-app.adoc[Register a Mobile App]
