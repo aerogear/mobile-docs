@@ -23,22 +23,6 @@ include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 
 This guide introduces the procedures for using mobile services by guiding you through the process using the Identity Management service. For a full list of available services see xref:con_services.adoc[Mobile Services]
 
-<<<<<<< HEAD
-
-* xref:identity-management.adoc[{keycloak-service}]
-* xref:push-notifications.adoc[{unifiedpush-service}]
-* xref:runtime-connector.adoc[{custom-service}]
-* xref:mobile-metrics.adoc[{metrics-service}]
-* xref:mobile-cicd.adoc[{digger-service}]
-* xref:device-security.adoc[{device-security-service}]
-
-
-This section introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service.
-
-include::keycloak/provisioning.adoc[leveloffset=1]
-[[binding]]
-=======
->>>>>>> update provision first service
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
 == Setting Up your Local Development Environment

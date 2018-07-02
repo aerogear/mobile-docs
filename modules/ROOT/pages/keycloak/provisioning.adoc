@@ -2,8 +2,6 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Identity Management
 
-= Provisioning {service-name} Service
-
 == Prerequisites
 
 * [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
