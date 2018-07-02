@@ -1,0 +1,18 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-sync
+
+[id='{context}_con_introduction-to-data-sync']
+= About the {sync-service} Service
+
+[[overview]]
+== Overview
+
+
+include::{partialsdir}/generic-service-intros.adoc[tags=sync-service]
+
+
+== Next Steps
+
+* xref:sync/provisioning.adoc[Provisioning the {sync-service} service]

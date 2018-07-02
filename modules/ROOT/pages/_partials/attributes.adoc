@@ -37,6 +37,9 @@
 // Device Security
 :device-security-service: Device Security
 
+// Sync Service
+:sync-service: Data Sync
+
 :SDK: AeroGear SDK
 :ios-sdk: AeroGear SDK for iOS
 :android-sdk: AeroGear SDK for Android
