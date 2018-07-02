@@ -43,14 +43,22 @@ include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 
 == Running your First Mobile App
 
-=== Clone the showcase app:
+A few showcase apps have been created to allow you to try out some of the features. They are available in several different platforms. Please pick one platform that you are interested in and follow the steps below to set them up.
+
+=== Clone the showcase app
+
+Please choose one platform and clone the corresponding showcase app.
 
 include::{partialsdir}/cloning-showcase-app.adoc[]
 
+=== Configure the showcase app
+
+You need to configure the showcase app by updating the `mobile-services.json` file.
+
+include::{partialsdir}/configure-showcase-apps.adoc[]
+
+=== Build and run the Mobile App
+
+include::{partialsdir}/build-and-deploy.adoc[]
+
 include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=2]
-
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
-
-=== Running the Mobile App in an Emulator
-
-include::{partialsdir}/running-app-in-emulator.adoc[leveloffset=1]

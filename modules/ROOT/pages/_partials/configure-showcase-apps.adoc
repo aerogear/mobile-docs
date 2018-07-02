@@ -1,0 +1,51 @@
+include::{partialsdir}/attributes.adoc[]
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Paste it to the `mobile-services.json` file in the showcase app depending on the platform:
+[role="primary"]
+.Android
+
+****
+
+Update this file at the following location in your Android showcase project:
+
+`android-showcase-template/app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Update this file at the following location in your iOS showcase project:
+
+`ios-showcase-template/ios-showcase-template/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Update this file at the following location in your Cordova showcase project 
+
+`cordova-showcase-template/src/mobile-services.json`
+
+and import it using `require` like this:
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Update this file at the following location in your Xamarin showcase project:
+
+`xamarin-showcase-template/Example/Resources/mobile-services.json`
+
+****
