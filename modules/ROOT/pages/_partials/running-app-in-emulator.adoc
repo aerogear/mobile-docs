@@ -1,19 +1,43 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Doing Stuff
+[role="primary"]
+.Android
 
-[discrete]
-== Prerequisites
+****
 
-* [x] minimal prereqs
+To run an Android app in an emulator refer to the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation].
 
-[discrete]
-== Procedure
+****
 
-. numbered list
+[role="secondary"]
+.iOS
 
+****
 
-[discrete]
-== Additional Information
+To run an iOS app in an emulator refer to the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation].
 
-Any links are better placed here.
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Cordova cross-platform applications can be run in the following emulators:
+
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android]
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS]
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Xamarin cross-platform applications can be run in the following emulators:
+
+* link:https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debugging/debug-on-emulator/visual-studio-android-emulator/[Android]
+* link:https://docs.microsoft.com/en-us/xamarin/tools/ios-simulator[iOS]
+
+****
