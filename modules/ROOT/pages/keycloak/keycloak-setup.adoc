@@ -1,6 +1,6 @@
 //include::{partialsdir}/attributes.adoc[]
 
-= Keycloak Setup
+= Setting Up {keycloak-service}
 
 The following guide helps you to configure schema of the redirect url and web origin for a client in Keycloak. This is required to use the Auth SDK.
 
