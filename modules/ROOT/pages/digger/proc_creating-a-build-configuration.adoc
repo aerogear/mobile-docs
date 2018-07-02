@@ -12,7 +12,7 @@ You can use the OpenShift UI to create a new client build for an existing mobile
 == Prerequisites
 
 * [x] xref:digger/provisioning.adoc[A provisioned {digger-service} service].
-* [x] A xref:registering-a-mobile-app.adoc[{mobile-client}]
+* [x] xref:registering-a-mobile-app.adoc[A registered {mobile-client}]
 * [x] To build your mobile client, you need to provide xref:digger/ref_source-configuration.adoc[source configuration].
 
 [discrete]

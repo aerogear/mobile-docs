@@ -13,7 +13,7 @@ The build history for each build is also captured.
 == Prerequisites
 
 * [x] xref:digger/provisioning.adoc[A provisioned {digger-service} service].
-* [x] A xref:registering-a-mobile-app.adoc[{mobile-client}]
+* [x] xref:registering-a-mobile-app.adoc[A Registered {mobile-client}]
 * [x] xref:digger/proc_creating-a-build-configuration.adoc[Created a Build Configuration].
 * [x] xref:digger/running-a-build.adoc[Built a Mobile App].
 
