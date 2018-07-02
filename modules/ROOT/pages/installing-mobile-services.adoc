@@ -12,11 +12,14 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 * MacOS or Linux
 * A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
-
 * link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
 +
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
+
++
+NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working.
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
 
 * Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
 
