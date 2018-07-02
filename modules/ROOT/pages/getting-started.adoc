@@ -1,14 +1,25 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Getting Started with AeroGear Mobile Services
+= Getting Started with {org-name} {product-name}
 :toc:
+
+== Introduction
+
+This guide will bring you through all the required steps to get up and running with {product-name}. By the end of this guide you will have learned how to:
+
+* Set up {org-name} {product-name} on OpenShift
+* Create a Mobile Client and a Mobile Service 
+* Set up a local development environment
+* Configure and run the {org-name} Showcase App on your platform of choice
+
+
 include::installing-mobile-services.adoc[leveloffset=1]
 [[registering]]
 include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 [[provisioning]]
 == Provisioning your First Service
 
-Mobile Services provide commonly required features for mobile app development.
+{product-name} provide commonly required features for mobile app development.
 
 The following services are available with this release:
 
@@ -21,7 +32,7 @@ The following services are available with this release:
 * xref:device-security.adoc[{device-security-service}]
 
 
-This guide introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service. 
+This section introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service.
 
 include::keycloak/provisioning.adoc[leveloffset=1]
 [[binding]]
