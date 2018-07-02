@@ -24,7 +24,7 @@ bind it to other services in OpenShift. This will allow your applications to int
 To get started, click on your {mobile-client} from the overview screen, under the '{mobile-client}s' heading.
 This will expand the {mobile-client} view, showing configuration details for your application and a section for managing bindings.
 
-image:./images/mobile-client-overview.png[{mobile-client} Overview]
+image:mobile-client-overview.png[{mobile-client} Overview]
 
 The bindings section displays a list of all possible services your {mobile-client} can be bound to. Bindings can be both created and deleted from this area. 
 
@@ -37,7 +37,7 @@ These three states will be explained in further detail by binding an Android App
 
 A binding is possible between the {mobile-client} and the service, but the service has not yet been provisioned in the namespace. 
 
-image:./images/keycloak-not-provisioned.png[Keycloak Not Provisioned]
+image:keycloak-not-provisioned.png[Keycloak Not Provisioned]
 
 To create a new binding, simply click `provision Keycloak to enable binding`. This will allow you to provision the service as usual. In this case, Keycloak. 
 
@@ -46,11 +46,11 @@ To create a new binding, simply click `provision Keycloak to enable binding`. Th
 
 Once the service has been provisioned, it is now available to bind to your {mobile-client}. 
 
-image:./images/keycloak-available.png[Keycloak Integration Available]
+image:keycloak-available.png[Keycloak Integration Available]
 
 To create a new binding, click  `bind Keycloak`. You will be prompted to bind your {mobile-client} to this service via a binding modal. 
 
-image:./images/keycloak-binding-modal.png[Keycloak Integration Enabled]
+image:keycloak-binding-modal.png[Keycloak Integration Enabled]
 
 Enter the Client ID of your application, which can be found in the configuration details under `clientId`. In this case, `myapp-android` is the ID of the example Android application.
 
@@ -61,8 +61,8 @@ For more information about these two client types, see link:https://github.com/a
 
 A binding now exists between the {mobile-client} and the Keycloak service, and the `services` array in the configuration is automatically updated to reflect this association. 
 
-image:./images/keycloak-client-config.png[Client Bindings Config]
+image:keycloak-client-config.png[Client Bindings Config]
 
 To delete the binding, simply click on the trash can icon next to the service name. 
 
-image:./images/keycloak-enabled.png[Keycloak Integration Enabled]
+image:keycloak-enabled.png[Keycloak Integration Enabled]
