@@ -4,7 +4,7 @@
 
 :release-number: 1.0.0-alpha
 
-:service-name:  
+:service-name:
 
 :mobile-client: Mobile Client
 :mobile-client-openshift: Mobile Client in your OpenShift project
@@ -19,10 +19,11 @@
 :keycloak-service: Identity Management
 :keycloak-ui: Keycloak Admin UI
 :keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
 
 // Push Service
 
-:unifiedpush-service: Push Notifications  
+:unifiedpush-service: Push Notifications
 :push-ui: Unified Push Admin UI
 :push-notification: push notification
 

@@ -21,12 +21,14 @@ The following services are available with this release:
 * xref:device-security.adoc[{device-security-service}]
 
 
-This guide introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service. 
+This guide introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service.
 
 include::keycloak/provisioning.adoc[leveloffset=1]
 [[binding]]
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
+include::keycloak/keycloak-setup.adoc[leveloffset=2]
+
 == Setting Up your Local Development Environment
 
 === Supported Environments
@@ -38,7 +40,6 @@ In order to perform local development, you will need to have set up a local deve
 * link:https://cordova.apache.org/#getstarted[Cordova]
 * link:https://developer.xamarin.com/getting-started/[Xamarin]
 
-include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 [[running]]
 
 == Running your First Mobile App
