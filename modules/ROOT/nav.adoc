@@ -1,7 +1,8 @@
 include::{partialsdir}/attributes.adoc[]
 
 * xref:getting-started.adoc[Getting Started]
-** xref:getting-started.adoc#procedure[Setting Up]
+** xref:getting-started.adoc#introduction[Introduction]
+** xref:getting-started.adoc#setting-up-aerogear-mobile-services-on-openshift[Setting Up]
 ** xref:getting-started.adoc#registering[Registering a Mobile Client]
 ** xref:getting-started.adoc#provisioning[Provisioning a Service]
 ** xref:getting-started.adoc#binding[Binding Client Service]
