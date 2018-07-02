@@ -12,13 +12,12 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 * MacOS or Linux
 * A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
-
 * link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
 +
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 
-* Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
++
+NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working. Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
 
 [role="primary"]
 .MacOS
@@ -36,16 +35,10 @@ You can download Docker CE version 17.09.1 for rpm based distros from link:https
 
 * A link:https://hub.docker.com/[Docker Hub] account
 
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
+
 [[firewall-requirements]]
 === Firewall Requirements (Required)
-
-. Configure the Docker registry _and_ ports required as part
-of the cluster setup:
-+
-* Linux: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux[here]
-* Mac: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[here]
 
 . For Linux (Fedora) we also need to add an extra port to the `dockerc`
 zone:
