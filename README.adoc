@@ -116,10 +116,32 @@ When building for publication use:
 ----
 ./bin/build.sh
 ----
-+
+
+. Check the `index.html` output in the default Antora output directory `build\site`.
 
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
+
+=== Running Antora Using Docker
+
+. Make sure you can run antora as described in https://docs.antora.org/antora/1.0/antora-container/
+
+. Clone the antora-ui so that `mobile-docs` and `antora-ui` are at the same level.
+
+. Change directory to the level above `mobile-docs` and `antora-ui`.
+
+. Enter the following commands:
++
+-----
+$ docker run --entrypoint ash --privileged -v `pwd`:/antora --rm -it antora/antora
+# cd mobile-docs
+# antora testui-site.yml
+# exit
+$ cd mobile-docs
+$ ./bin/fix-div.sh
+-----
+
+. Check the `index.html` output in the default Antora output directory `build\site`.
 
 
 == Editing
