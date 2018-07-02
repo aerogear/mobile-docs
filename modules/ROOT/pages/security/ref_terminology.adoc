@@ -21,12 +21,12 @@ This check is not available for iOS.
 [role="secondary"]
 .Cordova
 ****
-This check is not available for iOS.
+This check is not available for Cordova.
 ****
 [role="secondary"]
 .Xamarin
 ****
-This check is not available for iOS.
+This check is not available for Xamarin.
 ****
 
 Developer Mode Detection (NO_DEVELOPER_MODE)::

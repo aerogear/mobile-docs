@@ -112,7 +112,12 @@ npm install --save @aerogear/push
 
 ****
 
+[role="secondary"]
+.Xamarin
 
+****
+This feature is not yet supported in the AeroGear Xamarin SDK
+****
 
 === Device registration
 
@@ -227,6 +232,14 @@ pushObject.on('registration').subscribe(data => {
 ----
 
 ****
+
+[role="secondary"]
+.Xamarin
+
+****
+This feature is not yet supported in the AeroGear Xamarin SDK
+****
+
 
 == Next Steps
 
