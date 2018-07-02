@@ -18,6 +18,9 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 +
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 
++
+NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working.
+
 * Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
 
 [role="primary"]
