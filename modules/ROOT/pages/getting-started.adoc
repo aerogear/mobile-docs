@@ -33,10 +33,10 @@ include::keycloak/binding.adoc[leveloffset=1]
 
 {product-name} supports mobile app development for the following:
 
-* Android
-* iOS
-* Cordova
-* Xamarin
+* link:https://developer.android.com/studio/install[Android]
+* link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS]
+* link:https://cordova.apache.org/#getstarted[Cordova]
+* link:https://developer.xamarin.com/getting-started/[Xamarin]
 
 include::keycloak/configuring-dev-env-keycloak.adoc[leveloffset=2]
 [[running]]
