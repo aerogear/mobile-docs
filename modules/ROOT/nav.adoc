@@ -49,8 +49,6 @@ include::{partialsdir}/attributes.adoc[]
 
 ** xref:mobile-cicd.adoc[{digger-service}]
 *** xref:mobile-cicd.adoc#setup[Setting Up]
-
-*** xref:mobile-cicd.adoc#setup[Setting Up]
 *** xref:mobile-cicd.adoc#build-config[Creating a Build Configuration]
 *** xref:mobile-cicd.adoc#jenkins[Adding a Jenkins file]
 *** xref:mobile-cicd.adoc#building[Building Apps]
