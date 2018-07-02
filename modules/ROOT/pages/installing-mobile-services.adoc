@@ -17,7 +17,10 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 
 +
-NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working. Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
+NOTE: Ensure that you can run oc cluster up services.link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
+
++
+NOTE: Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and AeroGear Mobile Services. This version may be different from the version listed on the oc cluster up documentation. You must ensure you are running with this version of docker and that oc cluster works without errors before moving on. Depending on your OS this is downloaded from different places:
 
 [role="primary"]
 .MacOS
