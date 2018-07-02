@@ -17,11 +17,7 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 
 +
-NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working.
-
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
-
-* Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
+NOTE: Ensure link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] is working. Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
 
 [role="primary"]
 .MacOS
@@ -38,6 +34,8 @@ You can download Docker CE version 17.09.1 for rpm based distros from link:https
 ****
 
 * A link:https://hub.docker.com/[Docker Hub] account
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
 
 [[firewall-requirements]]
 === Firewall Requirements (Required)
