@@ -4,6 +4,7 @@ include::keycloak/index.adoc[leveloffset=0]
 [[setup]]
 == Setting Up the Identity Management Mobile Service
 include::keycloak/provisioning.adoc[leveloffset=2]
+include::keycloak/keycloak-setup.adoc[leveloffset=3]
 include::keycloak/binding.adoc[leveloffset=2]
 include::keycloak/coding.adoc[leveloffset=2]
 [[user-auth]]

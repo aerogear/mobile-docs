@@ -24,6 +24,7 @@ The following services are available with this release:
 This guide introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service. 
 
 include::keycloak/provisioning.adoc[leveloffset=1]
+include::keycloak/keycloak-setup.adoc[leveloffset=2]
 [[binding]]
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
