@@ -1,0 +1,7 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Sync
+
+= Binding a {mobile-client} with the {service-name} Service
+
+include::{partialsdir}/generic-binding.adoc[]
