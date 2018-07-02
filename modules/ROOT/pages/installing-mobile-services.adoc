@@ -34,6 +34,8 @@ You can download Docker CE for MacOS version 17.09.1 link:https://download.docke
 You can download Docker CE version 17.09.1 for rpm based distros from link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here]. Otherwise have a look link:https://docs.docker.com/install[here].
 ****
 
+* A link:https://hub.docker.com/[Docker Hub] account
+
 [[firewall-requirements]]
 === Firewall Requirements (Required)
 
