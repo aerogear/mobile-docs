@@ -40,3 +40,7 @@ Depending on the platform set the redirect as described in either the Android or
 . Open your Android client.
 . Add `<schema>:/callback` to `Valid Redirect URIs`.
 . Add `<schema>` to `Web Origins`.
+
++
+NOTE: A user will need to be setup in order to be able to log into the ShowCase App's. To create a new user follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here] and to setup a new users credentials follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+
