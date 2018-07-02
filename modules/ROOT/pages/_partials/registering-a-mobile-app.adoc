@@ -21,4 +21,4 @@ You can filter the catalog items to only show mobile specific items by clicking 
 image:mobile-platforms.png[Available Mobile Clients]
 . Click the *Apps* tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.
 
-After the {mobile-client} is provisioned, you can navigate to it from Project Overview. This screen displays a list of mobile services that you can associate with the {mobile-client} and offers to provision any mobile service that is in the service catalog but is not currently provisioned. 
+After the {mobile-client} is provisioned, you can navigate to it from Project Overview. The {mobile-client} view displays a list of mobile services that you can associate with the {mobile-client} and offers to provision any mobile service that is in the service catalog but is not currently provisioned. 
