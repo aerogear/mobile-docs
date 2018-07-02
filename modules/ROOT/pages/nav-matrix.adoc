@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 [discrete]
 == Prerequisites
 
-* [x] You have xref:ROOT:index.adoc[set up AeroGear Mobile Services on OpenShift].
+* [x] You have set up xref:getting-started.adoc[AeroGear Mobile Services] on OpenShift.
 
 * [x] You have xref:registering-a-mobile-app.adoc[registered a mobile app] to create a {mobile-client}.
 

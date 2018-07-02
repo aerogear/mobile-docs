@@ -21,8 +21,9 @@ include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 
 {product-name} provide commonly required features for mobile app development.
 
-The following services are available with this release:
+This guide introduces the procedures for using mobile services by guiding you through the process using the Identity Management service. For a full list of available services see xref:con_services.adoc[Mobile Services]
 
+<<<<<<< HEAD
 
 * xref:identity-management.adoc[{keycloak-service}]
 * xref:push-notifications.adoc[{unifiedpush-service}]
@@ -36,6 +37,8 @@ This section introduces the procedures for using mobile services by guiding you 
 
 include::keycloak/provisioning.adoc[leveloffset=1]
 [[binding]]
+=======
+>>>>>>> update provision first service
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
 == Setting Up your Local Development Environment
