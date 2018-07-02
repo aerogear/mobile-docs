@@ -12,13 +12,15 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 * MacOS or Linux
 * A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
-
 * link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
 +
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 
-* Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and depending on your OS this is downloaded from different places:
++
+NOTE: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
+
++
+NOTE: Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and AeroGear Mobile Services. This version may be different from the version listed on the oc cluster up documentation. You must ensure you are running with this version of docker and that oc cluster works without errors before moving on. Depending on your OS this is downloaded from different places:
 
 [role="primary"]
 .MacOS
@@ -33,6 +35,10 @@ You can download Docker CE for MacOS version 17.09.1 link:https://download.docke
 ****
 You can download Docker CE version 17.09.1 for rpm based distros from link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here]. Otherwise have a look link:https://docs.docker.com/install[here].
 ****
+
+* A link:https://hub.docker.com/[Docker Hub] account
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
 
 [[firewall-requirements]]
 === Firewall Requirements (Required)
@@ -151,18 +157,10 @@ password: password
 
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
 
+image:mobile-platforms.png[]
+
 == Next Steps
 
 * xref:registering-a-mobile-app.adoc[Register a Mobile App]
 
 * xref:con_services.adoc[Provision a Mobile Service]
-
-== Troubleshooting
-
-=== Switching from a different Docker version on Fedora 28
-
-. link:https://docs.docker.com/install/linux/docker-ce/fedora/#uninstall-old-versions[Uninstall] the old Docker version
-
-. link:https://docs.docker.com/install/linux/docker-ce/fedora/#install-from-a-package[Install] Docker 17.09.1 from the rpm package
-
-. Make sure that Docker can be managed by non-root users by following link:https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user[this guide]

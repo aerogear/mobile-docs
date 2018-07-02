@@ -16,7 +16,7 @@ self-signed certificates, you must extract the root certificate from the cluster
 [[extracting-root-ca]]
 == Extracting the OpenShift Root Certificate Authority Cert
 
-. Log into OpenShift as the admin user. If you followed the steps in the xref:index.adoc[Getting Started], you can log in using `admin/admin`.
+. Log into OpenShift as the admin user.
 
 . Run the following command:
 +
