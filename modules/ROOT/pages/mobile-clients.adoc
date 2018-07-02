@@ -66,3 +66,16 @@ image:keycloak-client-config.png[Client Bindings Config]
 To delete the binding, simply click on the trash can icon next to the service name. 
 
 image:keycloak-enabled.png[Keycloak Integration Enabled]
+
+
+[#registering]
+include::mc-registering-a-mobile-client.adoc[leveloffset=1]
+[#services]
+include::mc-viewing-available-services.adoc[leveloffset=1]
+[#binding]
+include::mc-binding-mobile-services.adoc[leveloffset=1]
+[#configuring]
+include::mc-configuring-and-running-builds.adoc[leveloffset=1]
+[#running]
+include::mc-downloading-and-installing-apps.adoc[leveloffset=1]
+
