@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-:service-name: Sync
+:service-name: Data Sync
 
 = Provisioning {service-name} Service
 
