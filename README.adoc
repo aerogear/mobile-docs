@@ -133,11 +133,12 @@ NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], yo
 . Enter the following commands:
 +
 -----
-demo-site $ docker run --entrypoint ash --privileged -v `pwd`:/antora --rm -it antora/antora
+$ docker run --entrypoint ash --privileged -v `pwd`:/antora --rm -it antora/antora
 # cd mobile-docs
 # antora testui-site.yml
 # exit
-./bin/bin/fix-div.sh
+$ cd mobile-docs
+$ ./bin/fix-div.sh
 -----
 
 . Check the `index.html` output in the default Antora output directory `build\site`.
