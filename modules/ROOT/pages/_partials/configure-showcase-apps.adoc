@@ -1,9 +1,7 @@
-include::{partialsdir}/attributes.adoc[]
-
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
-. Copy the configuration to your clipboard.
-. Paste it to the `mobile-services.json` file in the showcase app depending on the platform:
+. Copy the configuration to your clipboard and paste it to the `mobile-services.json` file in the showcase app depending on the platform:
+
 [role="primary"]
 .Android
 
@@ -34,8 +32,6 @@ Update this file at the following location in your iOS showcase project:
 Update this file at the following location in your Cordova showcase project 
 
 `cordova-showcase-template/src/mobile-services.json`
-
-and import it using `require` like this:
 
 ****
 
