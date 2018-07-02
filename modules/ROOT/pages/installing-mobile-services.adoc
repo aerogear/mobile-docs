@@ -161,13 +161,3 @@ password: password
 * xref:registering-a-mobile-app.adoc[Register a Mobile App]
 
 * xref:con_services.adoc[Provision a Mobile Service]
-
-== Troubleshooting
-
-=== Switching from a different Docker version on Fedora 28
-
-. link:https://docs.docker.com/install/linux/docker-ce/fedora/#uninstall-old-versions[Uninstall] the old Docker version
-
-. link:https://docs.docker.com/install/linux/docker-ce/fedora/#install-from-a-package[Install] Docker 17.09.1 from the rpm package
-
-. Make sure that Docker can be managed by non-root users by following link:https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user[this guide]
