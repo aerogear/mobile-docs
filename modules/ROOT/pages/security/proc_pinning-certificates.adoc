@@ -8,6 +8,7 @@ other services *SPKI* pinning is used. Mobile services must have pinning configu
 separately. For more information on setting up certificate pinning for mobile services see the
 link:https://developer.android.com/training/articles/security-config.html#CertificatePinning[Android network security guide].
 
+[discrete]
 == Generating Pinning Configuration
 
 The {sdk} gets its configuration from the `https` section of the `mobile-services.json` file
@@ -36,11 +37,13 @@ allow these to be included use the `--insecure-skip-tls-verify` flag.
 $ ./mobile get clientconfig <client name> --include-cert-pins --insecure-skip-tls-verify
 ----
 
+[discrete]
 === Using Pinning Configuration
 
 If the `https` section is included in the `mobile-services.json` file then certificate pinning will
 automatically be enabled for mobile services.
 
+[discrete]
 === Considerations
 
 If the certificate authority of a service changes then the `mobile-services.json` file will need to

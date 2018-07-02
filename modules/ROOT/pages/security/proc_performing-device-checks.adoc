@@ -6,6 +6,7 @@ This section describes what Device Trust Checks are available and how to execute
 NOTE: A *successful* check means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
 For example, the `Root Access Detection Check NOT_ROOTED` should return `true` when it is _not rooted_, since this would be the more secure condition.
 
+[discrete]
 == Root Access Detection
 
 Use this to help prevent your app running in a device that has been rooted/jailbroken.
@@ -65,6 +66,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_JAILBROKEN
 ----
 ****
 
+[discrete]
 == Developer Mode Detection
 
 Use this to detect if Developer Mode has been enabled on the device.
@@ -105,6 +107,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEVELOPER_M
 ****
 
 
+[discrete]
 == Debugger Detection
 
 Use this to detect if a debugger is attached to the app.
@@ -155,6 +158,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEBUGGER);
 ----
 ****
 
+[discrete]
 == Emulator Detection
 
 Use this to detect if the app is being run on an emulator.
@@ -205,6 +209,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_IN_EMULATO
 ----
 ****
 
+[discrete]
 == Device Lock Detection
 
 Use this to detect if a device has a lock screen set (with pin, fingerprint, pattern...).
@@ -256,6 +261,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.SCREEN_LOCK_EN
 ----
 ****
 
+[discrete]
 == App Data Backup Detection
 
 Use this to detect whether the application’s data is configured to be synchronized across devices.
@@ -295,6 +301,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.ALLOW_BACKUP_D
 ----
 ****
 
+[discrete]
 == Device Encryption Detection
 
 Use this to detect whether the devices filesystem is encrypted.
@@ -338,10 +345,12 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.HAS_ENCRYPTION
 
 
 
+[discrete]
 == Invoking Multiple Self Defence Checks
 
 Security Checks can be run in group, both synchronously and asynchronously.
 
+[discrete]
 === Synchronously
 
 [role="primary"]
@@ -411,6 +420,7 @@ Dictionary<string, SecurityCheckResult> results = checkExecutor.Execute();
 ----
 ****
 
+[discrete]
 === Asynchronously
 
 [role="primary"]
@@ -465,10 +475,8 @@ NOTE: This method returns a Promise with an array containing all `SecurityCheckR
 Executing multiple checks asynchronously is not supported at the moment for this platform.
 ****
 
-
-== Additional Resources
-
-=== Adding Custom Self Defence Checks
+[discrete]
+== Adding Custom Self Defence Checks
 
 Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Self Defence Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
 
@@ -609,7 +617,8 @@ SecurityCheckResult result = securityService.Check(new CustomSecurityCheck());
 
 
 
-=== Reporting Self Defence Checks Results Via the Metrics Service
+[discrete]
+== Reporting Self Defence Checks Results Using the Metrics Service
 
 In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
 
@@ -695,7 +704,3 @@ new SecurityService()
 ****
 Self Defence reports are not yet available for Xamarin.
 ****
-
-== Next steps
-
-xref:security/proc_pinning-certificates.adoc[Certificate Pinning]

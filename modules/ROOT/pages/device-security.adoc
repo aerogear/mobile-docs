@@ -1,7 +1,7 @@
-:toc:
+:toc: 1
 
 include::security/index.adoc[leveloffset=1]
-include::security/coding.adoc[leveloffset=1]
+include::security/coding.adoc[]
 [#device-trust]
 include::security/proc_performing-device-checks.adoc[leveloffset=1]
 [#cert-pinning]
