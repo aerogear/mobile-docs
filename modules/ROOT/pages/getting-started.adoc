@@ -1,40 +1,38 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Getting Started with {org-name} {product-name}
+= Getting Started with AeroGear Mobile Services
 :toc:
-
-== Introduction
-
-This guide will bring you through all the required steps to get up and running with {product-name}. By the end of this guide you will have learned how to:
-
-* Set up {org-name} {product-name} on OpenShift
-* Create a Mobile Client and a Mobile Service 
-* Set up a local development environment
-* Configure and run the {org-name} Showcase App on your platform of choice
-
-
 include::installing-mobile-services.adoc[leveloffset=1]
 [[registering]]
 include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 [[provisioning]]
 == Provisioning your First Service
 
-{product-name} provide commonly required features for mobile app development.
+Mobile Services provide commonly required features for mobile app development.
 
-The following services are available with this release:
+This guide introduces the procedures for using mobile services by guiding you through the process using the Identity Management service. For a full list of available services see xref:con_services.adoc[Mobile Services]
+
+:service-name: Identity Management
+
+include::{partialsdir}/generic-provisioning.adoc[]
+
+When provisioning a {keycloak-service} service, you are prompted to set the following configuration:
+
+* *Keycloak admin username*: Username for Keycloak administration
+
+* *Keycloak admin password*: Password for the Keycloak admin user
+
+* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
+
+NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
+
+* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
+
+* *URL of the shared service*: Enter a value if you want to use an existing shared service.
+
+include::{partialsdir}/generic-provisioning-end.adoc[]
 
 
-* xref:identity-management.adoc[{keycloak-service}]
-* xref:push-notifications.adoc[{unifiedpush-service}]
-* xref:runtime-connector.adoc[{custom-service}]
-* xref:mobile-metrics.adoc[{metrics-service}]
-* xref:mobile-cicd.adoc[{digger-service}]
-* xref:device-security.adoc[{device-security-service}]
-
-
-This section introduces the procedures for using mobile services by guiding you through the process for running an Android app using the Identity Management service.
-
-include::keycloak/provisioning.adoc[leveloffset=1]
 [[binding]]
 include::keycloak/binding.adoc[leveloffset=1]
 [[localdev]]
@@ -44,7 +42,7 @@ include::keycloak/keycloak-setup.adoc[leveloffset=2]
 
 === Supported Environments
 
-In order to perform local development, you will need to have set up a local development environment or IDE. Mobile App development is supported across iOS Native, Android Native, Cordova and Xamarin. For information on how to set up your local development environment for these technologies, please see the links below:
+In order to perform local development, you will need to have set up a local development environment or IDE. {product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin. For information on how to set up your local development environment for these technologies, please see the links below:
 
 * link:https://developer.android.com/studio/install[Android]
 * link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS]
@@ -55,26 +53,14 @@ In order to perform local development, you will need to have set up a local deve
 
 == Running your First Mobile App
 
-A few showcase apps have been created to allow you to try out some of the features. They are available in several different platforms. Please pick one platform that you are interested in and follow the steps below to set it up.
-
-=== Clone the showcase app
-
-Please choose one platform and clone the corresponding showcase app.
+=== Clone the showcase app:
 
 include::{partialsdir}/cloning-showcase-app.adoc[]
 
-=== Configure the showcase app
-
-You need to configure the showcase app by updating the `mobile-services.json` file.
-
-include::{partialsdir}/configure-showcase-apps.adoc[]
-
-Before building and running the showcase app, we also need to configure the device to make sure it will accept self-signed certificates.
-
 include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=2]
 
-We can now build and run the showcase app.
+include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 
-include::{partialsdir}/build-and-deploy.adoc[leveloffset=1]
+=== Running the Mobile App in an Emulator
 
-
+include::{partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
