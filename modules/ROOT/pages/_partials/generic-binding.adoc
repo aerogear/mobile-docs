@@ -1,5 +1,3 @@
-include::{partialsdir}/attributes.adoc[]
-
 
 To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client} and that {mobile-client} must be associated with the mobile service.
 This association is called a binding and once it's done, your mobile app can use that service immediately.
