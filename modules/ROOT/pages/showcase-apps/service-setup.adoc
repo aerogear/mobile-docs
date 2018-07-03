@@ -34,20 +34,10 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 
 .. xref:keycloak/keycloak-setup.adoc[Set up the {keycloak-service} service].
 
-.. Create a user account in the {keycloak-ui} to use when logging in within the showcase app:
-+
-... Open OpenShift console.
-... Click the URL for the {keycloak-service}.
-... Login with your Keycloak credentials that you specified at Provisioning (defaults to admin:admin)
-... Click *Users* item in the navigation menu.
-... Click *Add User*.
-... Fill in the details of the user as you wish. Make sure *User Enabled* toggle is active.
-... Click *Save*
-... You will be taken to details view for the user you have just added.
-... Click *Credentials*.
-... Type in a password in *New Password* and *Password Confirmation* inputs.
-... Uncheck the *Temporary* toggle so that you do not have to reset password on first login.
-... Press *Reset Password*
+.. You must create a new user account before you can log into the Showcase App. To create a new user follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
+
+.. To create the new user's credentials follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+
 +
 For more information about features, see xref:keycloak/index.adoc[{keycloak-service} Service]
 
