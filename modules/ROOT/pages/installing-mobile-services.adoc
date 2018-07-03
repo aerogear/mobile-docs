@@ -12,53 +12,24 @@ NOTE: {org-name} recommends running OpenShift using the method described here. H
 * MacOS or Linux
 * A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
+* A link:https://hub.docker.com/[Docker Hub] account
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.4 or above)
+
 * link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
 +
 WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
-
 +
 NOTE: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
-
 +
-NOTE: Docker must be version 17.09.1 in order to be compatible with the latest release of OpenShift and AeroGear Mobile Services. This version may be different from the version listed on the oc cluster up documentation. You must ensure you are running with this version of docker and that oc cluster works without errors before moving on. Depending on your OS this is downloaded from different places:
-
-[role="primary"]
-.MacOS
-
-****
-You can download Docker CE for MacOS version 17.09.1 link:https://download.docker.com/mac/stable/19543/Docker.dmg[here].
-****
-
-[role="secondary"]
-.Linux
-
-****
-You can download Docker CE version 17.09.1 for rpm based distros from link:https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.09.1.ce-1.el7.centos.x86_64.rpm[here]. Otherwise have a look link:https://docs.docker.com/install[here].
-****
-
-* A link:https://hub.docker.com/[Docker Hub] account
-
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (tested with version 2.4, but should work with version 2.3 or later)
-
-[[firewall-requirements]]
-=== Firewall Requirements (Required)
-
-. Configure the Docker registry _and_ ports required as part
-of the cluster setup:
-+
-* Linux: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux[here]
-* Mac: Follow steps 2 _and_ 3
-https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[here]
-
-. For Linux (Fedora) we also need to add an extra port to the `dockerc`
-zone:
-+
+For Linux (Fedora) we also need to add an extra port to the `dockerc` zone:
 [source,sh]
 ----
 firewall-cmd --permanent --zone dockerc --add-port 443/tcp
 firewall-cmd --reload
 ----
+
+
 
 [[procedure]]
 == Procedure
@@ -89,34 +60,27 @@ are installed and are the right version.
 Once verified it prompts you for your Docker Hub login credentials, which
 must be valid for the installation to continue.
 +
-The next set of values are optional and can be left with the default values. However, if you wish to have your local cluster accessible from a mobile device, you must set the *Cluster IP* value shown here to match that of your local machine that you are performing the installation on. *Note:* Your mobile device must be on the same network as your local machine.
-
+The next set of values are optional and can be left with the default values.
 +
 [source,bash,subs="attributes"]
 ----
-DockerHub Tag (Defaults to {release-number}):
+DockerHub Tag (Defaults to latest):
 DockerHub Organisation (Defaults to aerogearcatalog):
-Cluster IP (Defaults to 192.168.37.1):
+Cluster IP (Defaults to <Network IP Address>
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
 The first two values here are used to configure the service-catalog in the
 resulting cluster to look at other docker registries or tags to fetch the
-APBs from, but unless you are already familiar with editing these values,
-the defaults are the safest option.
+APBs from.
++
+The *Cluster IP* defaults to the IP address of your primary network interface. If you want to connect to your OPenShift instance from a mobile device, you will need to ensure that your device is on the same network. For this reason, it is usally best to ensure you are using the IP Address of your Wireless Adapter (if one exists).
 +
 The *Wildcard DNS Host* option alters the wildcard DNS host you wish
 to use.
-
-. Check the Cluster IP:
 +
-To allow communication between your mobile device and the cluster, the
-cluster IP must be the same as your local machines IP address.
+All of these values can be left at their defaults, unless you have a specific reason to change them (e.g. installing a specific version of {product-name}).
 +
-For example, if your workstation has the IP address: "192.168.0.2" and your mobile device 
-has the IP `192.168.0.3`, set the cluster IP to: `192.168.0.2` so 
-that your mobile device is able to access the cluster.
-
 . Check the installation logs:
 +
 The following installation can take a while the first time it runs as it pulls a number of docker images. Once completed successfully, this will end with output similar to:
@@ -157,4 +121,4 @@ password: password
 
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
 
-image:image:catalog-mobile-clients.png[]
+image:catalog-mobile-clients.png[]
