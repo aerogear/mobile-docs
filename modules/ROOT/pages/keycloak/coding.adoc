@@ -4,14 +4,7 @@ include::./configuring-dev-env-keycloak.adoc[]
 
 == Setting up {keycloak-service} service SDK
 
-This guide will help you to set up the {keycloak-service} service SDK in your App.
-
-=== Prerequisites
-
-* [x] xref:keycloak/provisioning.adoc[Provisioned {keycloak-service} service].
-* [x] xref:keycloak/binding.adoc[Binding] created.
-* [x] xref:keycloak/configuring-dev-env-keycloak.adoc[Configured dev environment].
-* [x] Read the xref:configuring-dev-env.adoc[general app setup guide].
+This section will help you to set up the {keycloak-service} service SDK in your App.
 
 === Importing the libraries
 
@@ -209,7 +202,3 @@ authService.Configure(authConfig);
 ----
 
 ****
-
-== Next steps
-
-xref:keycloak/authenticating.adoc[User authentication]

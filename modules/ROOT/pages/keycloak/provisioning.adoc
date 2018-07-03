@@ -2,9 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Identity Management
 
-== Prerequisites
-
-* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
+= Provisioning the Service
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
@@ -23,7 +21,3 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
- 
-== Next steps
-
-xref:keycloak/binding.adoc[Binding a {mobile-client} with the {service-name} Service]

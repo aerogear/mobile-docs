@@ -20,6 +20,7 @@ include::{partialsdir}/attributes.adoc[]
 * xref:con_services.adoc[Mobile Services]
 
 ** xref:identity-management.adoc[{keycloak-service}]
+*** xref:identity-management.adoc#introduction[Introduction]
 *** xref:identity-management.adoc#setup[Setting Up]
 *** xref:identity-management.adoc#user-auth[User Authentication]
 *** xref:identity-management.adoc#access[Access Control]

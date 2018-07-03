@@ -97,7 +97,3 @@ bool isAdmin = user.HasRealmRole("user_admin");
 bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
 ----
 ****
-
-== Next steps
-
-xref:keycloak/sso.adoc[Single Sign On]
