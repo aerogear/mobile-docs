@@ -6,17 +6,7 @@ The following section will guide you through configuring the schema of the redir
 
 :service-name: Identity Management
 
-include::{partialsdir}/generic-service-nav.adoc[]
-
-. Click on the Realm URL link to open the {idm-name} Administration Console.
-
-. Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
-
-. Open `Clients` from the menu.
-
-. Open your Android client.
-
-. Add the schema to `Valid Redirect URIs`.
+== Choose the schema of a redirect url
 
 [role="primary"]
 .Android
@@ -38,6 +28,20 @@ The schema of the redirect url should be `\http://localhost/*`.
 ****
 Depending on the platform set the redirect as described in either the Android or the iOS tab.
 ****
+
+== Configuring {idm-name}
+
+include::{partialsdir}/generic-service-nav.adoc[]
+
+. Click on the Realm URL link to open the {idm-name} Administration Console.
+
+. Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
+
+. Open `Clients` from the menu.
+
+. Open your Android client.
+
+. Add the schema selected in the step 'Choose the schema of a redirect url' above to `Valid Redirect URIs`.
 
 . Add `*` to `Web Origins`.
 
