@@ -34,7 +34,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 
 .. xref:keycloak/keycloak-setup.adoc[Set up the {keycloak-service} service].
 
-.. A user account is needed when logging in within the showcase app, to create a new user follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
+.. You must create a new user account before you can log into the Showcase App. To create a new user follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
 
 .. To create the new user's credentials follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
 
