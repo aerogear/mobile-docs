@@ -1,0 +1,4 @@
+= Registering a {mobile-client}
+To create bindings and use Services in a mobile app a {mobile-client} must first be created to represent the app in OpenShift.
+
+include::{partialsdir}/mobile-client-registration-procedure.adoc[]
