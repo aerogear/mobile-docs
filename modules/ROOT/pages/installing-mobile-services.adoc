@@ -22,7 +22,7 @@ WARNING: OpenShift oc executable must be located in a system location that is kn
 +
 NOTE: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
 +
-For Linux (Fedora) we also need to add an extra port to the `dockerc` zone:
+For Linux (Fedora), add an extra port to the `dockerc` zone:
 [source,sh]
 ----
 firewall-cmd --permanent --zone dockerc --add-port 443/tcp
