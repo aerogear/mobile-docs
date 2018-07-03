@@ -13,11 +13,6 @@ A configuration file named `mobile-services.json` acts as the link between your 
 and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
 and to connect to the back end {product-name} you have provisioned on OpenShift.
 
-== Binding 
-
-{mobile-client}s in OpenShift may be bound to particular services provisioned in the namespace to allow communication between them. 
-The result of an binding produces a JSON configuration file (`mobile-services.json`) for your application which may be consumed by the Aerogear SDKs, allowing it to access the service (or services) it needs.
-
 [#registering]
 include::{partialsdir}/mobile-client-registering-a-mobile-client.adoc[leveloffset=1]
 
