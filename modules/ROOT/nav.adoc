@@ -10,6 +10,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:getting-started.adoc#running[Running the mobile app]
 
 * xref:mobile-clients.adoc[Mobile Clients]
+** xref:mobile-clients.adoc#introduction[Introduction]
 ** xref:mobile-clients.adoc#registering[Registering a Mobile Client]
 ** xref:mobile-clients.adoc#services[Viewing Available Services]
 ** xref:mobile-clients.adoc#binding[Binding Mobile Services]

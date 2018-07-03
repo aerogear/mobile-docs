@@ -1,0 +1,5 @@
+= Procedure
+
+include::generic-service-nav.adoc[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
