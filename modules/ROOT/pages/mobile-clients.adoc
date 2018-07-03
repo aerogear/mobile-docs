@@ -1,81 +1,27 @@
 include::{partialsdir}/attributes.adoc[]
 = {mobile-client}s in OpenShift
 
-== What is a Mobile Client in your OpenShift Project
+== Introduction
 
-Typically, when you develop a mobile app you connect directly to services such as authentication, and push networks. As these services change, you update your code,
+{mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back end
+for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally.
+{mobile-client}s allow you bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service},
+{metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and
+quicker to implement.
 
-With {product-name}, you create a representation of your mobile app in OpenShift and this *mobile client* becomes the conduit by which you connect to services in OpenShift and external services.
-
-== Binding 
-
-{mobile-client}s in OpenShift may be bound to particular services provisioned in the namespace to allow communication between them. 
-The result of an binding produces a JSON configuration file (`mobile-services.json`) for your application which may be consumed by the Aerogear SDKs, allowing it to access the service (or services) it needs.
-
-== Create a {mobile-client}
-A {mobile-client} is a representation of your mobile application (Android, iOS, Cordova) in OpenShift. See link:./mobile-clients-in-openshift.adoc[this document] to learn more about {mobile-client}s in OpenShift and how to create them. 
-
-== Binding your {mobile-client} to Services
-
-Once you have created your {mobile-client}, it is possible to
-bind it to other services in OpenShift. This will allow your applications to interact with services provisioned in your namespace. 
-
-=== Getting started
-To get started, click on your {mobile-client} from the overview screen, under the '{mobile-client}s' heading.
-This will expand the {mobile-client} view, showing configuration details for your application and a section for managing bindings.
-
-image:mobile-client-overview.png[{mobile-client} Overview]
-
-The bindings section displays a list of all possible services your {mobile-client} can be bound to. Bindings can be both created and deleted from this area. 
-
-=== Creating bindings
-
-A binding may be in one of 3 states at a single time: _not provisioned_, _available_ and _enabled_. 
-These three states will be explained in further detail by binding an Android Application to Keycloak as an example.
-
-==== Not provisioned
-
-A binding is possible between the {mobile-client} and the service, but the service has not yet been provisioned in the namespace. 
-
-image:keycloak-not-provisioned.png[Keycloak Not Provisioned]
-
-To create a new binding, simply click `provision Keycloak to enable binding`. This will allow you to provision the service as usual. In this case, Keycloak. 
-
-
-==== Available
-
-Once the service has been provisioned, it is now available to bind to your {mobile-client}. 
-
-image:keycloak-available.png[Keycloak Integration Available]
-
-To create a new binding, click  `bind Keycloak`. You will be prompted to bind your {mobile-client} to this service via a binding modal. 
-
-image:keycloak-binding-modal.png[Keycloak Integration Enabled]
-
-Enter the Client ID of your application, which can be found in the configuration details under `clientId`. In this case, `myapp-android` is the ID of the example Android application.
-
-The client type dropdown allows you to choose the type of Keycloak client (bearer-only or public) that will be created for your application during the binding process. The `public` client option should be chosen for client bindings.
-For more information about these two client types, see link:https://github.com/aerogear/mobile-core/blob/master/docs/walkthroughs/provision-keycloak-apb.adoc#client-types[here].
-
-==== Enabled
-
-A binding now exists between the {mobile-client} and the Keycloak service, and the `services` array in the configuration is automatically updated to reflect this association. 
-
-image:keycloak-client-config.png[Client Bindings Config]
-
-To delete the binding, simply click on the trash can icon next to the service name. 
-
-image:keycloak-enabled.png[Keycloak Integration Enabled]
-
+A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift
+and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
+and to connect to the back end {product-name} you have provisioned on OpenShift.
 
 [#registering]
-include::mc-registering-a-mobile-client.adoc[leveloffset=1]
+include::{partialsdir}/mobile-client-registering-a-mobile-client.adoc[leveloffset=1]
+
 [#services]
 include::mc-viewing-available-services.adoc[leveloffset=1]
 [#binding]
-include::mc-binding-mobile-services.adoc[leveloffset=1]
+include::{partialsdir}/mobile-core-binding-mobile-services.adoc[leveloffset=1]
 [#configuring]
-include::mc-configuring-and-running-builds.adoc[leveloffset=1]
+include::{partialsdir}/mc-configuring-and-running-builds.adoc[leveloffset=1]
 [#running]
-include::mc-downloading-and-installing-apps.adoc[leveloffset=1]
+include::{partialsdir}/mc-downloading-and-installing-apps.adoc[leveloffset=1]
 

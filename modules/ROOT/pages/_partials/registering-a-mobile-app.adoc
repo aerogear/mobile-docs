@@ -4,25 +4,6 @@ include::{partialsdir}/attributes.adoc[]
 
 After the setup is completed, the next thing you need to do is to register a {mobile-client} for the mobile app that you are going to develop.
 
-A Mobile Client is a representation of the mobile app that you are developing locally. Mobile Clients allow you bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please check xref:mobile-clients.adoc[Mobile Clients in OpenShift]
+A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please check xref:mobile-clients.adoc[Mobile Clients in OpenShift]
 
-[discrete]
-== Prerequisites:
-
-* [x] You have installed OpenShift with {product-name} as described in xref:index.adoc[Getting Started].
-
-[discrete]
-== Procedure
-
-To create a {mobile-client-openshift}:
-
-. Log into the OpenShift console.
-. Choose your project.
-. Click *Add to Project* and choose *Browse Catalog* from the options.
-+
-You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
-+
-image:mobile-platforms.png[Available Mobile Clients]
-. Click the *Apps* tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.
-
-After the {mobile-client} is provisioned, you can navigate to it from Project Overview. The {mobile-client} view displays a list of mobile services that you can associate with the {mobile-client} and offers to provision any mobile service that is in the service catalog but is not currently provisioned. 
+include::{partialsdir}/mobile-client-registration-procedure.adoc[]

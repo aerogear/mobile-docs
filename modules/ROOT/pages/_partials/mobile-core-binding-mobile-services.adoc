@@ -1,0 +1,15 @@
+= Binding Mobile Services
+
+In order to use services with a mobile app the {mobile-client} associated with the app must be bound to services.
+A service must be provisioned before it can be bound.
+
+To view the services available to be bound to a {mobile-client} go to the *Mobile Services* tab in the {mobile-client}
+view.
+
+Once a service has been bound to a {mobile-client} the `mobile-services.json` for that client will be updated to
+include the configuration for the service. This allows a mobile app to interact with the service.
+The UI will also be updated to show the service is bound to the {mobile-client}.
+
+image::mobile-clients-configuration.png[]
+
+include::{partialsdir}/generic-binding-procedure.adoc[leveloffset=+1]

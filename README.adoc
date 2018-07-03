@@ -147,7 +147,8 @@ Currently, the publishing process is manual:
 NOTE: Check for correct styling changes too.
 +
 . Make a PR against  https://github.com/aerogear/docs.aerogear.org
-. Merge PR as required.
+
+NOTE: This repo contains more than just the output of mobile-docs repo. See https://github.com/aerogear/docs.aerogear.org/blob/master/README.adoc for more details.
 
 == Remote Repos
 
