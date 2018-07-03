@@ -12,6 +12,3 @@ include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
 //== Additional resources
 
-== Next steps
-
-xref:security/coding.adoc[Configuring your Development Environment for the Security Service]

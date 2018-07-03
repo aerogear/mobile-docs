@@ -38,6 +38,6 @@ It can be seen as a _broker_ that distributes push messages to different 3rd par
 
 NOTE: When using the UnifiedPush Server, please keep in mind that Push notification is a signalling mechanism and that it is not suitable to be used as a data carrying system (e.g. use in a chat application).
 
-== Next Steps
+== Prerequisites
 
-* xref:push/provisioning.adoc[Provisioning the {unifiedpush-service} service]
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]

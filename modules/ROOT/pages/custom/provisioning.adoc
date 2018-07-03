@@ -19,6 +19,3 @@ When prompted, enter the following:
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
 
-== Next steps
-
-xref:custom/binding.adoc[Binding] to the {service-name} Service

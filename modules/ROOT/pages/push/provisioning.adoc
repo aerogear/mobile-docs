@@ -2,10 +2,6 @@ include::{partialsdir}/attributes.adoc[]
 
 = Provisioning {unifiedpush-service} Service
 
-== Prerequisites
-
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
-
 include::{partialsdir}/generic-provisioning.adoc[]
 
 include::{partialsdir}/generic-provisioning-end.adoc[]

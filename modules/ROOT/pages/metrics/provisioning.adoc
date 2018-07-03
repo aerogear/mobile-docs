@@ -4,10 +4,6 @@ include::{partialsdir}/attributes.adoc[]
 
 = Provisioning {service-name} Service
 
-== Prerequisites
-
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
-
 include::{partialsdir}/generic-provisioning.adoc[]
 
 When provisioning a {service-name} Service, you are prompted to set the following:

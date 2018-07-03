@@ -17,3 +17,7 @@ include::./ref_terminology.adoc[leveloffset=+2]
 === Additional resources
 
 See the link:https://www.keycloak.org/documentation.html[Keycloak documentation] for more info.
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
