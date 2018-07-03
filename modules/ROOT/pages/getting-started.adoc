@@ -46,6 +46,7 @@ include::{partialsdir}/generic-provisioning-end.adoc[]
 
 [[binding]]
 include::keycloak/binding.adoc[leveloffset=1]
+
 [[localdev]]
 include::keycloak/keycloak-setup.adoc[leveloffset=2]
 
@@ -64,7 +65,7 @@ In order to perform local development, you will need to have set up a local deve
 
 == Running your First Mobile App
 
-=== Clone the showcase app:
+=== Clone the Showcase App
 
 include::{partialsdir}/cloning-showcase-app.adoc[]
 
