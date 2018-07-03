@@ -31,8 +31,6 @@ Depending on the platform set the redirect as described in either the Android or
 
 == Configuring {idm-name}
 
-include::{partialsdir}/generic-service-nav.adoc[]
-
 . Click on the Realm URL link to open the {idm-name} Administration Console.
 
 . Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
@@ -40,9 +38,5 @@ include::{partialsdir}/generic-service-nav.adoc[]
 . Open `Clients` from the menu.
 
 . Open your Android client.
-
-. Add the schema selected in the step 'Choose the schema of a redirect url' above to `Valid Redirect URIs`.
-
-. Add `*` to `Web Origins`.
-
-. Save your changes.
+. Add `<schema>:/callback` to `Valid Redirect URIs`.
+. Add `<schema>` to `Web Origins`.
