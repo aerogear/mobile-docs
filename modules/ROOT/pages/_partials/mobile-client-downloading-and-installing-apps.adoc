@@ -1,0 +1,17 @@
+[discrete]
+== Downloading and Installing Apps:
+
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device. This binary can be downloaded for any successful build in the build history.
+
+Once the build has completed you can then press the `Download` button and you will be presented with a QR code. Applications to scan QR codes are available in Google Play for Android or the App Store for iPhone. Once the QR code has been scanned it will open the download URL in the device and the application will download.
+
+image:mobile-clients-builds-complete.png[Available Mobile Clients]
+
+If you do not have a QR code scanner you can also download the artifact from the URL in the openshift web console. Once downloaded connect a device to your local machine.
+
+* For iOS applications open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation. 
+
+* For Android applications move the APK file into the device directory. On your device locate and select the APK file and select install.
+
++
+NOTE: You may need to enable the installation of apps from unknown sources on Android devices before installing from an APK.

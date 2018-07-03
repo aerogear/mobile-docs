@@ -23,5 +23,5 @@ include::{partialsdir}/mobile-core-binding-mobile-services.adoc[leveloffset=1]
 [#configuring]
 include::{partialsdir}/mc-configuring-and-running-builds.adoc[leveloffset=1]
 [#running]
-include::{partialsdir}/mc-downloading-and-installing-apps.adoc[leveloffset=1]
+include::{partialsdir}/mobile-client-downloading-and-installing-apps.adoc[leveloffset=1]
 
