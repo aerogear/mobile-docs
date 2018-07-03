@@ -1,0 +1,44 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Building Mobile Apps
+
+The *Builds* tab in the {mobile-client} view allows you to view the previous builds of the app, and triggers a new build of the app.
+
+== Provisoning a {digger-service} Service
+
+In order to build the {mobile-client} app, you first need to provision a {digger-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {digger-service} service.
+
+image:mobile-clients-no-service.png[]
+
+For more details about how to provision the {digger-service} service, please check xref:mobile-cicd.adoc[{digger-service} service guide].
+
+== Creating a Build
+
+After the {digger-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app etc. 
+
+image:mobile-clients-build-config.png[]
+
+For more information about how to configure the build config, please check xref:mobile-cicd.adoc#build-config[the build config section of {digger-service}].
+
+== Starting a Build
+
+Once a build is configured, you can start a new build. You will be able to view the progress of the build from the OpenShift UI and access the full build log.
+
+image:mobile-clients-build-in-progress.png[]
+
+== Downloading and Installing Apps
+
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device. This binary can be downloaded for any successful build in the build history.
+
+Once the build has completed you can then press the `Download` button and you will be presented with a QR code. Applications to scan QR codes are available in Google Play for Android or the App Store for iPhone. Once the QR code has been scanned it will open the download URL in the device and the application will download.
+
+image:mobile-clients-builds-complete.png[Available Mobile Clients]
+
+If you do not have a QR code scanner you can also download the artifact from the URL in the openshift web console. Once downloaded connect a device to your local machine.
+
+* For iOS applications open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation. 
+
+* For Android applications move the APK file into the device directory. On your device locate and select the APK file and select install.
+
++
+NOTE: You may need to enable the installation of apps from unknown sources on Android devices before installing from an APK.

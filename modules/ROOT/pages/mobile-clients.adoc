@@ -20,8 +20,6 @@ include::{partialsdir}/mobile-client-registering-a-mobile-client.adoc[leveloffse
 include::mc-viewing-available-services.adoc[leveloffset=1]
 [#binding]
 include::{partialsdir}/mobile-core-binding-mobile-services.adoc[leveloffset=1]
-[#configuring]
-include::{partialsdir}/mc-configuring-and-running-builds.adoc[leveloffset=1]
-[#running]
-include::{partialsdir}/mobile-client-downloading-and-installing-apps.adoc[leveloffset=1]
+[#building]
+include::{partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
 

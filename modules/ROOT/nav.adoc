@@ -14,8 +14,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:mobile-clients.adoc#registering[Registering a Mobile Client]
 ** xref:mobile-clients.adoc#services[Viewing Available Services]
 ** xref:mobile-clients.adoc#binding[Binding Mobile Services]
-** xref:mobile-clients.adoc#configuring[Configuring and Running Builds]
-** xref:mobile-clients.adoc#running[Downloading and Installing Apps]
+** xref:mobile-clients.adoc#building[Building Mobile Apps]
 
 
 * xref:con_services.adoc[Mobile Services]
