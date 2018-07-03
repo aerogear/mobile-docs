@@ -16,15 +16,6 @@ and to connect to the back end {product-name} you have provisioned on OpenShift.
 [#registering]
 include::{partialsdir}/mobile-client-registering-a-mobile-client.adoc[leveloffset=1]
 
-
-=== Getting started
-To get started, click on your {mobile-client} from the overview screen, under the '{mobile-client}s' heading.
-This will expand the {mobile-client} view, showing configuration details for your application and a section for managing bindings.
-
-image:mobile-client-overview.png[{mobile-client} Overview]
-
-The bindings section displays a list of all possible services your {mobile-client} can be bound to. Bindings can be both created and deleted from this area.
-
 [#services]
 include::mc-viewing-available-services.adoc[leveloffset=1]
 [#binding]
