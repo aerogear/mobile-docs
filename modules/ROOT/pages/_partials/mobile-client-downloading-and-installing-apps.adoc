@@ -1,0 +1,10 @@
+[discrete]
+== Downloading and Installing Apps:
+
+Once the build has completed you can then press the `Download` button and you will be presented with a QR code. Applications to scan QR codes are available in Google Play for Android or the App Store for iPhone. Once the QR code has been scanned it will open the download URL in the device and the application will download.
+
+image:mobile-clients-builds-complete.png[Available Mobile Clients]
+
+If you do not have a QR code scanner you can also download the artifact from the URL in the openshift web console. Once downloaded connect a device to your local machine, then open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation. 
+
+NOTE: For Android devices you need to follow the same steps, just using Android Studio to install the APK file on your device or AVD.
