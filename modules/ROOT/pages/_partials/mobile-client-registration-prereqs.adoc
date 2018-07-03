@@ -1,4 +1,4 @@
 [discrete]
 == Prerequisites:
 
-* [x] You have installed OpenShift with {product-name} as described in xref:index.adoc[Getting Started].
+* [x] You have installed OpenShift with {product-name} as described in xref:getting-started.adoc#setting-up-aerogear-mobile-services-on-openshift[Getting Started].
