@@ -10,6 +10,3 @@ include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service
 
 [id='{context}_additional-resources-{context}']
 
-== Next steps
-
-xref:custom/provisioning.adoc[Provisioning] the {custom-service} Service
