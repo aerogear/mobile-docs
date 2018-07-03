@@ -22,8 +22,8 @@ Click on the `✔` to see the API reference documentation:
 | link:/api/cordova/latest/security[✔]
 
 | Xamarin
-| link:/api/xamarin/latest/core/[✔]
-| link:/api/xamarin/latest/auth/[✔]
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_core.html[✔]
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_auth.html[✔]
 | 
-| link:/api/xamarin/latest/security[✔]
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_security.html[✔]
 |===
