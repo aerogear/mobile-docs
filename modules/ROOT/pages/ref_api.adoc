@@ -3,8 +3,12 @@
 [[android]]
 == Android API Reference
 
-The Android API documentation is published as 
-link:http://www.javadoc.io/doc/org.jboss.aerogear/aerogear-android-push/[Javadoc].
+Android API documentation is available for:
+
+* link:http://www.javadoc.io/doc/org.aerogear/android-auth/[Auth]
+* link:http://www.javadoc.io/doc/org.aerogear/android-core/[Core]
+* link:http://www.javadoc.io/doc/org.aerogear/android-push/[Push]
+* link:http://www.javadoc.io/doc/org.aerogear/android-security/[Security]
 
 [[ios]]
 == iOS API Reference
