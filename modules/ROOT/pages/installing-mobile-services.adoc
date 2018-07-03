@@ -42,7 +42,7 @@ Clone this repo to your local machine and check out the {release-number} tag usi
 +
 [source,bash,subs="attributes"]
 ----
-git clone git@github.com:aerogear/mobile-core.git
+git clone https://github.com/aerogear/mobile-core.git
 cd mobile-core
 git checkout {release-number}
 ----
@@ -65,7 +65,7 @@ are installed.
 ----
 DockerHub Tag (Defaults to latest):
 DockerHub Organisation (Defaults to aerogearcatalog):
-Cluster IP (Defaults to <Network IP Address>
+Cluster IP (Defaults to < Network IP Address >)
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
