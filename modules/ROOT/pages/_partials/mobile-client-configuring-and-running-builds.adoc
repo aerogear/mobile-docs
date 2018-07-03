@@ -25,17 +25,3 @@ For more information about how to configure the build config, please check xref:
 Once a build is configured, you can start a new build. You will be able to view the progress of the build from the OpenShift UI and access the full build log.
 
 image:mobile-clients-build-in-progress.png[]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
