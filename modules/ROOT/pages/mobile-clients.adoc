@@ -1,11 +1,17 @@
 include::{partialsdir}/attributes.adoc[]
 = {mobile-client}s in OpenShift
 
-== What is a Mobile Client in your OpenShift Project
+== Introduction
 
-Typically, when you develop a mobile app you connect directly to services such as authentication, and push networks. As these services change, you update your code,
+{mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back end
+for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally.
+{mobile-client}s allow you bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service},
+{metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and
+quicker to implement.
 
-With {product-name}, you create a representation of your mobile app in OpenShift and this *mobile client* becomes the conduit by which you connect to services in OpenShift and external services.
+A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift
+and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
+and to connect to the back end {product-name} you have provisioned on OpenShift.
 
 == Binding 
 
