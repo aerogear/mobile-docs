@@ -8,8 +8,6 @@ include::{partialsdir}/attributes.adoc[]
 
 == Introduction
 
-== Introduction
-
 include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
 
 include::./ref_terminology.adoc[leveloffset=+2]
