@@ -4,7 +4,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Binding a {mobile-client} 
 
-include::{partialsdir}/generic-binding.adoc[leveloffset=+1]
+include::{partialsdir}/generic-binding.adoc[]
 
 . Choose the *Keycloak client type*. The default is `public` which allows the client to request tokens while type `bearer` should be used to bind to services that only need to verify tokens.
 +

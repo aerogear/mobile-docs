@@ -1,7 +1,7 @@
 = Viewing Mobile Services
 
-In order to use services with a mobile app the {mobile-client} associated with the app must be bound to services. In
-the list of {mobile-client}s in the *Overview* view there is a summary of the amount of services available to be bound
+In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to services. In
+the list of {mobile-client}s in the *Overview* view there is a summary of the number of services available to be bound
 to the {mobile-client} and how many services have already been bound to the client.
 
 image::overview-mobile-clients-expanded-none-provisioned.png[]

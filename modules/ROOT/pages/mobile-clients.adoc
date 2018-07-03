@@ -13,6 +13,7 @@ A configuration file named `mobile-services.json` acts as the link between your 
 and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
 and to connect to the back end {product-name} you have provisioned on OpenShift.
 
+[#registering]
 == Registering a {mobile-client}
 To use services with a mobile app a {mobile-client} must first be created to represent the mobile app in OpenShift.
 Once the {mobile-client} has been registered it can then be bound to services to allow the mobile app to interact with
@@ -22,9 +23,6 @@ For information on how to register a {mobile-client} in OpenShift, see xref:gett
 
 [#services]
 include::{partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
-
-[#binding]
-include::{partialsdir}/mobile-core-binding-mobile-services.adoc[leveloffset=1]
 
 [#building]
 include::{partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
