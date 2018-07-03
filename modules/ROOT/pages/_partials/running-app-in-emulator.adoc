@@ -28,6 +28,9 @@ Cordova cross-platform applications can be run in the following emulators:
 * link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android]
 * link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS]
 
++
+NOTE: Running an iOS application requires running an emulator on macOS
+
 ****
 
 [role="secondary"]
@@ -37,7 +40,10 @@ Cordova cross-platform applications can be run in the following emulators:
 
 Xamarin cross-platform applications can be run in the following emulators:
 
-* link:https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debugging/debug-on-emulator/visual-studio-android-emulator/[Android]
-* link:https://docs.microsoft.com/en-us/xamarin/tools/ios-simulator[iOS]
+* link:https://blogs.msdn.microsoft.com/visualstudio/2018/05/08/hyper-v-android-emulator-support/[Android]
+* link:https://developer.xamarin.com/getting-started-ios/[iOS]
+
++
+NOTE: Running an iOS application requires running an emulator on macOS
 
 ****
