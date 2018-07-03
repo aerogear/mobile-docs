@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 == Prerequisites
 
 * [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
-* [x] You have provisioned the {keycloak-service} Service as described in xref:keycloak/provisioning.adoc[Provisioning {keycloak-service} Service].
+* [x] You have provisioned the {keycloak-service} Service as described in xref:identity-management.adoc#provisioning-the-service[Provisioning {keycloak-service} Service].
 
 NOTE: The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
 

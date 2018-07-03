@@ -1,6 +1,6 @@
 //include::{partialsdir}/attributes.adoc[]
 
-= Configuring the Identity Management Service
+= Configuring the Service
 
 The following section will guide you through configuring the schema of the redirect url and web origin for a client in {idm-name}. This is required to enable OpenID authentication.
 
