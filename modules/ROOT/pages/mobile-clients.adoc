@@ -17,9 +17,11 @@ and to connect to the back end {product-name} you have provisioned on OpenShift.
 include::{partialsdir}/mobile-client-registering-a-mobile-client.adoc[leveloffset=1]
 
 [#services]
-include::mc-viewing-available-services.adoc[leveloffset=1]
+include::{partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
+
 [#binding]
 include::{partialsdir}/mobile-core-binding-mobile-services.adoc[leveloffset=1]
+
 [#building]
 include::{partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
 

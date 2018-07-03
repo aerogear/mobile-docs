@@ -1,0 +1,26 @@
+= Viewing Mobile Services
+
+In order to use services with a mobile app the {mobile-client} associated with the app must be bound to services. In
+the list of {mobile-client}s in the *Overview* view there is a summary of the amount of services available to be bound
+to the {mobile-client} and how many services have already been bound to the client.
+
+image::overview-mobile-clients-expanded-none-provisioned.png[]
+
+The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
+to the {mobile-client}. If a service has not yet been bound to a {mobile-client} a binding can be created by selecting
+the *Create Binding* button.
+
+image::mobile-clients-services-all-unprovisioned.png[]
+
+If a service is bound to the {mobile-client} then details about the binding between the {mobile-client} and the
+service can be seen when expanding the service. These details differ for each service.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
+
+Once a service has been bound to a {mobile-client} the configuration for the {mobile-client} will be updated in the
+*Overview* view and the {mobile-client} *Configuration* view. This configuration is used by your app to interact
+with the bound services.
+
+image::mobile-clients-configuration.png[]
+
+For more information on binding {mobile-client}s to services, see xref:getting-started.adoc#binding[Getting Started].

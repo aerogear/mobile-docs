@@ -13,7 +13,6 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:mobile-clients.adoc#introduction[Introduction]
 ** xref:mobile-clients.adoc#registering[Registering a Mobile Client]
 ** xref:mobile-clients.adoc#services[Viewing Available Services]
-** xref:mobile-clients.adoc#binding[Binding Mobile Services]
 ** xref:mobile-clients.adoc#building[Building Mobile Apps]
 
 
