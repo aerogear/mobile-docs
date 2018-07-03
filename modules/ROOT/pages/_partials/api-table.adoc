@@ -1,0 +1,29 @@
+Click on the `✔` to see the API reference documentation:
+
+|===
+| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service}
+
+| Android
+| link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-auth/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-push/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-security/[✔]
+
+| iOS
+| link:/api/ios/latest/core/[✔]
+| link:/api/ios/latest/auth/[✔]
+| link:/api/ios/latest/push/[✔]
+| link:/api/ios/latest/security/[✔]
+
+| Cordova
+| link:/api/cordova/latest/core/[✔]
+| link:/api/cordova/latest/auth/[✔]
+| link:/api/cordova/latest/push/[✔]
+| link:/api/cordova/latest/security[✔]
+
+| Xamarin
+| link:/api/xamarin/latest/core/[✔]
+| link:/api/xamarin/latest/auth/[✔]
+| 
+| link:/api/xamarin/latest/security[✔]
+|===

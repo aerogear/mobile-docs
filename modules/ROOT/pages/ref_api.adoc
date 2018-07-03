@@ -1,33 +1,6 @@
+include::{partialsdir}/attributes.adoc[]
 = AeroGear API Reference
 
 You can find the links to the API reference of each module for each platform in the table below. 
 
-Please click on the `✔` to see the API reference.
-
-|===
-| Platform | Core | Identity Management | Push Notification | Device Security
-
-| iOS
-| link:/api/ios/latest/core/[✔]
-| link:/api/ios/latest/auth/[✔]
-| link:/api/ios/latest/push/[✔]
-| link:/api/ios/latest/security/[✔]
-
-| Android
-| link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
-| link:http://www.javadoc.io/doc/org.aerogear/android-auth/[✔]
-| link:http://www.javadoc.io/doc/org.aerogear/android-push/[✔]
-| link:http://www.javadoc.io/doc/org.aerogear/android-security/[✔]
-
-| Cordova
-| link:/api/cordova/latest/core/[✔]
-| link:/api/cordova/latest/auth/[✔]
-| link:/api/cordova/latest/push/[✔]
-| link:/api/cordova/latest/security[✔]
-
-| Xamarin
-| link:/api/xamarin/latest/core/[✔]
-| link:/api/xamarin/latest/auth/[✔]
-| 
-| link:/api/xamarin/latest/security[✔]
-|===
+include::{partialsdir}/api-table.adoc[]
