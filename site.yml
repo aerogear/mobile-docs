@@ -6,7 +6,7 @@ site:
   start_page: aerogear::getting-started
 content:
   sources:
-  - url: git@github.com:aerogear/mobile-docs.git
+  - url: https://github.com/aerogear/mobile-docs.git
     branches: master
 ui:
   bundle:
