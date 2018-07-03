@@ -29,3 +29,9 @@ include::{partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset
 [#building]
 include::{partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
 
+include::{partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+
+
+
+include::{partialsdir}/api-table.adoc[]
+

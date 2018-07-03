@@ -1,0 +1,36 @@
+
+. In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
++
+[source,ruby,subs="attributes"]
+----
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target :'YourTarget' do
+    ## Require one of the AeroGear SDK's here
+    pod 'AGSCore', '{release-number}'
+    pod 'AGSPush', '{release-number}'
+    pod 'AGSAuth', '{release-number}'
+    pod 'AGSSecurity', '{release-number}'
+end
+----
++
+. Then run the following command:
++
+[source,bash]
+----
+pod install
+----
++
+. Open up `.xcworkspace` with Xcode and start using the SDK.
++
+NOTE: Do not use `.xcodeproj`. If you open a project file instead of a workspace, dependencies will not be correctly configured.
++
+. Import the SDK you want to use in the application. For example:
++
+[source,swift]
+----
+   import AGSAuth
+----
