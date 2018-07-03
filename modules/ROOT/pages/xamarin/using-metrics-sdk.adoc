@@ -1,12 +1,12 @@
 = AeroGear Services Metrics SDK
 
-This document explains how to use the AeroGear Metrics SDK on the Android platform and integrate it with an App.
+This document explains how to use the AeroGear Metrics SDK on the Xamarin platform and integrate it with an App.
 
 == Provided metrics
 
-The default metrics contain App metrics, Device metrics and possibly other types in the future.
+The default metrics contain mobile app and mobile device metrics.
 A Client ID and a timestamp are added to the top level of the Metrics object for categorization and visualization purposes.
-The Client ID will be generated and stored on the device when the App is started the first time.
+When the App is started for the first time, a Client ID is generated and stored on the mobile device.
 
 === App metrics
 
