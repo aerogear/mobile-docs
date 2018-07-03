@@ -1,16 +1,13 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::configuring-dev-env-security.adoc[]
 
-== Setting up {device-security-service} service SDK
+
+== Setting up {device-security-service} Service SDK
 
 This guide will help you to set up the {device-security-service} service SDK in your App.
 
-=== Prerequisites
 
-* [x] You have xref:security/configuring-dev-env-security.adoc[configured your dev environment].
-* [x] You have read the xref:configuring-dev-env.adoc[general app setup guide].
-
+[discrete]
 === Importing the libraries
 
 [role="primary"]
@@ -152,6 +149,6 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 ----
-+
+    +
 NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
 ****
