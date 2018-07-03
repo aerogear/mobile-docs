@@ -1,30 +1,30 @@
 = AeroGear API Reference
 
-[[android]]
-== Android API Reference
+You can find the links to the API reference of each module for each platform in the table below.
 
-The Android API documentation is published as 
-link:http://www.javadoc.io/doc/org.jboss.aerogear/aerogear-android-push/[Javadoc].
+|===
+| Platform | Core | Auth | Push | Security
 
-[[ios]]
-== iOS API Reference
+| iOS
+| link:/api/ios/latest/core/[API]
+| link:/api/ios/latest/auth/[API]
+| link:/api/ios/latest/push/[API]
+| link:/api/ios/latest/security/[API]
 
-iOS API documentation is available for:
+| Android
+| link:http://www.javadoc.io/doc/org.aerogear/core/[API]
+| link:http://www.javadoc.io/doc/org.aerogear/auth/[API]
+| link:http://www.javadoc.io/doc/org.aerogear/push/[API]
+| link:http://www.javadoc.io/doc/org.aerogear/security/[API]
 
-* link:/api/ios/latest/core/[Core]
-* link:/api/ios/latest/push/[Push]
-* link:/api/ios/latest/auth/[Auth]
+| Cordova
+| link:/api/cordova/latest/core/[API]
+| link:/api/cordova/latest/auth/[API]
+| link:/api/cordova/latest/push/[API]
+| link:/api/cordova/latest/security[API]
 
-[[cordova]]
-== Cordova API Reference
-
-Cordova API documentation is available for:
-
-* link:/api/cordova/latest/core/[Core]
-* link:/api/cordova/latest/cordova-plugin-aerogear-metrics/[Metrics]
-* link:/api/cordova/latest/auth/[Auth]
-
-[[xamarin]]
-== Xamarin  API Reference
-
-See the link:/api/xamarin/latest/[Xamarin API documentation]
+| Xamarin
+| link:/api/xamarin/latest/core/[API]
+| link:/api/xamarin/latest/auth/[API]
+| 
+| link:/api/xamarin/latest/security[API]
