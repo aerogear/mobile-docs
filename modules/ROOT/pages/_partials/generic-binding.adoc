@@ -8,15 +8,7 @@ NOTE: The association between a {mobile-client} and {service-name} Service uses 
 
 To associate a {mobile-client} with a mobile service:
 
-. Navigate to the *Overview* of your OpenShift project.
-
-. Click on the {mobile-client} and navigate to {mobile-client} view.
-+
-NOTE: Your mobile app will be represented by two items in OpenShift, an item in the *{mobile-client}s* list and an item in the *Provisioned Services* list. Make sure to click on the item in the *{mobile-client}s* list.
-
-. Navigate to *Mobile Services* tab.
-
-. Expand the {service-name} Service by clicking the *>* icon.
+include::generic-service-nav.adoc[]
 
 . Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
 
