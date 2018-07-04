@@ -6,7 +6,7 @@ requirement is to integrate and connect with back-end
 services in a secure manner. This is achieved using SSL/TLS. 
 
 However, in order for the client device to connect over SSL/TLS, it needs to trust the
-certificates used by the back-end services, which are signed by a certificate authority. Today most of the client devices will have a list of well-known and trusted certificate authorities pre-installed and it will allow the client devices to verify the certificates used by the back-end services.
+certificates used by the back-end services, which are signed by a certificate authority. Today, most of the client devices will have a list of well-known and trusted certificate authorities pre-installed and it will allow the client devices to verify the certificates used by the back-end services.
 
 However, this normally doesn't work in a development environment, such as a local OpenShift cluster as it uses self-signed certificates which are not signed by any of the trusted certificate authorties. This means by default the client devices won't be able to establish secure connections with the back-end services that are running on a local OpenShift cluster.
 
@@ -44,12 +44,12 @@ accessible from the device and download the attachment.
 Drive which is accessible from the device, browse to the certificate and
 proceed to download it.
 * USB - Attach the device to the machine hosting
-OpenShift via USB and drag the certificate to the devices file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
+OpenShift via USB and drag the certificate to the devices' file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
 .. Add the certificate to your device:
 +
 If you are using the email or cloud service approach, once the certificate file is downloaded, you will be prompted by the Android system automatically to install the file. You can simply follow the instructions to complete the process.
 +
-However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and and Android system should detect the
+However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and Android system should detect the
 certificate and let you add it to the device. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
 ****
 

@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 
 {mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back end
 for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally.
-{mobile-client}s allow you bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service},
+{mobile-client}s allow you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service},
 {metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and
 quicker to implement.
 

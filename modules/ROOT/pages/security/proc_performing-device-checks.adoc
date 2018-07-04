@@ -297,7 +297,7 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.ALLOW_BACKUP_D
 
 == Device Encryption Detection
 
-Use this to detect whether the devices filesystem is encrypted.
+Use this to detect whether the devices' filesystem is encrypted.
 
 [role="primary"]
 .Android

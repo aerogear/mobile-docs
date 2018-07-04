@@ -1,2 +1,2 @@
 
-Once the wizard steps are completed navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.

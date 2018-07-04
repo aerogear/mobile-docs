@@ -59,7 +59,7 @@ To detect whether the application's data is configured to be synchronized across
 
 === Device Encryption Detection (HAS_ENCRYPTION_ENABLED)
 
-To detect whether the devices filesystem is encrypted the `SecurityCheckType#HAS_ENCRYPTION_ENABLED` function can be used. This function uses Android's link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[DevicePolicyManager] class.
+To detect whether the devices' filesystem is encrypted the `SecurityCheckType#HAS_ENCRYPTION_ENABLED` function can be used. This function uses Android's link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[DevicePolicyManager] class.
 
 == Custom Self Defence Checks
 

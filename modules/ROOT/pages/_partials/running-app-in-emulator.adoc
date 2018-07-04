@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 
-To run an Android app in an emulator refer to the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation].
+To run an Android app in an emulator, refer to the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation].
 
 ****
 
@@ -14,7 +14,7 @@ To run an Android app in an emulator refer to the following link:https://develop
 
 ****
 
-To run an iOS app in an emulator refer to the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation].
+To run an iOS app in an emulator, refer to the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation].
 
 ****
 
