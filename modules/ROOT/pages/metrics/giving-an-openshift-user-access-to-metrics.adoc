@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 :service-name: Metrics
 
-= Sharing access to the {metrics-service} Service
+= Sharing Access to User Interfaces Associated with the {metrics-service} Service 
 
 == Overview
 
@@ -67,7 +67,8 @@ image::giving-access-to-metrics/authorize.png[OAuth proxy service account author
 Click *Allow selected permissions*. The OAuth proxy redirects you to the requested route.
 
 
-== Additional Resources
+== Related Information
+
 
 * link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[OpenShift Authorization]
 * link:https://github.com/openshift/oauth-proxy[OpenShift OAuth Proxy container]

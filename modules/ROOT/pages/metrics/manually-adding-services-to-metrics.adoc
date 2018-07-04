@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Manually making a service visible to the {metrics-service} Service
+= Making a Service Visible to the {metrics-service} Service Manually
 
 == Adding a service to the {metrics-service} Service
 

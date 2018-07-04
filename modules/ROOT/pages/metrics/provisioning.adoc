@@ -4,6 +4,11 @@ include::{partialsdir}/attributes.adoc[]
 
 = Provisioning {service-name} Service
 
+[discrete]
+== Prerequisites
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
+
 include::{partialsdir}/generic-provisioning.adoc[]
 
 When provisioning a {service-name} Service, you are prompted to set the following:
@@ -30,6 +35,3 @@ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
 
-== Next Steps
-
-* xref:metrics/binding.adoc[Binding a {mobile-client} with the {service-name} Service]

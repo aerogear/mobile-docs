@@ -1,13 +1,10 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Monitoring {keycloak-service} Service
+= Monitoring the {keycloak-service} Service
 
 == Prerequisites
 
-* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
-* [x] You have provisioned the {keycloak-service} Service as described in xref:identity-management.adoc#provisioning-the-service[Provisioning {keycloak-service} Service].
-
-NOTE: The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
+* [x] The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
 
 == Overview
 
@@ -56,7 +53,7 @@ Used to show the distribution of data, e.g. the number of logins per identity pr
 
 * *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
 
-== Additional resources
+== Related Information
 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]

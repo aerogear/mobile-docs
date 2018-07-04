@@ -1,8 +1,8 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Making Services auto-discoverable by the {metrics-service} Service
+= Making Services Auto-discoverable by the {metrics-service} Service
 
-Mobile Services that expose a metrics endpoint will already be auto-discovered by the {metrics-service} Service.
+Mobile Services that expose a metrics endpoint are already discovered by the {metrics-service} Service.
 No additional steps are needed for Prometheus to poll for metrics from Mobile Services.
 
 However, to setup the {metrics-service} Service to gather metrics from your service:
