@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
-When provisioning a {keycloak-service} service, you are prompted to set the following configuration:
+When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
 
 * *Keycloak admin username*: Username for Keycloak administration
 

@@ -21,13 +21,13 @@ include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
 
 {product-name} provide commonly required features for mobile app development.
 
-This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services see xref:con_services.adoc[Mobile Services]
+This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see xref:con_services.adoc[Mobile Services]
 
 :service-name: Identity Management
 
 include::{partialsdir}/generic-provisioning.adoc[]
 
-When provisioning a {keycloak-service} service, you are prompted to set the following configuration:
+When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
 
 * *Keycloak admin username*: Username for Keycloak administration
 

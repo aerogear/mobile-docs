@@ -16,7 +16,7 @@ To use the Auth SDK you'll first need to:
 
 ==== Using OpenShift
 
-* If you do not have mobile services enabled in your openshift cluster follow this link:https://github.com/aerogear/mobile-core/blob/master/docs/walkthroughs/local-setup.adoc[Local Setup] guide.
+* If you do not have mobile services enabled in your OpenShift cluster follow this link:https://github.com/aerogear/mobile-core/blob/master/docs/walkthroughs/local-setup.adoc[Local Setup] guide.
 * Navigate to your Openshift cluster and in the Service Catalog search for the Keycloak service.
 * Click on the Keycloak service and you will be prompted to fill in details about your app.  For now you can leave these as they are.  Navigate through the setup and click Create.
 This will provision the Keycloak service in the project you specified and create a public Client to be used with an app along with a bearer-only client.

@@ -7,7 +7,7 @@ to the {mobile-client} and how many services have already been bound to the clie
 image::overview-mobile-clients-expanded-none-provisioned.png[]
 
 The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
-to the {mobile-client}. If a service has not yet been bound to a {mobile-client} a binding can be created by selecting
+to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
 the *Create Binding* button.
 
 image::mobile-clients-services-all-unprovisioned.png[]
@@ -17,7 +17,7 @@ service can be seen when expanding the service. These details differ for each se
 
 image::mobile-clients-services-all-idm-provisioned.png[]
 
-Once a service has been bound to a {mobile-client} the configuration for the {mobile-client} will be updated in the
+Once a service has been bound to a {mobile-client}, the configuration for the {mobile-client} will be updated in the
 *Overview* view and the {mobile-client} *Configuration* view. This configuration is used by your app to interact
 with the bound services.
 

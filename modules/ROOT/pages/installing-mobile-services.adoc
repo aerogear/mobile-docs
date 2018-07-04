@@ -4,7 +4,7 @@ include::{partialsdir}/attributes.adoc[]
 
 To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see https://www.openshift.org/.
 
-NOTE: {org-name} recommends running OpenShift using the method described here. However there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[].
+NOTE: {org-name} recommends running OpenShift using the method described in this document. However, there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[].
 
 [[prerequisites]]
 == Prerequisites
@@ -77,9 +77,8 @@ Typically, you should ensure you are using the IP Address of your Wireless Adapt
 +
 The *Wildcard DNS Host* option alters the wildcard DNS host you want to use.
 +
-The following installation can take a while the first time it runs as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
+The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
 
-. Check the installation logs:
 +
 ----
 TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
