@@ -121,7 +121,7 @@ This feature is not yet supported in the AeroGear Xamarin SDK
 
 === Device registration
 
-To make use of the {unifiedpush-service} service devices need to be registered by calling an endpoint of the server.
+To make use of the {unifiedpush-service} service, devices need to be registered by calling an endpoint of the server.
 The SDKs will handle this for you and the following steps will give you everything you need to start working with push notifications.
 
 [role="primary"]

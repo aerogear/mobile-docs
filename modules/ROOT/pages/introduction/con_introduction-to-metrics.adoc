@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-metrics']
 = Introduction to {metrics-service}
 
-The {metrics-service} service allows you gather metrics on mobile apps, & device versions, device security checks and back- end mobile service usage.
+The {metrics-service} service allows you to gather metrics on mobile apps, & device versions, device security checks and back- end mobile service usage.
 
 * Monitor usage by version of mobile app, platform and SDK.
 * Monitor interactions with the Identity Management service.

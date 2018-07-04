@@ -21,14 +21,14 @@ In general, the summary data that is visible on the 'Mobile Services' Dashboard 
 An App launch is a metric event that occurs when an App is launched on a device.
 The total number of App launches for a given time shows how many times an App was launched in that time, regardless of if it was the same device or different devices.
 It can be useful as a gauge on how much activity the App has.
-However, as it doesn't take into account multiple lauches from the same device, it isn't useful as a gauge for 'stickiness' of the App.
+However, as it doesn't take into account multiple launches from the same device, it isn't useful as a gauge for 'stickiness' of the App.
 
 [discrete]
 == Analyzing unique clients
 
 Every metric event has a unique client identifier associated with it.
 This unique client identifier is generated the first time an App is started.
-It is worth noting this identifier will be regenerated if a user uninstalls and re-installs an App.
+It is worth noting this identifier will be regenerated if a user re-installs an App.
 The total number of unique clients for a given time shows how many users launched an App at least once.
 This can be useful as a gauge on how many active App users there currently are.
 The time range is an important factor when viewing the number of unique clients.
@@ -42,7 +42,7 @@ Every metric event has an App identifier associated with it.
 An App identifier uniquely identifies an App.
 It is bundled with the App binary.
 There can be more than 1 App (each with a different App identifier) sending metrics events to the same Metrics Service.
-For example, there might be an Admin Portal App and a Field Worker App both using the same backend services and same {metrics-service} Service.
+For example, there might be an Admin Portal App and a Field Worker App both using the same back-end services and same {metrics-service} Service.
 The number of unique clients per App gives a breakdown of all users by the App they are using.
 However, if you only have 1 App there is no difference between the number of unique clients and the number of unique clients per App.
 
@@ -50,16 +50,16 @@ However, if you only have 1 App there is no difference between the number of uni
 == Analyzing unique clients per platform
 
 Every metric event has the platform associated with it.
-An example of platform is Android or iOS.
+An example of a platform is Android or iOS.
 This can be useful for making decisions about which platform to put effort into.
-However, if all your Apps on on a single platform, there is no difference between the number of unique clients and the number of unique clients per platform.
+However, if all your Apps are on a single platform, there is no difference between the number of unique clients and the number of unique clients per platform.
 
 [discrete]
 == Analyzing unique clients per sdk version
 
 Every metric event has the AeroGear sdk version associated with it.
 This can be useful for making decisions about what features to deprecate or drop support for, or applying backwards incompatible server changes/updates.
-This metric will be more valueable as more versions of an App (with different sdk versions) are published.
+This metric will be more valuable as more versions of an App (with different sdk versions) are published.
 
 [discrete]
 == Analyzing unique clients per app version

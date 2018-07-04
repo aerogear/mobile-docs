@@ -7,5 +7,5 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-binding.adoc[]
 
-After the binding is finished the {mobile-client} has been updated with the custom configuration.
+After the binding is finished, the {mobile-client} has been updated with the custom configuration.
 

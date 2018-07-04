@@ -10,7 +10,7 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 
 * Secure your mobile app using the industry standard OpenID Connect protocol.
 * Add access control to your app based on user’s group membership.
-* Easily implement SSO, multi factor authentication and Social Login support.
+* Easily implement SSO, multi-factor authentication and Social Login support.
 * Back-end support for identity brokering and user federation.
 
 

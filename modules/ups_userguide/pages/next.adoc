@@ -24,7 +24,7 @@ Different type of client technologies are supported with the Server
 
 === Server Integration Tutorials
 
-For the backend integration of your server we have a few different tutorials as well:
+For the back-end integration of your server we have a few different tutorials as well:
 
 * link:../../GetStartedwithJavaSender[Java Integration]
 * link:https://github.com/aerogear/aerogear-unifiedpush-nodejs-client#examples[Node.js Integration]

@@ -14,7 +14,7 @@ Also, when you configure your {mobile-client} to use metrics, you can see the me
 
 In addition to those, you can create and modify custom dashboards to:
 
-* visualize metrics from apps and backend services that are not mobile services
+* visualize metrics from apps and back-end services that are not mobile services
 * monitor additional metrics from mobile services that are not displayed by default
 * monitor additional metrics from OpenShift that are not displayed by default
 

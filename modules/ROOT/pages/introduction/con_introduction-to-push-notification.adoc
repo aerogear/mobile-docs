@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-push-notification']
 = Introduction to {unifiedpush-service}
 
-The {unifiedpush-service} service allows you send native push notifications to different mobile operating systems.
+The {unifiedpush-service} service allows you to send native push notifications to different mobile operating systems.
 
 * Code once and push notifications to iOS and Android.
 * Push notifications to defined groups.
