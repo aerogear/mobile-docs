@@ -2,6 +2,10 @@ include::{partialsdir}/attributes.adoc[]
 
 include::nav-matrix.adoc[leveloffset=1]
 
+Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
+
+image::3steps.png[]
+
 
 // include::integrating-services.adoc[leveloffset=1]
 
