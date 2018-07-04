@@ -53,6 +53,7 @@ Used to show the distribution of data, e.g. the number of logins per identity pr
 
 * *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
 
+[discrete]
 == Related Information
 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
