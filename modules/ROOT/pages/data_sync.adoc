@@ -1,0 +1,8 @@
+:toc:
+
+include::sync/index.adoc[leveloffset=0]
+[[setup]]
+== Setting Up the Data Sync Mobile Service
+include::sync/provisioning.adoc[leveloffset=2]
+include::sync/binding.adoc[leveloffset=2]
+include::sync/coding.adoc[leveloffset=2]
