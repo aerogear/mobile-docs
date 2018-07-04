@@ -6,7 +6,9 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-metrics
 
 [id='{context}_con_introduction-to-metrics']
-= Introduction to {metrics-service} Service
+
+[#introduction]
+= Introduction to the {metrics-service} Service
 
 // video::xWFWUcuZPaQ[youtube]
 
