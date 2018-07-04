@@ -6,18 +6,15 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}']
 = {keycloak-service}
 
+[#introduction]
 == Introduction
 
 include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
 
-include::./ref_terminology.adoc[leveloffset=+2]
-
-[id='{context}_additional-resources-{context}']
-
-=== Additional resources
 
 See the link:https://www.keycloak.org/documentation.html[Keycloak documentation] for more info.
 
-== Prerequisites
 
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+include::./ref_terminology.adoc[leveloffset=+2]
+
+
