@@ -77,7 +77,7 @@ Typically, you should ensure you are using the IP Address of your Wireless Adapt
 +
 The *Wildcard DNS Host* option alters the wildcard DNS host you want to use.
 +
-The following installation can take a while the first time it runs as it pulls a number of Docker images. Once completed successfully, this will end with output similar to:
+The following installation can take a while the first time it runs as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
 
 . Check the installation logs:
 +
