@@ -1,8 +1,11 @@
 = Mobile CI/CD
 :toc:
 include::digger/index.adoc[leveloffset=1]
+include::digger/ref_terminology.adoc[leveloffset=+1]
+include::digger/ref_source-configuration.adoc[leveloffset=+1]
 include::digger/provisioning.adoc[leveloffset=1]
 [#build-config]
 include::digger/proc_creating-a-build-configuration.adoc[leveloffset=1]
 include::digger/running-a-build.adoc[leveloffset=1]
+[#deploy]
 include::digger/proc_deploying-a-mobile-app.adoc[leveloffset=1]
