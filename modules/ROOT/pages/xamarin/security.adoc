@@ -122,7 +122,7 @@ participate in the backup and restore infrastructure, which might be interesting
 ==== Device Encryption Detection (HAS_ENCRYPTION_ENABLED)
 IMPORTANT: This check is available for Android only
 
-To detect whether the devices filesystem is encrypted the `SecurityChecks#HAS_ENCRYPTION_ENABLED` function can be used.
+To detect whether the devices' filesystem is encrypted the `SecurityChecks#HAS_ENCRYPTION_ENABLED` function can be used.
 This function uses Android’s link:https://developer.xamarin.com/api/type/Android.App.Admin.DevicePolicyManager/[DevicePolicyManager] class.
 
 === Custom Self Defence Checks

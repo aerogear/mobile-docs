@@ -92,7 +92,7 @@ NOTE: You need to have link:https://docs.docker.com/installation/rhel/[Docker] a
 [[Docker-Server]]
 === UnifiedPush Server as a Docker container
 
-The simplest version to run the Push Server is via Docker. The AeroGear team has a docker image on Docker Hub, that is easy to run:
+The simplest version to run the Push Server is via Docker. The AeroGear team has a Docker image on Docker Hub, that is easy to run:
 
 [source,c]
 ----
