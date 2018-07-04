@@ -5,9 +5,3 @@ include::{partialsdir}/attributes.adoc[]
 include::{partialsdir}/generic-provisioning.adoc[]
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
-
-== Next Steps
-
-xref:registering-a-mobile-app.adoc[Registering a Mobile App]
-
-xref:push/binding.adoc[Binding a {mobile-client} with the {unifiedpush-service} Service]

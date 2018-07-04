@@ -64,8 +64,8 @@ image::giving-access-to-ups/authorize.png[OAuth proxy service account authorize 
 
 Click *Allow selected permissions*. The OAuth proxy redirects you to the requested route.
 
-
-== Additional Resources
+[discrete]
+== Additional Information
 
 * link:https://docs.openshift.com/container-platform/3.9/architecture/additional_concepts/authorization.html[Openshift Authorization]
 * link:https://github.com/openshift/oauth-proxy[Openshift OAuth Proxy container]

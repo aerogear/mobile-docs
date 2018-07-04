@@ -17,6 +17,6 @@ To access {unifiedpush-service} using the {push-ui}, you will need to:
 NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
 
 [discrete]
-== Additional resources
+== Additional Information
 
 * To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].

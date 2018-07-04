@@ -58,7 +58,4 @@ cat <path/to/your/.p12> | base64 --wrap=0
 
 After clicking Bind your variant will be created in UPS and you should see a new binding for your mobile client.
 
-== Next Steps
-
-xref:push/configuring-dev-env-push.adoc[Configuring your Development Environment for the {service-name} Service]
 

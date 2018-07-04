@@ -4,7 +4,8 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-push-notification
 
 [id='{context}_con_introduction-to-push-notification']
-= About {unifiedpush-service} Service
+[#introduction]
+= Introduction to the {unifiedpush-service} Service
 
 [[overview]]
 == Overview
@@ -38,6 +39,3 @@ It can be seen as a _broker_ that distributes push messages to different 3rd par
 
 NOTE: When using the UnifiedPush Server, please keep in mind that Push notification is a signalling mechanism and that it is not suitable to be used as a data carrying system (e.g. use in a chat application).
 
-== Prerequisites
-
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
