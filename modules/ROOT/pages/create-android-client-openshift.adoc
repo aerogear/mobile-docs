@@ -32,4 +32,4 @@ start integrating your Android App with other services. Check out some
 of these guides:
 
 * link:./integrate-android-app-with-custom-service.adoc[Integrate an
-Android Application with your own backend service in OpenShift]
+Android Application with your own back-end service in OpenShift]

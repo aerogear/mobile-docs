@@ -4,8 +4,8 @@ include::{partialsdir}/attributes.adoc[]
 
 This document describes the steps needed to configure the Aerogear Android SDK to allow your Android app to interact with:
 
-* Your own backend services in OpenShift
-* External backend services
+* Your own back-end services in OpenShift
+* External back-end services
 
 == Prerequisites
 
@@ -21,12 +21,12 @@ image:./images/custom-service-py.png[Custom Service and Android Client in OpenSh
 
 === Provision the Custom Runtime Connector
 
-We can connect our {mobile-client} to our backend service by provisioning a **Custom Runtime Connector** from the OpenShift Service Catalog.
+We can connect our {mobile-client} to our back-end service by provisioning a **Custom Runtime Connector** from the OpenShift Service Catalog.
 
 * Select the Custom Runtime Connector from the Service Catalog.
 * Put the service name in the service name field. This name will be used in the SDK to retrieve details about the service.
 * Put the publicly accessible url of the service in the Service URL field.
-* In the Service Config field, place any additional configuration that might be needed by the mobile app in order to communicate with the backend service. **This must be a valid JSON format**.
+* In the Service Config field, place any additional configuration that might be needed by the mobile app in order to communicate with the back-end service. **This must be a valid JSON format**.
 * Click 'Create'.
 
 image:./images/create-crc.png[Provisioning a Custom Runtime Connector]
@@ -40,7 +40,7 @@ Note that provisioning the Custom Runtime Connector simply creates a Config Map 
 
 image:./images/mobile-client-select-crc.png[{mobile-client} Config Blank]
 
-* The 'services' list in the {mobile-client} Configuration now includes a configuration object that contains details related to your backend service such as the name, uri and custom configuration.
+* The 'services' list in the {mobile-client} Configuration now includes a configuration object that contains details related to your back-end service such as the name, uri and custom configuration.
 
 image:./images/mobile-client-custom-runtime.png[{mobile-client} Config with Custom Service]
 

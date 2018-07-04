@@ -6,11 +6,11 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-runtime-connector']
 = Introduction to {custom-service}
 
-The {custom-service} service allows you connect your mobile apps to your own backend API servers.
+The {custom-service} service allows you connect your mobile apps to your own back-end API servers.
 
-* Bind your mobile app to multiple backend API services.
+* Bind your mobile app to multiple back-end API services.
 * Integrated authentication and authorization across mobile and API services.
-* Ability to configure custom headers for specific backend requests.
+* Ability to configure custom headers for specific back-end requests.
 
 
 [id='{context}_additional-resources']

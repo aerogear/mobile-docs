@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Adding Access Control to your Mobile App
 
-Once a `UserPrincipal` has been retrieved the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles] of the user can be listed and checked. This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
+Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles] of the user can be listed and checked. This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
 
 Roles are divided into two types. Resource roles which belong to the client the user has authenticated against, and Realm roles which belong to the realm the client is in.
 

@@ -6,7 +6,7 @@
 = {unifiedpush-service} Service
 //tag::pushnotification-service[]
 
-The {unifiedpush-service} service allows you send native push notifications to different mobile operating systems.
+The {unifiedpush-service} service allows you to send native push notifications to different mobile operating systems.
 
 * Code once and push notifications to iOS and Android
 * Push notifications to defined groups
@@ -21,7 +21,7 @@ The {unifiedpush-service} service allows you send native push notifications to d
 = {metrics-service} Service
 //tag::metrics-service[]
 
-The {metrics-service} service allows you gather metrics on mobile apps, device versions, device security checks and back-end mobile service usage.
+The {metrics-service} service allows you to gather metrics on mobile apps, device versions, device security checks and back-end mobile service usage.
 
 * Monitor usage by version of mobile app, platform and SDK
 * Monitor interactions with the Identity Management service
@@ -38,7 +38,7 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 
 * Secure your mobile app using the industry standard OpenID Connect protocol
 * Add access control to your app based on user’s group membership
-* Easily implement SSO, multi factor authentication and Social Login support
+* Easily implement SSO, multi-factor authentication and Social Login support
 * Back-end support for identity brokering and user federation
 
 //end::identitymanagement-service[]
@@ -49,7 +49,7 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 = {digger-service}
 //tag::mobilecicd-service[]
 
-The {digger-service} service allows you automate the building of your native and hybrid mobile app for both Android and iOS.
+The {digger-service} service allows you to automate the building of your native and hybrid mobile app for both Android and iOS.
 
 * Leverage your Jenkins expertise to manage and automate mobile builds.
 * Containerised builds on OpenShift for Android
@@ -66,10 +66,10 @@ The {digger-service} service allows you automate the building of your native and
 
 //tag::runtimeconnector-service[]
 
-The {custom-service} service allows you connect your mobile apps to your own backend API servers.
+The {custom-service} service allows you connect your mobile apps to your own back-end API servers.
 
-* Bind your mobile client to custom backend API services and business logic
-* Ability to add custom configuration for a backend service, which becomes accessible from your Mobile App
+* Bind your mobile client to custom back-end API services and business logic
+* Ability to add custom configuration for a back-end service, which becomes accessible from your Mobile App
 
 //end::runtimeconnector-service[]
 

@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 [id='{context}_con_introduction-to-cicd']
 = Introduction to {digger-service}
 
-The {digger-service} service allows you automate the building of your native and hybrid mobile app for both Android and iOS.
+The {digger-service} service allows you to automate the building of your native and hybrid mobile app for both Android and iOS.
 
 * Based on Jenkins for build management and automation.
 * Containerised builds on OpenShift for Android.
