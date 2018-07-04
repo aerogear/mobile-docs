@@ -4,13 +4,6 @@ include::configuring-dev-env-security.adoc[]
 
 == Setting up {device-security-service} service SDK
 
-This guide will help you to set up the {device-security-service} service SDK in your App.
-
-=== Prerequisites
-
-* [x] You have xref:security/configuring-dev-env-security.adoc[configured your dev environment].
-* [x] You have read the xref:configuring-dev-env.adoc[general app setup guide].
-
 === Importing the libraries
 
 [role="primary"]
