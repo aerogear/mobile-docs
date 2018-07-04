@@ -51,6 +51,9 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:mobile-cicd.adoc#deploy[Deploying Apps]
 *** xref:mobile-cicd.adoc#clean[Cleaning up Builds]
 
+** xref:data_sync.adoc[{sync-service}]
+*** xref:data_sync.adoc#introduction[Introduction]
+*** xref:data_sync.adoc#setup[Setting Up]
 
 ** xref:device-security.adoc[{device-security-service}]
 *** xref:device-security.adoc#introduction[Introduction]
