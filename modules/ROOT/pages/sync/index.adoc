@@ -3,16 +3,21 @@ include::{partialsdir}/attributes.adoc[]
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: con_introduction-to-sync
 
-[id='{context}_con_introduction-to-data-sync']
-= About the {sync-service} Service
+[id='{context}']
+= {sync-service}
 
-[[overview]]
-== Overview
-
+== Introduction
 
 include::{partialsdir}/generic-service-intros.adoc[tags=sync-service]
 
+include::./ref_terminology.adoc[leveloffset=+2]
 
-== Next Steps
+[id='{context}_additional-resources-{context}']
 
-* xref:sync/provisioning.adoc[Provisioning the {sync-service} service]
+=== Additional resources
+
+TODO
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
