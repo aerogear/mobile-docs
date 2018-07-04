@@ -1,6 +1,5 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Coding a Push Notifications App
 
 include::configuring-dev-env-push.adoc[leveloffset=1]
 
