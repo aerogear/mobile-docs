@@ -7,7 +7,5 @@ NOTE: The association between a {mobile-client} and {service-name} Service uses 
 To associate a {mobile-client} with a mobile service:
 
 include::{partialsdir}/generic-binding-procedure.adoc[]
-+
-image:mobile-clients-services.png[]
 
 . Fill out the binding parameters required by the {service-name} Service.

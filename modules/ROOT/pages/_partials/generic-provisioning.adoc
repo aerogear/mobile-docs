@@ -6,6 +6,8 @@ To provision the {service-name} mobile service:
 +
 You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
 . Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
 
 . Follow the wizard for provisioning that service. 
 +
