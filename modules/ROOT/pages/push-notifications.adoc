@@ -4,6 +4,11 @@
 include::push/index.adoc[leveloffset=1]
 
 [[setup]]
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
 == Setting Up the Identity Management Mobile Service
 include::push/google-setup.adoc[leveloffset=2]
 include::push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]

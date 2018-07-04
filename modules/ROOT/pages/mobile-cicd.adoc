@@ -3,6 +3,12 @@
 include::digger/index.adoc[leveloffset=1]
 include::digger/ref_terminology.adoc[leveloffset=+1]
 include::digger/ref_source-configuration.adoc[leveloffset=+1]
+[#setup]
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
 include::digger/provisioning.adoc[leveloffset=1]
 [#build-config]
 include::digger/proc_creating-a-build-configuration.adoc[leveloffset=1]
