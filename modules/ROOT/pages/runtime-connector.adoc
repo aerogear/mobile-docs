@@ -1,5 +1,5 @@
 :toc:
-include::custom/index.adoc[{custom-service}]
+include::custom/index.adoc[leveloffset=1}]
 [#setup]
 = Setting Up the Runtime Connector Mobile Service
 

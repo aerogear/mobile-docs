@@ -4,9 +4,8 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-custom
 
 [id='{context}_con_introduction-to-custom']
-= About the {custom-service} Service
+[#introduction]
+= Introduction to the {custom-service} Service
+
 
 include::{partialsdir}/generic-service-intros.adoc[tags=runtimeconnector-service]
-
-[id='{context}_additional-resources-{context}']
-

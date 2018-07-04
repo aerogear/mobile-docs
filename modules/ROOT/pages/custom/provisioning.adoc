@@ -4,6 +4,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Provisioning the {service-name} Service
 
+[discrete]
 == Prerequisites
 
 * [x] You are running a back-end service that is exposed to the internet with a known URL.
