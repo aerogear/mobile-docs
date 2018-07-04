@@ -1,6 +1,16 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::nav-matrix.adoc[leveloffset=1]
+{org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
+
+The following services are available:
+
+* xref:identity-management.adoc[{keycloak-service}]
+* xref:push-notifications.adoc[{unifiedpush-service}]
+* xref:runtime-connector.adoc[{custom-service}]
+* xref:mobile-metrics.adoc[{metrics-service}]
+* xref:mobile-cicd.adoc[{digger-service}]
+* xref:device-security.adoc[{device-security-service}]
+
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 
