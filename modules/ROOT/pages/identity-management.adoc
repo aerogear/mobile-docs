@@ -2,6 +2,11 @@
 
 include::keycloak/index.adoc[leveloffset=0]
 [[setup]]
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
 == Setting Up the Identity Management Mobile Service
 include::keycloak/provisioning.adoc[leveloffset=2]
 include::keycloak/binding.adoc[leveloffset=2]
