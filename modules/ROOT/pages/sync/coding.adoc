@@ -1,0 +1,27 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Using the {sync-service} service SDK
+
+This section will help you to set up the {sync-service} service SDK in your App.
+
+== Importing the libraries
+
+[role="primary"]
+.Android
+****
+****
+
+[role="secondary"]
+.iOS
+****
+****
+
+[role="secondary"]
+.Cordova
+****
+****
+
+[role="secondary"]
+.Xamarin
+****
+****
