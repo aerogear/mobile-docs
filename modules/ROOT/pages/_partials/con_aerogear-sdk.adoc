@@ -34,7 +34,7 @@ For Service specific steps, see:
 [[cordova]]
 == Cordova
 
-For information about how to develop apps using Cordova see link:https://cordova.apache.org/#getstarted[Cordova Documentation].
+For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation].
 
 include::{partialsdir}/conf-dev-env-cordova.adoc[]
 

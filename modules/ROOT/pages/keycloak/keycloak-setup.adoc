@@ -26,7 +26,7 @@ The schema of the redirect url should be `\http://localhost/*`.
 [role="secondary"]
 .Xamarin
 ****
-Depending on the platform set the redirect as described in either the Android or the iOS tab.
+Depending on the platform, set the redirect as described in either the Android or the iOS tab.
 ****
 
 == Configuring {idm-name}
@@ -47,4 +47,4 @@ Depending on the platform set the redirect as described in either the Android or
 
 . Save your changes.
 
-NOTE: You must create a new user account before you can log into the Showcase App. To create a new user follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here] and to setup a new users credentials follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+NOTE: You must create a new user account before you can log into the Showcase App. To create a new user, follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here] and to setup a new users credentials, follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
