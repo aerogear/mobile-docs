@@ -5,13 +5,6 @@ include::{partialsdir}/attributes.adoc[]
 This guide shows how to use app metrics to provide rich visualizations regarding app usage that can then drive development planning, for example, when should support for  version x.y of app end?'
 
 [discrete]
-== Prerequisites
-
-* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
-* [x] You have associated the service with a {mobile-client} as described in xref:metrics/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
-* [x] You have configured the app as described in xref:metrics/configuring-dev-env-metrics.adoc[Configuring your Development Environment]
-
-[discrete]
 == Viewing Dashboards
 
 There are many visualisations available in the default dashboards in Grafana.
@@ -76,7 +69,10 @@ The App version is set by the developer.
 Like the sdk version, this can be useful for making decisions about what features to deprecate or drop support for, or applying backwards incompatible server changes/updates.
 It can also be useful to see the uptake rate of newly published versions of an App.
 
-== External resources
+[discrete]
+== Related Information
+
+See Grafana documentation for more information on the following topics:
 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
