@@ -1,5 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
+
 = {mobile-client}s in OpenShift
+:toc:
 
 == Introduction
 
