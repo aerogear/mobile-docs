@@ -66,9 +66,8 @@ you are prompted to allow the service account access your account.
 image::giving-access-to-metrics/authorize.png[OAuth proxy service account authorize access]
 Click *Allow selected permissions*. The OAuth proxy redirects you to the requested route.
 
-
+[discrete]
 == Related Information
-
 
 * link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[OpenShift Authorization]
 * link:https://github.com/openshift/oauth-proxy[OpenShift OAuth Proxy container]
