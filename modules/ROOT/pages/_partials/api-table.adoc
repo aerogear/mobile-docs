@@ -1,4 +1,4 @@
-Click on the `✔` to see the API reference documentation:
+Click on the link:#[✔] to see the API reference documentation:
 
 |===
 | Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service}
