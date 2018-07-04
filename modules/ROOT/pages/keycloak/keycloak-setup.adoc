@@ -39,7 +39,7 @@ Depending on the platform set the redirect as described in either the Android or
 
 . Open `Clients` from the menu.
 
-. Open your Android client.
+. Open your client. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
 
 . Add `<schema>:/callback` to `Valid Redirect URIs`.
 
