@@ -696,6 +696,3 @@ new SecurityService()
 Self Defence reports are not yet available for Xamarin.
 ****
 
-== Next steps
-
-xref:security/proc_pinning-certificates.adoc[Certificate Pinning]

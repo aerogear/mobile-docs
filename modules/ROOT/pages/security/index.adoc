@@ -4,11 +4,11 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-device-security
 
 [id='{context}_con_introduction-to-device-security']
-= About {device-security-service}
+[#introduction]
+= Introduction to the {device-security-service} Service
 
 include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
 
 [id='{context}_additional-resources-{context}']
 
-//== Additional resources
 
