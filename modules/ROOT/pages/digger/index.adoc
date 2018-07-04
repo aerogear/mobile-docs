@@ -4,13 +4,8 @@ include::{partialsdir}/attributes.adoc[]
 :context: con_introduction-to-build
 
 [id='{context}_con_introduction-to-build']
-= About {digger-service}
+[#introduction]
+= Introduction to the {digger-service} Service
 
 include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 
-include::./ref_terminology.adoc[leveloffset=+1]
-include::./ref_source-configuration.adoc[leveloffset=+1]
-
-== Prerequisites
-
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]

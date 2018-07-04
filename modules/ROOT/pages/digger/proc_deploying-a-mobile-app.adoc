@@ -9,16 +9,6 @@ include::{partialsdir}/attributes.adoc[]
 You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device.
 This binary can be downloaded for any successful build in the build history.
 
-[discrete]
-== Prerequisites
-
-* [x] xref:digger/provisioning.adoc[A provisioned {digger-service} service].
-* [x] xref:registering-a-mobile-app.adoc[A registered {mobile-client}]
-* [x] xref:digger/proc_creating-a-build-configuration.adoc[Created a Build Configuration].
-* [x] xref:digger/running-a-build.adoc[Built a Mobile App].
-
-[discrete]
-== Procedure
 
 . Open the OpenShift UI.
 

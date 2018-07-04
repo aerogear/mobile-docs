@@ -8,16 +8,6 @@ include::{partialsdir}/attributes.adoc[]
 
 You can use the OpenShift UI to create a new client build for an existing mobile client.
 
-[discrete]
-== Prerequisites
-
-* [x] xref:digger/provisioning.adoc[A provisioned {digger-service} service].
-* [x] xref:registering-a-mobile-app.adoc[A registered {mobile-client}]
-* [x] To build your mobile client, you need to provide xref:digger/ref_source-configuration.adoc[source configuration].
-
-[discrete]
-== Procedure
-
 . Open the OpenShift UI.
 
 . Browse to the *Project Overview* screen and find the mobile client you want to build.
@@ -27,8 +17,3 @@ You can use the OpenShift UI to create a new client build for an existing mobile
 . At the top right of the screen, click the *drop down* and select *Create Build*.
 
 . When the *Client Build Form* screen opens, give the new build a unique name.
-
-[discrete]
-== Additional Resources
-
-* xref:digger/ref_source-configuration.adoc[Source Configuration Reference material].
