@@ -14,6 +14,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:mobile-clients.adoc#registering[Registering a Mobile Client]
 ** xref:mobile-clients.adoc#services[Viewing Available Services]
 ** xref:mobile-clients.adoc#building[Building Mobile Apps]
+** xref:mobile-clients.adoc#sdk[AeroGear SDK]
 
 
 * xref:con_services.adoc[Mobile Services]
