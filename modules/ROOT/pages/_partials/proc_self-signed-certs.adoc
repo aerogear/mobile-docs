@@ -6,7 +6,8 @@ requirement is to integrate and connect with back-end
 services in a secure manner. This is achieved using SSL/TLS. 
 
 However, in order for the client device to connect over SSL/TLS, it needs to trust the
-certificates used by the back-end services, which are signed by a certificate authority. Today, most of the client devices will have a list of well-known and trusted certificate authorities pre-installed and it will allow the client devices to verify the certificates used by the back-end services.
+certificates used by the back-end services, which are signed by a certificate authority.
+Most client devices have a list of well-known and trusted certificate authorities pre-installed and this allows the client devices to verify the certificates used by the back-end services.
 
 However, this normally doesn't work in a development environment, such as a local OpenShift cluster as it uses self-signed certificates which are not signed by any of the trusted certificate authorties. This means by default the client devices won't be able to establish secure connections with the back-end services that are running on a local OpenShift cluster.
 
