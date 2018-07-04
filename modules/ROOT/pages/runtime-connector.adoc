@@ -1,6 +1,13 @@
+= Runtime Connector
+
 :toc:
 include::custom/index.adoc[leveloffset=1]
 [#setup]
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
 = Setting Up the Runtime Connector Mobile Service
 
 include::custom/provisioning.adoc[leveloffset=1]

@@ -3,6 +3,11 @@
 
 include::metrics/index.adoc[leveloffset=1]
 [#setup]
+
+== Prerequisites
+
+include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+
 == Setting Up the Mobile Metrics Service
 
 include::metrics/provisioning.adoc[leveloffset=2]
