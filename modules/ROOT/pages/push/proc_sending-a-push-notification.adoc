@@ -9,15 +9,6 @@ include::{partialsdir}/attributes.adoc[]
 
 The {push-ui} allows you to send {push-notification}s to devices.
 
-[discrete]
-== Prerequisites
-
-* Access to the {push-ui}.
-* xref:push/binding.adoc[Binding] created.
-
-[discrete]
-== Procedure
-
 . Open the {push-ui} in a browser.
 
 . Select the target application from the home page and click *Send Notification To This App*.

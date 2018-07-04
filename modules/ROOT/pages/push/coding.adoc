@@ -240,7 +240,3 @@ pushObject.on('registration').subscribe(data => {
 This feature is not yet supported in the AeroGear Xamarin SDK
 ****
 
-
-== Next Steps
-
-xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
