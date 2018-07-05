@@ -69,7 +69,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:showcase-apps.adoc#setup[Service Setup]
 ** xref:showcase-apps.adoc#app[Showcase App Setup]
 ** xref:showcase-apps.adoc#binding[Service Binding]
-** xref:showcase-apps.adoc#json[Downloading the service-config file]
+** xref:showcase-apps.adoc#downloading-the-mobile-services-configuration-file[Downloading the Mobile Services Configuration File]
 ** xref:showcase-apps.adoc#build[Building and Running the Showcase Apps]
 ** xref:showcase-apps.adoc#certs[Using Self Signed Certs]
 
