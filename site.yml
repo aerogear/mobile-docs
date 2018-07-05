@@ -2,7 +2,7 @@ runtime:
   cache_dir: ./.cache/antora
 site:
   title: AeroGear Mobile Services
-  url: https://www.aerogear.org
+  url: https://docs.aerogear.org
   start_page: aerogear::getting-started
 content:
   sources:
