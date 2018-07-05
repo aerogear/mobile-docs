@@ -30,10 +30,10 @@ To begin using self defence checks in your app, you'll need to retrieve an insta
 
 [source, c#]
 ----
-var SecurityService = MobileCore.GetService<SecurityService>();
+var SecurityService = MobileCore.GetService<ISecurityService>();
 ----
 
-Any subsequent `MobileCore#GetService` method will return the same instance of `SecurityService`. +
+Any subsequent `MobileCore#GetService` method will return the same instance of `ISecurityService`. +
 Self defense checks can either be <<Provided Self Defence Checks,provided>> by the SDK or <<Custom Self Defence Checks,custom>>.
 
 === Provided Self Defence Checks
@@ -186,3 +186,23 @@ Dictionary<string, SecurityCheckResult> results = securityService.GetSyncExecuto
 
 The `Builder.WithSecurityCheck` method can be invoked as much as needed to add checks to be executed.
 The value returned by the `Execute` method will be a `Dictionary` whose value is the result of the check, while the key is the ID of the check that produced that result.
+
+[#reporting-selfdefence-metrics]
+=== Reporting Self Defence Checks Results Via the Metrics Service
+In order to report the results of Self Defence use the link:./using-metrics-sdk[Metrics Service] in conjunction with the `ISecurityService`.
+
+Reporting the check results is done using an `Executor` that is passed a reference to the link:./using-metrics-sdk[Metrics Service]:
+
+[source, csharp]
+----
+// Get the metric service object
+var metricsService = MobileCore.Instance.GetService<MetricsService>();
+var checkExecutor = SecurityCheckExecutor
+				.newSyncExecutor()
+				.WithSecurityCheck(mysecuritycheck)   // repeat this call for each check to execute
+				.WithMetricsService(metricsService)   // pass the metric service
+				.Build();
+// Execute the checks
+var checkResults = checkExecutor.Execute();
+----
+

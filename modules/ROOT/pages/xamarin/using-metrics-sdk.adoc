@@ -1,0 +1,32 @@
+= AeroGear Services Metrics SDK
+
+This section explains how to use the AeroGear Metrics SDK on the Xamarin platform and integrate it with an App.
+
+== Using metrics
+
+The Metrics service is part of the Core SDK and no additional dependency is required to use it.
+All you have to do is to make sure that your `mobile-services.json` contains a configuration section for it.
+You can verify this by checking that it include a `metrics` section inside the `services` array.
+
+If no such configuration is provided then the Metrics module will not send any data over the network.
+
+== Provided metrics
+
+The default metrics contain App metrics and Device metrics.
+A Client ID and a timestamp are added to the top level of the Metrics object for categorization and visualization purposes.
+When the App is started for the first time, a Client ID is generated and stored on the mobile device.
+
+=== App metrics
+
+- *App ID*: The package name of your App
+- *App version*: The version of your App as defined in the Manifest `versionName` tag
+- *SDK version*: The version of the Aerogear SDK that is used
+- *Framework*: Framework used for development (`Xamarin.Android` or `Xamarin.iOS`)
+
+NOTE: App metrics are sent automatically once the core SDK is initialized. To report Device metrics refer to <<security.adoc#reporting-selfdefence-metrics,Reporting Self Defence Checks Results Via the Metrics Service>>.
+
+=== Device metrics
+
+- *Platform*: Hardcoded to `android` or `iOS`
+- *Platform Version*: The API level of the device on Android or, on iOS, the  version of the platform (11.4, etc.)
+
