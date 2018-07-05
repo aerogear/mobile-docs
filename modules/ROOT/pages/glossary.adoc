@@ -1,3 +1,4 @@
+= Glossary
 :toc:
 include::mobile_terminology.adoc[leveloffset=+1]
 include::keycloak/ref_terminology.adoc[leveloffset=+1]
