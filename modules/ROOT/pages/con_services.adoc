@@ -1,5 +1,5 @@
 include::{partialsdir}/attributes.adoc[]
-
+= Mobile Services
 {org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
 
 The following services are available:
