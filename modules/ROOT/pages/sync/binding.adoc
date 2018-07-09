@@ -1,0 +1,11 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Data Sync
+
+= Binding a {mobile-client} with the {service-name} Service
+
+include::{partialsdir}/generic-binding.adoc[]
+
+== Next Steps
+
+* xref:sync/adding-sync-to-your-app.adoc[Adding {service-name} Service to your Application]

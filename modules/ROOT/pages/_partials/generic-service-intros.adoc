@@ -87,3 +87,12 @@ The {device-security-service} service allows you to easily configure and manage 
 NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
 
 //end::device-security-service[]
+
+
+
+= {sync-service}
+//tag::sync-service[]
+
+TODO
+
+//end::sync-service[]
