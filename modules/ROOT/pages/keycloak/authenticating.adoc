@@ -98,7 +98,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 .Cordova
 ****
 Authentication will be performed on initialization as described xref:keycloak/coding.adoc#initializing-the-sdk[here]. To manually redirect to the login screen, use:
-[code,javascript]
+[source,javascript]
 ----
 authService.login().then(() => {
     // Login success
