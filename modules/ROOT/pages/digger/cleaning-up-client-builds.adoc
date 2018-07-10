@@ -1,17 +1,13 @@
 [[cleaning-up-mobile-client-builds]]
-= Clean up a Mobile Client Build
+= Cleaning up a Mobile Client Build
 
-== Overview
+== Deleting a Build Instance
 
-This document outlines how to clean up a mobile client buildconfig and builds so that you can fully clean up the related builds and Jobs from the Mobile CI/CD service. 
+After creating and running a build, you can click through to your mobile client screen from the project overview and into the *Builds* tab. In this tab you see the details of your various mobile client builds.
 
-== Deleting an individual build
+1. Click the build number of the build you want to delete. The build details screen is displayed.
+2. Choose *Delete* from the *Actions* menu. The build resource is removed from OpenShift along with the corrosponding build in the CI/CD service and any artefacts.
 
-After creating and running a build, you should be able to click through to your mobile client screen from the project overview and into the builds tab. In this tab you should see the details of your various mobile client builds.
+== Deleting a {digger-service} Build Configuration
 
-From here you will see the build number which is also a link to the individual build. Clicking on the build link will bring you to the build resource screen. From this screen you can select the actions and click the delete option. Once deleted the build resource will be removed from OpenShift along with the corrosponding build in the CI CD service and any artefacts created.
-
-
-== Deleting a build config (how to remove a CI CD Job via OpenShift)
-
-When you create a mobile client build, it is represented by a https://docs.openshift.org/3.9/dev_guide/builds/index.html#defining-a-buildconfig[build config] resource in OpenShift. This build config is then translated into a Jenkins Build for your mobile client in the CI CD service. If you want to remove the entire Job from the CI CD service and clean up everything in OpenShift, then deleting the build config  will achieve this. To delete the build config, click into your mobile client and open the builds tab. From here you can select the delete option from the more actions (the three dots) at the far right of the build row. Once deleted associated resources and builds with that Job will be removed as will the underlying Jenkins Job in the CI CD service.
+When you create a {mobile-client} build configuration, you create a https://docs.openshift.org/latest/dev_guide/builds/index.html#defining-a-buildconfig[BuildConfig] resource in OpenShift. This build config is then translated into a Jenkins Build for your mobile client in the CI/CD service. If you want to remove the entire Job from the CI/CD service and clean up everything in OpenShift, then deleting the build config  will achieve this. To delete the build config, click into your mobile client and open the builds tab. From here you can select the delete option from the more actions (the three dots) at the far right of the build row. Once deleted associated resources and builds with that Job will be removed as will the underlying Jenkins Job in the CI/CD service.

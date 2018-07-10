@@ -2,6 +2,8 @@
 
 To build a mobile app using the {digger-service} service, you must add a `Jenkinsfile` to your git repository, typically in the root directory of that repository.
 
+The following sample files are suitable for the link:showcase-apps.html[Showcase Apps]. You may need a different configuration for your mobile app.
+
 == Sample Android Jenkinsfile for Debug Build Type
 
 ```groovy
