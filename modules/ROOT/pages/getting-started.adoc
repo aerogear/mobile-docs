@@ -16,7 +16,7 @@ This guide will bring you through all the required steps to get up and running w
 * Configure and run the {org-name} Showcase App on your platform of choice
 
 // start installing-mobile-services.adoc[leveloffset=1]
-include::installing-mobile-services.adoc[leveloffset=1]
+include::{partialsdir}/installing-mobile-services.adoc[leveloffset=1]
 // end installing-mobile-services.adoc[leveloffset=1]
 [[registering]]
 // start {partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]

@@ -1,4 +1,0 @@
-= Architecture of {product-name}
-
-image::arch.png[]
-

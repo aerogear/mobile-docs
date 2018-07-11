@@ -1,7 +1,7 @@
 = Glossary
 :toc:
 // start mobile_terminology.adoc[leveloffset=+1]
-include::mobile_terminology.adoc[leveloffset=+1]
+include::{partialsdir}/mobile_terminology.adoc[leveloffset=+1]
 // end mobile_terminology.adoc[leveloffset=+1]
 // start keycloak/ref_terminology.adoc[leveloffset=+1]
 include::keycloak/ref_terminology.adoc[leveloffset=+1]

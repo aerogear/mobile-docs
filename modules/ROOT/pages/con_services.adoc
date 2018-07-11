@@ -18,8 +18,3 @@ Below is a high-level architecture diagram, which outlines how your mobile apps 
 
 image::3steps.png[]
 
-
-// // start integrating-services.adoc[leveloffset=1]
-include::integrating-services.adoc[leveloffset=1]
-// end integrating-services.adoc[leveloffset=1]
-
