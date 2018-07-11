@@ -111,29 +111,40 @@ include::{partialsdir}/cloning-showcase-app.adoc[]
 
 // TODO: fix link and numbering
 [start=2]
-. If using xref:push/google-setup.adoc[Firebase Cloud Messaging] for push notifications, copy the `google-services.json` to your IDE.
+. The following steps will help you enable Push Notifications in a showcase application.
 
 [role="primary"]
 .Android
 
 ****
-Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
-xref:push/google-setup.adoc[Firebase Cloud Messaging] console.
+. You will need to create a project on link:https://firebase.google.com/[Firebase].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here] to download `google-services.json` from your Firebase project.
+. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+Firebase Cloud Messaging console.
 ****
 
 [role="secondary"]
 .iOS
 
 ****
-Firebase Cloud Messaging is not supported on iOS.
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide] to enable push notifications for your Xcode project.
+
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
++
+NOTE: Make sure to protect the p12 file with a password.
++
+NOTE: The exported p12 file with the password will be used later when binding your {mobile-client} to the {unifiedpush-service}.
+
 ****
 
 [role="secondary"]
 .Cordova
 
 ****
-Overwrite the file `/google-services.json` with the `google-services.json` file you downloaded from
-xref:push/google-setup.adoc[Firebase Cloud Messaging] console.
+. You will need to create a project on link:https://firebase.google.com/[Firebase].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here] to download `google-services.json` from your Firebase project.
+. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+Firebase Cloud Messaging console.
 ****
 
 [role="secondary"]
