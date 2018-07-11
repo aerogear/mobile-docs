@@ -111,8 +111,6 @@ include::{partialsdir}/cloning-showcase-app.adoc[]
 
 // TODO: fix link and numbering
 [start=2]
-. Configure the Mobile SDK as described in xref:configuring-dev-env.adoc#obtaining-the-mobile-sdk-configuration-file[Obtaining the Mobile SDK Configuration File]
-
 . If using xref:push/google-setup.adoc[Firebase Cloud Messaging] for push notifications, copy the `google-services.json` to your IDE.
 
 [role="primary"]
