@@ -3,18 +3,32 @@
 :toc:
 
 
+// start showcase-apps/index.adoc[leveloffset=1]
 include::showcase-apps/index.adoc[leveloffset=1]
+// end showcase-apps/index.adoc[leveloffset=1]
 
 
 [#features]
 == Showcase App Features
 
+// start showcase-apps/identity-management.adoc[leveloffset=2]
 include::showcase-apps/identity-management.adoc[leveloffset=2]
+// end showcase-apps/identity-management.adoc[leveloffset=2]
+// start showcase-apps/device-security.adoc[leveloffset=2}]
 include::showcase-apps/device-security.adoc[leveloffset=2}]
+// end showcase-apps/device-security.adoc[leveloffset=2}]
+// start showcase-apps/push-notifications.adoc[leveloffset=2}]
 include::showcase-apps/push-notifications.adoc[leveloffset=2}]
+// end showcase-apps/push-notifications.adoc[leveloffset=2}]
+// start showcase-apps/metrics.adoc[leveloffset=2]
 include::showcase-apps/metrics.adoc[leveloffset=2]
+// end showcase-apps/metrics.adoc[leveloffset=2]
 
 
+// start showcase-apps/service-setup.adoc[leveloffset=1]
 include::showcase-apps/service-setup.adoc[leveloffset=1]
+// end showcase-apps/service-setup.adoc[leveloffset=1]
 [#certs]
+// start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
 include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
+// end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]

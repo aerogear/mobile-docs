@@ -21,7 +21,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 [discrete]
 === Prerequisites
 
-* [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 
 [discrete]
 === Procedure
@@ -108,6 +108,8 @@ You need the following installed on your system:
 
 include::{partialsdir}/cloning-showcase-app.adoc[]
 
+
+// TODO: fix link and numbering
 [start=2]
 . Configure the Mobile SDK as described in xref:configuring-dev-env.adoc#obtaining-the-mobile-sdk-configuration-file[Obtaining the Mobile SDK Configuration File]
 
