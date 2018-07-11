@@ -9,3 +9,29 @@ include::{partialsdir}/attributes.adoc[]
 * [x] You are running OpenShift with {product-name} as described in xref:ROOT:installing-mobile-services.adoc[Setting up AeroGear {product-name} on OpenShift].
 
 include::{partialsdir}/generic-provisioning.adoc[]
+
+When provisioning a {service-name} Service, you are prompted to set the following:
+
+.Configuration
+[options="header"]
+|====
+|Field|Description
+|Postgres Storage Size (Gb)|Size of persistent volume for Postgres (default value is recommended)
+|Postgres User|User name that will be used to connect to postgres ('user' will be used if blank)
+|Postgres Password|Password to connect to Postgres (generated if blank)
+|====
+
+[NOTE]
+====
+If the Postgres password was generated, retrieve the password using:
+[source,bash]
+----
+oc describe dc postgres-data-sync -n <myproject> | grep POSTGRESQL_PASSWORD
+----
+====
+
+include::{partialsdir}/generic-provisioning-end.adoc[]
+
+== Next Steps
+
+* xref:sync/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
