@@ -11,12 +11,12 @@ The following section will guide you through configuring the schema of the redir
 [role="primary"]
 .Android
 ****
-It is recommended to use the package name of the Android app followed by `:/callback` as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
 ****
 [role="secondary"]
 .iOS
 ****
-It is recommended to use the Bundle Identifier of the iOS app followed by `:/callback` as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template:/callback`)
+It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
 ****
 [role="secondary"]
 .Cordova
