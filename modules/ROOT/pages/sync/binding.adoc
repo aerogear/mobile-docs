@@ -8,4 +8,4 @@ include::{partialsdir}/generic-binding.adoc[]
 
 == Next Steps
 
-* xref:sync/adding-sync-to-your-app.adoc[Adding {service-name} Service to your Application]
+* xref:sync/adding-sync-to-your-app.adoc[Adding {sync-service} Service to your Application]
