@@ -3,5 +3,3 @@
 :service-name: Security
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
-
-//***TODO***
