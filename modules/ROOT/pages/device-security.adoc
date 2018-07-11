@@ -1,10 +1,18 @@
 = Device Security
 :toc:
 
+// start security/index.adoc[leveloffset=1]
 include::security/index.adoc[leveloffset=1]
+// end security/index.adoc[leveloffset=1]
+// start security/coding.adoc[leveloffset=1]
 include::security/coding.adoc[leveloffset=1]
+// end security/coding.adoc[leveloffset=1]
 [#device-trust]
+// start security/proc_performing-device-checks.adoc[leveloffset=1]
 include::security/proc_performing-device-checks.adoc[leveloffset=1]
+// end security/proc_performing-device-checks.adoc[leveloffset=1]
 [#cert-pinning]
+// start security/proc_pinning-certificates.adoc[leveloffset=1]
 include::security/proc_pinning-certificates.adoc[leveloffset=1]
+// end security/proc_pinning-certificates.adoc[leveloffset=1]
 
