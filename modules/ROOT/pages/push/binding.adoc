@@ -19,7 +19,7 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 * [x] An Apple Developer account
-* [x] An APNs client TLS certificate. Have a look at link:apple-setup.html[APNs Setup] for further instructions.
+* [x] An APNs client TLS certificate. Have a look at link:../push-notifications.html#proc_preparing-ups-for-use-with-ios_preparing-ups-for-use-with-ios[APNs Setup] for further instructions.
 ****
 
 
