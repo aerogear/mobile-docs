@@ -1,5 +1,7 @@
 include::{partialsdir}/attributes.adoc[]
 
+:service-name: Data Sync
+
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: con_introduction-to-sync
 
@@ -16,8 +18,8 @@ include::./ref_terminology.adoc[leveloffset=+2]
 
 === Additional resources
 
-TODO
+For more information, see the link:https://www.apollographql.com/docs/react/[Apollo Client Documentation]
 
-== Prerequisites
+== Next Steps
 
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+* xref:sync/provisioning.adoc[Provisioning {service-name} Service]
