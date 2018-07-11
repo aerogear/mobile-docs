@@ -171,6 +171,3 @@ include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[levelof
 
 
 include::{partialsdir}/build-and-deploy.adoc[]
-
-
-include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
