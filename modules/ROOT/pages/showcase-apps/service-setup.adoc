@@ -8,11 +8,11 @@ include::{partialsdir}/attributes.adoc[]
 Showcase apps demonstrate many features of {product-name}. To see these features:
 
 . Set up the appropriate services.
-. Set up the mobile app as described in xref:setting-up-the-showcase-app[].
+. Set up the mobile app as described in xref:app[].
 . Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
 . Bind your {mobile-client} to the appropriate services as described in xref:binding[]
 . Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
-. Build and run your showcase app  as described in xref:building-and-deploying-the-showcase-apps[].
+. Build and run your showcase app  as described in xref:build[].
 
 [[setting-up-mobile-services-to-demonstrate-showcase-apps]]
 [#setup]
