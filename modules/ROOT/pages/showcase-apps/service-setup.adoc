@@ -86,8 +86,8 @@ $ gem install cocoapods
 ****
 You need the following installed on your machine:
 
-* [x] link:https://nodejs.org/[Node.js] runtime and NPM
-* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI]
+* [x] link:https://nodejs.org/[Node.js] version 8.9.4 runtime and NPM 
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI] version 8.0.0
 ****
 
 [role="secondary"]
