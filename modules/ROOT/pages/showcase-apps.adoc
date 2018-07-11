@@ -18,7 +18,7 @@ include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
 
 
 [#features]
-== Showcase App Features
+== Demonstrating the ShowCase App Features
 
 // start showcase-apps/identity-management.adoc[leveloffset=2]
 include::showcase-apps/identity-management.adoc[leveloffset=2]
