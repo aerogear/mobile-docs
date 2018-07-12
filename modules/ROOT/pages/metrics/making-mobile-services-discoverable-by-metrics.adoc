@@ -70,9 +70,9 @@ An example of doing that with `oc` CLI:
 
 [source,bash]
 ----
-oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"="/metrics"
+$ oc annotate service my-awesome-service "org.aerogear.metrics/plain_endpoint"="/metrics"
 # OR
-oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"="/metrics"
+$ oc annotate service my-awesome-service "org.aerogear.metrics/ssl_endpoint"="/metrics"
 ----
 
 Prometheus constantly monitors Kubernetes and will be notified about this change. It will start collecting the metrics

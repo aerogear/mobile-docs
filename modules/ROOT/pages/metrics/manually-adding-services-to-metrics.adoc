@@ -99,11 +99,11 @@ Run the following commands:
 
 [source,bash]
 ----
-oc login # login to the OpenShift Cluster
-oc get projects # list available Projects
-oc use myproject # switch to the project where the prometheus and the custom service are located
-oc get configmaps # list available Config Maps
-oc edit configmap prometheus-configmap # open the prometheus configmap in $OC_EDITOR or $EDITOR
+$ oc login # login to the OpenShift Cluster
+$ oc get projects # list available Projects
+$ oc use myproject # switch to the project where the prometheus and the custom service are located
+$ oc get configmaps # list available Config Maps
+$ oc edit configmap prometheus-configmap # open the prometheus configmap in $OC_EDITOR or $EDITOR
 ----
 
 This will allow you to edit the Config Map in a local editor similarly
@@ -114,7 +114,7 @@ execute a new rollout of Prometheus' deployment config:
 
 [source,bash]
 ----
-oc get deploymentconfigs # list existing deployment configs
-oc rollout latest dc/prometheus # start a new deployment of the prometheus deploymentconfig
-oc rollout status dc/prometheus # follow the status of the new rollout
+$ oc get deploymentconfigs # list existing deployment configs
+$ oc rollout latest dc/prometheus # start a new deployment of the prometheus deploymentconfig
+$ oc rollout status dc/prometheus # follow the status of the new rollout
 ----

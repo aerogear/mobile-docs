@@ -17,8 +17,8 @@ If you have not installed CocoaPods, install it by running the command:
 
 [source,bash]
 ----
-gem install cocoapods
-pod setup
+$ gem install cocoapods
+$ pod setup
 ----
 
 2) In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
@@ -42,7 +42,7 @@ end
     
 [source,bash]
 ----
-pod install
+$ pod install
 ----
 
 4) Open up `.xcworkspace` with Xcode and start using the SDK.

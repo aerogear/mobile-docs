@@ -34,7 +34,7 @@ Android KeyStore:: Password protected PKCS12 file containing a key protected by 
 The PKSC12 archive of your android keystore certificate can be generated using the following command:
 [source,bash]
 ----
-keytool -importkeystore -srckeystore <your-android-cert.keystore> -destkeystore <your-android-cert>.p12 -deststoretype PKCS12 -srcalias <your-android-cert-alias>
+$ keytool -importkeystore -srckeystore <your-android-cert.keystore> -destkeystore <your-android-cert>.p12 -deststoretype PKCS12 -srcalias <your-android-cert-alias>
 ----
 
 == iOS

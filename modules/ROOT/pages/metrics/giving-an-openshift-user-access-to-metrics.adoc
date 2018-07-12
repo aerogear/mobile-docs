@@ -45,13 +45,13 @@ The user can now access the Metrics routes.
 +
 [source,bash]
 ----
-oc adm policy who-can update dc
+$ oc adm policy who-can update dc
 ----
 . Assign the *edit* role to a user:
 +
 [source,bash]
 ----
-oc adm policy add-cluster-role-to-user edit <user>
+$ oc adm policy add-cluster-role-to-user edit <user>
 ----
 +
 The user can now access the Metrics routes.

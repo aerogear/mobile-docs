@@ -20,14 +20,14 @@ To work around the problem, you must manually extract the root certificate from 
 +
 [source,bash]
 ----
-oc login -u system:admin
+$ oc login -u system:admin
 ----
 
 .. Run the following command:
 +
 [source,bash]
 ----
-oc get secret router-certs --template='{{index .data "tls.crt"}}' -n default  |  \
+$ oc get secret router-certs --template='{{index .data "tls.crt"}}' -n default  |  \
 base64 --decode | sed -e '1,/^-----END RSA PRIVATE KEY-----$/ d'  > /tmp/localcluster.crt
 ----
 +

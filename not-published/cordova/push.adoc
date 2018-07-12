@@ -22,7 +22,7 @@ Ionic Apps require an additional dependency, the link:https://ionicframework.com
 
 [source,bash]
 ----
-npm install --save @ionic-native/push
+$ npm install --save @ionic-native/push
 ----
 
 === Configuration

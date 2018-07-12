@@ -25,8 +25,8 @@ NOTE: Ensure that you can run link:https://github.com/openshift/origin/blob/mast
 For Linux (Fedora), add an extra port to the `dockerc` zone:
 [source,sh]
 ----
-firewall-cmd --permanent --zone dockerc --add-port 443/tcp
-firewall-cmd --reload
+$ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
+$ firewall-cmd --reload
 ----
 
 
@@ -51,7 +51,7 @@ git checkout {release-number}
 +
 [source,bash]
 ----
-./installer/install.sh
+$ ./installer/install.sh
 ----
 +
 The installer checks that valid versions of Ansible, Docker and the OpenShift Client Tools
