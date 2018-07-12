@@ -11,11 +11,11 @@ The Mobile CLI allows developers work with {product-name} from the command line,
 
 [source,bash]
 ----
-mobile get services
-mobile create serviceinstance <serviceName> --namespace=<namespace>
-mobile get clients --namespace=<namespace>
-mobile get clientconfig <mobileClientID> --namespace=<namespace> 
-mobile create integration <consumingServiceInstanceID> <providingServiceInstanceID> --namespace=<namespace>
+$ mobile get services
+$ mobile create serviceinstance <serviceName> --namespace=<namespace>
+$ mobile get clients --namespace=<namespace>
+$ mobile get clientconfig <mobileClientID> --namespace=<namespace> 
+$ mobile create integration <consumingServiceInstanceID> <providingServiceInstanceID> --namespace=<namespace>
 ----
 
 [[installing-the-cli]]
@@ -30,7 +30,7 @@ https://github.com/aerogear/mobile-cli
 +
 [source,bash]
 ----
-./install.sh
+$ ./install.sh
 ----
 
 [[core-objects-or-resources]]
