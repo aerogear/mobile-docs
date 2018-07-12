@@ -114,6 +114,6 @@ username: developer
 password: password
 ----
 
-.. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are succesfully installed.
+.. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are successfully installed.
 
 image:catalog-mobile-clients.png[]
