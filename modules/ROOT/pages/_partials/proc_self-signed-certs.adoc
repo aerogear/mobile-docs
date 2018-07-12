@@ -17,6 +17,11 @@ To work around the problem, you must manually extract the root certificate from 
 == 1. Extracting the OpenShift Root Certificate Authority Cert
 
 .. Log into OpenShift as the admin user.
++
+[source,bash]
+----
+oc login -u system:admin
+----
 
 .. Run the following command:
 +
