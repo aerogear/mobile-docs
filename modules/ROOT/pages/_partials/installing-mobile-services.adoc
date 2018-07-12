@@ -14,7 +14,7 @@ NOTE: {org-name} recommends running OpenShift using the method described in this
 
 * A link:https://hub.docker.com/[Docker Hub] account
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.4 or above)
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.6 or above)
 
 * link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
 +
