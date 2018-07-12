@@ -60,21 +60,20 @@ If you intend to reuse a part of a file, create a partial in modules/ROOT/_parti
 
 If you create a link, use the following whenever possible:
 
-----
- > getting-started.adoc
- > con_services.adoc
- > device-security.adoc
- > getting-started.adoc
- > identity-management.adoc
- > mobile-cicd.adoc
- > mobile-cli.adoc
- > mobile-clients.adoc
- > mobile-metrics.adoc
- > push-notifications.adoc
- > ref_api.adoc
- > runtime-connector.adoc
- > showcase-apps.adoc
- ----
+* getting-started.adoc
+* con_services.adoc
+* device-security.adoc
+* getting-started.adoc
+* identity-management.adoc
+* mobile-cicd.adoc
+* mobile-cli.adoc
+* mobile-clients.adoc
+* mobile-metrics.adoc
+* push-notifications.adoc
+* ref_api.adoc
+* runtime-connector.adoc
+* showcase-apps.adoc
+ 
  
 
 
