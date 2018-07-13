@@ -8,7 +8,7 @@ include::{partialsdir}/attributes.adoc[]
 
 == Data Source Introduction
 
-A Data Source is a representation of your data storage solution. The Data Source consists of a *Name*, a *Type*, and a *Configuration*. The *Type* of Data Source which are currently supported are *Postgres* and *InMemory*. For information on how to use *Postgres*, refer to the documentation https://www.postgresql.org/docs[here]. The *InMemory* Data Source that is currently supported is *NeDB*, for more information on how to use this please refer to the the documentation https://github.com/louischatriot/nedb[here].
+A Data Source is a representation of your data storage solution. The Data Source consists of a *Name*, a *Type*, and a *Configuration*. The *Type* of Data Source which are currently supported are *Postgres* and *InMemory*. For information on how to use *Postgres*, refer to the documentation https://www.postgresql.org/docs[here]. The *InMemory* Data Source that is currently supported is *NeDB*, for more information on how to use this please refer to the the documentation https://github.com/louischatriot/nedb[here]. *Note* that the *InMemory* Data Source is not recommended for production use.
 
 
 
