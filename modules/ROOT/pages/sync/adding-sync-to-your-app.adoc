@@ -96,7 +96,9 @@ SyncService
         });
 ```        
 
-Note: Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
+NOTE: `MyNotesQuery` class is generated from example schema above
+
+Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
