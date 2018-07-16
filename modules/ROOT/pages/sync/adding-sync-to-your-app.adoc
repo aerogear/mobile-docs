@@ -53,7 +53,7 @@ query myNotes {
 }
 ```
 
-Apollo will create a file `MyNotesQuery` to you fire your query.
+Apollo will automatically create a file `MyNotesQuery` (in compile time) to you fire your query.
 ****
 
 [role="secondary"]
