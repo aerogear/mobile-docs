@@ -40,7 +40,7 @@ link:https://github.com/apollographql[Apollo client] requires some configuration
 ****
 1. Create a special folder `graphql` inside of `src/main`
 2. Create a file `schema.json` with your GraphQL schema
-3. Create a file with name that corresponds objects you want to create and the `.graphql` extension
+3. Create a file with a name that corresponds to your business objects and a `.graphql` extension
 4. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response. 
 
 For example if you create a file `graphql/org/aerogear/android/app/memeolist/graphql/myProject.graphql` with the content bellow:
