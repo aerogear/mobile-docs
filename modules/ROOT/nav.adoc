@@ -66,6 +66,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:data_sync.adoc#introduction[Introduction]
 *** xref:data_sync.adoc#setup[Setting Up]
 *** xref:data_sync.adoc#ui[The Data Sync UI]
+*** xref:data_sync.adoc#sdk[Addind sync to your app]
 
 ** xref:device-security.adoc[{device-security-service}]
 *** xref:device-security.adoc#introduction[Introduction]
