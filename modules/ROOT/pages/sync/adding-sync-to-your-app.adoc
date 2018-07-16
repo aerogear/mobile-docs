@@ -9,6 +9,96 @@ This section will help you to set up the {sync-service} service SDK in your App.
 [role="primary"]
 .Android
 ****
+```
+implementation "org.aerogear:aerogear-sync:1.1.0-SNAPSHOT"
+```
+****
+
+[role="secondary"]
+.iOS
+****
+****
+
+[role="secondary"]
+.Cordova
+****
+****
+
+[role="secondary"]
+.Xamarin
+****
+****
+
+== Setting Up the Sync Mobile Service
+
+The Sync SDK is using the link:https://github.com/apollographql/[Apollo GraphQL Client] behind of the scenes to handle link:http://graphql.github.io/[GraphQL]. 
+
+link:https://github.com/apollographql[Apollo client] requires some configuration to work.
+
+[role="primary"]
+.Android
+****
+1. Create a special folder `graphql` inside of `src/main`
+2. Create a file `schema.json` with your GraphQL schema
+3. Create a file with a name that corresponds to your business objects and a `.graphql` extension
+4. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response. 
+
+For example if you create a file `graphql/org/aerogear/android/app/memeolist/graphql/myProject.graphql` with the content bellow:
+
+```
+query myNotes {
+  allNotes() {
+    id
+  }
+}
+```
+
+Apollo will automatically create a file `MyNotesQuery` (in compile time) for you to fire the query.
+****
+
+[role="secondary"]
+.iOS
+****
+****
+
+[role="secondary"]
+.Cordova
+****
+****
+
+[role="secondary"]
+.Xamarin
+****
+****
+
+## Using the Sync Mobile Service
+
+The Sync SDK provides a method to get a configured instance of the Apollo Client
+
+[role="primary"]
+.Android
+****
+```
+SyncService
+        .getInstance()
+        .getApolloClient()
+        .query(MyNotesQuery.builder().build())
+        .enqueue(new ApolloCall.Callback<MyNotesQuery.Data>() {
+            @Override
+            public void onResponse(@Nonnull Response<MyNotesQuery.Data> response) {
+                // Do some magic with the response
+            }
+
+            @Override
+            public void onFailure(@Nonnull ApolloException e) {
+                /// Oops! Something went wrong.
+            }
+        });
+```        
+
+NOTE: `MyNotesQuery` class is generated from example schema above
+
+Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
