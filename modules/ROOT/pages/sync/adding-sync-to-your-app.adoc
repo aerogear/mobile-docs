@@ -73,7 +73,7 @@ Apollo will create a file `MyNotesQuery` to you fire your query.
 
 ## Using the Sync Mobile Service
 
-Client SDK provides a simple way to get the Apollo client configured to use.
+The Sync SDK provides a method to get a configured instance of the Apollo Client
 
 [role="primary"]
 .Android
