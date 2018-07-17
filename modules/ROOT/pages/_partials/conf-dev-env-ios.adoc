@@ -21,7 +21,7 @@ end
 +
 [source,bash]
 ----
-pod install
+$ pod install
 ----
 +
 . Open up `.xcworkspace` with Xcode and start using the SDK.

@@ -1,4 +1,6 @@
+// start {partialsdir}/attributes.adoc[]
 include::{partialsdir}/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
 = Mobile Services
 {org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
 
@@ -15,7 +17,4 @@ The following services are available:
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 
 image::3steps.png[]
-
-
-// include::integrating-services.adoc[leveloffset=1]
 

@@ -1,21 +1,39 @@
 :toc:
 
+// start keycloak/index.adoc[leveloffset=0]
 include::keycloak/index.adoc[leveloffset=0]
+// end keycloak/index.adoc[leveloffset=0]
 [[setup]]
 
 == Prerequisites
 
+// start {partialsdir}/generic-provisioning-pre-req.adoc[]
 include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+// end {partialsdir}/generic-provisioning-pre-req.adoc[]
 
 == Setting Up the Identity Management Mobile Service
+// start keycloak/provisioning.adoc[leveloffset=2]
 include::keycloak/provisioning.adoc[leveloffset=2]
+// end keycloak/provisioning.adoc[leveloffset=2]
+// start keycloak/binding.adoc[leveloffset=2]
 include::keycloak/binding.adoc[leveloffset=2]
+// end keycloak/binding.adoc[leveloffset=2]
+// start keycloak/coding.adoc[leveloffset=2]
 include::keycloak/coding.adoc[leveloffset=2]
+// end keycloak/coding.adoc[leveloffset=2]
 [[user-auth]]
+// start keycloak/authenticating.adoc[leveloffset=1]
 include::keycloak/authenticating.adoc[leveloffset=1]
+// end keycloak/authenticating.adoc[leveloffset=1]
 [[access]]
+// start keycloak/retrieving-users-roles.adoc[leveloffset=1]
 include::keycloak/retrieving-users-roles.adoc[leveloffset=1]
+// end keycloak/retrieving-users-roles.adoc[leveloffset=1]
 [[sso]]
+// start keycloak/sso.adoc[leveloffset=1]
 include::keycloak/sso.adoc[leveloffset=1]
+// end keycloak/sso.adoc[leveloffset=1]
 [[monitoring]]
+// start metrics/monitoring-keycloak.adoc[leveloffset=1]
 include::metrics/monitoring-keycloak.adoc[leveloffset=1]
+// end metrics/monitoring-keycloak.adoc[leveloffset=1]

@@ -1,8 +1,0 @@
-* xref:index.adoc[iOS]
-** xref:app-id-ssl-certificate-apns.adoc[]
-** xref:iOS-app.adoc[]
-** xref:provisioning-profiles.adoc[]
-** xref:send-push.adoc[]
-** xref:troubleshooting.adoc[]
-** xref:unified-push-server.adoc[]
-** xref:xcode-setup.adoc[]
