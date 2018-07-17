@@ -38,6 +38,10 @@ include::{partialsdir}/generic-provisioning.adoc[]
 NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
 For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-onfiguration-additional-resources[{keycloak-service} Configuration].
 
+// start {partialsdir}/generic-provisioning-end.adoc[]
+include::{partialsdir}/generic-provisioning-end.adoc[]
+// end {partialsdir}/generic-provisioning-end.adoc[]
+
 [id='{keycloak-service}-onfiguration-additional-resources']
 [discrete]
 === Additional resources
@@ -55,11 +59,6 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 * *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
 
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
-
-// start {partialsdir}/generic-provisioning-end.adoc[]
-include::{partialsdir}/generic-provisioning-end.adoc[]
-// end {partialsdir}/generic-provisioning-end.adoc[]
-
 
 [[binding]]
 // start keycloak/binding.adoc[leveloffset=1]
