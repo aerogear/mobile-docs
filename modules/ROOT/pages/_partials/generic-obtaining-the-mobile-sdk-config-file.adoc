@@ -18,7 +18,7 @@ NOTE: The mobile-services.json file is the link between your provisioned service
 
 Locate this file at the following location in your application project:
 
-`src/main/assets/mobile-services.json`
+`app/src/main/assets/mobile-services.json`
 
 ****
 
