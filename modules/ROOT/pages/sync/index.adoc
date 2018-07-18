@@ -19,7 +19,3 @@ include::./ref_terminology.adoc[leveloffset=+2]
 === Additional resources
 
 For more information, see the link:https://www.apollographql.com/docs/react/[Apollo Client Documentation]
-
-== Next Steps
-
-* xref:sync/provisioning.adoc[Provisioning {service-name} Service]
