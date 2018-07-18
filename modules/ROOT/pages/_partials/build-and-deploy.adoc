@@ -24,7 +24,12 @@ $ ./gradlew assembleDebug
 ****
 Run this command to install dependencies:
 
+. Install CocoaPods as described in link:https://cocoapods.org/[] if it is not already installed.
+
+. Run this command to install dependencies:
++
 [source,bash]
++
 ----
 $ pod install
 ----

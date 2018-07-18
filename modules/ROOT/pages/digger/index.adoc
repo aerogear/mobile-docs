@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 
 [id='{context}_con_introduction-to-build']
 [#introduction]
-= Introduction to the {digger-service} Service
+= Introduction to the {mobile-ci-cd-service} Service
 
 include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
 

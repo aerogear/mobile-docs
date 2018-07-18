@@ -28,7 +28,7 @@
 :push-notification: push notification
 
 // Build Service
-:digger-service: Mobile CI/CD
+:mobile-ci-cd-service: Mobile CI/CD
 :digger-ui: Jenkins UI
 
 // Custom Runtime Service

@@ -63,14 +63,14 @@ NOTE: Any subsequent call to AGSSecurity returns the same instance of the `Secur
 [role="secondary"]
 .Cordova
 ****
-. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM]
+. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM, window="_blank"]
 +
 [source,bash]
 ----
 $ npm install @aerogear/security
 ----
 
-. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin] for Cordova:
+. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin, window="_blank"] for Cordova:
 +
 [source,bash]
 ----
@@ -92,9 +92,9 @@ NOTE: Any new instantiation of `SecurityService` returns the same instance.
 [role="secondary"]
 .Xamarin
 ****
-. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet]
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
 
-. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security] package
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security, window="_blank"] package
 +
 [source,bash,subs="attributes"]
 ----
