@@ -93,6 +93,11 @@ NOTE: {device-security-service} is not currently associated with an OpenShift se
 = {sync-service}
 //tag::sync-service[]
 
-TODO
+The {sync-service} service allows you to synchronize data between multiple mobile clients and easily query exactly the data you need.
+
+* Synchronize data between multiple clients
+* Define and connect your own data sources
+* Retrieve and update your records using GraphQL
+* Robust offline experience and good performance thanks to Apollo caching
 
 //end::sync-service[]

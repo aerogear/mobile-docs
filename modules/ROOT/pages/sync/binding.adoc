@@ -5,7 +5,3 @@ include::{partialsdir}/attributes.adoc[]
 = Binding a {mobile-client} with the {service-name} Service
 
 include::{partialsdir}/generic-binding.adoc[]
-
-== Next Steps
-
-* xref:sync/adding-sync-to-your-app.adoc[Adding {sync-service} Service to your Application]
