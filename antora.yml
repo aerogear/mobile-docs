@@ -1,5 +1,5 @@
 name: aerogear
-title: 
+title: Mobile Services
 version: 'latest'
 start_ROOT: ROOT:getting-started.adoc
 nav:
