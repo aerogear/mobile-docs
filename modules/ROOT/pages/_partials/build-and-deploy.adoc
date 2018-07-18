@@ -6,6 +6,8 @@ include::{partialsdir}/attributes.adoc[]
 
 . Build the Mobile App
 
+// tag::build[]
+
 [role="primary"]
 .Android
 
@@ -50,6 +52,8 @@ Run this command to install dependencies (optional):
 $ nuget restore
 ----
 ****
+// end::build[]
+
 
 [start=2]
 . Run the Mobile App
