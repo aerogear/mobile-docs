@@ -31,7 +31,3 @@ oc describe dc postgres-data-sync -n <myproject> | grep POSTGRESQL_PASSWORD
 ====
 
 include::{partialsdir}/generic-provisioning-end.adoc[]
-
-== Next Steps
-
-* xref:sync/binding.adoc[Binding a {mobile-client} with the {service-name} Service]
