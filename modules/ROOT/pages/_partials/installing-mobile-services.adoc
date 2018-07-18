@@ -25,12 +25,12 @@ IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.6 or above)
 
 * For Linux (Fedora), add an extra port to the `dockerc` zone:
+
 [source,sh]
 ----
 $ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
 $ firewall-cmd --reload
 ----
-
 
 [[procedure]]
 == Procedure
@@ -118,3 +118,13 @@ password: password
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are successfully installed.
 
 image:catalog-mobile-clients.png[]
+
+== Troubleshooting
+Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
+This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses, an example of the ports you may want to add to your firewall are:
+
+NOTE: The following command will only add the specified port for the current session. If you reload your firewall or restart your machine the specified port will be restricted again.
+----
+$ firewall-cmd --add-port 443/tcp
+$ firewall-cmd --add-port 80/tcp
+----

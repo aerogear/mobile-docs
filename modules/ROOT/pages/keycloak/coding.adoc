@@ -126,7 +126,7 @@ Set your custom configuration to the auth service instance, making sure the redi
 ----
 // create the authentication config
 let authenticationConfig = AuthenticationConfig(redirectURL: "org.aerogear.mobile.example:/callback")
-try! AgsAuth.instance.configure(authConfig: authenticationConfig)
+try! AgsAuth.instance.configure(authConfig: authenticationConfig, useExternalUserAgent: false)
 ----
 ****
 

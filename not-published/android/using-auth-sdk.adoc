@@ -15,7 +15,9 @@ To use the Auth SDK you'll first need to:
 * A configuration file added to the apps assets directory. See <<Configuration file>>
 * Specify the schema of the redirect url for your Android project in `android.defaultConfig.manifestPlaceholders` of the apps `build.gradle` file.
 It should match the schema specified in the `Valid Redirect URL` section for the client in Keycloak.
-It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts.
+
+NOTE: To avoid keycloak authentication failing with the error `invalid redirect url`, use the package name of the Android app as the schema of the redirect url.
+
 See link:../../example/src/build.gradle[the example app build.gradle file].
 
 === Setting up Keycloak
@@ -228,9 +230,9 @@ AuthService authService = MobileCore.getInstance().getService(AuthService.class)
 
 static int LOGIN_RESULT_CODE = 1;
 
-// Build the options object and start the authentication flow. 
+// Build the options object and start the authentication flow.
 // Provide an activity to handle the auth response.
-DefaultAuthenticateOptions options = 
+DefaultAuthenticateOptions options =
     new DefaultAuthenticateOptions(myActivity, LOGIN_RESULT_CODE);
 
 Callback authCallback = new Callback<UserPrincipal>() {
@@ -282,7 +284,7 @@ To list a users roles the `UserPrincipal#getRoles` method can be invoked.
 Roles are divided into two types. Resource roles which belong to the client the user has
 authenticated against, and Realm roles which belong to the realm the client is in.
 
-To list a users realm roles  the `UserPrincipal#getRealmRoles` method can be invoked and 
+To list a users realm roles  the `UserPrincipal#getRealmRoles` method can be invoked and
 to list a users resource roles the `UserPrincipal#getResourceRoles` can be invoked.
 
 In order to check if a user has a specific role you can invoke the `UserPrincipal#hasResourceRole`
