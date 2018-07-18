@@ -93,7 +93,15 @@ include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=2]
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 // end {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 
-=== Running the Mobile App in an Emulator
+=== Building and Running the Mobile App in an Emulator
+
+Build the app:
+
+// start {partialsdir}/build-and-deploy.adoc[tags=build]
+include::{partialsdir}/build-and-deploy.adoc[tags=build]
+// end {partialsdir}/build-and-deploy.adoc[tags=build]
+
+Run the app in an emulator:
 
 // start {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
 include::{partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
