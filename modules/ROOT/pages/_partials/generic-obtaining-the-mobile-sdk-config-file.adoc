@@ -38,19 +38,9 @@ Locate this file at the following location in your application project:
 
 ****
 
-Locate this file in your application project and import it using `require`.
+Locate this file at the following location in your application project:
 
-[source,javascript]
-----
-const aerogearConfig = require("./mobile-services.json");
-----
-
-Alternatively you can create a JavaScript object and use directly:
-
-[source,javascript]
-----
-const aerogearConfig = /* Paste here the contents of the clipboard */;
-----
+`src/mobile-services.json`
 
 ****
 
