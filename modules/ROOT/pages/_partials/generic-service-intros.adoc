@@ -46,10 +46,10 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 
 //change to {mobilecicd-service} maybe 
 
-= {digger-service}
+= {mobile-ci-cd-service}
 //tag::mobilecicd-service[]
 
-The {digger-service} service allows you to automate the building of your native and hybrid mobile app for both Android and iOS.
+The {mobile-ci-cd-service} service allows you to automate the building of your native and hybrid mobile app for both Android and iOS.
 
 * Leverage your Jenkins expertise to manage and automate mobile builds.
 * Containerised builds on OpenShift for Android
