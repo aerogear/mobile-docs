@@ -84,16 +84,9 @@ Cluster IP (Defaults to < Network IP Address >)
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
-The first two values configure the location of the APBs used for the service-catalog in the cluster you are creating.
-+
-The *Cluster IP* value defaults to the IP address of your primary network interface. If you want to connect to your OpenShift instance from a mobile device, ensure that your device is on the same network.
-+
-Typically, you should ensure you are using the IP Address of your Wireless Adapter (if one exists).
-+
-The *Wildcard DNS Host* option alters the wildcard DNS host you want to use.
+For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
 +
 The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
-
 +
 ----
 TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
@@ -133,6 +126,11 @@ password: password
 
 image:catalog-mobile-clients.png[]
 
+
+[id='additional-resources']
+[discrete]
+= Additional resources
+
 == Troubleshooting
 Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
 This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses, an example of the ports you may want to add to your firewall are:
@@ -142,3 +140,13 @@ NOTE: The following command will only add the specified port for the current ses
 $ firewall-cmd --add-port 443/tcp
 $ firewall-cmd --add-port 80/tcp
 ----
+
+== DockerHub, Cluster IP and Wildcard DNS Host values
+
+The first two values configure the location of the APBs used for the service-catalog in the cluster you are creating.
+
+The *Cluster IP* value defaults to the IP address of your primary network interface. If you want to connect to your OpenShift instance from a mobile device, ensure that your device is on the same network.
+
+Typically, you should ensure you are using the IP Address of your Wireless Adapter (if one exists).
+
+The *Wildcard DNS Host* option alters the wildcard DNS host you want to use.
