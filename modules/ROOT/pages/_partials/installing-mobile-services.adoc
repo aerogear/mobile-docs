@@ -21,6 +21,18 @@ IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob
 +
 
 * A link:https://hub.docker.com/[Docker Hub] account
+** For Linux (RHEL), manage Docker as a non-root user:
++
+[source,sh]
++
+----
+$ sudo groupadd docker
+$ sudo usermod -aG docker $(whoami)
+//Test Docker
+$ docker info
+----
++
+For more information, see link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.6 or above)
 
@@ -47,6 +59,8 @@ git clone https://github.com/aerogear/mobile-core.git
 cd mobile-core
 git checkout {release-number}
 ----
+
+. Start docker
 
 . In the same directory, run the installer:
 +
