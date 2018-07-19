@@ -10,7 +10,7 @@ The following services are available:
 * xref:push-notifications.adoc[{unifiedpush-service}]
 * xref:runtime-connector.adoc[{custom-service}]
 * xref:mobile-metrics.adoc[{metrics-service}]
-* xref:mobile-cicd.adoc[{digger-service}]
+* xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
 * xref:device-security.adoc[{device-security-service}]
 
 

@@ -4,21 +4,21 @@ include::{partialsdir}/attributes.adoc[]
 
 The *Builds* tab in the {mobile-client} view allows you to view the previous builds of the app, and triggers a new build of the app.
 
-== Provisoning a {digger-service} Service
+== Provisoning a {mobile-ci-cd-service} Service
 
-In order to build the {mobile-client} app, you first need to provision a {digger-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {digger-service} service.
+In order to build the {mobile-client} app, you first need to provision a {mobile-ci-cd-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {mobile-ci-cd-service} service.
 
 image:mobile-clients-no-service.png[]
 
-For more details about how to provision the {digger-service} service, please see xref:mobile-cicd.adoc[{digger-service} service guide].
+For more details about how to provision the {mobile-ci-cd-service} service, please see xref:mobile-cicd.adoc[{mobile-ci-cd-service} service guide].
 
 == Creating a Build
 
-After the {digger-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app, etc. 
+After the {mobile-ci-cd-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app, etc. 
 
 image:mobile-clients-build-config.png[]
 
-For more information about how to configure the build config, please see xref:mobile-cicd.adoc#build-config[the build config section of {digger-service}].
+For more information about how to configure the build config, please see xref:mobile-cicd.adoc#build-config[the build config section of {mobile-ci-cd-service}].
 
 == Starting a Build
 

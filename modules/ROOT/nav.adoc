@@ -52,7 +52,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:mobile-metrics.adoc#setup[Device Trust]
 *** xref:mobile-metrics.adoc#identity[Identity Management]
 
-** xref:mobile-cicd.adoc[{digger-service}]
+** xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
 *** xref:mobile-cicd.adoc#introduction[Introduction]
 *** xref:mobile-cicd.adoc#setup[Setting Up]
 *** xref:mobile-cicd.adoc#build-config[Creating a Build Configuration]

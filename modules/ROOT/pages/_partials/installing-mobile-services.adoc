@@ -10,19 +10,22 @@ NOTE: {org-name} recommends running OpenShift using the method described in this
 == Prerequisites
 
 * MacOS or Linux
-* A system capable of running OpenShift as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
+
+* A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
+
+** Use link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
++
+IMPORTANT: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
++
+IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
++
 
 * A link:https://hub.docker.com/[Docker Hub] account
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.6 or above)
 
-* link:https://www.openshift.org/download.html[OpenShift client tools] version 3.9 or later
-+
-WARNING: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
-+
-NOTE: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
-+
-For Linux (Fedora), add an extra port to the `dockerc` zone:
+* For Linux (Fedora), add an extra port to the `dockerc` zone:
+
 [source,sh]
 ----
 $ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
