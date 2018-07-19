@@ -19,7 +19,8 @@ IMPORTANT: OpenShift oc executable must be located in a system location that is 
 +
 IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
 +
-
+* Docker (version >= 1.22)
++
 * A link:https://hub.docker.com/[Docker Hub] account
 ** For Linux (RHEL), manage Docker as a non-root user:
 +
@@ -125,7 +126,6 @@ password: password
 .. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are successfully installed.
 
 image:catalog-mobile-clients.png[]
-
 
 [id='additional-resources']
 [discrete]
