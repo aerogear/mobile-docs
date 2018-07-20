@@ -29,7 +29,7 @@ Locate this file at the following location in your application project:
 
 Locate this file at the following location in your application project:
 
-`<app directory>/mobile-services.json`
+`<app directory>/ios-showcase-template/mobile-services.json`
 
 ****
 
