@@ -28,11 +28,11 @@ AuthBrowser chromeBrowser = AuthBrowsers.CHROME_DEFAULT;
 AuthBrowser samsungBrowser = AuthBrowsers.samsung(false, AuthBrowserVersionRange.atMost("6"));
 ----
 
-For the full list of predefined browsers available see link:https://github.com/aerogear/aerogear-android-sdk/blob/master/auth/src/main/java/org/aerogear/mobile/auth/configuration/AuthBrowsers.java[AuthBrowsers.java].
+For the full list of predefined browsers available see link:https://github.com/aerogear/aerogear-android-sdk/blob/master/auth/src/main/java/org/aerogear/mobile/auth/configuration/AuthBrowsers.java[AuthBrowsers.java, window="_blank"].
 
 === Custom Browsers
 
-To use a custom browser an link:https://github.com/aerogear/aerogear-android-sdk/blob/master/auth/src/main/java/org/aerogear/mobile/auth/configuration/AuthBrowser.java[AuthBrowser] object can be created:
+To use a custom browser an link:https://github.com/aerogear/aerogear-android-sdk/blob/master/auth/src/main/java/org/aerogear/mobile/auth/configuration/AuthBrowser.java[AuthBrowser, window="_blank"] object can be created:
 
 [source, java]
 ----

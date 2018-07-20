@@ -12,7 +12,7 @@ include::{partialsdir}/attributes.adoc[]
 include::{partialsdir}/generic-service-intros.adoc[tags=identitymanagement-service]
 
 
-See the link:https://www.keycloak.org/documentation.html[Keycloak documentation] for more info.
+See the link:https://www.keycloak.org/documentation.html[Keycloak documentation, window="_blank"] for more info.
 
 
 include::./ref_terminology.adoc[leveloffset=+2]

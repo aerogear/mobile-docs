@@ -11,7 +11,7 @@ Use it to help prevent your app running in a device that has been rooted/jailbro
 ****
 `SecurityChecks.NOT_ROOTED`.
 
-This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer] library to check if root access is present on the device.
+This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer, window="_blank"] library to check if root access is present on the device.
 ****
 [role="secondary"]
 .iOS
@@ -30,19 +30,19 @@ This check is not available for Xamarin.
 ****
 
 Developer Mode Detection (NO_DEVELOPER_MODE)::
-To detect if Developer Mode has been enabled on the device the `SecurityCheckType#NO_DEVELOPER_MODE` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[`Settings`] class.
+To detect if Developer Mode has been enabled on the device the `SecurityCheckType#NO_DEVELOPER_MODE` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[Settings, window="_blank"] class.
 
 Debugger Detection (NO_DEBUGGER)::
-To detect if an Android debugger is attached to the app the `SecurityCheckType#NO_DEBUGGER` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Debug.html[`Debug`] class.
+To detect if an Android debugger is attached to the app the `SecurityCheckType#NO_DEBUGGER` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Debug.html[Debug, window="_blank"] class.
 
 Emulator Detection (NOT_IN_EMULATOR)::
-To detect if the app is being run on an emulator the `SecurityCheckType#NOT_IN_EMULATOR` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Build.html[`Build`] class.
+To detect if the app is being run on an emulator the `SecurityCheckType#NOT_IN_EMULATOR` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Build.html[Build, window="_blank"] class.
 
 Device Lock Detection (SCREEN_LOCK_ENABLED)::
-To detect if a device has a lock screen set (with pin, fingerprint, pattern) the `SecurityCheckType#SCREEN_LOCK_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/KeyguardManager.html[`KeyguardManager`] class.
+To detect if a device has a lock screen set (with pin, fingerprint, pattern) the `SecurityCheckType#SCREEN_LOCK_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/KeyguardManager.html[KeyguardManager, window="_blank"] class.
 
 App Data Backup Detection (ALLOW_BACKUP_DISABLED)::
-To detect whether the application’s data is configured to be synchronized across devices the `SecurityCheckType#ALLOW_BACKUP_DISABLED` function can be used. The link:https://developer.android.com/guide/topics/manifest/application-element.html[`allowBackup`] flag determines whether to allow the application to participate in the backup and restore infrastructure, which might be interesting to avoid depending on your app’s needs.
+To detect whether the application’s data is configured to be synchronized across devices the `SecurityCheckType#ALLOW_BACKUP_DISABLED` function can be used. The link:https://developer.android.com/guide/topics/manifest/application-element.html[allowBackup, window="_blank"] flag determines whether to allow the application to participate in the backup and restore infrastructure, which might be interesting to avoid depending on your app’s needs.
 
 Device Encryption Detection (HAS_ENCRYPTION_ENABLED)::
-To detect whether the devices' filesystem is encrypted the `SecurityCheckType#HAS_ENCRYPTION_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[`DevicePolicyManager`] class.
+To detect whether the devices' filesystem is encrypted the `SecurityCheckType#HAS_ENCRYPTION_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[DevicePolicyManager, window="_blank"] class.
