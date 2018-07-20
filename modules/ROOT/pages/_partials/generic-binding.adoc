@@ -2,7 +2,7 @@
 To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
 This association is called *binding* and once it's done, your mobile app can use that service immediately.
 
-NOTE: The association between a {mobile-client} and {service-name} Service uses the link:https://blog.openshift.com/asynchronous-bind-with-the-automation-broker/[Service Broker bind] feature.
+NOTE: The association between a {mobile-client} and {service-name} Service uses the link:https://blog.openshift.com/asynchronous-bind-with-the-automation-broker/[Service Broker bind, window="_blank"] feature.
 
 To associate a {mobile-client} with a mobile service:
 

@@ -57,8 +57,8 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 ****
 You need the following installed on your machine:
 
-* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google]
-* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK]
+* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google, window="_blank"]
+* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"]
 ****
 
 [role="secondary"]
@@ -69,7 +69,7 @@ You need the following installed on your machine:
 
 * [x] iOS 9 or later
 * [x] Xcode 9 or later
-* [x] link:https://cocoapods.org[CocoaPods]
+* [x] link:https://cocoapods.org[CocoaPods, window="_blank"]
 
 The AeroGear SDK for iOS is available using the CocoaPods package manager.
 If you have not installed CocoaPods, install it by running the command:
@@ -86,8 +86,8 @@ $ gem install cocoapods
 ****
 You need the following installed on your machine:
 
-* [x] link:https://nodejs.org/[Node.js] version 8.9.4 runtime and NPM 
-* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI] version 8.0.0
+* [x] link:https://nodejs.org/[Node.js, window="_blank"] version 8.9.4 runtime and NPM 
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI, window="_blank"] version 8.0.0
 ****
 
 [role="secondary"]
@@ -96,9 +96,9 @@ You need the following installed on your machine:
 ****
 You need the following installed on your system:
 
-* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft]
-* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK], if you would like to install the showcase app on an Android device or emulator
-* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple], if you would like to install the showcase app on an iOS device or emulator
+* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft, window="_blank"]
+* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"], if you would like to install the showcase app on an Android device or emulator
+* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple, window="_blank"], if you would like to install the showcase app on an iOS device or emulator
 ****
 
 [discrete]
@@ -117,8 +117,8 @@ include::{partialsdir}/cloning-showcase-app.adoc[]
 .Android
 
 ****
-. You will need to create a project on link:https://firebase.google.com/[Firebase].
-. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here] to download `google-services.json` from your Firebase project.
+. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
 . Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
 Firebase Cloud Messaging console.
 ****
@@ -127,9 +127,9 @@ Firebase Cloud Messaging console.
 .iOS
 
 ****
-. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide] to enable push notifications for your Xcode project.
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide, window="_blank"] to enable push notifications for your Xcode project.
 
-. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide, window="_blank"] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
 +
 NOTE: Make sure to protect the p12 file with a password.
 +
@@ -141,8 +141,8 @@ NOTE: The exported p12 file with the password will be used later when binding yo
 .Cordova
 
 ****
-. You will need to create a project on link:https://firebase.google.com/[Firebase].
-. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here] to download `google-services.json` from your Firebase project.
+. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
 . Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
 Firebase Cloud Messaging console.
 ****
