@@ -36,13 +36,13 @@ include::{partialsdir}/generic-provisioning.adoc[]
 // end {partialsdir}/generic-provisioning.adoc[]
 
 NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
-For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-onfiguration-additional-resources[{keycloak-service} Configuration].
+For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
 
 // start {partialsdir}/generic-provisioning-end.adoc[]
 include::{partialsdir}/generic-provisioning-end.adoc[]
 // end {partialsdir}/generic-provisioning-end.adoc[]
 
-[id='{keycloak-service}-onfiguration-additional-resources']
+[id='{keycloak-service}-configuration-additional-resources']
 [discrete]
 === Additional resources
 
