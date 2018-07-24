@@ -35,7 +35,18 @@ This section introduces the procedures for using {product-name} by guiding you t
 include::{partialsdir}/generic-provisioning.adoc[]
 // end {partialsdir}/generic-provisioning.adoc[]
 
-When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
+NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
+For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
+
+// start {partialsdir}/generic-provisioning-end.adoc[]
+include::{partialsdir}/generic-provisioning-end.adoc[]
+// end {partialsdir}/generic-provisioning-end.adoc[]
+
+[id='{keycloak-service}-configuration-additional-resources']
+[discrete]
+=== Additional resources
+
+==== {keycloak-service} Configuration
 
 * *Keycloak admin username*: Username for Keycloak administration
 
@@ -48,11 +59,6 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 * *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
 
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
-
-// start {partialsdir}/generic-provisioning-end.adoc[]
-include::{partialsdir}/generic-provisioning-end.adoc[]
-// end {partialsdir}/generic-provisioning-end.adoc[]
-
 
 [[binding]]
 // start keycloak/binding.adoc[leveloffset=1]
@@ -70,10 +76,10 @@ include::keycloak/keycloak-setup.adoc[leveloffset=2]
 
 In order to perform local development, you will need to have set up a local development environment or IDE. {product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin. For information on how to set up your local development environment for these technologies, please see the links below:
 
-* link:https://developer.android.com/studio/install[Android]
-* link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS]
-* link:https://cordova.apache.org/#getstarted[Cordova]
-* link:https://developer.xamarin.com/getting-started/[Xamarin]
+* link:https://developer.android.com/studio/install[Android, window="_blank"]
+* link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS, window="_blank"]
+* link:https://cordova.apache.org/#getstarted[Cordova, window="_blank"]
+* link:https://developer.xamarin.com/getting-started/[Xamarin, window="_blank"]
 
 [[running]]
 
