@@ -102,11 +102,7 @@ The log above is displayed after a successful installation.
 
 . Verify the installation:
 +
-.. Open a browser and login (accepting the self-signed certificate):
-+
-----
-https://192.168.37.1:8443/console/
-----
+.. Browse to the Web console URL displayed at the end of the installation, and log in, accepting the self-signed certificate if displayed.
 +
 The developer login credentials are:
 +
