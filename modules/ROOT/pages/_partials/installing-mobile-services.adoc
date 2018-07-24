@@ -59,8 +59,6 @@ cd mobile-core
 git checkout {release-number}
 ----
 
-. Ensure Docker is running using the command `docker info`.
-
 . In the same directory, run the installer:
 +
 [source,bash]
