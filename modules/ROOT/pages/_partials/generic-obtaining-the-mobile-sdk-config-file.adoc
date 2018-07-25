@@ -31,6 +31,8 @@ Locate this file at the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
+NOTE: Make sure this file is visible in Xcode, add the file if necessary.
+
 ****
 
 [role="secondary"]
