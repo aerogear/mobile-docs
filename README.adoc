@@ -104,6 +104,8 @@ For more information and some useful templates, see link:https://redhat-document
 [[using-antora]]
 == Using Antora to convert asciidoc to html
 
+NOTE: You can avoid using antora by building the docs online as described in https://github.com/finp/mobile-netlify
+
 After modifying documentation, you can validate your changes and preview the results by:
 
 . Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
