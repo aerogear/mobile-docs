@@ -31,9 +31,13 @@ Depending on the platform, set the redirect as described in either the Android o
 
 == Configuring {idm-name}
 
-. Expand the {service-name} Service by clicking the *>* icon.
+. Navigate to the {mobile-client} screen.
 
-. Click on the Realm URL link to open the {idm-name} Administration Console.
+. Select the Mobile Services tab.
+
+. After the binding is complete, you can expand the Identity Management Service by clicking the > icon.
+
+. Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
 
 . Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
 
