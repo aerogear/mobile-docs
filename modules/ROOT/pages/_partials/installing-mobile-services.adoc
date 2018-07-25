@@ -2,7 +2,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Setting up {org-name} {product-name} on OpenShift
 
-To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see link:https://www.openshift.org/[ window="_blank"].
+To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see link:https://www.openshift.org/[OpenShift website, window="_blank"].
 
 NOTE: {org-name} recommends running OpenShift using the method described in this document. However, there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[Issue 1287, window="_blank"].
 
