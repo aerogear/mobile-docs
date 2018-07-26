@@ -71,7 +71,8 @@ Cluster IP (Defaults to < Network IP Address >)
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
-The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
+The following installation can take a while the first time it runs, as it pulls a number of Docker images.
+Once output similar to the following is displayed it indicates that it has completed successfully and you can proceed.
 +
 ----
 TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
