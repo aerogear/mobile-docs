@@ -32,6 +32,8 @@ $ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
 $ firewall-cmd --reload
 ----
 
+* A local mobile development environment for the platform you want to develop on.
+
 [[procedure]]
 == Procedure
 
