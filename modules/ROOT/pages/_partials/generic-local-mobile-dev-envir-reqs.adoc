@@ -8,7 +8,7 @@ You need the following installed on your machine:
 * [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google, window="_blank"]
 * [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"]
 
-For information on how to set up your local development environment for Android, see link:https://developer.android.com/studio/install[Android, window="_blank"].
+For information on how to set up a local Android development environment, see link:https://developer.android.com/studio/install[Android, window="_blank"].
 ****
 
 [role="secondary"]
@@ -29,7 +29,7 @@ If you have not installed CocoaPods, install it by running the command:
 $ gem install cocoapods
 ----
 
-For information on how to set up your local development environment for iOS, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS, window="_blank"].
+For information on how to set up a local iOS development environment, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[iOS, window="_blank"].
 ****
 
 [role="secondary"]
@@ -41,7 +41,7 @@ You need the following installed on your machine:
 * [x] link:https://nodejs.org/[Node.js, window="_blank"] version 8.9.4 runtime and NPM
 * [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI, window="_blank"] version 8.0.0
 
-For information on how to set up your local development environment for Cordova, see link:https://cordova.apache.org/#getstarted[Cordova, window="_blank"].
+For information on how to set up a local Cordova development environment, see link:https://cordova.apache.org/#getstarted[Cordova, window="_blank"].
 ****
 
 [role="secondary"]
@@ -54,5 +54,5 @@ You need the following installed on your system:
 * [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"], if you would like to install the showcase app on an Android device or emulator
 * [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple, window="_blank"], if you would like to install the showcase app on an iOS device or emulator
 
-For information on how to set up your local development environment for Xamarin, see link:https://developer.xamarin.com/getting-started/[Xamarin, window="_blank"].
+For information on how to set up a local Xamarin development environment, see link:https://developer.xamarin.com/getting-started/[Xamarin, window="_blank"].
 ****
