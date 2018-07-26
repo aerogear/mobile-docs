@@ -33,12 +33,10 @@ Callback authCallback = new Callback<UserPrincipal>() {
 };
 ----
 
-. Retrieve an instance of the `AuthService` and use the `login` method to hand over to the login browser:
+. Use the `login` method to hand over to the login browser:
 +
 [source,java]
 ----
-AuthService authService = MobileCore.getInstance().getService(AuthService.class);
-
 // Build the options object and start the authentication flow
 DefaultAuthenticateOptions options = new DefaultAuthenticateOptions(myActivity, LOGIN_RESULT_CODE);
 
@@ -52,7 +50,6 @@ authService.login(options, authCallback);
 @Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == LOGIN_RESULT_CODE) {
-        AuthService authService = MobileCore.getInstance().getService(AuthService.class);
         authService.handleAuthResult(data);
     }
 }
@@ -139,11 +136,10 @@ The following section describes how to perform a logout.
 .Android
 ****
 
-. Get an instance of the auth service and retrieve the current user:
+. Retrieve the current user:
 +
 [source,java]
 ----
-AuthService authService = MobileCore.getInstance().getService(AuthService.class);
 UserPrincipal currentUser = authService.currentUser();
 ----
 
