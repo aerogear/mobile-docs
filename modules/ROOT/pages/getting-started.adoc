@@ -8,12 +8,18 @@ include::{partialsdir}/attributes.adoc[]
 
 == Introduction
 
-This guide will bring you through all the required steps to get up and running with {product-name}. By the end of this guide you will have learned how to:
+{org-name} {product-name} provides solutions to common development challenges faced by mobile developers. 
+With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
+
+This guide shows you how to:
 
 * Set up {org-name} {product-name} on OpenShift
-* Create a Mobile Client and a Mobile Service
+* Create a {mobile-client} and a Mobile Service ({keycloak-service})
 * Set up a local development environment
-* Configure and run the {org-name} Showcase App on your platform of choice
+* Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin). 
+* Run the showcase app and make calls to the {keycloak-service} service.
+
+Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
 
 // start installing-mobile-services.adoc[leveloffset=1]
 include::{partialsdir}/installing-mobile-services.adoc[leveloffset=1]
