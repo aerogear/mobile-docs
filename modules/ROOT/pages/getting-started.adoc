@@ -9,7 +9,7 @@ include::{partialsdir}/attributes.adoc[]
 == Introduction
 
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers. 
-With OpenShift's Container technology providing  a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
+With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 
 This guide shows you how to:
 
