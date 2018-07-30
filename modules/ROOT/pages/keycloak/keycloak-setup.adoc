@@ -31,9 +31,13 @@ Depending on the platform, set the redirect as described in either the Android o
 
 == Configuring {idm-name}
 
-. Expand the {service-name} Service by clicking the *>* icon.
+. Navigate to the {mobile-client} screen.
 
-. Click on the Realm URL link to open the {idm-name} Administration Console.
+. Select the Mobile Services tab.
+
+. After the binding is complete, you can expand the Identity Management Service by clicking the > icon.
+
+. Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
 
 . Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
 
@@ -47,4 +51,6 @@ Depending on the platform, set the redirect as described in either the Android o
 
 . Save your changes.
 
-NOTE: You must create a new user account before you can log into the Showcase App. To create a new user, follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here] and to setup a new users credentials, follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+. Create a new user account as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[Creating a New User].
+
+. Set up credentials for the new user as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[User Credentials].
