@@ -10,6 +10,8 @@ NOTE: {org-name} recommends running OpenShift using the method described in this
 == Prerequisites
 
 * MacOS or Linux
++
+NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift bug], {product-name} will not run on RHEL/CentOS 7.4 or RHEL/CentOS 7.5.
 
 * A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management, window="_blank"]
 
@@ -19,8 +21,8 @@ IMPORTANT: OpenShift oc executable must be located in a system location that is 
 +
 IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up, window="_blank"] with no errors before moving on to the installation of AeroGear.
 +
-
-* A link:https://hub.docker.com/[Docker Hub, window="_blank"] account
+* A link:https://hub.docker.com/[Docker Hub] account
+//** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible, window="_blank"] (version 2.6 or above)
 
@@ -73,8 +75,9 @@ Cluster IP (Defaults to < Network IP Address >)
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
-The following installation can take a while the first time it runs, as it pulls a number of Docker images.
-Once output similar to the following is displayed it indicates that it has completed successfully and you can proceed.
+For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
++
+The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
 +
 ----
 TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
@@ -110,10 +113,9 @@ password: password
 
 image:catalog-mobile-clients.png[]
 
-
 [id='additional-resources']
 [discrete]
-= Additional Resources
+= Additional resources
 
 == Troubleshooting
 Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
