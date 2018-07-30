@@ -10,6 +10,8 @@ NOTE: {org-name} recommends running OpenShift using the method described in this
 == Prerequisites
 
 * MacOS or Linux
++
+NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift bug], {product-name} will not run on RHEL/CentOS 7.4 or RHEL/CentOS 7.5.
 
 * A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management]
 
@@ -20,7 +22,7 @@ IMPORTANT: OpenShift oc executable must be located in a system location that is 
 IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up] with no errors before moving on to the installation of AeroGear.
 +
 * A link:https://hub.docker.com/[Docker Hub] account
-** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
+//** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible] (version 2.6 or above)
 
