@@ -67,6 +67,8 @@ are installed.
 . Accept the default values for the next set of prompts, unless you have specific requirements and understand the implications of changing the values.
 For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional Resources].
 +
+NOTE: If your Cluster IP address is reported as 127.0.0.1, the installation will not succeed. Check your network connection and restart the installer.
++
 [source,bash,subs="attributes"]
 ----
 DockerHub Tag (Defaults to latest):
