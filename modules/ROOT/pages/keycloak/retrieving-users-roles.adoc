@@ -13,8 +13,6 @@ Roles are divided into two types. Resource roles which belong to the client the 
 +
 [source,java]
 ----
-// authService already initialized.
-AuthService authService = MobileCore.getInstance().getService(AuthService.class);
 UserPrincipal currentUser = authService.currentUser();
 ----
 
