@@ -3,6 +3,8 @@ include::{partialsdir}/attributes.adoc[]
 [role="primary"]
 .Android
 
+NOTE: The AeroGear SDK supports API level 21 or later.
+
 ****
 
 To run an Android app in an emulator, see the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation, window="_blank"].
