@@ -100,13 +100,6 @@ dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
 .Android
 ****
 
-. Retrieve the auth service:
-+
-[source,java]
-----
-AuthService authService = MobileCore.getInstance().getService(AuthService.class);
-----
-
 . Specify the redirect URL. It is recommended to use the package name of your app.
 +
 ----
@@ -116,11 +109,11 @@ AuthServiceConfiguration authServiceConfig = new AuthServiceConfiguration
     .build();
 ----
 
-. Before the auth service can be used `init` must be invoked once in an app
+. Create the auth service:
 +
 [source,java]
 ----
-authService.init(context, authServiceConfig);
+AuthService authService = new AuthService(authServiceConfig);
 ----
 ****
 
