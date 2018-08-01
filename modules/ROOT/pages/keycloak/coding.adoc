@@ -77,6 +77,7 @@ dotnet add package AeroGear.Mobile.Core --version {release-number}
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.Android --version {release-number}
 ----
 
 . For iOS run:
@@ -84,6 +85,7 @@ dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-numb
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
 ----
 ****
 
