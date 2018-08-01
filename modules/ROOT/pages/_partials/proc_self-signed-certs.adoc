@@ -1,6 +1,8 @@
 //[[using-self-signed-certificates-in-mobile-clients]]
 = Using Self-Signed Certificates in Mobile Apps
 
+NOTE: Before you can run a mobile app and connect to {product-name}, you must configure self-signed certificates on the mobile device.
+
 Throughout the development lifecycle of a mobile app, a common
 requirement is to integrate and connect with back-end
 services in a secure manner. This is achieved using SSL/TLS. 
