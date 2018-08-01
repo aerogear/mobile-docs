@@ -1,12 +1,33 @@
 = Mobile Docs
 
-Our goal is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
+This readme introduces the standards for contributing to AeroGear docs.
 
-This readme introduces the standards for AeroGear docs.
+The goal of these docs is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
+
+- If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue^] and post a PR with a fix for a review. Include as much information as possible.
+- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board^].
 
 :toc: 1
 
-== Concepts, Procedures and Reference
+== Writing AeroGear Documentation
+
+- If you make a filename change (for example adding or renaming a file), you must update the appropriate modules/ROOT/nav.adoc file. 
+-  Determine which functionality is this documentation related to?
++
+* Push
+* Metrics
+* Common to all mobile services
+* Common to all services or SDKs but with some information that is specific to each.
++
+With this information, you should be able to determine where the file should be located in the repo, for example `modules/ROOT/push`
++
+If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include` directive.
+
+- Stick to present tense, for example `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
+
+- Test your changes xref:#using-antora[using Antora]
+ 
+== Structure of AeroGear documentation
 
 Concept::
 An introduction to a new term, process, module or component. For example, "Mobile Service" : what is it? why do I care? and how does it fit into my development environment?
@@ -20,11 +41,11 @@ The important information that gets me using AeroGear software, for example, wri
 +
 . Who should perform this procedure?
 . Why am I performing this procedure? benefits or context in a higher level user story
-. What is the object of the task? eg adding a dashboard.. to what?
+. What is the object of the task? for example adding a dashboard.. to what?
 . What do I need to know and/or do before installing or provisioning the software?
 . What do I need to do to provision the software?
 . What are the minimum configuration tasks that I need to do to get value from the software?
-. What additional information would be useful after completing procedure (eg, next steps)
+. What additional information would be useful after completing procedure (for example, next steps)
 
 * Name file by slugifying title
 
@@ -43,72 +64,30 @@ Information I might need to debug or extend the normal usage of AeroGear softwar
 * Prefix filenames with ref_
 
 
-== Writing AeroGear Documentation
-
-. If you make a filename change (eg adding or renaming a file), you must update the appropriate modules/ROOT/nav.adoc file. 
-. Test your changes xref:#using-antora[using Antora]
-. Determine which functionality is this documentation related to?
-+
-* Push
-* Metrics
-* Common to all mobile services
-* Common to all services or SDKs but with some information that is specific to each.
-+
-With this information, you should be able to determine where the file should be located in the repo, eg modules/ROOT/push
-+
-If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include`
-
-If you create a link, use the following whenever possible:
-
-* getting-started.adoc
-* con_services.adoc
-* device-security.adoc
-* getting-started.adoc
-* identity-management.adoc
-* mobile-cicd.adoc
-* mobile-cli.adoc
-* mobile-clients.adoc
-* mobile-metrics.adoc
-* push-notifications.adoc
-* ref_api.adoc
-* runtime-connector.adoc
-* showcase-apps.adoc
- 
- 
 
 
-. Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
+== AsciiDoc text document format
 
+"AsciiDoc is a text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs."
 
-== Asciidoc
+See link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc syntax quick reference^]:
 
-For a fuller list of asciidoc syntax, see link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the quick reference], note the following syntax to avoid:
+* Avoid using headings with `--, ~~, ^^, ++`
+* Avoid using Markdown
+* Try to use syntax highlighting wherever possible, for example `[source, bash]`
 
-* Headings using --, ~~, ^^, ++ syntax
-* Markdown
-* Source block without syntax. Try to use syntax highlighting where possible, for example `[source, bash]`
+== Modular Documentation Templates
 
-[NOTE]
---
-This page acts as example of documentation best practises:
-
-* introducing terms
-* a single  procedure
-* reference material
---
-
-== Modular Docs
-
-For more information and some useful templates, see link:https://redhat-documentation.github.io/modular-docs/[Modular Docs]
+See link:https://redhat-documentation.github.io/modular-docs/[Modular Docs].
 
 [[using-antora]]
-== Using Antora to convert asciidoc to html
+== Using Antora to convert AsciiCoc to HTML
 
-NOTE: You can avoid using antora by building the docs online as described in https://github.com/finp/mobile-netlify
+NOTE: You can avoid using Antora to preview the docs with online tool as described in https://github.com/finp/mobile-netlify
 
-After modifying documentation, you can validate your changes and preview the results by:
+After modifying documentation, validate your changes and preview the results by:
 
-. Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
+. Installing Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
 +
 NOTE: As part of Antora installation, you should install site-generator globally.
 +
@@ -144,7 +123,9 @@ NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], yo
 
 == Editing
 
-After reviewing a html file, you might identify a change. When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. For example, when editing the `registering-an-app.adoc`, avoid problems by: 
+After reviewing a rendered html file, you might identify a change. When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. 
+
+For example, when editing the `registering-an-app.adoc`, avoid problems by: 
 
 . Regex search for `include.*registering-an-app` across the whole repo.
 . Review the list of files from this search to understand of the context of the content.
@@ -153,8 +134,6 @@ After reviewing a html file, you might identify a change. When editing a file, y
 
 [[publishing]]
 == Publishing
-
-Currently, the publishing process is manual:
 
 . Run antora using following command:
 +
@@ -170,16 +149,16 @@ NOTE: Check for correct styling changes too.
 
 NOTE: This repo contains more than just the output of mobile-docs repo. See https://github.com/aerogear/docs.aerogear.org/blob/master/README.adoc for more details.
 
-== Remote Repos
+== References to remote repos
 
 No remote repos were harmed in the production of this documentation ;)
 
-However, references to code maybe be included as follows:
+References to code can be included as follows:
 
 
-1. Decide on a name for the snippet, eg push-ios-register 
+1. Decide on a name for the snippet, for example push-ios-register 
 
-2. Create a partial in mobile-docs, eg
+2. Create a partial in mobile-docs, for example:
 https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/push-ios-register.inc
 
 3. Reference the code file you want to use (with a tags filter):
@@ -188,7 +167,7 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
  include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
 ----
 
-4. Add tags to the code repo, eg 
+4. Add tags to the code repo, for example: 
 +
 ----
 // tag::push-ios-register[]
@@ -221,6 +200,3 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 ----
 +
 NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
-
-
-
