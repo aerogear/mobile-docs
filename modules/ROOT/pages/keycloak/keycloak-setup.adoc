@@ -32,6 +32,8 @@ Depending on the platform, set the redirect as described in either the Android o
 
 == Configuring {idm-name}
 
+. Log into the OpenShift console and navigate to the Project Overview.
+
 . Navigate to the {mobile-client} screen.
 
 . Select the Mobile Services tab.
