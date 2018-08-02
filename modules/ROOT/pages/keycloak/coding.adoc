@@ -77,6 +77,7 @@ dotnet add package AeroGear.Mobile.Core --version {release-number}
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.Android --version {release-number}
 ----
 
 . For iOS run:
@@ -84,6 +85,7 @@ dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-numb
 [source,bash,subs="attributes"]
 ----
 dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
 ----
 ****
 
@@ -190,7 +192,7 @@ authService.Configure(authConfig);
 +
 NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter, window="_blank"] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app, window="_blank"].
 
-.. For an iOS app (AppDelegate.cs):
+.. For an iOS app (FinishedLaunching method of AppDelegate.cs):
 +
 [source,swift]
 ----
