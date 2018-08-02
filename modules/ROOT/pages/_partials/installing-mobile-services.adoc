@@ -112,8 +112,10 @@ The developer login credentials are:
 username: developer
 password: password
 ----
++
+The service catalog is displayed
 
-.. At the top of the catalog package, find the *Mobile* category that indicates that the mobile features of {org-name} {product-name} are successfully installed.
+.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed. If the _Mobile_ tab still is not displayed, follow the troubleshooting steps below.
 
 image:catalog-mobile-clients.png[]
 
