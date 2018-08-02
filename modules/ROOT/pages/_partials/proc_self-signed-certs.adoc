@@ -5,7 +5,7 @@ NOTE: Before you can run a mobile app and connect to {product-name}, you must co
 
 Throughout the development lifecycle of a mobile app, a common
 requirement is to integrate and connect with back-end
-services in a secure manner. This is achieved using SSL/TLS. 
+services in a secure manner. This is achieved using SSL/TLS.
 
 However, in order for the client device to connect over SSL/TLS, it needs to trust the
 certificates used by the back-end services, which are signed by a certificate authority.
@@ -18,7 +18,7 @@ To work around the problem, you must manually extract the root certificate from 
 [[extracting-root-ca]]
 == 1. Extracting the OpenShift Root Certificate Authority Cert
 
-.. Log into OpenShift as the admin user.
+.. Log into OpenShift as the admin user:
 +
 [source,bash]
 ----
