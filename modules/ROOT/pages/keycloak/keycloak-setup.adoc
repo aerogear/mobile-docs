@@ -6,6 +6,7 @@ The following section will guide you through configuring the schema of the redir
 
 :service-name: Identity Management
 
+[[choose-schema]]
 == Choose the schema of a redirect url
 
 [role="primary"]
@@ -43,13 +44,13 @@ Depending on the platform, set the redirect as described in either the Android o
 
 . Log in to the Administration console using the credentials you specified at xref:keycloak/provisioning.adoc[Provisioning] (defaults to admin:admin)
 
-. Open `Clients` from the menu.
+. Select `Clients` from the menu.
 
-. Open your client. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
+. Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
 
-. Add `<schema>:/callback` to `Valid Redirect URIs`.
+. Add `<schema>:/callback` as an additional entry to `Valid Redirect URIs`. See xref:choose-schema[] to determine the value for `<schema>`.
 
-. Add `<schema>` to `Web Origins`.
+. Add `<schema>` as an additional entry to `Web Origins`.  See xref:choose-schema[] to determine the value for `<schema>`.
 
 . Save your changes.
 
