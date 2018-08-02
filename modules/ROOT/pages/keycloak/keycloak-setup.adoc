@@ -2,7 +2,9 @@
 
 = Configuring the Service
 
-The following section will guide you through configuring the schema of the redirect url and web origin for a client in {idm-name}. This is required to enable OpenID authentication.
+The following section will guide you through configuring the schema of the redirect url and web origin for a client in {idm-name}.
+This is required to enable OpenID authentication.
+For an explanation of these terms, see link:https://www.keycloak.org/documentation.html[Keycloak Documentation].
 
 :service-name: Identity Management
 
