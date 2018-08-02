@@ -8,7 +8,7 @@ include::{partialsdir}/attributes.adoc[]
 
 == Introduction
 
-{org-name} {product-name} provides solutions to common development challenges faced by mobile developers. 
+{org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 
 This guide shows you how to:
@@ -16,7 +16,7 @@ This guide shows you how to:
 * Set up {org-name} {product-name} on OpenShift
 * Create a {mobile-client} and a Mobile Service ({keycloak-service})
 * Set up a local development environment
-* Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin). 
+* Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
 * Run the showcase app and make calls to the {keycloak-service} service.
 
 Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
@@ -82,6 +82,8 @@ include::keycloak/keycloak-setup.adoc[leveloffset=2]
 
 In order to perform local development, you will need to have set up a local development environment or IDE.
 {product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin.
+
+NOTE: You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
 
 include::{partialsdir}/generic-local-mobile-dev-envir-reqs.adoc[]
 
