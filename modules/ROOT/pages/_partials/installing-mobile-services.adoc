@@ -14,7 +14,9 @@ NOTE: {org-name} recommends running OpenShift using the method described in this
 NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift bug], {product-name} will not run on RHEL/CentOS 7.4 or RHEL/CentOS 7.5.
 
 * A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management, window="_blank"]
-
++
+NOTE: Installation on macOS with Docker Machine has not been tested, use the link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[Docker for Mac] instructions when installing OpenShift.
++
 ** Use link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.9 or later
 +
 IMPORTANT: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
