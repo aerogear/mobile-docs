@@ -35,7 +35,9 @@ Depending on the platform, set the redirect as described in either the Android o
 
 . Select the Mobile Services tab.
 
-. After the binding is complete, you can expand the Identity Management Service by clicking the > icon.
+. If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
+
+. If the _Keycloak Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
 
 . Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
 
