@@ -56,12 +56,14 @@ For more information about the _In Memory_ option have a look at xref:#in-memory
 
 You need to provide a name for the data source. The only other option is `TimeStamp Data`. If checked, timestamps will be stored along with your data in `NeDB`.
 
+WARNING: Some features like unique indices and persistence are not supported in the In Memory database and it is therefore only recommended for evaluation purposes.
+
 [[postgres-option]]
 === Postgres Data Sources
 
 You need to provide a name for the data source. `Postgres` has a number of other required options:
 
-. _Server_: The URL where the PostgreSQL server is located.
+. _Server_: The host name of the PostgreSQL instance.
 . _Port_: The Network Port used by PostgreSQL (defaults to `5432`).
 . _Database_: The name of the database to connect to. PostgreSQL servers can host multiple databases.
 . _Username_: The username of the PostgreSQL user account.
