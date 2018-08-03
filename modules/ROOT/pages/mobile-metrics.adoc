@@ -33,5 +33,7 @@ include::metrics/monitoring-keycloak.adoc[leveloffset=1]
 // end metrics/monitoring-keycloak.adoc[leveloffset=1]
 [#sync]
 include::metrics/monitoring-sync.adoc[leveloffset=1]
+[#using-dashboards]
+include::metrics/using-dashboards.adoc[leveloffset=1]
 
 
