@@ -34,4 +34,4 @@ dependencies {
 }
 ----
 
-NOTE: To implement certificate pinning in the individual SDKs, see link:certificate-pinning.html[the certificate pinning guide].
+NOTE: To implement certificate pinning in the individual SDKs, see link:device-security.html#cert-pinning[Certificate Pinning in Android Devices].
