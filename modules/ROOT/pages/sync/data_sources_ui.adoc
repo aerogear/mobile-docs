@@ -48,6 +48,25 @@ NOTE: When you delete a data source, all resolvers that are attached to it will 
 
 === Create a New Data Source
 
-If no data source exists, a new data source can be created by clicking the *Add Data Source* button
+If no data source exists, a new data source can be created by clicking the *Add Data Source* button. Select the type of your data source from the dropdown.
+For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option]. Information about the Postgres option can be found xref:#in-memory-option[here].
 
-Enter the *name* of the data source into the required fields on the modal. Next choose if you would like to add timestamps to your records.
+[[in-memory-option]]
+=== In Memory Data Sources
+
+You need to provide a name for the data source. The only other option is `TimeStamp Data`. If checked, timestamps will be stored along with your data in `NeDB`.
+
+WARNING: Some features like unique indices and persistence are not supported in the In Memory database and it is therefore only recommended for evaluation purposes.
+
+[[postgres-option]]
+=== Postgres Data Sources
+
+You need to provide a name for the data source. `Postgres` has a number of other required options:
+
+. _Server_: The host name of the PostgreSQL instance.
+. _Port_: The Network Port used by PostgreSQL (defaults to `5432`).
+. _Database_: The name of the database to connect to. PostgreSQL servers can host multiple databases.
+. _Username_: The username of the PostgreSQL user account.
+. _Password_: (Optional) The password of the PostgreSQL user account.
+
+NOTE: You can test your data source before saving by clicking on the `Test` button. Data Sync will then attempt to connect to the provided PostgreSQL server. If the connection fails you will see the error message in the dialog.
