@@ -47,6 +47,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:mobile-metrics.adoc#setup[Device Trust]
 *** xref:mobile-metrics.adoc#identity[Identity Management]
 *** xref:mobile-metrics.adoc#sync[Monitoring Data Sync Service]
+*** xref:mobile-metrics.adoc#using-dashboards[Using Dashboards]
 
 ** xref:mobile-cicd.adoc[{digger-service}]
 *** xref:mobile-cicd.adoc#setup[Setting Up]
