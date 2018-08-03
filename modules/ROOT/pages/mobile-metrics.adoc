@@ -13,5 +13,7 @@ include::metrics/analysing-app-usage.adoc[leveloffset=1]
 include::metrics/analysing-trust-checks.adoc[leveloffset=1]
 [#identity]
 include::metrics/monitoring-keycloak.adoc[leveloffset=1]
+[#sync]
+include::metrics/monitoring-sync.adoc[leveloffset=1]
 
 
