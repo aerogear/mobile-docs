@@ -1,17 +1,17 @@
 = Documentation for AeroGear Mobile Services 
 
-This README contains the guidelines and standards for contributing to AeroGear documentation. The documentation is written in link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc, window="_blank"] and published by link:docs.antora.org[Antora, window="_blank"].
+This readme contains the guidelines and standards for contributing to AeroGear documentation. The documentation is written in link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc^] and published by link:docs.antora.org[Antora^].
 
 - If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue^] and post a PR with a fix for a review. Please include as much information as possible.
-- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board^].
+- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board with Docs Issues^].
 
 :toc: 1
 
 == Writing AeroGear Documentation
 - (WIP) Write documentation that adheres to xref:#mod-docs[Modular Documentation Principles].
-- Name files by slugifying titles
+- Name files by slugifying titles: 
 `Registering a Mobile App` -> `registering-a-mobile-app.adoc`
-- Determine which functionality is the change related to?
+- Determine which functionality is the change related to:
 +
 * A specific mobile service
 * Common to all mobile services
@@ -27,26 +27,24 @@ If you intend to reuse a part of a file, create a partial in modules/ROOT/_parti
 
 - Test your changes xref:#using-antora[using Antora].
 
+- This documentation set is structured by using `#include` AsciiDoc directives:
 
-When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. 
-
-For example, when editing the `registering-an-app.adoc`, avoid problems by: 
+You might find that the content you want to change is not in the `.adoc` file with the name of the guide, but that it's "included" using the AsciiDoc `#include` directive. Editing of that included file, can have unintended effects (It may be included in several documents, and the change may not fit into context of all of them.). For example, when editing the `registering-an-app.adoc`, avoid this by: 
 
 . Regex search for `include.*registering-an-app` across the whole repo.
-. Review the list of files from this search to understand of the context of the content.
-. Use your judgement when editing the file to make sure the content is appropriate for each rendering of that content. 
+. Review the list of files from this search to understand of the context of the content and make sure the content is appropriate for each rendering of that content. 
  
-[mod-docs]
+[[mod-docs]]
 === Modular Documentation Principles
 
 See link:https://redhat-documentation.github.io/modular-docs/[Modular Docs and Templates, window="_blank"].
 
-.Concept
-An introduction to a new term, process, module or component. For example, "Mobile Service" : what is it? why do I care? and how does it fit into my development environment?
+Concept::
+An introduction to a new term, process, module or component. For example, "Mobile Service" : What is it? Why should I care? How does it fit into my development environment? 
 
 * Prefix file names with con_
 
-.Procedure
+Procedure::
 See link:https://redhat-documentation.github.io/modular-docs/#creating-procedure-modules[Creating Procedures]
 
 * Prefix filenames with proc_
@@ -61,7 +59,7 @@ See link:https://redhat-documentation.github.io/modular-docs/#creating-procedure
 
 
 
-.Reference
+Reference::
 * Prefix filenames with ref_
 
 Information user might need to debug or extend the normal usage of AeroGear software. For example:
@@ -148,7 +146,7 @@ References to code can be included as follows:
 2. Create a partial in mobile-docs, for example:
 https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/push-ios-register.inc
 
-3. Reference the code file you want to use (with a tags filter):
+3. Reference the code file you want to use (with a tags filter). Example:
 +
 ----
  include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
@@ -186,4 +184,4 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
  include::{partialsdir}/push-ios-register.inc-rantora.adoc[]
 ----
 +
-NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
+NOTE: Run mobile-docs:/bin/quick-build.sh <site>.yml to make sure the temp files are in place when building site
