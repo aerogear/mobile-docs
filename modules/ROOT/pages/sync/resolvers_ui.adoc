@@ -1,0 +1,88 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: resolvers_ui
+
+[id='{context}_data_sources_ui']
+= Adding Resolvers to a Schema
+
+A schema describes the structure of your data and the operations to query or mutate that data.
+When a query is executed, GraphQL runs the attached `Resolver`. Resolvers implement the actual
+operations on the data and can be attached to Queries, Mutations and Properties of custom types.
+
+NOTE: to learn more about resolvers and their role in GraphQL have a look at the link:https://graphql.org/learn/execution/#root-fields-resolvers[official documentation].
+
+== Defining Resolvers
+
+Resolvers are defined in the `Resolvers` tab of the UI. If you have a valid schema you can see its
+structure on the left side and the resolver details on the right side.
+
+=== Structure View
+
+The structure view is different from the one in the schema tab in that it is grouped
+by `Queries`, `Mutations`, `Subscriptions` and `Custom Types`. All entries can be expanded to see their
+arguments (queries and mutations) or fields (custom types). The lines in the view have three columns:
+
+. _Name_: The name of the Query/Mutation/Custom Type
+. _Argument count_: The number of fields / arguments
+. _Resolver_: Shows the name of the Resolver's data source when one is assigned. Otherwise shows `No resolver`. Click here to start editing the resolver details.
+
+NOTE: Resolvers can only be attached directly to `Queries` and `Mutations` and not their arguments. For `Custom Types` the opposite is true: you usually want to assign resolvers to more complex properties, for example the `comments` field in the `Note` type of the above example.
+
+=== Resolver Details
+
+Here you can add the details of a resolver. The following fields must be provided:
+
+. _Data Source_: The data source this resolver gets executed against.
+. _Request Mapping Template_: The query that is executed to retrieve a result. `Mutations` in GraphQL are required to return a result too. NOTE: Have a look at xref:#mapping-templates[mapping templates] to learn how to make use of the `context` object in your queries.
+
+The following fields are optional:
+
+. _Response Mapping Template_: Allows you to transform the result before passing it to the caller. For example you could convert a string response to JSON, or parse a XML response.
+. _Pre Hook_: A WebHook that is called before running the `Request Mapping`.
+. _Post Hook_: A WebHook that is called if the `Request Mapping` was run successfully.
+
+NOTE: The Drop-Down buttons above the Request and Response Mappings fields allow you to pick one of the pre-defined templates of your data source.
+
+[[mapping-templates]]
+=== Request Mapping Templates
+
+To write meaningful queries you need access to the arguments passed to the resolver by the client.
+This is achieved by making use of the `context` object. Request and response mappings are evaluated int the {sync-server} backend and you can use Handlebars templates to inject values from the context object.
+
+The structure of the context object is the following:
+
+```javascript
+context: {
+    arguments,    // The arguments passed to the resolver
+    parent        // Parent object reference
+}
+```
+
+For example, a request mapping to retrieve all the comments for a particular `Note` could look like this:
+
+```
+select * from Comments where NoteId = '{{ context.parent.id }}'
+```
+
+=== Response Mapping Templates
+
+Use a response mapping to transform a result or extract certain properties from the result. As with request mappers, response mapper have access to a `context` object with the following format:
+
+```javascript
+context: {
+    result      // The result returned from the query or mutation
+}
+```
+
+Handlebars helpers can be applied to the result. Currently the following helpers are available:
+
+. _toJSON_: Parses a string and returns the result as JSON.
+. _toBoolean_: Parses a string and returns the result as either `true` or `false`.
+. _convertNeDBIds_: Changes all id fields in the input object from `_id` to `id`, the latter being a more common name for a GraphQL property.
+
+An example response mapper for an in memory result could look like this:
+
+```
+{{ toJSON (convertNeDBIds context.result) }}
+```
