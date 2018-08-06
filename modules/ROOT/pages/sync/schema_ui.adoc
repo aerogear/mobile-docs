@@ -1,0 +1,41 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: schema_ui
+
+[id='{context}_data_sources_ui']
+= Defining a Schema using the {sync-service} UI
+
+A schema describes the structure of the data the {sync-service} deals with. It allows you to configure
+your data types, queries and mutations in a format that is independent of the underlying data source.
+To learn more Schemas have a look at the link:https://graphql.org/learn/schema/[GraphQL documentation].
+
+== The Schema Editor
+
+The Schema Editor can be found under the `Schema` tab in the UI. It consists of a text editor where
+you can write and edit your schema and a structure view on the right. To try it out you can use a simple schema like this:
+
+```
+type Query {
+    notes: [Note]
+}
+
+type Comment {
+    from: String
+    text: String
+}
+
+type Note {
+    text: String!
+    comments: [Comment]
+}
+```
+
+Save the schema py pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
+You can download this JSON representation by clicking on `Download Compiled Schema`. This is needed in the client SDKs.
+
+== Structure View
+
+After saving a schema the structure view on the right side of the `Schema` tab will be updated. If your schema contains errors you will see the error message there.
+Otherwise you will see a list of all your types, queries, mutations and subscriptions. This view is read only and can be used to quickly browse a schema.
+
