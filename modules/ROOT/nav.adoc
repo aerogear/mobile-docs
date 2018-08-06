@@ -57,6 +57,8 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:data_sync.adoc#introduction[Introduction]
 *** xref:data_sync.adoc#setup[Setting Up]
 *** xref:data_sync.adoc#ui[The Data Sync UI]
+*** xref:data_sync.adoc#schema[Working with a Schema]
+*** xref:data_sync.adoc#resolvers[Adding resolvers to a Schema]
 *** xref:data_sync.adoc#sdk[Adding sync to your app]
 *** xref:data_sync.adoc#monitoring[Monitoring Data Sync Service]
 
