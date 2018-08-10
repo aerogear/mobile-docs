@@ -1,27 +1,27 @@
 = Documentation for AeroGear Mobile Services 
 
-This readme contains the guidelines and standards for contributing to AeroGear documentation. The documentation is written in link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc^] and published by link:docs.antora.org[Antora^].
+This readme introduces the standards for contributing to AeroGear documentation. The documentation is written in link:https://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc^] and published by link:docs.antora.org[Antora^].
 
-- If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue^] and post a PR with a fix for a review. Please include as much information as possible.
-- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board with Docs Issues^].
+The goal of these docs is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
+
+- If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue, window="_blank"] and post a PR with a fix for a review. Please include as much information as possible.
+- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board, window="_blank"].
 
 :toc: 1
 
-== Writing AeroGear Documentation
-- (WIP) Write documentation that adheres to xref:#mod-docs[Modular Documentation Principles].
-- Name files by slugifying titles: 
-`Registering a Mobile App` -> `registering-a-mobile-app.adoc`
-- Determine which functionality is the change related to:
-+
-* A specific mobile service
-* Common to all mobile services
-* Common to all services or SDKs but with some information that is specific to each.
-+
-With this information, you should be able to determine where the file should be located in the repo, for example `modules/ROOT/push`
-+
-If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include` directive.
+== Contributing to AeroGear Documentation
 
-- If you make a filename change (for example adding or renaming a file), you must update the appropriate `modules/ROOT/nav.adoc` file. 
+* Determine which functionality is the contribution related to:
+** Is it related to a certain service only?
+** Is it common to all mobile services?
+** Is it common to all services or SDKs but with some information that is specific to each?
+
++
+With this information, you will be able to determine where the file should located in the repo, for example `modules/ROOT/push`.
++
+//If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include` directive.
+
+* If you want to make a file name change (for example adding or renaming a file), update `modules/ROOT/nav.adoc file` to include it in the left hand menu on link:docs.aerogear.org[^]. 
 
 - Stick to present tense, for example `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
 
