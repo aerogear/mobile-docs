@@ -17,7 +17,7 @@ implementation "org.aerogear:aerogear-sync:1.1.0-SNAPSHOT"
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
 == Setting Up the Sync Mobile Service
@@ -34,7 +34,7 @@ link:https://github.com/apollographql[Apollo client] requires some configuration
 3. Create a file with a name that corresponds to your business objects and a `.graphql` extension
 4. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response. 
 
-For example if you create a file `graphql/whateverfolder/somefile.graphql` with the content bellow:
+For example if you create a file `graphql/com/example/somefile.graphql` with the content bellow:
 
 ```
 query myNotes {
@@ -59,13 +59,13 @@ subscription noteAdded {
 }
 ```
 
-Apollo will automatically create a file `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in compile time) in the package `whateverfolder` for you.
+Apollo will automatically create a file `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in compile time) in the package `com.example` for you.
 ****
 
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
 ## Using the Sync Mobile Service
@@ -83,7 +83,7 @@ SyncService.getInstance().getApolloClient()
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
 ### Query
@@ -111,7 +111,7 @@ SyncService
         });
 ```        
 
-NOTE: `MyNotesQuery` class is generated from example schema above
+NOTE: The `MyNotesQuery` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
@@ -119,7 +119,7 @@ Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL C
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
 ### Mutation
@@ -147,7 +147,7 @@ SyncService
         });
 ```        
 
-NOTE: `CreateNoteMutation` class is generated from example schema above
+NOTE: The `CreateNoteMutation` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
@@ -155,7 +155,7 @@ Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL C
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
 ### Subscription
@@ -183,7 +183,7 @@ SyncService
         });
 ```        
 
-NOTE: `NoteAddedSubscription` class is generated from example schema above
+NOTE: The `NoteAddedSubscription` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
@@ -191,6 +191,6 @@ Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL C
 [role="secondary"]
 .iOS
 ****
-Comming soon
+Coming soon
 ****
 
