@@ -1,10 +1,7 @@
 //include::{partialsdir}/attributes.adoc[]
 = Performing Device Trust Checks in your Device
 
-This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Security Checks can be performed either individually or together.
-
-NOTE: A *successful* check means that the environment the application is running in is more secure and no action is required, as opposed to signalling if a certain feature is enabled.
-For example, the `Root Access Detection Check NOT_ROOTED` should return `true` when it is _not rooted_, since this would be the more secure condition.
+This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Device Checks can be performed either individually or together.
 
 == Root Access Detection
 
@@ -17,7 +14,7 @@ Use this to help prevent your app running in a device that has been rooted/jailb
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_ROOTED);
+DeviceCheckResult result = securityService.check(DeviceCheckType.ROOT_ENABLED);
 ----
 ****
 
@@ -76,7 +73,7 @@ Use this to detect if Developer Mode has been enabled on the device.
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEVELOPER_MODE);
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEVELOPER_MODE_ENABLED);
 ----
 ****
 
@@ -116,7 +113,7 @@ Use this to detect if a debugger is attached to the app.
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.NO_DEBUGGER);
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEBUGGER_ENABLED);
 ----
 ****
 
@@ -166,7 +163,7 @@ Use this to detect if the app is being run on an emulator.
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.NOT_IN_EMULATOR);
+DeviceCheckResult result = securityService.check(DeviceCheckType.IS_EMULATOR);
 ----
 ****
 
@@ -216,7 +213,7 @@ Use this to detect if a device has a lock screen set (with pin, fingerprint, pat
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.SCREEN_LOCK_ENABLED);
+DeviceCheckResult result = securityService.check(DeviceCheckType.SCREEN_LOCK_ENABLED);
 ----
 ****
 
@@ -267,7 +264,7 @@ Use this to detect whether the application’s data is configured to be synchron
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.ALLOW_BACKUP_DISABLED);
+DeviceCheckResult result = securityService.check(DeviceCheckType.BACKUP_ENABLED);
 ----
 ****
 
@@ -306,7 +303,7 @@ Use this to detect whether a devices filesystem is encrypted.
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.check(SecurityCheckType.HAS_ENCRYPTION_ENABLED);
+DeviceCheckResult result = securityService.check(DeviceCheckType.ENCRYPTION_ENABLED);
 ----
 ****
 
@@ -338,9 +335,9 @@ SecurityCheckResult result = securityService.Check(SecurityChecks.HAS_ENCRYPTION
 
 
 
-== Invoking Multiple Self Defence Checks
+== Invoking Multiple Device Checks
 
-Security Checks can be run in group, both synchronously and asynchronously.
+Device Checks can be run in group, both synchronously and asynchronously.
 
 === Synchronously
 
@@ -352,15 +349,15 @@ Security Checks can be run in group, both synchronously and asynchronously.
 [source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-SyncSecurityCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
+SyncDeviceCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
 ----
 
 . Add your checks and execute synchronously:
 +
 [source, java]
 ----
-Map<String, SecurityCheckResult> results = syncCheckExecutor
-    .addCheck(SecurityCheckType.<check_type>)
+Map<String, DeviceCheckResult> results = syncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
     // Add more checks here
     .execute();
 ----
@@ -421,15 +418,15 @@ Dictionary<string, SecurityCheckResult> results = checkExecutor.Execute();
 [source, java]
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
-AsyncSecurityCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+AsyncDeviceCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
 ----
 
 . Add your checks and execute synchronously:
 +
 [source, java]
 ----
-Map<String, Future<SecurityCheckResult>> results = asyncCheckExecutor
-    .addCheck(SecurityCheckType.<check_type>)
+Map<String, Future<DeviceCheckResult>> results = asyncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
     // Add more checks here
     .execute();
 ----
@@ -468,19 +465,19 @@ Executing multiple checks asynchronously is not supported at the moment for this
 
 == Additional Resources
 
-=== Adding Custom Self Defence Checks
+=== Adding Custom Device Checks
 
-Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Self Defence Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
 
 [role="primary"]
 .Android
 ****
 
-. Extend the `AbstractSecurityCheck` interface:
+. Extend the `AbstractDeviceCheck` interface:
 +
 [source, java]
 ----
-class CustomSecurityCheck extends AbstractSecurityCheck {
+class CustomDeviceCheck extends AbstractDeviceCheck {
 
     @Override
     protected boolean execute(@NonNull final Context context) {
@@ -497,8 +494,8 @@ class CustomSecurityCheck extends AbstractSecurityCheck {
 ----
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheck customSecurityCheck = new CustomSecurityCheck();
-SecurityCheckResult result = securityService.check(customSecurityCheck);
+DeviceCheck customDeviceCheck = new CustomDeviceCheck();
+DeviceCheckResult result = securityService.check(customDeviceCheck);
 ----
 ****
 
@@ -510,7 +507,7 @@ SecurityCheckResult result = securityService.check(customSecurityCheck);
 [source, swift]
 ----
 public class MyCustomCheck: SecurityCheck {
-    
+
     public let name = "Custom Check"
 
     public init() {}
@@ -577,18 +574,18 @@ class CustomSecurityCheck : ISecurityCheck
 {
     public string GetName()
     {
-        return "Custom check";  
+        return "Custom check";
     }
 
     public string GetId()
     {
-        return typeof(CustomSecurityCheck).FullName;    
+        return typeof(CustomSecurityCheck).FullName;
     }
 
     public SecurityCheckResult Check()
     {
-        // Implement security check logic here  
-        return null;    
+        // Implement security check logic here
+        return null;
     }
 }
 ----
@@ -609,9 +606,9 @@ SecurityCheckResult result = securityService.Check(new CustomSecurityCheck());
 
 
 
-=== Reporting Self Defence Checks Results Via the Metrics Service
+=== Reporting Device Checks Results Via the Metrics Service
 
-In order to report the results of Self Defence utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
+In order to report the results of Device Checks utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
 
 [role="primary"]
 .Android
@@ -623,7 +620,7 @@ Report individual checks via the `checkAndSendMetric` method:
 MetricsService metricsService = MobileCore.getInstance(MetricsService.class);
 SecurityService securityService = MobileCore.getInstance(SecurityService.class);
 
-SecurityCheckResult result = securityService.checkAndSendMetric(SecurityCheckType.<check_type>, metricsService);
+DeviceCheckResult result = securityService.checkAndSendMetric(DeviceCheckType.<check_type>, metricsService);
 ----
 
 Or alternatively report multiple checks using a `CheckExecutor`:
@@ -631,8 +628,8 @@ Or alternatively report multiple checks using a `CheckExecutor`:
 [source, java]
 ----
 MetricsService metricsService = mobileCore.getInstance(MetricsService.class);
-Map<String, SecurityCheckResult> results = SecurityCheckExecutor.Builder.newSyncExecutor(this.getContext())
-    .withSecurityCheck(SecurityCheckType.<check_type>)
+Map<String, DeviceCheckResult> results = DeviceCheckExecutor.Builder.newSyncExecutor(this.getContext())
+    .withDeviceCheck(DeviceCheckType.<check_type>)
     // Add other checks...
     .withMetricsService(metricsService)
     .build()
@@ -693,6 +690,6 @@ new SecurityService()
 [role="secondary"]
 .Xamarin
 ****
-Self Defence reports are not yet available for Xamarin.
+Device checks reports are not yet available for Xamarin.
 ****
 
