@@ -4,8 +4,8 @@ This readme introduces the standards for contributing to AeroGear documentation.
 
 The goal of these docs is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
 
-- If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue, window="_blank"] and post a PR with a fix for a review. Please include as much information as possible.
-- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board, window="_blank"].
+- If you see an issue in documentation, link:https://github.com/aerogear/mobile-docs/issues/new[raise an issue^] and post a PR with a fix for a review. Please include as much information as possible.
+- See the link:https://github.com/aerogear/mobile-docs/projects/1[Kanban board^].
 
 :toc: 1
 
@@ -37,7 +37,7 @@ You might find that the content you want to change is not in the `.adoc` file wi
 [[mod-docs]]
 === Modular Documentation Principles
 
-See link:https://redhat-documentation.github.io/modular-docs/[Modular Docs and Templates, window="_blank"].
+See link:https://redhat-documentation.github.io/modular-docs/[Modular Docs and Templates^].
 
 Concept::
 An introduction to a new term, process, module or component. For example, "Mobile Service" : What is it? Why should I care? How does it fit into my development environment? 
