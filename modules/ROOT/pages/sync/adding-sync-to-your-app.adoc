@@ -17,16 +17,7 @@ implementation "org.aerogear:aerogear-sync:1.1.0-SNAPSHOT"
 [role="secondary"]
 .iOS
 ****
-****
-
-[role="secondary"]
-.Cordova
-****
-****
-
-[role="secondary"]
-.Xamarin
-****
+Coming soon
 ****
 
 == Setting Up the Sync Mobile Service
@@ -43,37 +34,61 @@ link:https://github.com/apollographql[Apollo client] requires some configuration
 3. Create a file with a name that corresponds to your business objects and a `.graphql` extension
 4. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response. 
 
-For example if you create a file `graphql/org/aerogear/android/app/memeolist/graphql/myProject.graphql` with the content bellow:
+For example if you create a file `graphql/com/example/somefile.graphql` with the content bellow:
 
 ```
 query myNotes {
   allNotes() {
+    id,
+    text
+  }
+}
+
+mutation createNote(text: String!) {
+  createNote($text: String!) {
     id
+    text
+  }
+}
+
+subscription noteAdded {
+  noteAdded {
+    id
+    note
   }
 }
 ```
 
-Apollo will automatically create a file `MyNotesQuery` (in compile time) for you to fire the query.
+Apollo will automatically create a file `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in compile time) in the package `com.example` for you.
 ****
 
 [role="secondary"]
 .iOS
 ****
+Coming soon
 ****
 
-[role="secondary"]
-.Cordova
-****
-****
-
-[role="secondary"]
-.Xamarin
-****
-****
-
-## Using the Sync Mobile Service
+== Using the Sync Mobile Service
 
 The Sync SDK provides a method to get a configured instance of the Apollo Client
+
+[role="primary"]
+.Android
+****
+```
+SyncService.getInstance().getApolloClient()
+```        
+****
+
+[role="secondary"]
+.iOS
+****
+Coming soon
+****
+
+=== Query
+
+Use the `Query` method from Apollo client to fire a query
 
 [role="primary"]
 .Android
@@ -85,18 +100,18 @@ SyncService
         .query(MyNotesQuery.builder().build())
         .enqueue(new ApolloCall.Callback<MyNotesQuery.Data>() {
             @Override
-            public void onResponse(@Nonnull Response<MyNotesQuery.Data> response) {
+            public void onResponse(Response<MyNotesQuery.Data> response) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(@Nonnull ApolloException e) {
+            public void onFailure(ApolloException e) {
                 /// Oops! Something went wrong.
             }
         });
 ```        
 
-NOTE: `MyNotesQuery` class is generated from example schema above
+NOTE: The `MyNotesQuery` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
@@ -104,14 +119,78 @@ Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL C
 [role="secondary"]
 .iOS
 ****
+Coming soon
+****
+
+=== Mutation
+
+Use the `Mutate` method from Apollo client to fire a mutation
+
+[role="primary"]
+.Android
+****
+```
+SyncService
+        .getInstance()
+        .getApolloClient()
+        .mutate(CreateNoteMutation.builder().text("The note text").build())
+        .enqueue(new ApolloCall.Callback<CreateNoteMutation.Data>() {
+            @Override
+            public void onResponse(Response<CreateNoteMutation.Data> response) {
+                // Do some magic with the response
+            }
+
+            @Override
+            public void onFailure(ApolloException e) {
+                /// Oops! Something went wrong.
+            }
+        });
+```        
+
+NOTE: The `CreateNoteMutation` class is generated from the example schema above
+
+Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
-.Cordova
+.iOS
 ****
+Coming soon
+****
+
+=== Subscription
+
+Use the `subscribe` method from Apollo client to fire a subscription
+
+[role="primary"]
+.Android
+****
+```
+SyncService
+        .getInstance()
+        .getApolloClient()
+        .subscribe(new NoteAddedSubscription())
+        .execute(new ApolloSubscriptionCall.Callback<NoteAddedSubscription.Data>() {
+            @Override
+            public void onResponse(Response<NoteAddedSubscription.Data> response) {
+                // Do some magic with the response
+            }
+
+            @Override
+            public void onFailure(ApolloException e) {
+                /// Oops! Something went wrong.
+            }
+        });
+```        
+
+NOTE: The `NoteAddedSubscription` class is generated from the example schema above
+
+Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
-.Xamarin
+.iOS
 ****
+Coming soon
 ****
+
