@@ -1,0 +1,30 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Binding the {sync-service} service to a Keycloak instance
+
+This section will help you to bind a Keycloak service to the {sync-service} service.
+
+== Prerequisites
+
+* Ensure {sync-service} is xref:sync/provisioning.adoc[provisioned].
+* Ensure {keycloak-service} is xref:keycloak/provisioning.adoc[provisioned]
+
+== Creating the binding secret from a Keycloak instance
+
+* Navigate to your Openshift project
+* Select *Applications* and then *Provisioned Services*
+* Select the *Identity Management* service from the list of Provisioned Services
+* Select the *Create Binding* option
+* Enter the *Service Instance Id* of the provisioned *{sync-service}* service
+
+A secret will be created as a result of this binding.
+
+== Making the secret available to the {sync-service} 
+
+* Select *View Secret* on the *Identity Management* details page
+* Select *Add to Application* and select the {sync-service} from the options
+* Select the *Volume* option and enter the following mount path: `/opt/keycloak`
+
+NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be configured to use the secret.
+
+
