@@ -13,9 +13,10 @@ This section will help you to bind a Keycloak service to the {sync-service} serv
 
 * Navigate to your Openshift project
 * Select *Applications* and then *Provisioned Services*
+* Copy the *Instance Name* field from the *{sync-service}* service
 * Select the *Identity Management* service from the list of Provisioned Services
 * Select the *Create Binding* option
-* Enter the *Service Instance Id* of the provisioned *{sync-service}* service
+* Enter the copied *Instance Name* of the provisioned *{sync-service}* service
 
 A secret will be created as a result of this binding.
 
