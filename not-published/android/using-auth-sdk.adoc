@@ -337,5 +337,16 @@ You can use the `AuthService#deleteTokens` function to delete the local authenti
 
 *Note:* To perform backchannel or federated logouts, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under  http://www.keycloak.org/docs/latest/server_admin/index.html#openid-connect-v1-0-identity-providers[OIDC Identity Providers].
 
+=== Using auth with backend
+
+To authenticate service on existing backend server users need to supply additional token:
+
+[source]
+----
+Authorization: BEARER Yourtoken
+----
+
+Auth SDK also provides _AuthHeaderProvider_ class that can be used for this purpose.
+
 === Single Sign-on
 A walkthrough on how to setup Single Sign-on across Android Applications can be seen under the link:./auth-single-sign-on.adoc[Single Sign-on Documentation].
