@@ -3,9 +3,6 @@
 // start digger/index.adoc[leveloffset=1]
 include::digger/index.adoc[leveloffset=1]
 // end digger/index.adoc[leveloffset=1]
-// start digger/ref_terminology.adoc[leveloffset=+1]
-include::digger/ref_terminology.adoc[leveloffset=+1]
-// end digger/ref_terminology.adoc[leveloffset=+1]
 [#setup]
 
 == Prerequisites
