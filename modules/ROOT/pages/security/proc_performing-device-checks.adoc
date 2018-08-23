@@ -24,7 +24,7 @@ DeviceCheckResult result = securityService.check(DeviceCheckType.ROOT_ENABLED);
 [source, swift]
 ----
 let security = AGSSecurity()
-let result = security.check(IsJailbrokenCheck())
+let result = security.check(JailbrokenDeviceCheck())
 ----
 ****
 
@@ -123,7 +123,7 @@ DeviceCheckResult result = securityService.check(DeviceCheckType.DEBUGGER_ENABLE
 [source, swift]
 ----
 let security = AGSSecurity()
-let result = security.check(IsDebuggerCheck())
+let result = security.check(DebuggerAttachedCheck())
 ----
 ****
 
@@ -223,7 +223,7 @@ DeviceCheckResult result = securityService.check(DeviceCheckType.SCREEN_LOCK_ENA
 [source, swift]
 ----
 let security = AGSSecurity()
-let result = security.check(IsDeviceLockCheck())
+let result = security.check(DeviceLockEnabledCheck())
 ----
 ****
 
@@ -369,10 +369,10 @@ Map<String, DeviceCheckResult> results = syncCheckExecutor
 Invoke multiple checks using the `checkMany` function:
 [source, swift]
 ----
-let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
 let results = security.checkMany(checks)
 ----
-NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
 ****
 
 [role="secondary"]
@@ -502,17 +502,17 @@ DeviceCheckResult result = securityService.check(customDeviceCheck);
 [role="secondary"]
 .iOS
 ****
-. Implement the `SecurityCheck` interface:
+. Implement the `DeviceCheck` interface:
 +
 [source, swift]
 ----
-public class MyCustomCheck: SecurityCheck {
+public class MyCustomCheck: DeviceCheck {
 
     public let name = "Custom Check"
 
     public init() {}
 
-    public func check() -> SecurityCheckResult {
+    public func check() -> DeviceCheckResult {
         // Implement security check logic here
         return nil
     }
@@ -644,14 +644,14 @@ Report individual checks via the `checkAndPublishMetric` function:
 
 [source, swift]
 ----
-let result = security.checkAndPublishMetric(IsDeviceLockCheck())
+let result = security.checkAndPublishMetric(DeviceLockEnabledCheck())
 ----
 
 Or alternatively report multiple checks using the `checkManyAndPublishMetric` function:
 
 [source, swift]
 ----
-let checks = [IsDeviceLockCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
 let results = security.checkManyAndPublishMetric(checks)
 ----
 ****

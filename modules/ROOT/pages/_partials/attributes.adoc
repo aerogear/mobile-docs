@@ -3,6 +3,7 @@
 :product-name: Mobile Services
 
 :release-number: 1.0.0
+:ios-sdk-release-number: 2.0.0
 
 :service-name:
 

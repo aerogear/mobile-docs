@@ -37,7 +37,7 @@ NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of
 [source,ruby,subs="attributes"]
 ----
 target '[TARGET NAME]' do
-    pod 'AGSSecurity', '{release-number}'
+    pod 'AGSSecurity', '{ios-sdk-release-number}'
 end
 ----
 
