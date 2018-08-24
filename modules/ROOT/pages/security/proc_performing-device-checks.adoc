@@ -12,7 +12,7 @@ Use this to help prevent your app running in a device that has been rooted/jailb
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.ROOT_ENABLED);
 ----
@@ -45,20 +45,20 @@ new SecurityService()
 [role="secondary"]
 .Xamarin
 ****
-Use `NOT_ROOTED` for Android:
+Use `ROOT_ENABLED` for Android:
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_ROOTED);
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED);
 ----
 
-Use `NOT_JAILBROKEN` for iOS:
+Use `JAILBREAK_ENABLED` for iOS:
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_JAILBROKEN);
+DeviceCheckResult result = securityService.Check(DeviceChecks.JAILBREAK_ENABLED);
 ----
 ****
 
@@ -71,7 +71,7 @@ Use this to detect if Developer Mode has been enabled on the device.
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.DEVELOPER_MODE_ENABLED);
 ----
@@ -97,7 +97,7 @@ WARNING: This check is available for Android only.
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEVELOPER_MODE);
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEVELOPER_MODE_ENABLED);
 ----
 ****
 
@@ -111,7 +111,7 @@ Use this to detect if a debugger is attached to the app.
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.DEBUGGER_ENABLED);
 ----
@@ -144,11 +144,20 @@ new SecurityService()
 [role="secondary"]
 .Xamarin
 ****
+Use `DEBUGGER_ENABLED` for Android:
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.NO_DEBUGGER);
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ENABLED);
+----
+
+Use `DEBUGGER_ATTACHED` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ATTACHED);
 ----
 ****
 
@@ -161,7 +170,7 @@ Use this to detect if the app is being run on an emulator.
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.IS_EMULATOR);
 ----
@@ -198,7 +207,7 @@ new SecurityService()
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.NOT_IN_EMULATOR);
+DeviceCheckResult result = securityService.Check(DeviceChecks.IS_EMULATOR);
 ----
 ****
 
@@ -211,7 +220,7 @@ Use this to detect if a device has a lock screen set (with pin, fingerprint, pat
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.SCREEN_LOCK_ENABLED);
 ----
@@ -249,7 +258,7 @@ new SecurityService()
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.SCREEN_LOCK_ENABLED);
+DeviceCheckResult result = securityService.Check(DeviceChecks.SCREEN_LOCK_ENABLED);
 ----
 ****
 
@@ -262,7 +271,7 @@ Use this to detect whether the application’s data is configured to be synchron
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.BACKUP_ENABLED);
 ----
@@ -288,7 +297,7 @@ WARNING: This check is available for Android only.
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.ALLOW_BACKUP_DISABLED);
+DeviceCheckResult result = securityService.Check(DeviceChecks.BACKUP_ENABLED);
 ----
 ****
 
@@ -301,7 +310,7 @@ Use this to detect whether a devices filesystem is encrypted.
 ****
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.check(DeviceCheckType.ENCRYPTION_ENABLED);
 ----
@@ -327,7 +336,7 @@ WARNING: This check is available for Android only.
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(SecurityChecks.HAS_ENCRYPTION_ENABLED);
+DeviceCheckResult result = securityService.Check(DeviceChecks.ENCRYPTION_ENABLED);
 ----
 ****
 
@@ -348,7 +357,7 @@ Device Checks can be run in group, both synchronously and asynchronously.
 +
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 SyncDeviceCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
 ----
 
@@ -400,11 +409,11 @@ NOTE: `SecurityCheckResult` objects in the returning array stay in the same orde
 var securityService = MobileCore.GetService<SecurityService>();
 
 var checkExecutor = securityService.GetSyncExecutor()
-                        .WithSecurityCheck(SecurityChecks.NOT_ROOTED)
-                        .WithSecurityCheck(SecurityChecks.NO_DEVELOPER_MODE)
+                        .WithDeviceCheck(SecurityChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(SecurityChecks.DEVELOPER_MODE_ENABLED)
                         // Add more checks here
                         .Build()
-Dictionary<string, SecurityCheckResult> results = checkExecutor.Execute();
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
 ----
 ****
 
@@ -417,7 +426,7 @@ Dictionary<string, SecurityCheckResult> results = checkExecutor.Execute();
 +
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 AsyncDeviceCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
 ----
 
@@ -492,7 +501,7 @@ class CustomDeviceCheck extends AbstractDeviceCheck {
 +
 [source, java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheck customDeviceCheck = new CustomDeviceCheck();
 DeviceCheckResult result = securityService.check(customDeviceCheck);
@@ -570,7 +579,7 @@ securityService.check(new CustomSecurityCheck())
 +
 [source, c#]
 ----
-class CustomSecurityCheck : ISecurityCheck
+class CustomDeviceCheck : IDeviceCheck
 {
     public string GetName()
     {
@@ -582,7 +591,7 @@ class CustomSecurityCheck : ISecurityCheck
         return typeof(CustomSecurityCheck).FullName;
     }
 
-    public SecurityCheckResult Check()
+    public DeviceCheckResult Check()
     {
         // Implement security check logic here
         return null;
@@ -596,7 +605,7 @@ class CustomSecurityCheck : ISecurityCheck
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
-SecurityCheckResult result = securityService.Check(new CustomSecurityCheck());
+DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
 ----
 ****
 
@@ -618,7 +627,7 @@ Report individual checks via the `checkAndSendMetric` method:
 [source, java]
 ----
 MetricsService metricsService = MobileCore.getInstance(MetricsService.class);
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 
 DeviceCheckResult result = securityService.checkAndSendMetric(DeviceCheckType.<check_type>, metricsService);
 ----
@@ -690,6 +699,30 @@ new SecurityService()
 [role="secondary"]
 .Xamarin
 ****
-Device checks reports are not yet available for Xamarin.
+Report individual checks:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+DeviceCheckResult result = securityService.Check(SecurityChecks.ROOT_ENABLED, metricsService);
+----
+
+Or alternatively report multiple checks using a `CheckExecutor`:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithDeviceCheck(SecurityChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(SecurityChecks.DEVELOPER_MODE_ENABLED)
+                        .WithMetricsService(metricsService)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
+----
 ****
 

@@ -14,18 +14,18 @@ include::configuring-dev-env-security.adoc[]
 [source,groovy,subs="attributes"]
 ----
 dependencies {
-    implementation 'org.aerogear:android-security:{release-number}'
+    implementation 'org.aerogear:android-security:{android-sdk-release-number}'
 }
 ----
 
 . Get an instance of `SecurityService` to start using the SDK.
 +
-[source,swift]
+[source,java]
 ----
-SecurityService securityService = MobileCore.getInstance(SecurityService.class);
+SecurityService securityService = new SecurityService();
 ----
 +
-NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
+NOTE: It is user responsibility to manage the `SecurityService` lifecycle.
 
 ****
 
@@ -98,21 +98,21 @@ NOTE: Any new instantiation of `SecurityService` returns the same instance.
 +
 [source,bash,subs="attributes"]
 ----
-$ dotnet add package AeroGear.Mobile.Security --version {release-number}
+$ dotnet add package AeroGear.Mobile.Security --version {xamarin-sdk-release-number}
 ----
 
 . Install the specific packages for Android:
 +
 [source,bash,subs="attributes"]
 ----
-$ dotnet add package AeroGear.Mobile.Security.Platform.Android --version {release-number}
+$ dotnet add package AeroGear.Mobile.Security.Platform.Android --version {xamarin-sdk-release-number}
 ----
 +
 And for iOS:
 +
 [source,bash,subs="attributes"]
 ----
-$ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {release-number}
+$ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {xamarin-sdk-release-number}
 ----
 
 . Initialize the SDK by adding the following line to your Android application's *MainActivity.cs*:
