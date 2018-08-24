@@ -24,13 +24,13 @@ include::./ref_terminology.adoc[leveloffset=+1]
 
 == Privacy note
 
-As explained in the _link:#_how_the_unifiedpush_server_works[How the UnifiedPush Server works]_ section, the payload of the push notification is delivered to 3rd party Push Network providers, like Google or Apple.
+As explained in the xref:how_the_unifiedpush_server_works[How the UnifiedPush Server works] section, the payload of the push notification is delivered to 3rd party Push Network providers, like Google or Apple.
 
 WARNING: It is highly recommended to not send any sensitive personal or confidential information belonging to an individual (e.g. a social security number, financial account or transactional information, or any information where the individual may have a reasonable expectation of secure transmission) as part of any Push Notification!
 
 For analytic purposes on our link:#_dashboard[Dashboard] we store the content of the +alert+ key sent to the UnifiedPush Server. The content of the +alert+ key belongs to the metadata, which is deleted after 30 days, using a nightly job within the UnifiedPush Server.
 
-
+[[how_the_unifiedpush_server_works]]
 == How the UnifiedPush Server Works
 
 The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
