@@ -13,7 +13,7 @@ include::push/index.adoc[leveloffset=1]
 include::{partialsdir}/generic-provisioning-pre-req.adoc[]
 // end {partialsdir}/generic-provisioning-pre-req.adoc[]
 
-== Setting Up the Identity Management Mobile Service
+== Setting Up the Push Notifications Mobile Service
 // start push/google-setup.adoc[leveloffset=2]
 include::push/google-setup.adoc[leveloffset=2]
 // end push/google-setup.adoc[leveloffset=2]
