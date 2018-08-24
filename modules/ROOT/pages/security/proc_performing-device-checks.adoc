@@ -34,7 +34,7 @@ let result = security.check(JailbrokenDeviceCheck())
 [source, javascript]
 ----
 new SecurityService()
-    .check(SecurityCheckType.notRooted)
+    .check(DeviceCheckType.rootEnabled)
     .then(result => {
         // Handle the security result metric
         // result: { id: string, name: string, passed: boolean }
@@ -133,7 +133,7 @@ let result = security.check(DebuggerAttachedCheck())
 [source, javascript]
 ----
 new SecurityService()
-    .check(SecurityCheckType.notDebugMode)
+    .check(DeviceCheckType.debugModeEnabled)
     .then(result => {
         // Handle the security result metric
         // result: { id: string, name: string, passed: boolean }
@@ -192,7 +192,7 @@ let result = security.check(IsEmulatorCheck())
 [source, javascript]
 ----
 new SecurityService()
-    .check(SecurityCheckType.notEmulated)
+    .check(DeviceCheckType.isEmulator)
     .then(result => {
         // Handle the security result metric
         // result: { id: string, name: string, passed: boolean }
@@ -243,7 +243,7 @@ NOTE: For iOS devices this check requires iOS 8 or above.
 [source, javascript]
 ----
 new SecurityService()
-    .check(SecurityCheckType.hasDeviceLock)
+    .check(DeviceCheckType.screenLockEnabled)
     .then(result => {
         // Handle the security result metric
         // result: { id: string, name: string, passed: boolean }
@@ -391,26 +391,26 @@ Executing multiple checks synchronously is not directly supported. Instead, it's
 [source, javascript]
 ----
 const results = await securityService.checkMany(
-    SecurityCheckType.notRooted,
-    SecurityCheckType.notEmulated,
+    DeviceCheckType.rootEnabled,
+    DeviceCheckType.isEmulator,
     // Add more checks here
 );
 ----
-NOTE: `SecurityCheckResult` objects in the returning array stay in the same order they were provided.
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
 ****
 
 [role="secondary"]
 .Xamarin
 ****
-. Build a `SyncSecurityCheckExecutor` from `SecurityService` and execute:
+. Build a `SyncDeviceCheckExecutor` from `SecurityService` and execute:
 +
 [source, c#]
 ----
 var securityService = MobileCore.GetService<SecurityService>();
 
 var checkExecutor = securityService.GetSyncExecutor()
-                        .WithDeviceCheck(SecurityChecks.ROOT_ENABLED)
-                        .WithDeviceCheck(SecurityChecks.DEVELOPER_MODE_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
                         // Add more checks here
                         .Build()
 Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
@@ -454,15 +454,15 @@ Invoke multiple checks using the `checkMany` method:
 [source, javascript]
 ----
 const checkResults = securityService.checkMany(
-    SecurityCheckType.notRooted,
-    SecurityCheckType.notEmulated,
+    DeviceCheckType.rootEnabled,
+    DevoceCheckType.isEmulator,
     // Add more checks here
 )
 .then(results => {
     // Handle results
 });
 ----
-NOTE: This method returns a Promise with an array containing all `SecurityCheckResult` objects in the same order they were provided.
+NOTE: This method returns a Promise with an array containing all `DeviceCheckResult` objects in the same order they were provided.
 ****
 
 [role="secondary"]
@@ -541,18 +541,18 @@ let result = security.check(MyCustomCheck())
 [role="secondary"]
 .Cordova
 ****
-. Implement the `SecurityCheck` interface:
+. Implement the `DeviceCheck` interface:
 +
 [source, javascript]
 ----
-class CustomSecurityCheck implements SecurityCheck {
+class CustomDeviceCheck implements DeviceCheck {
 
     get name(): string {
         return "My Custom Check";
     }
 
-    public check(): Promise<SecurityCheckResult> {
-        // Implement security check logic here
+    public check(): Promise<DeviceCheckResult> {
+        // Implement device check logic here
         return null;
     }
 
@@ -565,7 +565,7 @@ class CustomSecurityCheck implements SecurityCheck {
 ----
 const securityService = new SecurityService();
 
-securityService.check(new CustomSecurityCheck())
+securityService.check(new CustomDeviceCheck())
     .then(result => {
         // Handle result
     });
@@ -575,7 +575,7 @@ securityService.check(new CustomSecurityCheck())
 [role="secondary"]
 .Xamarin
 ****
-. Implement the `ISecurityCheck` interface:
+. Implement the `IDeviceCheck` interface:
 +
 [source, c#]
 ----
@@ -588,7 +588,7 @@ class CustomDeviceCheck : IDeviceCheck
 
     public string GetId()
     {
-        return typeof(CustomSecurityCheck).FullName;
+        return typeof(CustomDeviceCheck).FullName;
     }
 
     public DeviceCheckResult Check()
@@ -673,7 +673,7 @@ Report individual checks via the `checkAndPublishMetric` method:
 [source, javascript]
 ----
 new SecurityService()
-    .checkAndPublishMetric(SecurityCheckType.notRooted)
+    .checkAndPublishMetric(DeviceCheckType.rootEnabled)
     .then(result => {
         // Handle the security result metric
         // result: { id: string, name: string, passed: boolean }
@@ -686,8 +686,8 @@ Or alternatively report multiple checks using the `checkManyAndPublishMetric` me
 ----
 new SecurityService()
     .checkManyAndPublishMetric(
-        SecurityCheckType.notRooted,
-        SecurityCheckType.notEmulated,
+        DeviceCheckType.rootEnabled,
+        DeviceCheckType.isEmulator,
         // Add more checks here
     )
     .then(results => {
@@ -706,7 +706,7 @@ Report individual checks:
 var securityService = MobileCore.GetService<SecurityService>();
 var metricsService = MobileCore.GetService<MetricsService>();
 
-DeviceCheckResult result = securityService.Check(SecurityChecks.ROOT_ENABLED, metricsService);
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED, metricsService);
 ----
 
 Or alternatively report multiple checks using a `CheckExecutor`:
@@ -717,8 +717,8 @@ var securityService = MobileCore.GetService<SecurityService>();
 var metricsService = MobileCore.GetService<MetricsService>();
 
 var checkExecutor = securityService.GetSyncExecutor()
-                        .WithDeviceCheck(SecurityChecks.ROOT_ENABLED)
-                        .WithDeviceCheck(SecurityChecks.DEVELOPER_MODE_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
                         .WithMetricsService(metricsService)
                         // Add more checks here
                         .Build()
