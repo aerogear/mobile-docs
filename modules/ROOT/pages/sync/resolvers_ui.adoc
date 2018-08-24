@@ -48,7 +48,7 @@ NOTE: The Drop-Down buttons above the Request and Response Mappings fields allow
 === Request Mapping Templates
 
 To write meaningful queries you need access to the arguments passed to the resolver by the client.
-This is achieved by making use of the `context` object. Request and response mappings are evaluated int the {sync-server} backend and you can use Handlebars templates to inject values from the context object.
+This is achieved by making use of the `context` object. Request and response mappings are evaluated in the {sync-service} backend and you can use Handlebars templates to inject values from the context object.
 
 The structure of the context object is the following:
 

@@ -5,7 +5,7 @@ include::{partialsdir}/attributes.adoc[]
 == Prerequisites
 
 * [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
-* [x] You have provisioned the {v} Service as described in xref:sync/provisioning.adoc[Provisioning {sync-service} Service].
+* [x] You have provisioned the {sync-service} Service as described in xref:sync/provisioning.adoc[Provisioning {sync-service} Service].
 
 NOTE: The {metrics-service} Service and {sync-service} Service must be provisioned in the same OpenShift project to access data.
 
