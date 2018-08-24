@@ -20,7 +20,7 @@ NOTE: On first login you need to provide the OpenShift OAuth service permissions
 
 A Data Source is a representation of your data storage solution. The Data Source consists of a *Name*, a *Type*, and a *Configuration*.
 The *Type* of Data Source which are currently supported are *Postgres* and *InMemory*. For information on how to use *Postgres*, refer to the documentation https://www.postgresql.org/docs[here].
-The *In Memory* Data Source that is currently supported is *NeDB*, for more information on how to use this please refer to the the documentation https://github.com/louischatriot/nedb[here].
+The *In Memory* Data Source that is currently supported is *NeDB*, for more information on how to use this please refer to the documentation https://github.com/louischatriot/nedb[here].
 
 NOTE: The *In Memory* Data Source is not recommended for production use.
 
@@ -56,7 +56,7 @@ For more information about the _In Memory_ option have a look at xref:#in-memory
 
 You need to provide a name for the data source. The only other option is `TimeStamp Data`. If checked, timestamps will be stored along with your data in `NeDB`.
 
-NOTE: To find about more about `NeDB` and how to write queries, have a look at the link:https://github.com/louischatriot/nedb#finding-documents[Github Repository].
+NOTE: To find more about `NeDB` and how to write queries, have a look at the link:https://github.com/louischatriot/nedb#finding-documents[Github Repository].
 
 WARNING: Some features like unique indices and persistence are not supported in the In Memory database and it is therefore only recommended for evaluation purposes.
 
