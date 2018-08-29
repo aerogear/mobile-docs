@@ -35,7 +35,7 @@
 :digger-ui: Jenkins UI
 
 // Custom Runtime Service
-:custom-service: Runtime Connector
+//:custom-service: Runtime Connector
 
 // Device Security
 :device-security-service: Device Security
