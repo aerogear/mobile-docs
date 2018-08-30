@@ -34,17 +34,6 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push-notifications.adoc#sending[Sending a Notification]
 *** xref:push-notifications.adoc#handling[Handling a Notification]
 
-
-** xref:runtime-connector.adoc[{custom-service}]
-*** xref:runtime-connector.adoc#introduction[Introduction]
-*** xref:runtime-connector.adoc#setup[Setting Up]
-// *** xref:runtime-connector.adoc#creating[Creating an API Server]
-// *** xref:runtime-connector.adoc#connecting[Connecting to an API Server]
-// *** xref:runtime-connector.adoc#calling[Calling APIs]
-// *** xref:runtime-connector.adoc#updating[Updating Runtime Parameters]
-// *** xref:runtime-connector.adoc#securing[Securing an API Server]
-
-
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#introduction[Introduction]
 *** xref:mobile-metrics.adoc#setup[Setting Up]

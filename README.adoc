@@ -71,7 +71,7 @@ If you create a link, use the following whenever possible:
 * mobile-metrics.adoc
 * push-notifications.adoc
 * ref_api.adoc
-* runtime-connector.adoc
+//* runtime-connector.adoc
 * showcase-apps.adoc
  
  
