@@ -31,7 +31,7 @@ type Note {
 }
 ```
 
-Save the schema py pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
+Save the schema by pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
 You can download this JSON representation by clicking on `Download Compiled Schema`. This is needed in the client SDKs.
 
 NOTE: When defining https://graphql.org/learn/schema/#scalar-types[custom scalars] on your schema it is important to assert that the data types match the expected type. This is important as custom Scalar definitions could potentially lead to security vulnerabilities such as SQL Injection.
