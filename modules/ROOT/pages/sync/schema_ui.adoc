@@ -31,7 +31,7 @@ type Note {
 }
 ```
 
-Save the schema py pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
+Save the schema by pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
 You can download this JSON representation by clicking on `Download Compiled Schema`. This is needed in the client SDKs.
 
 == Structure View
