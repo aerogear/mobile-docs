@@ -23,7 +23,7 @@ IMPORTANT: OpenShift oc executable must be located in a system location that is 
 +
 IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up, window="_blank"] with no errors before moving on to the installation of AeroGear.
 +
-* A link:https://hub.docker.com/[Docker Hub] account
+* Access to a link:https://hub.docker.com/[Docker Hub] account. The installer uses Docker Hub as a source for AeroGear Docker images.
 //** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible, window="_blank"] (version 2.6 or above)
