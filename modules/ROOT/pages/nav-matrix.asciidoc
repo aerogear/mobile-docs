@@ -50,11 +50,11 @@ After choosing a mobile service, use the following table to navigate to the step
 |N/A
 
 
-|xref:digger/index.adoc[{mobile-ci-cd-service}]
-|xref:digger/provisioning.adoc[Provisioning {mobile-ci-cd-service}] 
+|xref:mobilecicd/index.adoc[{mobile-ci-cd-service}]
+|xref:mobilecicd/provisioning.adoc[Provisioning {mobile-ci-cd-service}] 
 |N/A
-|xref:digger/running-a-build.adoc[Building an App]
-|xref:digger/digger-ui.adoc[{digger-ui}]
+|xref:mobilecicd/running-a-build.adoc[Building an App]
+|xref:mobilecicd/mobilecicd-ui.adoc[{mobilecicd-ui}]
 
 
 

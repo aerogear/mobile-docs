@@ -32,7 +32,7 @@
 
 // Build Service
 :mobile-ci-cd-service: Mobile CI/CD
-:digger-ui: Jenkins UI
+:mobilecicd-ui: Jenkins UI
 
 // Custom Runtime Service
 //:custom-service: Runtime Connector
