@@ -81,7 +81,7 @@ authService.Configure(authConfig);
 [source,C#]
 ----
 // auth service is already initialised
-var user = MobileCore.Instance.GetInstance<IAuthService>().CurrentUser();
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
 
 var username = user.Username;
 var email = user.Email;
@@ -93,7 +93,7 @@ var accessToken = user.AccessToken;
 
 [source,C#]
 ----
-IAuthService service = MobileCore.Instance.GetInstance<IAuthService>();
+IAuthService service = MobileCore.Instance.GetService<IAuthService>();
 var authOptions = DependencyService.Get<IAuthenticateOptionsProvider>().GetOptions();
 service.Authenticate(authOptions).ContinueWith(result =>
 {
@@ -108,7 +108,7 @@ service.Authenticate(authOptions).ContinueWith(result =>
 ----
 // listing all Roles for a previously initialised authService
 
-var user = MobileCore.Instance.GetInstance<IAuthService>().CurrentUser();
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
 var roleItems = new List<string> { };
 foreach(var role in user.getRoles())
 {
@@ -123,7 +123,7 @@ foreach(var role in user.getRoles())
 ----
 // checking if the current user has a specific realm role
 
-var user = MobileCore.Instance.GetInstance<IAuthService>().CurrentUser();
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
 bool isAdmin = user.HasRealmRole("user_admin");
 if (isAdmin) {
     // Show some component
@@ -142,7 +142,7 @@ if (isModerator) {
 ----
 // auth service already initialised
 
-var authService = MobileCore.Instance.GetInstance<IAuthService>();
+var authService = MobileCore.Instance.GetService<IAuthService>();
 authService.Logout(authService.CurrentUser()).ContinueWith(result =>
 {
     // load some view

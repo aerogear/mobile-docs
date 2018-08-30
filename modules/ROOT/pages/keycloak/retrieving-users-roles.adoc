@@ -78,7 +78,7 @@ NOTE: No function to retrieve the resource roles is currently exported but you c
 [source,csharp]
 ----
 // auth service is already initialised
-var user = MobileCore.Instance.GetInstance<IAuthService>().CurrentUser();
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
 ----
 
 . Use `getRoles` to retrieve all roles from the user:
