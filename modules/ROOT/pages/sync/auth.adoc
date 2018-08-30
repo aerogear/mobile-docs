@@ -1,0 +1,41 @@
+include::{partialsdir}/attributes.adoc[]
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: sync_auth
+
+[id='{context}_authentication']
+= Authentication
+
+The {sync-service} by default do not provide any any authentication and authorization mechanism.
+Users can configure {sync-service} to work with {keycloak-service} to provide authentication and 
+authorization for their applications.
+
+== Prerequisites
+
+* Ensure {sync-service} is xref:sync/provisioning.adoc[provisioned].
+* Ensure {keycloak-service} is xref:keycloak/provisioning.adoc[provisioned]
+* Ensure {keycloak-service} is xref:keycloak/coding.adoc[configured] to work with your mobile applications
+
+== Binding the {sync-service} service to a {keycloak-service} instance
+
+To benefit from authentication developers need to connect (bind) {sync-service} into  {keycloak-service} instance. 
+
+== Creating the binding secret from a Keycloak instance
+
+* Navigate to your Openshift project
+* Select *Applications* and then *Provisioned Services*
+* Copy the *Instance Name* field from the *{sync-service}* service
+* Select the *Identity Management* service from the list of Provisioned Services
+* Select the *Create Binding* option
+* Enter the copied *Instance Name* of the provisioned *{sync-service}* service
+
+A secret will be created as a result of this binding.
+
+== Making the secret available to the {sync-service} 
+
+* Select *View Secret* on the *Identity Management* details page
+* Select *Add to Application* and select the {sync-service} from the options
+* Select the *Volume* option and enter the following mount path: `/opt/keycloak`
+
+NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be configured to use the secret.
+

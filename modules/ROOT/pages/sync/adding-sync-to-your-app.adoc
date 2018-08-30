@@ -1,6 +1,6 @@
 include::{partialsdir}/attributes.adoc[]
 
-= Using the {sync-service} service SDK
+= Using the {sync-service} SDK
 
 This section will help you to set up the {sync-service} service SDK in your App.
 
