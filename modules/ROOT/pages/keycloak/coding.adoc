@@ -46,7 +46,7 @@ $ pod install
 ----
 import AGSAuth
 
-let auth = AGSAuth()
+auth = AGSAuth()
 ----
 ****
 
