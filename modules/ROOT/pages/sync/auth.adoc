@@ -39,3 +39,10 @@ A secret will be created as a result of this binding.
 
 NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be configured to use the secret.
 
+== Making secret available
+
+Add keycloak config environment variable
+
+```
+KEYCLOAK_CONFIG_FILE= `/opt/keycloak`TODO
+```
