@@ -9,12 +9,11 @@ Roles are divided into two types. Resource roles which belong to the client the 
 [role="primary"]
 .Android
 ****
-. Retrieve the authenticated user:
+. Use the instance of the `AuthService` to retrieve the authenticated user:
 +
 [source,java]
 ----
-// authService already initialized.
-AuthService authService = MobileCore.getInstance().getService(AuthService.class);
+// authService already initialized
 UserPrincipal currentUser = authService.currentUser();
 ----
 
