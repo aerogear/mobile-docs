@@ -4,7 +4,8 @@ This association is called *binding* and once it's done, your mobile app can use
 
 NOTE: The association between a {mobile-client} and {service-name} Service uses the link:https://blog.openshift.com/asynchronous-bind-with-the-automation-broker/[Service Broker bind, window="_blank"] feature.
 
-To associate a {mobile-client} with a mobile service:
+== Prerequisites
+* You have registered a {mobile-client}. See xref:getting-started.adoc#registering[Registering a Mobile Client].
 
 include::{partialsdir}/generic-binding-procedure.adoc[]
 
