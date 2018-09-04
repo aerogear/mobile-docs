@@ -12,13 +12,40 @@ include::{partialsdir}/attributes.adoc[]
 * link:https://www.keycloak.org/docs/3.4/authorization_services/index.html#_policy_overview[Managing Policies in Keycloak]
 
 
-Role based authorization can be applied to Queries, Mutations, Subscriptions and individual fields in a GraphQL schema, when {sync-service} is used with Keycloak. This means it is possible to restrict individual fields and/or operations defined in the GraphQL schema to users with specific roles.
+Role based authorization can be applied to Queries, Mutations, Subscriptions and individual fields in a GraphQL schema, when {sync-service} is used with Keycloak. This means it is possible to restrict individual fields and/or operations defined in the GraphQL schema to users with specific roles in Keycloak.
 
-Take a publishing platform as an example. Role Based Authorization could be used to ensure only users with the role `editor` can perform the `editPublication` mutation. 
+Take a publishing platform as an example. Role Based Authorization could be used to ensure only users with the role `editor` can perform the `editPublication` mutation.
 
-== Using the `hasRole` Directive to Apply Role Based Authorization on a Schema
+{sync-service} currently supports authorization using **client** roles and **realm** roles defined in keycloak. Consult the Keycloak documentation to learn how to create roles.
 
-The following example demonstrates how the `hasRole` directive can be used to define role based authorization on various parts of a GraphQL schema. This example schema represents publishing application like a news or blog website.
+* link:https://www.keycloak.org/docs/4.3/server_admin/index.html#realm-roles[Realm Roles in Keycloak]
+* link:https://www.keycloak.org/docs/4.3/server_admin/index.html#client-roles[Client Roles in Keycloak]
+
+== The @hasRole Directive
+
+Role based authorization can be defined using the `@hasRole` directive. The `@hasRole` directive is a special annotation that can be applied to
+
+* Fields
+* Queries
+* Mutations
+* Subscriptions
+
+The `@hasRole` usage is as follows:
+
+* `@hasRole(role: String)`
+  * Example - `@hasRole(role: "admin])`
+  * If the authenticated user has the role `admin` they will be authorized.
+* `@hasRole(role: [String])`
+  * Example - `@hasRole(role: ["admin", "editor"])`
+  * If the authenticated user has **at least one of the roles** in the list, they will be authorized.
+
+**The default behaviour is to check client roles.** For example, `@hasRole(role: "admin")` will check that a user has a client role called `admin`.
+
+The syntax for checking a realm role is `@hasRole(role: "realm:<role>")`. For example, `@hasRole(role: "realm:admin")`. Using a list of roles, it is possible to check for both client and realm roles at the same time.
+
+== Example: Using the @hasRole Directive to Apply Role Based Authorization on a Schema
+
+The following example demonstrates how the `@hasRole` directive can be used to define role based authorization on various parts of a GraphQL schema. This example schema represents publishing application like a news or blog website.
 
 ----
 type Post {
@@ -65,12 +92,12 @@ There are two Mutations:
 
 === Role Based Authorization on Queries and Mutations
 
-In the example schema, the `hasRole` directive has been applied to the `editPost` and `deletePost` mutations. The same could be done on Queries.
+In the example schema, the `@hasRole` directive has been applied to the `editPost` and `deletePost` mutations. The same could be done on Queries.
 
 * Only users with the roles `editor` and/or `admin` are allowed to perform the `editPost` mutation.
 * Only users with the role `admin` are allowed to perform the `deletePost` mutation.
 
-This example shows how the `hasRole` directive can be used on various queries and mutations.
+This example shows how the `@hasRole` directive can be used on various queries and mutations.
 
 === Role Based Authorization on Fields
 
