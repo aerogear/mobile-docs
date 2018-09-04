@@ -41,8 +41,9 @@ NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be
 
 == Making secret available
 
-Add keycloak config environment variable
+By default secret is not visible to server application
+To point server to application please add new environment variable:
 
-```
+----
 KEYCLOAK_CONFIG_FILE= `/opt/keycloak`TODO
-```
+----
