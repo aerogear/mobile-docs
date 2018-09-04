@@ -34,7 +34,7 @@ A secret will be created as a result of this binding.
 == Making the secret available to the {sync-service} 
 
 * Select *View Secret* on the *Identity Management* details page
-* Select *Add to Application* and select the {sync-service} from the options
+* Select *Add to Application* and select the data-sync-server from the options
 * Select the *Volume* option and enter the following mount path: `/opt/keycloak`
 
 NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be configured to use the secret.
