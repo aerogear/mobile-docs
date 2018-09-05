@@ -1,7 +1,5 @@
 include::{partialsdir}/attributes.adoc[]
 
-include::{partialsdir}/attributes.adoc[]
-
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: sync_auth
 
