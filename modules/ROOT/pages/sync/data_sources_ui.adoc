@@ -49,7 +49,7 @@ NOTE: When you delete a data source, all resolvers that are attached to it will 
 === Create a New Data Source
 
 If no data source exists, a new data source can be created by clicking the *Add Data Source* button. Select the type of your data source from the dropdown.
-For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option]. Information about the Postgres option can be found xref:#in-memory-option[here].
+For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option]. Information about the Postgres option can be found xref:#postgres-option[here].
 
 [[in-memory-option]]
 === In Memory Data Sources
