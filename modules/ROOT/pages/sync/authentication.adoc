@@ -1,0 +1,25 @@
+include::{partialsdir}/attributes.adoc[]
+
+= Authentication for {sync-service} service
+
+== {sync-service} Authentication
+
+When user log in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
+
+[role="primary"]
+.Android
+****
+```
+MobileCore.getInstance().getHttpLayer().requestHeaderInterceptor().add(authService.getAuthHeaderProvider());
+```
+****
+
+[role="secondary"]
+.iOS
+****
+```
+if let transport = AgsSync.instance.transport {
+  transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
+}
+```
+****
