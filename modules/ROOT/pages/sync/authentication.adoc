@@ -2,9 +2,9 @@ include::{partialsdir}/attributes.adoc[]
 
 = Authentication for {sync-service} service
 
-== Using the {sync-service} SDK with {keycloak-service} SDK
+== {sync-service} Authentication
 
-When user login in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to preform requests to the {sync-service} backend.
+When user log in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
 
 [role="primary"]
 .Android
