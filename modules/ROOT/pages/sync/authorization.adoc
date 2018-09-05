@@ -6,7 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 
 == Prerequisites
 
-* xref:./binding_to_keycloak.adoc[Binding {sync-service} to Keycloak].
+* xref:data-sync.adoc#keycloak_binding[Binding {sync-service} to Keycloak].
 * link:https://www.keycloak.org/docs/3.4/getting_started/index.html#creating-a-realm-and-user[Creating a Realm in Keycloak].
 * link:https://www.keycloak.org/docs/3.4/authorization_services/index.html#_getting_started_hello_world_enabling_authz_services[Enabling Authorization Services in Keycloak].
 * link:https://www.keycloak.org/docs/3.4/authorization_services/index.html#_policy_overview[Managing Policies in Keycloak]
