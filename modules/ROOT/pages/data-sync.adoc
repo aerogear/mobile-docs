@@ -5,6 +5,7 @@ include::sync/index.adoc[leveloffset=0]
 == Setting Up the Data Sync Mobile Service
 include::sync/provisioning.adoc[leveloffset=2]
 include::sync/binding.adoc[leveloffset=2]
+[#keycloak_binding]
 include::sync/binding_to_keycloak.adoc[leveloffset=2]
 
 [#ui]
@@ -21,3 +22,5 @@ include::sync/adding-sync-to-your-app.adoc[leveloffset=+1]
 include::metrics/monitoring-sync.adoc[leveloffset=+1]
 [#auth]
 include::sync/authentication.adoc[leveloffset=+1]
+[#authorization]
+include::sync/authorization.adoc[leveloffset=+1]
