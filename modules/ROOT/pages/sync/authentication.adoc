@@ -4,10 +4,10 @@ include::{partialsdir}/attributes.adoc[]
 :context: sync_auth
 
 [id='{context}_authentication']
-= Authentication for {sync-service} 
+= Authentication for {sync-service}
 
 By default, {sync-service} does not provide any authentication and authorization mechanism.
-Users can configure {sync-service} to work with {keycloak-service} to provide authentication and 
+Users can configure {sync-service} to work with {keycloak-service} to provide authentication and
 authorization for their applications.
 
 == Prerequisites
@@ -16,9 +16,9 @@ authorization for their applications.
 * Ensure {keycloak-service} is xref:keycloak/provisioning.adoc[provisioned]
 * Ensure {keycloak-service} is xref:keycloak/coding.adoc[configured] to work with your mobile applications
 
-== Binding the {sync-service} service to a {keycloak-service} Instance
+== Binding the {sync-service} service to an {keycloak-service} Instance
 
-To benefit from authentication, developers need to connect (bind) {sync-service} into  {keycloak-service} Instance. 
+To benefit from authentication, developers need to connect (bind) {sync-service} into  {keycloak-service} Instance.
 
 == Creating the binding secret from a Keycloak Instance
 
@@ -31,7 +31,7 @@ To benefit from authentication, developers need to connect (bind) {sync-service}
 
 A secret will be created as a result of this binding.
 
-== Making the Secret available to the {sync-service} 
+== Making the Secret available to the {sync-service}
 
 * Select *View Secret* on the *Identity Management* details page
 * Select *Add to Application* and select the data-sync-server from the options
@@ -48,7 +48,7 @@ To point the server to the application, please add a new environment variable:
 KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
 ----
 
-== {sync-service} SDK Authentication 
+== {sync-service} SDK Authentication
 
 When user logs in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
 
