@@ -42,7 +42,7 @@ NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be
 == Making Secret available to application
 
 By default, the secret is not visible to the server application.
-o point the server to the application, please add a new environment variable:
+To point the server to the application, please add a new environment variable:
 
 ----
 KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
@@ -50,7 +50,7 @@ KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
 
 == {sync-service} SDK Authentication 
 
-When user log in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
+When user logs in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
 
 [role="primary"]
 .Android
