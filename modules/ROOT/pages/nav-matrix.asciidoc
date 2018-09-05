@@ -59,7 +59,6 @@ After choosing a mobile service, use the following table to navigate to the step
 |xref:sync/index.adoc[{sync-service}]
 |xref:sync/provisioning.adoc[Provisioning {sync-service}] 
 |xref:sync/binding.adoc[Binding to {sync-service}] 
-|xref:sync/auth.adoc[{sync-service} Authentication and Authorization]
 
 |xref:sync/adding-sync-to-your-app.adoc[Adding Sync to your App]
 |xref:sync/data_sources_ui.adoc[]
