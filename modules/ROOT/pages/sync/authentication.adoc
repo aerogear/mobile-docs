@@ -45,7 +45,7 @@ By default, the secret is not visible to the server application.
 o point the server to the application, please add a new environment variable:
 
 ----
-KEYCLOAK_CONFIG_FILE=/opt/keycloak
+KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
 ----
 
 == {sync-service} SDK Authentication 
