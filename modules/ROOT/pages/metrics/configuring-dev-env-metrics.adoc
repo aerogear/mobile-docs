@@ -1,11 +1,5 @@
-include::{partialsdir}/attributes.adoc[]
+= Configuring your Development Environment for the {metrics-service} Service
 
 :service-name: Metrics
 
-= Configuring your Development Environment for the {service-name} Service
-
-
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
-
-Metrics will be sent automatically from the mobile app once any of the components from {SDK} are installed.
-
