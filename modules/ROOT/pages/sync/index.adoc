@@ -1,0 +1,21 @@
+include::{partialsdir}/attributes.adoc[]
+
+:service-name: Data Sync
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-sync
+
+[id='{context}']
+= {sync-service}
+
+== Introduction
+
+include::{partialsdir}/generic-service-intros.adoc[tags=sync-service]
+
+include::./ref_terminology.adoc[leveloffset=+2]
+
+[id='{context}_additional-resources-{context}']
+
+=== Additional resources
+
+For more information, see the link:https://www.apollographql.com/docs/react/[Apollo Client Documentation]

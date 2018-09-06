@@ -87,3 +87,20 @@ The {device-security-service} service allows you to easily configure and manage 
 NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
 
 //end::device-security-service[]
+
+
+
+= {sync-service}
+//tag::sync-service[]
+
+NOTE: The Data Sync mobile service is currently in development. Current released version is {data-sync-version}.
+The software is available for you to use and investigate, however it might not work as expected and functionality might change over time.
+
+The {sync-service} service allows you to synchronize data between multiple mobile clients and easily query exactly the data you need.
+
+* Synchronize data between multiple clients
+* Define and connect your own data sources
+* Retrieve and update your records using GraphQL
+* Robust offline experience and good performance thanks to Apollo caching
+
+//end::sync-service[]
