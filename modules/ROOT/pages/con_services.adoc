@@ -12,7 +12,7 @@ The following services are available:
 * xref:mobile-metrics.adoc[{metrics-service}]
 * xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
 * xref:device-security.adoc[{device-security-service}]
-
+* xref:data-sync.adoc[{sync-service}]
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 
