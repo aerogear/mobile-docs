@@ -40,7 +40,7 @@ After choosing a mobile service, use the following table to navigate to the step
 |xref:metrics/index.adoc[{metrics-service}]
 |xref:metrics/provisioning.adoc[Provisioning {metrics-service}] 
 |xref:metrics/binding.adoc[Binding to {metrics-service}] 
-|xref:metrics/configuring-dev-env-metrics.adoc[Adding Metrics to your App]
+|xref:metrics/coding.adoc[Adding Metrics to your App]
 |xref:metrics/grafana-ui.adoc[{grafana-ui}] and xref:metrics/prometheus-ui.adoc[{prometheus-ui}]
 
 |xref:custom/index.adoc[{custom-service}]

@@ -1,0 +1,95 @@
+include::{partialsdir}/attributes.adoc[]
+
+include::configuring-dev-env-metrics.adoc[]
+
+== Setting up {metrics-service} service SDK
+
+=== Importing the libraries
+
+Metrics is included in all SDK modules, if you already use a component from the {SDK} in your app, you may skip this step.
+Otherwise, install the core package by following the next steps depending on your platform:
+
+[role="primary"]
+.Android
+
+****
+
+Add the following dependency in your app's *build.gradle*:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-core:{release-number}'
+}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. Add the dependency to your *Podfile*
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSCore', '{release-number}'
+end
+----
+
+. Update the dependencies by running in your terminal
++
+[source,bash]
+----
+$ pod install
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Install the following package:
++
+[source,bash]
+----
+$ npm install --save @aerogear/core
+----
+
+. Install `cordova-plugin-aerogear-metrics`:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-metrics
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. Install the specific packages for Android:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+----
++
+And for iOS:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+----
+****
