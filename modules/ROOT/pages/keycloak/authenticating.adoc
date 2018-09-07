@@ -117,12 +117,7 @@ IAuthService authService = MobileCore.Instance.GetService<IAuthService>();
 var authOptions = DependencyService.Get<IAuthenticateOptionsProvider>().GetOptions();
 authService.Authenticate(authOptions).ContinueWith(user =>
 {
-    // Get the authenticated User from the provided Task.
-    Console.WriteLine(user.Result);
-
-    // Change view to user details. No need to handle the user result here, it will be available through
-    // authService.CurrentUser()
-    Device.BeginInvokeOnMainThread(() => ((RootPage)(App.Current.MainPage)).ChangePage(new UserDetails()));
+    // Login success
 });
 ----
 ****
