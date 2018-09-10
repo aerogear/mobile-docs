@@ -15,7 +15,7 @@ Otherwise, install the core package by following the next steps depending on you
 ****
 
 Add the following dependency in your app's *build.gradle*:
-+
+
 [source,groovy,subs="attributes"]
 ----
 dependencies {
