@@ -17,6 +17,5 @@ The following services are available:
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 
 image::mobile-services-arch.png[]
-https://i.imgur.com/x6vrU07.png[Source]
 // Picture sourced from https://docs.google.com/drawings/d/1aFZinQb6UF8AuCisQ_xt0DsX75WxWC7a55ZiDT9Xwho/edit?usp=sharing
 
