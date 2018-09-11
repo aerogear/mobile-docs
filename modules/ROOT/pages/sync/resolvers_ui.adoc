@@ -65,6 +65,8 @@ For example, a request mapping to retrieve all the comments for a particular `No
 select * from Comments where NoteId = '{{ context.parent.id }}'
 ```
 
+NOTE: For in-memory data sources link:https://github.com/louischatriot/nedb[NeDB] is used. See link:https://github.com/louischatriot/nedb#api[NeDB API] to write request mappings.
+
 === Response Mapping Templates
 
 Use a response mapping to transform a result or extract certain properties from the result. As with request mappers, response mapper have access to a `context` object with the following format:

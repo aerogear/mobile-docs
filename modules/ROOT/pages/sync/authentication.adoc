@@ -48,6 +48,8 @@ To point the server to the application, please add a new environment variable:
 KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
 ----
 
+NOTE: When working with OpenShift with self-signed certificate, add NODE_TLS_REJECT_UNAUTHORIZED=0 environment variable to deployment config of data-sync-server, otherwise the Keycloak-protected Data Sync won't work - the playground will be unavailable.
+
 == {sync-service} SDK Authentication
 
 When user logs in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
