@@ -6,7 +6,7 @@ site:
   start_page: aerogear::getting-started
 content:
   sources:
-  - url: https://github.com/aerogear/mobile-docs.git
+  - url: https://github.com/pmacko1/mobile-docs.git
     branches: master
   - url: https://github.com/aerogear/mobile-security.git
     branches: master
@@ -23,3 +23,5 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
+output:
+  dir: ./public
