@@ -125,7 +125,7 @@ The Sync SDK provides a method to get a configured instance of the Apollo Client
 .Android
 ****
 ```
-SyncService.getInstance().getApolloClient()
+SyncClient.getInstance()
 ```        
 ****
 
@@ -145,9 +145,8 @@ AgsSync.instance.client
 Use the `Query` method from Apollo client to fire a query:
 
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
         .query(MyNotesQuery.builder().build())
         .enqueue(new ApolloCall.Callback<MyNotesQuery.Data>() {
             @Override
@@ -195,9 +194,8 @@ Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Clien
 Use the `Mutate` method from Apollo client to fire a mutation:
 
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
         .mutate(CreateNoteMutation.builder().text("The note text").build())
         .enqueue(new ApolloCall.Callback<CreateNoteMutation.Data>() {
             @Override
@@ -245,9 +243,8 @@ Use the `subscribe` method from Apollo client to fire a subscription
 .Android
 ****
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
         .subscribe(new NoteAddedSubscription())
         .execute(new ApolloSubscriptionCall.Callback<NoteAddedSubscription.Data>() {
             @Override
