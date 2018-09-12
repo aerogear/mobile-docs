@@ -5,4 +5,4 @@
 
 . Navigate to *Mobile Services* tab.
 +
-image::mobile-clients-services-all-unprovisioned.png[]
+image::mobile-clients-services-all-unbound.png[]

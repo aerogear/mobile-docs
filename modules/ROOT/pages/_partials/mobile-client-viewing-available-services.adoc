@@ -10,7 +10,7 @@ The *Mobile Services* tab in the {mobile-client} view shows the provisioned serv
 to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
 the *Create Binding* button.
 
-image::mobile-clients-services-all-unprovisioned.png[]
+image::mobile-clients-services-all-unbound.png[]
 
 If a service is bound to the {mobile-client} then details about the binding between the {mobile-client} and the
 service can be seen when expanding the service. These details differ for each service.
