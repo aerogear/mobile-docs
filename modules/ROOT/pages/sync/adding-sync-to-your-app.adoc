@@ -265,15 +265,16 @@ Use the `subscribe` method from Apollo client to fire a subscription
 SyncClient
         .getInstance()
         .subscribe(new NoteAddedSubscription())
-        .execute(new ApolloSubscriptionCall.Callback<NoteAddedSubscription.Data>() {
+        .execute(NoteAddedSubscription.Data.class)
+        .respondWith(new Responder<Response<NoteAddedSubscription.Data>>() {
             @Override
-            public void onResponse(Response<NoteAddedSubscription.Data> response) {
+            public void onResult(Response<NoteAddedSubscription.Data> response) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
-                /// Oops! Something went wrong.
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
             }
         });
 ```        
