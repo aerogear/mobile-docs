@@ -10,7 +10,7 @@ This section will help you to set up the {sync-service} service SDK in your App.
 .Android
 ****
 ```
-implementation "org.aerogear:aerogear-sync:2.1.0-alpha.1"
+implementation "org.aerogear:android-sync:2.1.0-alpha.1"
 ```
 ****
 
