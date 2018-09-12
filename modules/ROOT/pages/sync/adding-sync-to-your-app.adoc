@@ -9,6 +9,23 @@ This section will help you to set up the {sync-service} service SDK in your App.
 [role="primary"]
 .Android
 ****
+Add `apollo-gradle-plugin` dependency to your project's `build.gradle` file:
+```
+buildscript {
+  repositories {
+    ...
+  }
+  dependencies {
+    classpath 'com.apollographql.apollo:apollo-gradle-plugin:0.5.0'
+  }
+}
+```
+Apply the plugin in your app module's `build.gradle` file:
+```
+apply plugin: 'com.android.application'
+apply plugin: 'com.apollographql.android'
+```
+Add `android-sync` dependency to your app module's `build.gradle` file:
 ```
 implementation "org.aerogear:android-sync:2.1.0-alpha.1"
 ```
@@ -148,14 +165,15 @@ Use the `Query` method from Apollo client to fire a query:
 SyncClient
         .getInstance()
         .query(MyNotesQuery.builder().build())
-        .enqueue(new ApolloCall.Callback<MyNotesQuery.Data>() {
+        .execute(MyNotesQuery.Data.class)
+        .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
             @Override
-            public void onResponse(Response<MyNotesQuery.Data> response) {
+            public void onResult(Response<MyNotesQuery.Data> value) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
+            public void onException(Exception exception) {
                 /// Oops! Something went wrong.
             }
         });
@@ -196,16 +214,17 @@ Use the `Mutate` method from Apollo client to fire a mutation:
 ```
 SyncClient
         .getInstance()
-        .mutate(CreateNoteMutation.builder().text("The note text").build())
-        .enqueue(new ApolloCall.Callback<CreateNoteMutation.Data>() {
+        .mutation(CreateNoteMutation.builder().text("The note text").build())
+        .execute(CreateNoteMutation.Data.class)
+        .respondWith(new Responder<Response<TestMutMutation.Data>>() {
             @Override
-            public void onResponse(Response<CreateNoteMutation.Data> response) {
+            public void onResult(Response<TestMutMutation.Data> value) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
-                /// Oops! Something went wrong.
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
             }
         });
 ```        
