@@ -9,8 +9,25 @@ This section will help you to set up the {sync-service} service SDK in your App.
 [role="primary"]
 .Android
 ****
+Add `apollo-gradle-plugin` dependency to your project's `build.gradle` file:
 ```
-implementation "org.aerogear:aerogear-sync:2.1.0-alpha.1"
+buildscript {
+  repositories {
+    ...
+  }
+  dependencies {
+    classpath 'com.apollographql.apollo:apollo-gradle-plugin:0.5.0'
+  }
+}
+```
+Apply the plugin in your app module's `build.gradle` file:
+```
+apply plugin: 'com.android.application'
+apply plugin: 'com.apollographql.android'
+```
+Add `android-sync` dependency to your app module's `build.gradle` file:
+```
+implementation "org.aerogear:android-sync:2.1.0-alpha.1"
 ```
 ****
 
@@ -125,7 +142,7 @@ The Sync SDK provides a method to get a configured instance of the Apollo Client
 .Android
 ****
 ```
-SyncService.getInstance().getApolloClient()
+SyncClient.getInstance()
 ```        
 ****
 
@@ -145,18 +162,18 @@ AgsSync.instance.client
 Use the `Query` method from Apollo client to fire a query:
 
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
         .query(MyNotesQuery.builder().build())
-        .enqueue(new ApolloCall.Callback<MyNotesQuery.Data>() {
+        .execute(MyNotesQuery.Data.class)
+        .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
             @Override
-            public void onResponse(Response<MyNotesQuery.Data> response) {
+            public void onResult(Response<MyNotesQuery.Data> value) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
+            public void onException(Exception exception) {
                 /// Oops! Something went wrong.
             }
         });
@@ -195,19 +212,19 @@ Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Clien
 Use the `Mutate` method from Apollo client to fire a mutation:
 
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
-        .mutate(CreateNoteMutation.builder().text("The note text").build())
-        .enqueue(new ApolloCall.Callback<CreateNoteMutation.Data>() {
+        .mutation(CreateNoteMutation.builder().text("The note text").build())
+        .execute(CreateNoteMutation.Data.class)
+        .respondWith(new Responder<Response<TestMutMutation.Data>>() {
             @Override
-            public void onResponse(Response<CreateNoteMutation.Data> response) {
+            public void onResult(Response<TestMutMutation.Data> value) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
-                /// Oops! Something went wrong.
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
             }
         });
 ```        
@@ -245,19 +262,19 @@ Use the `subscribe` method from Apollo client to fire a subscription
 .Android
 ****
 ```
-SyncService
+SyncClient
         .getInstance()
-        .getApolloClient()
         .subscribe(new NoteAddedSubscription())
-        .execute(new ApolloSubscriptionCall.Callback<NoteAddedSubscription.Data>() {
+        .execute(NoteAddedSubscription.Data.class)
+        .respondWith(new Responder<Response<NoteAddedSubscription.Data>>() {
             @Override
-            public void onResponse(Response<NoteAddedSubscription.Data> response) {
+            public void onResult(Response<NoteAddedSubscription.Data> response) {
                 // Do some magic with the response
             }
 
             @Override
-            public void onFailure(ApolloException e) {
-                /// Oops! Something went wrong.
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
             }
         });
 ```        
