@@ -5,7 +5,8 @@ include::{partialsdir}/attributes.adoc[]
 = Binding a {mobile-client} 
 
 include::{partialsdir}/generic-binding.adoc[]
-NOTE: Use `public` when binding a {mobile-client} to {service-name} Service, as it enables {mobile-client} to request tokens ({mobile-client} doesn't need to verify tokens). Use `bearer` when binding {service-name} Service to other services (If the other service to be bound does not need authentication.).
++
+NOTE: Use `public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `bearer`.
 
 The {service-name} service will now be expandable, details about the service can be viewed.
 
