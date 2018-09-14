@@ -17,7 +17,7 @@ NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift 
 +
 NOTE: Installation on macOS with Docker Machine has not been tested, use the link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[Docker for Mac] instructions when installing OpenShift.
 +
-** Use link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.9 or later
+** Use link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.9
 +
 IMPORTANT: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
 +
