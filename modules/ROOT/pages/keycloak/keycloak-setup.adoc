@@ -24,7 +24,7 @@ It is recommended to use the Bundle Identifier of the iOS app as the schema of t
 [role="secondary"]
 .Cordova
 ****
-The schema of the redirect url should be `\http://localhost/*`.
+Redirect url is `\http://localhost/\*`, without `:/callback`. Web Origin is `\http://localhost/*`.
 ****
 [role="secondary"]
 .Xamarin
