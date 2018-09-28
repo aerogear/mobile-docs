@@ -11,7 +11,7 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 * [x] A Google account
-* [x] Access to the Firebase console. See link:google-setup.html[Firebase Setup] to get started.
+* [x] Access to the Firebase console. Refer to link:https://firebase.google.com/docs/[Firebase Docs].
 ****
 
 [role="secondary"]
@@ -19,7 +19,7 @@ include::{partialsdir}/attributes.adoc[]
 
 ****
 * [x] An Apple Developer account
-* [x] An APNs client TLS certificate. Have a look at link:../push-notifications.html#proc_preparing-ups-for-use-with-ios_preparing-ups-for-use-with-ios[APNs Setup] for further instructions.
+* [x] An APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
 ****
 
 
