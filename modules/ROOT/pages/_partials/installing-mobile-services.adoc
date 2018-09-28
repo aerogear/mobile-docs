@@ -124,14 +124,14 @@ image:catalog-mobile-clients.png[]
 = Additional resources
 
 == Troubleshooting
-If you have problems running {org-name} {product-name}, run the installer using the --debug option to capture as much information as possible:
+If you have problems running {org-name} {product-name}, run the installer using the '--debug' option to capture as much information as possible:
 ----
 $ ./installer/install.sh --debug
 ----
 
 Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
 
-This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses, an example of the ports you may want to add to your firewall are:
+This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses an example of the ports you may want to add to your firewall are:
 
 NOTE: The following command will only add the specified port for the current session. If you reload your firewall or restart your machine the specified port will be restricted again.
 ----
