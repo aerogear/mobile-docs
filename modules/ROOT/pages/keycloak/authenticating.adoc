@@ -204,7 +204,7 @@ To logout invoke the `Logout` method:
 var authService = MobileCore.Instance.GetService<IAuthService>();
 authService.Logout(authService.CurrentUser()).ContinueWith(result =>
 {
-    Device.BeginInvokeOnMainThread(() => ((RootPage)(App.Current.MainPage)).ChangePage(new GoodbyePage()));
+    // user is now logged out
 });
 ----
 ****
