@@ -124,7 +124,7 @@ image:catalog-mobile-clients.png[]
 = Additional resources
 
 == Troubleshooting
-If you have problems running {org-name} {product-name}, run the installer using the '--debug' option to capture as much information as possible:
+If you have problems running {org-name} {product-name}, run the installer using the `--debug` option to capture as much information as possible:
 ----
 $ ./installer/install.sh --debug
 ----
