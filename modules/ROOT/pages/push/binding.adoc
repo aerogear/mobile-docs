@@ -25,16 +25,17 @@ include::{partialsdir}/attributes.adoc[]
 
 include::{partialsdir}/generic-binding.adoc[]
 
-When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
-Those credentials need to be provided in the binding dialog.
+- Provide the credentials When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
+Provide these in the binding dialog.
 
-Pick a *Mobile Client Type*. Fill out the required fields:
-
++
+Choose a *Mobile Client Type*. Fill out the required fields:
++
 [role="primary"]
 .Android
 
 ****
-- Provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console
+- Enter a *Server Key* and a *Sender ID*. Both are present in the Firebase console.
 - Ensure that you have selected `Android` in the `Mobile Client Type` dropdown menu.
 ****
 
@@ -43,7 +44,8 @@ Pick a *Mobile Client Type*. Fill out the required fields:
 
 ****
 - Ensure that you have selected `iOS` in the `Mobile Client Type` dropdown menu.
-- Acquire an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide]. The certificate needs to be encoded in base64 before copying it into the field labeled `iOS .p12 file`. 
+- Obtain an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide]. 
+- Encode the certificate using base64 and copy the encoded certificate into the field labeled `iOS .p12 file`. 
 +
 If you are using macOS, run:
 +
@@ -51,7 +53,8 @@ If you are using macOS, run:
 cat <path/to/your/.p12> | base64
 ----
 +
-If you are using Linux, chances are that you are using a version of the base64 tool that does line wrapping. You need to disable this:
+If you are using Linux, chances are that you are using a version of the base64 tool that does line wrapping.
+Disable base64 line wrapping by using `--wrap=0` flag:
 +
 ----
 cat <path/to/your/.p12> | base64 --wrap=0
@@ -59,6 +62,6 @@ cat <path/to/your/.p12> | base64 --wrap=0
 
 ****
 
-After clicking `Bind`, your variant will be created in UPS and you should see a new binding for your mobile client.
-
+. Click *Bind*.
+UPS creates a new variant and the OpenShift console displays a new binding for your mobile client.
 
