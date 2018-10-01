@@ -13,7 +13,7 @@ For this guide, assume that your two apps are called **Email App** and **Messagi
 
 . Ensure the "Remember Me" option in Keycloak is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
 
-. Now that your two iOS apps and Keycloak clients are setup, sign into the *Email App* with the user you have previously created. You should be redirected to your device browser which should have loaded the Keycloak login page.
+. Now that your two apps and Keycloak clients are setup, sign into the *Email App* with the user you have previously created. You should be redirected to your device browser which should have loaded the Keycloak login page.
 
 . Next, enter in your credentials, make sure check the *Remember Me* option and login. You have now been authenticated on the *Email App* via the browser.
 
