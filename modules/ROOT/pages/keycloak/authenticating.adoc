@@ -162,6 +162,7 @@ authService.logout(currentUser, new Callback<UserPrincipal>() {
 [source,swift]
 ----
 func onLogoutComplete(_: Error?) {
+    // User Logged Out Successfully and local Auth tokens were Deleted
     ...
 }
 ----
@@ -189,7 +190,7 @@ To logout invoke the `logout` function:
 [source,javascript]
 ----
 authService.logout().then(() => {
-    // When the logout succeeded the local tokens obtained during authentication are deleted
+    // User Logged Out Successfully and local Auth tokens were Deleted
 });
 ----
 
@@ -204,7 +205,7 @@ To logout invoke the `Logout` method:
 var authService = MobileCore.Instance.GetService<IAuthService>();
 authService.Logout(authService.CurrentUser()).ContinueWith(result =>
 {
-    // user is now logged out
+    // User Logged Out Successfully and local Auth tokens were Deleted
 });
 ----
 ****
