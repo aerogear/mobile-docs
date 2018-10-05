@@ -19,6 +19,15 @@ dependencies {
     implementation "org.aerogear:android-auth:{release-number}"
 }
 ----
+. Additionally, to prevent build errors, also add the following in your app's *build.gradle*:
+[source,groovy,subs="attributes"]
++
+----
+compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+}
+----
 ****
 
 [role="secondary"]
