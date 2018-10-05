@@ -41,6 +41,6 @@ NOTE: When defining https://graphql.org/learn/schema/#scalar-types[custom scalar
 After saving a schema the structure view on the right side of the `Schema` tab will be updated. If your schema contains errors you will see the error message there.
 Otherwise you will see a list of all your types, queries, mutations and subscriptions. This view is read only and can be used to quickly browse a schema.
 
-= Playground
+== Playground
 
 A playground is provided which allows you to test your changes to the schema. To use the playground, navigate to the tab in the UI and then write any queries or mutations you wish. Some useful features of the playground include code completion, query variables and full http header support. For more information about the playground and what is possible please visit link:https://github.com/prisma/graphql-playground[Prisma Playground].
