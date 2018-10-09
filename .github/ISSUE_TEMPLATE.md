@@ -1,17 +1,17 @@
-## Description
-Add a brief and meaningful description.
+### Description
+<!-- A brief description of the problem. -->
 
-## Expected Behavior
-Describe the expected behaviour. 
+### Actual result
+<!--Describe what happened when you followed the current documentation.-->
 
-## Actual Behavior
-Describe the current/actual behaviour.
+### Expected result
+<!--Describe what you had expected to happen when you followed the documentation.-->
 
-## Environment
+### Testing environment
 
 * Operating system:
 * OpenShift versions:
 * Project Versions: 
 
-## Steps to reproduce
-Describe all steps and pre-requirements which are required to be performed in order to reproduce this scenario. ( E.g 1. Action, 2. Action ... )
+### Steps to reproduce
+<!--Describe all steps and pre-requirements which are required to be performed in order to reproduce this scenario.-->
