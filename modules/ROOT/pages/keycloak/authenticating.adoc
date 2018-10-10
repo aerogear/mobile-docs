@@ -122,6 +122,54 @@ authService.Authenticate(authOptions).ContinueWith(user =>
 ----
 ****
 
+== Refreshing the authentication token
+
+Everytime a user is authenticated, both an access and a refresh token get generated. They both have a lifespan that can be configured on the authentication server.
+If the refresh token is still valid, the authentication token can be refreshed even if it is currently expired.
+This operation is supported and can be automatically done with the Aerogear SDK as exemplificated below.
+
+[role="primary"]
+.Android
+****
+
+Retrieve the current user and refresh, if needed and still possible, its access token:
+
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser(true);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Retrieve the current user and refresh, if needed and still possible, its access token:
+
+[source,swift]
+----
+do {
+    try self.auth.currentUser(autoRefresh: true) { (currentUser, error) in
+        // If error is nil, currentUser is now refreshed
+    }
+} catch {
+    // An error has occurred trying to reach the authentication server
+}
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+Retrieve the current user and refresh, if needed and still possible, its access token:
+
+[source,csharp]
+----
+var authService = MobileCore.Instance.GetService<IAuthService>();
+var currentUser = await authService.CurrentUser(true);
+----
+****
+
+
 == Adding Log Out Option to your Mobile App
 
 The following section describes how to perform a logout.
