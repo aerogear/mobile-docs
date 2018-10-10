@@ -145,7 +145,7 @@ Retrieve the current user and refresh, if needed and still possible, its access 
 [source,swift]
 ----
 do {
-    try self.auth.currentUser(autoRefresh: true) { (currentUser, error) in
+    try AgsAuth.instance.currentUser(autoRefresh: true) { (currentUser, error) in
         // If error is nil, currentUser is now refreshed
     }
 } catch {
