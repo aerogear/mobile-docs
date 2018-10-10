@@ -157,7 +157,7 @@ do {
 [role="secondary"]
 .Cordova
 ****
-Get the keycloak client object and refresh, if needed and still possible, the access token:
+Get the keycloak adapter object and refresh, if needed and still possible, the access token:
 
 [source,javascript]
 ----
@@ -165,6 +165,8 @@ authService.service.extract().updateToken(30).then(() => {
     // Token has been refreshed
 });
 ----
+
+More information about the keycloak javascript adapter can be found link:https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html[here]
 ****
 
 [role="secondary"]
