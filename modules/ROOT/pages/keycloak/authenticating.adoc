@@ -115,10 +115,7 @@ authService.login().then(() => {
 IAuthService authService = MobileCore.Instance.GetService<IAuthService>();
 
 var authOptions = DependencyService.Get<IAuthenticateOptionsProvider>().GetOptions();
-authService.Authenticate(authOptions).ContinueWith(user =>
-{
-    // Login success
-});
+var user = await authService.Authenticate(authOptions);
 ----
 ****
 
@@ -251,10 +248,7 @@ To logout invoke the `Logout` method:
 [source,csharp]
 ----
 var authService = MobileCore.Instance.GetService<IAuthService>();
-authService.Logout(authService.CurrentUser()).ContinueWith(result =>
-{
-    // User Logged Out Successfully and local Auth tokens were Deleted
-});
+var result = await authService.Logout(authService.CurrentUser());
 ----
 ****
 
