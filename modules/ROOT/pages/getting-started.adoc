@@ -11,6 +11,9 @@ include::{partialsdir}/attributes.adoc[]
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 
+IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.
+
+
 This guide shows you how to:
 
 * Set up {org-name} {product-name} on OpenShift
