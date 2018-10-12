@@ -16,7 +16,7 @@ NOTE: The mobile-services.json file is the link between your provisioned service
 
 ****
 
-Locate this file at the following location in your application project:
+Move this file to the following location in your application project:
 
 `app/src/main/assets/mobile-services.json`
 
@@ -27,11 +27,11 @@ Locate this file at the following location in your application project:
 
 ****
 
-Locate this file at the following location in your application project:
+Move this file to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
-NOTE: Make sure this file is visible in Xcode, add the file if necessary.
+NOTE: Ensure this file is visible in Xcode, add the file if necessary.
 
 ****
 
@@ -40,7 +40,7 @@ NOTE: Make sure this file is visible in Xcode, add the file if necessary.
 
 ****
 
-Locate this file at the following location in your application project:
+Move this file to the following location in your application project:
 
 `src/mobile-services.json`
 
@@ -51,7 +51,7 @@ Locate this file at the following location in your application project:
 
 ****
 
-Locate this file at the following location in your application project:
+Move this file to the following location in your application project:
 
 `Resources/mobile-services.json`
 
