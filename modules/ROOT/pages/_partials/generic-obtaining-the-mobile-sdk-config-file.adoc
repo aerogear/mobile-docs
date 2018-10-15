@@ -31,7 +31,7 @@ Move mobile-services.json to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
-NOTE: Ensure that mobile-services.json is visible in Xcode, add this file if necessary.
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
 
 ****
 
