@@ -136,7 +136,7 @@ Apollo will automatically create a file called API.swift with classes `MyNotesQu
 
 == Using the Sync Mobile Service
 
-The Sync SDK provides a method to get a configured instance of the Apollo Client
+Use the AeroGear SDK sync library to provision a configured instance of the sync client (SyncClient):
 
 [role="primary"]
 .Android
@@ -159,50 +159,27 @@ AgsSync.instance.client
 [role="primary"]
 .Android
 ****
-
-You can use a async method `query` from SyncClient
-
-SyncClient
-    .getInstance()
-    .query(MyNotesQuery.builder().build())
-    .execute(MyNotesQuery.Data.class)
-    .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
-        @Override
-        public void onResult(Response<MyNotesQuery.Data> response) {
-                // Do some magic with the response
-            }
-        }
-
-        @Override
-        public void onException(Exception exception) {
-            /// Oops! Something went wrong.
-        }
-    });
-
-
-Or use the `Query` method from Apollo client to fire a query:
+Use the `query` method from SyncClient:
 
 ```
 SyncClient
-    .getInstance()
-    .query(MyNotesQuery.builder().build())
-    .execute(MyNotesQuery.Data.class)
-    .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
-        @Override
-        public void onResult(Response<MyNotesQuery.Data> response) {
-            // Do some magic with the response.
-        }
+        .getInstance()
+        .query(MyNotesQuery.builder().build())
+        .execute(MyNotesQuery.Data.class)
+        .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
+            @Override
+            public void onResult(Response<MyNotesQuery.Data> value) {
+                // Do some magic with the response.
+            }
 
-        @Override
-        public void onException(Exception exception) {
-            /// Oops! Something went wrong.
-        }
-    });
+            @Override
+            public void onException(Exception exception) {
+                /// Oops! Something went wrong.
+            }
+        });
 ```        
 
 NOTE: The `MyNotesQuery` class is generated from the example schema above
-
-Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
@@ -230,50 +207,27 @@ Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Clien
 [role="primary"]
 .Android
 ****
-
-You can use a async method `mutate` from SyncClient
-
-```
-SyncClient
-    .getInstance()
-    .mutation(CreateNoteMutation.builder().text("The note text").build())
-    .execute(CreateNoteMutation.Data.class)
-    .respondWith(new Responder<Response<CreateNoteMutation.Data>>() {
-        @Override
-        public void onResult(Response<CreateNoteMutation.Data> response) {
-            // Do some magic with the response
-        }
-
-        @Override
-        public void onException(Exception exception) {
-            // Oops! Something went wrong.
-        }
-    });
-```
-
-Or use the `Mutate` method from Apollo client to fire a mutation:
+Use the `mutate` method from SyncClient:
 
 ```
 SyncClient
-    .getInstance()
-    .mutation(CreateNoteMutation.builder().text("The note text").build())
-    .execute(CreateNoteMutation.Data.class)
-    .respondWith(new Responder<Response<TestMutMutation.Data>>() {
-        @Override
-        public void onResult(Response<TestMutMutation.Data> value) {
-            // Do some magic with the response.
-        }
+        .getInstance()
+        .mutation(CreateNoteMutation.builder().text("The note text").build())
+        .execute(CreateNoteMutation.Data.class)
+        .respondWith(new Responder<Response<TestMutMutation.Data>>() {
+            @Override
+            public void onResult(Response<TestMutMutation.Data> value) {
+                // Do some magic with the response.
+            }
 
-        @Override
-        public void onException(Exception exception) {
-            // Oops! Something went wrong.
-        }
-    });
+            @Override
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
+            }
+        });
 ```        
 
 NOTE: The `CreateNoteMutation` class is generated from the example schema above
-
-Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
@@ -298,25 +252,7 @@ Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Clien
 
 === Subscription
 
-You can use a utilite method `subscribe` from SyncClient
-
-SyncClient
-    .getInstance()
-    .subscribe(new NoteAddedSubscription())
-    .execute(NoteAddedSubscription.Data.class)
-    .respondWith(new Responder<Response<NoteAddedSubscription.Data>>() {
-        @Override
-        public void onResult(Response<NoteAddedSubscription.Data> response) {
-            // Do some magic with the response.
-        }
-
-        @Override
-        public void onException(Exception exception) {
-            // Oops! Something went wrong.
-        }
-    });
-
-or the `subscribe` method from Apollo client to fire a subscription
+Use the `subscribe` method from SyncClient:
 
 [role="primary"]
 .Android
@@ -340,8 +276,6 @@ SyncClient
 ```        
 
 NOTE: The `NoteAddedSubscription` class is generated from the example schema above
-
-Check the link:https://github.com/apollographql/apollo-android/[Apollo GraphQL Client for Android] for a complete list of options.
 ****
 
 [role="secondary"]
