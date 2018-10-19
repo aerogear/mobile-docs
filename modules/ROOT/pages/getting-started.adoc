@@ -28,9 +28,9 @@ Make sure you satisfy all the requirements listed in the xref:prerequisites[] an
 include::{partialsdir}/installing-mobile-services.adoc[leveloffset=1]
 // end installing-mobile-services.adoc[leveloffset=1]
 [[registering]]
-// start {partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-// end {partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
+// start registering-a-mobile-app.adoc[leveloffset=1]
+include::registering-a-mobile-app.adoc[leveloffset=1]
+// end registering-a-mobile-app.adoc[leveloffset=1]
 [[provisioning]]
 == Provisioning your First Service
 
