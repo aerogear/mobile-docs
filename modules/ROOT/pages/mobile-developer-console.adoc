@@ -2,7 +2,7 @@
 include::{partialsdir}/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-= {mobile-client}s in OpenShift
+= Mobile Developer Console
 :toc:
 
 == Introduction
