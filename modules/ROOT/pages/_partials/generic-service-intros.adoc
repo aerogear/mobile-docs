@@ -60,21 +60,6 @@ The {mobile-ci-cd-service} service allows you to automate the building of your n
 //end::mobilecicd-service[]
 
 
-// change to {runtimeconnector-service} maybe
-
-= {custom-service}
-
-//tag::runtimeconnector-service[]
-
-The {custom-service} service allows you connect your mobile apps to your own back-end API servers.
-
-* Bind your mobile client to custom back-end API services and business logic
-* Ability to add custom configuration for a back-end service, which becomes accessible from your Mobile App
-
-//end::runtimeconnector-service[]
-
-
-
 // change to {device-security} maybe
 = {device-security-service}
 //tag::device-security-service[]

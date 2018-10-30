@@ -43,13 +43,6 @@ After choosing a mobile service, use the following table to navigate to the step
 |xref:metrics/coding.adoc[Adding Metrics to your App]
 |xref:metrics/grafana-ui.adoc[{grafana-ui}] and xref:metrics/prometheus-ui.adoc[{prometheus-ui}]
 
-|xref:custom/index.adoc[{custom-service}]
-|xref:custom/provisioning.adoc[Provisioning {custom-service}] 
-|xref:custom/binding.adoc[Binding to {custom-service}] 
-|xref:custom/configuring-dev-env-custom.adoc[Using a {custom-service}]
-|N/A
-
-
 |xref:mobilecicd/index.adoc[{mobile-ci-cd-service}]
 |xref:mobilecicd/provisioning.adoc[Provisioning {mobile-ci-cd-service}] 
 |N/A
