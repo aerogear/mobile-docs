@@ -101,7 +101,7 @@ Run the following commands:
 ----
 $ oc login # login to the OpenShift Cluster
 $ oc get projects # list available Projects
-$ oc use myproject # switch to the project where the prometheus and the custom service are located
+$ oc use myproject # switch to the project where the where Prometheus is located
 $ oc get configmaps # list available Config Maps
 $ oc edit configmap prometheus-configmap # open the prometheus configmap in $OC_EDITOR or $EDITOR
 ----

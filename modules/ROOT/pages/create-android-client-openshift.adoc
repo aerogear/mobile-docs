@@ -28,8 +28,4 @@ Configuration]
 == Next Steps
 
 Now that the Android {mobile-client} is available, it is now possible to
-start integrating your Android App with other services. Check out some
-of these guides:
-
-* link:./integrate-android-app-with-custom-service.adoc[Integrate an
-Android Application with your own back-end service in OpenShift]
+start integrating your Android App with other services.

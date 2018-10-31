@@ -15,5 +15,4 @@ Binding:: You can associate a Mobile Service with a mobile app to allow your mob
 Mobile Services configuration file:: The `mobile-services.json` file provides the information your mobile app needs to use {product-name}.
 
 Back-end:: Your server-side code, typically Node.js or Java.
-You can register the URL for each back-end service while provisioning the {custom-service} service. This URL is available to the mobile app from the `mobile-services.json` file.
 

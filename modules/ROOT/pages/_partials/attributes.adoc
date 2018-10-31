@@ -34,9 +34,6 @@
 :mobile-ci-cd-service: Mobile CI/CD
 :mobilecicd-ui: Jenkins UI
 
-// Custom Runtime Service
-//:custom-service: Runtime Connector
-
 // Device Security
 :device-security-service: Device Security
 
