@@ -270,6 +270,32 @@ var result = await authService.Logout(authService.CurrentUser());
 
 NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
 
+== Using auth with backend
+
+To authenticate service on existing backend server users need to supply additional token:
+
+[source]
+----
+Authorization: BEARER Yourtoken
+----
+
+Auth SDK also provides _AuthHeaderProvider_ class that can be used for this purpose.
+
+[role="primary"]
+.Android
+****
+
+. Add the `AuthHeaderProvider` instance provided by the Aerogear SDK to the current list of providers:
++
+[source,java]
+----
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
+----
+****
+
 [discrete]
 == Additional Information
 
