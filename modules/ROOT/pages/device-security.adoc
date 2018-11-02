@@ -5,6 +5,7 @@
 include::security/index.adoc[leveloffset=1]
 // end security/index.adoc[leveloffset=1]
 // start security/coding.adoc[leveloffset=1]
+[#setup]
 include::security/coding.adoc[leveloffset=1]
 // end security/coding.adoc[leveloffset=1]
 [#device-trust]
