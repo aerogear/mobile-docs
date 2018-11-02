@@ -279,7 +279,7 @@ To authenticate service on existing backend server users need to supply addition
 Authorization: BEARER Yourtoken
 ----
 
-Auth SDK also provides _AuthHeaderProvider_ class that can be used for this purpose.
+SDK also provides number of helpers to build authentication headers that will provide way to refresh it once token is outdated.
 
 [role="primary"]
 .Android
@@ -289,11 +289,14 @@ Auth SDK also provides _AuthHeaderProvider_ class that can be used for this purp
 +
 [source,java]
 ----
-MobileCore.getInstance()
-          .getHttpLayer()
-          .requestHeaderInterceptor()
-          .add(authService.getAuthHeaderProvider());
+authService.getAuthHeaderProvider()
 ----
+****
+
+[role="secondary"]
+.iOS
+****
+authService.getAuthHeaderProvider()
 ****
 
 [discrete]
