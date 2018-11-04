@@ -1,8 +1,13 @@
-= Using the Push Notifications Mobile Service
+// start {partialsdir}/attributes.adoc[]
+include::{partialsdir}/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
 :toc:
 
+= Using the Push Notifications Mobile Service
+
 // start push/index.adoc[leveloffset=1]
-include::push/index.adoc[leveloffset=1]
+include::_partials/push/index.adoc[leveloffset=1]
 // end push/index.adoc[leveloffset=1]
 
 [[setup]]
@@ -15,29 +20,29 @@ include::{partialsdir}/generic-provisioning-pre-req.adoc[]
 
 == Setting Up the Push Notifications Mobile Service
 // start push/google-setup.adoc[leveloffset=2]
-include::push/google-setup.adoc[leveloffset=2]
+include::_partials/push/google-setup.adoc[leveloffset=2]
 // end push/google-setup.adoc[leveloffset=2]
 // start push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
-include::push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
+include::_partials/push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
 // end push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
 // start push/provisioning.adoc[leveloffset=2]
-include::push/provisioning.adoc[leveloffset=2]
+include::_partials/push/provisioning.adoc[leveloffset=2]
 // end push/provisioning.adoc[leveloffset=2]
 // start push/binding.adoc[leveloffset=2]
-include::push/binding.adoc[leveloffset=2]
+include::_partials/push/binding.adoc[leveloffset=2]
 // end push/binding.adoc[leveloffset=2]
 // start push/coding.adoc[leveloffset=2]
-include::push/coding.adoc[leveloffset=2]
+include::_partials/push/coding.adoc[leveloffset=2]
 // end push/coding.adoc[leveloffset=2]
 [#push-ui]
 // start push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
-include::push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
+include::_partials/push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
 // end push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
 [#sending]
 // start push/proc_sending-a-push-notification.adoc[leveloffset=1]
-include::push/proc_sending-a-push-notification.adoc[leveloffset=1]
+include::_partials/push/proc_sending-a-push-notification.adoc[leveloffset=1]
 // end push/proc_sending-a-push-notification.adoc[leveloffset=1]
 [#handling]
 // start push/handling-push-notifications.adoc[leveloffset=1]
-include::push/handling-push-notifications.adoc[leveloffset=1]
+include::_partials/push/handling-push-notifications.adoc[leveloffset=1]
 // end push/handling-push-notifications.adoc[leveloffset=1]

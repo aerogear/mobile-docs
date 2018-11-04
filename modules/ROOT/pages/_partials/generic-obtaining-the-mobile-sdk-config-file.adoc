@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File

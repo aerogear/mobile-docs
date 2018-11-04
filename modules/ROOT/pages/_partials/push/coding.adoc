@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 
 include::configuring-dev-env-push.adoc[leveloffset=1]
@@ -24,7 +24,7 @@ You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple
 ****
 
 === Importing the libraries
-include::{partialsdir}/attributes.adoc[]
+
 
 [role="primary"]
 .Android

@@ -1,4 +1,4 @@
-//include::{partialsdir}/attributes.adoc[]
+//
 //[[google-setup]]
 = Obtaining Firebase Cloud Messaging Credentials
 

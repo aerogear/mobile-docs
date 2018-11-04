@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 = Registering a {unifiedpush-service} client
 
 This document describes the functionality of a client SDK that works

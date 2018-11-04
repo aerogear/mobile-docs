@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 = Analyzing App Usage
 

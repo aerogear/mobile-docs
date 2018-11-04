@@ -1,6 +1,6 @@
 //note that this file is orphaned, doesn't have a place in nav.adoc
 
-include::{partialsdir}/attributes.adoc[]
+
 
 = Additional configuration for Android
 
