@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 = Certificate Pinning in Android Devices
 

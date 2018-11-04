@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 = Making a Service Visible to the {metrics-service} Service Manually
 

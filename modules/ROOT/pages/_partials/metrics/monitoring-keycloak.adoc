@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 = Monitoring the {keycloak-service} Service
 

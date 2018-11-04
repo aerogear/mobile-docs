@@ -1,4 +1,4 @@
-//include::{partialsdir}/attributes.adoc[]
+//
 = Performing Device Trust Checks in your Device
 
 This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Device Checks can be performed either individually or together.

@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 = Using the {sync-service} SDK
 
