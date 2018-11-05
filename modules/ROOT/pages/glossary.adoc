@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :toc:
@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 = Glossary
 
 // start mobile_terminology.adoc[leveloffset=+1]
-include::{partialsdir}/mobile_terminology.adoc[leveloffset=+1]
+include::_partials/mobile_terminology.adoc[leveloffset=+1]
 // end mobile_terminology.adoc[leveloffset=+1]
 // start sync/ref_terminology.adoc[leveloffset=+1]
 include::_partials/sync/ref_terminology.adoc[leveloffset=+1]

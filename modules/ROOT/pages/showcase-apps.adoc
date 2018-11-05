@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :toc:
@@ -17,7 +17,7 @@ include::_partials/showcase-apps/service-setup.adoc[leveloffset=1]
 // end showcase-apps/service-setup.adoc[leveloffset=1]
 [#certs]
 // start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
-include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
+include::_partials/proc_self-signed-certs.adoc[leveloffset=1]
 // end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
 
 
@@ -25,7 +25,7 @@ include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
 == Demonstrating the ShowCase App Features
 
 // start {partialsdir}/identity-management-demo.adoc[leveloffset=2]
-include::{partialsdir}/identity-management-demo.adoc[leveloffset=2]
+include::_partials/identity-management-demo.adoc[leveloffset=2]
 // end {partialsdir}/identity-management-demo.adoc[leveloffset=2]
 // start showcase-apps/device-security.adoc[leveloffset=2}]
 include::_partials/showcase-apps/device-security.adoc[leveloffset=2}]

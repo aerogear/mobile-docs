@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 = Mobile Services
 {org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.

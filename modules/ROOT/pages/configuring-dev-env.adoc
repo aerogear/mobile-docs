@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 
 = Configuring your Development Environment
 
@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 * [x] You have provisioned one of the {product-name}.
 * [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
 
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
 == Adding AeroGear SDK modules for the Mobile Platforms
 
@@ -16,7 +16,7 @@ include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[levelof
 
 ****
 
-include::{partialsdir}/conf-dev-env-android.adoc[]
+include::_partials/conf-dev-env-android.adoc[]
 
 ****
 
@@ -25,7 +25,7 @@ include::{partialsdir}/conf-dev-env-android.adoc[]
 
 ****
 
-include::{partialsdir}/conf-dev-env-ios.adoc[]
+include::_partials/conf-dev-env-ios.adoc[]
 
 ****
 
@@ -34,7 +34,7 @@ include::{partialsdir}/conf-dev-env-ios.adoc[]
 
 ****
 
-include::{partialsdir}/conf-dev-env-cordova.adoc[]
+include::_partials/conf-dev-env-cordova.adoc[]
 
 ****
 
@@ -43,9 +43,9 @@ include::{partialsdir}/conf-dev-env-cordova.adoc[]
 
 ****
 
-include::{partialsdir}/conf-dev-env-xamarin.adoc[]
+include::_partials/conf-dev-env-xamarin.adoc[]
 
 ****
 
-//include::{partialsdir}/proc_self-signed-certs.adoc[]
+//include::_partials/proc_self-signed-certs.adoc[]
 

@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 
 = Registering a {mobile-client}
 
@@ -6,4 +6,4 @@ After the setup is completed, the next thing you need to do is to register a {mo
 
 A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please see xref:mobile-clients.adoc[Mobile Clients in OpenShift]
 
-include::{partialsdir}/mobile-client-registration-procedure.adoc[]
+include::_partials/mobile-client-registration-procedure.adoc[]

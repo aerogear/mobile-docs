@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :toc:
@@ -14,7 +14,7 @@ include::_partials/metrics/index.adoc[leveloffset=1]
 == Prerequisites
 
 // start {partialsdir}/generic-provisioning-pre-req.adoc[]
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+include::_partials/generic-provisioning-pre-req.adoc[]
 // end {partialsdir}/generic-provisioning-pre-req.adoc[]
 
 == Setting Up the Mobile Metrics Service

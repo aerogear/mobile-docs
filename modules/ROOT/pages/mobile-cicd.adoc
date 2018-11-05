@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :toc:
@@ -17,7 +17,7 @@ include::_partials/mobilecicd/ref_terminology.adoc[leveloffset=+1]
 == Prerequisites
 
 // start {partialsdir}/generic-provisioning-pre-req.adoc[]
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+include::_partials/generic-provisioning-pre-req.adoc[]
 // end {partialsdir}/generic-provisioning-pre-req.adoc[]
 // start mobilecicd/provisioning.adoc[leveloffset=1]
 

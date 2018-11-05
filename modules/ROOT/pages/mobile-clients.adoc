@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 = {mobile-client}s in OpenShift
@@ -27,23 +27,23 @@ For information on how to register a {mobile-client} in OpenShift, see xref:gett
 
 [#services]
 // start {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
-include::{partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
+include::_partials/mobile-client-viewing-available-services.adoc[leveloffset=1]
 // end {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
 
 [#building]
 // start {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
-include::{partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+include::_partials/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
 // end {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
 
 [#sdk]
 // start {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
-include::{partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+include::_partials/con_aerogear-sdk.adoc[leveloffset=1]
 // end {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
 
 
 == API Reference Documentation
 
 // start {partialsdir}/api-table.adoc[]
-include::{partialsdir}/api-table.adoc[]
+include::_partials/api-table.adoc[]
 // end {partialsdir}/api-table.adoc[]
 
