@@ -2,6 +2,6 @@
 
 = Provisioning {unifiedpush-service} Service
 
-include::{partialsdir}/generic-provisioning.adoc[]
+include::../generic-provisioning.adoc[]
 
-include::{partialsdir}/generic-provisioning-end.adoc[]
+include::../generic-provisioning-end.adoc[]

@@ -4,7 +4,7 @@
 
 = Binding a {mobile-client} 
 
-include::{partialsdir}/generic-binding.adoc[]
+include::../generic-binding.adoc[]
 +
 NOTE: Use `public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `bearer`.
 

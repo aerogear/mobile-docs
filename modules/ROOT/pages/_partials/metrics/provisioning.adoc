@@ -4,7 +4,7 @@
 
 = Provisioning {service-name} Service
 
-include::{partialsdir}/generic-provisioning.adoc[]
+include::../generic-provisioning.adoc[]
 
 When provisioning a {service-name} Service, you are prompted to set the following:
 
@@ -28,5 +28,5 @@ $ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
 ----
 ====
 
-include::{partialsdir}/generic-provisioning-end.adoc[]
+include::../generic-provisioning-end.adoc[]
 

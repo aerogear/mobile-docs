@@ -12,7 +12,7 @@
 
 // video::xWFWUcuZPaQ[youtube]
 
-include::{partialsdir}/generic-service-intros.adoc[tags=metrics-service]
+include::../generic-service-intros.adoc[tags=metrics-service]
 
 Identity management is monitored by the {metrics-service} Service when it is provisioned. No configuration is needed.
 

@@ -7,7 +7,7 @@
 [#introduction]
 = Introduction to the {device-security-service} Service
 
-include::{partialsdir}/generic-service-intros.adoc[tags=device-security-service]
+include::../generic-service-intros.adoc[tags=device-security-service]
 
 [id='{context}_additional-resources-{context}']
 

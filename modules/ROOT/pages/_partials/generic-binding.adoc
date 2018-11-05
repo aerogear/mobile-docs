@@ -4,6 +4,6 @@ This association is called *binding* and it is necessary for your mobile app to 
 
 To bind a {mobile-client} with a mobile service:
 
-include::{partialsdir}/generic-binding-procedure.adoc[]
+include::./generic-binding-procedure.adoc[]
 
 . Fill out the binding parameters required by the {service-name} Service.

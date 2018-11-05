@@ -7,5 +7,5 @@
 [#introduction]
 = Introduction to the {mobile-ci-cd-service} Service
 
-include::{partialsdir}/generic-service-intros.adoc[tags=mobilecicd-service]
+include::../generic-service-intros.adoc[tags=mobilecicd-service]
 

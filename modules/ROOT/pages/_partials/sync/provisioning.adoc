@@ -6,10 +6,10 @@
 
 [discrete]
 == Prerequisites
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+include::../generic-provisioning-pre-req.adoc[]
 
 
-include::{partialsdir}/generic-provisioning.adoc[]
+include::../generic-provisioning.adoc[]
 
 When provisioning a {service-name} Service, you are prompted to set the following:
 
@@ -34,4 +34,4 @@ oc describe dc postgres-data-sync -n <myproject> | grep POSTGRESQL_PASSWORD
 Wait for the database provisioning to finish before executing this command.
 ====
 
-include::{partialsdir}/generic-provisioning-end.adoc[]
+include::../generic-provisioning-end.adoc[]

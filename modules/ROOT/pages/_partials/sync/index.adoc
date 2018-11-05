@@ -10,7 +10,7 @@
 
 == Introduction
 
-include::{partialsdir}/generic-service-intros.adoc[tags=sync-service]
+include::../generic-service-intros.adoc[tags=sync-service]
 
 include::./ref_terminology.adoc[leveloffset=+2]
 

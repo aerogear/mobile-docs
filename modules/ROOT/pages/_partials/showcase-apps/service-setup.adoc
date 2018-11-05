@@ -51,14 +51,14 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 [discrete]
 === Prerequisites
 
-include::{partialsdir}/generic-local-mobile-dev-envir-reqs.adoc[]
+include::../generic-local-mobile-dev-envir-reqs.adoc[]
 
 [discrete]
 === Procedure
 
 1. Clone the showcase app and checkout the release tag {release-number}
 
-include::{partialsdir}/cloning-showcase-app.adoc[]
+include::../cloning-showcase-app.adoc[]
 
 // TODO: fix link and numbering
 [start=2]
@@ -118,7 +118,7 @@ Firebase Cloud Messaging console.
 +
 NOTE: This step also creates a variant as described in xref:push/index.adoc[ {unifiedpush-service} Service] terminology.
 
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
 
-include::{partialsdir}/build-and-deploy.adoc[]
+include::../build-and-deploy.adoc[]

@@ -5,5 +5,5 @@
 = Configuring your Development Environment for the {service-name} Service
 
 
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
