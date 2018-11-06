@@ -270,9 +270,9 @@ var result = await authService.Logout(authService.CurrentUser());
 
 NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
 
-== Using auth with backend
+== Authenticating with a back end service
 
-To authenticate service on existing backend server users need to supply additional token:
+In a typical scenario, you not only want the user to authenticate on the mobile app, you also want that user to authenticate with a back end service. To achieve this, you must add an additional token:
 
 [source]
 ----
@@ -284,19 +284,45 @@ SDK also provides number of helpers to build authentication headers that will pr
 [role="primary"]
 .Android
 ****
-
-. Add the `AuthHeaderProvider` instance provided by the Aerogear SDK to the current list of providers:
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
 +
 [source,java]
 ----
 authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer. When using the `okhttp` library, this can be added to the list of request interceptors to automatically supply the required tokens:
++
+[source,java]
+----
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
 ----
 ****
 
 [role="secondary"]
 .iOS
 ****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,swift]
+----
 authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer.
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,csharp]
+----
+var authHeaderProvider = authService.AuthHeaderProvider;
+----
+. Plug it into your networking layer.
 ****
 
 [discrete]
