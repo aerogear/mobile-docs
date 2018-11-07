@@ -270,6 +270,74 @@ var result = await authService.Logout(authService.CurrentUser());
 
 NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
 
+== Authenticating with a back end service
+
+In a typical scenario, you not only want the user to authenticate on the mobile app, you also want that user to authenticate with a back end service. To achieve this, you must add an additional token:
+
+[source]
+----
+Authorization: BEARER Yourtoken
+----
+
+SDK also provides number of helpers to build authentication headers that will provide way to refresh it once token is outdated.
+
+[role="primary"]
+.Android
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,java]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer. When using the `okhttp` library, this can be added to the list of request interceptors to automatically supply the required tokens:
++
+[source,java]
+----
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,swift]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer.
+****
+
+[role="secondary"]
+.Cordova
+****
+The AeroGear Cordova SDK doesn't provide an HTTP layer, therefore it cannot provide an Auth Header Provider.
+You must manually attach the `Bearer` header to your HTTP requests.
+
+[source,javascript]
+----
+req.setRequestHeader('Accept', 'application/json');
+req.setRequestHeader('Authorization', 'Bearer ' + authService.extract().token);
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,csharp]
+----
+var authHeaderProvider = authService.AuthHeaderProvider;
+----
+. Plug it into your networking layer.
+****
+
 [discrete]
 == Additional Information
 
