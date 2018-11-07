@@ -314,6 +314,18 @@ authService.getAuthHeaderProvider()
 ****
 
 [role="secondary"]
+.Cordova
+****
+Cordova SDK doesn't provide an HTTP layer so, it also doesn't provide an Auth Header. It's your responsibility to attach that to your HTTP provider.
+
+[source,javascript]
+----
+req.setRequestHeader('Accept', 'application/json');
+req.setRequestHeader('Authorization', 'Bearer ' + authService.extract().token);
+----
+****
+
+[role="secondary"]
 .Xamarin
 ****
 . Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
