@@ -316,7 +316,8 @@ authService.getAuthHeaderProvider()
 [role="secondary"]
 .Cordova
 ****
-Cordova SDK doesn't provide an HTTP layer so, it also doesn't provide an Auth Header. It's your responsibility to attach that to your HTTP provider.
+The AeroGear Cordova SDK doesn't provide an HTTP layer, therefore it cannot provide an Auth Header Provider.
+You must manually attach the `Bearer` header to your HTTP requests.
 
 [source,javascript]
 ----
