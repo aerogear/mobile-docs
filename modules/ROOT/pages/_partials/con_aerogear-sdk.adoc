@@ -1,21 +1,25 @@
 = Introduction to the AeroGear SDK
 
-After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
+// After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
+After you have registered a {mobile-client}, bound the {mobile-client} to a mobile service, and downloaded the mobile services configuration file, you can start developing your mobile app using mobile services.
 
 The {org-name} SDK supports the following platforms:
 
 [[android]]
 == Android
 
-For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation, window="_blank"].
+For information about how to develop Android apps, see link:https://developer.android.com/studio/install[Android Documentation, window="_blank"].
 
 include::{partialsdir}/conf-dev-env-android.adoc[]
 
 For Service specific steps, see:
 
-* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
-* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
-* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+// * xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+// * xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+// * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+* Steps for {keycloak-service}
+* Steps for {unifiedpush-service}
+* Steps for {device-security-service}
 
 [[ios]]
 == iOS
@@ -26,9 +30,12 @@ include::{partialsdir}/conf-dev-env-ios.adoc[]
 
 For Service specific steps, see:
 
-* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
-* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
-* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+// * xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+// * xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+// * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+* Steps for {keycloak-service}
+* Steps for {unifiedpush-service}
+* Steps for {device-security-service}
 
 
 [[cordova]]
@@ -40,9 +47,12 @@ include::{partialsdir}/conf-dev-env-cordova.adoc[]
 
 For Service specific steps, see:
 
-* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
-* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
-* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+// * xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+// * xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+// * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+* Steps for {keycloak-service}
+* Steps for {unifiedpush-service}
+* Steps for {device-security-service}
 
 [[xamarin]]
 == Xamarin
@@ -53,5 +63,7 @@ include::{partialsdir}/conf-dev-env-xamarin.adoc[]
 
 For Service specific steps, see:
 
-* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
-* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+// * xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+// * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+* Steps for {keycloak-service}
+* Steps for {device-security-service}

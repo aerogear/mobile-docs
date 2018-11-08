@@ -476,7 +476,8 @@ Executing multiple checks asynchronously is not supported at the moment for this
 
 === Adding Custom Device Checks
 
-Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+// Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+Besides the Provided Device Checks it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
 
 [role="primary"]
 .Android
@@ -617,7 +618,8 @@ DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
 
 === Reporting Device Checks Results Via the Metrics Service
 
-In order to report the results of Device Checks utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
+// In order to report the results of Device Checks utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
+In order to report the results of Device Checks utilize this service in conjunction with the Metrics Service.
 
 [role="primary"]
 .Android
@@ -725,4 +727,3 @@ var checkExecutor = securityService.GetSyncExecutor()
 Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
 ----
 ****
-

@@ -5,7 +5,8 @@ include::{partialsdir}/attributes.adoc[]
 == Prerequisites
 
 * [x] You have provisioned one of the {product-name}.
-* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
+* [x] You have associated the service with a {mobile-client} as described in Binding a {mobile-client} with Mobile Services.
+// * [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
@@ -48,4 +49,3 @@ include::{partialsdir}/conf-dev-env-xamarin.adoc[]
 ****
 
 //include::{partialsdir}/proc_self-signed-certs.adoc[]
-

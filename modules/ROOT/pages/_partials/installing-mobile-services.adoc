@@ -67,7 +67,8 @@ are installed.
 . Enter your Docker Hub login credentials when prompted. The installer checks these credentials are valid before continuing.
 
 . Accept the default values for the next set of prompts, unless you have specific requirements and understand the implications of changing the values.
-For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional Resources].
+// For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional Resources].
+For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in Additional Resources.
 +
 NOTE: If your Cluster IP address is reported as 127.0.0.1, the installation will not succeed. Check your network connection and restart the installer.
 +
@@ -79,7 +80,8 @@ Cluster IP (Defaults to < Network IP Address >)
 Wildcard DNS Host (Defaults to nip.io):
 ----
 +
-For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
+// For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
+For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in Additional resources.
 +
 The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
 +
@@ -137,7 +139,7 @@ NOTE: The following command will only add the specified port for the current ses
 ----
 $ firewall-cmd --add-port 443/tcp
 $ firewall-cmd --add-port 80/tcp
----- 
+----
 
 == DockerHub, Cluster IP and Wildcard DNS Host values
 

@@ -1,1 +1,2 @@
+// * [x] You are running OpenShift with {product-name} as described in Setting up AeroGear {product-name} on OpenShift.
 * [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].

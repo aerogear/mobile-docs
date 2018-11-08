@@ -7,12 +7,18 @@ include::{partialsdir}/attributes.adoc[]
 
 Showcase apps demonstrate many features of {product-name}. To see these features:
 
-. Set up the appropriate services as described in xref:setup[].
-. Set up the showcase app as described in xref:app[].
-. Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
-. Bind your {mobile-client} to the appropriate services as described in xref:binding[]
-. Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
-. Build and run your showcase app  as described in xref:build[].
+// . Set up the appropriate services as described in xref:setup[].
+. Set up the appropriate services as described in setup.
+// . Set up the showcase app as described in xref:app[].
+. Set up the showcase app as described in app.
+// . Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
+. Register your showcase app as described in Registering a Mobile App.
+// . Bind your {mobile-client} to the appropriate services as described in xref:binding[]
+. Bind your {mobile-client} to the appropriate services as described in binding
+// . Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
+. Copy the `mobile-services.json` file to your IDE as described in downloading-the-mobile-services-configuration-file
+// . Build and run your showcase app as described in xref:build[].
+. Build and run your showcase app as described in build.
 
 [[setting-up-mobile-services-to-demonstrate-showcase-apps]]
 [#setup]
@@ -21,28 +27,33 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 [discrete]
 === Prerequisites
 
-* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+// * [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* [x] You are running OpenShift with {product-name} as described in Setting up AeroGear {product-name} on OpenShift.
 
 [discrete]
 === Procedure
 
-. To demonstrate {metrics-service}, xref:metrics/provisioning.adoc[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
+// . To demonstrate {metrics-service}, xref:metrics/provisioning.adoc[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
+. To demonstrate {metrics-service}, Provision the {metrics-service} service. For more information about features, see {metrics-service} Service
 
 . To demonstrate {keycloak-service}:
 
-.. xref:keycloak/provisioning.adoc[Provision the {keycloak-service} service].
+// .. xref:keycloak/provisioning.adoc[Provision the {keycloak-service} service].
+.. Provision the {keycloak-service} service.
 
-.. xref:keycloak/keycloak-setup.adoc[Set up the {keycloak-service} service].
+// .. xref:keycloak/keycloak-setup.adoc[Set up the {keycloak-service} service].
+.. Set up the {keycloak-service} service.
 
 .. Create a new user to authenticate as. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
 
 .. Set credentials for the created user. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
 
 +
-For more information about features, see xref:identity-management.adoc[{keycloak-service} Service]
+For more information about features, see keycloak-service} Service
+// For more information about features, see {keycloak-service} Service
 
-
-. To demonstrate {unifiedpush-service}, xref:push/provisioning.adoc[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+// . To demonstrate {unifiedpush-service}, xref:push/provisioning.adoc[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+. To demonstrate {unifiedpush-service}, Provision the {unifiedpush-service} service. For more information about features, see {unifiedpush-service} Service
 
 [[setting-up-the-showcase-app]]
 [#app]
@@ -110,13 +121,16 @@ Firebase Cloud Messaging console.
 [#binding]
 == Binding the Showcase {mobile-client} to {product-name}
 
+// . xref:metrics/binding.adoc[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
+// . xref:keycloak/binding.adoc[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
+// . xref:push/binding.adoc[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
 
-
-. xref:metrics/binding.adoc[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
-. xref:keycloak/binding.adoc[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
-. xref:push/binding.adoc[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
+. Bind the {mobile-client} to the {metrics-service} service if you want to demonstrate the {metrics-service} service.
+. Bind the {mobile-client} to the {keycloak-service} service if you want to demonstrate authentication.
+. Bind the {mobile-client} to the {unifiedpush-service} service if you want to demonstrate {unifiedpush-service}.
 +
-NOTE: This step also creates a variant as described in xref:push/index.adoc[ {unifiedpush-service} Service] terminology.
+NOTE: This step also creates a variant as described in {unifiedpush-service} Service terminology.
+// NOTE: This step also creates a variant as described in {unifiedpush-service} Service terminology.
 
 include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 

@@ -10,7 +10,8 @@ The {sync-service} UI allows you to manage your data sources.
 
 To access the {sync-service} UI, you will need to:
 
- * Make sure it is xref:sync/provisioning.adoc[provisioned].
+// * Make sure it is xref:sync/provisioning.adoc[provisioned].
+ * Make sure it is provisioned.
  * Select a route in OpenShift.
  * Login with your OpenShift credentials.
 
@@ -49,7 +50,10 @@ NOTE: When you delete a data source, all resolvers that are attached to it will 
 === Create a New Data Source
 
 If no data source exists, a new data source can be created by clicking the *Add Data Source* button. Select the type of your data source from the dropdown.
-For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option]. Information about the Postgres option can be found xref:#postgres-option[here].
+// Information about the Postgres option can be found xref:#postgres-option[here].
+// For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option].
+For more information about the _In Memory_ option have a look at the In Memory Option.
+Information about the Postgres option can be found here.
 
 [[in-memory-option]]
 === In Memory Data Sources

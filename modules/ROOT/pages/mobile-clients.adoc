@@ -23,7 +23,8 @@ To use services with a mobile app, a {mobile-client} must first be created to re
 Once the {mobile-client} has been registered, it can then be bound to services to allow the mobile app to interact with
 these services.
 
-For information on how to register a {mobile-client} in OpenShift, see xref:getting-started.adoc#registering[Getting Started].
+// For information on how to register a {mobile-client} in OpenShift, see xref:getting-started.adoc#registering[Getting Started].
+For information on how to register a {mobile-client} in OpenShift, Getting Started.
 
 [#services]
 // start {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
@@ -46,4 +47,3 @@ include::{partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
 // start {partialsdir}/api-table.adoc[]
 include::{partialsdir}/api-table.adoc[]
 // end {partialsdir}/api-table.adoc[]
-

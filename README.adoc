@@ -36,7 +36,7 @@ Reference::
 Information I might need to debug or extend the normal usage of AeroGear software. For example:
 +
 * API syntax and definitions
-* Configuration optionss 
+* Configuration optionss
 
 * Name file by slugifying title
 
@@ -45,8 +45,9 @@ Information I might need to debug or extend the normal usage of AeroGear softwar
 
 == Writing AeroGear Documentation
 
-. If you make a filename change (eg adding or renaming a file), you must update the appropriate modules/ROOT/nav.adoc file. 
-. Test your changes xref:#using-antora[using Antora]
+. If you make a filename change (eg adding or renaming a file), you must update the appropriate modules/ROOT/nav.adoc file.
+// . Test your changes xref:#using-antora[using Antora]
+. Test your changes using Antora
 . Determine which functionality is this documentation related to?
 +
 * Push
@@ -72,8 +73,8 @@ If you create a link, use the following whenever possible:
 * push-notifications.adoc
 * ref_api.adoc
 * showcase-apps.adoc
- 
- 
+
+
 
 
 . Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
@@ -129,7 +130,7 @@ Note: <site-file> refers to either:
 +
 * local-site - your current directory
 * site.yml - the master branch of the github repo
-+ 
++
 When building for publication use:
 +
 ----
@@ -143,11 +144,11 @@ NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], yo
 
 == Editing
 
-After reviewing a html file, you might identify a change. When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. For example, when editing the `registering-an-app.adoc`, avoid problems by: 
+After reviewing a html file, you might identify a change. When editing a file, you might find that the content is not in the associated adoc file, because it's rendered by using the asciidoc `include` command. You can edit the included file, but note that editing the source file can have unintended effect. For example, when editing the `registering-an-app.adoc`, avoid problems by:
 
 . Regex search for `include.*registering-an-app` across the whole repo.
 . Review the list of files from this search to understand of the context of the content.
-. Use your judgement when editing the file to make sure the content is appropriate for each rendering of that content. 
+. Use your judgement when editing the file to make sure the content is appropriate for each rendering of that content.
 
 
 [[publishing]]
@@ -176,7 +177,7 @@ No remote repos were harmed in the production of this documentation ;)
 However, references to code maybe be included as follows:
 
 
-1. Decide on a name for the snippet, eg push-ios-register 
+1. Decide on a name for the snippet, eg push-ios-register
 
 2. Create a partial in mobile-docs, eg
 https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/push-ios-register.inc
@@ -187,7 +188,7 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
  include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
 ----
 
-4. Add tags to the code repo, eg 
+4. Add tags to the code repo, eg
 +
 ----
 // tag::push-ios-register[]
@@ -220,6 +221,3 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 ----
 +
 NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
-
-
-

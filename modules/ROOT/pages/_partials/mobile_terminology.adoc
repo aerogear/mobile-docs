@@ -3,10 +3,12 @@ include::{partialsdir}/attributes.adoc[]
 = {org-name} {product-name} Terminology
 
 [[mobile-service]]Mobile Service:: A mobile service accelerates your mobile app development by providing solutions for common mobile development use cases such as Push notifications. Mobile services are hosted on OpenShift and you use the OpenShift console to provision and associate services with your mobile apps.
-For more information, see xref:con_services.adoc[Mobile Services].
+// For more information, see xref:con_services.adoc[Mobile Services].
+For more information, see Mobile Services.
 
 [[mobile-client]]{mobile-client}:: A {mobile-client} is the representation of a mobile app in an OpenShift project. This allows you connect and disconnect an app with any mobile service in the same OpenShift project.
-For more information, see xref:registering-a-mobile-app.adoc[Registering a mobile app].
+// For more information, see xref:registering-a-mobile-app.adoc[Registering a mobile app].
+For more information, see Registering a mobile app.
 
 [[mobile-app]]mobile app:: A mobile app is your code for Android, iOS, Cordova or Xamarin that uses {product-name}.
 
@@ -15,4 +17,3 @@ Binding:: You can associate a Mobile Service with a mobile app to allow your mob
 Mobile Services configuration file:: The `mobile-services.json` file provides the information your mobile app needs to use {product-name}.
 
 Back-end:: Your server-side code, typically Node.js or Java.
-

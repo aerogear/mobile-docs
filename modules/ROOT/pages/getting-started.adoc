@@ -22,7 +22,8 @@ This guide shows you how to:
 * Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
 * Run the showcase app and make calls to the {keycloak-service} service.
 
-Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
+// Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
+Make sure you satisfy all the requirements listed in the prerequisites and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
 
 // start installing-mobile-services.adoc[leveloffset=1]
 include::{partialsdir}/installing-mobile-services.adoc[leveloffset=1]
@@ -36,7 +37,8 @@ include::registering-a-mobile-app.adoc[leveloffset=1]
 
 {product-name} provide commonly required features for mobile app development.
 
-This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see xref:con_services.adoc[Mobile Services]
+// This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see xref:con_services.adoc[Mobile Services]
+This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see Mobile Services
 
 :service-name: Identity Management
 
@@ -45,7 +47,8 @@ include::{partialsdir}/generic-provisioning.adoc[]
 // end {partialsdir}/generic-provisioning.adoc[]
 
 NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
-For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
+// For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
+For more information about the {keycloak-service} provisioning wizard fields, see {keycloak-service} Configuration.
 
 // start {partialsdir}/generic-provisioning-end.adoc[]
 include::{partialsdir}/generic-provisioning-end.adoc[]

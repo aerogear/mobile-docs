@@ -6,6 +6,7 @@ include::{partialsdir}/attributes.adoc[]
 
 The following services are available:
 
+// @PWRIGHT - the table below is full of xrefs :'(
 * xref:identity-management.adoc[{keycloak-service}]
 * xref:push-notifications.adoc[{unifiedpush-service}]
 * xref:mobile-metrics.adoc[{metrics-service}]
@@ -17,6 +18,3 @@ Below is a high-level architecture diagram, which outlines how your mobile apps 
 
 image::mobile-services-arch.png[]
 //Image found in https://docs.google.com/drawings/d/1aFZinQb6UF8AuCisQ_xt0DsX75WxWC7a55ZiDT9Xwho/edit?usp=sharing
-
-
-

@@ -34,7 +34,8 @@ NOTE: Resolvers can only be attached directly to `Queries` and `Mutations` and n
 Here you can add the details of a resolver. The following fields must be provided:
 
 . _Data Source_: The data source this resolver gets executed against.
-. _Request Mapping Template_: The query that is executed to retrieve a result. `Mutations` in GraphQL are required to return a result too. NOTE: Have a look at xref:#mapping-templates[mapping templates] to learn how to make use of the `context` object in your queries.
+//. _Request Mapping Template_: The query that is executed to retrieve a result. `Mutations` in GraphQL are required to return a result too. NOTE: Have a look at xref:#mapping-templates[mapping templates] to learn how to make use of the `context` object in your queries.
+. _Request Mapping Template_: The query that is executed to retrieve a result. `Mutations` in GraphQL are required to return a result too. NOTE: Have a look at mapping templates to learn how to make use of the `context` object in your queries.
 
 The following fields are optional:
 

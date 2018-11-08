@@ -31,9 +31,10 @@ The *Client Build Form* is displayed.
 * Git Reference:: Optional branch, tag, or commit to checkout, default is master. This option can be used to select different branches of you application repo for different builds, for example, release vs develop.
 * Jenkins file path:: Optional path to where the Jenkinsfile is located in your application repo. The default is the root of the repo.
 
-. Select the *Build Type* for the build configuration. Typically you create two build configurations, one for debugging and and another for release. 
+. Select the *Build Type* for the build configuration. Typically you create two build configurations, one for debugging and and another for release.
 +
-NOTE: Typically, for a *Release* build configuration, you need to add more information as described in xref:ref_source-configuration_ref_source-configuration[].
+NOTE: Typically, for a *Release* build configuration, you need to add more information as described in ref_source-configuration_ref_source-configuration.
+// NOTE: Typically, for a *Release* build configuration, you need to add more information as described in xref:ref_source-configuration_ref_source-configuration[].
 
 . Create any environment variables that you want to pass to the build process and set values in the *Environment Variable* section of the form.
 

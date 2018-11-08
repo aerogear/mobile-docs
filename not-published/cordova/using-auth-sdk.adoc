@@ -24,10 +24,12 @@ See link:http://www.keycloak.org/docs/latest/server_admin/index.html#oidc-client
 npm install @aerogear/auth
 ----
 
-3. Generate again the app configuration file to use during xref:getting-started.adoc[app initialization]. For an example of Keycloak configuration see the example app's link:https://github.com/aerogear/cordova-showcase-template/blob/master/src/mobile-services.json[mobile-services.json].
+// 3. Generate again the app configuration file to use during xref:getting-started.adoc[app initialization]. For an example of Keycloak configuration see the example app's link:https://github.com/aerogear/cordova-showcase-template/blob/master/src/mobile-services.json[mobile-services.json].
+3. Generate again the app configuration file to use during app initialization. For an example of Keycloak configuration see the example app's link:https://github.com/aerogear/cordova-showcase-template/blob/master/src/mobile-services.json[mobile-services.json].
 
 === Auth Service Initialization
-Once the AeroGear SDK is initialized (see xref:getting-started.adoc[Getting Started]) you can import and initialize `Auth`:
+// Once the AeroGear SDK is initialized (see xref:getting-started.adoc[Getting Started]) you can import and initialize `Auth`:
+Once the AeroGear SDK is initialized (see Getting Started) you can import and initialize `Auth`:
 
 [source,javascript]
 ----

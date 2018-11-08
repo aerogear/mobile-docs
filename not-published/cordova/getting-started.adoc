@@ -36,6 +36,10 @@ Once this method is called, the whole SDK will be ready to use.
 
 You can now use any of the services that AeroGear provides, some of them require additional dependencies and steps:
 
+// ** xref:metrics.adoc[Metrics]
+// ** xref:auth.adoc[Auth]
+// ** xref:security-checks.adoc[Push]
+
 ** xref:metrics.adoc[Metrics]
 ** xref:auth.adoc[Auth]
 ** xref:security-checks.adoc[Push]

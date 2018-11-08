@@ -23,4 +23,5 @@ with the bound services.
 
 image::mobile-clients-configuration.png[]
 
-For more information on binding {mobile-client}s to services, see xref:getting-started.adoc#binding[Getting Started].
+// For more information on binding {mobile-client}s to services, see xref:getting-started.adoc#binding[Getting Started].
+For more information on binding {mobile-client}s to services, see Getting Started.
