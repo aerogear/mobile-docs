@@ -1,7 +1,7 @@
 //note that this file is orphaned, doesn't have a place in nav.adoc
 
 
-
+[android-additional-configuration]
 = Additional configuration for Android
 
 == Authentication Browser

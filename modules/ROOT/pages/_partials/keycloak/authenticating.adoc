@@ -341,6 +341,6 @@ var authHeaderProvider = authService.AuthHeaderProvider;
 [discrete]
 == Additional Information
 
-* xref:keycloak/android-additional-configuration.adoc[Additional configuration for Android]
+* xref:#android-additional-configuration[Additional configuration for Android]
 
 * link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[Keycloak OICD Providers, window="_blank"]

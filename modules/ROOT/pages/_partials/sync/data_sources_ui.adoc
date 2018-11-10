@@ -10,7 +10,7 @@ The {sync-service} UI allows you to manage your data sources.
 
 To access the {sync-service} UI, you will need to:
 
- * Make sure it is xref:sync/provisioning.adoc[provisioned].
+ * Make sure the {sync-service} service is provisioned.
  * Select a route in OpenShift.
  * Login with your OpenShift credentials.
 

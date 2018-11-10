@@ -4,8 +4,8 @@
 
 == Prerequisites
 
-* [x] You have provisioned the {metrics-service} Service as described in xref:metrics/provisioning.adoc[Provisioning {metrics-service} Service].
-* [x] You have provisioned the {sync-service} Service as described in xref:sync/provisioning.adoc[Provisioning {sync-service} Service].
+* [x] You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
+* [x] You have provisioned the xref:data-sync.adoc[{sync-service}] service.
 
 NOTE: The {metrics-service} Service and {sync-service} Service must be provisioned in the same OpenShift project to access data.
 

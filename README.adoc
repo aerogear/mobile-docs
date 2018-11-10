@@ -184,7 +184,7 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 3. Reference the code file you want to use (with a tags filter):
 +
 ----
- include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
+ // include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
 ----
 
 4. Add tags to the code repo, eg 

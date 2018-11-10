@@ -12,9 +12,9 @@ authorization for their applications.
 
 == Prerequisites
 
-* Ensure {sync-service} is xref:sync/provisioning.adoc[provisioned].
-* Ensure {keycloak-service} is xref:keycloak/provisioning.adoc[provisioned]
-* Ensure {keycloak-service} is xref:keycloak/coding.adoc[configured] to work with your mobile applications
+* Make sure the {sync-service} service is provisioned.
+* Make sure the xref:identity-management.adoc[{keycloak-service}] service is provisioned.
+* Create an app that works with the {keycloak-service} service.
 
 == Binding the {sync-service} service to an {keycloak-service} Instance
 

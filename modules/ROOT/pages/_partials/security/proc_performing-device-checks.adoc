@@ -617,7 +617,7 @@ DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
 
 === Reporting Device Checks Results Via the Metrics Service
 
-In order to report the results of Device Checks utilize this service in conjunction with the xref:metrics/index.adoc[Metrics Service].
+In order to report the results of Device Checks utilize this service in conjunction with the xref:mobile-metrics.adoc[Mobile Metrics] service.
 
 [role="primary"]
 .Android
