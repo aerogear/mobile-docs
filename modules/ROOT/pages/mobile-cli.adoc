@@ -1,7 +1,7 @@
 
 // start {partialsdir}/attributes.adoc[]
 // start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 

@@ -1,39 +1,44 @@
-= Mobile Metrics
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
 :toc:
 
+= Mobile Metrics
+
 // start metrics/index.adoc[leveloffset=1]
-include::metrics/index.adoc[leveloffset=1]
+include::_partials/metrics/index.adoc[leveloffset=1]
 // end metrics/index.adoc[leveloffset=1]
 [#setup]
 
 == Prerequisites
 
 // start {partialsdir}/generic-provisioning-pre-req.adoc[]
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
+include::_partials/generic-provisioning-pre-req.adoc[]
 // end {partialsdir}/generic-provisioning-pre-req.adoc[]
 
 == Setting Up the Mobile Metrics Service
 
 // start metrics/provisioning.adoc[leveloffset=2]
-include::metrics/provisioning.adoc[leveloffset=2]
+include::_partials/metrics/provisioning.adoc[leveloffset=2]
 // end metrics/provisioning.adoc[leveloffset=2]
 // start metrics/binding.adoc[leveloffset=2]
-include::metrics/binding.adoc[leveloffset=2]
+include::_partials/metrics/binding.adoc[leveloffset=2]
 // end metrics/binding.adoc[leveloffset=2]
 // start metrics/coding.adoc[leveloffset=1]
-include::metrics/coding.adoc[leveloffset=1]
+include::_partials/metrics/coding.adoc[leveloffset=1]
 // end metrics/coding.adoc[leveloffset=1]
 [#app]
 // start metrics/analysing-app-usage.adoc[leveloffset=1]
-include::metrics/analysing-app-usage.adoc[leveloffset=1]
+include::_partials/metrics/analysing-app-usage.adoc[leveloffset=1]
 // end metrics/analysing-app-usage.adoc[leveloffset=1]
 [#identity]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
-include::metrics/monitoring-keycloak.adoc[leveloffset=1]
+include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=1]
 // end metrics/monitoring-keycloak.adoc[leveloffset=1]
 [#sync]
-include::metrics/monitoring-sync.adoc[leveloffset=1]
+include::_partials/metrics/monitoring-sync.adoc[leveloffset=1]
 [#using-dashboards]
-include::metrics/using-dashboards.adoc[leveloffset=1]
+include::_partials/metrics/using-dashboards.adoc[leveloffset=1]
 
 

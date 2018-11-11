@@ -1,0 +1,19 @@
+
+
+:service-name: Metrics
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-metrics
+
+[id='{context}_con_introduction-to-metrics']
+
+[#introduction]
+= Introduction to the {metrics-service} Service
+
+// video::xWFWUcuZPaQ[youtube]
+
+include::../generic-service-intros.adoc[tags=metrics-service]
+
+Identity management is monitored by the {metrics-service} Service when it is provisioned. No configuration is needed.
+
+

@@ -1,9 +1,9 @@
 :partialsdir: _partials
 
-include::{partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
 
 == Provisioning {unifiedpush-service} Service
 
-include::{partialsdir}/generic-provisioning.adoc[]
+include::_partials/generic-provisioning.adoc[]
 
-include::{partialsdir}/generic-provisioning-end.adoc[]
+include::_partials/generic-provisioning-end.adoc[]

@@ -1,0 +1,7 @@
+
+
+:service-name: Data Sync
+
+= Binding a {mobile-client} with the {service-name} Service
+
+include::../generic-binding.adoc[]

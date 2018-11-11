@@ -1,0 +1,10 @@
+
+
+= {device-security-service}
+
+
+From the showcase app:
+
+. Press the *Device Security* menu item.
+. View the results of the Device security checks.
+. Navigate to the {grafana-ui}, and view the metrics as described in xref:mobile-metrics.adoc[Analyzing App Usage]

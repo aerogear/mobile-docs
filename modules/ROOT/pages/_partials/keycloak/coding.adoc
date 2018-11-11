@@ -1,0 +1,228 @@
+
+
+include::./configuring-dev-env-keycloak.adoc[]
+
+== Setting up {keycloak-service} service SDK
+
+This section will help you to set up the {keycloak-service} service SDK in your App.
+
+=== Importing the libraries
+
+[role="primary"]
+.Android
+****
+. Add the following dependency in your app's *build.gradle*:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation "org.aerogear:android-auth:{release-number}"
+}
+----
+. To prevent build errors, add the following in your app's *build.gradle*:
+[source,groovy,subs="attributes"]
++
+----
+compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+}
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Add the dependency to your *Podfile*:
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSAuth', '{release-number}'
+end
+----
+
+. Update the dependencies:
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import and instantiate `AGSAuth` to start using the SDK:
++
+[source,swift]
+----
+import AGSAuth
+
+auth = AGSAuth()
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM, window="_blank"]:
+[source,bash]
+----
+$ npm install @aerogear/auth
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"].
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. For Android run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.Android --version {release-number}
+----
+
+. For iOS run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
+----
+****
+
+== Initializing the SDK
+
+[role="primary"]
+.Android
+****
+
+. Specify the redirect URL. It is recommended to use the package name of your app.
++
+----
+AuthServiceConfiguration authServiceConfig = new AuthServiceConfiguration
+    .AuthConfigurationBuilder()
+    .withRedirectUri("org.aerogear.mobile.example:/callback")
+    .build();
+----
+
+. Create the auth service:
++
+[source,java]
+----
+AuthService authService = new AuthService(authServiceConfig);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Set your custom configuration to the auth service instance, making sure the redirect URL matches the App's Bundle Id.
+
+[source,swift]
+----
+// create the authentication config
+let authenticationConfig = AuthenticationConfig(redirectURL: "org.aerogear.mobile.example:/callback")
+try! AgsAuth.instance.configure(authConfig: authenticationConfig, useExternalUserAgent: false)
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+
+Import and initialize Auth:
+
+[source,javascript]
+----
+const Auth = require('@aerogear/auth').Auth;
+
+const authService = new Auth();
+const initOptions = { onLoad: "login-required" };
+
+authService.init(initOptions)
+    .then(() => {
+        // successful init & authentication
+    })
+    .catch((err) => {
+        // initialization error
+    });
+----
+
+You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
+
+NOTE: Initialization will also perform authentication
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+
+. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter, window="_blank"] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
++
+[source,xml]
+----
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity" android:exported="true"  android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="org.aerogear.mobile.example" />
+    </intent-filter>
+</activity>
+----
+
+. Initialize the Auth module
+.. For an Android app (MainActivity.cs):
++
+[source,csharp]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
++
+NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter, window="_blank"] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app, window="_blank"].
+
+.. For an iOS app (FinishedLaunching method of AppDelegate.cs):
++
+[source,swift]
+----
+var app = new App();
+MobileCore core = MobileCoreIOS.Init(app.GetType().Assembly);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
+
+. To use self-signed certificates with Xamarin Android:
+.. Create a file at `Resources/xml/network_security_config.xml` with the following code:
++
+[source,xml]
+----
+<network-security-config>
+  <base-config>
+    <trust-anchors>
+      <certificates src="user"/>
+      <certificates src="system"/>
+    </trust-anchors>
+  </base-config>
+</network-security-config>
+----
+.. Add the following value to the `<application>` tag in `AndroidManifest.xml`:
++
+[source,xml]
+----
+android:networkSecurityConfig="@xml/network_security_config"
+----
+****

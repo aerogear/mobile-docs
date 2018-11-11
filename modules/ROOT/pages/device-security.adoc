@@ -1,19 +1,24 @@
-= Device Security
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
 :toc:
 
+= Device Security
+
 // start security/index.adoc[leveloffset=1]
-include::security/index.adoc[leveloffset=1]
+include::_partials/security/index.adoc[leveloffset=1]
 // end security/index.adoc[leveloffset=1]
 // start security/coding.adoc[leveloffset=1]
 [#setup]
-include::security/coding.adoc[leveloffset=1]
+include::_partials/security/coding.adoc[leveloffset=1]
 // end security/coding.adoc[leveloffset=1]
 [#device-trust]
 // start security/proc_performing-device-checks.adoc[leveloffset=1]
-include::security/proc_performing-device-checks.adoc[leveloffset=1]
+include::_partials/security/proc_performing-device-checks.adoc[leveloffset=1]
 // end security/proc_performing-device-checks.adoc[leveloffset=1]
 [#cert-pinning]
 // start security/proc_pinning-certificates.adoc[leveloffset=1]
-include::security/proc_pinning-certificates.adoc[leveloffset=1]
+include::_partials/security/proc_pinning-certificates.adoc[leveloffset=1]
 // end security/proc_pinning-certificates.adoc[leveloffset=1]
 

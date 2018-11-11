@@ -12,4 +12,4 @@ The UI will also be updated to show the service is bound to the {mobile-client}.
 
 image::mobile-clients-configuration.png[]
 
-include::{partialsdir}/generic-binding-procedure.adoc[leveloffset=+1]
+include::./generic-binding-procedure.adoc[leveloffset=+1]

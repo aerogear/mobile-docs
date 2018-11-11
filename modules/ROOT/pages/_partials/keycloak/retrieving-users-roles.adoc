@@ -1,0 +1,97 @@
+
+
+= Adding Access Control to your Mobile App
+
+Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked. This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
+
+Roles are divided into two types. Resource roles which belong to the client the user has authenticated against, and Realm roles which belong to the realm the client is in.
+
+[role="primary"]
+.Android
+****
+. Retrieve the authenticated user:
++
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser();
+----
+
+. Use `hasRealmRole` and `hasResourceRole` to check for roles:
++
+[source,java]
+----
+boolean hasAdminPermissions = currentUser.hasRealmRole("user_admin");
+boolean isModerator = currentUser.hasResourceRole("my_resource", "user_moderator");
+----
+
+****
+
+[role="secondary"]
+.iOS
+****
+. Retrieve the authenticated user:
++
+[source,swift]
+----
+let currentUser = try AgsAuth.instance.currentUser()
+----
+
+. The user roles are available on the authenticated user:
++
+[source,swift]
+----
+let clientRoles = currentUser.clientRoles
+let realmRoles = currentUser.realmRoles
+----
+
+. Use `hasRealmRole` and `hasClientRole` to check for roles:
++
+[source,swift]
+----
+let hasAdminRole = currentUser.hasRealmRole("admin")
+let hasModeratorRole = currentUser.hasClientRole(client: "my_client", role: "moderator")
+----
+
+****
+
+[role="secondary"]
+.Cordova
+****
+Get the realm roles from the auth service:
+
+[source,javascript]
+----
+const realmRoles = authService.getRealmRoles();
+----
+
+NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here, window="_blank"].
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Retrieve the authenticated user:
++
+[source,csharp]
+----
+// auth service is already initialised
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
+----
+
+. Use `getRoles` to retrieve all roles from the user:
++
+[source,csharp]
+----
+// auth service is already initialised
+var roles = user.getRoles();
+----
+
+. Use `HasRealmRole` and `HasResourceRole` to check for roles:
++
+[source,csharp]
+----
+bool isAdmin = user.HasRealmRole("user_admin");
+bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
+----
+****

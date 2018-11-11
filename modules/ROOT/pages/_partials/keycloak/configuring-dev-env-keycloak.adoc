@@ -1,0 +1,7 @@
+
+
+:service-name: Identity Management
+
+include::./keycloak-setup.adoc[leveloffset=2]
+
+include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]

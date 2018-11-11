@@ -1,0 +1,9 @@
+
+
+:service-name: Push Notifications
+
+= Configuring your Development Environment for the {service-name} Service
+
+
+include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+
