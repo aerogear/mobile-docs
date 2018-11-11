@@ -16,8 +16,6 @@ ui:
     snapshot: true
 
 asciidoc:
-  extensions:
-  - ./lib/remote-include-processor
   attributes:
     experimental: ''
     idprefix: ''
