@@ -1,8 +1,7 @@
 
 
 :service-name: Identity Management
-
-= Binding a {mobile-client} 
+= Binding a {mobile-client} with the {service-name} Service
 
 include::../generic-binding.adoc[]
 +
