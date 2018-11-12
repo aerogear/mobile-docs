@@ -1,0 +1,756 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Using the Push Notifications Mobile Service
+
+// start push/index.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-push-notification
+
+[id='{context}_con_introduction-to-push-notification']
+[#introduction]
+= Introduction to the {unifiedpush-service} Service
+
+[[overview]]
+== Overview
+
+
+
+The {unifiedpush-service} service allows you to send native push notifications to different mobile operating systems.
+
+* Code once and push notifications to iOS and Android
+* Push notifications to defined groups
+* Push notifications to either iOS only or Android only
+* Push notifications to different variants of a mobile app
+* Push notifications from different back-end apps to the same mobile app
+
+
+
+Currently the service supports:
+
+
+* link:https://developer.apple.com/notifications/[Apple Push Notification Service, window="_blank"]
+* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging, window="_blank"]
+
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{unifiedpush-service}
+
+[id='{context}_ref_terminology']
+
+= {unifiedpush-service} Terminology
+
+This section describes terminology that is associated with {unifiedpush-service}.
+
+Push Application:: A logical construct that represents an Mobile App, for example, _Mobile HR_.
+
+Push Notification Message:: A simple message to be sent to a Push Application.
+
+Sender Endpoint API:: A RESTful API that receives Push Notification Message requests for a PushApplication or some of its different Variants. The Server translates this request into the platform specific details and delivers the payload to the 3rd party cloud providers, which eventually might deliver the message to the physical device.
+
+Variant:: A variant of the Push Application, representing a specific mobile platform, like iOS or Android, or even more fine-grained differentiation like iPad or iPhone.
+There can be multiple variants for a single Push Application (for example, _Mobile HR Android_, _Mobile HR iPad_, _Mobile HR iOS free_ or _Mobile HR iOS premium).
+Each supported variant type contains some platform specific properties, such as a Google API key (Android) or passphrase and certificate (Apple).
+
+APNs:: link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[Apple Push Notification service].
+
+Installation:: Represents an actual device, registered with the UnifiedPush Server. User1 running _HR Android_ app, while User2 runs _HR iPhone premium_ on his phone.
+
+Administrative User Interface:: (AUI) The {push-ui} Web UI that allows you manage Push Applications and Variants, view statistics and send Push Notifications to devices.
+
+:leveloffset!:
+
+== Privacy note
+
+As explained in the xref:how_the_unifiedpush_server_works[How the UnifiedPush Server works] section, the payload of the push notification is delivered to 3rd party Push Network providers, like Google or Apple.
+
+WARNING: It is highly recommended to not send any sensitive personal or confidential information belonging to an individual (e.g. a social security number, financial account or transactional information, or any information where the individual may have a reasonable expectation of secure transmission) as part of any Push Notification.
+
+For analytic purposes on our link:#_dashboard[Dashboard] we store the content of the +alert+ key sent to the UnifiedPush Server. The content of the +alert+ key belongs to the metadata, which is deleted after 30 days, using a nightly job within the UnifiedPush Server.
+
+[[how_the_unifiedpush_server_works]]
+== How the UnifiedPush Server Works
+
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
+It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
+
+
+NOTE: When using the UnifiedPush Server, please keep in mind that Push notification is a signalling mechanism and that it is not suitable to be used as a data carrying system (e.g. use in a chat application).
+
+
+:leveloffset!:
+// end push/index.adoc[leveloffset=1]
+
+[[setup]]
+
+== Prerequisites
+
+// start {partialsdir}/generic-provisioning-pre-req.adoc[]
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+
+== Setting Up the Push Notifications Mobile Service
+// start push/google-setup.adoc[leveloffset=2]
+:leveloffset: 2
+
+//
+//[[google-setup]]
+= Obtaining Firebase Cloud Messaging Credentials
+
+Before the Android application is able to receive the notifications, you must set up access to Firebase Cloud Messaging. As with iOS, you are only able to test out your push notifications in a real device. The following credentials are necessary to set up Firebase Cloud Messaging for your app:
+
+* the **Server key**
+* the **Sender ID**
+* the `google-services.json` file containing the credentials required to connect your app to Firebase and Google services.
+
+. From the _Project Settings_ screen, switch to the _Cloud Messaging_ tab, where you can find the **Server key** and **Sender ID** (known in GCM as **Project Number**). There is also a _Legacy server key_ but it should not be used for new projects.
+
+. Download the `google-services.json` file as described in the link:https://support.google.com/firebase/answer/7015592?hl=en[Google Documentation, window="_blank"].
+
+:leveloffset!:
+// end push/google-setup.adoc[leveloffset=2]
+// start push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_preparing-ups-for-use-with-ios
+
+[id='{context}_preparing-ups-for-use-with-ios']
+= Enable Push Notifications for iOS App
+
+The following guide helps you to enable Push Notifications for your iOS application.
+
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official Apple guide] to enable push notifications for your Xcode project.
+
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
++
+NOTE: Make sure to protect the p12 file with a password.
++
+NOTE: The exported p12 file with the password will be used later when binding your {mobile-client} to the {unifiedpush-service}.
+
+
+:leveloffset!:
+// end push/proc_preparing-ups-for-use-with-ios.adoc[leveloffset=2]
+// start push/provisioning.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+= Provisioning {unifiedpush-service} Service
+
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+:leveloffset!:
+// end push/provisioning.adoc[leveloffset=2]
+// start push/binding.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+:service-name: Push Notifications
+
+= Binding a {mobile-client} with the {service-name} service
+
+== Prerequisites
+
+[role="primary"]
+.Android
+
+****
+* [x] A Google account
+* [x] Access to the Firebase console. Refer to link:https://firebase.google.com/docs/[Firebase Docs].
+****
+
+[role="secondary"]
+.iOS
+
+****
+* [x] An Apple Developer account
+* [x] An APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
+****
+
+
+
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+To bind a {mobile-client} with a mobile service:
+
+== Procedure
+
+
+. Navigate to the *Overview* of your OpenShift project.
+
+. Select the {mobile-client} name listed in the {mobile-client}s section.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
+
+. Fill out the binding parameters required by the {service-name} Service.
+
+When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
+Those credentials need to be provided in the binding dialog.
+
+First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
+
+[role="primary"]
+.Android
+
+****
+You need to provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console under *Project Settings > Cloud Messaging*. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need an APNs client TLS certificate. Have a look at link:apple-setup.html[APNs Setup] for instructions on how to obtain one. Make sure that you have selected `iOS` in the `Mobile Client Type` dropdown.
+The certificate needs to be encoded in base64 before copying it into the field labelled `iOS .p12 file`. If you're on Mac OS run:
+
+----
+cat <path/to/your/.p12> | base64
+----
+
+If you're on Linux chances are that you're using a version of the base64 tool that does line wrapping. You need to disable this:
+
+----
+cat <path/to/your/.p12> | base64 --wrap=0
+----
+
+****
+
+After clicking Bind your variant will be created in UPS and you should see a new binding for your mobile client.
+
+
+
+:leveloffset!:
+// end push/binding.adoc[leveloffset=2]
+// start push/coding.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+
+:leveloffset: 1
+
+
+
+:service-name: Push Notifications
+
+= Configuring your Development Environment for the {service-name} Service
+
+
+:leveloffset: 1
+
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset!:
+
+
+:leveloffset!:
+
+== Setting up {unifiedpush-service} service SDK
+
+This guide will help you to set up the {unifiedpush-service} service SDK in your App.
+
+=== Prerequisites
+
+[role="primary"]
+.Android
+
+****
+You need a Firebase account. See link:google-setup.html[Google setup] to get started.
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple setup] to get started.
+****
+
+=== Importing the libraries
+
+
+[role="primary"]
+.Android
+
+****
+
+. Add the push dependency to your application module
++
+[source,groovy,subs="attributes"]
+----
+implementation "org.aerogear:aerogear-push:{release-number}"
+implementation "com.google.firebase:firebase-messaging:[version]"
+----
++
+. Create a new project in link:https://console.firebase.google.com[Firebase console, window="_blank"]
+. Add link:https://developers.google.com/android/guides/google-services-plugin[The Google Services Gradle Plugin, window="_blank"] in your root `build.gradle` file
+[source,groovy]
+  buildscript {
+      dependencies {
+          classpath 'com.google.gms:google-services:[version]'
+      }
+  }
+. Apply the plugin in your app `build.gradle` file
+[source,groovy]
+  // ADD THIS AT THE BOTTOM
+  apply plugin: 'com.google.gms.google-services'
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSPush', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSPush
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Install `cordova-plugin-aerogear-push`:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-push
+----
+
+. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library, window="_blank"]
++
+[source,bash]
+----
+$ npm install --save @ionic-native/push
+----
+
+. Install the Unified Push Server package needed for device registration:
++
+[source,bash]
+----
+$ npm install --save @aerogear/push
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+This feature is not yet supported in the AeroGear Xamarin SDK
+****
+
+=== Device registration
+
+To make use of the {unifiedpush-service} service, devices need to be registered by calling an endpoint of the server.
+The SDKs will handle this for you and the following steps will give you everything you need to start working with push notifications.
+
+[role="primary"]
+.Android
+
+****
+
+. Getting an instance of the PushService
++
+[source,java]
+----
+PushService pushService = new PushService.Builder().openshift().build();
+----
+
+. Registration request
++
+[source,java]
+----
+pushService.registerDevice()
+  .requestOn(new AppExecutors().mainThread())
+  .respondWith(new Responder<Boolean>() {
+    @Override
+    public void onResult(Boolean value) { // Yay }
+
+    @Override
+    public void onException(Exception exception) { // Oops! }
+});
+----
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+[source,swift]
+----
+func application(_ application: UIApplication,
+                 didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    var config = UnifiedPushConfig()
+    AgsPush.instance.register(
+        deviceToken,
+        config,
+        success: {
+           print("Successfully registered to Unified Push Server")
+        },
+        failure: { (error: Error!) in
+           print("Failure to register for on Unified Push Server: \(error)")
+        }
+    )
+}
+----
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+*Using plain Cordova*
+
+[source,javascript]
+----
+const push = PushNotification.init({
+    android: {},
+    ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+    }
+});
+
+// Registration handler
+push.on('registration', data => {
+    // PushRegistration is part of @aerogear/push
+    new PushRegistration().register(data.registrationId).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        // Error on device registration
+    });
+});
+----
+
+*Using Ionic*
+
+[source,javascript]
+----
+import { Push } from "@ionic-native/push";
+
+const pushObject = new Push().init({
+    android: {},
+    ios: {
+        alert: true,
+        badge: true,
+        sound: true
+    }
+});
+
+pushObject.on('registration').subscribe(data => {
+    new PushRegistration().register(data.registrationId).then(() => {
+        // Registration with UPS successful, you can now send push notifications from the UPS UI
+    }).catch(err => {
+        //Error on device registration
+    });
+});
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+This feature is not yet supported in the AeroGear Xamarin SDK
+****
+
+
+:leveloffset!:
+// end push/coding.adoc[leveloffset=2]
+[#push-ui]
+// start push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_accessing-push-using-the-ui
+
+[id='{context}_con_accessing-push-using-the-ui']
+= Accessing {unifiedpush-service} using the {push-ui}
+
+The {push-ui} allows you to send Push Notifications.
+
+To access {unifiedpush-service} using the {push-ui}, you will need to:
+
+ * Make sure the {unifiedpush-service} service is provisioned.
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
+
+[discrete]
+== Additional Information
+
+* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].
+
+:leveloffset!:
+// end push/con_accessing-push-using-the-ui.adoc[leveloffset=+1]
+[#sending]
+// start push/proc_sending-a-push-notification.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_sending-a-push-notification
+
+[id='{context}_proc_sending-a-push-notification']
+
+= Sending a Push Notification
+
+The {push-ui} allows you to send {push-notification}s to devices.
+
+. Open the {push-ui} in a browser.
+
+. Select the target application from the home page and click *Send Notification To This App*.
++
+image::send1.png[Send a Push]
+
+. When the _Send Push_ dialog displays, enter text in the *Message* form.
++
+image::send2.png[Enter the payload]
+
+. Click *Send Push Notification* to send the message to the target application.
++
+image::PushMessage.png[You got a notification!]
+
+NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
+
+:leveloffset!:
+// end push/proc_sending-a-push-notification.adoc[leveloffset=1]
+[#handling]
+// start push/handling-push-notifications.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Handling Push Notifications
+
+Follow the next steps to handle incoming {push-notification}s in your foregrounded application.
+
+NOTE: {push-notification}s that arrive when the application is in the background will always be handled by the OS.
+
+[role="primary"]
+.Android
+****
+
+Add to your project an implementation of *MessageHandler*:
+
+[source,java]
+----
+public class MyMessageHandler implements MessageHandler {
+
+    @Override
+    public void onMessage(Context context, Map<String, String> message) {
+        // Handle incoming message
+    }
+
+}
+----
+
+Add it to your application's manifest.
+
+[source,xml]
+----
+<meta-data
+    android:name="DEFAULT_MESSAGE_HANDLER_KEY"
+    android:value=".MyMessageHandler" />
+----
+
+****
+
+
+[role="secondary"]
+.iOS
+****
+
+The {SDK} for iOS does not provide a way to handle incoming messages. Instead, follow the link:https://developer.apple.com/notifications/[Apple's official documentation, window="_blank"] about notifications.
+
+****
+
+
+[role="secondary"]
+.Cordova
+****
+
+The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin, window="_blank"].
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+This feature is not yet supported in the AeroGear Xamarin SDK
+****
+
+:leveloffset!:
+// end push/handling-push-notifications.adoc[leveloffset=1]

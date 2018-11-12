@@ -1,0 +1,856 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Getting Started with {org-name} {product-name}
+
+== Introduction
+
+{org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
+With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
+
+IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.
+
+
+This guide shows you how to:
+
+* Set up {org-name} {product-name} on OpenShift
+* Create a {mobile-client} and a Mobile Service ({keycloak-service})
+* Set up a local development environment
+* Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
+* Run the showcase app and make calls to the {keycloak-service} service.
+
+Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
+
+// start installing-mobile-services.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Setting up {org-name} {product-name} on OpenShift
+
+To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see link:https://www.openshift.org/[OpenShift website, window="_blank"].
+
+NOTE: {org-name} recommends running OpenShift using the method described in this document. However, there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[Issue 1287, window="_blank"].
+
+[[prerequisites]]
+== Prerequisites
+
+* MacOS or Linux
++
+NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift bug], {product-name} will not run on RHEL/CentOS 7.4 or RHEL/CentOS 7.5.
+
+* A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management, window="_blank"]
++
+NOTE: Installation on macOS with Docker Machine has not been tested, use the link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[Docker for Mac] instructions when installing OpenShift.
++
+** Use link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.9
++
+IMPORTANT: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
++
+IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up, window="_blank"] with no errors before moving on to the installation of AeroGear.
++
+* Access to a link:https://hub.docker.com/[Docker Hub] account. The installer uses Docker Hub as a source for AeroGear Docker images.
+//** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible, window="_blank"] (version 2.6 or above)
+
+* For Linux (Fedora), add an extra port to the `dockerc` zone:
+
+[source,sh]
+----
+$ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
+$ firewall-cmd --reload
+----
+
+* A local mobile development environment for the platform you want to develop on.
+
+[[procedure]]
+== Procedure
+
+. Clone the Mobile-core installer:
++
+The installer configures the local development installation of {org-name} {product-name} using ansible scripts in our link:https://github.com/aerogear/mobile-core[mobile-core, window="_blank"] repo.
++
+Clone this repo to your local machine and check out the {release-number} tag using:
++
+[source,bash,subs="attributes"]
+----
+git clone https://github.com/aerogear/mobile-core.git
+cd mobile-core
+git checkout {release-number}
+----
+
+. In the same directory, run the installer:
++
+[source,bash]
+----
+$ ./installer/install.sh
+----
++
+The installer checks that valid versions of Ansible, Docker and the OpenShift Client Tools
+are installed.
+
+. Enter your Docker Hub login credentials when prompted. The installer checks these credentials are valid before continuing.
+
+. Accept the default values for the next set of prompts, unless you have specific requirements and understand the implications of changing the values.
+For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional Resources].
++
+NOTE: If your Cluster IP address is reported as 127.0.0.1, the installation will not succeed. Check your network connection and restart the installer.
++
+[source,bash,subs="attributes"]
+----
+DockerHub Tag (Defaults to latest):
+DockerHub Organisation (Defaults to aerogearcatalog):
+Cluster IP (Defaults to < Network IP Address >)
+Wildcard DNS Host (Defaults to nip.io):
+----
++
+For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
++
+The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
++
+----
+TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
+ok: [localhost] => {
+    "msg": [
+        "Web console URL: https://192.168.37.1:8443/console/",
+        "",
+        "Config is at host directory /var/lib/origin/openshift.local.config",
+        "Volumes are at host directory /var/lib/origin/openshift.local.volumes",
+        "Persistent volumes are at host directory /var/lib/origin/openshift.local.pv",
+        "Data is at host directory /path/to/mobile-core/ui/openshift-data"
+    ]
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************************************
+localhost                  : ok=44   changed=17   unreachable=0    failed=0
+----
++
+The log above is displayed after a successful installation.
+
+. Verify the installation:
++
+.. Browse to the Web console URL displayed at the end of the installation, and log in, accepting the self-signed certificate if displayed.
++
+The developer login credentials are:
++
+----
+username: developer
+password: password
+----
++
+The service catalog is displayed
+
+.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed. If the _Mobile_ tab still is not displayed, follow the troubleshooting steps below.
+
+image:catalog-mobile-clients.png[]
+
+[id='additional-resources']
+[discrete]
+= Additional resources
+
+== Troubleshooting
+If you have problems running {org-name} {product-name}, run the installer using the `--debug` option to capture as much information as possible:
+----
+$ ./installer/install.sh --debug
+----
+
+Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
+
+This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses an example of the ports you may want to add to your firewall are:
+
+NOTE: The following command will only add the specified port for the current session. If you reload your firewall or restart your machine the specified port will be restricted again.
+----
+$ firewall-cmd --add-port 443/tcp
+$ firewall-cmd --add-port 80/tcp
+----
+
+== DockerHub, Cluster IP and Wildcard DNS Host values
+
+Use *DockerHub Tag* and *DockerHub Organisation* to configure the location of the APBs used by the service-catalog in the cluster you are creating:
+[source,bash,subs="attributes"]
+----
+DockerHub Tag (Defaults to latest):
+DockerHub Organisation (Defaults to aerogearcatalog):
+----
+
+The *Cluster IP* value defaults to the IP address of your primary network interface.
+If you want to connect to your OpenShift instance from a mobile device, ensure that your device is on the same network.
+Typically, you should ensure you are using the IP Address of your Wireless Adapter (if one exists):
+[source,bash,subs="attributes"]
+----
+Cluster IP (Defaults to < Network IP Address >)
+----
+
+The *Wildcard DNS Host* option alters the wildcard DNS host you want to use:
+[source,bash,subs="attributes"]
+----
+Wildcard DNS Host (Defaults to nip.io):
+----
+
+:leveloffset!:
+// end installing-mobile-services.adoc[leveloffset=1]
+[[registering]]
+// start registering-a-mobile-app.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+= Registering a {mobile-client}
+
+After the setup is completed, the next thing you need to do is to register a {mobile-client} for the mobile app that you are going to develop.
+
+A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please see xref:mobile-clients.adoc[Mobile Clients in OpenShift]
+
+[discrete]
+== Procedure
+
+To create a {mobile-client-openshift}:
+
+. Log into the OpenShift console.
+. Choose your project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
++
+image:catalog-all.png[Available Mobile Clients]
+. Click the *Apps* tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.
++
+NOTE: On the wizard's *configuration* screen, it is recommended that you input the name of the showcase application into the *Package Name* text box.
++
+NOTE: When registering an iOS app, you are prompted for a bundle id. See the link:https://cocoacasts.com/what-are-app-ids-and-bundle-identifiers/[description of bundle identifiers] for more information.
+
+After the {mobile-client} is provisioned, you can navigate to it from Project Overview. The {mobile-client} view displays a list of mobile services that you can associate with the {mobile-client}, and offers to provision any mobile service that is in the service catalog but is not currently provisioned.
+
+:leveloffset!:
+// end registering-a-mobile-app.adoc[leveloffset=1]
+[[provisioning]]
+== Provisioning your First Service
+
+{product-name} provide commonly required features for mobile app development.
+
+This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see xref:con_services.adoc[Mobile Services]
+
+:service-name: Identity Management
+
+// start {partialsdir}/generic-provisioning.adoc[]
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+// end {partialsdir}/generic-provisioning.adoc[]
+
+NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
+For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
+
+// start {partialsdir}/generic-provisioning-end.adoc[]
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+// end {partialsdir}/generic-provisioning-end.adoc[]
+
+[id='{keycloak-service}-configuration-additional-resources']
+[discrete]
+=== Additional resources
+
+==== {keycloak-service} Configuration
+
+* *Keycloak admin username*: Username for Keycloak administration
+
+* *Keycloak admin password*: Password for the Keycloak admin user
+
+* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
+
+NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
+
+* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
+
+* *URL of the shared service*: Enter a value if you want to use an existing shared service.
+
+[[binding]]
+// start keycloak/binding.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+:service-name: Identity Management
+
+= Binding a {mobile-client}
+
+
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+To bind a {mobile-client} with a mobile service:
+
+== Procedure
+
+
+. Navigate to the *Overview* of your OpenShift project.
+
+. Select the {mobile-client} name listed in the {mobile-client}s section.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
+
+. Fill out the binding parameters required by the {service-name} Service.
++
+NOTE: Use `public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `bearer`.
+
+The {service-name} service will now be expandable, details about the service can be viewed.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
+
+:leveloffset!:
+// end keycloak/binding.adoc[leveloffset=1]
+
+[[localdev]]
+// start keycloak/keycloak-setup.adoc[leveloffset=2]
+:leveloffset: 2
+
+//
+
+= Configuring the Service
+
+The following section will guide you through configuring the schema of the redirect url and web origin for a client in {idm-name}.
+This is required to enable OpenID authentication.
+For an explanation of these terms, see link:https://www.keycloak.org/documentation.html[Keycloak Documentation].
+
+:service-name: Identity Management
+
+[[choose-schema]]
+== Choose the schema of a redirect url
+
+[role="primary"]
+.Android
+****
+It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+****
+[role="secondary"]
+.iOS
+****
+It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
+****
+[role="secondary"]
+.Cordova
+****
+Redirect url is `\http://localhost/\*`, without `:/callback`. Web Origin is `\http://localhost/*`.
+****
+[role="secondary"]
+.Xamarin
+****
+Depending on the platform, set the redirect as described in either the Android or the iOS tab.
+****
+
+== Configuring {idm-name}
+
+. Log into the OpenShift console and navigate to the Project Overview.
+
+. Navigate to the {mobile-client} screen.
+
+. Select the Mobile Services tab.
+
+. If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
+
+. If the _Keycloak Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
+
+. Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
+
+. Log in to the Administration console using the credentials you specified when xref:#provisioning-the-identity-management-service[Provisioning] the service (defaults to admin:admin).
+
+. Select `Clients` from the left navigation menu.
+
+. Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
+
+. Add `<schema>:/callback` as an additional entry to `Valid Redirect URIs`. See xref:choose-schema[] to determine the value for `<schema>`.
+
+. Add `<schema>` as an additional entry to `Web Origins`.  See xref:choose-schema[] to determine the value for `<schema>`.
+
+. Save your changes.
+
+. Create a new user account as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[Creating a New User].
+
+. Set up credentials for the new user as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[User Credentials].
+
+:leveloffset!:
+// end keycloak/keycloak-setup.adoc[leveloffset=2]
+
+== Setting Up your Local Development Environment
+
+=== Supported Environments
+
+In order to perform local development, you will need to have set up a local development environment or IDE.
+{product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin.
+
+NOTE: You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
+
+
+[role="primary"]
+.Android
+
+****
+You need the following installed on your machine:
+
+* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google, window="_blank"]
+* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"]
+
+For information on how to set up a local Android development environment, see the link:https://developer.android.com/studio/install[Android Studio documentation, window="_blank"].
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need the following installed on your machine:
+
+* [x] iOS 9 or later
+* [x] Xcode 9 or later
+* [x] link:https://cocoapods.org[CocoaPods, window="_blank"]
+
+The AeroGear SDK for iOS is available using the CocoaPods package manager.
+If you have not installed CocoaPods, install it by running the command:
+
+[source,bash]
+----
+$ gem install cocoapods
+----
+
+For information on how to set up a local iOS development environment, see the link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[Swift documentation, window="_blank"].
+****
+
+[role="secondary"]
+.Cordova
+
+****
+You need the following installed on your machine:
+
+* [x] link:https://nodejs.org/[Node.js, window="_blank"] version 8.9.4 runtime and NPM
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI, window="_blank"] version 8.0.0
+
+For information on how to set up a local Cordova development environment, see the link:https://cordova.apache.org/#getstarted[Cordova documentation, window="_blank"].
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+You need the following installed on your system:
+
+* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft, window="_blank"]
+* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"], if you would like to install the showcase app on an Android device or emulator
+* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple, window="_blank"], if you would like to install the showcase app on an iOS device or emulator
+
+For information on how to set up a local Xamarin development environment, see the link:https://developer.xamarin.com/getting-started/[Xamarin documentation, window="_blank"].
+****
+
+[[running]]
+
+== Running your First Mobile App
+
+=== Cloning the Showcase App
+
+// start {partialsdir}/cloning-showcase-app.adoc[]
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/android-showcase-template.git
+$ cd android-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/ios-showcase-template.git
+$ cd ios-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/cordova-showcase-template.git
+$ cd cordova-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/xamarin-showcase-template.git
+$ cd xamarin-showcase-template
+$ git checkout {release-number}
+----
+****
+// end {partialsdir}/cloning-showcase-app.adoc[]
+
+
+// start {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset!:
+// end {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
+
+
+=== Building the app
+
+// start {partialsdir}/build-and-deploy.adoc[tags=build]
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+$ ./gradlew assembleDebug
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+Run this command to install dependencies:
+
+. Install CocoaPods as described in link:https://cocoapods.org/[] if it is not already installed.
+
+. Run this command to install dependencies:
++
+[source,bash]
++
+----
+$ pod install
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+$ npm install
+$ npm run ionic:build
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+Run this command to install dependencies (optional):
+
+[source,bash]
+----
+$ nuget restore
+----
+****
+// end {partialsdir}/build-and-deploy.adoc[tags=build]
+
+// start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
+:leveloffset: 2
+
+//[[using-self-signed-certificates-in-mobile-clients]]
+= Using Self-Signed Certificates in Mobile Apps
+
+NOTE: Before you can run a mobile app and connect to {product-name}, you must configure self-signed certificates on the mobile device.
+
+Throughout the development lifecycle of a mobile app, a common
+requirement is to integrate and connect with back-end
+services in a secure manner. This is achieved using SSL/TLS.
+
+However, in order for the client device to connect over SSL/TLS, it needs to trust the
+certificates used by the back-end services, which are signed by a certificate authority.
+Most client devices have a list of well-known and trusted certificate authorities pre-installed and this allows the client devices to verify the certificates used by the back-end services.
+
+However, this normally doesn't work in a development environment, such as a local OpenShift cluster as it uses self-signed certificates which are not signed by any of the trusted certificate authorties. This means by default the client devices won't be able to establish secure connections with the back-end services that are running on a local OpenShift cluster.
+
+To work around the problem, you must manually extract the root certificate from the cluster, install it on the device and mark it as trusted.
+
+[[extracting-root-ca]]
+== 1. Extracting the OpenShift Root Certificate Authority Cert
+
+.. Log into OpenShift as the admin user:
++
+[source,bash]
+----
+$ oc login -u system:admin
+----
+
+.. Run the following command:
++
+[source,bash]
+----
+$ oc get secret router-certs --template='{{index .data "tls.crt"}}' -n default  |  \
+base64 --decode | sed -e '1,/^-----END RSA PRIVATE KEY-----$/ d'  > /tmp/localcluster.crt
+----
++
+The resulting file is located in the `/tmp` directory.
+
+[[installing-on-device]]
+== 2. Installing the OpenShift Root Certificate Authority Cert on a Device
+
+[role="primary"]
+.Android
+
+****
+.. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to ensure the certificate can be installed.
+
+.. Copy the file to your device using one of the following methods:
++
+* Email attachment (Recommended) - Simply email the certificate to an address
+accessible from the device and download the attachment.
+* Cloud service - Use a cloud storage service such as Dropbox or Google
+Drive which is accessible from the device, browse to the certificate and
+proceed to download it.
+* USB - Attach the device to the machine hosting
+OpenShift via USB and drag the certificate to a devices file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
+* link:https://developer.android.com/studio/command-line/adb[Android Debug Bridge, window="_blank"] (adb) - Use the adb push command to push the certificate to device or emulator:
++
+----
+$ adb push /tmp/localcluster.crt /sdcard/Download/localcluster.crt
+----
+.. Add the certificate to your device:
++
+If you are using the email or cloud service approach, once the certificate file is downloaded, you will be prompted by the Android system automatically to install the file. You can simply follow the instructions to complete the process.
++
+However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and Android system should detect the
+certificate and let you add it to the device. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
+****
+
+[role="secondary"]
+.iOS
+
+****
+.. Enable https://support.apple.com/en-us/ht204060[Passcode] or https://support.apple.com/en-us/ht201371[TouchID] protection on the mobile device to ensure the certificate can be installed.
+.. Copy the file to your device using one of the following methods:
++
+* Email attachment (Recommended) - Simply email the certificate to an address
+accessible from the device and download the attachment.
+* Cloud service - Use a cloud storage service such as Dropbox or Google
+Drive which is accessible from the device, browse to the certificate and
+proceed to download it.
+.. Add the certificate to your device:
++
+When you download the certificate, the
+device should automatically detect a profile. Simply follow the on
+screen instructions to install it.
++
+NOTE: Versions iOS 10.3 and later require an additional step to trust the now
+installed certificate. Instructions can be found on the
+https://support.apple.com/en-us/HT204477[Apple support site]
+****
+
+:leveloffset!:
+// end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
+
+
+=== Running the app in an emulator
+
+// start {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+[role="primary"]
+.Android
+
+
+****
+To run an Android app in an emulator, see the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation, window="_blank"].
+
+NOTE: The AeroGear SDK supports API level 21 or later.
+
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+To run an iOS app in an emulator, see the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation, window="_blank"].
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Cordova cross-platform applications can be run in the following emulators:
+
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android, window="_blank"]
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS, window="_blank"]
+
++
+NOTE: A running emulator on macOS is required to run an iOS application.
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Xamarin cross-platform applications are run in the following emulators:
+
+* link:https://blogs.msdn.microsoft.com/visualstudio/2018/05/08/hyper-v-android-emulator-support/[Android, window="_blank"]
+* link:https://developer.xamarin.com/getting-started-ios/[iOS, window="_blank"]
+
++
+NOTE: A running emulator on macOS is required to run an iOS application.
+
+****
+
+:leveloffset!:
+// end {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
+
+// start {partialsdir}/identity-management-demo.adoc[tags=idm-demo]
+
+From the showcase app:
+
+. Press the *Authenticate* menu item. A login screen is displayed.
+. Log in using the credentials you set up with setting up the service.
++
+Once the login is successful, you will be taken back to the showcase
+application where you can see the roles and basic information of the user you have just logged in with.
+
+// end {partialsdir}/identity-management-demo.adoc[tags=idm-demo]

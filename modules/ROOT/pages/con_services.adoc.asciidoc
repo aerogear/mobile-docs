@@ -1,0 +1,66 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+= Mobile Services
+{org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
+
+The following services are available:
+
+* link:identity-management.html[{keycloak-service}]
+* link:push-notifications.html[{unifiedpush-service}]
+* link:mobile-metrics.html[{metrics-service}]
+* link:mobile-cicd.html[{mobile-ci-cd-service}]
+* link:device-security.html[{device-security-service}]
+* link:data-sync.html[{sync-service}]
+
+Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
+
+image::mobile-services-arch.png[]
+//Image found in https://docs.google.com/drawings/d/1aFZinQb6UF8AuCisQ_xt0DsX75WxWC7a55ZiDT9Xwho/edit?usp=sharing

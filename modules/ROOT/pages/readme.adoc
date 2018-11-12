@@ -1,7 +1,0 @@
-= Remote File
-This directory is used to store generic files and temporary files during the build process.
-A reference file typically is named `rantora-metrics-index.inc` and contains:
-
-----
-// include::https://raw.githubusercontent.com/finp/metrics-apb/MOBDOC-23/docs/modules/ROOT/pages/index.adoc[]
-----

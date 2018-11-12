@@ -1,0 +1,87 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+= AeroGear API Reference
+
+You can find the links to the API reference of each module for each platform in the table below.
+
+// start {partialsdir}/api-table.adoc[]
+SDKs for our Mobile Services are available for a variety of platforms, including Android, iOS, Cordova & Xamarin. These SDKs will help simplify your mobile and modern application development needs, leveraging OpenShift's Container technology to provide a secure, scalable backend platform.
+
+Click on the link:#[✔] to see the API reference documentation:
+
+|===
+| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service}
+
+| Android
+| link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-auth/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-push/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-security/[✔]
+
+| iOS
+| link:/api/ios/latest/core/[✔]
+| link:/api/ios/latest/auth/[✔]
+| link:/api/ios/latest/push/[✔]
+| link:/api/ios/latest/security/[✔]
+
+| Cordova
+| link:/api/cordova/latest/core/[✔]
+| link:/api/cordova/latest/auth/[✔]
+| link:/api/cordova/latest/push/[✔]
+| link:/api/cordova/latest/security[✔]
+
+| Xamarin
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_core.html[✔]
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_auth.html[✔]
+|
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_security.html[✔]
+|===
+// end {partialsdir}/api-table.adoc[]

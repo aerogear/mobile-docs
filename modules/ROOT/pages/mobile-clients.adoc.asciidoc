@@ -1,0 +1,394 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+= {mobile-client}s in OpenShift
+:toc:
+
+== Introduction
+
+{mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back-end
+for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally.
+{mobile-client}s allow you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service},
+{metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and
+quicker to implement.
+
+A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift
+and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
+and to connect to the back-end {product-name} you have provisioned on OpenShift.
+
+[#registering]
+== Registering a {mobile-client}
+To use services with a mobile app, a {mobile-client} must first be created to represent the mobile app in OpenShift.
+Once the {mobile-client} has been registered, it can then be bound to services to allow the mobile app to interact with
+these services.
+
+For information on how to register a {mobile-client} in OpenShift, see xref:getting-started.adoc#registering[Getting Started].
+
+[#services]
+// start {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
+:leveloffset: 1
+
+= Viewing Mobile Services
+
+In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to services. In
+the list of {mobile-client}s in the *Overview* view there is a summary of the number of services available to be bound
+to the {mobile-client} and how many services have already been bound to the client.
+
+image::overview-mobile-clients-expanded-none-provisioned.png[]
+
+The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
+to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
+the *Create Binding* button.
+
+image::mobile-clients-services-all-unbound.png[]
+
+If a service is bound to the {mobile-client} then details about the binding between the {mobile-client} and the
+service can be seen when expanding the service. These details differ for each service.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
+
+Once a service has been bound to a {mobile-client}, the configuration for the {mobile-client} will be updated in the
+*Overview* view and the {mobile-client} *Configuration* view. This configuration is used by your app to interact
+with the bound services.
+
+image::mobile-clients-configuration.png[]
+
+For more information on binding {mobile-client}s to services, see xref:getting-started.adoc#binding[Getting Started].
+
+:leveloffset!:
+// end {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
+
+[#building]
+// start {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Building Mobile Apps
+
+The *Builds* tab in the {mobile-client} view allows you to view the previous builds of the app, and triggers a new build of the app.
+
+== Provisoning a {mobile-ci-cd-service} Service
+
+In order to build the {mobile-client} app, you first need to provision a {mobile-ci-cd-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {mobile-ci-cd-service} service.
+
+image:mobile-clients-no-service.png[]
+
+For more details about how to provision the {mobile-ci-cd-service} service, please see xref:mobile-cicd.adoc[{mobile-ci-cd-service} service guide].
+
+== Creating a Build
+
+After the {mobile-ci-cd-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app, etc.
+
+image:mobile-clients-build-config.png[]
+
+For more information about how to configure the build config, please see xref:mobile-cicd.adoc#build-config[the build config section of {mobile-ci-cd-service}].
+
+== Starting a Build
+
+Once a build is configured, you can start a new build. You will be able to view the progress of the build from the OpenShift UI and access the full build log.
+
+image:mobile-clients-build-in-progress.png[]
+
+== Downloading and Installing Apps
+
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device. This binary can be downloaded for any successful build in the build history.
+
+Once the build has completed you can then press the `Download` button and you will be presented with a QR code. Applications to scan QR codes are available in Google Play for Android or the App Store for iPhone. Once the QR code has been scanned, it will open the download URL in the device and the application will download.
+
+image:mobile-clients-builds-complete.png[Available Mobile Clients]
+
+If you do not have a QR code scanner you can also download the artifact from the URL in the OpenShift web console. Once downloaded connect a device to your local machine.
+
+* For iOS applications open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation.
+
+* For Android applications move the APK file into the device directory. On your device locate and select the APK file and select install.
+
++
+NOTE: You may need to enable the installation of apps from unknown sources on Android devices before installing from an APK.
+
+:leveloffset!:
+// end {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+
+[#sdk]
+// start {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+:leveloffset: 1
+
+= Introduction to the AeroGear SDK
+
+After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
+
+The {org-name} SDK supports the following platforms:
+
+[[android]]
+== Android
+
+For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation, window="_blank"].
+
+
+. To use the SDK add jcenter to the `build.grade` file in your project's root directory
++
+[source, groovy]
+----
+allprojects {
+    repositories {
+        jcenter() // <-- Add This line
+        google()
+    }
+}
+----
+
+. In the build.gradle file of your app you can begin adding dependencies provided by the SDK.
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    ...
+    implementation 'org.aerogear:android-core:{release-number}'
+    implementation 'org.aerogear:android-push:{release-number}'
+    implementation 'org.aerogear:android-auth:{release-number}'
+    implementation 'org.aerogear:android-security:{release-number}'
+}
+----
+
+. For push you also need to add a dependency to the Firebase SDK:
++
+[source,groovy]
+----
+dependencies {
+    ...
+    implementation "com.google.firebase:firebase-messaging:[version]"
+}
+----
+
+NOTE: To implement certificate pinning in the individual SDKs, see link:device-security.html#cert-pinning[Certificate Pinning in Android Devices].
+
+For Service specific steps, see:
+
+* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+[[ios]]
+== iOS
+
+For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation, window="_blank"].
+
+
+. In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
++
+[source,ruby,subs="attributes"]
+----
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target :'YourTarget' do
+    ## Require one of the AeroGear SDK's here
+    pod 'AGSCore', '{release-number}'
+    pod 'AGSPush', '{release-number}'
+    pod 'AGSAuth', '{release-number}'
+    pod 'AGSSecurity', '{release-number}'
+end
+----
++
+. Then run the following command:
++
+[source,bash]
+----
+$ pod install
+----
++
+. Open up `.xcworkspace` with Xcode and start using the SDK.
++
+NOTE: Do not use `.xcodeproj`. If you open a project file instead of a workspace, dependencies will not be correctly configured.
++
+. Import the SDK you want to use in the application. For example:
++
+[source,swift]
+----
+   import AGSAuth
+----
+
+For Service specific steps, see:
+
+* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+
+[[cordova]]
+== Cordova
+
+For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation, window="_blank"].
+
+. Open a terminal and navigate to your appplication project root folder.
+
+. Install the AeroGear SDK base project:
++
+[source.bash]
+npm install @aerogear/app
++
+. In your application, import and call the "init" method:
++
+[source,javascript]
+----
+import { init } from "@aerogear/app";
+
+const aerogearConfig = {
+    // Replace with your own configuration
+};
+
+init(aerogearConfig);
+----
+
+For Service specific steps, see:
+
+* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+[[xamarin]]
+== Xamarin
+
+For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation, window="_blank"].
+
+. In your VisualStudio project expand `Dependencies > NuGet`
+
+. Click on `Add packages...`
+
+. Select `AeroGear.Mobile.Core` and depending on your target platforms:
+
+. for Android:
+
+.. also pick `AeroGear.Mobile.Core.Platform.Android`
+
+.. Initialize Core (for Xamarin.Forms):
++
+[source,csharp]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+LoadApplication(app);
+----
+
+.. Initialize Core (for Legacy Xamarin):
++
+[source,csharp]
+----
+MobileCoreAndroid.Init(ApplicationContext);
+----
+
+. for iOS:
+
+.. also pick `AeroGear.Mobile.Core.Platform.iOS`
+
+.. Initialize Core (for Xamarin.Forms):
++
+[source,csharp]
+----
+var app = new App();
+MobileCoreIOS.Init(app.GetType().Assembly);
+LoadApplication(app);
+----
+
+.. Initialize Core (for Legacy Xamarin):
++
+[source,csharp]
+----
+MobileCoreIOS.Init();
+----
+
+For Service specific steps, see:
+
+* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+:leveloffset!:
+// end {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+
+
+== API Reference Documentation
+
+// start {partialsdir}/api-table.adoc[]
+SDKs for our Mobile Services are available for a variety of platforms, including Android, iOS, Cordova & Xamarin. These SDKs will help simplify your mobile and modern application development needs, leveraging OpenShift's Container technology to provide a secure, scalable backend platform.
+
+Click on the link:#[✔] to see the API reference documentation:
+
+|===
+| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service}
+
+| Android
+| link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-auth/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-push/[✔]
+| link:http://www.javadoc.io/doc/org.aerogear/android-security/[✔]
+
+| iOS
+| link:/api/ios/latest/core/[✔]
+| link:/api/ios/latest/auth/[✔]
+| link:/api/ios/latest/push/[✔]
+| link:/api/ios/latest/security/[✔]
+
+| Cordova
+| link:/api/cordova/latest/core/[✔]
+| link:/api/cordova/latest/auth/[✔]
+| link:/api/cordova/latest/push/[✔]
+| link:/api/cordova/latest/security[✔]
+
+| Xamarin
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_core.html[✔]
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_auth.html[✔]
+|
+| link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_security.html[✔]
+|===
+// end {partialsdir}/api-table.adoc[]

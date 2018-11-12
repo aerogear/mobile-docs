@@ -1,0 +1,1095 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Device Security
+
+// start security/index.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-device-security
+
+[id='{context}_con_introduction-to-device-security']
+[#introduction]
+= Introduction to the {device-security-service} Service
+
+
+The {device-security-service} service allows you to easily configure and manage device security, and trust checks for your mobile application
+
+* Perform a range of device trust checks on the mobile device, such as checking if the device is rooted, and allows you take proactive action based on the results
+* Distribute SSL certificates with a mobile app to create a direct chain of trust (certificate pinning)
+
+NOTE: {device-security-service} is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using {device-security-service}.
+
+
+[id='{context}_additional-resources-{context}']
+
+
+
+:leveloffset!:
+// end security/index.adoc[leveloffset=1]
+// start security/coding.adoc[leveloffset=1]
+[#setup]
+:leveloffset: 1
+
+
+
+= Configuring your Development Environment for the {device-security-service} Service
+
+:service-name: Security
+
+:leveloffset: 1
+
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset!:
+
+== Setting up {device-security-service} service SDK
+
+=== Importing the libraries
+
+[role="primary"]
+.Android
+****
+. Add the following dependency in your app's *build.gradle*:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-security:{android-sdk-release-number}'
+}
+----
+
+. Get an instance of `SecurityService` to start using the SDK.
++
+[source,java]
+----
+SecurityService securityService = new SecurityService();
+----
++
+NOTE: It is user responsibility to manage the `SecurityService` lifecycle.
+
+****
+
+[role="secondary"]
+.iOS
+****
+. Add the dependency to your *Podfile*
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSecurity', '{ios-sdk-release-number}'
+end
+----
+
+. Update the dependencies by running in your terminal
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import `AGSSecurity` and instantiate the `SecurityService` to start using the SDK
++
+[source,swift]
+----
+import AGSSecurity
+
+let security = AGSSecurity()
+----
++
+NOTE: Any subsequent call to AGSSecurity returns the same instance of the `SecurityService`.
+****
+
+[role="secondary"]
+.Cordova
+****
+. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM, window="_blank"]
++
+[source,bash]
+----
+$ npm install @aerogear/security
+----
+
+. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin, window="_blank"] for Cordova:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-security
+----
+
+. Import and instantiate `SecurityService` to start using the SDK:
++
+[source,javascript]
+----
+const SecurityService = require("@aerogear/security");
+
+const securityService = new SecurityService();
+----
++
+NOTE: Any new instantiation of `SecurityService` returns the same instance.
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security, window="_blank"] package
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security --version {xamarin-sdk-release-number}
+----
+
+. Install the specific packages for Android:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.Android --version {xamarin-sdk-release-number}
+----
++
+And for iOS:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Security.Platform.iOS --version {xamarin-sdk-release-number}
+----
+
+. Initialize the SDK by adding the following line to your Android application's *MainActivity.cs*:
++
+[source,c#]
+----
+protected override void OnCreate(Bundle savedInstanceState)
+{
+    base.OnCreate(savedInstanceState);
+
+    SecurityService.InitializeService();
+    // ...
+}
+----
++
+And to your iOS application's *AppDelegate.cs*:
++
+[source,c#]
+----
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+    SecurityService.InitializeService();
+    // ...
+}
+----
+
+. Get an instance of `SecurityService` to start using the SDK:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+----
++
+NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
+****
+
+:leveloffset!:
+// end security/coding.adoc[leveloffset=1]
+[#device-trust]
+// start security/proc_performing-device-checks.adoc[leveloffset=1]
+:leveloffset: 1
+
+//
+= Performing Device Trust Checks in your Device
+
+This section describes what Device Trust Checks are available and how to execute them for the supported platforms. Also, mind that Device Checks can be performed either individually or together.
+
+== Root Access Detection
+
+Use this to help prevent your app running in a device that has been rooted/jailbroken.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.ROOT_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(JailbrokenDeviceCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(DeviceCheckType.rootEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+Use `ROOT_ENABLED` for Android:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED);
+----
+
+Use `JAILBREAK_ENABLED` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.JAILBREAK_ENABLED);
+----
+****
+
+== Developer Mode Detection
+
+Use this to detect if Developer Mode has been enabled on the device.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEVELOPER_MODE_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
+
+[role="secondary"]
+.Cordova
+****
+This check is not available for Cordova.
+****
+
+[role="secondary"]
+.Xamarin
+****
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEVELOPER_MODE_ENABLED);
+----
+****
+
+
+== Debugger Detection
+
+Use this to detect if a debugger is attached to the app.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEBUGGER_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(DebuggerAttachedCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(DeviceCheckType.debugModeEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+Use `DEBUGGER_ENABLED` for Android:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ENABLED);
+----
+
+Use `DEBUGGER_ATTACHED` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ATTACHED);
+----
+****
+
+== Emulator Detection
+
+Use this to detect if the app is being run on an emulator.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.IS_EMULATOR);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(IsEmulatorCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+[source, javascript]
+----
+new SecurityService()
+    .check(DeviceCheckType.isEmulator)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.IS_EMULATOR);
+----
+****
+
+== Device Lock Detection
+
+Use this to detect if a device has a lock screen set (with pin, fingerprint, pattern...).
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.SCREEN_LOCK_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(DeviceLockEnabledCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+NOTE: For iOS devices this check requires iOS 8 or above.
+[source, javascript]
+----
+new SecurityService()
+    .check(DeviceCheckType.screenLockEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.SCREEN_LOCK_ENABLED);
+----
+****
+
+== App Data Backup Detection
+
+Use this to detect whether the application’s data is configured to be synchronized across devices.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.BACKUP_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
+
+[role="secondary"]
+.Cordova
+****
+This is not available for Cordova.
+****
+
+[role="secondary"]
+.Xamarin
+****
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.BACKUP_ENABLED);
+----
+****
+
+== Device Encryption Detection
+
+Use this to detect whether a devices filesystem is encrypted.
+
+[role="primary"]
+.Android
+****
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.ENCRYPTION_ENABLED);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+This check is not available for iOS.
+****
+
+[role="secondary"]
+.Cordova
+****
+This is not available for Cordova.
+****
+
+[role="secondary"]
+.Xamarin
+****
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ENCRYPTION_ENABLED);
+----
+****
+
+
+
+
+
+== Invoking Multiple Device Checks
+
+Device Checks can be run in group, both synchronously and asynchronously.
+
+=== Synchronously
+
+[role="primary"]
+.Android
+****
+. Get a `SyncCheckExecutor` from `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+SyncDeviceCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source, java]
+----
+Map<String, DeviceCheckResult> results = syncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Invoke multiple checks using the `checkMany` function:
+[source, swift]
+----
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkMany(checks)
+----
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
+****
+
+[role="secondary"]
+.Cordova
+****
+Executing multiple checks synchronously is not directly supported. Instead, it's possible to use the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await[await, window="_blank"] operator.
+[source, javascript]
+----
+const results = await securityService.checkMany(
+    DeviceCheckType.rootEnabled,
+    DeviceCheckType.isEmulator,
+    // Add more checks here
+);
+----
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Build a `SyncDeviceCheckExecutor` from `SecurityService` and execute:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
+----
+****
+
+=== Asynchronously
+
+[role="primary"]
+.Android
+****
+. Get an `AsyncCheckExecutor` from `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+AsyncDeviceCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source, java]
+----
+Map<String, Future<DeviceCheckResult>> results = asyncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Executing multiple checks asynchronously is not supported at the moment for this platform.
+****
+
+[role="secondary"]
+.Cordova
+****
+Invoke multiple checks using the `checkMany` method:
+[source, javascript]
+----
+const checkResults = securityService.checkMany(
+    DeviceCheckType.rootEnabled,
+    DevoceCheckType.isEmulator,
+    // Add more checks here
+)
+.then(results => {
+    // Handle results
+});
+----
+NOTE: This method returns a Promise with an array containing all `DeviceCheckResult` objects in the same order they were provided.
+****
+
+[role="secondary"]
+.Xamarin
+****
+Executing multiple checks asynchronously is not supported at the moment for this platform.
+****
+
+
+== Additional Resources
+
+=== Adding Custom Device Checks
+
+Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+
+[role="primary"]
+.Android
+****
+
+. Extend the `AbstractDeviceCheck` interface:
++
+[source, java]
+----
+class CustomDeviceCheck extends AbstractDeviceCheck {
+
+    @Override
+    protected boolean execute(@NonNull final Context context) {
+        // Implement security check logic here
+        return false;
+    }
+
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheck customDeviceCheck = new CustomDeviceCheck();
+DeviceCheckResult result = securityService.check(customDeviceCheck);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Implement the `DeviceCheck` interface:
++
+[source, swift]
+----
+public class MyCustomCheck: DeviceCheck {
+
+    public let name = "Custom Check"
+
+    public init() {}
+
+    public func check() -> DeviceCheckResult {
+        // Implement security check logic here
+        return nil
+    }
+
+}
+----
+
+. Use the `check` function as usual:
++
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(MyCustomCheck())
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+. Implement the `DeviceCheck` interface:
++
+[source, javascript]
+----
+class CustomDeviceCheck implements DeviceCheck {
+
+    get name(): string {
+        return "My Custom Check";
+    }
+
+    public check(): Promise<DeviceCheckResult> {
+        // Implement device check logic here
+        return null;
+    }
+
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, javascript]
+----
+const securityService = new SecurityService();
+
+securityService.check(new CustomDeviceCheck())
+    .then(result => {
+        // Handle result
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Implement the `IDeviceCheck` interface:
++
+[source, c#]
+----
+class CustomDeviceCheck : IDeviceCheck
+{
+    public string GetName()
+    {
+        return "Custom check";
+    }
+
+    public string GetId()
+    {
+        return typeof(CustomDeviceCheck).FullName;
+    }
+
+    public DeviceCheckResult Check()
+    {
+        // Implement security check logic here
+        return null;
+    }
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
+----
+****
+
+
+
+
+
+
+
+=== Reporting Device Checks Results Via the Metrics Service
+
+In order to report the results of Device Checks utilize this service in conjunction with the xref:mobile-metrics.adoc[Mobile Metrics] service.
+
+[role="primary"]
+.Android
+****
+Report individual checks via the `checkAndSendMetric` method:
+
+[source, java]
+----
+MetricsService metricsService = MobileCore.getInstance(MetricsService.class);
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.checkAndSendMetric(DeviceCheckType.<check_type>, metricsService);
+----
+
+Or alternatively report multiple checks using a `CheckExecutor`:
+
+[source, java]
+----
+MetricsService metricsService = mobileCore.getInstance(MetricsService.class);
+Map<String, DeviceCheckResult> results = DeviceCheckExecutor.Builder.newSyncExecutor(this.getContext())
+    .withDeviceCheck(DeviceCheckType.<check_type>)
+    // Add other checks...
+    .withMetricsService(metricsService)
+    .build()
+    .execute();
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Report individual checks via the `checkAndPublishMetric` function:
+
+[source, swift]
+----
+let result = security.checkAndPublishMetric(DeviceLockEnabledCheck())
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` function:
+
+[source, swift]
+----
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkManyAndPublishMetric(checks)
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Report individual checks via the `checkAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService()
+    .checkAndPublishMetric(DeviceCheckType.rootEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService()
+    .checkManyAndPublishMetric(
+        DeviceCheckType.rootEnabled,
+        DeviceCheckType.isEmulator,
+        // Add more checks here
+    )
+    .then(results => {
+        // Handle the security results array
+    });
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+Report individual checks:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED, metricsService);
+----
+
+Or alternatively report multiple checks using a `CheckExecutor`:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
+                        .WithMetricsService(metricsService)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
+----
+****
+
+
+:leveloffset!:
+// end security/proc_performing-device-checks.adoc[leveloffset=1]
+[#cert-pinning]
+// start security/proc_pinning-certificates.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Certificate Pinning in Android Devices
+
+link:https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning[Certificate pinning, window="_blank"] can be enabled in individual SDKs through the `mobile-services.json` file.
+Certificate pinning will only be enabled for services which are used directly by the SDKs. For
+other services *SPKI* pinning is used. Mobile services must have pinning configured
+separately. For more information on setting up certificate pinning for mobile services see the
+link:https://developer.android.com/training/articles/security-config.html#CertificatePinning[Android network security guide, window="_blank"].
+
+== Generating Pinning Configuration
+
+The {sdk} gets its configuration from the `https` section of the `mobile-services.json` file
+in a project.
+
+[source,json]
+----
+{
+    "services":[],
+    "https": {
+        "certificatePins": [{
+            "host": "example.sync.service",
+            "certificateHash": "exampleHash"
+        }]
+    }
+}
+----
+
+To include the `https` section in configuration when generating it using the Mobile CLI use the
+`--include-cert-pins` flag when retrieving a client configuration. By default, self-signed or
+invalid certs will not be permitted to be included in the certificate pinning configuration. To
+allow these to be included use the `--insecure-skip-tls-verify` flag.
+
+[source, bash]
+----
+$ ./mobile get clientconfig <client name> --include-cert-pins --insecure-skip-tls-verify
+----
+
+=== Using Pinning Configuration
+
+If the `https` section is included in the `mobile-services.json` file then certificate pinning will
+automatically be enabled for mobile services.
+
+=== Considerations
+
+If the certificate authority of a service changes then the `mobile-services.json` file will need to
+be regenerated in order to retrieve the correct `https` configuration. The app will then need to be
+rebuilt and republished for the end users to consume. If this is not done then an app may become
+incapable of making network requests to other services.
+
+:leveloffset!:
+// end security/proc_pinning-certificates.adoc[leveloffset=1]

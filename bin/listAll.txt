@@ -1,0 +1,14 @@
+../modules/ROOT/pages/con_services.adoc
+../modules/ROOT/pages/data-sync.adoc
+../modules/ROOT/pages/device-security.adoc
+../modules/ROOT/pages/getting-started.adoc
+../modules/ROOT/pages/glossary.adoc
+../modules/ROOT/pages/identity-management.adoc
+../modules/ROOT/pages/mobile-cicd.adoc
+../modules/ROOT/pages/mobile-cli.adoc
+../modules/ROOT/pages/mobile-clients.adoc
+../modules/ROOT/pages/mobile-metrics.adoc
+../modules/ROOT/pages/push-notifications.adoc
+../modules/ROOT/pages/ref_api.adoc
+../modules/ROOT/pages/registering-a-mobile-app.adoc
+../modules/ROOT/pages/showcase-apps.adoc

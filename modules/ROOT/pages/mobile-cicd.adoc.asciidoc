@@ -1,0 +1,507 @@
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Mobile CI/CD
+
+// start mobilecicd/index.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-build
+
+[id='{context}_con_introduction-to-build']
+[#introduction]
+= Introduction to the {mobile-ci-cd-service} Service
+
+
+The {mobile-ci-cd-service} service allows you to automate the building of your native and hybrid mobile app for both Android and iOS.
+
+* Leverage your Jenkins expertise to manage and automate mobile builds.
+* Containerised builds on OpenShift for Android
+* Support for integrating OSX as build slaves for iOS builds
+* Catch build errors early using automated builds
+* Build status is displayed on the {mobile-client} details page in the OpenShift console, along with the mobile services associated with that {mobile-client}
+
+
+
+:leveloffset!:
+// end mobilecicd/index.adoc[leveloffset=1]
+// start mobilecicd/ref_terminology.adoc[leveloffset=+1]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{mobile-ci-cd-service}
+
+[id='{context}_ref_terminology']
+
+= {mobile-ci-cd-service} Terminology
+
+This section describes terminology that is associated with {mobile-ci-cd-service}.
+
+CI/CD:: Continuous Integration / Continuous Development
+
+Jenkins:: A tool that helps to automate the software development process, with continuous integration and facilitating continuous delivery.
+
+Build:: A single run of Jenkins against a source code repository.
+
+Artifact:: The result of a succesful build in Jenkins, this is the binary that can be installed on to a mobile device.
+
+Jenkinsfile:: This is a file contained in the source code repository which instructs Jenkins on how to build an artifact with this source code.
+
+:leveloffset!:
+// end mobilecicd/ref_terminology.adoc[leveloffset=+1]
+[#setup]
+
+== Prerequisites
+
+// start {partialsdir}/generic-provisioning-pre-req.adoc[]
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+// start mobilecicd/provisioning.adoc[leveloffset=1]
+
+:leveloffset: 1
+
+
+
+:service-name: Mobile CI/CD
+
+= Provisioning {service-name} Service
+
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+
+When provisioning a {mobile-ci-cd-service} service, you are prompted to set the following:
+
+. *Android SDK License Agreement
+ (required)*: Enter `yes` to accept the link:https://developer.android.com/studio/terms.html[Android SDK License Agreement, window="_blank"].
+
+. *Android SDK package config*: Add any configuration details you require for the SDK config file. Default values are provided but you should review and adapt them to your needs.
+
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+:leveloffset!:
+// end mobilecicd/provisioning.adoc[leveloffset=1]
+[#build-config]
+// start mobilecicd/proc_creating-a-build-configuration.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_creating-a-build-configuration
+
+[id='{context}_proc_creating-a-build-configuration']
+= Creating a Build Configuration
+
+You can use the OpenShift UI to create a new client build for an existing mobile client.
+
+. Log in to the OpenShift Console.
+
+. Browse to the *Project Overview* screen and find the {mobile-client} you want to build.
+
+. Click on the name of the {mobile-client} to open the details view.
+
+. From the *Builds* tab, select *Create Build* in the *Actions* menu. If no build configuration  exists, a *Start Build* button is displayed which allows you create a build configuration.
++
+image:mobile-clients-builds-empty.png[]
++
+The *Client Build Form* is displayed.
+
+.. Enter a unique name for the build configuration in the *Name* field.
+
+.. Enter the *Git Repository URL* for the {mobile-client} you want to build.
+
+.. Select the *Authentication Type* for the Git repository. For example, the {product-name} showcase apps are available to everyone, so you would choose *Public*. If your repo URL starts with `git@`, select *SSH*. If your repo URl starts with `http` and requires authentication, select *Basic*.
+
+.. If you select *Advanced Options* you can also specify:
++
+* Git Reference:: Optional branch, tag, or commit to checkout, default is master. This option can be used to select different branches of you application repo for different builds, for example, release vs develop.
+* Jenkins file path:: Optional path to where the Jenkinsfile is located in your application repo. The default is the root of the repo.
+
+. Select the *Build Type* for the build configuration. Typically you create two build configurations, one for debugging and and another for release.
++
+NOTE: Typically, for a *Release* build configuration, you need to add more information as described in xref:ref_source-configuration_ref_source-configuration[].
+
+. Create any environment variables that you want to pass to the build process and set values in the *Environment Variable* section of the form.
+
+. Click *Create*
+
+:leveloffset!:
+// end mobilecicd/proc_creating-a-build-configuration.adoc[leveloffset=1]
+[#jenkins]
+// start mobilecicd/proc_adding-a-jenkinsfile.adoc[leveloffset=1]
+:leveloffset: 1
+
+= Adding a Jenkinsfile
+
+To build a mobile app using the {mobile-ci-cd-service} service, you must add a `Jenkinsfile` to your git repository, typically in the root directory of that repository.
+
+The following sample files are suitable for the link:showcase-apps.html[Showcase Apps]. You may need a different configuration for your mobile app.
+
+== Sample Android Jenkinsfile for Debug Build Type
+
+```groovy
+node("android") {
+  stage("Checkout") {
+    checkout scm
+  }
+
+  stage("Prepare") {
+    sh 'chmod +x ./gradlew'
+  }
+
+  stage("Build") {
+    sh './gradlew clean assembleDebug' //comment for debug builds
+  }
+
+  uncomment the following stage if running a release build
+  stage("Sign") {
+
+  }
+
+ stage("Archive") {
+    archiveArtifacts artifacts: 'app/build/outputs/apk/**/app-debug.apk', excludes: 'app/build/outputs/apk/*-unaligned.apk'
+  }
+}
+
+```
+
+== Sample Android Jenkinsfile for Release Build Type
+
+```groovy
+node("android") {
+  stage("Checkout") {
+    checkout scm
+  }
+
+  stage("Prepare") {
+    sh 'chmod +x ./gradlew'
+  }
+
+  stage("Build"){
+    sh './gradlew clean assembleRelease' // uncomment for release build
+  }
+
+  stage("Sign") {
+    signAndroidApks (
+      keyStoreId: "myproject-testandroidcert",
+      keyAlias: "aerogear",
+      apksToSign: "**/*-unsigned.apk",
+      // uncomment the following line to output the signed APK to a separate directory as described above
+      // signedApkMapping: [ $class: UnsignedApkBuilderDirMapping ],
+      // uncomment the following line to output the signed APK as a sibling of the unsigned APK, as described above, or just omit signedApkMapping
+      // you can override these within the script if necessary
+      // androidHome: '/usr/local/Cellar/android-sdk'
+    )
+  }
+
+ stage("Archive") {
+    archiveArtifacts artifacts: 'app/build/outputs/apk/**/app-release.apk', excludes: 'app/build/outputs/apk/*-unaligned.apk'
+  }
+}
+
+```
+
+== Sample iOS Jenkinsfile for Release Build Type
+
+```groovy
+CODE_SIGN_PROFILE_ID = "myproject-iostestcert"
+BUILD_CONFIG = "Debug" // Use either "Debug" or "Release"
+
+PROJECT_NAME = "helloworld-ios-app"
+INFO_PLIST = "helloworld-ios-app/helloworld-ios-app-Info.plist"
+VERSION = "1.0.0"
+SHORT_VERSION = "1.0"
+BUNDLE_ID = "org.aerogear.helloworld-ios-app"
+OUTPUT_FILE_NAME="${PROJECT_NAME}-${BUILD_CONFIG}.ipa"
+SDK = "iphoneos"
+
+// use something like 8.3 to use a specific XCode version, default version is used if not set
+XC_VERSION = ""
+
+// do a clean build and sign
+CLEAN = true
+
+node('ios') {
+    stage('Checkout') {
+        checkout scm
+    }
+
+    stage('Prepare') {
+      sh '/usr/local/bin/pod install'
+    }
+
+    stage('Build') {
+        withEnv(["XC_VERSION=${XC_VERSION}"]) {
+            xcodeBuild(
+                    cleanBeforeBuild: CLEAN,
+                    src: './',
+                    schema: "${PROJECT_NAME}",
+                    workspace: "${PROJECT_NAME}",
+                    buildDir: "build",
+                    sdk: "${SDK}",
+                    version: "${VERSION}",
+                    shortVersion: "${SHORT_VERSION}",
+                    bundleId: "${BUNDLE_ID}",
+                    infoPlistPath: "${INFO_PLIST}",
+                    xcodeBuildArgs: 'ENABLE_BITCODE=NO OTHER_CFLAGS="-fstack-protector -fstack-protector-all"',
+                    autoSign: false,
+                    config: "${BUILD_CONFIG}"
+            )
+        }
+    }
+
+    stage('CodeSign') {
+        codeSign(
+                profileId: "${CODE_SIGN_PROFILE_ID}",
+                clean: CLEAN,
+                verify: true,
+                ipaName: "${OUTPUT_FILE_NAME}",
+                appPath: "build/${BUILD_CONFIG}-${SDK}/${PROJECT_NAME}.app"
+        )
+    }
+
+    stage('Archive') {
+        archiveArtifacts "build/${BUILD_CONFIG}-${SDK}/${OUTPUT_FILE_NAME}"
+    }
+}
+```
+
+:leveloffset!:
+// end mobilecicd/proc_adding-a-jenkinsfile.adoc[leveloffset=1]
+[#building]
+// start mobilecicd/running-a-build.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_building-a-mobile-app
+
+[id='{context}_proc_building-a-mobile-app']
+= Building a Mobile App
+
+To build a mobile app.
+
+. Log in to the OpenShift Console.
+
+. Browse to the *Project Overview* screen and find the {mobile-client} you want to build.
+
+. Click on the name of the {mobile-client} to open the details view.
+
+. From the *Builds* tab, select the mobile app you want to build click *Start Build*.
++
+NOTE: Expanding the build section will show the current status of this build.
+
+. Check the mobile app build status by expanding the mobile client box.
++
+NOTE: This box lists the last 5 builds for this client.
+
+. To view the mobile app as a pipeline build, from the left menu, click *Builds > Pipeline*.
++
+Each build step is displayed (along with the current step status: completed, error or running) based on the stages in your Jenkinsfile code.
+
+.  To view the full build log, click *view log* which redirects you to your Jenkins instance.
+
+:leveloffset!:
+// end mobilecicd/running-a-build.adoc[leveloffset=1]
+[#logs]
+// start mobilecicd/access-mobile-client-build-logs.adoc[leveloffset=1]
+:leveloffset: 1
+
+[[access-mobile-client-build-logs]]
+= Viewing Build Logs
+
+== Viewing Build History in the OpenShift Console
+
+All of the builds related to your mobile client can be seen in the **Builds** tab of your {mobile-client}. Each build can be expanded to show further information about the build configuration, latest build and build history.
+
+All builds have a *View Log* link associated with them to access the detailed logs of that build.
+
+image::mobile-clients-builds-complete.png[access-build-from-notification][align="center"]
+
+
+== Viewing Build Logs in Jenkins
+
+. Navigate to the {mobile-client} and click the *Builds* tab.
+
+. Click the *View Log* link for the build, you are redirected to the Jenkins instance that has been running your build.
+
+. If prompted, log into OpenShift and accept the authorization request for:
++
+* user:info permission
+* user:check-access permission
+
+. View the log of the build. Based on your permissions to the OpenShift project, you might have access to other Jenkins capabilities, such as inspecting the build configuration or re-running the build with changes in the pipeline script.
+
+:leveloffset!:
+// end mobilecicd/access-mobile-client-build-logs.adoc[leveloffset=1]
+[#deploy]
+// start mobilecicd/proc_deploying-a-mobile-app.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_deploying-a-mobile-app
+
+[id='{context}_proc_deploying-a-mobile-app']
+= Deploying a Mobile App
+
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device.
+This binary can be downloaded for any successful build in the build history.
+
+
+. Open the OpenShift UI.
+
+. In the mobile overview screen for the mobile client, open the *Build tab*.
+
+. Expand the *buildconfig* that you want to deploy and click *Download*.
+
+. To download the binary to your mobile device, scan the QR code using your mobile device.
+
+:leveloffset!:
+// end mobilecicd/proc_deploying-a-mobile-app.adoc[leveloffset=1]
+[#clean]
+// start mobilecicd/cleaning-up-client-builds.adoc[leveloffset=1]
+:leveloffset: 1
+
+[[cleaning-up-mobile-client-builds]]
+= Cleaning up a Mobile Client Build
+
+== Deleting a Build Instance
+
+After creating and running a build, you can click through to your mobile client screen from the project overview and into the *Builds* tab. In this tab you see the details of your various mobile client builds.
+
+1. Click the build number of the build you want to delete. The build details screen is displayed.
+2. Choose *Delete* from the *Actions* menu. The build resource is removed from OpenShift along with the corrosponding build in the CI/CD service and any artefacts.
+
+== Deleting a {mobile-ci-cd-service} Build Configuration
+
+When you create a {mobile-client} build configuration, you create a https://docs.openshift.org/latest/dev_guide/builds/index.html#defining-a-buildconfig[BuildConfig] resource in OpenShift. This build config is then translated into a Jenkins Build for your mobile client in the CI/CD service. If you want to remove the entire Job from the CI/CD service and clean up everything in OpenShift, then deleting the build config  will achieve this. To delete the build config, click into your mobile client and open the builds tab. From here you can select the delete option from the more actions (the three dots) at the far right of the build row. Once deleted associated resources and builds with that Job will be removed as will the underlying Jenkins Job in the CI/CD service.
+
+:leveloffset!:
+// end mobilecicd/cleaning-up-client-builds.adoc[leveloffset=1]
+// start mobilecicd/ref_source-configuration.adoc[leveloffset=+1]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_source-configuration
+
+[id='{context}_ref_source-configuration']
+
+= Debug and Release Build Types
+
+Use the following information to configure debug and release type builds.
+
+== Android
+Add Build Type:
+Debug:: An Android debug build, no additional information required
+Release:: An Android release build, requires an upload of a password protected PKCS12 file containing a key protected by the same password.
+
+=== Release Build Type
+
+As a release build will need to be signed, you need to specify the keystore and private key passwords.
+
+=== Keystore located in source code
+
+If your keystore is checked into your source code, you will need to take the password value in your build script as an environmental variable. This will allow you to set this environmental variable as part of your client build from within the OpenShift UI. This can be done directly when creating the mobile client build or afterwards by editing the build config.
+
+=== External keystore
+
+If you have an external keystore, you should ensure to select the checkbox to use an external keystore once this is done, you will be asked for the following additional information:
+
+Name:: A unique name for the android credentials you are adding e.g. my-android-release-cert
+KeyStore Password:: The password for the android keystore and the PKCS12 archive (The password for the archive and the keystore must be the same)
+KeyStore Alias:: The entry name of the private key/certificate chain you want to use to sign your APK(s). This entry must exist in the key store uploaded. If your key store contains only one key entry, which is the most common case, you can leave this field blank.
+Android KeyStore:: Password protected PKCS12 file containing a key protected by the same password.
+
+The PKSC12 archive of your android keystore certificate can be generated using the following command:
+[source,bash]
+----
+$ keytool -importkeystore -srckeystore <your-android-cert.keystore> -destkeystore <your-android-cert>.p12 -deststoretype PKCS12 -srcalias <your-android-cert-alias>
+----
+
+== iOS
+
+Build Type:: Build type value to be used by xcodebuild
+Name:: The unique credential name to be used in jenkins
+Apple Developer Profile:: An xcode zip generated file that contains all required files (certificate, private key and provisioning profile) to sign an iOS app. For more information, see this documentation on exporting developer accounts in XCode.
+Apple Developer Profile Password:: The developer profile password to be used by jenkins when importing the developer profiles private key.
+
+== Cordova
+
+Platform:: The platform that the app will target.
+Build Type:: The build type value (debug or release). Depending on the platform selected, this may result in additional parameters to be required.
+
+:leveloffset!:
+// end mobilecicd/ref_source-configuration.adoc[leveloffset=+1]

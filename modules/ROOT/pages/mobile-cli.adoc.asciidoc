@@ -1,0 +1,155 @@
+// start {partialsdir}/attributes.adoc[]
+// start {partialsdir}/attributes.adoc[]
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+= Getting Started with the {mobile-cli}
+
+The Mobile CLI allows developers work with {product-name} from the command line, for example using the following commands:
+
+[source,bash]
+----
+$ mobile get services
+$ mobile create serviceinstance <serviceName> --namespace=<namespace>
+$ mobile get clients --namespace=<namespace>
+$ mobile get clientconfig <mobileClientID> --namespace=<namespace>
+$ mobile create integration <consumingServiceInstanceID> <providingServiceInstanceID> --namespace=<namespace>
+----
+
+[[installing-the-cli]]
+== Installing {mobile-cli}
+
+
+. Clone the following repo:
++
+https://github.com/aerogear/mobile-cli
+
+. Change to the `scripts` directory and run the following command:
++
+[source,bash]
+----
+$ ./install.sh
+----
+
+[[core-objects-or-resources]]
+== Resources
+
+The following resources are available:
+
+* *MobileClient:* The mobile client is a resource that represents your
+mobile client application as part of the OpenShift UI and is also called the {mobile-client}. It gives us the
+context and information needed to show you relevant information around
+your particular mobile runtime as well as allowing us to setup the
+different kind of client builds required.
+* *ClientConfig* The client config, is a resource created by aggregating
+together all of the available service configs. This resource is the
+configuration required in order to consume your mobile aware services
+from your mobile client. It is used by the client SDKs for the various
+mobile services.
+* *ServiceConfig:* The service config contains the services' information
+that is used to configure the Mobile SDK. For more information see
+link:./docs/service_config.md[here].
+* *ClientBuild* The client build is backed by a regular BuildConfig,
+however the CLI will help you create this BuildConfig with as little
+effort as possible. This allows you to focus on just the mobile parts
+rather than needing to understand how to setup and manage a buildconfig
+and builds. For example, it will help you manage build credentials, and
+keys and ensure the build integrates seamlessly with the aereogear
+mobile build farm.
+* *Binding* The binding is backed by a binding resource in the service
+catalog. Once again we try to remove the need to understand how to
+create the native objects so that you can focus on being productive and
+building your mobile app. When doing a binding, you will be able to
+integrate different mobile services together. For example when using
+sync and keycloak you can bind them together and have your sync service
+protected by keycloak. This is as simple as
+`mobile create integration <consuming_service_instance_id> <providing_service_instance_id>`
+
+[[command-structure]]
+== Command Structure
+
+
+[[get]]
+=== get
+
+
+....
+  client           gets a single mobile client in the namespace
+  clients          gets a list of mobile clients represented in the namespace
+  clientconfig     get clientconfig returns a client ready filtered configuration of the available services.
+  integration      get a single integration
+  integrations     get a list of the current integrations between services
+  serviceconfig    get a mobile aware service definition
+  serviceconfigs   get a list of deployed mobile enabled services
+  serviceinstances get a list of provisioned service instances based on the service name.
+  services         get mobile aware services that can be provisioned to your namespace
+....
+
+[[create]]
+=== create
+
+
+....
+  client          create a mobile client representation in your namespace
+  integration     integrate certain mobile services together. mobile get services will show you what can be integrated.
+  serviceconfig   create a new service config
+  serviceinstance create a running instance of the given service
+....
+
+[[delete]]
+=== delete
+
+....
+  client          deletes a single mobile client in the namespace
+  integration     delete the integration between mobile services.
+  serviceconfig   delete a service config
+  serviceinstance deletes a service instance and other objects created when provisioning the services instance, such as pod presets
+....
