@@ -1,4 +1,11 @@
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{device-security-service}
 
+[id='{context}_ref_terminology']
+
+= {device-security-service} Terminology
+
+This section describes terminology that is associated with {device-security-service}.
 
 Root Access Detection (ROOT_ENABLED)::
 Use it to help prevent your app running in a device that has been rooted/jailbroken. A device is considered rooted if *any* of the following are true:

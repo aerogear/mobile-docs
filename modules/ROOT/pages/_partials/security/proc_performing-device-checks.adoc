@@ -476,7 +476,7 @@ Executing multiple checks asynchronously is not supported at the moment for this
 
 === Adding Custom Device Checks
 
-Besides the xref:security/index.adoc#ref_terminology_Device%20Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+Besides the xref:glossary.adoc#ref_terminology_Device Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
 
 [role="primary"]
 .Android
