@@ -11,7 +11,11 @@ include::_partials/attributes.adoc[]
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 
-IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.
+// start {partialsdir}/mdc-introduction.adoc[]
+include::_partials/mdc-introduction.adoc[]
+// end {partialsdir}/mdc-introduction.adoc[]
+
+IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this tech preview release as an evaluation environment for developing and deploying mobile applications on Openshift.
 
 
 This guide shows you how to:
@@ -22,15 +26,20 @@ This guide shows you how to:
 * Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
 * Run the showcase app and make calls to the {keycloak-service} service.
 
-Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
-
 // start installing-mobile-services.adoc[leveloffset=1]
 include::_partials/installing-mobile-services.adoc[leveloffset=1]
 // end installing-mobile-services.adoc[leveloffset=1]
+
+[[provision-mdc]]
+// start {partialsdir}/provision-mdc.adoc[]
+include::_partials/provision-mdc.adoc[]
+// end {partialsdir}/provision-mdc.adoc[]
+
 [[registering]]
 // start registering-a-mobile-app.adoc[leveloffset=1]
 include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
 // end registering-a-mobile-app.adoc[leveloffset=1]
+
 [[provisioning]]
 == Provisioning your First Service
 

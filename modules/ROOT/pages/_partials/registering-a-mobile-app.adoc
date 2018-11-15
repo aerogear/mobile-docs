@@ -1,8 +1,8 @@
 
 = Registering a {mobile-client}
 
-After the setup is completed, the next thing you need to do is to register a {mobile-client} for the mobile app that you are going to develop.
+After provisioning Mobile Developer Console, the next step is to register a {mobile-client} for the mobile application that you are going to develop.
 
-A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please see xref:mobile-clients.adoc[Mobile Clients in OpenShift]
+A {mobile-client} is a representation of the mobile application that you are developing locally. {mobile-client}s allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement.
 
 include::mobile-client-registration-procedure.adoc[]

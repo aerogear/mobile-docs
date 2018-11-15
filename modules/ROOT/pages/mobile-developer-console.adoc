@@ -7,15 +7,23 @@ include::_partials/attributes.adoc[]
 
 == Introduction
 
+// start {partialsdir}/mdc-introduction.adoc[]
+include::_partials/mdc-introduction.adoc[]
+// end {partialsdir}/mdc-introduction.adoc[]
+
 A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift
 and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
 and to connect to the back-end {product-name} you have provisioned on OpenShift.
 
 [#provision-mdc]
+// start {partialsdir}/provision-mdc.adoc[]
+include::_partials/provision-mdc.adoc[]
+// end {partialsdir}/provision-mdc.adoc[]
 
 [#registering]
-== Registering a {mobile-client}
-For information on how to register a {mobile-client} in OpenShift, see xref:getting-started.adoc#registering[Getting Started].
+// start registering-a-mobile-app.adoc[leveloffset=1]
+include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
+// end registering-a-mobile-app.adoc[leveloffset=1]
 
 [#services]
 // start {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
