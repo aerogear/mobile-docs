@@ -16,7 +16,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:mobile-developer-console.adoc#provision-mdc[Provisioning Mobile Deveoper Console]
 ** xref:mobile-developer-console.adoc#registering[Registering a Mobile App]
 *** xref:mobile-developer-console.adoc#sdk[Configure SDK]
-** xref:mobile-developer-console.adoc#services[Viewing Available Services]
+** xref:mobile-developer-console.adoc#services[Using mobile services]
 ** xref:mobile-developer-console.adoc#building[Building Mobile Apps]
 
 * xref:con_services.adoc[Mobile Services]

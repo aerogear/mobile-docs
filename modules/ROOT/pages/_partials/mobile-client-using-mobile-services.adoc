@@ -1,0 +1,38 @@
+= Using mobile services
+
+== Viewing mobile services
+
+In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to services. 
+To show the list of services, go to the application *Overview* screen and to the *mobile services* tab. 
+There is a list of services available to be bound to the {mobile-client} and list of services that have already been bound to the client.
+
+image::mobile-clients-mobile-services.png[]
+
+== Binding mobile services
+
+The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
+to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by clicking
+the *Create Binding* button.
+
+You can bind a service by clicking *Bind to App* (image is the example of a Push Service). 
+
+image::mobile-clients-service-bind-1.png[]
+
+At the second step you can fill in configuration details for the binding (image is the example of a Push Service). 
+
+image::mobile-clients-service-bind-2.png[]
+
+Press *Create* to create the binding (image is the example of a Push Service).
+
+image::mobile-clients-service-bind-3.png[]
+
+After the binding is complete, the configuration in `mobile-services.json` for the {mobile-client} is updated in the
+*Configuration* tab. This configuration is used by your app to interact with the bound services.
+
+image::mobile-clients-overview-mobile-services-json.png[]
+
+== Unbinding mobile services
+
+To remove the binding press the image:3dots.png[] button and select *Delete*. 
+
+image::mobile-clients-service-unbind.png[]
