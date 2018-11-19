@@ -7,21 +7,13 @@
 
 To build a mobile app.
 
-. Log in to the OpenShift Console.
-
-. Browse to the *Project Overview* screen and find the {mobile-client} you want to build.
+. Open Mobile Developer Console and find the {mobile-client} you want to build.
 
 . Click on the name of the {mobile-client} to open the details view.
 
-. From the *Builds* tab, select the mobile app you want to build click *Start Build*.
-+
-NOTE: Expanding the build section will show the current status of this build.
+. From the *Builds* tab, select the build configuration you want to build and click *Start Build*.
 
-. Check the mobile app build status by expanding the mobile client box.
-+
-NOTE: This box lists the last 5 builds for this client.
-
-. To view the mobile app as a pipeline build, from the left menu, click *Builds > Pipeline*.
+. Check the mobile app build status by expanding the build configuration box.
 +
 Each build step is displayed (along with the current step status: completed, error or running) based on the stages in your Jenkinsfile code.
 
