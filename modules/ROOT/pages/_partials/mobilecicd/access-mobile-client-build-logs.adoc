@@ -3,11 +3,9 @@
 
 == Viewing Build History in the OpenShift Console
 
-All of the builds related to your mobile client can be seen in the **Builds** tab of your {mobile-client}. Each build can be expanded to show further information about the build configuration, latest build and build history.
+All of the builds related to your {mobile-client} can be seen in the **Builds** tab of your {mobile-client}. Each build can be expanded to show further information about the build configuration, latest build and build history.
 
 All builds have a *View Log* link associated with them to access the detailed logs of that build.
-
-image::mobile-clients-builds-complete.png[access-build-from-notification][align="center"]
 
 
 == Viewing Build Logs in Jenkins

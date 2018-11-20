@@ -3,7 +3,7 @@
 
 == Deleting a Build Instance
 
-After creating and running a build, you can click through to your mobile client screen from the project overview and into the *Builds* tab. In this tab you see the details of your various mobile client builds.
+After creating and running a build, you can click through to your {mobile-client} screen in the Mobile Developer Console and into the *Builds* tab. In this tab you see the details of your various mobile client builds.
 
 1. Click the build number of the build you want to delete. The build details screen is displayed.
 2. Choose *Delete* from the *Actions* menu. The build resource is removed from OpenShift along with the corrosponding build in the CI/CD service and any artefacts.
