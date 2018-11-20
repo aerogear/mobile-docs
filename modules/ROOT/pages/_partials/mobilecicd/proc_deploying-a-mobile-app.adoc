@@ -10,10 +10,8 @@ You can use the OpenShift UI to deploy a mobile app by downloading the binary di
 This binary can be downloaded for any successful build in the build history.
 
 
-. Open the OpenShift UI.
+. Navigate to the {mobile-client} in the Mobile Developer Console and click the *Builds* tab.
 
-. In the mobile overview screen for the mobile client, open the *Build tab*.
-
-. Expand the *buildconfig* that you want to deploy and click *Download*.
+. Expand the *build configuration* that you want to deploy and click *Generate Download Link*.
 
 . To download the binary to your mobile device, scan the QR code using your mobile device.

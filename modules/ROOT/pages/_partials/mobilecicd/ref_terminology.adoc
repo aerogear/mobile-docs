@@ -9,9 +9,9 @@
 
 This section describes terminology that is associated with {mobile-ci-cd-service}.
 
-CI/CD:: Continuous Integration / Continuous Development
+CI/CD:: Continuous Integration / Continuous Delivery
 
-Jenkins:: A tool that helps to automate the software development process, with continuous integration and facilitating continuous delivery.
+Jenkins:: A tool that helps to automate the software build process.
 
 Build:: A single run of Jenkins against a source code repository.
 
