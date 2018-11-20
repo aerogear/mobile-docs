@@ -8,7 +8,7 @@
 = Introduction to the {device-security-service} Service
 
 include::../generic-service-intros.adoc[tags=device-security-service]
+include::./ref_terminology.adoc[leveloffset=+1]
 
-[id='{context}_additional-resources-{context}']
 
 
