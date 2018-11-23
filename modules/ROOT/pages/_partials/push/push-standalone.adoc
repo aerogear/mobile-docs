@@ -9,7 +9,7 @@
 == Running the UnifiedPush Server on OpenShift
 
 AeroGear provides a link:https://github.com/aerogearcatalog/unifiedpush-apb[Ansible Playbook Bundle] to make it easy to get running on OpenShift.
-If you don't already have an account you can sign up link:https://www.openshift.com/pricing/index.html[here]. You can also use one of the various ways to run OpenShift on your own hardware like link:https://github.com/minishift/minishift[Minishift] or link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up].
+If you don't already have an account you can sign up link:https://www.openshift.com/pricing/index.html[here]. You can also use one of the various ways to run OpenShift on your own hardware like link:https://github.com/minishift/minishift[Minishift] or link:https://github.com/openshift/origin/blob/release-3.9/docs/cluster_up_down.md#getting-started[oc cluster up].
 Alternatively you can follow the instructions in the link:https://github.com/aerogear/mobile-core[Mobile Application Platform] repo to get a local cluster running.
 
 NOTE: When using the APB, authentication will be handled by OpenShift. KeyCloak is not required.
