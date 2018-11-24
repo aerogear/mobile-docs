@@ -1,0 +1,1014 @@
+// start {partialsdir}/attributes.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/attributes.adoc
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+:leveloffset: 0
+
+
+
+:service-name: Data Sync
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-sync
+
+[id='{context}']
+= {sync-service}
+
+== Introduction
+
+
+NOTE: The Data Sync mobile service is currently in development. Current released version is {data-sync-version}.
+The software is available for you to use and investigate, however it might not work as expected and functionality might change over time.
+
+The {sync-service} service allows you to synchronize data between multiple mobile clients and easily query exactly the data you need.
+
+* Synchronize data between multiple clients
+* Define and connect your own data sources
+* Retrieve and update your records using GraphQL
+* Robust offline experience and good performance thanks to Apollo caching
+
+
+:leveloffset: +2
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{sync-service}
+
+[id='{context}_ref_terminology']
+
+= {sync-service} Terminology
+
+This section describes terminology that is associated with {sync-service}.
+
+GraphQL:: A query language for data that is more powerful than a REST API. See link:https://graphql.org/learn[GraphQL]
+
+Apollo:: A client side library to work with a GraphQL based server. See link:https://www.apollographql.com/[Apollo]
+
+:leveloffset: 0
+
+[id='{context}_additional-resources-{context}']
+
+=== Additional resources
+
+For more information, see the link:https://www.apollographql.com/docs/react/[Apollo Client Documentation]
+
+:leveloffset: 0
+[[setup]]
+== Setting Up the Data Sync Mobile Service
+:leveloffset: 2
+
+
+
+:service-name: Data Sync
+
+= Provisioning {service-name} Service
+
+[discrete]
+== Prerequisites
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-pre-req.adoc
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+
+
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning.adoc
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+
+When provisioning a {service-name} Service, you are prompted to set the following:
+
+.Configuration
+[options="header"]
+|====
+|Field|Description
+|Postgres Storage Size (Gb)|Size of persistent volume for Postgres (default value is recommended)
+|Postgres User|User name that will be used to connect to postgres ('user' will be used if blank)
+|Postgres Password|Password to connect to Postgres (generated if blank)
+|Query depth limit|Limit the complexity of the queries solely by their depth
+|Query complexity limit|Limit the complexity of the queries based on the data
+|====
+
+[NOTE]
+====
+If the Postgres password was generated, retrieve the password using:
+[source,bash]
+----
+oc describe dc postgres-data-sync -n <myproject> | grep POSTGRESQL_PASSWORD
+----
+Wait for the database provisioning to finish before executing this command.
+====
+
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-end.adoc
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+:leveloffset: 0
+:leveloffset: 2
+
+
+
+:service-name: Data Sync
+
+= Binding a {mobile-client} with the {service-name} Service
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding.adoc
+
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+To bind a {mobile-client} with a mobile service:
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding-procedure.adoc
+== Procedure
+
+// includedFile ../modules/ROOT/pages/_partials/generic-service-nav.adoc
+
+. Navigate to the *Overview* of your OpenShift project.
+
+. Select the {mobile-client} name listed in the {mobile-client}s section.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
+
+. Fill out the binding parameters required by the {service-name} Service.
+
+:leveloffset: 0
+
+[#ui]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: data_sources_ui
+
+[id='{context}_data_sources_ui']
+= Managing your data sources using the {sync-service} UI
+
+The {sync-service} UI allows you to manage your data sources.
+
+To access the {sync-service} UI, you will need to:
+
+ * Make sure the {sync-service} service is provisioned.
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
+
+== Data Source Introduction
+
+A Data Source is a representation of your data storage solution. The Data Source consists of a *Name*, a *Type*, and a *Configuration*.
+The *Type* of Data Source which are currently supported are *Postgres* and *InMemory*. For information on how to use *Postgres*, refer to the documentation https://www.postgresql.org/docs[here].
+The *In Memory* Data Source that is currently supported is *NeDB*, for more information on how to use this please refer to the documentation https://github.com/louischatriot/nedb[here].
+
+NOTE: The *In Memory* Data Source is not recommended for production use.
+
+== Data Source Options
+
+The data sources tab on the {sync-service} UI allows you to perform the following operatations:
+
+=== View Existing Data Sources
+
+This is the default view on the {sync-service} UI. It lists all of the existing data sources. This view currently displays the data source name and the type of the data source.
+
+Data sources can be filtered using the *name* property.
+
+=== Edit an Existing Data Source
+
+To edit an existing data source, choose the *Edit Data Source* option from the data source menu.
+
+Update the data source with the new values.
+
+=== Delete an Existing Data Source
+
+To delete a data source, choose the *Delete Data Source* option from the data source menu. Next confirm that you wish to delete the data source.
+
+NOTE: When you delete a data source, all resolvers that are attached to it will also be deleted.
+
+=== Create a New Data Source
+
+If no data source exists, a new data source can be created by clicking the *Add Data Source* button. Select the type of your data source from the dropdown.
+For more information about the _In Memory_ option have a look at xref:#in-memory-option[the In Memory Option]. Information about the Postgres option can be found xref:#postgres-option[here].
+
+[[in-memory-option]]
+=== In Memory Data Sources
+
+You need to provide a name for the data source. The only other option is `TimeStamp Data`. If checked, timestamps will be stored along with your data in `NeDB`.
+
+NOTE: To find more about `NeDB` and how to write queries, have a look at the link:https://github.com/louischatriot/nedb#finding-documents[Github Repository].
+
+WARNING: Some features like unique indices and persistence are not supported in the In Memory database and it is therefore only recommended for evaluation purposes.
+
+[[postgres-option]]
+=== Postgres Data Sources
+
+You need to provide a name for the data source. `Postgres` has a number of other required options:
+
+. _Server_: The host name of the PostgreSQL instance.
+. _Port_: The Network Port used by PostgreSQL (defaults to `5432`).
+. _Database_: The name of the database to connect to. PostgreSQL servers can host multiple databases.
+. _Username_: The username of the PostgreSQL user account.
+. _Password_: (Optional) The password of the PostgreSQL user account.
+
+NOTE: To find out more about Postgres and how to work with it, have a look at the link:https://www.postgresql.org/docs/[official documentation].
+
+NOTE: You can test your data source before saving by clicking on the `Test` button. Data Sync will then attempt to connect to the provided PostgreSQL server. If the connection fails you will see the error message in the dialog.
+
+:leveloffset: 0
+[#schema]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: schema_ui
+
+[id='{context}_data_sources_ui']
+= Defining a Schema using the {sync-service} UI
+
+A schema describes the structure of the data the {sync-service} deals with. It allows you to configure
+your data types, queries and mutations in a format that is independent of the underlying data source.
+To learn more Schemas have a look at the link:https://graphql.org/learn/schema/[GraphQL documentation].
+
+== The Schema Editor
+
+The Schema Editor can be found under the `Schema` tab in the UI. It consists of a text editor where
+you can write and edit your schema and a structure view on the right. To try it out you can use a simple schema like this:
+
+```
+type Query {
+    notes: [Note]
+}
+
+type Comment {
+    from: String
+    text: String
+}
+
+type Note {
+    text: String!
+    comments: [Comment]
+}
+```
+
+Save the schema by pressing the `Save Schema` button. Upon saving the {sync-service} will check your schema for errors and compile it to a JSON representation.
+You can download this JSON representation by clicking on `Download Compiled Schema`. This is needed in the client SDKs.
+
+NOTE: When defining https://graphql.org/learn/schema/#scalar-types[custom scalars] on your schema it is important to assert that the data types match the expected type. This is important as custom Scalar definitions could potentially lead to security vulnerabilities such as SQL Injection.
+
+== Structure View
+
+After saving a schema the structure view on the right side of the `Schema` tab will be updated. If your schema contains errors you will see the error message there.
+Otherwise you will see a list of all your types, queries, mutations and subscriptions. This view is read only and can be used to quickly browse a schema.
+
+== Playground
+
+A playground is provided which allows you to test your changes to the schema. To use the playground, navigate to the tab in the UI and then write any queries or mutations you wish. Some useful features of the playground include code completion, query variables and full http header support. For more information about the playground and what is possible please visit link:https://github.com/prisma/graphql-playground[Prisma Playground].
+
+:leveloffset: 0
+[#resolvers]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: resolvers_ui
+
+[id='{context}_data_sources_ui']
+= Adding Resolvers to a Schema
+
+A schema describes the structure of your data and the operations to query or mutate that data.
+When a query is executed, GraphQL runs the attached `Resolver`. Resolvers implement the actual
+operations on the data and can be attached to Queries, Mutations and Properties of custom types.
+
+NOTE: to learn more about resolvers and their role in GraphQL have a look at the link:https://graphql.org/learn/execution/#root-fields-resolvers[official documentation].
+
+== Defining Resolvers
+
+Resolvers are defined in the `Resolvers` tab of the UI. If you have a valid schema you can see its
+structure on the left side and the resolver details on the right side.
+
+=== Structure View
+
+The structure view is different from the one in the schema tab in that it is grouped
+by `Queries`, `Mutations`, `Subscriptions` and `Custom Types`. All entries can be expanded to see their
+arguments (queries and mutations) or fields (custom types). The lines in the view have three columns:
+
+. _Name_: The name of the Query/Mutation/Custom Type
+. _Argument count_: The number of fields / arguments
+. _Resolver_: Shows the name of the Resolver's data source when one is assigned. Otherwise shows `No resolver`. Click here to start editing the resolver details.
+
+NOTE: Resolvers can only be attached directly to `Queries` and `Mutations` and not their arguments. For `Custom Types` the opposite is true: you usually want to assign resolvers to more complex properties, for example the `comments` field in the `Note` type of the above example.
+
+=== Resolver Details
+
+Here you can add the details of a resolver. The following fields must be provided:
+
+. _Data Source_: The data source this resolver gets executed against.
+. _Request Mapping Template_: The query that is executed to retrieve a result. `Mutations` in GraphQL are required to return a result too. NOTE: Have a look at xref:#mapping-templates[mapping templates] to learn how to make use of the `context` object in your queries.
+
+The following fields are optional:
+
+. _Response Mapping Template_: Allows you to transform the result before passing it to the caller. For example you could convert a string response to JSON, or parse a XML response.
+. _Pre Hook_: A WebHook that is called before running the `Request Mapping`.
+. _Post Hook_: A WebHook that is called if the `Request Mapping` was run successfully.
+
+NOTE: The Drop-Down buttons above the Request and Response Mappings fields allow you to pick one of the pre-defined templates of your data source.
+
+[[mapping-templates]]
+=== Request Mapping Templates
+
+To write meaningful queries you need access to the arguments passed to the resolver by the client.
+This is achieved by making use of the `context` object. Request and response mappings are evaluated in the {sync-service} backend and you can use Handlebars templates to inject values from the context object.
+
+The structure of the context object is the following:
+
+```javascript
+context: {
+    arguments,    // The arguments passed to the resolver
+    parent        // Parent object reference
+}
+```
+
+For example, a request mapping to retrieve all the comments for a particular `Note` could look like this:
+
+```
+select * from Comments where NoteId = '{{ context.parent.id }}'
+```
+
+NOTE: For in-memory data sources link:https://github.com/louischatriot/nedb[NeDB] is used. See link:https://github.com/louischatriot/nedb#api[NeDB API] to write request mappings.
+
+=== Response Mapping Templates
+
+Use a response mapping to transform a result or extract certain properties from the result. As with request mappers, response mapper have access to a `context` object with the following format:
+
+```javascript
+context: {
+    result      // The result returned from the query or mutation
+}
+```
+
+Handlebars helpers can be applied to the result. Currently the following helpers are available:
+
+. _toJSON_: Parses a string and returns the result as JSON.
+. _toBoolean_: Parses a string and returns the result as either `true` or `false`.
+. _convertNeDBIds_: Changes all id fields in the input object from `_id` to `id`, the latter being a more common name for a GraphQL property.
+
+An example response mapper for an in memory result could look like this:
+
+```
+{{ toJSON (convertNeDBIds context.result) }}
+```
+
+:leveloffset: 0
+[#subscriptions]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: subscriptions_ui
+
+[id='{context}_data_sources_ui']
+= Adding Subscriptions to a Schema
+
+GraphQL subscriptions allow you to be notified in realtime of changes to your data.
+`Subscriptions` are defined in the Schema as their own type, just like with `Query` and `Mutation`:
+```
+type Query {
+    notes: [Note]
+}
+
+type Mutation {
+    addNote(text: String!)
+}
+
+type Subscription {
+    noteAdded: Note
+}
+```
+
+Learn more about Subscriptions and other operation types at link:https://graphql.org/learn/queries/#operation-name[GraphQL documentation]
+
+== Publishing to a subscription
+
+Subscriptions can be attached to `Mutations` only.
+
+Once defined in a Schema, you can assign them to any mutation's `Resolver` in the Resolvers tab. To do so, simply select any Resolver and choose one `Subscription` to publish to from the Subscriptions dropdown.
+
+:leveloffset: 0
+[#sdk]
+:leveloffset: +1
+
+
+
+= Using the {sync-service} SDK
+
+This section will help you to set up the {sync-service} service SDK in your App.
+
+== Importing the libraries
+
+[role="primary"]
+.Android
+****
+Add `apollo-gradle-plugin` dependency to your project's `build.gradle` file:
+```
+buildscript {
+  repositories {
+    ...
+  }
+  dependencies {
+    classpath 'com.apollographql.apollo:apollo-gradle-plugin:0.5.0'
+  }
+}
+```
+Apply the plugin in your app module's `build.gradle` file:
+```
+apply plugin: 'com.android.application'
+apply plugin: 'com.apollographql.android'
+```
+Add `android-sync` dependency to your app module's `build.gradle` file:
+```
+implementation "org.aerogear:android-sync:2.1.0-alpha.1"
+```
+****
+
+[role="secondary"]
+.iOS
+****
+. Add the dependency to your *Podfile*:
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync'
+end
+----
+
+. Update the dependencies:
++
+[source,bash]
+----
+$ pod install
+----
+****
+
+== Setting Up the Sync Mobile Service
+
+The Sync SDK is using the link:https://github.com/apollographql/[Apollo GraphQL Client] behind of the scenes to handle link:http://graphql.github.io/[GraphQL].
+
+link:https://github.com/apollographql[Apollo client] requires some configuration to work.
+
+[role="primary"]
+.Android
+****
+1. Download Compiled GraphQL Schema from {sync-service} UI
+2. Create a special folder `graphql` inside of `src/main`
+3. Create a file `schema.json` with your Compiled GraphQL Schema
+4. Create a file with a name that corresponds to your business objects and a `.graphql` extension
+5. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response.
+
+For example if you create a file `graphql/com/example/somefile.graphql` with the content bellow:
+
+```
+query myNotes {
+  allNotes() {
+    id,
+    text
+  }
+}
+
+mutation createNote(text: String!) {
+  createNote($text: String!) {
+    id
+    text
+  }
+}
+
+subscription noteAdded {
+  noteAdded {
+    id
+    note
+  }
+}
+```
+
+Apollo will automatically create a file `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in compile time) in the package `com.example` for you.
+****
+
+[role="secondary"]
+.iOS
+****
+1. Download Compiled GraphQL Schema from {sync-service} UI.
+2. Create a file `schema.json` with your Compiled GraphQL Schema.
+3. Create a file with a name that corresponds to your business objects and a `.graphql` extension.
+4. Add all your queries/mutations/subscriptions to the `.graphql` file.
+5. Add a link:https://www.apollographql.com/docs/ios/installation.html#adding-build-step[code generation build step] to your target.
+6. Drag the generated API.swift file to your target.
+
+During a build Appolo will generate appropriate classes in API.swift file for reading from the network response.
+
+For example if you create a file `somefile.graphql` with the content bellow:
+
+```
+query myNotes {
+  allNotes() {
+    id,
+    text
+  }
+}
+
+mutation createNote(text: String!) {
+  createNote($text: String!) {
+    id
+    text
+  }
+}
+
+subscription noteAdded {
+  noteAdded {
+    id
+    note
+  }
+}
+```
+
+Apollo will automatically create a file called API.swift with classes `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in build time) for you.
+****
+
+== Using the Sync Mobile Service
+
+Use the AeroGear SDK sync library to provision a configured instance of the sync client (SyncClient):
+
+[role="primary"]
+.Android
+****
+```
+SyncClient.getInstance()
+```
+****
+
+[role="secondary"]
+.iOS
+****
+```
+AgsSync.instance.client
+```
+****
+
+=== Query
+
+[role="primary"]
+.Android
+****
+Use the `query` method from SyncClient:
+
+```
+SyncClient
+        .getInstance()
+        .query(MyNotesQuery.builder().build())
+        .execute(MyNotesQuery.Data.class)
+        .respondWith(new Responder<Response<MyNotesQuery.Data>>() {
+            @Override
+            public void onResult(Response<MyNotesQuery.Data> value) {
+                // Do some magic with the response.
+            }
+
+            @Override
+            public void onException(Exception exception) {
+                /// Oops! Something went wrong.
+            }
+        });
+```
+
+NOTE: The `MyNotesQuery` class is generated from the example schema above
+****
+
+[role="secondary"]
+.iOS
+****
+Use the `fetch` method from Apollo client to fire a query:
+
+```
+AgsSync.instance.client?.fetch(query: MyNotesQuery()) { result, error in
+    if let error = error {
+        // Oops! Something went wrong.
+    } else {
+        // Do some magic with the response.
+    }
+}
+```
+
+NOTE: The `MyNotesQuery` class is generated from the example schema above
+
+Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
+****
+
+=== Mutation
+
+[role="primary"]
+.Android
+****
+Use the `mutate` method from SyncClient:
+
+```
+SyncClient
+        .getInstance()
+        .mutation(CreateNoteMutation.builder().text("The note text").build())
+        .execute(CreateNoteMutation.Data.class)
+        .respondWith(new Responder<Response<TestMutMutation.Data>>() {
+            @Override
+            public void onResult(Response<TestMutMutation.Data> value) {
+                // Do some magic with the response.
+            }
+
+            @Override
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
+            }
+        });
+```
+
+NOTE: The `CreateNoteMutation` class is generated from the example schema above
+****
+
+[role="secondary"]
+.iOS
+****
+Use the `perform` method from Apollo client to fire a mutation:
+
+```
+AgsSync.instance.client?.perform(mutation: CreateNoteMutation(text: "The note text")) { result, error in
+    if let error = error {
+        // Oops! Something went wrong.
+    } else {
+        // Do some magic with the response.
+    }
+}
+```
+
+NOTE: The `CreateNoteMutation` class is generated from the example schema above
+
+Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
+****
+
+=== Subscription
+
+Use the `subscribe` method from SyncClient:
+
+[role="primary"]
+.Android
+****
+```
+SyncClient
+        .getInstance()
+        .subscribe(new NoteAddedSubscription())
+        .execute(NoteAddedSubscription.Data.class)
+        .respondWith(new Responder<Response<NoteAddedSubscription.Data>>() {
+            @Override
+            public void onResult(Response<NoteAddedSubscription.Data> response) {
+                // Do some magic with the response.
+            }
+
+            @Override
+            public void onException(Exception exception) {
+                // Oops! Something went wrong.
+            }
+        });
+```
+
+NOTE: The `NoteAddedSubscription` class is generated from the example schema above
+****
+
+[role="secondary"]
+.iOS
+****
+```
+AgsSync.instance.client?.subscribe(subscription: NoteAddedSubscription())  { result, error in
+    if let error = error {
+        // Oops! Something went wrong.
+    } else {
+        // Do some magic with the response.
+    }
+}
+```
+
+NOTE: The `NoteAddedSubscription` class is generated from the example schema above
+
+Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
+****
+
+
+:leveloffset: 0
+[[monitoring]]
+:leveloffset: +1
+
+
+
+= Monitoring {sync-service} Service
+
+== Prerequisites
+
+* [x] You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
+* [x] You have provisioned the xref:data-sync.adoc[{sync-service}] service.
+
+NOTE: The {metrics-service} Service and {sync-service} Service must be provisioned in the same OpenShift project to access data.
+
+== Overview
+
+After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {sync-service} Service are provisioned,
+you should be able to see the "Data Sync Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Data Sync Metrics*).
+
+== Dashboard panel descriptions
+
+The Data Sync dashboard consists of several panels which give you an overview of the specific
+events and resources, such as memory usage, CPU usage, resolved operation count etc.
+
+Below you will find a detailed description of each panel and its values.
+
+== Singlestat Panels
+
+Singlestat panels show you the main summary of a single data series.
+
+* *CPU Usage*: CPU usage percentage of {sync-service} Service used currently.
+
+* *Memory Usage*: The amount of memory currently used by the {sync-service} Service
+
+== Graph panels
+
+Used to show how certain values change over time, e.g. the number of operations resolved.
+
+* *Memory Usage in Time*: The amount of memory used by the {sync-service} Service over time
+
+* *CPU Usage in Time*: The percentage of CPU used by the {sync-service} Service over time
+
+* *Queries/Mutations Resolved*: Overview of the resolved queries and mutations over time
+
+* *Resolver Timings*: Overview of the how long it took to resolve operations over time.
+
+
+== Additional resources
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]
+
+:leveloffset: 0
+[#auth]
+:leveloffset: +1
+
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: sync_auth
+
+[id='{context}_authentication']
+= Authentication for {sync-service}
+
+By default, {sync-service} does not provide any authentication and authorization mechanism.
+Users can configure {sync-service} to work with {keycloak-service} to provide authentication and
+authorization for their applications.
+
+== Prerequisites
+
+* Make sure the {sync-service} service is provisioned.
+* Make sure the xref:identity-management.adoc[{keycloak-service}] service is provisioned.
+* Create an app that works with the {keycloak-service} service.
+
+== Binding the {sync-service} service to an {keycloak-service} Instance
+
+To benefit from authentication, developers need to connect (bind) {sync-service} into  {keycloak-service} Instance.
+
+== Creating the binding secret from a Keycloak Instance
+
+* Navigate to your Openshift project
+* Select *Applications* and then *Provisioned Services*
+* Copy the *Instance Name* field from the *{sync-service}* service
+* Select the *Identity Management* service from the list of Provisioned Services
+* Select the *Create Binding* option
+* Enter the copied *Instance Name* of the provisioned *{sync-service}* service
+
+A secret will be created as a result of this binding.
+
+== Making the Secret available to the {sync-service}
+
+* Select *View Secret* on the *Identity Management* details page
+* Select *Add to Application* and select the data-sync-server from the options
+* Select the *Volume* option and enter the following mount path: `/opt/keycloak`
+
+NOTE: The mount path must be set to `/opt/keycloak` for the {sync-service} to be configured to use the secret.
+
+== Making Secret available to application
+
+By default, the secret is not visible to the server application.
+To point the server to the application, please add a new environment variable:
+
+----
+KEYCLOAK_CONFIG_FILE=/opt/keycloak/config
+----
+
+NOTE: When working with OpenShift with self-signed certificate, add NODE_TLS_REJECT_UNAUTHORIZED=0 environment variable to deployment config of data-sync-server, otherwise the Keycloak-protected Data Sync won't work - the playground will be unavailable.
+
+== {sync-service} SDK Authentication
+
+When user logs in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
+
+[role="primary"]
+.Android
+****
+```
+MobileCore.getInstance().getHttpLayer().requestHeaderInterceptor().add(authService.getAuthHeaderProvider());
+```
+****
+
+[role="secondary"]
+.iOS
+****
+```
+if let transport = AgsSync.instance.transport {
+  transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
+}
+```
+****
+
+:leveloffset: 0
+[#authorization]
+:leveloffset: +1
+
+
+
+:service-name: Data Sync
+
+= Role Based Authorization in {sync-service}
+
+== Prerequisites
+
+* xref:data-sync.adoc#auth[Binding {sync-service} to Keycloak].
+* link:https://www.keycloak.org/docs/3.4/getting_started/index.html#creating-a-realm-and-user[Creating a Realm in Keycloak].
+* link:https://www.keycloak.org/docs/3.4/authorization_services/index.html#_getting_started_hello_world_enabling_authz_services[Enabling Authorization Services in Keycloak].
+* link:https://www.keycloak.org/docs/3.4/authorization_services/index.html#_policy_overview[Managing Policies in Keycloak]
+
+
+Role based authorization can be applied to Queries, Mutations, Subscriptions and individual fields in a GraphQL schema, when {sync-service} is used with Keycloak. This means it is possible to restrict individual fields and/or operations defined in the GraphQL schema to users with specific roles in Keycloak.
+
+Take a publishing platform as an example. Role Based Authorization could be used to ensure only users with the role `editor` can perform the `editPublication` mutation.
+
+{sync-service} currently supports authorization using **client** roles and **realm** roles defined in keycloak. Consult the Keycloak documentation to learn how to create roles.
+
+* link:https://www.keycloak.org/docs/4.3/server_admin/index.html#realm-roles[Realm Roles in Keycloak]
+* link:https://www.keycloak.org/docs/4.3/server_admin/index.html#client-roles[Client Roles in Keycloak]
+
+== The @hasRole Directive
+
+Role based authorization can be defined using the `@hasRole` directive. The `@hasRole` directive is a special annotation that can be applied to
+
+* Fields
+* Queries
+* Mutations
+* Subscriptions
+
+The `@hasRole` usage is as follows:
+
+* `@hasRole(role: String)`
+  * Example - `@hasRole(role: "admin"])`
+  * If the authenticated user has the role `admin` they will be authorized.
+* `@hasRole(role: [String])`
+  * Example - `@hasRole(role: ["admin", "editor"])`
+  * If the authenticated user has **at least one of the roles** in the list, they will be authorized.
+
+**The default behaviour is to check client roles.** For example, `@hasRole(role: "admin"])` will check that user has a client role called `admin`. `@hasRole(role: "realm:admin"])` will check if that user has a realm role called `admin`
+
+The syntax for checking a realm role is `@hasRole(role: "realm:<role>")`. For example, `@hasRole(role: "realm:admin")`. Using a list of roles, it is possible to check for both client and realm roles at the same time.
+
+== Example: Using the @hasRole Directive to Apply Role Based Authorization on a Schema
+
+The following example demonstrates how the `@hasRole` directive can be used to define role based authorization on various parts of a GraphQL schema. This example schema represents publishing application like a news or blog website.
+
+----
+type Post {
+  id: ID!
+  title: String!
+  author: Author!
+  content: String!
+  createdAt: Int!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  posts: [Post]!
+  address: String! @hasRole(role: "admin")
+  age: Int! @hasRole(role: "admin")
+}
+
+type Query {
+  allPosts:[Post]!
+  getAuthor(id: ID!):Author!
+}
+
+type Mutation {
+  editPost:[Post]! @hasRole(role: ["editor", "admin"])
+  deletePost(id: ID!):[Post] @hasRole(role: "admin")
+}
+----
+
+There are two types:
+
+* `Post` - This might be an article or a blog post
+* `Author` - This would represent the person that authored a Post
+
+There are two Queries:
+
+* `allPosts` - This might return a list of posts
+* `getAuthor` - This would return details about an Author
+
+There are two Mutations:
+
+* `editPost` - This would edit an existing post
+* `deletePost` - This would delete a post.
+
+=== Role Based Authorization on Queries and Mutations
+
+In the example schema, the `@hasRole` directive has been applied to the `editPost` and `deletePost` mutations. The same could be done on Queries.
+
+* Only users with the roles `editor` and/or `admin` are allowed to perform the `editPost` mutation.
+* Only users with the role `admin` are allowed to perform the `deletePost` mutation.
+
+This example shows how the `@hasRole` directive can be used on various queries and mutations.
+
+=== Role Based Authorization on Fields
+
+In the example schema, the `Author` type has the fields `address` and `age` which both have `hasRole(role: "admin")` applied.
+
+This means that users without the role `admin` are not authorized to request these fields **in any query or mutation**.
+
+For example, non admin users are allowed to run the `getAuthor` query, but they cannot request back the `address` or `age` fields.
+
+
+
+:leveloffset: 0

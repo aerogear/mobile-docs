@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-obtaining-the-mobile-sdk-config-file.adoc
 
 
 //[[downloading-the-mobile-services-configuration-file]]

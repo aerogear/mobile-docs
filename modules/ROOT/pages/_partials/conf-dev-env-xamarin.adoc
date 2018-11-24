@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/conf-dev-env-xamarin.adoc
 . In your VisualStudio project expand `Dependencies > NuGet`
 
 . Click on `Add packages...`

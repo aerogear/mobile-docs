@@ -1,0 +1,1138 @@
+// start {partialsdir}/attributes.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/attributes.adoc
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+// start keycloak/index.adoc[leveloffset=0]
+:leveloffset: 0
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/index.adoc
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-keycloak
+
+[id='{context}']
+= {keycloak-service}
+
+[#introduction]
+== Introduction
+
+
+The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
+
+* Secure your mobile app using the industry standard OpenID Connect protocol
+* Add access control to your app based on user’s group membership
+* Easily implement SSO, multi-factor authentication and Social Login support
+* Back-end support for identity brokering and user federation
+
+
+
+See the link:https://www.keycloak.org/documentation.html[Keycloak documentation, window="_blank"] for more info.
+
+
+:leveloffset: +2
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/ref_terminology.adoc
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: ref_terminology_{keycloak-service}
+
+[id='{context}_ref_terminology']
+
+= {keycloak-service} Terminology
+
+This section describes terminology that is associated with {keycloak-service}.
+
+SSO:: _Single Sign On_, the ability to share a login between multiple services
+
+OpenID Connect:: a standard for providing identity on top of OAuth 2.0
+
+Keycloak:: Red Hat's implementation of _SSO_ and _OpenID_ used as the identity provider
+
+Client ID:: is the client identifier for _OpenID Connect_ requests, a simple alpha-numeric string
+
+User Attributes:: additional properties for user accounts (besides name and email) managed by Keycloak
+
+:leveloffset: 0
+
+
+
+:leveloffset: 0
+// end keycloak/index.adoc[leveloffset=0]
+[[setup]]
+
+== Prerequisites
+
+// start {partialsdir}/generic-provisioning-pre-req.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-pre-req.adoc
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+
+== Setting Up the Identity Management Mobile Service
+// start keycloak/provisioning.adoc[leveloffset=2]
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/provisioning.adoc
+
+
+:service-name: Identity Management
+
+= Provisioning the {keycloak-service} Service
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
++
+When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
++
+* *Keycloak admin username*: Username for Keycloak administration
++
+* *Keycloak admin password*: Password for the Keycloak admin user
++
+* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
++
+NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
++
+* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
++
+* *URL of the shared service*: Enter a value if you want to use an existing shared service.
+
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-end.adoc
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+:leveloffset: 0
+// end keycloak/provisioning.adoc[leveloffset=2]
+// start keycloak/binding.adoc[leveloffset=2]
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/binding.adoc
+
+
+:service-name: Identity Management
+
+= Binding a {mobile-client}
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding.adoc
+
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+To bind a {mobile-client} with a mobile service:
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding-procedure.adoc
+== Procedure
+
+// includedFile ../modules/ROOT/pages/_partials/generic-service-nav.adoc
+
+. Navigate to the *Overview* of your OpenShift project.
+
+. Select the {mobile-client} name listed in the {mobile-client}s section.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
+
+. Fill out the binding parameters required by the {service-name} Service.
++
+NOTE: Use `public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `bearer`.
+
+The {service-name} service will now be expandable, details about the service can be viewed.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
+
+:leveloffset: 0
+// end keycloak/binding.adoc[leveloffset=2]
+// start keycloak/coding.adoc[leveloffset=2]
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/coding.adoc
+
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/configuring-dev-env-keycloak.adoc
+
+
+:service-name: Identity Management
+
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/keycloak-setup.adoc
+//
+
+= Configuring the Service
+
+The following section will guide you through configuring the schema of the redirect url and web origin for a client in {idm-name}.
+This is required to enable OpenID authentication.
+For an explanation of these terms, see link:https://www.keycloak.org/documentation.html[Keycloak Documentation].
+
+:service-name: Identity Management
+
+[[choose-schema]]
+== Choose the schema of a redirect url
+
+[role="primary"]
+.Android
+****
+It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+****
+[role="secondary"]
+.iOS
+****
+It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
+****
+[role="secondary"]
+.Cordova
+****
+Redirect url is `\http://localhost/\*`, without `:/callback`. Web Origin is `\http://localhost/*`.
+****
+[role="secondary"]
+.Xamarin
+****
+Depending on the platform, set the redirect as described in either the Android or the iOS tab.
+****
+
+== Configuring {idm-name}
+
+. Log into the OpenShift console and navigate to the Project Overview.
+
+. Navigate to the {mobile-client} screen.
+
+. Select the Mobile Services tab.
+
+. If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
+
+. If the _Keycloak Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
+
+. Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
+
+. Log in to the Administration console using the credentials you specified when xref:#provisioning-the-identity-management-service[Provisioning] the service (defaults to admin:admin).
+
+. Select `Clients` from the left navigation menu.
+
+. Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
+
+. Add `<schema>:/callback` as an additional entry to `Valid Redirect URIs`. See xref:choose-schema[] to determine the value for `<schema>`.
+
+. Add `<schema>` as an additional entry to `Web Origins`.  See xref:choose-schema[] to determine the value for `<schema>`.
+
+. Save your changes.
+
+. Create a new user account as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[Creating a New User].
+
+. Set up credentials for the new user as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[User Credentials].
+
+:leveloffset: 0
+
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/generic-obtaining-the-mobile-sdk-config-file.adoc
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset: 0
+
+== Setting up {keycloak-service} service SDK
+
+This section will help you to set up the {keycloak-service} service SDK in your App.
+
+=== Importing the libraries
+
+[role="primary"]
+.Android
+****
+. Add the following dependency in your app's *build.gradle*:
++
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation "org.aerogear:android-auth:{release-number}"
+}
+----
+. To prevent build errors, add the following in your app's *build.gradle*:
+[source,groovy,subs="attributes"]
++
+----
+compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+}
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Add the dependency to your *Podfile*:
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSAuth', '{release-number}'
+end
+----
+
+. Update the dependencies:
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import and instantiate `AGSAuth` to start using the SDK:
++
+[source,swift]
+----
+import AGSAuth
+
+auth = AGSAuth()
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM, window="_blank"]:
+[source,bash]
+----
+$ npm install @aerogear/auth
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"].
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. For Android run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.Android --version {release-number}
+----
+
+. For iOS run:
++
+[source,bash,subs="attributes"]
+----
+dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
+----
+****
+
+== Initializing the SDK
+
+[role="primary"]
+.Android
+****
+
+. Specify the redirect URL. It is recommended to use the package name of your app.
++
+----
+AuthServiceConfiguration authServiceConfig = new AuthServiceConfiguration
+    .AuthConfigurationBuilder()
+    .withRedirectUri("org.aerogear.mobile.example:/callback")
+    .build();
+----
+
+. Create the auth service:
++
+[source,java]
+----
+AuthService authService = new AuthService(authServiceConfig);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Set your custom configuration to the auth service instance, making sure the redirect URL matches the App's Bundle Id.
+
+[source,swift]
+----
+// create the authentication config
+let authenticationConfig = AuthenticationConfig(redirectURL: "org.aerogear.mobile.example:/callback")
+try! AgsAuth.instance.configure(authConfig: authenticationConfig, useExternalUserAgent: false)
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+
+Import and initialize Auth:
+
+[source,javascript]
+----
+const Auth = require('@aerogear/auth').Auth;
+
+const authService = new Auth();
+const initOptions = { onLoad: "login-required" };
+
+authService.init(initOptions)
+    .then(() => {
+        // successful init & authentication
+    })
+    .catch((err) => {
+        // initialization error
+    });
+----
+
+You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
+
+NOTE: Initialization will also perform authentication
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+
+. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter, window="_blank"] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
++
+[source,xml]
+----
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity" android:exported="true"  android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="org.aerogear.mobile.example" />
+    </intent-filter>
+</activity>
+----
+
+. Initialize the Auth module
+.. For an Android app (MainActivity.cs):
++
+[source,csharp]
+----
+var app = new App();
+MobileCoreAndroid.Init(app.GetType().Assembly,ApplicationContext);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
++
+NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter, window="_blank"] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app, window="_blank"].
+
+.. For an iOS app (FinishedLaunching method of AppDelegate.cs):
++
+[source,swift]
+----
+var app = new App();
+MobileCore core = MobileCoreIOS.Init(app.GetType().Assembly);
+var authService = AuthService.InitializeService();
+var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
+authService.Configure(authConfig);
+----
+
+. To use self-signed certificates with Xamarin Android:
+.. Create a file at `Resources/xml/network_security_config.xml` with the following code:
++
+[source,xml]
+----
+<network-security-config>
+  <base-config>
+    <trust-anchors>
+      <certificates src="user"/>
+      <certificates src="system"/>
+    </trust-anchors>
+  </base-config>
+</network-security-config>
+----
+.. Add the following value to the `<application>` tag in `AndroidManifest.xml`:
++
+[source,xml]
+----
+android:networkSecurityConfig="@xml/network_security_config"
+----
+****
+
+:leveloffset: 0
+// end keycloak/coding.adoc[leveloffset=2]
+[[user-auth]]
+// start keycloak/authenticating.adoc[leveloffset=1]
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/authenticating.adoc
+
+
+= Adding User Authentication to your Mobile App
+
+This section describes how to perform user authentication for the supported platforms. On authentication a browser window will open and prompt the user for login credentials.
+
+== Implementing authentication
+
+The following examples show how to implement authentication using the Aerogear SDK on all the supported platforms.
+
+[role="primary"]
+.Android
+****
+
+. Provide an implementation of `Callback` which is defined in the Aerogear SDK and used to handle asynchronous results:
++
+[source,java]
+----
+Callback authCallback = new Callback<UserPrincipal>() {
+    @Override
+    public void onSuccess(UserPrincipal principal) {
+        ...
+    }
+
+    @Override
+    public void onError(Throwable error) {
+        ...
+    }
+};
+----
+
+. Use the `login` method to hand over to the login browser:
++
+[source,java]
+----
+// Build the options object and start the authentication flow
+DefaultAuthenticateOptions options = new DefaultAuthenticateOptions(myActivity, LOGIN_RESULT_CODE);
+
+authService.login(options, authCallback);
+----
+
+. Override `onActivityResult` to handle the result from the browser. It's important to pass the intent back to the Auth service:
++
+[source,java]
+----
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == LOGIN_RESULT_CODE) {
+        authService.handleAuthResult(data);
+    }
+}
+----
++
+NOTE: This handler should always invoke `handleAuthResult`, providing the `Intent`. This will exchange the temporary tokens returned from `login` for long-lived tokens and will provide a `UserPrincipal` which can be used to access a users details. If this is not invoked you will not have access to the `UserPrincipal`.
+
+. The callback provided to `login` will be invoked.
+****
+
+[role="secondary"]
+.iOS
+****
+. Use the `login` method to hand over to the login browser:
++
+[source,swift]
+----
+AgsAuth.instance.login(presentingViewController: self, onCompleted: onLoginComplete)
+
+func onLoginComplete(user: User?, err: Error?) {
+    if let error = err {
+        return
+    }
+
+    let currentUser = user
+}
+----
+
+. Allow your application to handle the redirect in `AppDelegate`:
++
+[source,swift]
+----
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+    do {
+        return try AgsAuth.instance.resumeAuth(url: url as URL)
+    } catch AgsAuth.Errors.serviceNotConfigured {
+        print("AeroGear auth service is not configured")
+    } catch {
+        fatalError("Unexpected error: \(error).")
+    }
+    return false
+}
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Authentication will be performed on initialization as described xref:keycloak/coding.adoc#initializing-the-sdk[here]. To manually redirect to the login screen, use:
+[source,javascript]
+----
+authService.login().then(() => {
+    // Login success
+}).catch(() => {
+    // Login error
+});;
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Use the `Authenticate` method to hand over to the login browser:
++
+[source,csharp]
+----
+IAuthService authService = MobileCore.Instance.GetService<IAuthService>();
+
+var authOptions = DependencyService.Get<IAuthenticateOptionsProvider>().GetOptions();
+var user = await authService.Authenticate(authOptions);
+----
+****
+
+== Refreshing the authentication token
+
+When a user is authenticated, an access token and a refresh token are generated by the authentication server.
+See the link:https://www.keycloak.org/docs/3.2/server_admin/topics/sessions/timeouts.html[Keycloak documentation] for information about configuring the lifespan of these tokens.
+If the refresh token is still valid, the authentication token can be refreshed even if the authentication token has expired.
+The following code shows how the authentication token can be refreshed automatically:
+
+[role="primary"]
+.Android
+****
+
+Retrieve the current user and refresh the access token when possible and required:
+
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser(true);
+----
+****
+
+[role="secondary"]
+.iOS
+****
+Retrieve the current user and refresh the access token when possible and required:
+
+[source,swift]
+----
+do {
+    try AgsAuth.instance.currentUser(autoRefresh: true) { (currentUser, error) in
+        // If error is nil, currentUser is now refreshed
+    }
+} catch {
+    // An error has occurred trying to reach the authentication server
+}
+----
+****
+
+[role="secondary"]
+.Cordova
+****
+Retrieve the keycloak adapter object and refresh the access token, when possible and required:
+
+[source,javascript]
+----
+authService.service.extract().updateToken(30).then(() => {
+    // Token has been refreshed
+});
+----
+
+More information about the keycloak javascript adapter can be found link:https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html[here]
+****
+
+[role="secondary"]
+.Xamarin
+****
+Retrieve the current user and refresh, if needed and still possible, its access token:
+
+[source,csharp]
+----
+var authService = MobileCore.Instance.GetService<IAuthService>();
+var currentUser = await authService.CurrentUser(true);
+----
+****
+
+
+== Adding Log Out Option to your Mobile App
+
+The following section describes how to perform a logout.
+
+[role="primary"]
+.Android
+****
+
+. Retrieve the current user:
++
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser();
+----
+
+. Implement `Callback` and call `logout`:
+[source,java]
+----
+authService.logout(currentUser, new Callback<UserPrincipal>() {
+    @Override
+    public void onSuccess() {
+        // User Logged Out Successfully and local Auth tokens were Deleted
+    }
+
+    @Override
+    public void onError(Throwable error) {
+        // An error occurred during logout
+    }
+});
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Implement the logout callback:
++
+[source,swift]
+----
+func onLogoutComplete(_: Error?) {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+    ...
+}
+----
+
+. Call `logout` and pass the callback:
++
+[source,swift]
+----
+do {
+    try AgsAuth.instance.logout(onCompleted: self.onLogoutComplete)
+} catch {
+    fatalError("Error logging out: \(error).")
+}
+----
+
+
+****
+
+[role="secondary"]
+.Cordova
+****
+
+To logout invoke the `logout` function:
+
+[source,javascript]
+----
+authService.logout().then(() => {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+});
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+To logout invoke the `Logout` method:
+[source,csharp]
+----
+var authService = MobileCore.Instance.GetService<IAuthService>();
+var result = await authService.Logout(authService.CurrentUser());
+----
+****
+
+NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider. More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
+
+== Authenticating with a back end service
+
+In a typical scenario, you not only want the user to authenticate on the mobile app, you also want that user to authenticate with a back end service. To achieve this, you must add an additional token:
+
+[source]
+----
+Authorization: BEARER Yourtoken
+----
+
+SDK also provides number of helpers to build authentication headers that will provide way to refresh it once token is outdated.
+
+[role="primary"]
+.Android
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,java]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer. When using the `okhttp` library, this can be added to the list of request interceptors to automatically supply the required tokens:
++
+[source,java]
+----
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,swift]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer.
+****
+
+[role="secondary"]
+.Cordova
+****
+The AeroGear Cordova SDK doesn't provide an HTTP layer, therefore it cannot provide an Auth Header Provider.
+You must manually attach the `Bearer` header to your HTTP requests.
+
+[source,javascript]
+----
+req.setRequestHeader('Accept', 'application/json');
+req.setRequestHeader('Authorization', 'Bearer ' + authService.extract().token);
+----
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,csharp]
+----
+var authHeaderProvider = authService.AuthHeaderProvider;
+----
+. Plug it into your networking layer.
+****
+
+[discrete]
+== Additional Information
+
+* xref:#android-additional-configuration[Additional configuration for Android]
+
+* link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[Keycloak OICD Providers, window="_blank"]
+
+:leveloffset: 0
+// end keycloak/authenticating.adoc[leveloffset=1]
+[[access]]
+// start keycloak/retrieving-users-roles.adoc[leveloffset=1]
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/retrieving-users-roles.adoc
+
+
+= Adding Access Control to your Mobile App
+
+Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked. This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
+
+Roles are divided into two types. Resource roles which belong to the client the user has authenticated against, and Realm roles which belong to the realm the client is in.
+
+[role="primary"]
+.Android
+****
+. Retrieve the authenticated user:
++
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser();
+----
+
+. Use `hasRealmRole` and `hasResourceRole` to check for roles:
++
+[source,java]
+----
+boolean hasAdminPermissions = currentUser.hasRealmRole("user_admin");
+boolean isModerator = currentUser.hasResourceRole("my_resource", "user_moderator");
+----
+
+****
+
+[role="secondary"]
+.iOS
+****
+. Retrieve the authenticated user:
++
+[source,swift]
+----
+let currentUser = try AgsAuth.instance.currentUser()
+----
+
+. The user roles are available on the authenticated user:
++
+[source,swift]
+----
+let clientRoles = currentUser.clientRoles
+let realmRoles = currentUser.realmRoles
+----
+
+. Use `hasRealmRole` and `hasClientRole` to check for roles:
++
+[source,swift]
+----
+let hasAdminRole = currentUser.hasRealmRole("admin")
+let hasModeratorRole = currentUser.hasClientRole(client: "my_client", role: "moderator")
+----
+
+****
+
+[role="secondary"]
+.Cordova
+****
+Get the realm roles from the auth service:
+
+[source,javascript]
+----
+const realmRoles = authService.getRealmRoles();
+----
+
+NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here, window="_blank"].
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+. Retrieve the authenticated user:
++
+[source,csharp]
+----
+// auth service is already initialised
+var user = MobileCore.Instance.GetService<IAuthService>().CurrentUser();
+----
+
+. Use `getRoles` to retrieve all roles from the user:
++
+[source,csharp]
+----
+// auth service is already initialised
+var roles = user.getRoles();
+----
+
+. Use `HasRealmRole` and `HasResourceRole` to check for roles:
++
+[source,csharp]
+----
+bool isAdmin = user.HasRealmRole("user_admin");
+bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
+----
+****
+
+:leveloffset: 0
+// end keycloak/retrieving-users-roles.adoc[leveloffset=1]
+[[sso]]
+// start keycloak/sso.adoc[leveloffset=1]
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/keycloak/sso.adoc
+= Adding Single Sign-On (SSO) to your Mobile App
+
+The Auth SDK uses OpenID Connect http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.
+
+== Prerequisites
+
+* Two {mobile-client}s bound to the {keycloak-service} service
+* Two mobile apps built and running on the same device that are using the AeroGear SDK Auth module
+
+== Using SSO with the Device Browser
+
+For this guide, assume that your two apps are called **Email App** and **Messaging App**.
+
+. Ensure the "Remember Me" option in Keycloak is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
+
+. Now that your two apps and Keycloak clients are setup, sign into the *Email App* with the user you have previously created. You should be redirected to your device browser which should have loaded the Keycloak login page.
+
+. Next, enter in your credentials, make sure check the *Remember Me* option and login. You have now been authenticated on the *Email App* via the browser.
+
+. Finally, try sign into the *Messaging App* and you should be automatically logged in as you have been previously authenticated in the *Email App* via the *_same_* browser.
+
+== Known Issues
+
+On iOS 11 and above, Apple has introduced https://developer.apple.com/documentation/safariservices/sfauthenticationsession[SFAuthenticationSession] for apps to perform SSO, instead of using the system Safari browser. However, there are a few known issues with this new feature and sometimes user may have to enter their credentials again in other apps, even if they have already logged in once previously in one of the apps.
+
+:leveloffset: 0
+// end keycloak/sso.adoc[leveloffset=1]
+[[monitoring]]
+// start metrics/monitoring-keycloak.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Monitoring the {keycloak-service} Service
+
+== Prerequisites
+
+* [x] The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
+
+== Overview
+
+After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
+you should be able to see the "Keycloak Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
+
+== Dashboard panel descriptions
+
+The Keycloak dashboard consists of several panels which give you an overview of the specific
+events, such as the number of registered users, memory usage etc.
+
+Below you will find a detailed description of each panel and its values.
+
+== Singlestat Panels
+
+Singlestat panels show you the main summary of a single data series.
+
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+
+* *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
+
+* *Total Login Errors*: Total number of failed login attempts.
+
+* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
+
+== Graph panels
+
+Used to show how certain values change over time, e.g. the number of successful logins.
+
+* *Logins*: Overview of the successful logins over time
+
+* *Login Errors*: Overview of the failed login attempts over time
+
+* *Memory Usage*: The values in this graph represents the following:
+
+** *Used*: The amount of memory currently used by the {keycloak-service} Service
+** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
+** *Max*: The maximum amount of memory that can be used for memory management
+
+
+== Pie Charts
+
+Used to show the distribution of data, e.g. the number of logins per identity provider.
+
+* *Logins Per Provider*: Overview of the successful (non-admin) user logins per provider
+
+* *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
+
+[discrete]
+== Related Information
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
+
+:leveloffset: 0
+// end metrics/monitoring-keycloak.adoc[leveloffset=1]

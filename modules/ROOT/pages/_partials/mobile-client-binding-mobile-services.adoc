@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/mobile-client-binding-mobile-services.adoc
 = Binding Mobile Services
 
 In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to services.

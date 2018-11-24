@@ -1,0 +1,608 @@
+// start {partialsdir}/attributes.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/attributes.adoc
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Mobile Metrics
+
+// start metrics/index.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+:service-name: Metrics
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-metrics
+
+[id='{context}_con_introduction-to-metrics']
+
+[#introduction]
+= Introduction to the {metrics-service} Service
+
+// video::xWFWUcuZPaQ[youtube]
+
+
+The {metrics-service} service allows you to gather metrics on mobile apps, device versions, device security checks and back-end mobile service usage.
+
+* Monitor usage by version of mobile app, platform and SDK
+* Monitor interactions with the Identity Management service
+
+
+Identity management is monitored by the {metrics-service} Service when it is provisioned. No configuration is needed.
+
+
+
+:leveloffset!:
+// end metrics/index.adoc[leveloffset=1]
+[#setup]
+
+== Prerequisites
+
+// start {partialsdir}/generic-provisioning-pre-req.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-pre-req.adoc
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+
+== Setting Up the Mobile Metrics Service
+
+// start metrics/provisioning.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+:service-name: Metrics
+
+= Provisioning {service-name} Service
+
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning.adoc
+To provision the {service-name} mobile service:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+
+When provisioning a {service-name} Service, you are prompted to set the following:
+
+.Configuration
+[options="header"]
+|====
+|Field|Description
+|Grafana Storage Size (Gb)|Size of persistent volume for Grafana (default value is recommended)
+|Prometheus Storage Size (Gb)|Size of persistent volume for Prometheus (default value is recommended)
+|Postgres Storage Size (Gb)|Size of persistent volume for Postgres (default value is recommended)
+|Postgres User|User name that will be used to connect to postgres ('user' will be used if blank)
+|Postgres Password|Password to connect to Postgres (generated if blank)
+|====
+
+[NOTE]
+====
+If the Postgres password was generated, retrieve the password using:
+[source,bash]
+----
+$ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
+----
+====
+
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-end.adoc
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+
+:leveloffset!:
+// end metrics/provisioning.adoc[leveloffset=2]
+// start metrics/binding.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+:service-name: Metrics
+
+= Binding a {mobile-client} with the {service-name} Service
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding.adoc
+
+To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+To bind a {mobile-client} with a mobile service:
+
+// includedFile ../modules/ROOT/pages/_partials/generic-binding-procedure.adoc
+== Procedure
+
+// includedFile ../modules/ROOT/pages/_partials/generic-service-nav.adoc
+
+. Navigate to the *Overview* of your OpenShift project.
+
+. Select the {mobile-client} name listed in the {mobile-client}s section.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
+. Click *Create Binding* and follow the *Create Binding* wizard to associate the {mobile-client} with the {service-name} Service.
+
+. Fill out the binding parameters required by the {service-name} Service.
+
+
+:leveloffset!:
+// end metrics/binding.adoc[leveloffset=2]
+// start metrics/coding.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Configuring your Development Environment for the {metrics-service} Service
+
+:service-name: Metrics
+
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/generic-obtaining-the-mobile-sdk-config-file.adoc
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset!:
+
+== Setting up {metrics-service} service SDK
+
+=== Importing the libraries
+
+Metrics is included in all SDK modules, if you already use a component from the {SDK} in your app, you may skip this step.
+Otherwise, install the core package by following the next steps depending on your platform:
+
+[role="primary"]
+.Android
+
+****
+
+Add the following dependency in your app's *build.gradle*:
+
+[source,groovy,subs="attributes"]
+----
+dependencies {
+    implementation 'org.aerogear:android-core:{release-number}'
+}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+. Add the dependency to your *Podfile*
++
+[source,ruby,subs="attributes"]
+----
+target '[TARGET NAME]' do
+    pod 'AGSCore', '{release-number}'
+end
+----
+
+. Update the dependencies by running in your terminal
++
+[source,bash]
+----
+$ pod install
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+. Install the following package:
++
+[source,bash]
+----
+$ npm install --save @aerogear/core
+----
+
+. Install `cordova-plugin-aerogear-metrics`:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-metrics
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
+
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core --version {release-number}
+----
+
+. Install the specific packages for Android:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core.Platform.Android --version {release-number}
+----
++
+And for iOS:
++
+[source,bash,subs="attributes"]
+----
+$ dotnet add package AeroGear.Mobile.Core.Platform.iOS --version {release-number}
+----
+****
+
+:leveloffset!:
+// end metrics/coding.adoc[leveloffset=1]
+[#app]
+// start metrics/analysing-app-usage.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Analyzing App Usage
+
+This guide shows how to use app metrics to provide rich visualizations regarding app usage that can then drive development planning, for example, when should support for  version x.y of app end?'
+
+[discrete]
+== Viewing Dashboards
+
+There are many visualisations available in the default dashboards in Grafana.
+There are 2 dashboards where App Metrics data is shown:
+
+* Mobile Service Dashboard (Summary data in the 'Mobile App Metrics' section)
+* Mobile App Metrics Dashboard
+
+In general, the summary data that is visible on the 'Mobile Services' Dashboard is also available on the 'Mobile App Metrics' dashboard, but in more detail.
+
+[discrete]
+== Analyzing App launches
+
+An App launch is a metric event that occurs when an App is launched on a device.
+The total number of App launches for a given time shows how many times an App was launched in that time, regardless of if it was the same device or different devices.
+It can be useful as a gauge on how much activity the App has.
+However, as it doesn't take into account multiple launches from the same device, it isn't useful as a gauge for 'stickiness' of the App.
+
+[discrete]
+== Analyzing unique clients
+
+Every metric event has a unique client identifier associated with it.
+This unique client identifier is generated the first time an App is started.
+It is worth noting this identifier will be regenerated if a user re-installs an App.
+The total number of unique clients for a given time shows how many users launched an App at least once.
+This can be useful as a gauge on how many active App users there currently are.
+The time range is an important factor when viewing the number of unique clients.
+Viewing unique clients for the last year gives a very different insight than for the last week.
+In Grafana, the time range can be changed in the top right of the Dashboard view.
+
+[discrete]
+== Analyzing unique clients per App
+
+Every metric event has an App identifier associated with it.
+An App identifier uniquely identifies an App.
+It is bundled with the App binary.
+There can be more than 1 App (each with a different App identifier) sending metrics events to the same Metrics Service.
+For example, there might be an Admin Portal App and a Field Worker App both using the same back-end services and same {metrics-service} Service.
+The number of unique clients per App gives a breakdown of all users by the App they are using.
+However, if you only have 1 App there is no difference between the number of unique clients and the number of unique clients per App.
+
+[discrete]
+== Analyzing unique clients per platform
+
+Every metric event has the platform associated with it.
+An example of a platform is Android or iOS.
+This can be useful for making decisions about which platform to put effort into.
+However, if all your Apps are on a single platform, there is no difference between the number of unique clients and the number of unique clients per platform.
+
+[discrete]
+== Analyzing unique clients per sdk version
+
+Every metric event has the AeroGear sdk version associated with it.
+This can be useful for making decisions about what features to deprecate or drop support for, or applying backwards incompatible server changes/updates.
+This metric will be more valuable as more versions of an App (with different sdk versions) are published.
+
+[discrete]
+== Analyzing unique clients per app version
+
+Every metric event has the App version associated with it.
+The App version is set by the developer.
+Like the sdk version, this can be useful for making decisions about what features to deprecate or drop support for, or applying backwards incompatible server changes/updates.
+It can also be useful to see the uptake rate of newly published versions of an App.
+
+[discrete]
+== Related Information
+
+See Grafana documentation for more information on the following topics:
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
+
+:leveloffset!:
+// end metrics/analysing-app-usage.adoc[leveloffset=1]
+[#identity]
+// start metrics/monitoring-keycloak.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Monitoring the {keycloak-service} Service
+
+== Prerequisites
+
+* [x] The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
+
+== Overview
+
+After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
+you should be able to see the "Keycloak Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
+
+== Dashboard panel descriptions
+
+The Keycloak dashboard consists of several panels which give you an overview of the specific
+events, such as the number of registered users, memory usage etc.
+
+Below you will find a detailed description of each panel and its values.
+
+== Singlestat Panels
+
+Singlestat panels show you the main summary of a single data series.
+
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+
+* *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
+
+* *Total Login Errors*: Total number of failed login attempts.
+
+* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
+
+== Graph panels
+
+Used to show how certain values change over time, e.g. the number of successful logins.
+
+* *Logins*: Overview of the successful logins over time
+
+* *Login Errors*: Overview of the failed login attempts over time
+
+* *Memory Usage*: The values in this graph represents the following:
+
+** *Used*: The amount of memory currently used by the {keycloak-service} Service
+** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
+** *Max*: The maximum amount of memory that can be used for memory management
+
+
+== Pie Charts
+
+Used to show the distribution of data, e.g. the number of logins per identity provider.
+
+* *Logins Per Provider*: Overview of the successful (non-admin) user logins per provider
+
+* *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
+
+[discrete]
+== Related Information
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
+
+:leveloffset!:
+// end metrics/monitoring-keycloak.adoc[leveloffset=1]
+[#sync]
+:leveloffset: 1
+
+
+
+= Monitoring {sync-service} Service
+
+== Prerequisites
+
+* [x] You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
+* [x] You have provisioned the xref:data-sync.adoc[{sync-service}] service.
+
+NOTE: The {metrics-service} Service and {sync-service} Service must be provisioned in the same OpenShift project to access data.
+
+== Overview
+
+After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {sync-service} Service are provisioned,
+you should be able to see the "Data Sync Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Data Sync Metrics*).
+
+== Dashboard panel descriptions
+
+The Data Sync dashboard consists of several panels which give you an overview of the specific
+events and resources, such as memory usage, CPU usage, resolved operation count etc.
+
+Below you will find a detailed description of each panel and its values.
+
+== Singlestat Panels
+
+Singlestat panels show you the main summary of a single data series.
+
+* *CPU Usage*: CPU usage percentage of {sync-service} Service used currently.
+
+* *Memory Usage*: The amount of memory currently used by the {sync-service} Service
+
+== Graph panels
+
+Used to show how certain values change over time, e.g. the number of operations resolved.
+
+* *Memory Usage in Time*: The amount of memory used by the {sync-service} Service over time
+
+* *CPU Usage in Time*: The percentage of CPU used by the {sync-service} Service over time
+
+* *Queries/Mutations Resolved*: Overview of the resolved queries and mutations over time
+
+* *Resolver Timings*: Overview of the how long it took to resolve operations over time.
+
+
+== Additional resources
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]
+
+:leveloffset!:
+[#using-dashboards]
+:leveloffset: 1
+
+
+
+= Viewing {metrics-service} Service Dashboards
+
+== Overview of Dashboards
+
+The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana, window="_blank"] to display that data.
+
+A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics.
+See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started, window="_blank"] guide for an introduction to dashboards.
+
+When you create an instance of a {product-name} service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana.
+Also, when you configure your {mobile-client} to use metrics, you can see the metrics in Grafana.
+
+In addition to those, you can create and modify custom dashboards to:
+
+* visualize metrics from apps and back-end services that are not mobile services
+* monitor additional metrics from mobile services that are not displayed by default
+* monitor additional metrics from OpenShift that are not displayed by default
+
+== Creating Dashboards in Grafana
+
+You can create dashboards using *Drag and Drop* in Grafana.
+See the http://docs.grafana.org/[Grafana Documentation, window="_blank"] to learn about building Grafana dashboards.
+
+== Importing Dashboards
+
+All Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using that JSON definition as described in the link:http://docs.grafana.org/reference/export_import/[importing and exporting dashboards, window="_blank"] Grafana documentation.
+
+== Customizing {product-name} Dashboards
+
+When you provision a mobile service from the service catalog, a dashboard showing metrics about that service is added to Grafana.
+
+NOTE: If you edit the default mobile service dashboards, your changes will be lost whenever the associated mobile service is updated.
+
+Before editing the dashboard, clone it as follows:
+
+. Open the Dashboard you want to clone.
+. Click the settings icon in the dashboard controls to show the *Settings* screen.
+. Select the *Save As* option and enter in a name for the new dashboard, for example `Copy of Sync Service Dashboard`.
+
+:leveloffset!:

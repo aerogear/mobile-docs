@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/mobile-client-configuring-and-running-builds.adoc
 
 
 = Building Mobile Apps

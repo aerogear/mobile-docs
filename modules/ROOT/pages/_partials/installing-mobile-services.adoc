@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/installing-mobile-services.adoc
 
 
 = Setting up {org-name} {product-name} on OpenShift

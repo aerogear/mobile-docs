@@ -1,3 +1,4 @@
+// start {partialsdir}/attributes.adoc[]
 // includedFile ../modules/ROOT/pages/_partials/attributes.adoc
 :org-name: AeroGear
 
@@ -10,7 +11,7 @@
 
 :service-name:
 
-:mobile-client: Mobile App
+:mobile-client: Mobile Client
 :mobile-client-openshift: Mobile Client in your OpenShift project
 :mobile-cli: Mobile CLI
 
@@ -47,3 +48,20 @@
 :android-sdk: AeroGear SDK for Android
 :js-sdk: AeroGear SDK for Cordova
 :xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+= Mobile Services
+{org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
+
+The following services are available:
+
+* link:identity-management.html[{keycloak-service}]
+* link:push-notifications.html[{unifiedpush-service}]
+* link:mobile-metrics.html[{metrics-service}]
+* link:mobile-cicd.html[{mobile-ci-cd-service}]
+* link:device-security.html[{device-security-service}]
+* link:data-sync.html[{sync-service}]
+
+Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
+
+image::mobile-services-arch.png[]
+//Image found in https://docs.google.com/drawings/d/1aFZinQb6UF8AuCisQ_xt0DsX75WxWC7a55ZiDT9Xwho/edit?usp=sharing

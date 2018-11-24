@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/keycloak/authenticating.adoc
 
 
 = Adding User Authentication to your Mobile App

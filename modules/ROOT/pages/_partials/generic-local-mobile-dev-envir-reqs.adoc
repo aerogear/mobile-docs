@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-local-mobile-dev-envir-reqs.adoc
 
 [role="primary"]
 .Android

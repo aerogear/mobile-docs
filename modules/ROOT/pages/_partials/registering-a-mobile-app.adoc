@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/registering-a-mobile-app.adoc
 
 = Registering a {mobile-client}
 

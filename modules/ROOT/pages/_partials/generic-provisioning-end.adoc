@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning-end.adoc
 
 Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
 Provisioning a service may take some time. 

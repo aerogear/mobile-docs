@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/conf-dev-env-ios.adoc
 
 . In your project directory (the directory where your `.xcodeproj` file is), create a plain text file named `Podfile` (without any file extension) and add the lines below. Replace `YourTarget` with your actual target name.
 +

@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/mobile_terminology.adoc
 
 
 = {org-name} {product-name} Terminology

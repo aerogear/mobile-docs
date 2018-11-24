@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/keycloak/provisioning.adoc
 
 
 :service-name: Identity Management

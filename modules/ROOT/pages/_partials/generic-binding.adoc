@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-binding.adoc
 
 To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.

@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/keycloak/retrieving-users-roles.adoc
 
 
 = Adding Access Control to your Mobile App

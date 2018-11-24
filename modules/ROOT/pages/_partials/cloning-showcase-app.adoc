@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/cloning-showcase-app.adoc
 
 [role="primary"]
 .Android

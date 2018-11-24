@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/proc_self-signed-certs.adoc
 //[[using-self-signed-certificates-in-mobile-clients]]
 = Using Self-Signed Certificates in Mobile Apps
 

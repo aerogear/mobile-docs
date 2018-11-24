@@ -1,4 +1,3 @@
-// includedFile ../modules/ROOT/pages/_partials/readme.adoc
 = Remote File
 This directory is used to store generic files and temporary files during the build process.
 A reference file typically is named `rantora-metrics-index.inc` and contains:

@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-binding-procedure.adoc
 == Procedure
 
 include::generic-service-nav.adoc[]

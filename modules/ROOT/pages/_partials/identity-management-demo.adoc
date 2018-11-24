@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/identity-management-demo.adoc
 
 
 = {keycloak-service}

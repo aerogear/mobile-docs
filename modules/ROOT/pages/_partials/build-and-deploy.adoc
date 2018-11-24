@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/build-and-deploy.adoc
 
 
 [[building-and-deploying-the-showcase-apps]]

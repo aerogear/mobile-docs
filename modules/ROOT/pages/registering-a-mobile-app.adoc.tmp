@@ -1,0 +1,78 @@
+// start {partialsdir}/attributes.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/attributes.adoc
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+= Registering a {mobile-client}
+
+After the setup is completed, the next thing you need to do is to register a {mobile-client} for the mobile app that you are going to develop.
+
+A Mobile Client in OpenShift is a representation of the mobile app that you are developing locally. Mobile Clients allow you to bind your mobile app to mobile services such as Identity Management, Push Notification, Mobile Metrics and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement. For more information, please see xref:mobile-clients.adoc[Mobile Clients in OpenShift]
+
+// includedFile ../modules/ROOT/pages/_partials/mobile-client-registration-procedure.adoc
+[discrete]
+== Procedure
+
+To create a {mobile-client-openshift}:
+
+. Log into the OpenShift console.
+. Choose your project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
++
+image:catalog-all.png[Available Mobile Clients]
+. Click the *Apps* tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.
++
+NOTE: On the wizard's *configuration* screen, it is recommended that you input the name of the showcase application into the *Package Name* text box.
++
+NOTE: When registering an iOS app, you are prompted for a bundle id. See the link:https://cocoacasts.com/what-are-app-ids-and-bundle-identifiers/[description of bundle identifiers] for more information.
+
+After the {mobile-client} is provisioned, you can navigate to it from Project Overview. The {mobile-client} view displays a list of mobile services that you can associate with the {mobile-client}, and offers to provision any mobile service that is in the service catalog but is not currently provisioned.

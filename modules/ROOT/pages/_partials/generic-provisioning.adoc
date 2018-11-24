@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/generic-provisioning.adoc
 To provision the {service-name} mobile service:
 
 . Log into the OpenShift console.

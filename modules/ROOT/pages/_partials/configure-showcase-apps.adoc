@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/configure-showcase-apps.adoc
 . Navigate to your project in OpenShift.
 . On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
 . Copy the configuration to your clipboard and paste it to the `mobile-services.json` file in the showcase app depending on the platform:

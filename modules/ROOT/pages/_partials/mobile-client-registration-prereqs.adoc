@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/mobile-client-registration-prereqs.adoc
 [discrete]
 == Prerequisites:
 

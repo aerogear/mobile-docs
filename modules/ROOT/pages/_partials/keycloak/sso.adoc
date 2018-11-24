@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/keycloak/sso.adoc
 = Adding Single Sign-On (SSO) to your Mobile App
 
 The Auth SDK uses OpenID Connect http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.

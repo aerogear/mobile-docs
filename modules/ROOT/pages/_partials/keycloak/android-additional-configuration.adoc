@@ -1,3 +1,4 @@
+// includedFile ../modules/ROOT/pages/_partials/keycloak/android-additional-configuration.adoc
 //note that this file is orphaned, doesn't have a place in nav.adoc
 
 

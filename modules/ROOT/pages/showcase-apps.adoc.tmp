@@ -1,0 +1,671 @@
+// start {partialsdir}/attributes.adoc[]
+// includedFile ../modules/ROOT/pages/_partials/attributes.adoc
+:org-name: AeroGear
+
+:product-name: Mobile Services
+
+:release-number: 1.0.0
+:xamarin-sdk-release-number: 2.0.1
+:ios-sdk-release-number: 2.0.0
+:android-sdk-release-number: 2.0.0
+
+:service-name:
+
+:mobile-client: Mobile Client
+:mobile-client-openshift: Mobile Client in your OpenShift project
+:mobile-cli: Mobile CLI
+
+// Metrics Service
+:metrics-service: Mobile Metrics
+:grafana-ui: Grafana
+:prometheus-ui: Prometheus
+
+// IDM Service
+:keycloak-service: Identity Management
+:keycloak-ui: Keycloak Admin UI
+:keycloak-dashboard: Auth Dashboard
+:idm-name: Keycloak
+
+// Push Service
+
+:unifiedpush-service: Push Notifications
+:push-ui: Unified Push Admin UI
+:push-notification: push notification
+
+// Build Service
+:mobile-ci-cd-service: Mobile CI/CD
+:mobilecicd-ui: Jenkins UI
+
+// Device Security
+:device-security-service: Device Security
+
+// Sync Service
+:sync-service: Data Sync
+:data-sync-version: 0.1.0
+
+:SDK: AeroGear SDK
+:ios-sdk: AeroGear SDK for iOS
+:android-sdk: AeroGear SDK for Android
+:js-sdk: AeroGear SDK for Cordova
+:xamarin-sdk: AeroGear SDK for Xamarin
+// end {partialsdir}/attributes.adoc[]
+
+:toc:
+
+= Introduction to Showcase Apps
+
+
+// start showcase-apps/index.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+= Showcase Apps
+
+== Introduction
+Showcase apps demonstrate many features of {product-name}.
+
+These mobile apps are ready to work with the mobile services provisioned and they present an easy
+starting point for the developers.
+
+:leveloffset!:
+// end showcase-apps/index.adoc[leveloffset=1]
+
+
+// start showcase-apps/service-setup.adoc[leveloffset=1]
+:leveloffset: 1
+
+
+
+
+
+= Using the Showcase Apps
+
+
+Showcase apps demonstrate many features of {product-name}. To see these features:
+
+. Set up the appropriate services as described in xref:setup[].
+. Set up the showcase app as described in xref:app[].
+. Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
+. Bind your {mobile-client} to the appropriate services as described in xref:binding[]
+. Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
+. Build and run your showcase app  as described in xref:build[].
+
+[[setting-up-mobile-services-to-demonstrate-showcase-apps]]
+[#setup]
+== Setting up Mobile Services to Demonstrate Showcase Apps
+
+[discrete]
+=== Prerequisites
+
+* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+
+[discrete]
+=== Procedure
+
+. To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
+
+. To demonstrate {keycloak-service}:
+
+.. xref:identity-management.adoc#provisioning-the-identity-management-service[Provision the {keycloak-service} service].
+
+.. xref:identity-management.adoc#configuring-the-service[Set up the {keycloak-service} service].
+
+.. Create a new user to authenticate as. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
+
+.. Set credentials for the created user. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+
++
+For more information about features, see xref:identity-management.adoc[{keycloak-service} Service]
+
+
+. To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+
+[[setting-up-the-showcase-app]]
+[#app]
+== Setting Up the Showcase App
+
+[discrete]
+=== Prerequisites
+
+// includedFile ../modules/ROOT/pages/_partials/generic-local-mobile-dev-envir-reqs.adoc
+
+[role="primary"]
+.Android
+
+****
+You need the following installed on your machine:
+
+* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google, window="_blank"]
+* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"]
+
+For information on how to set up a local Android development environment, see the link:https://developer.android.com/studio/install[Android Studio documentation, window="_blank"].
+****
+
+[role="secondary"]
+.iOS
+
+****
+You need the following installed on your machine:
+
+* [x] iOS 9 or later
+* [x] Xcode 9 or later
+* [x] link:https://cocoapods.org[CocoaPods, window="_blank"]
+
+The AeroGear SDK for iOS is available using the CocoaPods package manager.
+If you have not installed CocoaPods, install it by running the command:
+
+[source,bash]
+----
+$ gem install cocoapods
+----
+
+For information on how to set up a local iOS development environment, see the link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[Swift documentation, window="_blank"].
+****
+
+[role="secondary"]
+.Cordova
+
+****
+You need the following installed on your machine:
+
+* [x] link:https://nodejs.org/[Node.js, window="_blank"] version 8.9.4 runtime and NPM
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI, window="_blank"] version 8.0.0
+
+For information on how to set up a local Cordova development environment, see the link:https://cordova.apache.org/#getstarted[Cordova documentation, window="_blank"].
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+You need the following installed on your system:
+
+* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft, window="_blank"]
+* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"], if you would like to install the showcase app on an Android device or emulator
+* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple, window="_blank"], if you would like to install the showcase app on an iOS device or emulator
+
+For information on how to set up a local Xamarin development environment, see the link:https://developer.xamarin.com/getting-started/[Xamarin documentation, window="_blank"].
+****
+
+[discrete]
+=== Procedure
+
+1. Clone the showcase app and checkout the release tag {release-number}
+
+// includedFile ../modules/ROOT/pages/_partials/cloning-showcase-app.adoc
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/android-showcase-template.git
+$ cd android-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/ios-showcase-template.git
+$ cd ios-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/cordova-showcase-template.git
+$ cd cordova-showcase-template
+$ git checkout {release-number}
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/xamarin-showcase-template.git
+$ cd xamarin-showcase-template
+$ git checkout {release-number}
+----
+****
+
+// TODO: fix link and numbering
+[start=2]
+. The following steps will help you enable Push Notifications in a showcase application.
+
+[role="primary"]
+.Android
+
+****
+. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
+. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+Firebase Cloud Messaging console.
+****
+
+[role="secondary"]
+.iOS
+
+****
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide, window="_blank"] to enable push notifications for your Xcode project.
+
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide, window="_blank"] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
++
+NOTE: Make sure to protect the p12 file with a password.
++
+NOTE: The exported p12 file with the password will be used later when binding your {mobile-client} to the {unifiedpush-service}.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
+. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+Firebase Cloud Messaging console.
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+{unifiedpush-service} Service is not supported on Xamarin.
+****
+
+
+
+[#binding]
+== Binding the Showcase {mobile-client} to {product-name}
+
+
+
+. xref:mobile-metrics.adoc[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
+. xref:identity-management.adoc[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
+. xref:push-notifications.adoc[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
++
+NOTE: This step also creates a variant as described in xref:push-notifications.adoc[ {unifiedpush-service} Service] terminology.
+
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/generic-obtaining-the-mobile-sdk-config-file.adoc
+
+
+//[[downloading-the-mobile-services-configuration-file]]
+= Downloading the Mobile Services Configuration File
+
+. Navigate to your project in OpenShift.
+. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
+. Copy the configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+
+****
+
+[role="secondary"]
+.iOS
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+
+****
+
+:leveloffset!:
+
+
+// includedFile ../modules/ROOT/pages/_partials/build-and-deploy.adoc
+
+
+[[building-and-deploying-the-showcase-apps]]
+[#build]
+== Building and Running the Showcase App
+
+. Build the Mobile App
+
+// tag::build[]
+
+[role="primary"]
+.Android
+
+****
+[source,bash,subs="attributes"]
+----
+$ ./gradlew assembleDebug
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+Run this command to install dependencies:
+
+. Install CocoaPods as described in link:https://cocoapods.org/[] if it is not already installed.
+
+. Run this command to install dependencies:
++
+[source,bash]
++
+----
+$ pod install
+----
+****
+
+[role="secondary"]
+.Cordova
+
+****
+[source,bash,subs="attributes"]
+----
+$ npm install
+$ npm run ionic:build
+----
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+Run this command to install dependencies (optional):
+
+[source,bash]
+----
+$ nuget restore
+----
+****
+// end::build[]
+
+
+[start=2]
+. Run the Mobile App
+
+[role="primary"]
+.Android
+
+****
+Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
+no connected device, it installs and runs the application on the emulator.
+
+[source,bash,subs="attributes"]
+----
+$ ./gradlew installDebug
+----
+****
+
+[role="secondary"]
+.iOS
+
+****
+Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
+
+NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
+
+****
+
+[role="secondary"]
+.Cordova
+
+****
+To run the showcase app, use these commands:
+
+[source,bash,subs="attributes"]
+----
+$ npm run ionic:android # to run on an Android device or emulator
+$ npm run ionic:ios # to run on an iOS device or emulator
+----
+
+These commands would run the app on a device if connected or on the emulator if no device is connected.
+
+Alternatively, you can use Cordova commands directly to specify the target:
+
+[source,bash,subs="attributes"]
+----
+$ ionic cordova run android --device      # run on a connected device
+$ ionic cordova run android --emulator    # run on the Android emulator
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+
+****
+1. Open up `xamarin-showcase-template.sln` with VisualStudio.
+2. If you didn't run `nuget restore` before, right click on the solution in the left pane then click on `Restore Nuget Packages`.
+3. In the top bar, select the project to run: `Example.Android` or `Example.iOS`
+4. Again in the top bar, select the correct configuration:
+    * Debug/Release: for compiling Example.Android
+    * [Debug|Release]|iPhoneSimulator: to compile and run Example.iOS on the iPhoneSimulator
+    * [Debug|Release]|iPhone: to compile and run Example.iOS on a real iPhone device
+5. At the right of the configuration, select the target device (the android or iPhone version)
+6. Click on *Build -> Rebuild All*
+7. Click on the *Run* button in the top left
+
+NOTE: If no android devices are selectable, it could mean that no virtual android devices has been configured. To add one, click on *Tools->Device Manager->Add Device*
+****
+
+:leveloffset!:
+// end showcase-apps/service-setup.adoc[leveloffset=1]
+[#certs]
+// start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
+:leveloffset: 1
+
+// includedFile ../modules/ROOT/pages/_partials/proc_self-signed-certs.adoc
+//[[using-self-signed-certificates-in-mobile-clients]]
+= Using Self-Signed Certificates in Mobile Apps
+
+NOTE: Before you can run a mobile app and connect to {product-name}, you must configure self-signed certificates on the mobile device.
+
+Throughout the development lifecycle of a mobile app, a common
+requirement is to integrate and connect with back-end
+services in a secure manner. This is achieved using SSL/TLS.
+
+However, in order for the client device to connect over SSL/TLS, it needs to trust the
+certificates used by the back-end services, which are signed by a certificate authority.
+Most client devices have a list of well-known and trusted certificate authorities pre-installed and this allows the client devices to verify the certificates used by the back-end services.
+
+However, this normally doesn't work in a development environment, such as a local OpenShift cluster as it uses self-signed certificates which are not signed by any of the trusted certificate authorties. This means by default the client devices won't be able to establish secure connections with the back-end services that are running on a local OpenShift cluster.
+
+To work around the problem, you must manually extract the root certificate from the cluster, install it on the device and mark it as trusted.
+
+[[extracting-root-ca]]
+== 1. Extracting the OpenShift Root Certificate Authority Cert
+
+.. Log into OpenShift as the admin user:
++
+[source,bash]
+----
+$ oc login -u system:admin
+----
+
+.. Run the following command:
++
+[source,bash]
+----
+$ oc get secret router-certs --template='{{index .data "tls.crt"}}' -n default  |  \
+base64 --decode | sed -e '1,/^-----END RSA PRIVATE KEY-----$/ d'  > /tmp/localcluster.crt
+----
++
+The resulting file is located in the `/tmp` directory.
+
+[[installing-on-device]]
+== 2. Installing the OpenShift Root Certificate Authority Cert on a Device
+
+[role="primary"]
+.Android
+
+****
+.. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to ensure the certificate can be installed.
+
+.. Copy the file to your device using one of the following methods:
++
+* Email attachment (Recommended) - Simply email the certificate to an address
+accessible from the device and download the attachment.
+* Cloud service - Use a cloud storage service such as Dropbox or Google
+Drive which is accessible from the device, browse to the certificate and
+proceed to download it.
+* USB - Attach the device to the machine hosting
+OpenShift via USB and drag the certificate to a devices file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
+* link:https://developer.android.com/studio/command-line/adb[Android Debug Bridge, window="_blank"] (adb) - Use the adb push command to push the certificate to device or emulator:
++
+----
+$ adb push /tmp/localcluster.crt /sdcard/Download/localcluster.crt
+----
+.. Add the certificate to your device:
++
+If you are using the email or cloud service approach, once the certificate file is downloaded, you will be prompted by the Android system automatically to install the file. You can simply follow the instructions to complete the process.
++
+However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and Android system should detect the
+certificate and let you add it to the device. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
+****
+
+[role="secondary"]
+.iOS
+
+****
+.. Enable https://support.apple.com/en-us/ht204060[Passcode] or https://support.apple.com/en-us/ht201371[TouchID] protection on the mobile device to ensure the certificate can be installed.
+.. Copy the file to your device using one of the following methods:
++
+* Email attachment (Recommended) - Simply email the certificate to an address
+accessible from the device and download the attachment.
+* Cloud service - Use a cloud storage service such as Dropbox or Google
+Drive which is accessible from the device, browse to the certificate and
+proceed to download it.
+.. Add the certificate to your device:
++
+When you download the certificate, the
+device should automatically detect a profile. Simply follow the on
+screen instructions to install it.
++
+NOTE: Versions iOS 10.3 and later require an additional step to trust the now
+installed certificate. Instructions can be found on the
+https://support.apple.com/en-us/HT204477[Apple support site]
+****
+
+:leveloffset!:
+// end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=1]
+
+
+[#features]
+== Demonstrating the ShowCase App Features
+
+// start {partialsdir}/identity-management-demo.adoc[leveloffset=2]
+:leveloffset: 2
+
+// includedFile ../modules/ROOT/pages/_partials/identity-management-demo.adoc
+
+
+= {keycloak-service}
+
+// tag::idm-demo[]
+
+From the showcase app:
+
+. Press the *Authenticate* menu item. A login screen is displayed.
+. Log in using the credentials you set up with setting up the service.
++
+Once the login is successful, you will be taken back to the showcase
+application where you can see the roles and basic information of the user you have just logged in with.
+
+// end::idm-demo[]
+
+:leveloffset!:
+// end {partialsdir}/identity-management-demo.adoc[leveloffset=2]
+// start showcase-apps/device-security.adoc[leveloffset=2}]
+:leveloffset: 2}
+
+
+
+= {device-security-service}
+
+
+From the showcase app:
+
+. Press the *Device Security* menu item.
+. View the results of the Device security checks.
+. Navigate to the {grafana-ui}, and view the metrics as described in xref:mobile-metrics.adoc[Analyzing App Usage]
+
+:leveloffset!:
+// end showcase-apps/device-security.adoc[leveloffset=2}]
+// start showcase-apps/push-notifications.adoc[leveloffset=2}]
+:leveloffset: 2}
+
+
+
+= {unifiedpush-service}
+
+
+. Send a push notification as described in
+xref:push-notifications.adoc[Sending a Push Notification]
+. Launch the showcase app and view the notification.
+
+:leveloffset!:
+// end showcase-apps/push-notifications.adoc[leveloffset=2}]
+// start showcase-apps/metrics.adoc[leveloffset=2]
+:leveloffset: 2
+
+
+
+= {metrics-service}
+
+
+. Launch the showcase app. It automatically sends xref:mobile-metrics.adoc[app and device metrics].
+. Navigate to the {grafana-ui}, and view the metrics.
++
+If you perform xref:device-security.adoc[device security] checks, related metrics are also displayed.
+
+:leveloffset!:
+// end showcase-apps/metrics.adoc[leveloffset=2]
