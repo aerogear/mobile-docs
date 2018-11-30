@@ -4,7 +4,7 @@
 
 . Select `AeroGear.Mobile.Core` and depending on your target platforms:
 
-. for Android:
+. For Android:
 
 .. also pick `AeroGear.Mobile.Core.Platform.Android`
 
