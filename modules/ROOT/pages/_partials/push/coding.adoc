@@ -13,14 +13,14 @@ This guide will help you to set up the {unifiedpush-service} service SDK in your
 .Android
 
 ****
-You need a Firebase account. See link:google-setup.html[Google setup] to get started.
+A link:https://firebase.google.com/[Firebase account].
 ****
 
 [role="secondary"]
 .iOS
 
 ****
-You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple setup] to get started.
+A link:https://firebase.google.com/[Firebase account] or link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service].
 ****
 
 === Importing the libraries
