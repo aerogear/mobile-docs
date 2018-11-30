@@ -1,4 +1,4 @@
-= Introduction to the AeroGear SDK
+= AeroGear SDK
 
 After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
 
