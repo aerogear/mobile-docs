@@ -20,7 +20,7 @@ A link:https://firebase.google.com/[Firebase account].
 .iOS
 
 ****
-A link:https://firebase.google.com/[Firebase account] or link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service].
+A link:https://firebase.google.com/[Firebase account].
 ****
 
 === Importing the libraries
