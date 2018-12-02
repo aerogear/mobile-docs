@@ -112,9 +112,9 @@ Firebase Cloud Messaging console.
 
 
 
-. xref:mobile-metrics.adoc[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
-. xref:identity-management.adoc[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
-. xref:push-notifications.adoc[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
+. xref:mobile-metrics.adoc#binding-a-mobile-client-with-the-metrics-service[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
+. xref:identity-management.adoc#binding-a-mobile-client-with-the-identity-management-service[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
+. xref:push-notifications.adoc#binding-a-mobile-client-with-the-push-notifications-service[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
 +
 NOTE: This step also creates a variant as described in xref:push-notifications.adoc[ {unifiedpush-service} Service] terminology.
 
