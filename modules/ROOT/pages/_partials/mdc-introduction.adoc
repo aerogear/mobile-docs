@@ -2,6 +2,5 @@ Mobile Developer Console is part of {org-name} {product-name} and allows you to:
 
 * create representation of your mobile application in OpenShift
 * bind {mobile-client} with mobile services
-* build your mobile app (requires link:mobile-cicd.html[{mobile-ci-cd-service}])
-
-It also provides configuration file for {org-name} SDK.
+* build your mobile app (requires link:mobile-cicd.html[{mobile-ci-cd-service}] service)
+* get `mobile-services.json` configuration file for {org-name} SDK

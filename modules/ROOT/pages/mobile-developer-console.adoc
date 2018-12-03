@@ -11,10 +11,6 @@ include::_partials/attributes.adoc[]
 include::_partials/mdc-introduction.adoc[]
 // end {partialsdir}/mdc-introduction.adoc[]
 
-A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift
-and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app
-and to connect to the back-end {product-name} you have provisioned on OpenShift.
-
 [#provision-mdc]
 // start {partialsdir}/provision-mdc.adoc[]
 include::_partials/provision-mdc.adoc[]
