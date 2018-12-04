@@ -8,13 +8,15 @@ There is a list of services available to be bound to the {mobile-client} and lis
 
 image::mobile-clients-mobile-services.png[]
 
+NOTE: Some services might support multiple binding and in that case a *Bind to App* button is also shown in a *Bound Services* row.
+
 == Binding mobile services
 
 The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
 to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
 the *Create Binding* button.
 
-You can bind a service by clicking *Bind to app* (image is the example of a Push Service). 
+You can bind a service by clicking *Bind to App* (image is the example of a Push Service).
 
 image::mobile-clients-service-bind-1.png[]
 
