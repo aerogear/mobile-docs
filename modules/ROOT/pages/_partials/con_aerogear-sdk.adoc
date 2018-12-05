@@ -4,10 +4,10 @@ After you have xref:getting-started.adoc#registering[registered] a {mobile-clien
 
 The {org-name} SDK supports the following mobile platforms:
 
-* xref:android[Android]
-* xref:ios[iOS]
-* xref:cordova[Cordova]
-* xref:xamarin[Xamarin]
+* xref:android[Android]: SDK is hosted on link:https://bintray.com/bintray/jcenter[jCenter].
+* xref:ios[iOS]: SDK is hosted on link:https://cocoapods.org/[CocoaPods].
+* xref:cordova[Cordova]: SDK is hosted on link:https://www.npmjs.com/[npm].
+* xref:xamarin[Xamarin]: SDK is hosted on link:https://www.nuget.org/[NuGet].
 
 [[android]]
 == Using the {org-name} SDK to develop Android apps
