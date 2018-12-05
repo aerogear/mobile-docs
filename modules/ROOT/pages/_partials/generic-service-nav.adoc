@@ -1,8 +1,8 @@
 
 . Navigate to the *Overview* of your OpenShift project.
 
-. Select the {mobile-client} name listed in the {mobile-client}s section.
+. Create a new *Mobile App* representation and click it, or select an existing {mobile-client} listed in the {mobile-client}s section.
 
-. Navigate to *Mobile Services* tab.
+. Click the *Mobile Services* tab.
 +
 image::mobile-clients-services-all-unbound.png[]
