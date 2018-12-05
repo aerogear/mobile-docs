@@ -1,0 +1,17 @@
+== Provisioning Mobile Developer Console
+
+To provision the Mobile Developer Console:
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Select *Catalog* from the left hand menu.
++
+NOTE: You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.
+. Choose the Mobile Developer Console service.
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
+
+// start generic-provisioning-end.adoc[]
+include::generic-provisioning-end.adoc[]
+// end generic-provisioning-end.adoc[]
