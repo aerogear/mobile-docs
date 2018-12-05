@@ -22,9 +22,9 @@ include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
 // end registering-a-mobile-app.adoc[leveloffset=1]
 
 [#services]
-// start {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
-include::_partials/mobile-client-viewing-available-services.adoc[leveloffset=1]
-// end {partialsdir}/mobile-client-viewing-available-services.adoc[leveloffset=1]
+// start {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
+include::_partials/mobile-client-using-mobile-services.adoc[leveloffset=1]
+// end {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
 
 [#building]
 // start {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
