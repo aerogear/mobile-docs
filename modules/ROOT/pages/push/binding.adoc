@@ -34,18 +34,18 @@ Choose a *Mobile Client Type* and fill out the required fields:
 
 ****
 - Enter a *Server Key* and a *Sender ID*. Both are present in the Firebase console.
-- Ensure that you have selected `Android` in the `Mobile Client Type` dropdown menu.
+- Select `Android` from in the `Mobile Client Type` list.
 ****
 
 [role="secondary"]
 .iOS
 
 ****
-- Ensure that you have selected `iOS` in the `Mobile Client Type` dropdown menu.
+- Select `iOS` from the `Mobile Client Type` list.
 - Obtain an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide]. 
 - Encode the certificate using base64 and paste the encoded certificate into the field labeled `iOS .p12 file`. 
 +
-If you are using macOS, run:
+If you are using macOS:
 +
 ----
 cat <path/to/your/.p12> | base64
