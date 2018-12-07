@@ -24,6 +24,8 @@ NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minish
 [[procedure]]
 == Procedure
 
+=== Automated Install
+
 . Clone the Mobile Developer Console repository:
 +
 The repository contains installation script for {org-name} {product-name}.
@@ -60,6 +62,109 @@ $ chcon -Rt svirt_sandbox_file_t .
 $ ./scripts/post_install.sh
 ----
 +
+
+. Verify the installation:
++
+.. Browse to the Web console of your OpenShift instance and log in.
+
+.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
+
+=== Manual Install
+
+. Login to your OpenShift instance as user with `cluster-admin` privileges using `oc`
+. Prepare the Custom Resource Definition file for mobile:
++
+[source,bash,subs="attributes"]
+----
+cat > /tmp/crd.yaml << EOF
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: mobileclients.mobile.k8s.io
+spec:
+  group: mobile.k8s.io
+  version: v1alpha1
+  scope: Namespaced
+  names:
+    plural: mobileclients
+    singular: mobileclient
+    kind: MobileClient
+    shortNames:
+    - mc
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            apiKey:
+              type: string
+              pattern: '(\w{8}-\w{4}-\w{4}-\w{4}-\w{11})'
+            name:
+              type: string
+              pattern: '([\w-])'
+            dmzUrl:
+              type: string
+              nullable: true
+EOF
+----
+. Run the following commands to setup the Custom Resource on OpenShift:
++
+[source,bash,subs="attributes"]
+----
+oc create -f /tmp/crd.yaml
+oc create clusterrole mobileclient-admin --verb=create,delete,get,list,patch,update,watch --resource=mobileclients
+oc adm policy add-cluster-role-to-group mobileclient-admin system:authenticated
+----
+. Update the configurations of Automation Service Broker to add new registries:
+.. Edit the config map object using `oc`
++
+[source,bash,subs="attributes"]
+----
+oc edit configmap broker-config -n openshift-automation-service-broker
+----
+.. Add the following new registries to the `registry` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+registry:
+- type: dockerhub
+  name: ag
+  url: https://registry.hub.docker.com
+  org: aerogearcatalog
+  tag: 1.0.0
+  white_list:
+    - '.*-apb$'
+  black_list:
+    - '.*mobile-developer-console-apb$'
+- type: dockerhub
+  name: ag-mdc
+  org: aerogearcatalog
+  tag: 1.0.0-alpha
+  url: https://registry.hub.docker.com
+  white_list:
+  - '.*mobile-developer-console-apb$'
+----
+.. Update the following attributes in the `openshift` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+openshift:
+  image_pull_policy: Always
+  sandbox_role: admin
+----
+.. Update the following attributes in the `broker` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+broker:
+  launch_apb_on_bind: true
+----
+.. Save the configmap object, and restart the automation service broker:
++
+[source,bash,subs="attributes"]
+----
+oc rollout latest openshift-automation-service-broker -n openshift-automation-service-broker
+----
 
 . Verify the installation:
 +
