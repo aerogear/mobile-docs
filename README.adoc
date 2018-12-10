@@ -140,6 +140,11 @@ When building for publication use:
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
 
+The `site.yml` currently creates HTML for:
+
+* master branch of this repo
+* v1.0 branch of this repo
+* master branch of the https://github.com/aerogear/mobile-security repo
 
 == Editing
 
