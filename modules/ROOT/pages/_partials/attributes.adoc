@@ -46,3 +46,5 @@
 :android-sdk: AeroGear SDK for Android
 :js-sdk: AeroGear SDK for Cordova
 :xamarin-sdk: AeroGear SDK for Xamarin
+
+:mobile-developer-console: Mobile Developer Console
