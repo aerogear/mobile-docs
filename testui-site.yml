@@ -16,6 +16,8 @@ ui:
 asciidoc:
   extensions:
   - ./lib/remote-include-processor
+  - ./lib/tab-block.js
+  - ./lib/tab-block
   attributes:
     experimental: ''
     idprefix: ''
