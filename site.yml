@@ -16,6 +16,8 @@ ui:
     snapshot: true
 
 asciidoc:
+  extensions:
+  - ./lib/tab-block.js
   attributes:
     experimental: ''
     idprefix: ''
