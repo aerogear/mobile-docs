@@ -4,9 +4,8 @@ include::_partials/attributes.adoc[]
 
 :toc:
 
-// start keycloak/index.adoc[leveloffset=0]
-include::_partials/keycloak/index.adoc[leveloffset=0]
-// end keycloak/index.adoc[leveloffset=0]
+include::_partials/keycloak/overview-keycloak.adoc[leveloffset=1]
+
 [[setup]]
 
 == Prerequisites
