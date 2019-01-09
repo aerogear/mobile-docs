@@ -1,0 +1,56 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: setting-up-idm
+[id='doing-one-procedure-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Setting Up IDM
+// Start the title of a procedure module with a verb, such as Creating or Create. See also _Wording of headings_ in _The IBM Style Guide_.
+
+This section describes how to set up the IDM Mobile Service.
+
+.Prerequisites
+
+* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+
+= Provisioning the {keycloak-service} Service
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
++
+When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
++
+* *Keycloak admin username*: Username for Keycloak administration
++
+* *Keycloak admin password*: Password for the Keycloak admin user
++
+* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
++
+NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
++
+* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
++
+* *URL of the shared service*: Enter a value if you want to use an existing shared service.
+
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
+
+.Additional resources
