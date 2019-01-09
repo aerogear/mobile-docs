@@ -1,0 +1,68 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: downloading-configuration-file
+[id='doing-one-procedure-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Downloading the Configuration File
+
+This section describes how to download the configuration file.
+
+.Prerequisites
+
+* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+
+= Procedure
+
+. Open your {mobile-client} in Mobile Developer Console.
+. Copy the `mobile-services.json` configuration to your clipboard.
+. Save the contents of the clipboard to a new file called `mobile-services.json`.
++
+NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+. Follow the platform-specific instructions:
+
+[role="primary"]
+.Android
+****
+Move mobile-services.json to the following location in your application project:
+
+`app/src/main/assets/mobile-services.json`
+****
+
+[role="secondary"]
+.iOS
+****
+Move mobile-services.json to the following location in your application project:
+
+`<app directory>/mobile-services.json`
+
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+****
+
+[role="secondary"]
+.Cordova
+****
+Move mobile-services.json to the following location in your application project:
+
+`src/mobile-services.json`
+****
+
+[role="secondary"]
+.Xamarin
+****
+
+Move mobile-services.json to the following location in your application project:
+
+`Resources/mobile-services.json`
+****
+
+.Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
