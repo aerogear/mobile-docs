@@ -1,0 +1,28 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: my-concept-module-a.adoc
+// * ID: [id='my-concept-module-a']
+// * Title: = My concept module A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: overview-of-the-service
+[id='concept-explanation-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Overview of the {keycloak-service} service
+//In the title of concept modules, include nouns or noun phrases that are used in the body text. This helps readers and search engines find the information quickly.
+//Do not start the title of concept modules with a verb. See also _Wording of headings_ in _The IBM Style Guide_.
+
+The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
+
+* Secure your mobile app using the industry standard OpenID Connect protocol
+* Add access control to your app based on user’s group membership
+* Easily implement SSO, multi-factor authentication and Social Login support
+* Back-end support for identity brokering and user federation
+
+.Additional resources
+
+* For more information about OpenID, see the link:https://openid.net/[OpenID Foundation, window="_blank"] website.
+* See the link:https://www.keycloak.org/documentation.html[Keycloak documentation, window="_blank"] for more info.
