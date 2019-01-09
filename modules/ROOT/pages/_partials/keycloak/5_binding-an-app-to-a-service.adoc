@@ -1,0 +1,53 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: binding-an-app-to-a-service
+[id='doing-one-procedure-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Binding a {mobile-client} with the IDM Service
+
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+This section describes how to set up the IDM Mobile Service.
+
+.Prerequisites
+
+* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+
+= Procedure
+
+To bind a {mobile-client} with a mobile service:
+
+. Launch {mobile-developer-console}
+
+. Click on the {mobile-client} on the Overview screen
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
++
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Press *Bind to App* in the {service-name}
+. Fill out the binding parameters required by the {service-name} Service.
+
++
+image::mobile-clients-services-idm-parameters.png[]
+NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.
+
+The {service-name} service will now be expandable, details about the service can be viewed.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
+
+.Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.
