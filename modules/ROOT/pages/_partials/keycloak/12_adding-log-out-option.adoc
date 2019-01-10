@@ -1,0 +1,112 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: {keycloak-service}
+[id='adding-log-out-option-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Adding Log Out Option to your Mobile App
+
+The following section describes how to perform a logout.
+
+NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider.
+More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
+
+.Prerequisites
+
+* xref:getting-started-with-user-authentication-{context}[Getting Started with User Authentication].
+
+.Procedure
+
+. To perform a logout:
+
+[role="primary"]
+.Android
+****
+
+. Retrieve the current user:
++
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser();
+----
+
+. Implement `Callback` and call `logout`:
+[source,java]
+----
+authService.logout(currentUser, new Callback<UserPrincipal>() {
+    @Override
+    public void onSuccess() {
+        // User Logged Out Successfully and local Auth tokens were Deleted
+    }
+
+    @Override
+    public void onError(Throwable error) {
+        // An error occurred during logout
+    }
+});
+----
+****
+
+[role="secondary"]
+.iOS
+****
+. Implement the logout callback:
++
+[source,swift]
+----
+func onLogoutComplete(_: Error?) {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+    ...
+}
+----
+
+. Call `logout` and pass the callback:
++
+[source,swift]
+----
+do {
+    try AgsAuth.instance.logout(onCompleted: self.onLogoutComplete)
+} catch {
+    fatalError("Error logging out: \(error).")
+}
+----
+
+
+****
+
+[role="secondary"]
+.Cordova
+****
+
+To logout invoke the `logout` function:
+
+[source,javascript]
+----
+authService.logout().then(() => {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+});
+----
+
+****
+
+[role="secondary"]
+.Xamarin
+****
+To logout invoke the `Logout` method:
+[source,csharp]
+----
+var authService = MobileCore.Instance.GetService<IAuthService>();
+var result = await authService.Logout(authService.CurrentUser());
+----
+****
+
+.Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

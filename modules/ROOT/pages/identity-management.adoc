@@ -9,7 +9,7 @@ include::_partials/attributes.adoc[]
 include::_partials/keycloak/1_idm_intro.adoc[leveloffset=+1]
 include::_partials/keycloak/2_idm_glossary.adoc[leveloffset=+2]
 
-[[getting-started-with-the-idm-service]]
+[[setting-up-the-idm-service]]
 = Setting Up the {keycloak-service} Service
 include::_partials/keycloak/3_getting-started-with-idm.adoc[leveloffset=+1]
 include::_partials/keycloak/4_provisioning-the-idm.adoc[leveloffset=+1]
@@ -17,3 +17,11 @@ include::_partials/keycloak/5_binding-an-app-to-a-service.adoc[leveloffset=+1]
 include::_partials/keycloak/6_configuring-the-service.adoc[leveloffset=+1]
 include::_partials/keycloak/7_downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/keycloak/8_setting-up-the-idm-sdk.adoc[leveloffset=+1]
+
+[[adding-user-authentication-to-your-mobile-app]]
+= Adding User Authentication to your Mobile App
+include::_partials/keycloak/9_getting-started-with-user-authentication.adoc[leveloffset=+1]
+include::_partials/keycloak/10_implementing-authentication.adoc[leveloffset=+1]
+include::_partials/keycloak/11_refreshing-the-authentication-token.adoc[leveloffset=+1]
+include::_partials/keycloak/12_adding-log-out-option.adoc[leveloffset=+1]
+include::_partials/keycloak/13_authenticating-with-a-back-end-service.adoc[leveloffset=+1]
