@@ -8,19 +8,19 @@
 // * Title: = Doing procedure A
 
 // The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: setting-up-the-idm-sdk
-[id='doing-one-procedure-{context}']
+:context: {keycloak-service}
+[id='setting-up-sdk-{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
-= Setting up the IDM sdk
+= Setting up the {keycloak-service} Service SDK
 
 This section helps you to set up the {keycloak-service} service SDK in your App.
-It describes how to set up and initialize the IDM sdk.
+It describes how to set up and initialize the {keycloak-service} service SDK.
 
 .Prerequisites
 
-* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
 
-= Procedure
+.Procedure
 
 1. Import the libraries
 

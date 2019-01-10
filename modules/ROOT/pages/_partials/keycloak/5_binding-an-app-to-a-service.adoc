@@ -8,21 +8,21 @@
 // * Title: = Doing procedure A
 
 // The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: binding-an-app-to-a-service
-[id='doing-one-procedure-{context}']
+:context: {keycloak-service}
+[id='binding-an-app-to-{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
-= Binding a {mobile-client} with the IDM Service
+= Binding a {mobile-client} with the {keycloak-service} Service
 
 To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.
 
-This section describes how to set up the IDM Mobile Service.
+This section describes how to set up the {keycloak-service} service.
 
 .Prerequisites
 
-* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
 
-= Procedure
+.Procedure
 
 To bind a {mobile-client} with a mobile service:
 
