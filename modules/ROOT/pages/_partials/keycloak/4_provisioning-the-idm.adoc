@@ -8,19 +8,19 @@
 // * Title: = Doing procedure A
 
 // The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: setting-up-idm
-[id='doing-one-procedure-{context}']
+:context: {keycloak-service}
+[id='provisioning-the-{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
-= Setting Up IDM
+= Provisioning the {keycloak-service} Service
 // Start the title of a procedure module with a verb, such as Creating or Create. See also _Wording of headings_ in _The IBM Style Guide_.
 
 This section describes how to set up the IDM Mobile Service.
 
 .Prerequisites
 
-* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
 
-= Provisioning the {keycloak-service} Service
+.Provisioning the {keycloak-service} Service
 
 . Log into the OpenShift console.
 . Create a new project or choose an existing project.

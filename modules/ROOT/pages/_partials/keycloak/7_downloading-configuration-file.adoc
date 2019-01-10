@@ -8,8 +8,8 @@
 // * Title: = Doing procedure A
 
 // The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: downloading-configuration-file
-[id='doing-one-procedure-{context}']
+:context: {keycloak-service}
+[id='downloading-the-configuration-file-{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Downloading the Configuration File
 
@@ -17,9 +17,9 @@ This section describes how to download the configuration file.
 
 .Prerequisites
 
-* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
 
-= Procedure
+.Procedure
 
 . Open your {mobile-client} in Mobile Developer Console.
 . Copy the `mobile-services.json` configuration to your clipboard.
