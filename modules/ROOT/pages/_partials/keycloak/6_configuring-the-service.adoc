@@ -8,10 +8,10 @@
 // * Title: = Doing procedure A
 
 // The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: configuring-the-service
-[id='doing-one-procedure-{context}']
+:context: {keycloak-service}
+[id='configuring-{context}']
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
-= Configuring the Service
+= Configuring the {keycloak-service} Service
 
 This section guides you through configuring the schema of the redirect url and web origin for a client in {idm-name}.
 This is required to enable OpenID authentication.
@@ -19,9 +19,9 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 
 .Prerequisites
 
-* xref:concept-explanation-getting-started-with-idm[Getting Started with IDM].
+* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
 
-= Procedure
+.Procedure
 
 . Choose the schema of a redirect url
 +
