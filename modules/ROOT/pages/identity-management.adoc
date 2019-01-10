@@ -2,6 +2,8 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
+:toc:
+
 [[idm-service-intro]]
 = Introduction to the IDM Service
 include::_partials/keycloak/1_idm_intro.adoc[leveloffset=+1]
@@ -16,6 +18,3 @@ include::_partials/keycloak/6_configuring-the-service.adoc[leveloffset=+1]
 include::_partials/keycloak/7_downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/keycloak/8_setting-up-the-idm-sdk.adoc[leveloffset=+1]
 
-******************************************
-******************************************
-******************************************
