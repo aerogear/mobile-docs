@@ -21,7 +21,7 @@ If the credentials are correct, a user is granted access to the App.
 
 Before getting started with User Authentication, ensure that:
 
-* [x] You have completed all steps in xref:setting-up-the-idm-service[Setting Up the {keycloak-service} Service].
+* You have completed all steps in xref:setting-up-the-idm-service[Setting Up the {keycloak-service} Service].
 
 .Additional resources
 
