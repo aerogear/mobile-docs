@@ -19,6 +19,7 @@ Roles are divided into two types. Resource roles which belong to the client the 
 
 .Prerequisites
 
+* [x] You have completed all steps in xref:adding-user-authentication-to-your-mobile-app[Adding User Authentication to your Mobile App].
 * xref:getting-started-with-user-authentication-{context}[Getting Started with User Authentication].
 
 .Procedure
