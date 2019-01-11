@@ -33,5 +33,4 @@ include::_partials/keycloak/14_adding-access-control.adoc[leveloffset=+0]
 include::_partials/keycloak/15_getting-started-with-sso.adoc[leveloffset=+1]
 include::_partials/keycloak/16_using-sso.adoc[leveloffset=+1]
 
-[[monitoring-the-identity-management-service]]
-= Monitoring the Identity Management Service
+include::_partials/keycloak/17_monitoring-idm.adoc[leveloffset=+0]

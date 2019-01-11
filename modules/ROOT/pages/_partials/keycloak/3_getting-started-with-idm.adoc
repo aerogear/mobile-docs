@@ -17,8 +17,8 @@
 
 Before getting started with the {keycloak-service} Service, ensure that:
 
-* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
-* [x] You have provisioned Mobile Developer Console as described in xref:getting-started.adoc[Provisioning Mobile Developer Console].
+* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You have provisioned Mobile Developer Console as described in xref:getting-started.adoc[Provisioning Mobile Developer Console].
 
 .Additional resources
 

@@ -1,0 +1,66 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: {keycloak-service}
+[id='monitoring-idm-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Monitoring the {keycloak-service} Service
+
+After the Mobile Metrics Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned, "Keycloak Metrics" are displayed in the list of available dashboards.
+Use Grafana’s exposed URL to monitor the {keycloak-service} Service.
+
+.Prerequisites
+
+* xref:getting-started-with-sso-{context}[Getting Started with Single Sign-On (SSO)].
+* The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
+
+.Procedure
+
+. Navigate to Grafana’s exposed URL.
+. Click Log in → Home
+. Select *Keycloak Metrics*.
+
+.Additional resources
+
+.. Dashboard panel descriptions
++
+The Keycloak dashboard consists of several panels which give you an overview of the specific
+events, such as the number of registered users, memory usage etc.
+Below you will find a detailed description of each panel and its values.
++
+.. Singlestat Panels
++
+Singlestat panels show you the main summary of a single data series.
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+* *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
+* *Total Login Errors*: Total number of failed login attempts.
+* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
++
+.. Graph panels
++
+Used to show how certain values change over time, e.g. the number of successful logins.
+* *Logins*: Overview of the successful logins over time
+* *Login Errors*: Overview of the failed login attempts over time
+* *Memory Usage*: The values in this graph represents the following:
+** *Used*: The amount of memory currently used by the {keycloak-service} Service
+** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
+** *Max*: The maximum amount of memory that can be used for memory management
++
+.. Pie Charts
++
+Used to show the distribution of data, e.g. the number of logins per identity provider.
+* *Logins Per Provider*: Overview of the successful (non-admin) user logins per provider
+* *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
++
+.. Other Information
++
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
