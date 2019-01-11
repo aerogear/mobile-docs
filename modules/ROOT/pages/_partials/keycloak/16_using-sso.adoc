@@ -1,0 +1,37 @@
+// Module included in the following assemblies:
+//
+// <List assemblies here, each on a new line>
+
+// Base the file name and the ID on the module title. For example:
+// * file name: doing-procedure-a.adoc
+// * ID: [id='doing-procedure-a']
+// * Title: = Doing procedure A
+
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+:context: {keycloak-service}
+[id='using-sso-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Using SSO with the Device Browser
+
+The Auth SDK uses OpenID Connect link:http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.
+
+.Prerequisites
+
+* xref:getting-started-with-sso-{context}[Getting Started with Single Sign-On (SSO)].
+* An assumption is made that your two apps are called **Email App** and **Messaging App**.
+
+.Procedure
+
+. Ensure the "Remember Me" option in Keycloak is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
+
+. Now that your two apps and Keycloak clients are setup, sign into the *Email App* with the user you have previously created. You should be redirected to your device browser which should have loaded the Keycloak login page.
+
+. Next, enter in your credentials, make sure check the *Remember Me* option and login. You have now been authenticated on the *Email App* via the browser.
+
+. Finally, try sign into the *Messaging App* and you should be automatically logged in as you have been previously authenticated in the *Email App* via the *_same_* browser.
+
+.Additional resources
+
+* Known Issue
+** On iOS 11 and above, Apple has introduced SFAuthenticationSession for apps to perform SSO, instead of using the system Safari browser.
+However, there are a few known issues with this new feature and sometimes user may have to enter their credentials again in other apps, even if they have already logged in once previously in one of the apps.
