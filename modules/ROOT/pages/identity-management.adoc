@@ -25,4 +25,13 @@ include::_partials/keycloak/10_implementing-authentication.adoc[leveloffset=+1]
 include::_partials/keycloak/11_refreshing-the-authentication-token.adoc[leveloffset=+1]
 include::_partials/keycloak/12_adding-log-out-option.adoc[leveloffset=+1]
 include::_partials/keycloak/13_authenticating-with-a-back-end-service.adoc[leveloffset=+1]
-include::_partials/keycloak/14_adding-access-control.adoc[leveloffset=+1]
+
+include::_partials/keycloak/14_adding-access-control.adoc[leveloffset=+0]
+
+[[adding-sso-to-your-mobile-app]]
+= Adding SSO to your Mobile App
+include::_partials/keycloak/15_getting-started-with-sso.adoc[leveloffset=+1]
+include::_partials/keycloak/16_using-sso.adoc[leveloffset=+1]
+
+[[monitoring-the-identity-management-service]]
+= Monitoring the Identity Management Service
