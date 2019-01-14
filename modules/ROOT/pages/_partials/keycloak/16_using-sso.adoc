@@ -13,14 +13,18 @@
 // The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Using SSO with the Device Browser
 
-The Auth SDK uses OpenID Connect link:http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.
+The {org-name} mobile SDK uses OpenID Connect link:http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to implement SSO using a mobile device browser.
 
 .Prerequisites
 
-* xref:getting-started-with-sso-{context}[Getting Started with Single Sign-On (SSO)].
-* An assumption is made that your two apps are called **Email App** and **Messaging App**.
+* You have completed all steps in xref:adding-access-control-{keycloak-service}[Adding Access Control to your Mobile App].
+* Two {mobile-client}s bound to the {keycloak-service} service.
+* Two Mobile Apps built and running on the same device that are using the AeroGear SDK Auth module.
 
 .Procedure
+
+In the following procedure, the two apps are named **Email App** and **Messaging App**.
+Substitute the appropriate names for your SSO scenario.
 
 . Ensure the "Remember Me" option in Keycloak is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
 
@@ -32,6 +36,5 @@ The Auth SDK uses OpenID Connect link:http://openid.net/specs/openid-connect-cor
 
 .Additional resources
 
-* Known Issue
-** On iOS 11 and above, Apple has introduced SFAuthenticationSession for apps to perform SSO, instead of using the system Safari browser.
-However, there are a few known issues with this new feature and sometimes user may have to enter their credentials again in other apps, even if they have already logged in once previously in one of the apps.
+With iOS 11 and later, Apple has introduced SFAuthenticationSession for apps to perform SSO, instead of using the system Safari browser and there are known issues with this new feature.
+Sometimes, the user may have to enter their credentials again, even if they have logged in previously in another app.

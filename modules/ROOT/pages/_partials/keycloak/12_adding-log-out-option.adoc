@@ -1,16 +1,6 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Base the file name and the ID on the module title. For example:
-// * file name: doing-procedure-a.adoc
-// * ID: [id='doing-procedure-a']
-// * Title: = Doing procedure A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 :context: {keycloak-service}
 [id='adding-log-out-option-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+
 = Adding Log Out Option to your Mobile App
 
 The following section describes how to perform a logout.
@@ -20,7 +10,7 @@ More information is available in the Keycloak documentation under link:https://w
 
 .Prerequisites
 
-* xref:getting-started-with-user-authentication-{context}[Getting Started with User Authentication].
+*  A working mobile app that uses authentication with the {keycloak-service} service.
 
 .Procedure
 
@@ -107,6 +97,3 @@ var result = await authService.Logout(authService.CurrentUser());
 ----
 ****
 
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.
