@@ -1,16 +1,5 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Base the file name and the ID on the module title. For example:
-// * file name: doing-procedure-a.adoc
-// * ID: [id='doing-procedure-a']
-// * Title: = Doing procedure A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 :context: {keycloak-service}
 [id='setting-up-sdk-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Setting up the {keycloak-service} Service SDK
 
 This section helps you to set up the {keycloak-service} service SDK in your App.
@@ -18,7 +7,7 @@ It describes how to set up and initialize the {keycloak-service} service SDK.
 
 .Prerequisites
 
-* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
+* Your local `mobile-services.json` file is up-to-date.
 
 .Procedure
 
@@ -243,6 +232,3 @@ android:networkSecurityConfig="@xml/network_security_config"
 ----
 ****
 
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.

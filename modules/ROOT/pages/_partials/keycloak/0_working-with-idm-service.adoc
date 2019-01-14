@@ -1,25 +1,15 @@
-// This assembly is included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Retains the context of the parent assembly if this assembly is nested within another assembly.
-// For more information about nesting assemblies, see: https://redhat-documentation.github.io/modular-docs/#nesting-assemblies
-// See also the complementary step on the last line of this file.
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 :context: {keycloak-service}
 ifdef::context[:parent-context: {context}]
 
-// Base the file name and the ID on the assembly title. For example:
-// * file name: my-assembly-a.adoc
-// * ID: [id='my-assembly-a']
-// * Title: = My assembly A
+:installation-link: getting-started.html
+:sso-docs-link: https://www.keycloak.org/documentation.html
+:sso-name: Keycloak
 
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 [id='a-collection-of-modules']
-// If the assembly is reused in other assemblies in a guide, include {context} in the ID: [id='a-collection-of-modules-{context}'].
+
 = Working with the {keycloak-service} Service
-//If the assembly covers a task, start the title with a verb in the gerund form, such as Creating or Configuring.
 :context: assembly-keyword
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 
 The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
 
@@ -28,19 +18,20 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 * Easily implement SSO, multi-factor authentication and Social Login support
 * Back-end support for identity brokering and user federation
 
+include::2_idm_glossary.adoc[leveloffset=+2]
+
 .Prerequisites
 
-* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
-* You have provisioned Mobile Developer Console as described in xref:getting-started.adoc[Provisioning Mobile Developer Console].
-* Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
+// TODO: need to rewrite the following
+// * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
 
-// The following include statements pull in the module files that comprise the assembly. Include any combination of concept, procedure, or reference modules required to cover the user story. You can also include other assemblies.
-//include::modules/TEMPLATE_CONCEPT_explaining_a_concept.adoc[leveloffset=+1]
-// [leveloffset=+1] ensures that when a module starts with a level-1 heading (= Heading), the heading will be interpreted as a level-2 heading (== Heading) in the assembly.
+// TODO: could we include this here in the assembly?
+// * Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
 
 [[setting-up-the-idm-service]]
 == Setting Up the {keycloak-service} Service
-include::3_getting-started-with-idm.adoc[leveloffset=+2]
+// include::3_getting-started-with-idm.adoc[leveloffset=+2]
 include::4_provisioning-the-idm.adoc[leveloffset=+2]
 include::5_binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::6_configuring-the-service.adoc[leveloffset=+2]
@@ -49,7 +40,7 @@ include::8_setting-up-the-idm-sdk.adoc[leveloffset=+2]
 
 [[adding-user-authentication-to-your-mobile-app]]
 == Adding User Authentication to your Mobile App
-include::9_getting-started-with-user-authentication.adoc[leveloffset=+2]
+// include::9_getting-started-with-user-authentication.adoc[leveloffset=+2]
 include::10_implementing-authentication.adoc[leveloffset=+2]
 include::11_refreshing-the-authentication-token.adoc[leveloffset=+2]
 include::12_adding-log-out-option.adoc[leveloffset=+2]
@@ -59,14 +50,23 @@ include::14_adding-access-control.adoc[leveloffset=2]
 
 [[adding-sso-to-your-mobile-app]]
 == Adding SSO to your Mobile App
-include::15_getting-started-with-sso.adoc[leveloffset=+2]
+// include::15_getting-started-with-sso.adoc[leveloffset=+2]
 include::16_using-sso.adoc[leveloffset=+2]
 
-include::17_monitoring-idm.adoc[leveloffset=2]
+[[monitoring]]
+// start metrics/monitoring-keycloak.adoc[leveloffset=1]
+include::../metrics/monitoring-keycloak.adoc[leveloffset=2]
+
 
 == Additional resources
 
-include::2_idm_glossary.adoc[leveloffset=+3]
+* For more information about OpenID, see the link:https://openid.net/[OpenID Foundation, window="_blank"] website.
+* See the link:{sso-docs-link}[{sso-name} documentation, window="_blank"] for more info.
+
+
+
+// TODO: as in prereqs, move glossary up front
+// include::2_idm_glossary.adoc[leveloffset=+3]
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]

@@ -1,23 +1,14 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Base the file name and the ID on the module title. For example:
-// * file name: doing-procedure-a.adoc
-// * ID: [id='doing-procedure-a']
-// * Title: = Doing procedure A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 :context: {keycloak-service}
 [id='downloading-the-configuration-file-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Downloading the Configuration File
 
-This section describes how to download the configuration file.
+The `mobile-services.json` file provides the information for your mobile app to communicate with services. 
+After you change any configuration in the {mobile-developer-console}, it is important to update that file in your IDE.
 
 .Prerequisites
 
-* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
+* The configuration of your {mobile-client} in {mobile-developer-console} is up-to-date.
+* You have set up your mobile app development environment.
 
 .Procedure
 
@@ -25,7 +16,7 @@ This section describes how to download the configuration file.
 . Copy the `mobile-services.json` configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
-NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+NOTE: The `mobile-services.json` file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
 . Follow the platform-specific instructions:
 
 [role="primary"]
@@ -63,6 +54,3 @@ Move mobile-services.json to the following location in your application project:
 `Resources/mobile-services.json`
 ****
 
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.

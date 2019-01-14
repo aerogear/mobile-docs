@@ -1,16 +1,5 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Base the file name and the ID on the module title. For example:
-// * file name: doing-procedure-a.adoc
-// * ID: [id='doing-procedure-a']
-// * Title: = Doing procedure A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 :context: {keycloak-service}
 [id='adding-access-control-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Adding Access Control to your Mobile App
 
 Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked.
@@ -19,8 +8,7 @@ Roles are divided into two types. Resource roles which belong to the client the 
 
 .Prerequisites
 
-* You have completed all steps in xref:adding-user-authentication-to-your-mobile-app[Adding User Authentication to your Mobile App].
-* xref:getting-started-with-user-authentication-{context}[Getting Started with User Authentication].
+* A working mobile app that uses authentication with the {keycloak-service} service.
 
 .Procedure
 
@@ -116,6 +104,3 @@ bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
 ----
 ****
 
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.
