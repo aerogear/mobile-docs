@@ -10,7 +10,6 @@ ifdef::context[:parent-context: {context}]
 [id='a-collection-of-modules']
 
 = Working with the {keycloak-service} Service
-:context: assembly-keyword
 
 The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
 
