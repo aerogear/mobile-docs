@@ -20,7 +20,7 @@ This section describes how to set up the {keycloak-service} service.
 
 .Prerequisites
 
-* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
+* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
 
 .Procedure
 

@@ -17,7 +17,7 @@ This section describes how to download the configuration file.
 
 .Prerequisites
 
-* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
+* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
 
 .Procedure
 
