@@ -1,4 +1,5 @@
-:context: {keycloak-service}
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
 [id='adding-access-control-{context}']
 = Adding Access Control to your Mobile App
 
@@ -103,4 +104,3 @@ bool isAdmin = user.HasRealmRole("user_admin");
 bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
 ----
 ****
-
