@@ -18,7 +18,7 @@ This section describes how to set up the IDM Mobile Service.
 
 .Prerequisites
 
-* xref:getting-started-with-{context}[Getting Started with the {keycloak-service} Service].
+* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
 
 .Provisioning the {keycloak-service} Service
 
