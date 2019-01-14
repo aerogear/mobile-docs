@@ -18,9 +18,10 @@ This section describes how to set up the IDM Mobile Service.
 
 .Prerequisites
 
-* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
+* You understand identity management, and have a mobile app you want to protect.
+* You have logged into the OpenShift console and the {mobile-developer-console}.
 
-.Provisioning the {keycloak-service} Service
+.Procedure
 
 . Log into the OpenShift console.
 . Create a new project or choose an existing project.
@@ -51,7 +52,3 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 
 Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
 Provisioning a service may take some time.
-
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.

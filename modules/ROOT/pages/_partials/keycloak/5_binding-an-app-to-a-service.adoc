@@ -1,16 +1,5 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
-
-// Base the file name and the ID on the module title. For example:
-// * file name: doing-procedure-a.adoc
-// * ID: [id='doing-procedure-a']
-// * Title: = Doing procedure A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
 :context: {keycloak-service}
 [id='binding-an-app-to-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Binding a {mobile-client} with the {keycloak-service} Service
 
 To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
@@ -20,7 +9,8 @@ This section describes how to set up the {keycloak-service} service.
 
 .Prerequisites
 
-* xref:a-collection-of-modules[Working with the {keycloak-service} Service].
+* You have created a {mobile-client}.
+* You have logged into the {mobile-developer console}
 
 .Procedure
 
@@ -48,6 +38,3 @@ The {service-name} service will now be expandable, details about the service can
 
 image::mobile-clients-services-all-idm-provisioned.png[]
 
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.
