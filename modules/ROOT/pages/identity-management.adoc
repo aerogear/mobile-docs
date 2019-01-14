@@ -4,33 +4,4 @@ include::_partials/attributes.adoc[]
 
 :toc:
 
-[[idm-service-intro]]
-= Introduction to the {keycloak-service} Service
-include::_partials/keycloak/1_idm_intro.adoc[leveloffset=+1]
-include::_partials/keycloak/2_idm_glossary.adoc[leveloffset=+2]
-
-[[setting-up-the-idm-service]]
-= Setting Up the {keycloak-service} Service
-include::_partials/keycloak/3_getting-started-with-idm.adoc[leveloffset=+1]
-include::_partials/keycloak/4_provisioning-the-idm.adoc[leveloffset=+1]
-include::_partials/keycloak/5_binding-an-app-to-a-service.adoc[leveloffset=+1]
-include::_partials/keycloak/6_configuring-the-service.adoc[leveloffset=+1]
-include::_partials/keycloak/7_downloading-configuration-file.adoc[leveloffset=+1]
-include::_partials/keycloak/8_setting-up-the-idm-sdk.adoc[leveloffset=+1]
-
-[[adding-user-authentication-to-your-mobile-app]]
-= Adding User Authentication to your Mobile App
-include::_partials/keycloak/9_getting-started-with-user-authentication.adoc[leveloffset=+1]
-include::_partials/keycloak/10_implementing-authentication.adoc[leveloffset=+1]
-include::_partials/keycloak/11_refreshing-the-authentication-token.adoc[leveloffset=+1]
-include::_partials/keycloak/12_adding-log-out-option.adoc[leveloffset=+1]
-include::_partials/keycloak/13_authenticating-with-a-back-end-service.adoc[leveloffset=+1]
-
-include::_partials/keycloak/14_adding-access-control.adoc[leveloffset=+0]
-
-[[adding-sso-to-your-mobile-app]]
-= Adding SSO to your Mobile App
-include::_partials/keycloak/15_getting-started-with-sso.adoc[leveloffset=+1]
-include::_partials/keycloak/16_using-sso.adoc[leveloffset=+1]
-
-include::_partials/keycloak/17_monitoring-idm.adoc[leveloffset=+0]
+include::_partials/keycloak/0_working-with-idm-service.adoc[leveloffset=+1]
