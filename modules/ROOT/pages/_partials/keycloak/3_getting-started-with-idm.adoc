@@ -1,6 +1,0 @@
-:context: {keycloak-service}
-[id='getting-started-with-{context}']
-= Getting Started with the {keycloak-service} Service
-
-This section describes how to provision a service, provision and bind a {keycloak-service} Service.
-

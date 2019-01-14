@@ -1,19 +1,7 @@
-// Module included in the following assemblies:
-//
-// <List assemblies here, each on a new line>
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-// Base the file name and the ID on the module title. For example:
-// * file name: my-concept-module-a.adoc
-// * ID: [id='my-concept-module-a']
-// * Title: = My concept module A
-
-// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
-:context: {keycloak-service}
 [id='getting-started-with-sso-{context}']
-// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
 = Getting Started with SSO
-//In the title of concept modules, include nouns or noun phrases that are used in the body text. This helps readers and search engines find the information quickly.
-//Do not start the title of concept modules with a verb. See also _Wording of headings_ in _The IBM Style Guide_.
 
 The Auth SDK uses OpenID Connect http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to achieve SSO via a mobile device browser.
 
