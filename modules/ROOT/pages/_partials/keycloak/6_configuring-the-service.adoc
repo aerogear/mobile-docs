@@ -14,32 +14,33 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 
 . Choose the schema of a redirect url
 +
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
-****
+--
+iOS::
 +
-[role="secondary"]
-.iOS
-+
-****
+--
 It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
-****
+--
+// end::excludeDownstream[]
+Cordova::
 +
-[role="secondary"]
-.Cordova
-+
-****
+--
 Redirect url is `\http://localhost/\*`, without `:/callback`. Web Origin is `\http://localhost/*`.
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
 +
-[role="secondary"]
-.Xamarin
-+
-****
+--
 Depending on the platform, set the redirect as described in either the Android or the iOS tab.
-****
+--
+// end::excludeDownstream[]
+====
 +
 . Log into the OpenShift console and navigate to the Project Overview.
 
