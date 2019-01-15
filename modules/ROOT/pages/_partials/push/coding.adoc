@@ -1,6 +1,3 @@
-
-
-
 include::configuring-dev-env-push.adoc[leveloffset=1]
 
 == Setting up {unifiedpush-service} service SDK
@@ -9,28 +6,30 @@ This guide will help you to set up the {unifiedpush-service} service SDK in your
 
 === Prerequisites
 
-[role="primary"]
-.Android
-
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 You need a Firebase account. See link:google-setup.html[Google setup] to get started.
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 You need to set up APNs. See link:proc_preparing-ups-for-use-with-ios.adoc[Apple setup] to get started.
-****
+--
+// end::excludeDownstream[]
+====
 
 === Importing the libraries
 
-
-[role="primary"]
-.Android
-
-****
-
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 . Add the push dependency to your application module
 +
 [source,groovy,subs="attributes"]
@@ -52,12 +51,10 @@ implementation "com.google.firebase:firebase-messaging:[version]"
   // ADD THIS AT THE BOTTOM
   apply plugin: 'com.google.gms.google-services'
 
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 
 . Add the dependency to your Podfile
 +
@@ -81,12 +78,12 @@ $ pod install
 ----
 import AGSPush
 ----
-****
 
-[role="secondary"]
-.Cordova
-
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 
 . Install `cordova-plugin-aerogear-push`:
 +
@@ -109,25 +106,27 @@ $ npm install --save @ionic-native/push
 $ npm install --save @aerogear/push
 ----
 
-****
-
-[role="secondary"]
-.Xamarin
-
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 This feature is not yet supported in the AeroGear Xamarin SDK
-****
+--
+// end::excludeDownstream[]
+====
 
 === Device registration
 
 To make use of the {unifiedpush-service} service, devices need to be registered by calling an endpoint of the server.
 The SDKs will handle this for you and the following steps will give you everything you need to start working with push notifications.
 
-[role="primary"]
-.Android
-
-****
-
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 . Getting an instance of the PushService
 +
 [source,java]
@@ -150,12 +149,10 @@ pushService.registerDevice()
 });
 ----
 
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 
 [source,swift]
 ----
@@ -175,12 +172,11 @@ func application(_ application: UIApplication,
 }
 ----
 
-****
-
-[role="secondary"]
-.Cordova
-
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 
 *Using plain Cordova*
 
@@ -230,12 +226,13 @@ pushObject.on('registration').subscribe(data => {
 });
 ----
 
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 
-[role="secondary"]
-.Xamarin
-
-****
 This feature is not yet supported in the AeroGear Xamarin SDK
-****
-
+--
+// end::excludeDownstream[]
+====
