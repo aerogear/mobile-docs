@@ -13,28 +13,35 @@ Use it to help prevent your app running in a device that has been rooted/jailbro
 - A custom key has been used to sign the kernel
 - The `su` binaries are present
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 `DeviceChecks.ROOT_ENABLED`.
 
 This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer, window="_blank"] library to check if root access is present on the device.
-****
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 This check is not available for iOS.
-****
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 This check is not available for Cordova.
-****
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 This check is not available for Xamarin.
-****
+--
+// end::excludeDownstream[]
+====
 
 Developer Mode Detection (DEVELOPER_MODE_ENABLED)::
 To detect if Developer Mode has been enabled on the device the `DeviceCheckType#DEVELOPER_MODE_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[Settings, window="_blank"] class.
