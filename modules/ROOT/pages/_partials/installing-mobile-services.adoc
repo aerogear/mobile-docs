@@ -2,162 +2,265 @@
 
 = Setting up {org-name} {product-name} on OpenShift
 
-To use {product-name}, you must run OpenShift and install an add-on which enables {product-name}. For more information about OpenShift, see link:https://www.openshift.org/[OpenShift website, window="_blank"].
-
-NOTE: {org-name} recommends running OpenShift using the method described in this document. However, there are many ways to run OpenShift, and {product-name} is compatible with most of these methods. There is a known issue with Minishift that makes it unsuitable for mobile development. This issue is described in link:https://github.com/minishift/minishift/issues/1287[Issue 1287, window="_blank"].
+{product-name} run natively on link:https://www.openshift.org/[OpenShift, window="_blank"]. The installation script in the following steps installs {product-name} on OpenShift.
 
 [[prerequisites]]
 == Prerequisites
 
-* MacOS or Linux
+* OpenShift 3.11 instance
 +
-NOTE: Due to an link:https://github.com/openshift/origin/issues/18747[OpenShift bug], {product-name} will not run on RHEL/CentOS 7.4 or RHEL/CentOS 7.5.
+** This instance must have Service Catalog, Ansible Service Broker and Template Service Broker services installed.
++
+** You need to have full access to this OpenShift instance, i.e. user with `cluster-admin` privileges.
++
+NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minishift to xref:local-setup[setup OpenShift locally].
 
-* A system running OpenShift `oc cluster up` as described in link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#prerequisites[Local Cluster Management, window="_blank"]
-+
-NOTE: Installation on macOS with Docker Machine has not been tested, use the link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#macos-with-docker-for-mac[Docker for Mac] instructions when installing OpenShift.
-+
-** Use link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.9
-+
-IMPORTANT: OpenShift oc executable must be located in a system location that is known to all shells (e.g. /usr/local/bin)
-+
-IMPORTANT: Ensure that you can run link:https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#getting-started[oc cluster up, window="_blank"] with no errors before moving on to the installation of AeroGear.
-+
-* Access to a link:https://hub.docker.com/[Docker Hub] account. The installer uses Docker Hub as a source for AeroGear Docker images.
-//** For Linux (RHEL), manage Docker as a non-root user. For more information, see section _Manage Docker as a non-root user_ in  link:https://docs.docker.com/install/linux/linux-postinstall/[Post-installation steps for Linux].
+* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible, window="_blank"] (version 2.6 or above)
-
-* For Linux (Fedora), add an extra port to the `dockerc` zone:
-
-[source,sh]
-----
-$ firewall-cmd --permanent --zone dockerc --add-port 443/tcp
-$ firewall-cmd --reload
-----
+* link:https://www.docker.com/[Docker]
 
 * A local mobile development environment for the platform you want to develop on.
 
 [[procedure]]
 == Procedure
 
-. Clone the Mobile-core installer:
+=== Automated Install
+
+. Clone the Mobile Developer Console repository:
 +
-The installer configures the local development installation of {org-name} {product-name} using ansible scripts in our link:https://github.com/aerogear/mobile-core[mobile-core, window="_blank"] repo.
+The repository contains installation script for {org-name} {product-name}.
 +
 Clone this repo to your local machine and check out the {release-number} tag using:
 +
 [source,bash,subs="attributes"]
 ----
-git clone https://github.com/aerogear/mobile-core.git
-cd mobile-core
+git clone https://github.com/aerogear/mobile-developer-console.git
+cd mobile-developer-console
 git checkout {release-number}
+----
+
+. Login to your OpenShift instance as user with `cluster-admin` privileges:
++
+[source,bash]
+----
+$ oc login <OPENSHIFT_MASTER_URL>
+----
+
+. Change directory SELinux security context (RHEL/Fedora):
++
+NOTE: This step is only required on RHEL/Fedora with SELinux enabled.
++
+[source,bash]
+----
+$ chcon -Rt svirt_sandbox_file_t .
 ----
 
 . In the same directory, run the installer:
 +
 [source,bash]
 ----
-$ ./installer/install.sh
+$ ./scripts/post_install.sh
 ----
 +
-The installer checks that valid versions of Ansible, Docker and the OpenShift Client Tools
-are installed.
-
-. Enter your Docker Hub login credentials when prompted. The installer checks these credentials are valid before continuing.
-
-. Accept the default values for the next set of prompts, unless you have specific requirements and understand the implications of changing the values.
-For more information about these values, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional Resources].
-+
-NOTE: If your Cluster IP address is reported as 127.0.0.1, the installation will not succeed. Check your network connection and restart the installer.
-+
-[source,bash,subs="attributes"]
-----
-DockerHub Tag (Defaults to latest):
-DockerHub Organisation (Defaults to aerogearcatalog):
-Cluster IP (Defaults to < Network IP Address >)
-Wildcard DNS Host (Defaults to nip.io):
-----
-+
-For more information, see the _DockerHub, Cluster IP and Wildcard DNS Host values_ section in xref:additional-resources[Additional resources].
-+
-The following installation can take a while the first time it runs, as it pulls a number of Docker images. Once completed successfully, this results in an output similar to the following:
-+
-----
-TASK [output-oc-cluster-status : debug] ******************************************************************************************************************************************************
-ok: [localhost] => {
-    "msg": [
-        "Web console URL: https://192.168.37.1:8443/console/",
-        "",
-        "Config is at host directory /var/lib/origin/openshift.local.config",
-        "Volumes are at host directory /var/lib/origin/openshift.local.volumes",
-        "Persistent volumes are at host directory /var/lib/origin/openshift.local.pv",
-        "Data is at host directory /path/to/mobile-core/ui/openshift-data"
-    ]
-}
-
-PLAY RECAP ***********************************************************************************************************************************************************************************
-localhost                  : ok=44   changed=17   unreachable=0    failed=0
-----
-+
-The log above is displayed after a successful installation.
 
 . Verify the installation:
 +
-.. Browse to the Web console URL displayed at the end of the installation, and log in, accepting the self-signed certificate if displayed.
-+
-The developer login credentials are:
-+
-----
-username: developer
-password: password
-----
-+
-The service catalog is displayed
+.. Browse to the Web console of your OpenShift instance and log in.
 
-.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed. If the _Mobile_ tab still is not displayed, follow the troubleshooting steps below.
+.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
 
-image:catalog-mobile-clients.png[]
+=== Manual Install
+
+. Login to your OpenShift instance as user with `cluster-admin` privileges using `oc`
+. Prepare the Custom Resource Definition file for mobile:
++
+[source,bash,subs="attributes"]
+----
+cat > /tmp/crd.yaml << EOF
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: mobileclients.mobile.k8s.io
+spec:
+  group: mobile.k8s.io
+  version: v1alpha1
+  scope: Namespaced
+  names:
+    plural: mobileclients
+    singular: mobileclient
+    kind: MobileClient
+    shortNames:
+    - mc
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            apiKey:
+              type: string
+              pattern: '(\w{8}-\w{4}-\w{4}-\w{4}-\w{11})'
+            name:
+              type: string
+              pattern: '([\w-])'
+            dmzUrl:
+              type: string
+              nullable: true
+EOF
+----
+. Run the following commands to setup the Custom Resource on OpenShift:
++
+[source,bash,subs="attributes"]
+----
+oc create -f /tmp/crd.yaml
+oc create clusterrole mobileclient-admin --verb=create,delete,get,list,patch,update,watch --resource=mobileclients
+oc adm policy add-cluster-role-to-group mobileclient-admin system:authenticated
+----
+. Update the configurations of Automation Service Broker to add new registries:
+.. Edit the config map object using `oc`
++
+[source,bash,subs="attributes"]
+----
+oc edit configmap broker-config -n openshift-automation-service-broker
+----
+.. Add the following new registries to the `registry` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+registry:
+- type: dockerhub
+  name: ag
+  url: https://registry.hub.docker.com
+  org: aerogearcatalog
+  tag: 1.0.0
+  white_list:
+    - '.*-apb$'
+  black_list:
+    - '.*mobile-developer-console-apb$'
+- type: dockerhub
+  name: ag-mdc
+  org: aerogearcatalog
+  tag: 1.0.0-alpha
+  url: https://registry.hub.docker.com
+  white_list:
+  - '.*mobile-developer-console-apb$'
+----
+.. Update the following attributes in the `openshift` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+openshift:
+  image_pull_policy: Always
+  sandbox_role: admin
+----
+.. Update the following attributes in the `broker` section of the config:
++
+[source,yaml,subs="attributes"]
+----
+broker:
+  launch_apb_on_bind: true
+----
+.. Save the configmap object, and restart the automation service broker:
++
+[source,bash,subs="attributes"]
+----
+oc rollout latest openshift-automation-service-broker -n openshift-automation-service-broker
+----
+
+. Verify the installation:
++
+.. Browse to the Web console of your OpenShift instance and log in.
+
+.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
 
 [id='additional-resources']
 [discrete]
 = Additional resources
 
-== Troubleshooting
-If you have problems running {org-name} {product-name}, run the installer using the `--debug` option to capture as much information as possible:
+[[local-setup]]
+== Local OpenShift setup
+
+You can run OpenShift locally on your machine. There are two scripts in Mobile Developer Console repository which will create the cluster using Minishift or `oc cluster up`, and enable {org-name} {product-name}.
+
+NOTE: On Mac only Minishift is currently supported.
+
+=== Prerequisites
+
+[role="primary"]
+.Minishift
+****
+* link:https://www.okd.io/minishift/[Minishift]
+
+* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
+
+* link:https://www.docker.com/[Docker]
+****
+
+[role="secondary"]
+.oc cluster up
+****
+* Linux
+
+* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
+
+* link:https://www.docker.com/[Docker]
+
+* Firewall configured:
++
+[source,bash]
 ----
-$ ./installer/install.sh --debug
+firewall-cmd --permanent --add-port=8443/tcp
+firewall-cmd --permanent --add-port=8053/tcp
+firewall-cmd --permanent --add-port=53/udp
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --reload
 ----
+****
 
-Firewall issues can occur with external devices trying to communicate with {product-name} provisioned on a Linux machine.
+=== Procedure
 
-This is due to a number of {product-name} using ports which are restricted to root users only. If you encounter these issues, you can add the ports to your firewall. Depending on the port your service uses an example of the ports you may want to add to your firewall are:
-
-NOTE: The following command will only add the specified port for the current session. If you reload your firewall or restart your machine the specified port will be restricted again.
-----
-$ firewall-cmd --add-port 443/tcp
-$ firewall-cmd --add-port 80/tcp
----- 
-
-== DockerHub, Cluster IP and Wildcard DNS Host values
-
-Use *DockerHub Tag* and *DockerHub Organisation* to configure the location of the APBs used by the service-catalog in the cluster you are creating:
+. Clone the Mobile Developer Console repository:
++
 [source,bash,subs="attributes"]
 ----
-DockerHub Tag (Defaults to latest):
-DockerHub Organisation (Defaults to aerogearcatalog):
+git clone https://github.com/aerogear/mobile-developer-console.git
+cd mobile-developer-console
+git checkout {release-number}
 ----
 
-The *Cluster IP* value defaults to the IP address of your primary network interface.
-If you want to connect to your OpenShift instance from a mobile device, ensure that your device is on the same network.
-Typically, you should ensure you are using the IP Address of your Wireless Adapter (if one exists):
-[source,bash,subs="attributes"]
+. Run the installation script:
++
+[role="primary"]
+.Minishift
+****
+[source,bash]
 ----
-Cluster IP (Defaults to < Network IP Address >)
+$ ./scripts/minishift.sh
 ----
+****
++
+[role="secondary"]
+.oc cluster up
+****
+[source,bash]
+----
+$ ./scripts/oc-cluster-up.sh
+----
+****
 
-The *Wildcard DNS Host* option alters the wildcard DNS host you want to use:
-[source,bash,subs="attributes"]
+. Copy cluster self-signed certificate:
++
+When the script finishes it will save OpenShift's self-signed certificate to `/tmp/oc-certs/localcluster.crt`. Copy this file so you can later xref:showcase-apps.adoc#installing-on-device[install it to your mobile device].
++
+This is needed so that your mobile app can communicate with OpenShift.
+
+. Browse to the Web console of your local OpenShift instance, accept self-signed certificate and log in.
++
+You can get OpenShift URL with:
++
+[source,bash]
 ----
-Wildcard DNS Host (Defaults to nip.io):
+$ oc status
 ----
++
+NOTE: Browser may redirect you to `localhost`. If that happens just enter the URL again and make sure to add `/console` at the end.

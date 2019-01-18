@@ -9,7 +9,7 @@
 
 :service-name:
 
-:mobile-client: Mobile Client
+:mobile-client: Mobile App
 :mobile-client-openshift: Mobile Client in your OpenShift project
 :mobile-cli: Mobile CLI
 
@@ -46,3 +46,5 @@
 :android-sdk: AeroGear SDK for Android
 :js-sdk: AeroGear SDK for Cordova
 :xamarin-sdk: AeroGear SDK for Xamarin
+
+:mobile-developer-console: Mobile Developer Console

@@ -53,9 +53,8 @@ The {mobile-ci-cd-service} service allows you to automate the building of your n
 
 * Leverage your Jenkins expertise to manage and automate mobile builds.
 * Containerised builds on OpenShift for Android
-* Support for integrating OSX as build slaves for iOS builds
+* Support for integrating macOS as build slaves for iOS builds
 * Catch build errors early using automated builds
-* Build status is displayed on the {mobile-client} details page in the OpenShift console, along with the mobile services associated with that {mobile-client}
 
 //end::mobilecicd-service[]
 

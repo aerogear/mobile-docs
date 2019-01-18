@@ -3,9 +3,8 @@
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
-. Navigate to your project in OpenShift.
-. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
-. Copy the configuration to your clipboard.
+. Open your {mobile-client} in Mobile Developer Console.
+. Copy the `mobile-services.json` configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
 NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
