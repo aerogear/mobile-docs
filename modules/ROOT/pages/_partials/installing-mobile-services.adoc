@@ -187,7 +187,6 @@ NOTE: On Mac only Minishift is currently supported.
 
 [tabs]
 ====
-// tag::excludeDownstream[]
 Minishift::
 +
 --
@@ -238,7 +237,6 @@ git checkout {release-number}
 +
 [tabs]
 ====
-// tag::excludeDownstream[]
 Minishift::
 +
 --
