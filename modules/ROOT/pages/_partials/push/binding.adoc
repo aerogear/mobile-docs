@@ -12,14 +12,14 @@
 Android::
 +
 --
-* [x] A Google account
+* [x] Google account
 * [x] Access to the Firebase console. Refer to link:https://firebase.google.com/docs/[Firebase Docs].
 --
 iOS::
 +
 --
-* [x] An Apple Developer account
-* [x] An APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
+* [x] Apple Developer account
+* [x] APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
 --
 // end::excludeDownstream[]
 ====
@@ -27,10 +27,9 @@ iOS::
 
 include::../generic-binding.adoc[]
 
-When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
-Those credentials need to be provided in the binding dialog.
+=== Required Binding Parameters
 
-First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
+Choose a *Mobile Client Type* and fill out the required fields:
 
 [tabs]
 ====
@@ -38,22 +37,27 @@ First pick your *Mobile Client Type*. Depending on the selection you then have t
 Android::
 +
 --
-You need to provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console under *Project{nbsp}Settings{nbsp}>{nbsp}Cloud Messaging*. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
+- Enter a *Server Key* and a *Sender ID*. Both are present in the Firebase console.
+- Select `Android` from in the `Mobile Client Type` list.
 
 image::mobile-clients-services-push-parameters-android.png[]
 --
 iOS::
 +
 --
-You need an APNs client TLS certificate. Have a look at link:apple-setup.html[APNs Setup] for instructions on how to obtain one. Make sure that you have selected `iOS` in the `Mobile Client Type` dropdown.
-The certificate needs to be encoded in base64 before copying it into the field labelled `iOS .p12 file`. If you're on Mac OS run:
-
+- Select `iOS` from the `Mobile Client Type` list.
+- Obtain an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide]. 
+- Encode the certificate using base64 and paste the encoded certificate into the field labeled `iOS .p12 file`. 
++
+If you are using macOS:
++
 ----
 cat <path/to/your/.p12> | base64
 ----
-
-If you're on Linux chances are that you're using a version of the base64 tool that does line wrapping. You need to disable this:
-
++
+If you are using Linux, chances are that you are using a version of the base64 tool that does line wrapping.
+Disable base64 line wrapping by using `--wrap=0` flag:
++
 ----
 cat <path/to/your/.p12> | base64 --wrap=0
 ----
@@ -63,4 +67,4 @@ image::mobile-clients-services-push-parameters-ios.png[]
 // end::excludeDownstream[]
 ====
 
-After clicking *Create* your variant will be created in UPS and you should see a new binding for your mobile client.
+After clicking *Create* your variant will be created in UPS and you should see a new binding for your mobile client. A variant is used for the storage of the credentials provided in the Binding procedure.
