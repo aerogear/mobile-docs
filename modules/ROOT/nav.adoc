@@ -21,15 +21,6 @@ include::{partialsdir}/attributes.adoc[]
 
 * xref:con_services.adoc[Mobile Services]
 
-** xref:identity-old.adoc[OLD - {keycloak-service}]
-*** xref:identity-old.adoc#introduction[Introduction]
-*** xref:identity-old.adoc#setup[Setting Up]
-*** xref:identity-old.adoc#user-auth[User Authentication]
-*** xref:identity-old.adoc#access[Access Control]
-*** xref:identity-old.adoc#sso[Single Sign On]
-*** xref:identity-old.adoc#monitoring[Monitoring Identity Management]
-
-
 ** xref:identity-management.adoc[{keycloak-service}]
 *** xref:identity-management.adoc#introduction[Introduction]
 *** xref:identity-management.adoc#setup[Setting Up]
