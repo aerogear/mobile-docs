@@ -6,9 +6,12 @@ include::configuring-dev-env-security.adoc[]
 
 === Importing the libraries
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 . Add the following dependency in your app's *build.gradle*:
 +
 [source,groovy,subs="attributes"]
@@ -27,11 +30,11 @@ SecurityService securityService = new SecurityService();
 +
 NOTE: It is user responsibility to manage the `SecurityService` lifecycle.
 
-****
+--
+iOS::
++
+--
 
-[role="secondary"]
-.iOS
-****
 . Add the dependency to your *Podfile*
 +
 [source,ruby,subs="attributes"]
@@ -58,11 +61,13 @@ let security = AGSSecurity()
 ----
 +
 NOTE: Any subsequent call to AGSSecurity returns the same instance of the `SecurityService`.
-****
 
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+
 . Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM, window="_blank"]
 +
 [source,bash]
@@ -87,11 +92,13 @@ const securityService = new SecurityService();
 ----
 +
 NOTE: Any new instantiation of `SecurityService` returns the same instance.
-****
 
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+
 . Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
 
 . Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security, window="_blank"] package
@@ -147,4 +154,6 @@ var securityService = MobileCore.GetService<SecurityService>();
 ----
 +
 NOTE: Any subsequent call to MobileCore#getInstance returns the same instance of `SecurityService`.
-****
+--
+// end::excludeDownstream[]
+====

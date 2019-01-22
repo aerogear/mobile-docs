@@ -11,41 +11,40 @@ include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset
 
 == Adding AeroGear SDK modules for the Mobile Platforms
 
-[role="primary"]
-.Android
-
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 
 include::_partials/conf-dev-env-android.adoc[]
 
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 
 include::_partials/conf-dev-env-ios.adoc[]
 
-****
-
-[role="secondary"]
-.Cordova
-
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 
 include::_partials/conf-dev-env-cordova.adoc[]
 
-****
-
-[role="secondary"]
-.Xamarin
-
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 
 include::_partials/conf-dev-env-xamarin.adoc[]
 
-****
+--
+// end::excludeDownstream[]
+====
 
 //include::_partials/proc_self-signed-certs.adoc[]
-

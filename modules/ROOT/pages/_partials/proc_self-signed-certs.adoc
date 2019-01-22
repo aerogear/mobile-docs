@@ -38,10 +38,12 @@ The resulting file is located in the `/tmp` directory.
 [[installing-on-device]]
 == 2. Installing the OpenShift Root Certificate Authority Cert on a Device
 
-[role="primary"]
-.Android
-
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 .. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to ensure the certificate can be installed.
 
 .. Copy the file to your device using one of the following methods:
@@ -64,12 +66,10 @@ If you are using the email or cloud service approach, once the certificate file 
 +
 However, if you are using the USB approach, you will need to install the certificate manually: go to Settings > Security > Install from storage, tap on the copied certificate file and Android system should detect the
 certificate and let you add it to the device. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 .. Enable https://support.apple.com/en-us/ht204060[Passcode] or https://support.apple.com/en-us/ht201371[TouchID] protection on the mobile device to ensure the certificate can be installed.
 .. Copy the file to your device using one of the following methods:
 +
@@ -87,4 +87,6 @@ screen instructions to install it.
 NOTE: Versions iOS 10.3 and later require an additional step to trust the now
 installed certificate. Instructions can be found on the
 https://support.apple.com/en-us/HT204477[Apple support site]
-****
+--
+// end::excludeDownstream[]
+====

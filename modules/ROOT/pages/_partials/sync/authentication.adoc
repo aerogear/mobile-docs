@@ -1,5 +1,4 @@
 
-
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: sync_auth
 
@@ -54,20 +53,28 @@ NOTE: When working with OpenShift with self-signed certificate, add NODE_TLS_REJ
 
 When user logs in with {keycloak-service} SDK, user principal can be used to retrieve token. {sync-service} SDK can use this token to perform requests to the {sync-service} backend.
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+
 ```
 MobileCore.getInstance().getHttpLayer().requestHeaderInterceptor().add(authService.getAuthHeaderProvider());
 ```
-****
 
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
+
 ```
 if let transport = AgsSync.instance.transport {
   transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
 }
 ```
-****
+
+--
+// end::excludeDownstream[]
+====
