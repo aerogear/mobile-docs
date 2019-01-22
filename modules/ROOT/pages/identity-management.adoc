@@ -26,8 +26,6 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 * Easily implement SSO, multi-factor authentication and Social Login support
 * Back-end support for identity brokering and user federation
 
-include::_partials/keycloak/2_idm_glossary.adoc[leveloffset=+2]
-
 .Prerequisites
 
 // TODO: need to rewrite the following
@@ -37,45 +35,37 @@ include::_partials/keycloak/2_idm_glossary.adoc[leveloffset=+2]
 // TODO: could we include this here in the assembly?
 // * Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
 
-include::_partials/keycloak/0_working-with-idm-service.adoc[leveloffset=+1]
-
 [[setting-up-the-idm-service]]
 == Setting Up the {keycloak-service} Service
-include::_partials/keycloak/4_provisioning-the-idm.adoc[leveloffset=+2]
-include::_partials/keycloak/5_binding-an-app-to-a-service.adoc[leveloffset=+2]
-include::_partials/keycloak/6_configuring-the-service.adoc[leveloffset=+2]
-include::_partials/keycloak/7_downloading-configuration-file.adoc[leveloffset=+2]
-include::_partials/keycloak/8_setting-up-the-idm-sdk.adoc[leveloffset=+2]
+include::_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
+include::_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::_partials/keycloak/configuring-the-service.adoc[leveloffset=+2]
+include::_partials/keycloak/downloading-configuration-file.adoc[leveloffset=+2]
+include::_partials/keycloak/setting-up-the-idm-sdk.adoc[leveloffset=+2]
 
 [[adding-user-authentication-to-your-mobile-app]]
 == Adding User Authentication to your Mobile App
-// include::_partials/keycloak/9_getting-started-with-user-authentication.adoc[leveloffset=+2]
-include::_partials/keycloak/10_implementing-authentication.adoc[leveloffset=+2]
-include::_partials/keycloak/11_refreshing-the-authentication-token.adoc[leveloffset=+2]
-include::_partials/keycloak/12_adding-log-out-option.adoc[leveloffset=+2]
-include::_partials/keycloak/13_authenticating-with-a-back-end-service.adoc[leveloffset=+2]
+// include::_partials/keycloak/getting-started-with-user-authentication.adoc[leveloffset=+2]
+include::_partials/keycloak/implementing-authentication.adoc[leveloffset=+2]
+include::_partials/keycloak/refreshing-the-authentication-token.adoc[leveloffset=+2]
+include::_partials/keycloak/adding-log-out-option.adoc[leveloffset=+2]
+include::_partials/keycloak/authenticating-with-a-back-end-service.adoc[leveloffset=+2]
 
-include::_partials/keycloak/14_adding-access-control.adoc[leveloffset=2]
+include::_partials/keycloak/adding-access-control.adoc[leveloffset=2]
 
 [[adding-sso-to-your-mobile-app]]
 == Adding SSO to your Mobile App
-// include::_partials/keycloak/15_getting-started-with-sso.adoc[leveloffset=+2]
-include::_partials/keycloak/16_using-sso.adoc[leveloffset=+2]
+// include::_partials/keycloak/getting-started-with-sso.adoc[leveloffset=+2]
+include::_partials/keycloak/using-sso.adoc[leveloffset=+2]
 
 [[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
 include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
 
-
 == Additional resources
 
 * For more information about OpenID, see the link:https://openid.net/[OpenID Foundation, window="_blank"] website.
 * See the link:{sso-docs-link}[{sso-name} documentation, window="_blank"] for more info.
-
-
-
-// TODO: as in prereqs, move glossary up front
-// include::2_idm_glossary.adoc[leveloffset=+3]
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]
