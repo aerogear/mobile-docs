@@ -20,9 +20,12 @@ Authorization: BEARER Yourtoken
 
 . To authenticate with a back end service:
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 
 . Retrieve the current user:
 +
@@ -46,11 +49,10 @@ authService.logout(currentUser, new Callback<UserPrincipal>() {
     }
 });
 ----
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 . Implement the logout callback:
 +
 [source,swift]
@@ -71,14 +73,11 @@ do {
     fatalError("Error logging out: \(error).")
 }
 ----
-
-
-****
-
-[role="secondary"]
-.Cordova
-****
-
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 To logout invoke the `logout` function:
 
 [source,javascript]
@@ -87,19 +86,20 @@ authService.logout().then(() => {
     // User Logged Out Successfully and local Auth tokens were Deleted
 });
 ----
-
-****
-
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 To logout invoke the `Logout` method:
 [source,csharp]
 ----
 var authService = MobileCore.Instance.GetService<IAuthService>();
 var result = await authService.Logout(authService.CurrentUser());
 ----
-****
+--
+// end::excludeDownstream[]
+====
 
 .Additional resources
 
