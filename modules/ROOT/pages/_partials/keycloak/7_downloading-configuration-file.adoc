@@ -20,37 +20,44 @@ After you change any configuration in the {mobile-developer-console}, it is impo
 NOTE: The `mobile-services.json` file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
 . Follow the platform-specific instructions:
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 Move mobile-services.json to the following location in your application project:
 
 `app/src/main/assets/mobile-services.json`
-****
 
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 Move mobile-services.json to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
 NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
-****
 
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 Move mobile-services.json to the following location in your application project:
 
 `src/mobile-services.json`
-****
 
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 
 Move mobile-services.json to the following location in your application project:
 
 `Resources/mobile-services.json`
-****
+--
+// end::excludeDownstream[]
+====

@@ -15,21 +15,22 @@ If the refresh token is still valid, the authentication token can be refreshed e
 
 To automatically refresh the authenticate token :
 
-[role="primary"]
-.Android
-****
-
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 Retrieve the current user and refresh the access token when possible and required:
 
 [source,java]
 ----
 UserPrincipal currentUser = authService.currentUser(true);
 ----
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 Retrieve the current user and refresh the access token when possible and required:
 
 [source,swift]
@@ -42,11 +43,11 @@ do {
     // An error has occurred trying to reach the authentication server
 }
 ----
-****
-
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 Retrieve the keycloak adapter object and refresh the access token, when possible and required:
 
 [source,javascript]
@@ -57,11 +58,11 @@ authService.service.extract().updateToken(30).then(() => {
 ----
 
 More information about the keycloak javascript adapter can be found link:https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html[here]
-****
-
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 Retrieve the current user and refresh, if needed and still possible, its access token:
 
 [source,csharp]
@@ -69,4 +70,6 @@ Retrieve the current user and refresh, if needed and still possible, its access 
 var authService = MobileCore.Instance.GetService<IAuthService>();
 var currentUser = await authService.CurrentUser(true);
 ----
-****
+--
+// end::excludeDownstream[]
+====

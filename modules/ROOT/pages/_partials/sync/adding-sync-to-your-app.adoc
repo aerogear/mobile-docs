@@ -1,14 +1,16 @@
 
-
 = Using the {sync-service} SDK
 
 This section will help you to set up the {sync-service} service SDK in your App.
 
 == Importing the libraries
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 Add `apollo-gradle-plugin` dependency to your project's `build.gradle` file:
 ```
 buildscript {
@@ -29,11 +31,10 @@ Add `android-sync` dependency to your app module's `build.gradle` file:
 ```
 implementation "org.aerogear:android-sync:2.1.0-alpha.1"
 ```
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 . Add the dependency to your *Podfile*:
 +
 [source,ruby,subs="attributes"]
@@ -49,22 +50,27 @@ end
 ----
 $ pod install
 ----
-****
+--
+// end::excludeDownstream[]
+====
 
 == Setting Up the Sync Mobile Service
 
-The Sync SDK is using the link:https://github.com/apollographql/[Apollo GraphQL Client] behind of the scenes to handle link:http://graphql.github.io/[GraphQL]. 
+The Sync SDK is using the link:https://github.com/apollographql/[Apollo GraphQL Client] behind of the scenes to handle link:http://graphql.github.io/[GraphQL].
 
 link:https://github.com/apollographql[Apollo client] requires some configuration to work.
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 1. Download Compiled GraphQL Schema from {sync-service} UI
 2. Create a special folder `graphql` inside of `src/main`
 3. Create a file `schema.json` with your Compiled GraphQL Schema
 4. Create a file with a name that corresponds to your business objects and a `.graphql` extension
-5. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response. 
+5. Add all your queries/mutations/subscriptions to the `.graphql` file. Apollo will generate the appropriate Java classes with nested classes for reading from the network response.
 
 For example if you create a file `graphql/com/example/somefile.graphql` with the content bellow:
 
@@ -92,11 +98,10 @@ subscription noteAdded {
 ```
 
 Apollo will automatically create a file `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in compile time) in the package `com.example` for you.
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 1. Download Compiled GraphQL Schema from {sync-service} UI.
 2. Create a file `schema.json` with your Compiled GraphQL Schema.
 3. Create a file with a name that corresponds to your business objects and a `.graphql` extension.
@@ -132,33 +137,42 @@ subscription noteAdded {
 ```
 
 Apollo will automatically create a file called API.swift with classes `MyNotesQuery`, `CreateNoteMutation` and `NoteAddedSubscription` (in build time) for you.
-****
+--
+// end::excludeDownstream[]
+====
 
 == Using the Sync Mobile Service
 
 Use the AeroGear SDK sync library to provision a configured instance of the sync client (SyncClient):
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 ```
 SyncClient.getInstance()
-```        
-****
-
-[role="secondary"]
-.iOS
-****
+```
+--
+iOS::
++
+--
 ```
 AgsSync.instance.client
 ```
-****
+--
+// end::excludeDownstream[]
+====
 
 === Query
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 Use the `query` method from SyncClient:
 
 ```
@@ -177,14 +191,13 @@ SyncClient
                 /// Oops! Something went wrong.
             }
         });
-```        
+```
 
 NOTE: The `MyNotesQuery` class is generated from the example schema above
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 Use the `fetch` method from Apollo client to fire a query:
 
 ```
@@ -200,13 +213,18 @@ AgsSync.instance.client?.fetch(query: MyNotesQuery()) { result, error in
 NOTE: The `MyNotesQuery` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
-****
+--
+// end::excludeDownstream[]
+====
 
 === Mutation
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 Use the `mutate` method from SyncClient:
 
 ```
@@ -225,14 +243,13 @@ SyncClient
                 // Oops! Something went wrong.
             }
         });
-```        
+```
 
 NOTE: The `CreateNoteMutation` class is generated from the example schema above
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 Use the `perform` method from Apollo client to fire a mutation:
 
 ```
@@ -243,20 +260,25 @@ AgsSync.instance.client?.perform(mutation: CreateNoteMutation(text: "The note te
         // Do some magic with the response.
     }
 }
-```        
+```
 
 NOTE: The `CreateNoteMutation` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
-****
+--
+// end::excludeDownstream[]
+====
 
 === Subscription
 
 Use the `subscribe` method from SyncClient:
 
-[role="primary"]
-.Android
-****
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 ```
 SyncClient
         .getInstance()
@@ -273,14 +295,13 @@ SyncClient
                 // Oops! Something went wrong.
             }
         });
-```        
+```
 
 NOTE: The `NoteAddedSubscription` class is generated from the example schema above
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 ```
 AgsSync.instance.client?.subscribe(subscription: NoteAddedSubscription())  { result, error in
     if let error = error {
@@ -289,10 +310,11 @@ AgsSync.instance.client?.subscribe(subscription: NoteAddedSubscription())  { res
         // Do some magic with the response.
     }
 }
-```        
+```
 
 NOTE: The `NoteAddedSubscription` class is generated from the example schema above
 
 Check the link:https://github.com/apollographql/apollo-ios/[Apollo GraphQL Client for iOS] for a complete list of options.
-****
-
+--
+// end::excludeDownstream[]
+====

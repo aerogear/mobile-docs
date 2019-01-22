@@ -17,10 +17,12 @@ More information is available in the Keycloak documentation under link:https://w
 
 . To perform a logout:
 
-[role="primary"]
-.Android
-****
-
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 . Retrieve the current user:
 +
 [source,java]
@@ -43,11 +45,10 @@ authService.logout(currentUser, new Callback<UserPrincipal>() {
     }
 });
 ----
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 . Implement the logout callback:
 +
 [source,swift]
@@ -68,13 +69,11 @@ do {
     fatalError("Error logging out: \(error).")
 }
 ----
-
-
-****
-
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 
 To logout invoke the `logout` function:
 
@@ -84,16 +83,17 @@ authService.logout().then(() => {
     // User Logged Out Successfully and local Auth tokens were Deleted
 });
 ----
-
-****
-
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 To logout invoke the `Logout` method:
 [source,csharp]
 ----
 var authService = MobileCore.Instance.GetService<IAuthService>();
 var result = await authService.Logout(authService.CurrentUser());
 ----
-****
+--
+// end::excludeDownstream[]
+====
