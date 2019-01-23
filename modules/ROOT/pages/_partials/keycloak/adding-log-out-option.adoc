@@ -1,0 +1,99 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='adding-log-out-option-{context}']
+
+= Adding Log Out Option to your Mobile App
+
+The following section describes how to perform a logout.
+
+NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider.
+More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers, window="_blank"].
+
+.Prerequisites
+
+*  A working mobile app that uses authentication with the {keycloak-service} service.
+
+.Procedure
+
+To perform a logout:
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+. Retrieve the current user:
++
+[source,java]
+----
+UserPrincipal currentUser = authService.currentUser();
+----
+
+. Implement `Callback` and call `logout`:
+[source,java]
+----
+authService.logout(currentUser, new Callback<UserPrincipal>() {
+    @Override
+    public void onSuccess() {
+        // User Logged Out Successfully and local Auth tokens were Deleted
+    }
+
+    @Override
+    public void onError(Throwable error) {
+        // An error occurred during logout
+    }
+});
+----
+--
+iOS::
++
+--
+. Implement the logout callback:
++
+[source,swift]
+----
+func onLogoutComplete(_: Error?) {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+    ...
+}
+----
+
+. Call `logout` and pass the callback:
++
+[source,swift]
+----
+do {
+    try AgsAuth.instance.logout(onCompleted: self.onLogoutComplete)
+} catch {
+    fatalError("Error logging out: \(error).")
+}
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+
+To logout invoke the `logout` function:
+
+[source,javascript]
+----
+authService.logout().then(() => {
+    // User Logged Out Successfully and local Auth tokens were Deleted
+});
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+To logout invoke the `Logout` method:
+[source,csharp]
+----
+var authService = MobileCore.Instance.GetService<IAuthService>();
+var result = await authService.Logout(authService.CurrentUser());
+----
+--
+// end::excludeDownstream[]
+====

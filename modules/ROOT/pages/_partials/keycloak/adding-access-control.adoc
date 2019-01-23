@@ -1,14 +1,26 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-
+[id='adding-access-control-{context}']
 = Adding Access Control to your Mobile App
 
-Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked. This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
-
+Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked.
+This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
 Roles are divided into two types. Resource roles which belong to the client the user has authenticated against, and Realm roles which belong to the realm the client is in.
 
-[role="primary"]
-.Android
-****
+.Prerequisites
+
+* A working mobile app that uses authentication with the {keycloak-service} service.
+
+.Procedure
+
+To add Access Control:
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 . Retrieve the authenticated user:
 +
 [source,java]
@@ -23,12 +35,10 @@ UserPrincipal currentUser = authService.currentUser();
 boolean hasAdminPermissions = currentUser.hasRealmRole("user_admin");
 boolean isModerator = currentUser.hasResourceRole("my_resource", "user_moderator");
 ----
-
-****
-
-[role="secondary"]
-.iOS
-****
+--
+iOS::
++
+--
 . Retrieve the authenticated user:
 +
 [source,swift]
@@ -51,12 +61,11 @@ let realmRoles = currentUser.realmRoles
 let hasAdminRole = currentUser.hasRealmRole("admin")
 let hasModeratorRole = currentUser.hasClientRole(client: "my_client", role: "moderator")
 ----
-
-****
-
-[role="secondary"]
-.Cordova
-****
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 Get the realm roles from the auth service:
 
 [source,javascript]
@@ -65,12 +74,11 @@ const realmRoles = authService.getRealmRoles();
 ----
 
 NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here, window="_blank"].
-
-****
-
-[role="secondary"]
-.Xamarin
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 . Retrieve the authenticated user:
 +
 [source,csharp]
@@ -94,4 +102,6 @@ var roles = user.getRoles();
 bool isAdmin = user.HasRealmRole("user_admin");
 bool isModerator = user.HasResourceRole("my_resource", "user_moderator");
 ----
-****
+--
+// end::excludeDownstream[]
+====

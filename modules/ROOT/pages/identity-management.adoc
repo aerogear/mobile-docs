@@ -2,42 +2,74 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
+:toclevels: 4
+
 :toc:
 
-// start keycloak/index.adoc[leveloffset=0]
-include::_partials/keycloak/index.adoc[leveloffset=0]
-// end keycloak/index.adoc[leveloffset=0]
-[[setup]]
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-== Prerequisites
+:context: {keycloak-service}
+ifdef::context[:parent-context: {context}]
 
-// start {partialsdir}/generic-provisioning-pre-req.adoc[]
-include::_partials/generic-provisioning-pre-req.adoc[]
-// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+:installation-link: getting-started.html
+:sso-docs-link: https://www.keycloak.org/documentation.html
+:sso-name: Keycloak
 
-== Setting Up the Identity Management Mobile Service
-// start keycloak/provisioning.adoc[leveloffset=2]
-include::_partials/keycloak/provisioning.adoc[leveloffset=2]
-// end keycloak/provisioning.adoc[leveloffset=2]
-// start keycloak/binding.adoc[leveloffset=2]
-include::_partials/keycloak/binding.adoc[leveloffset=2]
-// end keycloak/binding.adoc[leveloffset=2]
-// start keycloak/coding.adoc[leveloffset=2]
-include::_partials/keycloak/coding.adoc[leveloffset=2]
-// end keycloak/coding.adoc[leveloffset=2]
-[[user-auth]]
-// start keycloak/authenticating.adoc[leveloffset=1]
-include::_partials/keycloak/authenticating.adoc[leveloffset=1]
-// end keycloak/authenticating.adoc[leveloffset=1]
-[[access]]
-// start keycloak/retrieving-users-roles.adoc[leveloffset=1]
-include::_partials/keycloak/retrieving-users-roles.adoc[leveloffset=1]
-// end keycloak/retrieving-users-roles.adoc[leveloffset=1]
-[[sso]]
-// start keycloak/sso.adoc[leveloffset=1]
-include::_partials/keycloak/sso.adoc[leveloffset=1]
-// end keycloak/sso.adoc[leveloffset=1]
+[id='a-collection-of-modules']
+
+= Using the {keycloak-service} Mobile Service
+
+[[introduction]]
+The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
+
+* Secure your mobile app using the industry standard OpenID Connect protocol
+* Add access control to your app based on user’s group membership
+* Easily implement SSO, multi-factor authentication and Social Login support
+* Back-end support for identity brokering and user federation
+
+include::_partials/keycloak/idm_glossary.adoc[leveloffset=+2]
+
+.Prerequisites
+
+// TODO: need to rewrite the following
+// * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
+
+// TODO: could we include this here in the assembly?
+// * Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
+
+[[setting-up-the-idm-service]]
+== Setting Up the {keycloak-service} Service
+include::_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
+include::_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::_partials/keycloak/configuring-the-service.adoc[leveloffset=+2]
+include::_partials/keycloak/downloading-configuration-file.adoc[leveloffset=+2]
+include::_partials/keycloak/setting-up-the-idm-sdk.adoc[leveloffset=+2]
+
+[[adding-user-authentication-to-your-mobile-app]]
+== Adding User Authentication to your Mobile App
+// include::_partials/keycloak/getting-started-with-user-authentication.adoc[leveloffset=+2]
+include::_partials/keycloak/implementing-authentication.adoc[leveloffset=+2]
+include::_partials/keycloak/refreshing-the-authentication-token.adoc[leveloffset=+2]
+include::_partials/keycloak/adding-log-out-option.adoc[leveloffset=+2]
+include::_partials/keycloak/authenticating-with-a-back-end-service.adoc[leveloffset=+2]
+
+include::_partials/keycloak/adding-access-control.adoc[leveloffset=2]
+
+[[adding-sso-to-your-mobile-app]]
+== Adding SSO to your Mobile App
+// include::_partials/keycloak/getting-started-with-sso.adoc[leveloffset=+2]
+include::_partials/keycloak/using-sso.adoc[leveloffset=+2]
+
 [[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
-include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=1]
-// end metrics/monitoring-keycloak.adoc[leveloffset=1]
+include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
+
+== Additional resources
+
+* For more information about OpenID, see the link:https://openid.net/[OpenID Foundation, window="_blank"] website.
+* See the link:{sso-docs-link}[{sso-name} documentation, window="_blank"] for more info.
+
+// Restore the context to what it was before this assembly.
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

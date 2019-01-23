@@ -1,8 +1,16 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-
-:service-name: Identity Management
-
+[id='provisioning-the-{context}']
 = Provisioning the {keycloak-service} Service
+
+This section describes how to set up the IDM Mobile Service.
+
+.Prerequisites
+
+* You understand identity management, and have a mobile app you want to protect.
+* You have logged into the OpenShift console and the {mobile-developer-console}.
+
+.Procedure
 
 . Log into the OpenShift console.
 . Create a new project or choose an existing project.
@@ -31,4 +39,5 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 +
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
 
-include::../generic-provisioning-end.adoc[]
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.
