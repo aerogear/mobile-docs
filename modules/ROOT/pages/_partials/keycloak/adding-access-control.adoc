@@ -13,7 +13,7 @@ Roles are divided into two types. Resource roles which belong to the client the 
 
 .Procedure
 
-. To add Access Control:
+To add Access Control:
 
 [tabs]
 ====

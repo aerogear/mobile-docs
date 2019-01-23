@@ -11,15 +11,14 @@ This section describes how to set up the {keycloak-service} service.
 .Prerequisites
 
 * You have created a {mobile-client}.
-* You have logged into the {mobile-developer console}
 
 .Procedure
 
 To bind a {mobile-client} with a mobile service:
 
-. Launch {mobile-developer-console}
+. Launch {mobile-developer-console}.
 
-. Click on the {mobile-client} on the Overview screen
+. Click on the {mobile-client} on the Overview screen.
 
 . Navigate to *Mobile Services* tab.
 +

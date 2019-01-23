@@ -9,7 +9,7 @@
 
 .Procedure
 
-. Implement authentication using the Aerogear SDK on all the supported platforms.
+To implement authentication using the Aerogear SDK:
 
 [tabs]
 ====
