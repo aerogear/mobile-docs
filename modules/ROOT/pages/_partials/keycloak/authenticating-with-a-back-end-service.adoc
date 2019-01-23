@@ -18,8 +18,8 @@ In a typical scenario, you not only want the user to authenticate on the mobile 
 Authorization: BEARER Yourtoken
 ----
 
-. To authenticate with a back end service:
-
+. Add code to authenticate with a back end service:
++
 [tabs]
 ====
 // tag::excludeDownstream[]
