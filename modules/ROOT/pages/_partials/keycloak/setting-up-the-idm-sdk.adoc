@@ -12,8 +12,8 @@ It describes how to set up and initialize the {keycloak-service} service SDK.
 
 .Procedure
 
-1. Import the libraries
-
+. Import the libraries
++
 [tabs]
 ====
 // tag::excludeDownstream[]
@@ -108,8 +108,8 @@ dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
 // end::excludeDownstream[]
 ====
 
-2. Initialize the SDK
-
+. Initialize the SDK
++
 [tabs]
 ====
 // tag::excludeDownstream[]

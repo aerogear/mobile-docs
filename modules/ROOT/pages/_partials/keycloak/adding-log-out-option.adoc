@@ -15,7 +15,7 @@ More information is available in the Keycloak documentation under link:https://w
 
 .Procedure
 
-. To perform a logout:
+To perform a logout:
 
 [tabs]
 ====
