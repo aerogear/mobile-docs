@@ -1,3 +1,25 @@
 = Running Example Application
 
-TODO
+To quickly test {sync-service} service our sample docker image can be used. 
+
+.Fill in this as a parameters for provisioning
+[options="header"]
+|====
+|Field|Value
+|Sync Application Name|mysyncapp
+|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
+|Sync App Port|4000
+|SQL Server Hostname|db.example.com
+|SQL Server Port|1234
+|SQL Server Username|test
+|Database name|test
+|====
+Note, this image doesn't use any database, so values doesn't matter there. For other values, don't fill anything, default will be used.
+
+After provisiong, check *Overview* screen in the project to see if it's running. 
+
+image:sync-app-example-provisioned.png[Sync App provisioned]
+
+Use URL from *Routes - External Traffic* and append `/graphql` there to access GraphQL Playground.
+
+image:sync-graphql-playground.png[GraphQL Playground]

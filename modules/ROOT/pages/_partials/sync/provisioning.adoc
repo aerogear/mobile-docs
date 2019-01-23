@@ -1,0 +1,62 @@
+
+Before we provision the Sync Server it's neccessary to build it into a Docker formatted container, deploy it to a public registry.
+The easiest way is to use a one such as link:https://hub.docker.com/[Dockerhub].
+
+= Building and publishing the container
+
+{sync-service} application is a Node.js project, to wrap it into a container, create `Dockerfile` in the project's directory like this:
+
+[source,dockerfile]
+----
+FROM node:8
+WORKDIR /usr/src/app
+# copy Node.js specific files required for Node.js Data Sync application
+COPY package*.json ./
+# copy Data Sync Server app source file to the workdir (add all other files that are needed) 
+COPY server.js . 
+RUN npm install
+# TCP port that Sync Server app is listening on
+EXPOSE 4000
+CMD [ "npm", "start" ]
+---- 
+
+Build the Docker container:
+[source,bash]
+----
+$ docker build .
+----
+
+Push to the Dockerhub repository :
+[source,bash]
+----
+$ docker push <your-repo>/<container-name>
+----
+
+
+= Provisioning {sync-service} Service
+
+include::../generic-provisioning.adoc[]
+
+Fill in all required parameters for the service:
+
+image:sync-app-creation-dialog.png[Sync App Creation Dialog]
+
+.Configuration
+[options="header"]
+|====
+|Field|Default|Description
+|Sync Application Name|*required*|Fill in name of your {sync-service} app 
+|Sync Application Docker image|*required*|Fill in URL too your {sync-service} app docker image 
+|Sync Application Docker image version|latest|Tag of your docker image
+|Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
+|Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
+|Sync App Port|*required*|TCP port that Sync Server app is listening on
+|SQL Server Hostname|*required*|SQL server hostname that is used to connect by the {sync-service}
+|SQL Server Port|*required*|SQL server port that is used to connect by the {sync-service}
+|SQL Server Username|*required*|SQL server username that is used to connect by the {sync-service}
+|Database name|*required*|Name of the database that is used to connect by the {sync-service}
+|Use SSL?|false|Use SSL connection to the SQL server
+|====
+
+include::../generic-provisioning-end.adoc[]
+

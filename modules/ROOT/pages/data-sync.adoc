@@ -77,8 +77,8 @@ include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 [#sync-openshift-deployment]
 == {sync-service} OpenShift Deployment
 
-[#sync-openshift-working-with-apb]
-include::_partials/sync/openshift-working-with-apb.adoc[leveloffset=2]
+[#provisioning]
+include::_partials/sync/provisioning.adoc[leveloffset=2]
 
 [#sync-openshift-example-app]
 include::_partials/sync/openshift-example-app.adoc[leveloffset=2]
