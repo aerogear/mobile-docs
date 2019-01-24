@@ -3,11 +3,7 @@
 [id='enable_push_notifications_for_ios_app-{context}']
 = Enable Push Notifications for iOS App
 
-This procedure describes how to enable Push Notifications for your iOS application.
-
-.Prerequisites
-
-* ?
+This procedure describes how to enable {unifiedpush-service} for your iOS application.
 
 .Procedure
 
