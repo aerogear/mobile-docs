@@ -1,10 +1,11 @@
 include::configuring-dev-env-push.adoc[leveloffset=1]
 
-== Setting up {unifiedpush-service} service SDK
+[id='configuring-{context}']
+= Configuring the {unifiedpush-service} Service
 
 This guide will help you to set up the {unifiedpush-service} service SDK in your App.
 
-=== Prerequisites
+.Procedure
 
 [tabs]
 ====
