@@ -42,7 +42,7 @@ include::_partials/push/ref_terminology.adoc[leveloffset=+2]
 
 [[setting-up-the-idm-service]]
 == Setting Up the {unifiedpush-service} Mobile Service
-// include::_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
+include::_partials/push/obtaining_firebase_cloud_messaging_credentials.adoc[leveloffset=+2]
 
 [[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
