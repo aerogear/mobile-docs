@@ -36,6 +36,8 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push-notifications.adoc#sending[Sending a Notification]
 *** xref:push-notifications.adoc#handling[Handling a Notification]
 
+** xref:push.adoc[*NEW* {unifiedpush-service}]
+
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#introduction[Introduction]
 *** xref:mobile-metrics.adoc#setup[Setting Up]
