@@ -48,6 +48,7 @@ include::_partials/push/3_provisioning-the-push.adoc[leveloffset=+2]
 include::_partials/push/4_binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::_partials/push/5_setting-up-the-push-sdk.adoc[leveloffset=+2]
 include::_partials/push/6_configuring-the-service.adoc[leveloffset=+2]
+include::_partials/push/7_sending-a-push-notification.adoc[leveloffset=+2]
 
 [[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
