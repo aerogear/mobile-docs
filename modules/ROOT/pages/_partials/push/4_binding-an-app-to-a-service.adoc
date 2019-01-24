@@ -1,10 +1,12 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
 
-:service-name: Push Notifications
+[id='binding-an-app-to-{context}']
+= Binding a {mobile-client} with the {unifiedpush-service} Service
 
-= Binding a {mobile-client} with the {service-name} service
+This section describes how to set up the {unifiedpush-service} Mobile Service.
 
-== Prerequisites
+.Procedure
 
 [tabs]
 ====
