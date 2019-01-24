@@ -1,4 +1,4 @@
-include::configuring-dev-env-push.adoc[leveloffset=1]
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
 [id='configuring-{context}']
 = Configuring the {unifiedpush-service} Service

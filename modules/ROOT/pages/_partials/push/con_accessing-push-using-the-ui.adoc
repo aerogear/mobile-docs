@@ -1,8 +1,4 @@
 
-
-//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: con_accessing-push-using-the-ui
-
 [id='{context}_con_accessing-push-using-the-ui']
 = Accessing {unifiedpush-service} using the {push-ui}
 
