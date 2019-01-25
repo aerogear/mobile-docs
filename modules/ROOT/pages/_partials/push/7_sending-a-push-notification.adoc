@@ -3,7 +3,19 @@
 [id='sending-a-push-notification-{context}']
 = Sending a Push Notification
 
-The {push-ui} allows you to send {push-notification}s to devices.
+The {push-ui} allows you to send Push Notifications.
+
+.Prerequisites
+
+To access {unifiedpush-service} using the {push-ui}, you will need to:
+
+ * Make sure the {unifiedpush-service} service is provisioned.
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
+
+.Procedure
 
 . Open the {push-ui} in a browser.
 
@@ -20,3 +32,8 @@ image::send2.png[Enter the payload]
 image::PushMessage.png[You got a notification!]
 
 NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
+
+[discrete]
+== Additional Information
+
+* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].
