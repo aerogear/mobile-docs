@@ -77,7 +77,7 @@ NOTE: {device-security-service} is not currently associated with an OpenShift se
 = {sync-service}
 //tag::sync-service[]
 
-The goal of {sync-service} is to make it easier for developers to build secure, production ready, real time APIs and applications with GraphQL.
+The goal of {sync-service} is to make it easier for developers to build secure, production ready, real time APIs and applications with link:https://graphql.org/learn[GraphQL].
 
 {sync-service} is a JavaScript framework that developers can use to add real time synchronization and enhanced offline capabilities to their mobile applications. {sync-service} includes two components - {sync-server} and {sync-client}.
 
