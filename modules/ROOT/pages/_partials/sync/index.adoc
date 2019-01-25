@@ -20,6 +20,6 @@ include::./ref_terminology.adoc[leveloffset=+2]
 
 * link:https://graphql.org/learn[Learn GraphQL]
 * link:https://github.com/aerogear/voyager-server[Voyager Server GitHub repository]
-* link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync[Voyager Client Github repository]
+* link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync[Voyager Client GitHub repository]
 * link:https://www.apollographql.com/docs/apollo-server[Apollo Server]
 * link:https://www.apollographql.com/docs/react[Apollo Client]
