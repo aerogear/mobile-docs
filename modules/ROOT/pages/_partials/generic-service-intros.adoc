@@ -81,7 +81,7 @@ The goal of {sync-service} is to make it easier for developers to build secure, 
 
 {sync-service} is a JavaScript framework that developers can use to add real time synchronization and enhanced offline capabilities to their mobile applications. {sync-service} includes two components - {sync-server} and {sync-client}.
 
-{sync-server} is set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
+{sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
 
 {sync-client} is client side JavaScript library for building web and mobile applications backed by {sync-server}.
 
