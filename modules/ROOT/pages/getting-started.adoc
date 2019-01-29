@@ -82,14 +82,14 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
 
 [[binding]]
-// start keycloak/binding.adoc[leveloffset=1]
-include::_partials/keycloak/binding.adoc[leveloffset=1]
-// end keycloak/binding.adoc[leveloffset=1]
+// start keycloak/binding-an-app-to-a-service.adoc[leveloffset=1]
+include::_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=1]
+// end keycloak/binding-an-app-to-a-service.adoc[leveloffset=1]
 
 [[localdev]]
-// start keycloak/keycloak-setup.adoc[leveloffset=2]
-include::_partials/keycloak/keycloak-setup.adoc[leveloffset=2]
-// end keycloak/keycloak-setup.adoc[leveloffset=2]
+// start keycloak/configuring-the-service.adoc[leveloffset=2]
+include::_partials/keycloak/configuring-the-service.adoc[leveloffset=2]
+// end keycloak/configuring-the-service.adoc[leveloffset=2]
 
 == Setting Up your Local Development Environment
 
