@@ -5,6 +5,8 @@
 Android::
 +
 --
+[source,bash,subs="attributes"]
+----
 $ git clone https://github.com/aerogear/android-showcase-template.git
 $ cd android-showcase-template
 $ git checkout {release-number}
