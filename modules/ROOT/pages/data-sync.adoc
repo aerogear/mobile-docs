@@ -27,15 +27,6 @@ include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]
 [#sync-server-getting-started]
 include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 
-[#sync-server-offline-and-conflict]
-include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
-
-[#sync-server-data-access]
-include::_partials/sync/server-data-access.adoc[leveloffset=2]
-
-[#sync-server-realtime-updates]
-include::_partials/sync/server-realtime-updates.adoc[leveloffset=2]
-
 [#sync-server-auth]
 include::_partials/sync/server-auth.adoc[leveloffset=2]
 
@@ -44,6 +35,15 @@ include::_partials/sync/server-metrics.adoc[leveloffset=2]
 
 [#sync-server-audit-logs]
 include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
+
+[#sync-server-offline-and-conflict]
+include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
+
+[#sync-server-realtime-updates]
+include::_partials/sync/server-realtime-updates.adoc[leveloffset=2]
+
+[#sync-server-data-access]
+include::_partials/sync/server-data-access.adoc[leveloffset=2]
 
 
 

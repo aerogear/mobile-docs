@@ -1,3 +1,4 @@
 = Audit Logs
 
-TODO
+== Example Server with Audit Logging
+
