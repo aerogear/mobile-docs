@@ -22,6 +22,9 @@ The {unifiedpush-service} service allows you to send native push notifications t
 * Push notifications to different variants of a mobile app.
 * Push notifications from different back-end apps to the same mobile app.
 
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
+It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
+
 Currently the service supports:
 
 * link:https://developer.apple.com/notifications/[Apple Push Notification Service, window="_blank"]

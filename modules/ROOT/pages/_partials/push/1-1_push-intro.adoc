@@ -4,9 +4,3 @@
 
 The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
 It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
-
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the concept module.
-* For more details on writing concept modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
