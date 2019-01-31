@@ -10,6 +10,22 @@ It describes how to set up and initialize the {unifiedpush-service} service SDK.
 
 * Your local `mobile-services.json` file is up-to-date.
 
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+A link:https://firebase.google.com/[Firebase account, window="_blank"].
+--
+iOS::
++
+--
+An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service, window="_blank"].
+--
+// end::excludeDownstream[]
+====
+
 .Procedure
 
 . Import the libraries
