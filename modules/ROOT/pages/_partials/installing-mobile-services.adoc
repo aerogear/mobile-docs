@@ -17,16 +17,18 @@ NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minish
 
 * link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
 
-* link:https://www.docker.com/[Docker]
+* link:https://www.docker.com/[Docker, window="_blank"]
 
 * A local mobile development environment for the platform you want to develop on.
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
 
 [[procedure]]
 == Procedure
 
 === Automated Install
 
-. Clone the Mobile Developer Console repository:
+. Clone the Mobile Services Installer repository:
 +
 The repository contains installation script for {org-name} {product-name}.
 +
@@ -34,8 +36,8 @@ Clone this repo to your local machine and check out the {release-number} tag usi
 +
 [source,bash,subs="attributes"]
 ----
-git clone https://github.com/aerogear/mobile-developer-console.git
-cd mobile-developer-console
+git clone https://github.com/aerogear/mobile-services-installer.git
+cd mobile-services-installer
 git checkout {release-number}
 ----
 
@@ -59,7 +61,7 @@ $ chcon -Rt svirt_sandbox_file_t .
 +
 [source,bash]
 ----
-$ ./scripts/post_install.sh
+$ ansible-playbook install-mobile-services.yml
 ----
 +
 
@@ -191,11 +193,13 @@ Minishift::
 +
 --
 
-* link:https://www.okd.io/minishift/[Minishift]
+* link:https://www.okd.io/minishift/[Minishift, window="_blank"]
 
 * link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
 
-* link:https://www.docker.com/[Docker]
+* link:https://www.docker.com/[Docker, window="_blank"]
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
 
 --
 oc cluster up::
@@ -206,7 +210,9 @@ oc cluster up::
 
 * link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
 
-* link:https://www.docker.com/[Docker]
+* link:https://www.docker.com/[Docker, window="_blank"]
+
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
 
 * Firewall configured:
 +
@@ -223,12 +229,12 @@ firewall-cmd --reload
 
 === Procedure
 
-. Clone the Mobile Developer Console repository:
+. Clone the Mobile Services Installer repository:
 +
 [source,bash,subs="attributes"]
 ----
-git clone https://github.com/aerogear/mobile-developer-console.git
-cd mobile-developer-console
+git clone https://github.com/aerogear/mobile-services-installer.git
+cd mobile-services-installer
 git checkout {release-number}
 ----
 
