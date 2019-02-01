@@ -65,9 +65,9 @@ $ cordova plugin add @aerogear/cordova-plugin-aerogear-metrics
 Xamarin::
 +
 --
-. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet^]
 
-. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core^] package
 +
 [source,bash,subs="attributes"]
 ----

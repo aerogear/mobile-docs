@@ -55,7 +55,7 @@ Drive which is accessible from the device, browse to the certificate and
 proceed to download it.
 * USB - Attach the device to the machine hosting
 OpenShift via USB and drag the certificate to a devices file system. Here is an https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices]. It may be different for other devices.
-* link:https://developer.android.com/studio/command-line/adb[Android Debug Bridge, window="_blank"] (adb) - Use the adb push command to push the certificate to device or emulator:
+* link:https://developer.android.com/studio/command-line/adb[Android Debug Bridge^] (adb) - Use the adb push command to push the certificate to device or emulator:
 +
 ----
 $ adb push /tmp/localcluster.crt /sdcard/Download/localcluster.crt

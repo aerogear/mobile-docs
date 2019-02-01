@@ -68,14 +68,14 @@ Cordova::
 +
 --
 
-. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM, window="_blank"]
+. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM^]
 +
 [source,bash]
 ----
 $ npm install @aerogear/security
 ----
 
-. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin, window="_blank"] for Cordova:
+. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin^] for Cordova:
 +
 [source,bash]
 ----
@@ -99,9 +99,9 @@ Xamarin::
 +
 --
 
-. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"]
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet^]
 
-. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security, window="_blank"] package
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Security[AeroGear Security^] package
 +
 [source,bash,subs="attributes"]
 ----

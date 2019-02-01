@@ -5,7 +5,7 @@
 Android::
 +
 --
-To run an Android app in an emulator, see the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation, window="_blank"].
+To run an Android app in an emulator, see the following link:https://developer.android.com/training/basics/firstapp/running-app[documentation^].
 
 NOTE: The AeroGear SDK supports API level 21 or later.
 
@@ -14,7 +14,7 @@ iOS::
 +
 --
 
-To run an iOS app in an emulator, see the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation, window="_blank"].
+To run an iOS app in an emulator, see the following link:https://help.apple.com/xcode/mac/current/#/dev2809b6cff[documentation^].
 
 --
 // end::excludeDownstream[]
@@ -24,8 +24,8 @@ Cordova::
 
 Cordova cross-platform applications can be run in the following emulators:
 
-* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android, window="_blank"]
-* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS, window="_blank"]
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android^]
+* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS^]
 
 +
 NOTE: A running emulator on macOS is required to run an iOS application.
@@ -38,8 +38,8 @@ Xamarin::
 
 Xamarin cross-platform applications are run in the following emulators:
 
-* link:https://blogs.msdn.microsoft.com/visualstudio/2018/05/08/hyper-v-android-emulator-support/[Android, window="_blank"]
-* link:https://developer.xamarin.com/getting-started-ios/[iOS, window="_blank"]
+* link:https://blogs.msdn.microsoft.com/visualstudio/2018/05/08/hyper-v-android-emulator-support/[Android^]
+* link:https://developer.xamarin.com/getting-started-ios/[iOS^]
 
 +
 NOTE: A running emulator on macOS is required to run an iOS application.

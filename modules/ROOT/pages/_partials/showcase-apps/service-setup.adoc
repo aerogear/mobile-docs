@@ -66,17 +66,17 @@ include::../cloning-showcase-app.adoc[]
 Android::
 +
 --
-. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
-. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
+. You will need to create a project on link:https://firebase.google.com/[Firebase^].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here^] to download `google-services.json` from your Firebase project.
 . Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
 Firebase Cloud Messaging console.
 --
 iOS::
 +
 --
-. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide, window="_blank"] to enable push notifications for your Xcode project.
+. Follow the link:https://help.apple.com/xcode/mac/current/#/devdfd3d04a1[official guide^] to enable push notifications for your Xcode project.
 
-. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide, window="_blank"] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
+. Follow  the link:https://help.apple.com/developer-account/#/dev82a71386a[official guide^] to generate an APNs client TLS certificate and export the client TLS identity from your Mac.
 +
 NOTE: Make sure to protect the p12 file with a password.
 +
@@ -86,8 +86,8 @@ NOTE: The exported p12 file with the password will be used later when binding yo
 Cordova::
 +
 --
-. You will need to create a project on link:https://firebase.google.com/[Firebase, window="_blank"].
-. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here, window="_blank"] to download `google-services.json` from your Firebase project.
+. You will need to create a project on link:https://firebase.google.com/[Firebase^].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here^] to download `google-services.json` from your Firebase project.
 . Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
 Firebase Cloud Messaging console.
 --

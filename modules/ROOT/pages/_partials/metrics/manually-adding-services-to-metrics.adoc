@@ -36,7 +36,7 @@ HTTP endpoint.
 
 See the
 link:https://prometheus.io/docs/prometheus/latest/configuration/configuration/\#scrape_config[Prometheus
-documentation on scrape_config, window="_blank"] for more details.
+documentation on scrape_config^] for more details.
 
 === Via the OpenShift Console
 
