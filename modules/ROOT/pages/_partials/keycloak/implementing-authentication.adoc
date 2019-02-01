@@ -98,7 +98,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 Cordova::
 +
 --
-Authentication will be performed on initialization as described in the section xref:identity-management.adoc#initializing-the-sdk[Initializing the SDK]. To manually redirect to the login screen, use:
+Authentication will be performed on initialization as described in the section xref:setting-up-the-idm-service[]. To manually redirect to the login screen, use:
 [source,javascript]
 ----
 authService.login().then(() => {
