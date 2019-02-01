@@ -4,7 +4,7 @@
 
 The UPS service URL is only accessible by users who have *edit* permission for the project. By default, a project owner already has permission.
 
-The UPS service creates routes to access the Unified Push Server . To protect these routes there is an OAuth reverse proxy sidecar container in front of the UPS container to enforce authentication. The authentication is based on Openshift permissions and is configured as part of the provisioning of the UPS service. See the link:https://github.com/openshift/oauth-proxy[documentation for the proxy container, window="_blank"] for
+The UPS service creates routes to access the Unified Push Server . To protect these routes there is an OAuth reverse proxy sidecar container in front of the UPS container to enforce authentication. The authentication is based on Openshift permissions and is configured as part of the provisioning of the UPS service. See the link:https://github.com/openshift/oauth-proxy[documentation for the proxy container^] for
 more information about configuring the proxy.
 
 == About OAuth proxy permissions
@@ -68,4 +68,4 @@ Click *Allow selected permissions*. The OAuth proxy redirects you to the request
 == Additional Information
 
 * link:https://docs.openshift.com/container-platform/3.9/architecture/additional_concepts/authorization.html[Openshift Authorization]
-* link:https://github.com/openshift/oauth-proxy[Openshift OAuth Proxy container, window="_blank"]
+* link:https://github.com/openshift/oauth-proxy[Openshift OAuth Proxy container^]

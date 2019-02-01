@@ -70,7 +70,7 @@ auth = AGSAuth()
 Cordova::
 +
 --
-Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM, window="_blank"]:
+Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
 [source,bash]
 ----
 $ npm install @aerogear/auth
@@ -80,9 +80,9 @@ $ npm install @aerogear/auth
 Xamarin::
 +
 --
-. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet, window="_blank"].
+. Install link:https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools[NuGet^].
 
-. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core, window="_blank"] package:
+. Install the link:https://www.nuget.org/packages/AeroGear.Mobile.Core[AeroGear Core^] package:
 +
 [source,bash,subs="attributes"]
 ----
@@ -175,7 +175,7 @@ NOTE: Initialization will also perform authentication
 Xamarin::
 +
 --
-. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter, window="_blank"] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
+. Create an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[intent filter^] for the `net.openid.appauth.RedirectUriReceiverActivity` activity. This step is required for Xamarin Android and allows the login browser to redirect back to your App. Add this to your `AndroidManifest.xml`:
 +
 [source,xml]
 ----
@@ -201,7 +201,7 @@ var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.e
 authService.Configure(authConfig);
 ----
 +
-NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter, window="_blank"] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app, window="_blank"].
+NOTE: For Android an link:https://developer.android.com/guide/topics/manifest/manifest-intro#ifs[Intent filter^] should be configured with the callback URL specified in AuthenticateOptions in the App's AndroidManifest.xml. See the link:https://github.com/aerogear/xamarin-showcase-template/blob/master/Example.Android/Properties/AndroidManifest.xml[example app^].
 
 .. For an iOS app (FinishedLaunching method of AppDelegate.cs):
 +

@@ -3,7 +3,7 @@
 [id='adding-access-control-{context}']
 = Adding Access Control to your Mobile App
 
-Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles, window="_blank"] of the user can be listed and checked.
+Once a `UserPrincipal` has been retrieved, the link:http://www.keycloak.org/docs/latest/server_admin/index.html#roles[roles^] of the user can be listed and checked.
 This can be used to perform client side access control, such as hiding UI components related to actions the user doesn't have permissions to perform.
 Roles are divided into two types. Resource roles which belong to the client the user has authenticated against, and Realm roles which belong to the realm the client is in.
 
@@ -73,7 +73,7 @@ Get the realm roles from the auth service:
 const realmRoles = authService.getRealmRoles();
 ----
 
-NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here, window="_blank"].
+NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here^].
 --
 // tag::excludeDownstream[]
 Xamarin::

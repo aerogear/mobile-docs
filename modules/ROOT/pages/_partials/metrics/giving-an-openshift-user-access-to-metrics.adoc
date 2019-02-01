@@ -69,5 +69,5 @@ Click *Allow selected permissions*. The OAuth proxy redirects you to the request
 [discrete]
 == Related Information
 
-* link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[OpenShift Authorization, window="_blank"]
-* link:https://github.com/openshift/oauth-proxy[OpenShift OAuth Proxy container, window="_blank"]
+* link:https://docs.openshift.com/container-platform/3.5/architecture/additional_concepts/authorization.html[OpenShift Authorization^]
+* link:https://github.com/openshift/oauth-proxy[OpenShift OAuth Proxy container^]

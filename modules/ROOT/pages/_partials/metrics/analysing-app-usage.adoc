@@ -74,6 +74,6 @@ It can also be useful to see the uptake rate of newly published versions of an A
 
 See Grafana documentation for more information on the following topics:
 
-* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
-* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
-* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel^]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel^]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart^]

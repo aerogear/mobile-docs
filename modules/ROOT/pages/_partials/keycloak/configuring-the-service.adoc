@@ -9,7 +9,7 @@ For an explanation of these terms, see link:{sso-docs-link}[{sso-name} Documenta
 
 .Prerequisites
 
-* An understanding of link:https://openid.net/[OpenID, window="_blank"]
+* An understanding of link:https://openid.net/[OpenID^]
 
 .Procedure
 

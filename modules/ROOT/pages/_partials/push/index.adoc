@@ -17,8 +17,8 @@ include::../generic-service-intros.adoc[tags=pushnotification-service]
 Currently the service supports:
 
 
-* link:https://developer.apple.com/notifications/[Apple Push Notification Service, window="_blank"]
-* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging, window="_blank"]
+* link:https://developer.apple.com/notifications/[Apple Push Notification Service^]
+* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging^]
 
 include::./ref_terminology.adoc[leveloffset=+1]
 

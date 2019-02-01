@@ -105,4 +105,4 @@ var result = await authService.Logout(authService.CurrentUser());
 
 * xref:android-additional-configuration[Additional configuration for Android]
 
-* link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[Keycloak OICD Providers, window="_blank"]
+* link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[Keycloak OICD Providers^]

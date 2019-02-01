@@ -4,10 +4,10 @@
 
 == Overview of Dashboards
 
-The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana, window="_blank"] to display that data.
+The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana^] to display that data.
 
 A Grafana dashboard allows you to arrange panels and charts together to provide a visual overview of your metrics. 
-See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started, window="_blank"] guide for an introduction to dashboards.
+See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started^] guide for an introduction to dashboards.
 
 When you create an instance of a {product-name} service from the OpenShift service catalog, a dashboard that shows metrics about that service is added to Grafana.
 Also, when you configure your {mobile-client} to use metrics, you can see the metrics in Grafana.
@@ -21,11 +21,11 @@ In addition to those, you can create and modify custom dashboards to:
 == Creating Dashboards in Grafana
 
 You can create dashboards using *Drag and Drop* in Grafana. 
-See the http://docs.grafana.org/[Grafana Documentation, window="_blank"] to learn about building Grafana dashboards. 
+See the http://docs.grafana.org/[Grafana Documentation^] to learn about building Grafana dashboards. 
 
 == Importing Dashboards
 
-All Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using that JSON definition as described in the link:http://docs.grafana.org/reference/export_import/[importing and exporting dashboards, window="_blank"] Grafana documentation.
+All Grafana dashboards are represented by a JSON definition. Dashboards can be imported and exported using that JSON definition as described in the link:http://docs.grafana.org/reference/export_import/[importing and exporting dashboards^] Grafana documentation.
 
 == Customizing {product-name} Dashboards
 
