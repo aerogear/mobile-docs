@@ -55,8 +55,7 @@ If you are using macOS:
 cat <path/to/your/.p12> | base64
 ----
 +
-If you are using Linux, chances are that you are using a version of the base64 tool that does line wrapping.
-Disable base64 line wrapping by using `--wrap=0` flag:
+If you are using Linux and a version of `base64` that wraps lines, disable line wrapping as follows:
 +
 ----
 cat <path/to/your/.p12> | base64 --wrap=0
