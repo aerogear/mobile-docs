@@ -7,7 +7,7 @@ To quickly test {sync-service} service our sample docker image can be used.
 |====
 |Field|Value
 |Sync Application Name|mysyncapp
-|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
+|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-basic
 |Sync App Port|4000
 |SQL Server Hostname|db.example.com
 |SQL Server Port|1234
