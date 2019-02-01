@@ -2,7 +2,7 @@
 
 = Setting up {org-name} {product-name} on OpenShift
 
-{product-name} run natively on link:https://www.openshift.org/[OpenShift, window="_blank"]. The installation script in the following steps installs {product-name} on OpenShift.
+{product-name} run natively on link:https://www.openshift.org/[OpenShift^]. The installation script in the following steps installs {product-name} on OpenShift.
 
 [[prerequisites]]
 == Prerequisites
@@ -15,13 +15,13 @@
 +
 NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minishift to xref:local-setup[setup OpenShift locally].
 
-* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
+* link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
 
-* link:https://www.docker.com/[Docker, window="_blank"]
+* link:https://www.docker.com/[Docker^]
 
 * A local mobile development environment for the platform you want to develop on.
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
 
 [[procedure]]
 == Procedure
@@ -193,13 +193,13 @@ Minishift::
 +
 --
 
-* link:https://www.okd.io/minishift/[Minishift, window="_blank"]
+* link:https://www.okd.io/minishift/[Minishift^]
 
-* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
+* link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
 
-* link:https://www.docker.com/[Docker, window="_blank"]
+* link:https://www.docker.com/[Docker^]
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
 
 --
 oc cluster up::
@@ -208,11 +208,11 @@ oc cluster up::
 
 * Linux
 
-* link:https://www.openshift.org/download.html[OpenShift client tools, window="_blank"] version 3.11
+* link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
 
-* link:https://www.docker.com/[Docker, window="_blank"]
+* link:https://www.docker.com/[Docker^]
 
-* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x, window="_blank"] installed on the machine where you want to run the installation scripts from
+* link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
 
 * Firewall configured:
 +

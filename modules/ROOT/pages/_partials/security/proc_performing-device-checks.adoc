@@ -419,7 +419,7 @@ NOTE: `DeviceCheckResult` objects in the returning array stay in the same order 
 Cordova::
 +
 --
-Executing multiple checks synchronously is not directly supported. Instead, it's possible to use the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await[await, window="_blank"] operator.
+Executing multiple checks synchronously is not directly supported. Instead, it's possible to use the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await[await^] operator.
 [source, javascript]
 ----
 const results = await securityService.checkMany(

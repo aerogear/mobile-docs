@@ -9,7 +9,7 @@ include::../generic-provisioning.adoc[]
 When provisioning a {mobile-ci-cd-service} service, you are prompted to set the following:
 
 . *Android SDK License Agreement
- (required)*: Enter `yes` to accept the link:https://developer.android.com/studio/terms.html[Android SDK License Agreement, window="_blank"].
+ (required)*: Enter `yes` to accept the link:https://developer.android.com/studio/terms.html[Android SDK License Agreement^].
 
 . *Android SDK package config*: Add any configuration details you require for the SDK config file. Default values are provided but you should review and adapt them to your needs.
 

@@ -2,11 +2,11 @@
 
 = Certificate Pinning in Android Devices
 
-link:https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning[Certificate pinning, window="_blank"] can be enabled in individual SDKs through the `mobile-services.json` file.
+link:https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning[Certificate pinning^] can be enabled in individual SDKs through the `mobile-services.json` file.
 Certificate pinning will only be enabled for services which are used directly by the SDKs. For
 other services *SPKI* pinning is used. Mobile services must have pinning configured
 separately. For more information on setting up certificate pinning for mobile services see the
-link:https://developer.android.com/training/articles/security-config.html#CertificatePinning[Android network security guide, window="_blank"].
+link:https://developer.android.com/training/articles/security-config.html#CertificatePinning[Android network security guide^].
 
 == Generating Pinning Configuration
 

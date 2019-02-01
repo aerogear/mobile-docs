@@ -7,10 +7,10 @@ Android::
 --
 You need the following installed on your machine:
 
-* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google, window="_blank"]
-* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"]
+* [x] Android SDK or Android Studio from https://developer.android.com/studio/index.html[Google^]
+* [x] (Recommended) The latest version of http://openjdk.java.net/install/index.html[OpenJDK^]
 
-For information on how to set up a local Android development environment, see the link:https://developer.android.com/studio/install[Android Studio documentation, window="_blank"].
+For information on how to set up a local Android development environment, see the link:https://developer.android.com/studio/install[Android Studio documentation^].
 --
 iOS::
 +
@@ -19,7 +19,7 @@ You need the following installed on your machine:
 
 * [x] iOS 9 or later
 * [x] Xcode 9 or later
-* [x] link:https://cocoapods.org[CocoaPods, window="_blank"]
+* [x] link:https://cocoapods.org[CocoaPods^]
 
 The AeroGear SDK for iOS is available using the CocoaPods package manager.
 If you have not installed CocoaPods, install it by running the command:
@@ -29,7 +29,7 @@ If you have not installed CocoaPods, install it by running the command:
 $ gem install cocoapods
 ----
 
-For information on how to set up a local iOS development environment, see the link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[Swift documentation, window="_blank"].
+For information on how to set up a local iOS development environment, see the link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html[Swift documentation^].
 --
 // end::excludeDownstream[]
 Cordova::
@@ -37,10 +37,10 @@ Cordova::
 --
 You need the following installed on your machine:
 
-* [x] link:https://nodejs.org/[Node.js, window="_blank"] version 8.9.4 runtime and NPM
-* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI, window="_blank"] version 8.0.0
+* [x] link:https://nodejs.org/[Node.js^] version 8.9.4 runtime and NPM
+* [x]  link:https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli[Cordova CLI^] version 8.0.0
 
-For information on how to set up a local Cordova development environment, see the link:https://cordova.apache.org/#getstarted[Cordova documentation, window="_blank"].
+For information on how to set up a local Cordova development environment, see the link:https://cordova.apache.org/#getstarted[Cordova documentation^].
 --
 // tag::excludeDownstream[]
 Xamarin::
@@ -48,11 +48,11 @@ Xamarin::
 --
 You need the following installed on your system:
 
-* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft, window="_blank"]
-* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK, window="_blank"], if you would like to install the showcase app on an Android device or emulator
-* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple, window="_blank"], if you would like to install the showcase app on an iOS device or emulator
+* [x] Visual Studio Tools for Xamarin from link:https://www.visualstudio.com/xamarin/[Microsoft^]
+* [x] (Optional) The latest version of http://openjdk.java.net/install/index.html[OpenJDK^], if you would like to install the showcase app on an Android device or emulator
+* [x] (Optional) The latest version of XCode and command line tools for XCode available from https://developer.apple.com/download/more/[Apple^], if you would like to install the showcase app on an iOS device or emulator
 
-For information on how to set up a local Xamarin development environment, see the link:https://developer.xamarin.com/getting-started/[Xamarin documentation, window="_blank"].
+For information on how to set up a local Xamarin development environment, see the link:https://developer.xamarin.com/getting-started/[Xamarin documentation^].
 --
 // end::excludeDownstream[]
 ====

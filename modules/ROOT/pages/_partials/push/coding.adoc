@@ -12,12 +12,12 @@ This guide will help you to set up the {unifiedpush-service} service SDK in your
 Android::
 +
 --
-A link:https://firebase.google.com/[Firebase account, window="_blank"].
+A link:https://firebase.google.com/[Firebase account^].
 --
 iOS::
 +
 --
-An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service, window="_blank"].
+An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service^].
 --
 // end::excludeDownstream[]
 ====
@@ -38,8 +38,8 @@ implementation "org.aerogear:aerogear-push:{release-number}"
 implementation "com.google.firebase:firebase-messaging:[version]"
 ----
 +
-. Create a new project in link:https://console.firebase.google.com[Firebase console, window="_blank"]
-. Add link:https://developers.google.com/android/guides/google-services-plugin[The Google Services Gradle Plugin, window="_blank"] in your root `build.gradle` file
+. Create a new project in link:https://console.firebase.google.com[Firebase console^]
+. Add link:https://developers.google.com/android/guides/google-services-plugin[The Google Services Gradle Plugin^] in your root `build.gradle` file
 [source,groovy]
   buildscript {
       dependencies {
@@ -92,7 +92,7 @@ Cordova::
 $ cordova plugin add @aerogear/cordova-plugin-aerogear-push
 ----
 
-. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library, window="_blank"]
+. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library^]
 +
 [source,bash]
 ----

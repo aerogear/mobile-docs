@@ -10,4 +10,4 @@ Before the Android application is able to receive the notifications, you must se
 
 . From the _Project Settings_ screen, switch to the _Cloud Messaging_ tab, where you can find the **Server key** and **Sender ID** (known in GCM as **Project Number**). There is also a _Legacy server key_ but it should not be used for new projects.
 
-. Download the `google-services.json` file as described in the link:https://support.google.com/firebase/answer/7015592?hl=en[Google Documentation, window="_blank"].
+. Download the `google-services.json` file as described in the link:https://support.google.com/firebase/answer/7015592?hl=en[Google Documentation^].

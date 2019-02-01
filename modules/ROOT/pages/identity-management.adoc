@@ -67,8 +67,8 @@ include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
 
 == Additional resources
 
-* For more information about OpenID, see the link:https://openid.net/[OpenID Foundation, window="_blank"] website.
-* See the link:{sso-docs-link}[{sso-name} documentation, window="_blank"] for more info.
+* For more information about OpenID, see the link:https://openid.net/[OpenID Foundation^] website.
+* See the link:{sso-docs-link}[{sso-name} documentation^] for more info.
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]

@@ -56,6 +56,6 @@ Used to show the distribution of data, e.g. the number of logins per identity pr
 [discrete]
 == Related Information
 
-* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel, window="_blank"]
-* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel, window="_blank"]
-* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart, window="_blank"]
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel^]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel^]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart^]

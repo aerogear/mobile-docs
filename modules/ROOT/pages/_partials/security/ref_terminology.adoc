@@ -21,7 +21,7 @@ Android::
 --
 `DeviceChecks.ROOT_ENABLED`.
 
-This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer, window="_blank"] library to check if root access is present on the device.
+This function uses the link:https://github.com/scottyab/rootbeer[Rootbeer^] library to check if root access is present on the device.
 --
 iOS::
 +
@@ -44,19 +44,19 @@ This check is not available for Xamarin.
 ====
 
 Developer Mode Detection (DEVELOPER_MODE_ENABLED)::
-To detect if Developer Mode has been enabled on the device the `DeviceCheckType#DEVELOPER_MODE_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[Settings, window="_blank"] class.
+To detect if Developer Mode has been enabled on the device the `DeviceCheckType#DEVELOPER_MODE_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[Settings^] class.
 
 Debugger Detection (DEBUGGER_ENABLED)::
-To detect if an Android debugger is attached to the app the `DeviceCheckType#DEBUGGER_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Debug.html[Debug, window="_blank"] class.
+To detect if an Android debugger is attached to the app the `DeviceCheckType#DEBUGGER_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Debug.html[Debug^] class.
 
 Emulator Detection (IS_EMULATOR)::
-To detect if the app is being run on an emulator the `DeviceCheckType#IS_EMULATOR` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Build.html[Build, window="_blank"] class.
+To detect if the app is being run on an emulator the `DeviceCheckType#IS_EMULATOR` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/os/Build.html[Build^] class.
 
 Device Lock Detection (SCREEN_LOCK_ENABLED)::
-To detect if a device has a lock screen set (with pin, fingerprint, pattern) the `DeviceCheckType#SCREEN_LOCK_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/KeyguardManager.html[KeyguardManager, window="_blank"] class.
+To detect if a device has a lock screen set (with pin, fingerprint, pattern) the `DeviceCheckType#SCREEN_LOCK_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/KeyguardManager.html[KeyguardManager^] class.
 
 App Data Backup Detection (BACKUP_ENABLED)::
-To detect whether the application’s data is configured to be synchronized across devices the `DeviceCheckType#BACKUP_ENABLED` function can be used. The link:https://developer.android.com/guide/topics/manifest/application-element.html[allowBackup, window="_blank"] flag determines whether to allow the application to participate in the backup and restore infrastructure, which might be interesting to avoid depending on your app’s needs.
+To detect whether the application’s data is configured to be synchronized across devices the `DeviceCheckType#BACKUP_ENABLED` function can be used. The link:https://developer.android.com/guide/topics/manifest/application-element.html[allowBackup^] flag determines whether to allow the application to participate in the backup and restore infrastructure, which might be interesting to avoid depending on your app’s needs.
 
 Device Encryption Detection (ENCRYPTION_ENABLED)::
-To detect whether the devices' filesystem is encrypted the `DeviceCheckType#ENCRYPTION_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[DevicePolicyManager, window="_blank"] class.
+To detect whether the devices' filesystem is encrypted the `DeviceCheckType#ENCRYPTION_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/app/admin/DevicePolicyManager.html[DevicePolicyManager^] class.

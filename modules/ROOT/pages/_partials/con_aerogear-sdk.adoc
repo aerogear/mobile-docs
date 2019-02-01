@@ -11,7 +11,7 @@ Android::
 +
 --
 
-For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation, window="_blank"].
+For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation^].
 
 include::./conf-dev-env-android.adoc[]
 
@@ -26,7 +26,7 @@ iOS::
 +
 --
 
-For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation, window="_blank"].
+For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation^].
 
 include::./conf-dev-env-ios.adoc[]
 
@@ -42,7 +42,7 @@ Cordova::
 +
 --
 
-For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation, window="_blank"].
+For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation^].
 
 include::./conf-dev-env-cordova.adoc[]
 
@@ -58,7 +58,7 @@ Xamarin::
 +
 --
 
-For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation, window="_blank"].
+For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation^].
 
 include::./conf-dev-env-xamarin.adoc[]
 
