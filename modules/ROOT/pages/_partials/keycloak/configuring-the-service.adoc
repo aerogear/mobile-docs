@@ -24,7 +24,7 @@ For an explanation of these terms, see link:{sso-docs-link}[{sso-name} Documenta
 . Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
 +
 // TODO: @wei will default credentials always be as follows?
-. Log in to the Administration console using the credentials you specified when xref:#provisioning[Provisioning] the service (defaults to admin/admin).
+. Log in to the Administration console using the credentials you specified when xref:provisioning-the-keycloak-service[Provisioning] the service (defaults to admin/admin).
 
 . Select `Clients` from the left navigation menu.
 +
