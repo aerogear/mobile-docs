@@ -2,7 +2,12 @@
 
 After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
 
-The {org-name} SDK supports the following platforms:
+The {org-name} SDK supports the following mobile platforms:
+
+* xref:android[Android]: SDK is hosted on link:https://bintray.com/bintray/jcenter[jCenter].
+* xref:ios[iOS]: SDK is hosted on link:https://cocoapods.org/[CocoaPods].
+* xref:cordova[Cordova]: SDK is hosted on link:https://www.npmjs.com/[npm].
+* xref:xamarin[Xamarin]: SDK is hosted on link:https://www.nuget.org/[NuGet].
 
 [tabs]
 ====
