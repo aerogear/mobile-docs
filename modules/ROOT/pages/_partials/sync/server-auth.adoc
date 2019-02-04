@@ -77,7 +77,8 @@ The syntax for checking a realm role is `@hasRole(role: "realm:<role>")`. For ex
 
 The following example demonstrates how the `@hasRole` directive can be used to define role based authorization on various parts of a GraphQL schema. This example schema represents publishing application like a news or blog website.
 
-```
+[source,graphql]
+----
 type Post {
   id: ID!
   title: String!
@@ -103,7 +104,7 @@ type Mutation {
   editPost:[Post]! @hasRole(role: ["editor", "admin"])
   deletePost(id: ID!):[Post] @hasRole(role: "admin")
 }
-```
+----
 
 There are two types:
 
