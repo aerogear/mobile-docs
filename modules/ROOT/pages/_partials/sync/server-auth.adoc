@@ -16,7 +16,7 @@ Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/vo
 
 = Setting Up Keycloak Protection in {sync-server}
 
-1. Import the Voyager Keycloak module
+1. Import the `@aerogear/voyager-keycloak` module
 
 [source,javascript]
 ----
