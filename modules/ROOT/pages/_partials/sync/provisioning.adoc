@@ -1,21 +1,20 @@
 
-Before we provision the Sync Server it's neccessary to build it into a Docker formatted container, deploy it to a public registry.
-The easiest way is to use a one such as link:https://hub.docker.com/[Dockerhub].
+Before we provision the {sync-service} server it is neccessary to build it into a Docker formatted container and deploy it to a public registry such as link:https://hub.docker.com/[Dockerhub].
 
 = Building and publishing the container
 
-{sync-service} application is a Node.js project, to wrap it into a container, create `Dockerfile` in the project's directory like this:
+A {sync-service} server is a Node.js application. To build it into a container, create a `Dockerfile` in the project's directory like this:
 
 [source,dockerfile]
 ----
 FROM node:8
 WORKDIR /usr/src/app
-# copy Node.js specific files required for Node.js Data Sync application
+# copy Node.js specific files 
 COPY package*.json ./
-# copy Data Sync Server app source file to the workdir (add all other files that are needed) 
+# copy application source file to the workdir
 COPY server.js . 
 RUN npm install
-# TCP port that Sync Server app is listening on
+# TCP port that application is listening on
 EXPOSE 4000
 CMD [ "npm", "start" ]
 ---- 
@@ -23,7 +22,7 @@ CMD [ "npm", "start" ]
 Build the Docker container:
 [source,bash]
 ----
-$ docker build .
+$ docker build . --tag  <your-repo>/<container-name>
 ----
 
 Push to the Dockerhub repository :
@@ -37,20 +36,20 @@ $ docker push <your-repo>/<container-name>
 
 include::../generic-provisioning.adoc[]
 
-Fill in all required parameters for the service:
+Fill in all of the required parameters for the service:
 
-image:sync-app-creation-dialog.png[Sync App Creation Dialog]
+image:sync-app-creation-dialog.png[Sync Application Creation Dialog]
 
 .Configuration
 [options="header"]
 |====
 |Field|Default|Description
-|Sync Application Name|*required*|Fill in name of your {sync-service} app 
-|Sync Application Docker image|*required*|Fill in URL too your {sync-service} app docker image 
+|Sync Application Name|*required*|Fill in name of your {sync-service} application 
+|Sync Application Docker image|*required*|Fill in URL too your {sync-service} application docker image 
 |Sync Application Docker image version|latest|Tag of your docker image
 |Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
 |Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
-|Sync App Port|*required*|TCP port that Sync Server app is listening on
+|Sync Application Port|*required*|TCP port that {sync-service} application is listening on
 |SQL Server Hostname|*required*|SQL server hostname that is used to connect by the {sync-service}
 |SQL Server Port|*required*|SQL server port that is used to connect by the {sync-service}
 |SQL Server Username|*required*|SQL server username that is used to connect by the {sync-service}
