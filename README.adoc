@@ -1,5 +1,7 @@
 = Mobile Docs
 
+This repository is used to build the documentation site for AeroGear Mobile Services. To view the documentation please visit link:https://docs.aerogear.org[docs.aerogear.org].
+
 Our goal is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
 
 This readme introduces the standards for AeroGear docs.
