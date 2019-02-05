@@ -20,6 +20,7 @@
   "homepage": "https://github.com/aerogear/mobile-docs#readme",
   "dependencies": {
     "live-server": "^1.2.1",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "write-good": "^1.0.1"
   }
 }
