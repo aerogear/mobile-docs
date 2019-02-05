@@ -264,5 +264,13 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 +
 NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
 
+== Writing tools
 
+You can lint the English prose you've written using the following command:
 
+----
+
+$ ./node_modules/write-good/bin/write-good.js <path-to-adoc>
+----
+
+The output gives you suggestions as to how to improve the text, but many suggestions can be ignored.
