@@ -6,6 +6,42 @@ This readme introduces the standards for AeroGear docs.
 
 :toc: 1
 
+== Prerequisites
+
+To work with mobile-docs you must have the following software installed on your local machine.
+
+* link:https://nodejs.org/en/[Node.js]
+* link:https://docs.antora.org/antora/1.0/install/install-antora/[Antora CLI]
+* link:https://docs.antora.org/antora/1.0/install/install-antora/#install-the-default-antora-site-generator[Antora Default Site Generator]
+
+Then install the dependencies specified in `package.json`.
+
+----
+npm install
+----
+
+== How to Make Changes and View them Locally
+
+It is possible to have livereload functionality while working on the website locally.
+
+Run the following command to watch for changes in the `modules` folder and automatically rebuild the site.
+
+----
+npm run watch
+----
+
+You should see new output in the terminal window when changes are made. This indicates the site is being rebuilt automatically.
+
+In a separate terminal, run the following command to serve the website.
+
+----
+npm run serve
+----
+
+This starts a static server that serves the built website. It will automatically open your browser and the current page will reload any time the site is rebuilt.
+
+NOTE: It usually takes 3-5 seconds to see the changes automatically reflected in your browser.
+
 == Concepts, Procedures and Reference
 
 Concept::
