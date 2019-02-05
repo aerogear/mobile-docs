@@ -22,7 +22,7 @@ Then install the dependencies specified in `package.json`.
 npm install
 ----
 
-== How to Make Changes and View them Locally
+== Getting Started with mobile-docs
 
 It is possible to have livereload functionality while working on the website locally.
 
