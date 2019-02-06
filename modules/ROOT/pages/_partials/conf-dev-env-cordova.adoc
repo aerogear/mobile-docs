@@ -15,5 +15,5 @@ const aerogearConfig = {
     // Replace with your own configuration
 };
 
-init(aerogearConfig);
+const app = init(aerogearConfig);
 ----
