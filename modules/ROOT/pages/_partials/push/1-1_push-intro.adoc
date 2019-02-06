@@ -1,0 +1,6 @@
+// The ID is used as an anchor for linking to the module. Avoid changing it after the module has been published to ensure existing links are not broken.
+[id='how-the-unifiedpush-server-works-{context}']
+= How the UnifiedPush Server Works
+
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
+It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.

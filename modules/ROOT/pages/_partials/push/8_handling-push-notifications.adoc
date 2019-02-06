@@ -1,10 +1,13 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-
+[id='handling-push-notifications-{context}']
 = Handling Push Notifications
 
 Follow the next steps to handle incoming {push-notification}s in your foregrounded application.
 
 NOTE: {push-notification}s that arrive when the application is in the background will always be handled by the OS.
+
+.Procedure
 
 [tabs]
 ====
@@ -40,7 +43,7 @@ iOS::
 +
 --
 
-The {SDK} for iOS does not provide a way to handle incoming messages. Instead, follow the link:https://developer.apple.com/notifications/[Apple's official documentation^] about notifications.
+The {SDK} for iOS does not provide a way to handle incoming messages. Instead, follow the link:https://developer.apple.com/notifications/[Apple's official documentation, window="_blank"] about notifications.
 
 --
 // end::excludeDownstream[]
@@ -48,7 +51,7 @@ Cordova::
 +
 --
 
-The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin^].
+The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin, window="_blank"].
 
 --
 // tag::excludeDownstream[]

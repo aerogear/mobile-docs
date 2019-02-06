@@ -29,6 +29,8 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:identity-management.adoc#adding-sso-to-your-mobile-app[Single Sign On]
 *** xref:identity-management.adoc#monitoring[Monitoring Identity Management]
 
+** xref:push.adoc[{unifiedpush-service}]
+
 ** xref:push-notifications.adoc[{unifiedpush-service}]
 *** xref:push-notifications.adoc#introduction[Introduction]
 *** xref:push-notifications.adoc#setup[Setting Up]
