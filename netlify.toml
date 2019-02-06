@@ -1,7 +1,7 @@
 [build]
   base = "netlify"
-  publish = "public"
-  command = "node_modules/.bin/antora --html-url-extension-style=indexify --pull ../site.yml"
+  publish = "build/site"
+  command = "node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml"
 
 [build.environment]
   NODE_VERSION = "8"
@@ -11,4 +11,4 @@
 [context.production.environment]
 
 [context.deploy-preview]
-  command = "URL=$DEPLOY_PRIME_URL node_modules/.bin/antora --html-url-extension-style=indexify --pull ../site.yml"
+  command = "URL=$DEPLOY_PRIME_URL node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml"
