@@ -9,7 +9,7 @@
 
 # generate html with pull for latest https://github.com/aerogear/antora-ui
 
-antora --clean --pull site.yml
+antora --clean --fetch site.yml
 
 # fix html
 
