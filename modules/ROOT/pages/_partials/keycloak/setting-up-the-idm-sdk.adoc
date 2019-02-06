@@ -12,7 +12,7 @@ It describes how to set up and initialize the {keycloak-service} service SDK.
 
 .Procedure
 
-. Import the libraries
+. Import the libraries.
 +
 [tabs]
 ====
@@ -66,17 +66,17 @@ import AGSAuth
 auth = AGSAuth()
 ----
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
 [source,bash]
 ----
 $ npm install @aerogear/auth
 ----
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --
@@ -108,7 +108,7 @@ dotnet add package AeroGear.Mobile.Auth.Platform.iOS --version {release-number}
 // end::excludeDownstream[]
 ====
 
-. Initialize the SDK
+. Initialize the SDK.
 +
 [tabs]
 ====
@@ -145,10 +145,10 @@ let authenticationConfig = AuthenticationConfig(redirectURL: "org.aerogear.mobil
 try! AgsAuth.instance.configure(authConfig: authenticationConfig, useExternalUserAgent: false)
 ----
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Import and initialize Auth:
 
 [source,javascript]
@@ -169,9 +169,9 @@ authService.init(initOptions)
 
 You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
 
-NOTE: Initialization will also perform authentication
---
+NOTE: Initialization also enables authentication.
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --
