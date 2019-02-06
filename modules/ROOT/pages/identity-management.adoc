@@ -20,6 +20,8 @@ ifdef::context[:parent-context: {context}]
 = Using the {keycloak-service} Mobile Service
 
 [[introduction]]
+
+image::https://media.makeameme.org/created/hahahahahahahahahahahahahahah-its-working.jpg[i hope so]
 The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
 
 * Secure your mobile app using the industry standard OpenID Connect protocol
