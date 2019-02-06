@@ -39,7 +39,7 @@ Cordova::
 
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .check(DeviceCheckType.rootEnabled)
     .then(result => {
         // Handle the security result metric
@@ -148,7 +148,7 @@ Cordova::
 --
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .check(DeviceCheckType.debugModeEnabled)
     .then(result => {
         // Handle the security result metric
@@ -211,7 +211,7 @@ Cordova::
 --
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .check(DeviceCheckType.isEmulator)
     .then(result => {
         // Handle the security result metric
@@ -266,7 +266,7 @@ Cordova::
 NOTE: For iOS devices this check requires iOS 8 or above.
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .check(DeviceCheckType.screenLockEnabled)
     .then(result => {
         // Handle the security result metric
@@ -603,7 +603,7 @@ class CustomDeviceCheck implements DeviceCheck {
 +
 [source, javascript]
 ----
-const securityService = new SecurityService();
+const securityService = new SecurityService(app.metrics);
 
 securityService.check(new CustomDeviceCheck())
     .then(result => {
@@ -710,7 +710,7 @@ Report individual checks via the `checkAndPublishMetric` method:
 
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .checkAndPublishMetric(DeviceCheckType.rootEnabled)
     .then(result => {
         // Handle the security result metric
@@ -722,7 +722,7 @@ Or alternatively report multiple checks using the `checkManyAndPublishMetric` me
 
 [source, javascript]
 ----
-new SecurityService()
+new SecurityService(app.metrics)
     .checkManyAndPublishMetric(
         DeviceCheckType.rootEnabled,
         DeviceCheckType.isEmulator,

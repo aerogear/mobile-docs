@@ -194,7 +194,7 @@ const push = PushNotification.init({
 // Registration handler
 push.on('registration', data => {
     // PushRegistration is part of @aerogear/push
-    new PushRegistration().register(data.registrationId).then(() => {
+    new PushRegistration(app.config).register(data.registrationId).then(() => {
         // Registration with UPS successful, you can now send push notifications from the UPS UI
     }).catch(err => {
         // Error on device registration
@@ -218,7 +218,7 @@ const pushObject = new Push().init({
 });
 
 pushObject.on('registration').subscribe(data => {
-    new PushRegistration().register(data.registrationId).then(() => {
+    new PushRegistration(app.config).register(data.registrationId).then(() => {
         // Registration with UPS successful, you can now send push notifications from the UPS UI
     }).catch(err => {
         //Error on device registration

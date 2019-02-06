@@ -88,7 +88,7 @@ $ cordova plugin add @aerogear/cordova-plugin-aerogear-security
 ----
 const SecurityService = require("@aerogear/security");
 
-const securityService = new SecurityService();
+const securityService = new SecurityService(app.metrics);
 ----
 +
 NOTE: Any new instantiation of `SecurityService` returns the same instance.
