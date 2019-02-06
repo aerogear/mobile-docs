@@ -21,3 +21,5 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
+output:
+  dir: ./public
