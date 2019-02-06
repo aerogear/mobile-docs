@@ -32,13 +32,13 @@ include::_partials/sync/server-metrics.adoc[leveloffset=2]
 [#sync-server-audit-logs]
 include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
 
-[#getting-started]
-== Getting Started with {sync-service}
+[#sync-server-openshift]
+== {sync-service} OpenShift APB
 
 [#sync-server-getting-started-overview]
 include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
 
-[#provisioning]
+[#building-sync-container]
 include::_partials/sync/provisioning.adoc[leveloffset=2]
 
 [#sync-server-example-basic]
@@ -46,6 +46,9 @@ include::_partials/sync/sync-server-example-basic.adoc[leveloffset=2]
 
 [#sync-server-getting-started-showcase-app]
 include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]
+
+[#sync-server-binding-keycloak]
+include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
 
 
 
