@@ -6,3 +6,5 @@
 /.vscode/
 .ts/
 .idea
+/public/
+/TODO/
