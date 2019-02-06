@@ -10,15 +10,6 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:getting-started.adoc#setting-up-your-local-development-environment[Setting Up Development Environment]
 ** xref:getting-started.adoc#running[Running a Mobile App]
 
-
-* xref:mobile-developer-console.adoc[Mobile Developer Console]
-** xref:mobile-developer-console.adoc#introduction[Introduction]
-** xref:mobile-developer-console.adoc#provision-mdc[Provisioning Mobile Developer Console]
-** xref:mobile-developer-console.adoc#registering[Registering a Mobile App]
-*** xref:mobile-developer-console.adoc#sdk[Configure SDK]
-** xref:mobile-developer-console.adoc#services[Using mobile services]
-** xref:mobile-developer-console.adoc#building[Building Mobile Apps]
-
 * xref:con_services.adoc[Mobile Services]
 
 ** xref:identity-management.adoc[{keycloak-service}]
