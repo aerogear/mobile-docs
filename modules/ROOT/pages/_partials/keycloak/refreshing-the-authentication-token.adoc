@@ -44,10 +44,10 @@ do {
 }
 ----
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Retrieve the keycloak adapter object and refresh the access token, when possible and required:
 
 [source,javascript]
@@ -58,8 +58,8 @@ authService.service.extract().updateToken(30).then(() => {
 ----
 
 More information about the keycloak javascript adapter can be found link:https://www.keycloak.org/docs/3.0/securing_apps/topics/oidc/javascript-adapter.html[here]
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --

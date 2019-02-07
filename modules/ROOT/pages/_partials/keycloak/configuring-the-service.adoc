@@ -32,7 +32,7 @@ For an explanation of these terms, see link:{sso-docs-link}[{sso-name} Documenta
 . Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
 
 
-. Add an additional entry to *Valid Redirect URIs* as follows:
+. Add an additional entry to *Valid Redirect URIs*.
 +
 [tabs]
 ====
@@ -47,13 +47,13 @@ iOS::
 --
 It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Set the additional value to `\http://localhost/\*`. 
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --
@@ -62,7 +62,7 @@ Depending on the platform, set the redirect URL as described in either the Andro
 // end::excludeDownstream[]
 ====
 
-. Add an additional entry to *Web Origins* as follows:
+. Add an additional entry to *Web Origins*.
 +
 [tabs]
 ====
@@ -77,13 +77,13 @@ iOS::
 --
 Use the Bundle Identifier of the iOS app. (e.g. `org.aerogear.ios-showcase-template`)
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Set additional value to `\http://localhost/\*`. 
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --

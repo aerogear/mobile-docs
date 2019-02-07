@@ -62,10 +62,10 @@ let hasAdminRole = currentUser.hasRealmRole("admin")
 let hasModeratorRole = currentUser.hasClientRole(client: "my_client", role: "moderator")
 ----
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 Get the realm roles from the auth service:
 
 [source,javascript]
@@ -74,8 +74,8 @@ const realmRoles = authService.getRealmRoles();
 ----
 
 NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here^].
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --
