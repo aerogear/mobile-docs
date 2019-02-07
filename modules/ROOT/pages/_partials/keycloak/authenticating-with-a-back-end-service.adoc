@@ -26,77 +26,57 @@ Authorization: BEARER Yourtoken
 Android::
 +
 --
-
-. Retrieve the current user:
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
 +
 [source,java]
 ----
-UserPrincipal currentUser = authService.currentUser();
+authService.getAuthHeaderProvider()
 ----
-
-. Implement `Callback` and call `logout`:
+. Plug it into your networking layer. When using the `okhttp` library, this can be added to the list of request interceptors to automatically supply the required tokens:
++
 [source,java]
 ----
-authService.logout(currentUser, new Callback<UserPrincipal>() {
-    @Override
-    public void onSuccess() {
-        // User Logged Out Successfully and local Auth tokens were Deleted
-    }
-
-    @Override
-    public void onError(Throwable error) {
-        // An error occurred during logout
-    }
-});
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
 ----
 --
 iOS::
 +
 --
-. Implement the logout callback:
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
 +
 [source,swift]
 ----
-func onLogoutComplete(_: Error?) {
-    // User Logged Out Successfully and local Auth tokens were Deleted
-    ...
-}
+authService.getAuthHeaderProvider()
 ----
-
-. Call `logout` and pass the callback:
-+
-[source,swift]
-----
-do {
-    try AgsAuth.instance.logout(onCompleted: self.onLogoutComplete)
-} catch {
-    fatalError("Error logging out: \(error).")
-}
-----
+. Plug it into your networking layer.
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
-To logout invoke the `logout` function:
+// end::excludeDownstream[]
+The AeroGear Cordova SDK doesn't provide an HTTP layer, therefore it cannot provide an Auth Header Provider.
+You must manually attach the `Bearer` header to your HTTP requests.
 
 [source,javascript]
 ----
-authService.logout().then(() => {
-    // User Logged Out Successfully and local Auth tokens were Deleted
-});
+req.setRequestHeader('Accept', 'application/json');
+req.setRequestHeader('Authorization', 'Bearer ' + authService.extract().token);
 ----
 --
 // tag::excludeDownstream[]
 Xamarin::
 +
 --
-To logout invoke the `Logout` method:
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
 [source,csharp]
 ----
-var authService = MobileCore.Instance.GetService<IAuthService>();
-var result = await authService.Logout(authService.CurrentUser());
+var authHeaderProvider = authService.AuthHeaderProvider;
 ----
+. Plug it into your networking layer.----
 --
 // end::excludeDownstream[]
 ====

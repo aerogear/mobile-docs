@@ -15,7 +15,7 @@ More information is available in the Keycloak documentation under link:https://w
 
 .Procedure
 
-To perform a logout:
+To enable users of the mobile app log out from the service.
 
 [tabs]
 ====
@@ -70,12 +70,12 @@ do {
 }
 ----
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
+// end::excludeDownstream[]
 
-To logout invoke the `logout` function:
+Invoke the `logout` function:
 
 [source,javascript]
 ----
@@ -83,8 +83,8 @@ authService.logout().then(() => {
     // User Logged Out Successfully and local Auth tokens were Deleted
 });
 ----
---
 // tag::excludeDownstream[]
+--
 Xamarin::
 +
 --
