@@ -41,7 +41,7 @@ The core idea is that every object has a `version` property with an integer valu
 [source,javascript]
 ----
 {
-  title: "A Brief History of Time"
+  msg: "Hello World"
   version: 1
 }
 ----
@@ -52,7 +52,7 @@ The server updates the version, persists the changes and sends back the new obje
 [source,javascript]
 ----
 {
-  title: "The Grand Design"
+  msg: "Hello Universe"
   version: 2
 }
 ----
@@ -166,7 +166,7 @@ const serverState = ...
 
 == Client Conflict implementation
 
-See [Voyager Client documentation](https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync#conflicts)
+See link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync#conflicts[Voyager Client documentation]
 
 
 == Implementing Custom Conflict Mechanism
