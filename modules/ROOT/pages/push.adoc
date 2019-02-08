@@ -53,7 +53,7 @@ include::_partials/push/provisioning-the-push.adoc[leveloffset=+2]
 include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::_partials/push/downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2]
-include::_partials/push/configuring-the-service.adoc[leveloffset=+2]
+//include::_partials/push/configuring-the-service.adoc[leveloffset=+2]
 include::_partials/push/sending-a-push-notification.adoc[leveloffset=+2]
 include::_partials/push/handling-push-notifications.adoc[leveloffset=+2]
 

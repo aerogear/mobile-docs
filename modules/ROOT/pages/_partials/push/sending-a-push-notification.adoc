@@ -7,8 +7,6 @@ The {push-ui} allows you to send Push Notifications.
 
 .Prerequisites
 
-To access {unifiedpush-service} using the {push-ui}, you will need to:
-
  * Make sure the {unifiedpush-service} service is provisioned.
  * Select a route in OpenShift.
  * Login with your OpenShift credentials.

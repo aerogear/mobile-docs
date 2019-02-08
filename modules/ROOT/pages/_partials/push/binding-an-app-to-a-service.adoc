@@ -45,7 +45,7 @@ image::mobile-clients-services-all-unbound.png[]
 +
 NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
 
-. Press *Bind to App* in the {service-name}
+. Press *Bind to App* in the {service-name}.
 . Fill out the binding parameters required by the {service-name} Service.
 
 +
