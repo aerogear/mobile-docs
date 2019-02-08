@@ -49,9 +49,40 @@ NOTE: It is possible to bind a {mobile-client} with a mobile service in the Open
 . Fill out the binding parameters required by the {service-name} Service.
 
 +
-image::mobile-clients-services-idm-parameters.png[]
-NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.
+When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
+Those credentials need to be provided in the binding dialog.
 
-The {service-name} service will now be expandable, details about the service can be viewed.
+First pick your *Mobile Client Type*. Depending on the selection you then have to fill out the fields for either Android or iOS.
 
-image::mobile-clients-services-all-idm-provisioned.png[]
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+You need to provide a *Server Key* and a *Sender ID*. Both can be found in the Firebase console under *Project{nbsp}Settings{nbsp}>{nbsp}Cloud Messaging*. Make sure that you have selected `Android` in the `Mobile Client Type` dropdown.
+
+image::mobile-clients-services-push-parameters-android.png[]
+--
+iOS::
++
+--
+You need an APNs client TLS certificate. Have a look at link:apple-setup.html[APNs Setup] for instructions on how to obtain one. Make sure that you have selected `iOS` in the `Mobile Client Type` dropdown.
+The certificate needs to be encoded in base64 before copying it into the field labelled `iOS .p12 file`. If you're on Mac OS run:
+
+----
+cat <path/to/your/.p12> | base64
+----
+
+If you're on Linux chances are that you're using a version of the base64 tool that does line wrapping. You need to disable this:
+
+----
+cat <path/to/your/.p12> | base64 --wrap=0
+----
+
+image::mobile-clients-services-push-parameters-ios.png[]
+--
+// end::excludeDownstream[]
+====
+
+After clicking *Create* your variant will be created in UPS and you should see a new binding for your mobile client.
