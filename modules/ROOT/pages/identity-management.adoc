@@ -42,7 +42,7 @@ include::_partials/keycloak/idm_glossary.adoc[leveloffset=+2]
 == Setting Up the {keycloak-service} Service
 include::_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
 include::_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=+2]
-include::_partials/keycloak/configuring-the-service.adoc[leveloffset=+2]
+include::_partials/keycloak/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
 == Configuring your development environment for the {keycloak-service} Service
 include::_partials/keycloak/downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/keycloak/setting-up-the-idm-sdk.adoc[leveloffset=+2]
