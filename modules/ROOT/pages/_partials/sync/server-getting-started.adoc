@@ -1,3 +1,52 @@
 = Getting Started
 
-TODO
+{sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
+
+{sync-server} is the starting point for developing a {sync-service} application. Used with link:https://expressjs.com/[Express], this module leverages Apollo Server and provides extension points for additional features and integrations.
+
+[source,bash]
+----
+npm install @aerogear/apollo-voyager-server
+----
+
+Below is a simple code example to get up and running with {sync-server}
+
+[source,javascript]
+----
+const express = require('express')
+const { ApolloVoyagerServer, gql } = require('@aerogear/apollo-voyager-server')
+
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`
+const resolvers = {
+  Query: {
+    hello: (obj, args, context, info) => {
+      return `Hello world`
+    }
+  }
+}
+
+const server = ApolloVoyagerServer({
+  typeDefs,
+  resolvers
+})
+
+const app = express()
+server.applyMiddleware({ app })
+
+app.listen(4000, () =>
+  console.log(`🚀 Server ready at http://localhost:4000/graphql`)
+)
+----
+
+One of the core ideas behind {sync-server} is that features can be enabled by passing implementations from separate modules. This keeps the core {sync-server} module lightweight and decoupled from the other features such as metrics, security and audit logging. New features in the future will be delivered in the future as new modules using this same concept.
+
+The set of additional libraries provided are:
+
+* @aerogear/apollo-voyager-keycloak - Adds authentication and authorization capabilities to {sync-server} using Keycloak. Integrates with {keycloak-service}.
+* @aerogear/apollo-voyager-metrics - Adds Prometheus metrics to {sync-server}. Integrates with the AeroGear {metrics-service} service.
+* @aerogear/apollo-voyager-audit - Adds Audit Logging functionality to {sync-server}. Audit logs cane be consumed and visualised by the OpenShift EFK stack. (ElasticSearch + Fluentd + Kibana).
+* @aerogear/apollo-voyager-conflicts - Adds conflict detection and resolution capabilities to {sync-server}. Enables developers to use custom and out of the box conflict resolution policies in their {sync-server} application.

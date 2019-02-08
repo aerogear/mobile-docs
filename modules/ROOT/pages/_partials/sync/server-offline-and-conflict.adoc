@@ -1,3 +1,183 @@
-= Offline Support and Conflict Resolution
+= Conflict Resolution
 
-TODO
+Applications that allow users to modify data while offline most likely have to deal with conflicts.
+A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
+
+*Example:* A user tried to modify a record while they were offline. When they came back online, they discovered that the record was already deleted.
+
+*Conflict resolution* is how the application handles the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
+
+In a GraphQL server, conflict detection and resolution happens exclusively in *mutations*.
+
+{sync-server} uses a concept of pluggable conflict resolution to allow developers to detect and handle conflicts regardless of the data storage.
+
+= Pluggable Conflict Resolution
+
+Pluggable conflict resolution is a concept that allows developers to define their own conflict resolution strategies regardless of the data storage.
+
+The conflict detection and resolution is enabled by {sync-server}, while the fetching and storing of data is the responsibility of the developer.
+
+Pluggable conflict resolution supports the following implementations:
+* `VersionedObjectState` - depends on version field supplied in objects (used by default when importing conflictHandler)
+* `HashObjectState` - depends on hash calculated from entire object
+
+Implementations are based on the `ObjectState` interface that can be extended to provide custom implementation for conflict detection.
+
+= Prerequisites
+
+* GraphQL server with resolvers.
+* Database or any other form of data storage that can cause data conflicts.
+
+== Enabling Conflict Resolution
+
+To enable conflict resolution, developers need to use one of the pluggable conflict resolution strategies
+in each individual resolver.
+
+== Version Based Conflict Resolution
+
+Version based conflict resolution is the recommended and simplest approach for conflict detection and resolution.
+The core idea is that every object has a `version` property with an integer value. For example:
+
+[source,javascript]
+----
+{
+  msg: "Hello World"
+  version: 1
+}
+----
+
+When a client tries to update object, they must send along their last known version number along with the changes to the server.
+The server updates the version, persists the changes and sends back the new object.
+
+[source,javascript]
+----
+{
+  msg: "Hello Universe"
+  version: 2
+}
+----
+
+A *conflict* occurs when the version number sent by the client does not match the version stored in the server. This means a different client already updated the object.
+
+== Using Version Based Conflict Resolution
+
+1. Import the link:https://npmjs.com/package/@aerogear/voyager-conflicts[@aerogear/voyager-conflicts] package.
+
+[source,javascript]
+----
+const { conflictHandler } = require('@aerogear/voyager-conflicts')
+----
+
+2. Add a version field to the GraphQL type that should support conflict resolution. The version should also be stored in the data storage.
+
+[source,graphql]
+----
+type Greeting {
+  msg: String
+  version: Int
+}
+----
+
+3. Add example mutations.
+
+[source,graphql]
+----
+  type Mutation {
+    changeGreeting(msg: String!, version: Int!): Greeting
+  }
+----
+
+4. Implement resolver for mutation
+
+Every conflict can be handled using a set of predefined steps
+
+[source,javascript]
+----
+// 1. Read data from data source
+// 2. Check for conflicts
+
+const serverData = // Read data from data source (example: SQL database)
+
+if (conflictHandler.hasConflict(serverData, clientData)) {
+  // 3. Resolve conflict (client or server) and return error to client
+  return await conflictHandler.resolveOnClient(serverData, clientData).response
+}
+
+// 4. Call next state to update the version numeber
+greeting = conflictHandler.nextState(clientData)
+
+// 5. Save object to data source
+----
+
+Conflicts can be resolved either on the client or the server. Depending on the strategy used, the resolver implementation will differ.
+Please see the chapter below for individual implementations.
+
+== Resolving Conflicts
+
+There is a typical flow to mutations that deal with conflicts.
+
+1. A client tries to modify / delete an object on the server using a GraphQL mutation.
+2. The server retrieves the current object the client is trying to modify.
+3. The server performs *conflict detection* by comparing the current object with the data sent by the client. This can be done with `VersionedObjectState` (recommended), `HashObjectState` or something custom.
+4. If a conflict is detected. *Conflict Resolution* happens. Conflict resolution can be done on the server (`resolveOnServer`) or on the client (`resolveOnClient`).
+  1. 
+
+Conflicts can be resolved the on server or client. This depends on how the GraphQL resolver is implemented. 
+
+=== Resolving Conflicts on the Client
+
+In the example above, the approach was to use `conflictHandler.resolveOnClient`. The server returns a special response to the client that contains the conflicting data and the client can make a choice on how to resolve it.
+
+[source,javascript]
+----
+// Data
+const serverState = ...
+
+changeGreeting: async (obj, clientState, context, info) => {
+    if (conflictHandler.hasConflict(serverState, args)) {
+      const clientState = args
+      return await conflictHandler.resolveOnClient(serverState, clientState).response
+    }
+    serverState = conflictHandler.nextState(clientState)
+    return serverState
+}
+----
+
+== Resolving Conflicts on the Server
+
+[source,javascript]
+----
+// Data
+const serverState = ...
+
+ changeGreeting: async (obj, clientState, context, info) => {
+      if (conflictHandler.hasConflict(serverState, clientState)) {
+        const strategy = customGreetingResolutionStrategy
+        const { resolvedState, response } = await conflictHandler.resolveOnServer(strategy, serverState, clientState)
+        serverState = resolvedState
+        return response
+      }
+      serverState = conflictHandler.nextState(clientState)
+      return serverState
+    }
+----
+
+> Note: For complete implementation see example application located in `examples/conflicts` folder.
+
+== Client Conflict implementation
+
+See link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync#conflicts[Voyager Client documentation]
+
+
+== Implementing Custom Conflict Mechanism
+
+The`ObjectState` interface is a complete conflict resolution implementation that provides a set of rules to detect and handle conflict. Interface will allow developers to handle conflict on the client or the server. `nextSate` method is a way for interface to modify existing object before is being saved to the database.
+For example when using `lastModified` field as a way to detect conflicts:
+
+[source,typescript]
+----
+ public nextState(currentObjectState: ObjectStateData) {
+    currentObjectState.lastModified = new Date()
+    return currentObjectState
+  }
+----
