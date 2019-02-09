@@ -1,0 +1,29 @@
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+[cards]
+====
+Android::
++
+--
+Lots of info about Android
+
+--
+iOS::
++
+--
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+
+--
+Cordova::
++
+--
+Info about cordova
+--
+Xamarin::
++
+--
+Stuff about Xamarin
+--
+====

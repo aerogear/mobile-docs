@@ -3,7 +3,7 @@ runtime:
 site:
   title: AeroGear Mobile Services
   url: https://www.aerogear.org
-  start_page: aerogear::getting-started
+  start_page: aerogear::index
 content:
   sources:
   - url: .
@@ -17,6 +17,7 @@ asciidoc:
   extensions:
   - ./lib/remote-include-processor
   - ./lib/tab-block.js
+  - ./lib/card-block.js
   attributes:
     experimental: ''
     idprefix: ''
