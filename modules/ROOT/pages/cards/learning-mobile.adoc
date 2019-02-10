@@ -1,0 +1,21 @@
+include::../_partials/attributes.adoc[]
+
+= Introduction to learning mobile development
+
+Choosing the right platform to develop mobile apps is difficult, a compromise between creating a native experience with Android and/or iOS development, or using a hybrid app development model such as Cordova or Xamarin.
+
+AeroGear allows you develop with the following:
+
+// tag::cards[]
+* link:https://developer.android.com/studio/install[Android^]
+* link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS^].
+* link:https://cordova.apache.org/#getstarted[Cordova^]
+* link:https://developer.xamarin.com/getting-started/[Xamarin^]
+
+// end::cards[]
+
+
+include::../_partials/con_aerogear-sdk.adoc[leveloffset=1]
+
+
+

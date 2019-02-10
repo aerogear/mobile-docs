@@ -1,0 +1,16 @@
+include::../_partials/attributes.adoc[]
+:toc:
+:toclevels: 1
+
+= Introduction to Devops with AeroGear
+
+// tag::cards[]
+A summary of mobile services admin tasks.
+// end::cards[]
+
+include::../_partials/installing-mobile-services.adoc[leveloffset=1]
+
+== Provisioning a mobile service
+include::../_partials/generic-provisioning.adoc[leveloffset=1]
+
+

@@ -3,20 +3,22 @@ runtime:
 site:
   title: AeroGear Mobile Services
   url: https://docs.aerogear.org
-  start_page: aerogear::getting-started
+  start_page: aerogear::index
 content:
   sources:
   - url: .
     branches: HEAD
 ui:
   bundle:
-    url: https://github.com/aerogear/antora-ui/raw/master/build/ui-bundle.zip
+    url: https://github.com/aerogear/antora-ui/raw/cards/build/ui-bundle.zip
     snapshot: true
 
 asciidoc:
   extensions:
   - ./lib/tab-block.js
   - ./lib/remote-include-processor
+  - ./lib/card-block.js
+
   attributes:
     experimental: ''
     idprefix: ''

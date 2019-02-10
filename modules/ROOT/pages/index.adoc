@@ -4,26 +4,70 @@ include::_partials/attributes.adoc[]
 
 [cards]
 ====
-Android::
+Administration::
 +
 --
-Lots of info about Android
+include::cards/devops.adoc[tags=cards]
+link:cards/devops.html[more...]
+--
+Learning Mobile Development::
++
+--
+include::cards/learning-mobile.adoc[tags=cards]
+link:cards/learning-mobile.html[more...]
+--
+Learning OpenShift::
++
+--
+All mobile services run on OpenShift. See 
 
+* link:https://www.openshift.com/learn/get-started/[Getting Started]
+* link:./getting-started.html#setting-up-aerogear-mobile-services-on-openshift[Installing mobile services]
 --
-iOS::
+Learning JavaScript::
 +
 --
-NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
+JavaScript is a language you can use for server and client side development with mobile services. See
 
---
-Cordova::
-+
---
-Info about cordova
---
-Xamarin::
-+
---
-Stuff about Xamarin
+* link:https://nodejs.org/en/docs/guides/[Node Docs]
+* link:https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html[TypeScript]
+* link:https://cordova.apache.org/#getstarted[Cordova]
 --
 ====
+
+{nbsp}
+{nbsp}
+{nbsp}
+{nbsp}
+
+
+[cards]
+====
+Mobile Projects::
++
+--
+include::cards/mobile-projects.adoc[tags=cards]
+
+link:cards/mobile-projects.html[more...]
+
+--
+AeroGear SDK::
++
+--
+
+--
+Security::
++
+--
+--
+Community::
++
+--
+--
+====
+
+{nbsp}
+{nbsp}
+{nbsp}
+{nbsp}
+

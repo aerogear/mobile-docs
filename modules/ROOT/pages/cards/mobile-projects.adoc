@@ -1,0 +1,18 @@
+include::../_partials/attributes.adoc[]
+
+= Your mobile app project
+
+// tag::cards[]
+Your mobile app project consists of:
+
+* Mobile app code
+* An OpenShift cluster
+* `mobile-services.json` file
+// end::cards[]
+
+After registering your mobile app on OpenShift and binding it to services, you update the `mobile-services.json` file by downloading it and thereby updating the mobile develpment environment with regard to changes in configuration.
+
+include::../_partials/mdc-introduction.adoc[leveloffset=1]
+
+
+
