@@ -114,13 +114,16 @@ Please see the chapter below for individual implementations.
 
 == Resolving Conflicts
 
+// TODO: finish this
+
 There is a typical flow to mutations that deal with conflicts.
 
 1. A client tries to modify / delete an object on the server using a GraphQL mutation.
 2. The server retrieves the current object the client is trying to modify.
 3. The server performs *conflict detection* by comparing the current object with the data sent by the client. This can be done with `VersionedObjectState` (recommended), `HashObjectState` or something custom.
 4. If a conflict is detected. *Conflict Resolution* happens. Conflict resolution can be done on the server (`resolveOnServer`) or on the client (`resolveOnClient`).
-  1. 
+
+== Resolving
 
 Conflicts can be resolved the on server or client. This depends on how the GraphQL resolver is implemented. 
 
