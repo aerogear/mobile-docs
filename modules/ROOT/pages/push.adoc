@@ -8,7 +8,7 @@ include::_partials/attributes.adoc[]
 
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-:context: {unifiedpush-service}
+:context: push-notifications
 ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
@@ -27,8 +27,8 @@ It can be seen as a _broker_ that distributes push messages to different 3rd par
 
 Currently the service supports:
 
-* link:https://developer.apple.com/notifications/[Apple Push Notification Service, window="_blank"]
-* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging, window="_blank"]
+* link:https://developer.apple.com/notifications/[Apple Push Notification Service^]
+* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging^]
 
 include::_partials/push/ref_terminology.adoc[leveloffset=+2]
 
@@ -41,8 +41,8 @@ The content of the +alert+ key belongs to the metadata, which is deleted after 3
 
 .Prerequisites
 
-* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
-* [x] You have provisioned Mobile Developer Console as described in xref:getting-started.adoc[Provisioning Mobile Developer Console].
+* You understand {unifiedpush-service}.
+* You have logged into the OpenShift console and the Mobile Developer Console.
 
 [[setting-up-the-idm-service]]
 == Setting Up the {unifiedpush-service} Mobile Service

@@ -16,12 +16,12 @@ It describes how to set up and initialize the {unifiedpush-service} service SDK.
 Android::
 +
 --
-A link:https://firebase.google.com/[Firebase account, window="_blank"].
+A link:https://firebase.google.com/[Firebase account^].
 --
 iOS::
 +
 --
-An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service, window="_blank"].
+An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service^].
 --
 // end::excludeDownstream[]
 ====
