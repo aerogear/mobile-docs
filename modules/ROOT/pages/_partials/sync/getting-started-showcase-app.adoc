@@ -1,6 +1,6 @@
 = Overview
 
-To make it easiser for developers to get started with our {sync-service} framework, we have built a sample application for developers to play with. With this app, developers can try out the many of the features offered by the {sync-service} framework, including:
+To make it easier for developers to get started with our {sync-service} framework, we have built link:https://github.com/aerogear/ionic-showcase[a sample application] for developers to play with. In this app, developers can try out the many of the features offered by the {sync-service} framework, including:
 
 * GraphQL Schema
 * Offline Storage
@@ -13,15 +13,42 @@ In this section, we will go through the steps to setup the sample application on
 
 - A running OpenShift cluster
 - You have {org-name} {product-name} installed to the OpenShift cluster
-- On your local machine, you need to have Node.js installed. It should be at least version 8.
+- In order to run the client app, on your local machine, you need to have Node.js installed. It should be at least version 8.
 - If you want to build the client as an iOS or Android app, you need to have the corresponding toolchain installed as well (Android SDK, or XCode).
 
 = Deploy the Server
 
-To deploy the server of the sample application, please follow the steps described in <<Provisioning {sync-service} Service>> with the following configurations:
+== Provision a PostgreSQL Database
 
+The sample application needs to connect to a running PostgreSQL database server to persist data. If you already have it running somewhere, make sure you have the following information ready:
 
+- Hostname of the database server
+- Port number of the database server
+- Database name
+- Username/Password to access the database
 
+If you don't have a PostgreSQL database server, you can easily provision a new instance on OpenShift by the following steps:
 
+. Login to the OpenShift web console, create a new project or use an existing one
+. Click on the `Add to Project` dropdown on the top right, and choose `Browse Catalog`
+. Select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database. Take notes of the values for `PostgreSQL Connection Username`, `PostgreSQL Connection Password` and `PostgreSQL Database Name`. You will need them later.
 
-= Setup and Run the Client App
+== Provision the Sample Server from the Catalog
+
+Once the database is running, you can provision the server of the sample application. Please follow the steps described in <<Provisioning {sync-service} Service>> with the following configurations:
+
+[options="header"]
+|====
+|Field|Value
+|Sync Application Name|syncshowcase
+|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
+|Sync Application health endpoint| health
+|Sync Application metrics endpoint| metrics
+|Sync App Port|4000
+|Sync App GraphQL Endpoint| graphql
+|Database Server Hostname|*Hostname of the PostgreSQL server*
+|Database Server Port|*Port number of the PostgreSQL server, usually should be 5432*
+|Database Server Username|*Username of the PostgreSQL database connection*
+|Database Server Password|*Password of the PostgreSQL database connection*
+|Database name|*PostgreSQL database name*
+|====
