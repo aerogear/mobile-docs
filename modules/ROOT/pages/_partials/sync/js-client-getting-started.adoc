@@ -1,3 +1,46 @@
 = Getting Started
 
-TODO
+This describes how to start using JavaScript library for creating mobile and web applications using {sync-service} provided by Voyager Server. 
+
+.Prerequisites
+
+* Your local `mobile-services.json` file is up-to-date.
+
+.Procedure
+
+. Install required NPM packages
++
+[source,bash]
+----
+$ npm install --save @aerogear/voyager-client
+----
+
+== Importing the package
+
+[source,javascript]
+----
+import {
+  createClient,
+  strategies
+} from '@aerogear/voyager-client';
+----
+
+== Configuration
+
+To provide custom configuration to the client, the following options are available. If you wish, these are also available by using the `DataSyncConfig` interface from the SDK.
+
+[source,javascript]
+----
+
+let config: DataSyncConfig = {
+  httpUrl: "http://localhost:4000/graphql",
+  wsUrl: "ws://localhost:4000/graphql",
+}
+----
+
+== Creating a Client
+
+[source,javascript]
+----
+let client = createClient(config);
+----
