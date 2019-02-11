@@ -1,0 +1,14 @@
+include::../_partials/attributes.adoc[]
+:toc:
+:toclevels: 1
+
+= AeroGear SDK
+
+// tag::cards[]
+Learn about the Aerogear SDK.
+// end::cards[]
+
+include::../_partials/con_aerogear-sdk.adoc[leveloffset=1]
+
+
+

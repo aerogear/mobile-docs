@@ -54,6 +54,9 @@ link:cards/mobile-projects.html[more...]
 AeroGear SDK::
 +
 --
+include::cards/aerogear-sdk.adoc[tags=cards]
+
+link:cards/aerogeear-sdk.html[more...]
 
 --
 Voyager::
