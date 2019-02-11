@@ -44,18 +44,21 @@ image:sync-app-creation-dialog.png[Sync Application Creation Dialog]
 [options="header"]
 |====
 |Field|Default|Description
-|Sync Application Name|*required*|Fill in name of your {sync-service} application 
-|Sync Application Docker image|*required*|Fill in URL too your {sync-service} application docker image 
+|Sync Application Name||Fill in name of your {sync-service} application 
+|Sync Application Docker image||Fill in URL too your {sync-service} application docker image 
 |Sync Application Docker image version|latest|Tag of your docker image
 |Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
 |Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
-|Sync Application Port|*required*|TCP port that {sync-service} application is listening on
-|SQL Server Hostname|*required*|SQL server hostname that is used to connect by the {sync-service}
-|SQL Server Port|*required*|SQL server port that is used to connect by the {sync-service}
-|SQL Server Username|*required*|SQL server username that is used to connect by the {sync-service}
-|Database name|*required*|Name of the database that is used to connect by the {sync-service}
+|Sync Application Port||Port number that {sync-service} application is listening on
+|Database Server Hostname||Database server hostname that is used to connect by the {sync-service}
+|Database Server Port||Database server port that is used to connect by the {sync-service}
+|Database Server Username||Database server username that is used to connect by the {sync-service}
+|Database name||Name of the database that is used to connect by the {sync-service}
 |Use SSL?|false|Use SSL connection to the SQL server
 |====
 
 include::../generic-provisioning-end.adoc[]
+
+Once the provision is completed, you should be able to see it in the Mobile Developer Console: go to the Mobile Developer Console and click on any mobile client, and you should see the newly provisioned {sync-service} server in the `Unbound Services` section. If you want your client app to use the {sync-service} server, just click on `Bind To App` button and complete the wizard. Once it's bound, copy the updated `mobile-services.json` file to your client app and you can then initialise the {sync-service} client SDK.
+
 
