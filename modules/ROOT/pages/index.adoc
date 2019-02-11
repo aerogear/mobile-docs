@@ -56,7 +56,7 @@ AeroGear SDK::
 --
 include::cards/aerogear-sdk.adoc[tags=cards]
 
-link:cards/aerogeear-sdk.html[more...]
+link:cards/aerogear-sdk.html[more...]
 
 --
 Voyager::
