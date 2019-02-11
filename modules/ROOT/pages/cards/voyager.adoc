@@ -1,0 +1,71 @@
+= Voyager
+
+Follow the discussion and see latest updates at:
+https://github.com/aerogear/voyager-server/issues/106
+
+.Motivation:
+Our documentation contains lots of useful information about contributing but since we use couple different repositories I decided to gather are required information in one place, till we get them ported to AeroGear website over the time.
+
+== Introduction
+
+AeroGear is set of the mobile focused services that help developers to write their mobile and backend software. For more general information about AeroGear please check our website:
+
+http://aerogear.org
+
+Voyager is one of the services that is currently under active development. 
+// tag::cards[]
+Voyager is an set of GraphQL extensions that help mobile developers to adapt GraphQL technology.
+// end::cards[]
+
+Very early preview of documentation is available here: 
+https://deploy-preview-613--aerogear-docs-preview.netlify.com/aerogear/latest/data-sync/
+
+Please mind that this document is still incomplete and individual repositories should have much more information.
+
+==  How I can start with  GraphQL/Voyager 
+
+GraphQL is an data query standard that is gaining a lots of attention recently over classical REST API aproach.
+There are numerous tutorials related to GraphQL and Apollo GraphQL.
+Best way to start is to learn basics of GraphQL
+https://graphql.org/graphql-js/
+
+Next step is to get yourself familiar with Apollo GraphQL technology. 
+I personally found robinwieruch.com tutorials one of the best and most up to date resources:
+
+For client: 
+
+https://www.robinwieruch.de/graphql-apollo-client-tutorial/
+
+For server:
+
+https://www.robinwieruch.de/graphql-apollo-server-tutorial/
+
+== Voyager Getting Started
+
+Voyager is currently maintained in 3 different repositories:
+
+Our **Example app** that contains server and client integrations for voyager and other AeroGear extensions:
+
+https://github.com/aerogear/ionic-showcase
+
+
+**Server:**
+https://github.com/aerogear/voyager-server/
+
+**Client:** 
+https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync
+
+Please check individual README.md files and CONTRIBUTING.md files for more information.
+
+== Working on the tasks
+
+To start working on one if the ideas please leave comment on one of the issues:
+https://github.com/aerogear/voyager-server/issues?q=is%3Aissue+is%3Aopen+label%3Aideas
+
+Mentors will reach out to you and explain the details of the tasks and possible steps.
+
+== Ask us anything
+
+If you found any information unclear feel free to ask question below - there is no bad questions. 
+
+ping @aerogear/voyager team.

@@ -56,9 +56,13 @@ AeroGear SDK::
 --
 
 --
-Security::
+Voyager::
 +
 --
+include::cards/voyager.adoc[tags=cards]
+
+link:cards/voyager.html[more...]
+
 --
 Community::
 +
