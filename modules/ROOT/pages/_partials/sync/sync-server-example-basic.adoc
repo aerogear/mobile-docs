@@ -2,7 +2,7 @@
 
 To quickly test {sync-service} service our sample docker image can be used. 
 
-.Fill in this as a parameters for provisioning
+.Fill in the following parameters for provisioning
 [options="header"]
 |====
 |Field|Value
@@ -14,12 +14,12 @@ To quickly test {sync-service} service our sample docker image can be used.
 |SQL Server Username|test
 |Database name|test
 |====
-Note, this image doesn't use any database, so values doesn't matter there. For other values, don't fill anything, default will be used.
+Note, this image doesn't use a database, any values may be used for the SQL and database fields. Leave any other values blank.
 
-After provisiong, check *Overview* screen in the project to see if it's running. 
+After provisiong, check the *Overview* screen in the project to see if it's running. 
 
 image:sync-app-example-provisioned.png[Sync App provisioned]
 
-Use URL from *Routes - External Traffic* and append `/graphql` there to access GraphQL Playground.
+Use the URL from *Routes - External Traffic* and append `/graphql` there to access the GraphQL Playground.
 
 image:sync-graphql-playground.png[GraphQL Playground]

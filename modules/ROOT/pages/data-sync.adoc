@@ -33,7 +33,7 @@ include::_partials/sync/server-metrics.adoc[leveloffset=2]
 include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
 
 [#sync-server-openshift]
-== {sync-service} OpenShift APB
+== Running {sync-service}
 
 [#sync-server-getting-started-overview]
 include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
@@ -41,16 +41,8 @@ include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
 [#building-sync-container]
 include::_partials/sync/provisioning.adoc[leveloffset=2]
 
-[#sync-server-example-basic]
-include::_partials/sync/sync-server-example-basic.adoc[leveloffset=2]
-
-[#sync-server-getting-started-showcase-app]
-include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]
-
 [#sync-server-binding-keycloak]
 include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
-
-
 
 [#sync-js-client]
 == {sync-service} Javascript Client

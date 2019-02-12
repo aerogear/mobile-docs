@@ -3,7 +3,9 @@ Before we provision the {sync-service} server it is neccessary to build it into 
 
 = Building and publishing the container
 
-A {sync-service} server is a Node.js application. To build it into a container, create a `Dockerfile` in the project's directory like this:
+A {sync-service} server is a Node.js application. To build it into a container, create a `Dockerfile` in the project's directory.  This container will need to include your server source code, its dependencies, and be configured to execute your server.
+
+As an example:
 
 [source,dockerfile]
 ----
@@ -19,13 +21,13 @@ EXPOSE 4000
 CMD [ "npm", "start" ]
 ---- 
 
-Build the Docker container:
+Build the Docker container and tag it:
 [source,bash]
 ----
 $ docker build . --tag  <your-repo>/<container-name>
 ----
 
-Push to the Dockerhub repository :
+Push your container to Dockerhub's repository :
 [source,bash]
 ----
 $ docker push <your-repo>/<container-name>
