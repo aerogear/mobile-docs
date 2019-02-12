@@ -56,9 +56,9 @@ Choose a *Mobile Client Type* and fill out the required fields:
 Android::
 +
 --
-- Enter a *Server Key* and a *Sender ID*. Both are present in the Firebase console.
-
 - Select `Android` from in the `Mobile Client Type` list.
+
+- Enter a *Server Key* and a *Sender ID*. Both are present in the Firebase console.
 
 image::mobile-clients-services-push-parameters-android.png[]
 --
