@@ -9,11 +9,11 @@
 == Overview
 
 After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
-you should be able to see the "Keycloak Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
+you should be able to see the "{idm-name} Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *{idm-name} Metrics*).
 
 == Dashboard panel descriptions
 
-The Keycloak dashboard consists of several panels which give you an overview of the specific
+The {idm-name} dashboard consists of several panels which give you an overview of the specific
 events, such as the number of registered users, memory usage etc.
 
 Below you will find a detailed description of each panel and its values.
@@ -22,7 +22,7 @@ Below you will find a detailed description of each panel and its values.
 
 Singlestat panels show you the main summary of a single data series.
 
-* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. {idm-name}, Github, Facebook etc.
 
 * *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
 
