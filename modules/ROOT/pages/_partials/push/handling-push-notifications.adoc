@@ -46,11 +46,11 @@ iOS::
 The {SDK} for iOS does not provide a way to handle incoming messages. Instead, follow the link:https://developer.apple.com/notifications/[Apple's official documentation^] about notifications.
 
 --
-// end::excludeDownstream[]
+
 Cordova::
 +
 --
-
+// end::excludeDownstream[]
 The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin^].
 
 --

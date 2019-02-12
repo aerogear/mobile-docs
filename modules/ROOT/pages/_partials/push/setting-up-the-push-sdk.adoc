@@ -86,11 +86,11 @@ import AGSPush
 ----
 
 --
-// end::excludeDownstream[]
+
 Cordova::
 +
 --
-
+// end::excludeDownstream[]
 . Install `cordova-plugin-aerogear-push`:
 +
 [source,bash]
