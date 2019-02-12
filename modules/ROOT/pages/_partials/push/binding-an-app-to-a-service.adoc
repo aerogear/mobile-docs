@@ -12,7 +12,7 @@ This section describes how to set up the {unifiedpush-service} service.
 
 * You have created a {mobile-client}.
 
-[tabs]
+*[tabs]
 ====
 // tag::excludeDownstream[]
 Android::
