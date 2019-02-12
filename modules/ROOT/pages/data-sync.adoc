@@ -33,7 +33,7 @@ include::_partials/sync/server-metrics.adoc[leveloffset=2]
 include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
 
 [#sync-server-openshift]
-== Running {sync-service}
+== Running {sync-service} on OpenShift
 
 [#sync-server-getting-started-overview]
 include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
@@ -77,3 +77,6 @@ include::_partials/sync/js-client-metrics.adoc[leveloffset=2]
 [#sync-js-client-audit-logs]
 include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 
+[#sync-sample-app]
+== Running the Sample Application
+include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]

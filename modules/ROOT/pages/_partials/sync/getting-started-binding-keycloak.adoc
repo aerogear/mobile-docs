@@ -1,5 +1,7 @@
 = Binding {sync-service} to {keycloak-service}
 
+In this section, we will show you how to protect your {sync-service} application using the {keycloak-service} service.
+
 == Prerequisites
 
 - There is a {keycloak-service} service available.
