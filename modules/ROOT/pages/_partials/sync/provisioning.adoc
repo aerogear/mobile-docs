@@ -55,6 +55,7 @@ image:sync-app-creation-dialog.png[Sync Application Creation Dialog]
 |Database Server Hostname||Database server hostname that is used to connect by the {sync-service}
 |Database Server Port||Database server port that is used to connect by the {sync-service}
 |Database Server Username||Database server username that is used to connect by the {sync-service}
+|Database Server Password||Database server password that is used to connect by the {sync-service}
 |Database name||Name of the database that is used to connect by the {sync-service}
 |Use SSL?|false|Use SSL connection to the SQL server
 |====
