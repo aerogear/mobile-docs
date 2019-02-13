@@ -1,6 +1,6 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-[id='using-dashboards-{context}']
+[id='monitoring-keycloak-{context}']
 = Viewing {metrics-service} Service Dashboards
 
 The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana^] to display that data.
