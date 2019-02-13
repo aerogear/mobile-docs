@@ -1,13 +1,12 @@
-
-
 include::configuring-dev-env-metrics.adoc[]
 
-== Setting up {metrics-service} service SDK
+= Setting up {metrics-service} service SDK
 
-=== Importing the libraries
-
+This guide will help you to set up the {metrics-service} service SDK in your App.
 Metrics is included in all SDK modules, if you already use a component from the {SDK} in your app, you may skip this step.
 Otherwise, install the core package by following the next steps depending on your platform:
+
+.Procedure
 
 [tabs]
 ====

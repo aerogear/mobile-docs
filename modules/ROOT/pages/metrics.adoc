@@ -42,7 +42,7 @@ include::_partials/metrics/1_provisioning-the-metrics.adoc[leveloffset=+2]
 include::_partials/metrics/2_binding-an-app-to-a-service.adoc[leveloffset=+2]
 == Configuring your development environment for the {metrics-service} Service
 include::_partials/metrics/3_downloading-configuration-file.adoc[leveloffset=+2]
-include::_partials/metrics/4_configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+include::_partials/metrics/4_setting-up-sdk.adoc[leveloffset=+2,tags=!excludeUpstream]
 include::_partials/metrics/downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/metrics/setting-up-the-idm-sdk.adoc[leveloffset=+2]
 
