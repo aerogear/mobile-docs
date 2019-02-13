@@ -43,27 +43,11 @@ include::_partials/metrics/2_binding-an-app-to-a-service.adoc[leveloffset=+2]
 == Configuring your development environment for the {metrics-service} Service
 include::_partials/metrics/3_downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/metrics/4_setting-up-sdk.adoc[leveloffset=+2,tags=!excludeUpstream]
-include::_partials/metrics/downloading-configuration-file.adoc[leveloffset=+2]
-include::_partials/metrics/setting-up-the-idm-sdk.adoc[leveloffset=+2]
-
-[[adding-user-authentication-to-your-mobile-app]]
-== Adding User Authentication to your Mobile App
-// include::_partials/metrics/getting-started-with-user-authentication.adoc[leveloffset=+2]
-include::_partials/metrics/implementing-authentication.adoc[leveloffset=+2]
-include::_partials/metrics/refreshing-the-authentication-token.adoc[leveloffset=+2]
-include::_partials/metrics/adding-log-out-option.adoc[leveloffset=+2,tags=!excludeUpstream]
-include::_partials/metrics/authenticating-with-a-back-end-service.adoc[leveloffset=+2,tags=!excludeUpstream]
-
-include::_partials/metrics/adding-access-control.adoc[leveloffset=2]
-
-[[adding-sso-to-your-mobile-app]]
-== Adding SSO to your Mobile App
-// include::_partials/metrics/getting-started-with-sso.adoc[leveloffset=+2]
-include::_partials/metrics/using-sso.adoc[leveloffset=+2]
+include::_partials/metrics/5_analysing-app-usage.adoc[leveloffset=+2]
 
 [[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
-include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
+include::_partials/metrics/6_monitoring-keycloak.adoc[leveloffset=2]
 
 == Additional resources
 
