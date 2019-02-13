@@ -1,0 +1,37 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='binding-an-app-to-{context}']
+= Binding a {mobile-client} with the {metrics-service} Service
+
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+This section describes how to set up the {metrics-service} service.
+
+.Prerequisites
+
+* You have created a {mobile-client}.
+
+.Procedure
+
+. Launch {mobile-developer-console}.
+
+. Click on the {mobile-client} on the Overview screen.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
++
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Click *Bind to App* for {metrics-service}.
+. Fill out the binding parameters required by the {metrics-service} Service.
+
++
+image::mobile-clients-services-idm-parameters.png[]
+NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.
+
+The {service-name} service will now be expandable, details about the service can be viewed.
+
+image::mobile-clients-services-all-idm-provisioned.png[]
