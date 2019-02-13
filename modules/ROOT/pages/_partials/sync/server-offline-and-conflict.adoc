@@ -132,10 +132,9 @@ In the example below, the approach was to use `conflictHandler.resolveOnClient`.
 
 [source,javascript]
 ----
-// Read data from the data source, e.g. database
-const serverState = readData()
-
 changeGreeting: async (obj, clientState, context, info) => {
+    // Read data from the data source, e.g. database
+    const serverState = readData()
     if (conflictHandler.hasConflict(serverState, args)) {
       const clientState = args
       return await conflictHandler.resolveOnClient(serverState, clientState).response
@@ -156,10 +155,9 @@ If there is no conflict, the data sent by the client should be persisted.
 
 [source,javascript]
 ----
-// Read data from the data source, e.g. database
-const serverState = readData()
-
  changeGreeting: async (obj, clientState, context, info) => {
+      // Read data from the data source, e.g. database
+      const serverState = readData()
       if (conflictHandler.hasConflict(serverState, clientState)) {
         const strategy = customGreetingResolutionStrategy
         const { resolvedState, response } = await conflictHandler.resolveOnServer(strategy, serverState, clientState)
