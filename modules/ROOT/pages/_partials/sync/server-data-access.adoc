@@ -27,7 +27,7 @@ If the application is going to be deployed on OpenShift as described in the <<Ru
 
 It is highly recommended that the application use these environment variables to setup the database connection.
 
-For example, an application needs to connect to a PostgreSQL database. The database, table and schema is already setup. On app start, the database connection can be established like this:
+For example, if an application needs to connect to a PostgresQL database (where all tables and schemas are already set up) then a database connection can be established on app start as follows:
 
 [source,javascript]
 ----
@@ -50,7 +50,7 @@ const db = knex({
 
 == Add Database Connection to `context` object
 
-Once the database connection is established, it needs to be accessible from a resolver so that it can be used to retrieve or persist data. The recommended way to achieve this is to add the database connection to the `context` object. 
+Add the database connection to the `context` object so that a resolver can access the database.
 
 From a very high level, the `context` object is an object shared by all resolvers in a particular query, and is used to contain per-request state, including authentication information, dataloader instances, and anything else that should be taken into account when resolving the query. For more information, please check link:https://www.apollographql.com/docs/apollo-server/essentials/data.html#context[the Apollo doc on the context argument].
 
