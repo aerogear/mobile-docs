@@ -114,14 +114,13 @@ Please see the chapter below for individual implementations.
 
 == Resolving Conflicts
 
-// TODO: finish this
-
 There is a typical flow to mutations that deal with conflicts.
 
 1. A client tries to modify / delete an object on the server using a GraphQL mutation.
-2. The server retrieves the current object the client is trying to modify.
+2. The server retrieves the current object the client is trying to modify from the data source, for example, the database.
 3. The server performs *conflict detection* by comparing the current object with the data sent by the client. This can be done with `VersionedObjectState` (recommended), `HashObjectState` or something custom.
-4. If a conflict is detected. *Conflict Resolution* happens. Conflict resolution can be done on the server (`resolveOnServer`) or on the client (`resolveOnClient`).
+4. If a conflict is detected. *Conflict Resolution* happens. Conflict resolution can be done on the server (`resolveOnServer`) or on the client (`resolveOnClient`). If the conflict is resolved on the server, the resolved data should be persisted. If the conflict is going to be resolved on the client, no data persist is required.
+5. If no conflict is detected, the data sent by the client should be persisted to the data source.
 
 == Resolving
 
@@ -129,38 +128,45 @@ Conflicts can be resolved the on server or client. This depends on how the Graph
 
 === Resolving Conflicts on the Client
 
-In the example above, the approach was to use `conflictHandler.resolveOnClient`. The server returns a special response to the client that contains the conflicting data and the client can make a choice on how to resolve it.
+In the example below, the approach was to use `conflictHandler.resolveOnClient`. When there is a conflict, the server returns a special response to the client that contains the conflicting data and the client can make a choice on how to resolve it. Since it will resolved on the client, it is not required to persist the data. However, if there is no conflict, the data sent by the client should be persisted.
 
 [source,javascript]
 ----
-// Data
-const serverState = ...
-
 changeGreeting: async (obj, clientState, context, info) => {
+    // Read data from the data source, e.g. database
+    const serverState = readData()
     if (conflictHandler.hasConflict(serverState, args)) {
       const clientState = args
       return await conflictHandler.resolveOnClient(serverState, clientState).response
     }
     serverState = conflictHandler.nextState(clientState)
+    await saveData(serverState)
     return serverState
 }
 ----
 
 == Resolving Conflicts on the Server
 
+In the example below, the approach was to use `conflictHandler.resolveOnServer`. When there is a conflict, the server will try to resolve it, using the specified resolution strategy. Once the conflict is resolved, the resolved data should be persisted. 
+
+Even though the conflict is resolved on the server, it did occur and the client should be notified about it in case it wants to do something about it. The server will return a message to the client to let it know that a conflict has happened, but it's resolved on the server, along with the resolved data. 
+
+If there is no conflict, the data sent by the client should be persisted.
+
 [source,javascript]
 ----
-// Data
-const serverState = ...
-
  changeGreeting: async (obj, clientState, context, info) => {
+      // Read data from the data source, e.g. database
+      const serverState = readData()
       if (conflictHandler.hasConflict(serverState, clientState)) {
         const strategy = customGreetingResolutionStrategy
         const { resolvedState, response } = await conflictHandler.resolveOnServer(strategy, serverState, clientState)
         serverState = resolvedState
+        await saveData(serverState)
         return response
       }
       serverState = conflictHandler.nextState(clientState)
+      await saveData(serverState)
       return serverState
     }
 ----
@@ -174,7 +180,7 @@ See link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync#c
 
 == Implementing Custom Conflict Mechanism
 
-The`ObjectState` interface is a complete conflict resolution implementation that provides a set of rules to detect and handle conflict. Interface will allow developers to handle conflict on the client or the server. `nextSate` method is a way for interface to modify existing object before is being saved to the database.
+The`ObjectState` interface is a complete conflict resolution implementation that provides a set of rules to detect and handle conflict. Interface will allow developers to handle conflict on the client or the server. `nextState` method is a way for interface to modify existing object before is being saved to the database.
 For example when using `lastModified` field as a way to detect conflicts:
 
 [source,typescript]
