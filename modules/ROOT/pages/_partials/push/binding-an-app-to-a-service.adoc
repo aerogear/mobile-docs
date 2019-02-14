@@ -6,15 +6,12 @@
 To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.
 
-This section describes how to set up the {unifiedpush-service} service.
-
 .Prerequisites
 
 * You have created a {mobile-client}.
 
 [tabs]
 ====
-// tag::excludeDownstream[]
 Android::
 +
 --
@@ -27,14 +24,13 @@ iOS::
 * [x] Apple Developer account
 * [x] APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
 --
-// end::excludeDownstream[]
 ====
 
 .Procedure
 
 To bind a {mobile-client} with a mobile service:
 
-. Launch {mobile-developer-console}.
+. Log in to the {mobile-developer-console}.
 
 . Click on the {mobile-client} on the Overview screen.
 
@@ -47,12 +43,14 @@ NOTE: It is possible to bind a {mobile-client} with a mobile service in the Open
 
 . Press *Bind to App* in the {service-name}.
 . Fill out the binding parameters required by the {service-name} Service.
-
++
+When you bind a mobile client to the {unifiedpush-service} service, a variant is created to store the credentials required to communicate with a push network.
+Those credentials need to be provided in the binding dialog.
++
 Choose a *Mobile Client Type* and fill out the required fields:
-
++
 [tabs]
 ====
-// tag::excludeDownstream[]
 Android::
 +
 --
@@ -82,7 +80,6 @@ cat <path/to/your/.p12> | base64 --wrap=0
 
 image::mobile-clients-services-push-parameters-ios.png[]
 --
-// end::excludeDownstream[]
 ====
-
++
 After clicking *Create* your variant will be created in UPS and you should see a new binding for your mobile client. A variant is used for the storage of the credentials provided in the Binding procedure.

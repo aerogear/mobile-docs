@@ -8,12 +8,13 @@ include::_partials/attributes.adoc[]
 
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-:context: push-notifications
+:context: {unifiedpush-service}
 ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
 = Using the {unifiedpush-service} Mobile Service
 
+[[introduction]]
 The {unifiedpush-service} service allows you to send native push notifications to different mobile operating systems.
 
 * Code once and push notifications to iOS and Android.
@@ -22,44 +23,49 @@ The {unifiedpush-service} service allows you to send native push notifications t
 * Push notifications to different variants of a mobile app.
 * Push notifications from different back-end apps to the same mobile app.
 
-The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
-It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
 
 Currently the service supports:
 
 * link:https://developer.apple.com/notifications/[Apple Push Notification Service^]
 * link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging^]
 
-include::_partials/push/ref_terminology.adoc[leveloffset=+2]
 
-The payload of the push notification is delivered to 3rd party Push Network providers, like Google or Apple.
+The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
+It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
 
-WARNING: It is highly recommended to not send any sensitive personal or confidential information belonging to an individual (e.g. a social security number, financial account or transactional information, or any information where the individual may have a reasonable expectation of secure transmission) as part of any Push Notification.
+WARNING: The payload of the push notification is delivered to 3rd party Push Network providers, Google or Apple. {org-name} recommends that users do not send any sensitive personal or confidential information (for example, a social security number, financial account or transactional information) as part of any Push Notification. Users of push notifications should not have an expectation of secure transmission.
 
 For analytic purposes on our link:#_dashboard[Dashboard] we store the content of the +alert+ key sent to the UnifiedPush Server.
 The content of the +alert+ key belongs to the metadata, which is deleted after 30 days, using a nightly job within the UnifiedPush Server.
+
+NOTE: You are only able to send push notifications to a real device, sending push notifications to an emulator fails.
 
 .Prerequisites
 
 * You understand {unifiedpush-service}.
 * You have logged into the OpenShift console and the Mobile Developer Console.
 
+
+include::_partials/push/ref_terminology.adoc[leveloffset=+2]
+
 [[setting-up-the-idm-service]]
 == Setting Up the {unifiedpush-service} Mobile Service
 include::_partials/push/obtaining_firebase_cloud_messaging_credentials.adoc[leveloffset=+2]
-include::_partials/push/push-intro.adoc[leveloffset=+2]
 include::_partials/push/enable_push_notifications_for_ios_app.adoc[leveloffset=+2]
 include::_partials/push/provisioning-the-push.adoc[leveloffset=+2]
 include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2]
+== Configuring your development environment for the {unifiedpush-service} Service
 include::_partials/push/downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2]
-//include::_partials/push/configuring-the-service.adoc[leveloffset=+2]
 include::_partials/push/sending-a-push-notification.adoc[leveloffset=+2]
 include::_partials/push/handling-push-notifications.adoc[leveloffset=+2]
 
-[[monitoring]]
-// start metrics/monitoring-keycloak.adoc[leveloffset=1]
-// include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
+
+== Additional resources
+
+* link:https://developer.apple.com/notifications/[Apple Push Notification Service^]
+* link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging^]
+
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]
