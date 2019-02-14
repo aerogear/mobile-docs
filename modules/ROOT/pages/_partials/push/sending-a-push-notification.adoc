@@ -1,7 +1,7 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
 [id='sending-a-push-notification-{context}']
-= Sending a Push Notification
+= Sending a Push Notification using the {push-ui}
 
 The {push-ui} allows you to send Push Notifications.
 

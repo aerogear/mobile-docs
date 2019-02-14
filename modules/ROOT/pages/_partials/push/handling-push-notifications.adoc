@@ -5,7 +5,7 @@
 
 This section describes how to handle incoming {push-notification}s in your foregrounded application.
 
-NOTE: {push-notification}s that arrive when the application is in the background are always handled by the OS.
+NOTE: Push notifications that arrive when the application is in the background are always handled by the OS.
 
 .Procedure
 
@@ -51,7 +51,18 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-The {SDK} for JavaScript does not provide a way to handle incoming messages. We recommend using the link:https://ionicframework.com/docs/native/push[Ionic Push plugin^].
+
+NOTE: You can only develop push applications using Ionic. Plain Cordova is not supported.
+
+. Install the plugin:
++
+[source,bash]
+----
+$ npm install --save @ionic-native/push
+----
+
+. Review the documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^] for details about using the plugin. 
+
 
 --
 // tag::excludeDownstream[]
