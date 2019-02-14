@@ -179,8 +179,8 @@ func application(_ application: UIApplication,
 ----
 
 --
-// end::excludeDownstream[]
 Cordova::
+// end::excludeDownstream[]
 +
 --
 

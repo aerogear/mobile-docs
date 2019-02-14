@@ -41,8 +41,8 @@ Move mobile-services.json to the following location in your application project:
 NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
 
 --
-// end::excludeDownstream[]
 Cordova::
+// end::excludeDownstream[]
 +
 --
 Move mobile-services.json to the following location in your application project:
