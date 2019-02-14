@@ -31,10 +31,9 @@ include::{partialsdir}/attributes.adoc[]
 
 ** xref:push-notifications.adoc[{unifiedpush-service}]
 *** xref:push-notifications.adoc#introduction[Introduction]
-*** xref:push-notifications.adoc#setup[Setting Up]
-*** xref:push-notifications.adoc#push-ui[Using the Push Admin UI]
-*** xref:push-notifications.adoc#sending[Sending a Notification]
-*** xref:push-notifications.adoc#handling[Handling a Notification]
+*** xref:push-notifications.adoc#setting-up-the-push-service[Setting Up]
+*** xref:push-notifications.adoc#sending-a-push-notification-push[Sending a Notification]
+*** xref:push-notifications.adoc#handling-push-notifications-push[Handling a Notification]
 
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#introduction[Introduction]

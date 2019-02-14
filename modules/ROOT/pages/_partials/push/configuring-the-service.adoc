@@ -1,26 +1,11 @@
-include::configuring-dev-env-push.adoc[leveloffset=1]
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-== Setting up {unifiedpush-service} service SDK
+[id='configuring-the-{context}']
+= Configuring the {unifiedpush-service} Service In A Local Development Environment
 
 This guide will help you to set up the {unifiedpush-service} service SDK in your App.
 
-=== Prerequisites
-
-[tabs]
-====
-// tag::excludeDownstream[]
-Android::
-+
---
-A link:https://firebase.google.com/[Firebase account^].
---
-iOS::
-+
---
-An link:https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1[APNs service^].
---
-// end::excludeDownstream[]
-====
+.Procedure
 
 === Importing the libraries
 
@@ -173,11 +158,11 @@ func application(_ application: UIApplication,
 ----
 
 --
-// end::excludeDownstream[]
+
 Cordova::
 +
 --
-
+// end::excludeDownstream[]
 *Using plain Cordova*
 
 [source,javascript]
@@ -194,7 +179,7 @@ const push = PushNotification.init({
 // Registration handler
 push.on('registration', data => {
     // PushRegistration is part of @aerogear/push
-    new PushRegistration(app.config).register(data.registrationId).then(() => {
+    new PushRegistration().register(data.registrationId).then(() => {
         // Registration with UPS successful, you can now send push notifications from the UPS UI
     }).catch(err => {
         // Error on device registration
@@ -218,7 +203,7 @@ const pushObject = new Push().init({
 });
 
 pushObject.on('registration').subscribe(data => {
-    new PushRegistration(app.config).register(data.registrationId).then(() => {
+    new PushRegistration().register(data.registrationId).then(() => {
         // Registration with UPS successful, you can now send push notifications from the UPS UI
     }).catch(err => {
         //Error on device registration

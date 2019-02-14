@@ -1,7 +1,0 @@
-
-
-= Provisioning {unifiedpush-service} Service
-
-include::../generic-provisioning.adoc[]
-
-include::../generic-provisioning-end.adoc[]
