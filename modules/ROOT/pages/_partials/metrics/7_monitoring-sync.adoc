@@ -8,8 +8,8 @@ you should be able to see the "Data Sync Metrics" in the list of available dashb
 
 .Prerequisites
 
-* You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
-* You have provisioned the xref:data-sync.adoc[{sync-service}] service.
+// * You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
+// * You have provisioned the xref:data-sync.adoc[{sync-service}] service.
 * The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
 
 .Procedure
