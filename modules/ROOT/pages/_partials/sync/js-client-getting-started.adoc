@@ -1,10 +1,10 @@
 = Getting Started
 
-This describes how to start using JavaScript library for creating mobile and web applications using {sync-service} provided by Voyager Server. 
+This section describes how to use the Voyager JavaScript client SDK to create mobile and web applications that can communicate with the Voyager server application. 
 
 .Prerequisites
 
-* Your local `mobile-services.json` file is up-to-date.
+* The Voyager server application is running either locally or on an OpenShift cluster
 
 .Procedure
 
@@ -17,7 +17,7 @@ $ npm install --save @aerogear/voyager-client
 
 == Importing the package
 
-[source,javascript]
+[source,typescript]
 ----
 import {
   createClient,
@@ -27,9 +27,9 @@ import {
 
 == Configuration
 
-To provide custom configuration to the client, the following options are available. If you wish, these are also available by using the `DataSyncConfig` interface from the SDK.
+An instance of `DataSyncConfig` can be used to configure the Voyager client. At a minimum, the `httpUrl` is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. The example beblow demostrates how to create a new instance of `DataSyncConfig`:
 
-[source,javascript]
+[source,typescript]
 ----
 
 let config: DataSyncConfig = {
@@ -38,9 +38,14 @@ let config: DataSyncConfig = {
 }
 ----
 
+// TODO: link to the API doc.
+For other configuration options, please check out the API docs for `DataSyncConfig`.
+
 == Creating a Client
 
-[source,javascript]
+[source,typescript]
 ----
 let client = createClient(config);
 ----
+
+//TODO: explain a bit more about the high level structure of the client SDK, and the packages provided by the SDK and what they are for.
