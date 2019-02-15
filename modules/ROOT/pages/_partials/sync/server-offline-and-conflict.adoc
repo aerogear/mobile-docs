@@ -9,11 +9,21 @@ A *conflict* occurs whenever two or more clients try to modify the same data in 
 
 In a GraphQL server, conflict detection and resolution happens exclusively in *mutations*.
 
-{sync-server} uses a concept of pluggable conflict resolution to allow developers to detect and handle conflicts regardless of the data storage.
+== Resolving Conflicts
+
+At a very high level, there is a typical flow to detecting and resolving conflicts.
+
+1. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation.
+2. *Read the Object* - The server reads the current object the client is trying to modify from the data source (usually a database).
+3. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there was a conflict. The developer can choose _how the comparison_ is done.
+4. *Conflict Resolution* - Conflict resolution can be deferred to the client or it can be done on the server. The developer can choose the resolution strategy.
+5. *Persist the Data* - Conflict Resolution on the server results in a new object which should be persisted.
+
+The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict resolution* to help developers with the *Conflict Detection* and *Conflict Resolution* steps.
 
 = Pluggable Conflict Resolution
 
-Pluggable conflict resolution is a concept that allows developers to define their own conflict resolution strategies regardless of the data storage.
+Pluggable conflict resolution is a concept that allows developers to define their own logic for *conflict detection* and *conflict resolution*, regardless of the data storage.
 
 The conflict detection and resolution is enabled by {sync-server}, while the fetching and storing of data is the responsibility of the developer.
 
@@ -111,16 +121,6 @@ greeting = conflictHandler.nextState(clientData)
 
 Conflicts can be resolved either on the client or the server. Depending on the strategy used, the resolver implementation will differ.
 Please see the chapter below for individual implementations.
-
-== Resolving Conflicts
-
-There is a typical flow to mutations that deal with conflicts.
-
-1. A client tries to modify / delete an object on the server using a GraphQL mutation.
-2. The server retrieves the current object the client is trying to modify from the data source, for example, the database.
-3. The server performs *conflict detection* by comparing the current object with the data sent by the client. This can be done with `VersionedObjectState` (recommended), `HashObjectState` or something custom.
-4. If a conflict is detected. *Conflict Resolution* happens. Conflict resolution can be done on the server (`resolveOnServer`) or on the client (`resolveOnClient`). If the conflict is resolved on the server, the resolved data should be persisted. If the conflict is going to be resolved on the client, no data persist is required.
-5. If no conflict is detected, the data sent by the client should be persisted to the data source.
 
 == Resolving
 
