@@ -1,3 +1,4 @@
+[#client-offline-support]
 = Offline support
 
 The Voyager client SDK provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the Voyager client SDK uses a mutation store to support offline mutations.

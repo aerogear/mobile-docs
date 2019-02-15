@@ -47,11 +47,11 @@ include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
 [#sync-js-client]
 == {sync-service} Javascript Client
 
-[#sync-js-client-getting-started]
-include::_partials/sync/js-client-getting-started.adoc[leveloffset=2]
-
 [#sync-js-basic-concepts]
 include::_partials/sync/js-sync-js-basic-concepts.adoc[leveloffset=2]
+
+[#sync-js-client-getting-started]
+include::_partials/sync/js-client-getting-started.adoc[leveloffset=2]
 
 [#sync-js-client-offline-and-conflict]
 include::_partials/sync/js-client-offline-and-conflict.adoc[leveloffset=2]
