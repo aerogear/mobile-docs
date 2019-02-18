@@ -21,21 +21,17 @@ paramater in the {sync-client} config object. A DataSyncConfig interface is also
 
 == Setting up a Client to use Subscriptions
 
-To set up a client to use subscriptions simply provide a wsUrl string in the config object. There is also
-a `DataSyncConfig` interface available to use. {sync-client} will automatically
-apply the necessary logic to handle websocket requests.
+To set up a client to use subscriptions simply provide a wsUrl string in the config object.
 
 ```
-const config: DataSyncConfig {
-    ...
+const config = {
     wsUrl: "ws://your_websocket_url"
-    ...
 }
 ```
 Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. Once this object is created, use it to initialise {sync-client} with:
 
 ```
-import { createClient } from '@aerogear/voyager-client';
+const { createClient } = require("@aerogear/voyager-client");
 
 const client = createClient(config)
 ```
@@ -119,7 +115,7 @@ An example of using the provided Cordova Network Status, which is an implementat
 This code should be used to re-run a query upon the client coming back to an online state.
 [source, javascript]
 ----
-    import { CordovaNetworkStatus, NetworkInfo } from '@aerogear/voyager-client';
+    const { CordovaNetworkStatus, NetworkInfo } = require("@aerogear/voyager-client");
     const networkStatus = new CordovaNetworkStatus();
     const tasks = []
 
