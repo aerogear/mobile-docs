@@ -201,7 +201,7 @@ function customResolutionStrategy (serverState, clientState) {
 
 This example takes string values from the server and the client records, merges them together and returns the newly resolved object. This example is a little contrived but it shows how any strategy could be implemented. 
 
-Use the custom strategy in your resolvers the same as the previous examples.
+Use the custom strategy in your resolvers the same way as the previous examples.
 
 [source, javascript]
 ----
@@ -218,13 +218,13 @@ The custom `ConflictResolutionStrategy` function can also be `async` or return a
 
 == Implementing Custom Conflict Mechanism
 
-The`ObjectState` interface is a complete conflict resolution implementation that provides a set of rules to detect and handle conflict. Interface will allow developers to handle conflict on the client or the server. `nextState` method is a way for interface to modify existing object before is being saved to the database.
+The `ObjectState` interface is a complete conflict resolution implementation that provides a set of rules to detect and handle conflict. Interface will allow developers to handle conflict on the client or the server. `nextState` method is a way for interface to modify existing object before is being saved to the database.
 For example when using `lastModified` field as a way to detect conflicts:
 
 [source,typescript]
 ----
- public nextState(currentObjectState: ObjectStateData) {
-    currentObjectState.lastModified = new Date()
-    return currentObjectState
-  }
+public nextState(currentObjectState: ObjectStateData) {
+  currentObjectState.lastModified = new Date()
+  return currentObjectState
+}
 ----
