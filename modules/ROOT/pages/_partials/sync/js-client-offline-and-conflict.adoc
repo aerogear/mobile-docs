@@ -21,8 +21,9 @@ Because of this, when mutations that can change query results are performed, the
 
 In the following example, the app will perform an `ADD_TASK` mutation which will create a new task. The app also has a `GET_TASKS` query to list all the tasks. In order to make sure the cache for the `GET_TASKS` query is kept up to date whenever a new task is created, the `update` option is used to add the newly created task to the cache:
 
+[source, javascript]
 ----
-  client.mutate<Task>({
+  client.mutate({
     mutation: ADD_TASK, variables: item,
     update: this.updateCacheOnAdd
   });
@@ -47,19 +48,11 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
 
 For more information, please check out link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
-// I don't really get what is section is for. Needs more context and code example
-// == Making Modifications When ffline
-
-// AeroGear Sync SDK provides queue that stores mutations performed when offline.
-// By default queue saves data in storage to be available after application restarts.
-// Queue will hold requests until application will come back online.
-
-// Developers can adjust how queue will process new mutations by supplying custom `NetworkStatus` implementation.
-
 === Online Only Queries
 
 To ensure certain queries are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used to annotate a query, as the example shown below:
 
+[source, graphql]
 ----
 exampleQuery(...) @onlineOnly {
   ...
@@ -87,6 +80,7 @@ let config = {
 
 To disable this feature at a mutation level, the `@noSqush` directive can be used to annotate mutations:
 
+[source, graphql]
 ----
 exampleMutation(...) @noSquash {
   ...
@@ -167,16 +161,15 @@ NOTE: Client strategy will be ignored when conflicts are resolved on the server.
 
 Developers can supply their own `conflictListener` implementation to get notifications about conflicts:
 
-[source,typescript]
+[source,javascript]
 ----
-class ConflictLogger implements ConflictListener {
-    console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
-  }
-}
-
 let config = {
 ...
-  conflictListener: new ConflictLogger()
+  conflictListener: {
+    conflictOccurred: function(operationName, resolvedData, server, client) {
+      console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
+    }
+  }
 ...
 }
 ----

@@ -1,16 +1,12 @@
-= Advanced topics
+= Advanced Topics
 
-== Implementing Custom Network Status checks
+== Network Status Checks
 
-To use your own custom network checks, implement the https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/NetworkStatus.ts[NetworkStatus]
- interface which provides two functions;
+The link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/NetworkStatus.ts[NetworkStatus] interface is used by the client SDK to determine if the client is online. Two default implementations are provided to support link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/WebNetworkStatus.ts[web browsers] and link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/CordovaNetworkStatus.ts[Cordova].
 
-[source,javascript]
-----
-  onStatusChangeListener(callback: NetworkStatusChangeCallback): void;
+If customization is required, implement the link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/NetworkStatus.ts[NetworkStatus] interface and pass it the config object via the `networkStatus` option when initialize the client.
 
-  isOffline(): boolean;
-----
+//TODO: link to API docs
 
 == Logging debug messages
 

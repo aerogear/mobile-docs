@@ -1,12 +1,13 @@
 = Introduction
 
-The {sync-service} Javascript client SDK is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features: 
+The {sync-client-sdk} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features: 
 
 * Offline query and mutation support
 * Conflict detection and resolution
+* Authentication and authorization support
 * Audit logging
 
-The client SDK can be used with all the major javascript frameworks that Apollo supports, please refer to their documentation for some of the basic concepts for each of the frameworks:
+Because the {sync-client-sdk} is an extension to Apollo, it works with all the frameworks that Apollo supports.
 
 For React:
 https://www.apollographql.com/docs/react/
@@ -22,14 +23,15 @@ In order to support offline use cases, the client SDK strongly leverages Apollo 
 
 To work with cache effectively, it is recommended that developers use the `cache-first` fetchPolicy when perform queries.
 
+[source, javascript]
 ----
-  return this.apollo.watchQuery<YourType>({
+  return this.apollo.watchQuery({
     query: YOUR_QUERY,
     fetchPolicy: 'cache-first',
   });
 ----
 
-Cache will be fueled by subscriptions, pooling or regular queries happening in UI. Please see <<#client-offline-support, Offline Support>> section for more details.
+The cache is populated by subscriptions, pooling or regular queries happening in UI. Please see <<#client-offline-support, Offline Support>> section for more details.
 
 == Required Field in GraphQL Types
 

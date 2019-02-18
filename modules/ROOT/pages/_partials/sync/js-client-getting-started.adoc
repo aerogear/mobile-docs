@@ -4,7 +4,7 @@ This section describes how to use the Voyager JavaScript client SDK to create mo
 
 .Prerequisites
 
-* The Voyager server application is running either locally or on an OpenShift cluster
+* The {sync-server} application is running either locally or on an OpenShift cluster
 
 .Procedure
 
@@ -15,9 +15,9 @@ This section describes how to use the Voyager JavaScript client SDK to create mo
 $ npm install --save @aerogear/voyager-client
 ----
 
-== Importing the package
-
-[source,typescript]
+. Importing the package
++
+[source,javascript]
 ----
 import {
   createClient,
@@ -25,25 +25,24 @@ import {
 } from '@aerogear/voyager-client';
 ----
 
-== Configuration
-
-An instance of `DataSyncConfig` can be used to configure the Voyager client. At a minimum, the `httpUrl` is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. The example beblow demostrates how to create a new instance of `DataSyncConfig`:
-
-[source,typescript]
+. Configuration
++
+To configure the Voyager client, a configuration object should be used. At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. For example:
++
+[source,javascript]
 ----
-
-let config: DataSyncConfig = {
+let config = {
   httpUrl: "http://localhost:4000/graphql",
   wsUrl: "ws://localhost:4000/graphql",
 }
 ----
-
++
 // TODO: link to the API doc.
-For other configuration options, please check out the API docs for `DataSyncConfig`.
+For other configuration options, please check out the API doc.
 
-== Creating a Client
-
-[source,typescript]
+. Creating a Client
++
+[source,javascript]
 ----
 let client = createClient(config);
 ----
