@@ -120,10 +120,11 @@ Please see the sections below for the individual implementations.
     conflictHandler.nextState(clientData)
 
     // 4. Persist the update to the database
-    const update = await context.db('tasks').update(clientData)
-      .where({
-        'id': clientData.id
-      }).returning('*').then((rows) => rows[0])
+    const update = await context.db('tasks')
+      .update(clientData)
+      .where('id', clientData.id)
+      .returning('*')
+      .then((rows) => rows[0])
 
     return update
   }
@@ -147,8 +148,8 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
 ----
  {
    updateTask: async (obj, clientData, context, info) => {
-     // 1. Read the Object from the database.
-     const task = await readFromDatabase(clientData.id)
+     // 1. Read the Object from the database. This example uses Knex https://knexjs.org/.
+     const task = wait context.db('tasks').select().where('id', clientData.id).then((rows) => rows[0])
 
      // 2. Conflict Detection using `VersionedObjectState`
      //    If the version number from the database does not match the one sent by the client
@@ -158,6 +159,14 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
        const { resolvedState, response } = conflictHandler.resolveOnServer(strategies.serverWins, task, clientData)
        // persist the resolved data to the database and then return the conflict response
        await persistToDatabase(resolvedState)
+       
+       // 4. Persist the update to the database
+       await context.db('tasks')
+         .update(clientData)
+         .where('id', clientData.id)
+         .returning('*')
+         .then((rows) => rows[0])
+
        return response
      }
 
@@ -166,7 +175,12 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
      conflictHandler.nextState(clientData)
 
      // 4. Persist the update to the database and return it to the client
-     await update = persistToDatabase(clientData)
+     const update = await context.db('tasks')
+       .update(clientData)
+       .where('id', clientData.id)
+       .returning('*')
+       .then((rows) => rows[0])
+
      return update
    }
  }
