@@ -1,6 +1,6 @@
 = Getting Started
 
-This section describes how to use the Voyager JavaScript client SDK to create mobile and web applications that can communicate with the Voyager server application. 
+This section describes how to use the {sync-client-sdk} to create mobile and web applications that can communicate with the Voyager server application. 
 
 .Prerequisites
 
@@ -27,7 +27,7 @@ import {
 
 . Configuration
 +
-To configure the Voyager client, a configuration object should be used. At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. For example:
+To configure the client, a configuration object should be used. At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. For example:
 +
 [source,javascript]
 ----

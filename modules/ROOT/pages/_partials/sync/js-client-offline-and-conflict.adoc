@@ -1,7 +1,7 @@
 [#client-offline-support]
 = Offline support
 
-The Voyager client SDK provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the Voyager client SDK uses a mutation store to support offline mutations.
+The {sync-client-sdk} provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the {sync-client-sdk} uses a mutation store to support offline mutations.
 
 image::datasync-features.png[]
 
@@ -87,6 +87,7 @@ exampleMutation(...) @noSquash {
 }
 ----
 
+[#sync-client-offline-queue-listener]
 == Listening for Events
 
 In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events will be emitted:
@@ -95,6 +96,8 @@ In order to get notification about offline related events, the `offlineQueueList
 * `onOperationSuccess` - Called when back online and operation succeeds
 * `onOperationFailure` - Called when back online and operation fails with GraphQL error
 * `queueCleared` - Called when offline operation queue is cleared
+
+This listener can be used to build UIs that can show pending changes.
 
 //TODO: code example
 
