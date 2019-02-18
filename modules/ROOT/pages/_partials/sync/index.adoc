@@ -8,9 +8,16 @@
 [id='{context}']
 = {sync-service}
 
-== Introduction
 
-include::../generic-service-intros.adoc[tags=sync-service]
+Unlike other AeroGear mobile services which provide a server and an API, Data Sync is a library that is used to develop services. Typically, you develop a {sync-service} service as follows:
+
+* Design a link:https://graphql.org/learn[GraphQL] schema
+* Develop a server side service and mobile application
+* Containerize your server and deploy it to OpenShift as a Data Sync App
+* Bind your mobile app to that data sync server app
+* Configure your mobile app to point to the data sync server app
+* Build and run your mobile app
+
 
 include::./ref_terminology.adoc[leveloffset=+2]
 

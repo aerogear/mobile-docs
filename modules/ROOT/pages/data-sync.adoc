@@ -2,8 +2,6 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-:toc:
-
 include::_partials/sync/index.adoc[leveloffset=0]
 [[setup]]
 
@@ -35,11 +33,12 @@ include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
 [#sync-server-openshift]
 == Running {sync-service} on OpenShift
 
-[#sync-server-getting-started-overview]
-include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
+[#sync-server-getting-started-openshift]
+include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
 
-[#building-sync-container]
-include::_partials/sync/provisioning.adoc[leveloffset=2]
+[#sync-server-getting-started-mdc-client]
+include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
+
 
 [#sync-server-binding-keycloak]
 include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]

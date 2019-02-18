@@ -1,50 +1,59 @@
-= Getting Started
+= Prerequisites
+* [x] You have Node.js and npm installed.
+* [x] You have created an empty web project that supports ES6.  The link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
+* [x] You have completed the server getting started guide and the application is running.
 
 This section describes how to use the {sync-client} to create mobile and web applications that can communicate with the Voyager server application. 
 
-.Prerequisites
+Data Sync provides JavaScript libraries which integrate your javascript app using AeroGear mobile services with a server that also uses Data Sync.  The client libraries are based on the link:https://www.apollographql.com/docs/react/api/apollo-client.html[Apollo client].
 
-* The {sync-server} application is running either locally or on an OpenShift cluster
+== Hello World Sync
 
-.Procedure
+Connecting our client to the server "Hello World" example. You will add the libraries to your mobile project, configure the client classes, connect to the server, and confirm that it works.
 
-. Install required NPM packages
-+
+.Add our libraries to your javascript client,
 [source,bash]
 ----
-$ npm install --save @aerogear/voyager-client
+npm install @aerogear/voyager-client
 ----
 
-. Importing the package
-+
-[source,javascript]
-----
-import {
-  createClient,
-  strategies
-} from '@aerogear/voyager-client';
-----
+Below is a simple code example to connect to and query our {sync-server}.  To configure the client, a configuration object should be used. At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. 
 
-. Configuration
-+
-To configure the client, a configuration object should be used. At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. If the client app uses subscription as well, then the `wsUrl` field is required too. For example:
-+
+Core to connect to and query our server application would look like the following: 
+
+.src/index.js
 [source,javascript]
 ----
+// gql is a utility function that handles gql queries
+import gql from 'graphql-tag';
+
+// createClient configures the Data Sync client based on options you provide
+import {createClient} from '@aerogear/voyager-client';
+
+// For our client application, we will connect to the local service.
 let config = {
   httpUrl: "http://localhost:4000/graphql",
   wsUrl: "ws://localhost:4000/graphql",
 }
-----
-+
-// TODO: link to the API doc.
-For other configuration options, please check out the API doc.
 
-. Creating a Client
-+
-[source,javascript]
-----
-let client = createClient(config);
+async function helloWorld() {
+  
+  // Actually create the client
+  let client = await createClient(config);
+
+  // Execute the hello query
+  client.query({
+      fetchPolicy: 'network-only',
+      query: gql`{hello}`
+    })
+    //Print the response of the query
+    .then( ({data}) => {
+      console.log(data.hello)
+    }); 
+}
+
+helloWorld();
 ----
 
-//TODO: explain a bit more about the high level structure of the client SDK, and the packages provided by the SDK and what they are for.
+You can build and run this code in your project.  You should see "Hello world" in your JavaScript console.  At this point your server and your client are able to talk to each other.
+
