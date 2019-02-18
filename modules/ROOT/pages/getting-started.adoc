@@ -29,15 +29,6 @@ This guide shows you how to:
 * Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
 * Run the showcase app and make calls to the {keycloak-service} service.
 
-// start installing-mobile-services.adoc[leveloffset=1]
-include::_partials/installing-mobile-services.adoc[leveloffset=1]
-// end installing-mobile-services.adoc[leveloffset=1]
-
-[[provision-mdc]]
-// start {partialsdir}/provision-mdc.adoc[]
-include::_partials/provision-mdc.adoc[]
-// end {partialsdir}/provision-mdc.adoc[]
-
 [[registering]]
 // start registering-a-mobile-app.adoc[leveloffset=1]
 include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
