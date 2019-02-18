@@ -27,7 +27,7 @@ The {keycloak-service} service allows you to add authentication and authorizatio
 * Easily implement SSO, multi-factor authentication and Social Login support
 * Back-end support for identity brokering and user federation
 
-include::_partials/keycloak/idm_glossary.adoc[leveloffset=+2]
+include::_partials/keycloak/idm_glossary.adoc[leveloffset=+1]
 
 .Prerequisites
 
