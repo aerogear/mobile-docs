@@ -1,14 +1,18 @@
 include::{partialsdir}/attributes.adoc[]
 
+
 * xref:getting-started.adoc[Getting Started]
 ** xref:getting-started.adoc#introduction[Introduction]
-** xref:getting-started.adoc#setting-up-aerogear-mobile-services-on-openshift[Setting Up]
-** xref:getting-started.adoc#provision-mdc[Provisioning Mobile Developer Console]
-** xref:getting-started.adoc#registering[Registering a Mobile App]
-** xref:getting-started.adoc#provisioning[Provisioning a Service]
-** xref:getting-started.adoc#binding[Binding Services]
-** xref:getting-started.adoc#setting-up-your-local-development-environment[Setting Up Development Environment]
-** xref:getting-started.adoc#running[Running a Mobile App]
+** xref:getting-started-installing.adoc[Installing]
+*** xref:getting-started-installing.adoc#setting-up-aerogear-mobile-services-on-openshift[Setting Up]
+*** xref:getting-started-installing.adoc#provision-mdc[Provisioning Mobile Developer Console]
+** xref:getting-started-configuring.adoc[Configuring]
+*** xref:getting-started-configuring.adoc#registering[Registering a Mobile App]
+*** xref:getting-started-configuring.adoc#provisioning[Provisioning a Service]
+*** xref:getting-started-configuring.adoc#binding[Binding Services]
+** xref:getting-started-running.adoc[Developing and Running]
+*** xref:getting-started-running.adoc#setting-up-your-local-development-environment[Setting Up Development Environment]
+*** xref:getting-started-running.adoc#running[Running a Mobile App]
 
 
 * xref:mobile-developer-console.adoc[Mobile Developer Console]

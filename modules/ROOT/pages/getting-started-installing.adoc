@@ -1,5 +1,7 @@
+include::{partialsdir}/attributes.adoc[]
+
 // start installing-mobile-services.adoc[leveloffset=1]
-include::_partials/installing-mobile-services.adoc[leveloffset=1]
+include::_partials/installing-mobile-services.adoc[leveloffset=0]
 // end installing-mobile-services.adoc[leveloffset=1]
 
 [[provision-mdc]]
