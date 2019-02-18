@@ -33,7 +33,6 @@ Move mobile-services.json to the following location in your application project:
 iOS::
 +
 --
-Move mobile-services.json to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
@@ -44,7 +43,6 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Move mobile-services.json to the following location in your application project:
 
 `src/mobile-services.json`
 // tag::excludeDownstream[]
