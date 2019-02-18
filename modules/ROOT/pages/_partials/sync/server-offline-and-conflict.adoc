@@ -9,7 +9,7 @@ A *conflict* occurs whenever two or more clients try to modify the same data in 
 
 In a GraphQL server, conflict detection and resolution happens exclusively in *mutations*.
 
-= Resolving Conflicts
+== Resolving Conflicts
 
 At a very high level, there is a typical flow to detecting and resolving conflicts.
 
@@ -21,7 +21,7 @@ At a very high level, there is a typical flow to detecting and resolving conflic
 
 The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict resolution* to help developers with the *Conflict Detection* and *Conflict Resolution* steps.
 
-= Pluggable Conflict Resolution
+== Pluggable Conflict Resolution
 
 Pluggable conflict resolution is a concept that allows developers to define their own logic for *conflict detection* and *conflict resolution*, regardless of the data storage.
 
@@ -33,12 +33,12 @@ Pluggable conflict resolution supports the following implementations:
 
 Implementations are based on the `ObjectState` interface that can be extended to provide custom implementation for conflict detection.
 
-= Prerequisites
+== Prerequisites
 
 * GraphQL server with resolvers.
 * Database or any other form of data storage that can cause data conflicts.
 
-= Version Based Conflict Resolution
+== Version Based Conflict Resolution
 
 Version based conflict resolution is the recommended and simplest approach for conflict detection and resolution.
 The core idea is that every object has a `version` property with an integer value. For example:
@@ -64,7 +64,7 @@ The server updates the version, persists the changes and sends back the new obje
 
 A *conflict* occurs when the version number sent by the client does not match the version stored in the server. This means a different client already updated the object.
 
-= Using Version Based Conflict Resolution
+== Using Version Based Conflict Resolution
 
 1. Import the link:https://npmjs.com/package/@aerogear/voyager-conflicts[@aerogear/voyager-conflicts] package.
 
@@ -97,7 +97,7 @@ type Mutation {
 Conflicts can be resolved either on the client or the server. Depending on the strategy used, the resolver implementation will differ.
 Please see the sections below for the individual implementations.
 
-= Resolving Conflicts on the Client
+== Resolving Conflicts on the Client
 
 [source,javascript]
 ----
@@ -135,7 +135,7 @@ In the example above, `conflictHandler.resolveOnClient` is used when a conflict 
 
 Since the conflict will be resolved on the client, it is not required to persist the data. However, if there is no conflict, the data sent by the client should be persisted.
 
-= Resolving Conflicts on the Server
+== Resolving Conflicts on the Server
 
 `conflictHandler.resolveOnServer` is used to resolve conflicts on the server side. `resolveOnServer` accepts a `ConfictResolutionStrategy` function as its first argument. The example below uses one of the default conflict resolution strategies from the `@aerogear/voyager-conflicts` module.
 
