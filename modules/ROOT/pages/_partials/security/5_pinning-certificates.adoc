@@ -1,5 +1,6 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-
+[id='certificate-pinning-{context}']
 = Certificate Pinning in Android Devices
 
 link:https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning[Certificate pinning^] can be enabled in individual SDKs through the `mobile-services.json` file.
@@ -36,11 +37,13 @@ allow these to be included use the `--insecure-skip-tls-verify` flag.
 $ ./mobile get clientconfig <client name> --include-cert-pins --insecure-skip-tls-verify
 ----
 
+[discrete]
 === Using Pinning Configuration
 
 If the `https` section is included in the `mobile-services.json` file then certificate pinning will
 automatically be enabled for mobile services.
 
+[discrete]
 === Considerations
 
 If the certificate authority of a service changes then the `mobile-services.json` file will need to

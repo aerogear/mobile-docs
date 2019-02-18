@@ -8,7 +8,7 @@ include::_partials/attributes.adoc[]
 
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-:context: push
+:context: security
 ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
@@ -30,15 +30,11 @@ NOTE: Device Security is not currently associated with an OpenShift service, so 
 include::_partials/security/ref_terminology.adoc[leveloffset=+2]
 
 [[setting-up-the-push-service]]
-== Setting Up the {device-security-service} Mobile Service
-include::_partials/security/1_downloading-configuration-file.adoc[leveloffset=+2]
+== Configuring your Development Environment for the {device-security-service} Service
+include::_partials/security/1_downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/security/2_configuring-the-service.adoc[leveloffset=+2]
-include::_partials/security/4_performing-device-checks.adoc[leveloffset=+2]
-
-== Certificate Pinning in Android Devices
-include::_partials/security/5_pinning-certificates.adoc[leveloffset=+2]
-
-
+include::_partials/security/4_performing-device-checks.adoc[leveloffset=+1]
+include::_partials/security/5_pinning-certificates.adoc[leveloffset=+1]
 
 == Additional resources
 

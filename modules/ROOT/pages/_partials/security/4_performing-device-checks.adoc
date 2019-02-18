@@ -381,6 +381,7 @@ DeviceCheckResult result = securityService.Check(DeviceChecks.ENCRYPTION_ENABLED
 
 Device Checks can be run in group, both synchronously and asynchronously.
 
+[discrete]
 === Synchronously
 
 [tabs]
@@ -454,6 +455,7 @@ Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
 // end::excludeDownstream[]
 ====
 
+[discrete]
 === Asynchronously
 
 [tabs]
@@ -515,6 +517,7 @@ Executing multiple checks asynchronously is not supported at the moment for this
 
 == Additional Resources
 
+[discrete]
 === Adding Custom Device Checks
 
 Besides the xref:glossary.adoc#ref_terminology_Device Security_ref_terminology[Provided Device Checks] it's also possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
@@ -654,6 +657,7 @@ DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
 // end::excludeDownstream[]
 ====
 
+[discrete]
 === Reporting Device Checks Results Via the Metrics Service
 
 In order to report the results of Device Checks utilize this service in conjunction with the xref:mobile-metrics.adoc[Mobile Metrics] service.
