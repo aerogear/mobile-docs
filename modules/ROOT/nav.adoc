@@ -65,6 +65,8 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:data-sync.adoc#auth[Authentication for {sync-service} Service]
 *** xref:data-sync.adoc#authorization[Authorization for {sync-service} Service]
 
+** xref:security.adoc[NEW {device-security-service}]
+
 ** xref:device-security.adoc[{device-security-service}]
 *** xref:device-security.adoc#introduction[Introduction]
 *** xref:device-security.adoc#setup[Setting Up]
