@@ -1,3 +1,4 @@
+[#sync-server-audit-logs]
 = Audit Logs
 
 Audit logging is a mechanism to track all of the actions that occur inside your application. Audit Logging in {sync-server} provides two main benefits.
@@ -93,7 +94,7 @@ An audit log example message is shown below.
 
 The `clientInfo` property of the audit log message is available only if the client is sending the client information to {sync-server}. That has to be enabled separately in the client. Additionally, data in that property can only be collected if the app is a Cordova app or a native app. Simple web clients cannot get the device, client nor app details and cannot send this information.
 
-The `userInfo` property is available only if {sync-server} is protected by an identity manager, such as {idm-name}, and if the user is authenticated. See xref:./server-auth.adoc[Authentication and Authorization using Keycloak].
+The `userInfo` property is available only if {sync-server} is protected by an identity manager, such as {idm-name}, and if the user is authenticated. See <<#sync-server-auth, Authentication and Authorization using Keycloak>>.
 
 = Enabling Audit Logging in Voyager Server
 
@@ -118,30 +119,9 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 
 The link:https://github.com/aerogear/voyager-server/blob/master/examples/auditLogging[Audit Logging Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
 
-= Sending Device Information in Voyager Clients
+= Sending Device Information in {sync-client}
 
-To send device information from your client application to {sync-server}:
-
-1. The Cordova plugin `cordova-plugin-aerogear-metrics` has to be installed so that the device, client and app information can be collected.
-
-[source,bash]
-----
-cordova plugin add cordova-plugin-aerogear-metrics
-----
-
-2. Set `auditLogging` to true when creating a client instance.
- 
-[source,javascript]
-----
-import { createClient } from '@aerogear/datasync-js';
-
-// ...
-
-return await createClient({
-  httpUrl: "http://path/to/graphql/endpoint",
-  auditLogging: true
-});
-----
+Please see <<#sync-clien-audit-logs, {sync-client} Audit Logs>> section for more details.
 
 
 = Exploring Audit Logs

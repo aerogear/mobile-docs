@@ -1,6 +1,6 @@
 = Getting Started
 
-This section describes how to use the {sync-client-sdk} to create mobile and web applications that can communicate with the Voyager server application. 
+This section describes how to use the {sync-client} to create mobile and web applications that can communicate with the Voyager server application. 
 
 .Prerequisites
 

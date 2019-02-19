@@ -34,7 +34,7 @@ let config = {
 
 == Logging Debug Messages
 
-The {sync-client-sdk} uses the link:https://www.npmjs.com/package/debug[debug module] to log debug messages.
+The {sync-client} uses the link:https://www.npmjs.com/package/debug[debug module] to log debug messages.
 
 To enable debug logs please execute the following code in a browser's console:
 `localStorage.debug = 'AeroGearSync:*'`.
@@ -44,7 +44,7 @@ Certain features can be enabled separately:
 
 == Optimistic UI
 
-By default mutations are not applied to the UI until responses are received from the server. To provide better user experience, an application may want to update the UI immediately. link:https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-mutation-options-optimisticResponse[Optimistic response] is an easy way to achieve this goal, and {sync-client-sdk} provides a helper method to work with optimistic responses:
+By default mutations are not applied to the UI until responses are received from the server. To provide better user experience, an application may want to update the UI immediately. link:https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-mutation-options-optimisticResponse[Optimistic response] is an easy way to achieve this goal, and {sync-client} provides a helper method to work with optimistic responses:
 
 [source, javascript]
 ----

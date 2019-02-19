@@ -1,13 +1,13 @@
 = Introduction
 
-The {sync-client-sdk} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features: 
+The {sync-client} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features: 
 
 * Offline query and mutation support
 * Conflict detection and resolution
 * Authentication and authorization support
 * Audit logging
 
-Because the {sync-client-sdk} is an extension to Apollo, it works with all the frameworks that Apollo supports.
+Because the {sync-client} is an extension to Apollo, it works with all the frameworks that Apollo supports.
 
 For React:
 https://www.apollographql.com/docs/react/
