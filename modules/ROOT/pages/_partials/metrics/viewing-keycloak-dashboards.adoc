@@ -1,6 +1,6 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-[id='monitoring-keycloak-{context}']
+[id='viewing-dashboards-{context}']
 = Viewing {metrics-service} Service Dashboards
 
 The {metrics-service} Service gathers metrics data from mobile services and uses link:https://grafana.com/[Grafana^] to display that data.
@@ -21,14 +21,17 @@ Also, when you configure your {mobile-client} to use metrics, you can see the me
 
 .Procedure
 
+. Navigate to Grafana.
 . link:http://docs.grafana.org/[Create dashboards using *Drag and Drop* in Grafana^]
 
 == Importing Dashboards
 
 .Procedure
 
+. Navigate to Grafana.
 . link:http://docs.grafana.org/[Import and export Grafana dashboards using that JSON dsefinition^]
 
+[discrete]
 == Related Information
 
 * See the Grafana http://docs.grafana.org/guides/getting_started/[Getting Started^] guide for an introduction to dashboards.
@@ -36,6 +39,7 @@ Also, when you configure your {mobile-client} to use metrics, you can see the me
 === Modifying custom dashboards
 
 You can create and modify custom dashboards to:
+
 * visualize metrics from apps and back-end services that are not mobile services
 * monitor additional metrics from mobile services that are not displayed by default
 * monitor additional metrics from OpenShift that are not displayed by default

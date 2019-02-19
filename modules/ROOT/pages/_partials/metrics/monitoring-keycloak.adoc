@@ -1,6 +1,6 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-[id='monitoring-with-metrics-{context}']
+[id='monitoring-idm-with-{context}']
 = Monitoring the {keycloak-service} Service
 
 After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
@@ -12,8 +12,7 @@ you should be able to see the "{idm-name} Metrics" in the list of available dash
 
 .Procedure
 
-. Navigate to Grafana's exposed URL.
-. Select Log in -> Home.
+. Navigate to Grafana.
 . Select *{idm-name} Metrics*.
 
 [discrete]
@@ -30,7 +29,7 @@ events, such as the number of registered users, memory usage etc.
 
 Below you will find a detailed description of each panel and its values.
 
-=== Singlestat Panels
+.Singlestat Panels
 
 Singlestat panels show you the main summary of a single data series.
 
@@ -42,7 +41,7 @@ Singlestat panels show you the main summary of a single data series.
 
 * *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
 
-=== Graph panels
+.Graph panels
 
 Used to show how certain values change over time, e.g. the number of successful logins.
 
@@ -56,7 +55,7 @@ Used to show how certain values change over time, e.g. the number of successful 
 ** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
 ** *Max*: The maximum amount of memory that can be used for memory management
 
-=== Pie Charts
+.Pie Charts
 
 Used to show the distribution of data, e.g. the number of logins per identity provider.
 

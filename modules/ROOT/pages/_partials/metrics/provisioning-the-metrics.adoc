@@ -7,7 +7,6 @@ This section describes how to set up the {metrics-service} Mobile Service.
 
 .Prerequisites
 
-* You understand metrics, and have a mobile app you want to protect.
 * You have logged into the OpenShift console and the {mobile-developer-console}.
 
 .Procedure
@@ -25,9 +24,7 @@ image::catalog-mobile-services.png[]
 +
 NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
 +
-When provisioning an {metrics-service} service, you are prompted to set the following configuration:
-+
-When provisioning a {service-name} Service, you are prompted to set the following:
+When provisioning the service, you are prompted to set the following:
 +
 .Configuration
 [options="header"]
@@ -42,7 +39,7 @@ When provisioning a {service-name} Service, you are prompted to set the followin
 +
 [NOTE]
 ====
-If the Postgres password was generated, retrieve the password using:
+If you choose to generate the Postgres password, you can later retrieve the password using:
 [source,bash]
 ----
 $ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD

@@ -1,6 +1,6 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-[id='monitoring-with-sync-{context}']
+[id='monitoring-sync-with-{context}']
 = Monitoring the {sync-service} Service
 
 After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
@@ -14,7 +14,7 @@ you should be able to see the "Data Sync Metrics" in the list of available dashb
 
 .Procedure
 
-. Navigate to Grafana's exposed URL.
+. Navigate to Grafana.
 . Select Log in -> Home.
 . Select *Data Sync Metrics*.
 
@@ -25,14 +25,14 @@ you should be able to see the "Data Sync Metrics" in the list of available dashb
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
 * link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]
 
-== Dashboard panel descriptions
+=== Dashboard panel descriptions
 
 The Data Sync dashboard consists of several panels which give you an overview of the specific
 events and resources, such as memory usage, CPU usage, resolved operation count etc.
 
 Below you will find a detailed description of each panel and its values.
 
-=== Singlestat Panels
+.Singlestat Panels
 
 Singlestat panels show you the main summary of a single data series.
 
@@ -40,7 +40,7 @@ Singlestat panels show you the main summary of a single data series.
 
 * *Memory Usage*: The amount of memory currently used by the {sync-service} Service
 
-=== Graph panels
+.Graph panels
 
 Used to show how certain values change over time, e.g. the number of operations resolved.
 

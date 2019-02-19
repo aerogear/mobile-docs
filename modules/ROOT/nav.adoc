@@ -37,15 +37,13 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push-notifications.adoc#handling[Handling a Notification]
 
 
-** xref:metrics.adoc[NEW {metrics-service}]
-
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#introduction[Introduction]
-*** xref:mobile-metrics.adoc#setup[Setting Up]
-*** xref:mobile-metrics.adoc#app[App and Device]
-*** xref:mobile-metrics.adoc#identity[Identity Management]
-*** xref:mobile-metrics.adoc#sync[Monitoring Data Sync Service]
-*** xref:mobile-metrics.adoc#using-dashboards[Using Dashboards]
+*** xref:mobile-metrics.adoc#setting-up-the-metrics-service[Setting Up]
+*** xref:mobile-metrics.adoc#analysing-app-usage-metrics[App and Device]
+*** xref:mobile-metrics.adoc#monitoring-idm-with-metrics[Monitoring IDM Service]
+*** xref:mobile-metrics.adoc#monitoring-sync-with-metrics[Monitoring Data Sync Service]
+*** xref:mobile-metrics.adoc#viewing-dashboards-metrics[Using Dashboards]
 
 ** xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
 *** xref:mobile-cicd.adoc#introduction[Introduction]
