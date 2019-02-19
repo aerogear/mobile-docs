@@ -1,7 +1,6 @@
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_terminology_{device-security-service}
 
-[id='ref_terminology-{context}']
+[id='security-terminology-{context}']
 = {device-security-service} Terminology
 
 This section describes terminology that is associated with {device-security-service}.
