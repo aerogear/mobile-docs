@@ -33,7 +33,7 @@ include::_partials/security/ref_terminology.adoc[leveloffset=+2]
 == Configuring your Development Environment for the {device-security-service} Service
 include::_partials/security/1_downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/security/2_configuring-the-service.adoc[leveloffset=+2]
-include::_partials/security/3_downloading-configuration-file.adoc[leveloffset=+2]
+include::_partials/security/3_setting-up-the-security-sdk.adoc[leveloffset=+2]
 include::_partials/security/4_performing-device-checks.adoc[leveloffset=+1]
 include::_partials/security/5_pinning-certificates.adoc[leveloffset=+1]
 
