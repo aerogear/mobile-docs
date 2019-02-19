@@ -1,3 +1,4 @@
+[#sync-server-auth]
 = Authentication and Authorization using Keycloak
 
 Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/voyager-keycloak[@aerogear/voyager-keycloak] module, it is possible to add security to a {sync-server} application. `@aerogear/voyager-keycloak` provides the following features out of the box.

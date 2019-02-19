@@ -1,47 +1,58 @@
+[#client-offline-support]
 = Offline support
 
-SDK provides first class support for performing GraphQL operations while offline.
-Queries and mutations are hold in queue that is being configured to hold requests when client goes offline.
-When client goes offline for long periods of time clients will be able still negotiate local updates with the server state thanks to powerful conflict resolution strategies.
+The {sync-client} provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the {sync-client} uses a mutation store to support offline mutations.
 
-image::./images/datasync-features.png[]
+image::datasync-features.png[]
 
-Client offers comprehensive set of features to perform data operations when offline.
-Thanks to offline mutation store users can stage their changes to be replicated back
-to server when becoming online:
+The mutation store is effectively a persisted queue, and it is used to hold query and mutation requests when the client is offline. If a client goes offline for a long period of time, it will be able to negotiate local updates with the server using conflict resolution strategies.
 
-image::./images/datasync-going_offline.png[]
+When a client becomes online from the offline state, the mutations that are persisted locally will be replicated back to the server, as shown in the diagram below:
 
-Please follow chapters bellow for more information.
+image::datasync-going_offline.png[]
 
-== Querying local cache
+Developers can attach listeners to get notification about if a update is applied on the server or not, and take appropriate actions.
 
-By default client will save all performed query results in the cache.
-Data will be available to be used when application goes offline.
-Queries are cached out of the box based on the type and `id` field.
-When performing mutations that affects some queries users can use `refetchQueries` or `update` methods:
+== Mutations and Local Cache
 
+By default queries are cached based on the type and `id` field, and the results of performed queries are cached as well and they will be available when the client is offline.
+
+Because of this, when mutations that can change query results are performed, the `refetchQueries` or `update` options of the `mutate` method should be used to ensure the local cache is kept up to date.
+
+In the following example, the app will perform an `ADD_TASK` mutation which will create a new task. The app also has a `GET_TASKS` query to list all the tasks. In order to make sure the cache for the `GET_TASKS` query is kept up to date whenever a new task is created, the `update` option is used to add the newly created task to the cache:
+
+[source, javascript]
 ----
-    client.mutate<Task>({
-      mutation: ADD_TASK, variables: item,
-      optimisticResponse: createOptimisticResponse('createTask', 'Task', item),
-      update: this.updateCacheOnAdd
+  client.mutate({
+    mutation: ADD_TASK, variables: item,
+    update: this.updateCacheOnAdd
+  });
+
+  updateCacheOnAdd(cache, { data: { createTask } }) {
+    let { allTasks } = cache.readQuery({ query: GET_TASKS });
+    if (allTasks) {
+      if (!allTasks.find((task) => task.id === createTask.id)) {
+        allTasks.push(createTask);
+      }
+    } else {
+      allTasks = [createTask];
+    }
+    cache.writeQuery({
+      query: GET_TASKS,
+      data: {
+        'allTasks': allTasks
+      }
     });
+  }
 ----
 
-== Making modifications when offline
-
-AeroGear Sync SDK provides queue that stores mutations performed when offline.
-By default queue saves data in storage to be available after application restarts.
-Queue will hold requests until application will come back online.
-
-Developers can adjust how queue will process new mutations by supplying custom `NetworkStatus` implementation.
+For more information, please check out link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
 === Online Only Queries
 
-To ensure certain queries are not queued and are always delivered to the network layer, you must make use of Graphql directives.
-To do so on your client, ensure the query has the annotation attached like so:
+To ensure certain queries are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used to annotate a query, as the example shown below:
 
+[source, graphql]
 ----
 exampleQuery(...) @onlineOnly {
   ...
@@ -50,11 +61,11 @@ exampleQuery(...) @onlineOnly {
 
 === Squashing Mutations
 
-Multiple changes performed on the same object ID and with the same mutation will automatically be joined by the AeroGear Sync SDK when your client is offline. This is beneficial as the client will not have to queue a large amount of mutations to replay once it returns online.
+By default, multiple changes performed on the same object ID and with the same mutation will be automatically merged when the client is offline. The advantages of this approach are it can reduce the number of mutations that need to be stored, and reduce the number of replays when the client is online again. If this behavior is not desired, it can be turned off at different levels.
 
 ==== Global Squashing
 
-This feature is on by default at a global level. To disable it on a global level simply do so in your config:
+This feature is on by default at a global level, it can be turned off in the config using the `mergeOfflineMutations` option.
 
 [source,javascript]
 ----
@@ -67,130 +78,101 @@ let config = {
 
 ==== Mutation Level Squashing
 
-To disable this feature at a mutation level be sure to include the annotation on the mutation like so:
+To disable this feature at a mutation level, the `@noSqush` directive can be used to annotate mutations:
 
+[source, graphql]
 ----
 exampleMutation(...) @noSquash {
   ...
 }
 ----
 
+[#sync-client-offline-queue-listener]
 == Listening for Events
 
-It is possible to provide `offlineQueueListener` in config to be notified about offline related events:
+In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events will be emitted:
 
 * `onOperationEnqueued` - Called when new operation is being added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
 * `onOperationFailure` - Called when back online and operation fails with GraphQL error
 * `queueCleared` - Called when offline operation queue is cleared
 
+This listener can be used to build UIs that can show pending changes.
+
+//TODO: code example
+
 == Conflicts
 
-When obtaining copy of the server side data, client data can get out of the sync.
-Edits that happened on the client data need to be replicated back to server.
-When replicating local changes to server it may happen that local changes no longer reflect the server state.
-This situations are often called "Data Conflicts" or "Data Collisions"
+A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
 
-Voyager client offers way to detect and handle conflicts for any GraphQL type by supplying
-`ConflictLink` implementation to client.
-When collision is detected it can be handled on both server or client.
+*Conflict resolution* is how the application detects and resolves the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
 
-See Voyager Server documentation for information about writing conflicts for the server.
+The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, please refer to <<#sync-server-offline-and-conflict, Voyager server document>>.
 
-=== Working with pluggable conflict implementations
+If conflicts need to be handled on client side, developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism.
 
-Plugable conflict resolution allows developers to define way to determine how conflicts are detected and handled.
-Conflict resolution can be fully controlled by server side implementation.
-If users chose to resolve conflicts in the client they need to configure their resolvers first return conflict back to client.
-Client will resolve them automatically basing on current strategy and notify listeners if developer supplied any.
+=== Pluggable Conflict Resolution
 
-Conflict resolution will work out of the box with recommended defaults and do not require any specific handling on the client.
+Pluggable conflict resolution is a concept that allows developers to implement their own conflict detection and resolution logic regardless of the data storage.
 
-____
-Advanced users may customize conflict implementation by supplying custom `conflictStateProvider` in config.
-____
+It has two parts: one for detecting conflicts, and the other for resolving conflicts. 
 
-=== Default conflict implementation
+To detect conflicts, developers can use either the default version-based conflict detection mechanism, or provide their own implementation via the `conflictStateProvider` option in the config object that is used to initialize the sync client.
 
-By default plugable conflict resolution is configured to rely on `version` field on each
-GraphQL type.
-For example:
+To resolve conflicts, developers can either use the default conflict resolution strategy, or provide their own ones via the `conflictResolutionStrategy` option in the config object.
 
-`
-type User {
-  id: ID!
-  version: String!
-  name: String!
-}
-`
+//TODO: link to API doc
 
-Version field is going to be controlled on the server and will map last version
-that was sent from server. All operations on version field happen automatically
-however users need to make sure that version field is always being passed to server
-for mutations that supports conflict resolution:
+=== Version Based Conflict Detection
 
-----
-type Mutation {
-  updateUser(id: ID!, version: String!): User
-}
-----
+For more details about how it works, please check the <<#server-version-based-conflict-resolution, Voyager server document>>.
 
-Alternatively developers can create input element that can be reused in every mutation
-that supports conflict resolution
+On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
 
-----
-type Mutation {
-  updateUser(user: UserInput): User
-}
-----
+//TODO: code example
 
-=== Conflict resolution strategies
+=== Conflict Resolution Strategies
 
-Client can define custom resolution strategies.
-You can provide custom conflict resolution strategies to the client in the config by using the provided `ConflictResolutionStrategy` type from the SDK. By default developers do not need to pass any strategy (`clientVersionWins` strategy is used).
-Custom strategies can be used also to provide different resolution strategy for certain operations:
+To resolve conflicts on the client side, a `conflictResolutionStrategy` needs to be provided. 
+
+If none is provided, by default, the `clientVersionWins` strategy is used. This means the SDK will automatically override the server data with the current client data. 
+
+It is very easy to provide a custom conflict resolution strategy: it is a function that will take in the current server data, and client data as parameters, and the return value will be the resolved data. 
+
+Here is an examples:
 
 [source,javascript]
 ----
-let updateUserConflictResolver = (serverData, clientData) => {
-    delete clientData.socialKey
+
+//defind a custom conflict resolver
+let updateTaskConflictResolver = (serverData, clientData) => {
+    ...
     return Object.assign(serverData, clientData);
 };
 
-let updateTaskConflictResolver = (serverData, clientData) => {
-    ...
-};
+//pass it to the config object
+let config = {
+...
+  conflictStrategy: {"TaskUpdated": updateTaskConflictResolver}
+...
+}
 ----
 
-NOTE: Client strategies will work only when specific server side resolver explicitly states that conflicts should be fixed on the client. Client strategy will be ignored when conflict is resolved on the server.
+NOTE: Client strategy will be ignored when conflicts are resolved on the server.
 
-To use strategy pass it as argument to conflictStrategy in your config object:
+=== Listening to Conflicts
+
+Developers can supply their own `conflictListener` implementation to get notifications about conflicts:
 
 [source,javascript]
 ----
 let config = {
 ...
-  conflictStrategy: {"TaskUpdated": updateTaskConflictResolver, "UserUpdated": updateUserConflictResolver}
-...
-}
-----
-
-=== Listening to conflicts
-
-Framework allows to receive information about the data conflict that occurred between client and server. Client will be notified for both server and client conflicts.
-
-Developers can supply their own `conflictListener` implementation
-
-[source,typescript]
-----
-class ConflictLogger implements ConflictListener {
-    console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
+  conflictListener: {
+    conflictOccurred: function(operationName, resolvedData, server, client) {
+      console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
+    }
   }
-}
-
-let config = {
-...
-  conflictListener: new ConflictLogger()
 ...
 }
 ----
