@@ -1,8 +1,0 @@
-
-
-:service-name: Metrics
-
-= Binding a {mobile-client} with the {service-name} Service
-
-include::../generic-binding.adoc[]
-

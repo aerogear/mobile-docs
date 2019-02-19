@@ -1,3 +1,0 @@
-= Configuring the {service-name} Service
-
-No further steps are required in order to set the {metrics-service} service up.
