@@ -41,6 +41,9 @@ include::_partials/sync/getting-started-overview.adoc[leveloffset=2]
 [#building-sync-container]
 include::_partials/sync/provisioning.adoc[leveloffset=2]
 
+[#sync-server-binding]
+include::_partials/sync/binding.adoc[leveloffset=2]
+
 [#sync-server-binding-keycloak]
 include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
 
@@ -75,5 +78,5 @@ include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 include::_partials/sync/js-client-advanced-topics.adoc[leveloffset=2]
 
 [#sync-sample-app]
-== Running the Sample Application
+== Showcase App
 include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]

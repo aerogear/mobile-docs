@@ -23,10 +23,12 @@ include::_partials/proc_self-signed-certs.adoc[leveloffset=1]
 
 [#features]
 == Demonstrating the ShowCase App Features
-
 // start {partialsdir}/identity-management-demo.adoc[leveloffset=2]
 include::_partials/identity-management-demo.adoc[leveloffset=2]
 // end {partialsdir}/identity-management-demo.adoc[leveloffset=2]
+// start showcase-apps/sync-dmo.adoc[leveloffset=2]
+include::_partials/showcase-apps/sync.adoc[leveloffset=2]
+// end showcase-apps/sync-dmo.adoc[leveloffset=2]
 // start showcase-apps/device-security.adoc[leveloffset=2}]
 include::_partials/showcase-apps/device-security.adoc[leveloffset=2}]
 // end showcase-apps/device-security.adoc[leveloffset=2}]
