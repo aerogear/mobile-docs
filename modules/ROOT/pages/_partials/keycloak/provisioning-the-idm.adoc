@@ -23,15 +23,15 @@ image::catalog-mobile-services.png[]
 
 . Follow the wizard for provisioning that service.
 +
-NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
 +
 When provisioning an {keycloak-service} service, you are prompted to set the following configuration:
 +
-* *{idm-name} admin username*: Username for {idm-name} administration
+* *{idm-name} admin username*: Username for {idm-name} administration.
 +
-* *{idm-name} admin password*: Password for the {idm-name} admin user
+* *{idm-name} admin password*: Password for the {idm-name} admin user.
 +
-* *Name of the {idm-name} realm*: Name of the {idm-name} realm. (defaults to current namespace)
+* *Name of the {idm-name} realm*: Name of the {idm-name} realm. (defaults to current namespace).
 +
 NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
 +

@@ -3,15 +3,15 @@
 [id='reference-material-{context}']
 = {keycloak-service} Service terminology
 
-This section describes terminology that is associated with Identity Management.
+This section describes terminology that is associated with {keycloak-service}.
 
-.Identity Management Terminology
-SSO:: Single Sign On, the ability to share a login between multiple services
-
-OpenID Connect:: A standard for providing identity on top of OAuth 2.0
-
-Keycloak:: Red Hat’s implementation of SSO and OpenID used as the identity provider
-
-Client ID:: Is the client identifier for OpenID Connect requests, a simple alpha-numeric string
-
-User Attributes:: Additional properties for user accounts (besides name and email) managed by Keycloak
+.Table
+[options="header"]
+|====
+|Term|Definition|
+|SSO|Single Sign On, the ability to share a login between multiple services.|
+|OpenID Connect|A standard for providing identity on top of OAuth 2.0.|
+|Keycloak|Red Hat’s implementation of SSO and OpenID used as the identity provider.|
+|Client ID|Is the client identifier for OpenID Connect requests, a simple alpha-numeric string.|
+|User Attributes|Additional properties for user accounts (besides name and email) managed by Keycloak.|
+|====

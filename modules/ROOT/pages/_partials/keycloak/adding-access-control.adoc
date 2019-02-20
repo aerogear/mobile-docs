@@ -9,7 +9,7 @@ Roles are divided into two types. Resource roles which belong to the client the 
 
 .Prerequisites
 
-* A working mobile app that uses authentication with the {keycloak-service} service.
+* A working Mobile App that uses authentication with the {keycloak-service} service.
 
 .Procedure
 
@@ -73,7 +73,9 @@ Get the realm roles from the auth service:
 const realmRoles = authService.getRealmRoles();
 ----
 
-NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying keycloak-js instance to retrieve the roles from there. Have a look at their documentation link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[here^].
+NOTE: No function to retrieve the resource roles is currently exported but you can use `extract` to get a handle to the underlying {keycloak-service}-js instance to retrieve the roles from there.
+For more information, see link:https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter[JavaScript Adapter^].
+
 // tag::excludeDownstream[]
 --
 Xamarin::

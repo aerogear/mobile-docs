@@ -20,23 +20,18 @@ ifdef::context[:parent-context: {context}]
 = Using the {keycloak-service} Mobile Service
 
 [[introduction]]
-The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
+The {keycloak-service} service allows you to add authentication and authorization to your Mobile App.
 
-* Secure your mobile app using the industry standard OpenID Connect protocol
-* Add access control to your app based on user’s group membership
-* Easily implement SSO, multi-factor authentication and Social Login support
-* Back-end support for identity brokering and user federation
+* Secure your Mobile App using the industry standard OpenID Connect protocol.
+* Add access control to your app based on user’s group membership.
+* Easily implement SSO, multi-factor authentication and Social Login support.
+* Back-end support for identity brokering and user federation.
 
 include::_partials/keycloak/idm_glossary.adoc[leveloffset=+1]
 
 .Prerequisites
 
-// TODO: need to rewrite the following
-// * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 * You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
-
-// TODO: could we include this here in the assembly?
-// * Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
 
 [[setting-up-the-idm-service]]
 == Setting Up the {keycloak-service} Service
@@ -59,17 +54,15 @@ include::_partials/keycloak/adding-access-control.adoc[leveloffset=2]
 
 [[adding-sso-to-your-mobile-app]]
 == Adding SSO to your Mobile App
-// include::_partials/keycloak/getting-started-with-sso.adoc[leveloffset=+2]
 include::_partials/keycloak/using-sso.adoc[leveloffset=+2]
 
 [[monitoring]]
-// start metrics/monitoring-keycloak.adoc[leveloffset=1]
 include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
 
 == Additional resources
 
 * For more information about OpenID, see the link:https://openid.net/[OpenID Foundation^] website.
-* See the link:{docs-link}[{idm-name} documentation^] for more info.
+* See the link:{docs-link}[{keycloak-service} documentation^] for more info.
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]

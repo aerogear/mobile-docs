@@ -30,7 +30,7 @@ Singlestat panels show you the main summary of a single data series.
 * *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
 * *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
 * *Total Login Errors*: Total number of failed login attempts.
-* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
+* *Current Memory*: The amount of memory currently used by the {keycloak-service} Service.
 ****
 
 

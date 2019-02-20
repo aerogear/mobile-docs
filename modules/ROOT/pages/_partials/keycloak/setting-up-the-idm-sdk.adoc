@@ -167,7 +167,7 @@ authService.init(initOptions)
     });
 ----
 
-You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
+You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to {keycloak-service} or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
 
 NOTE: Initialization also enables authentication.
 // tag::excludeDownstream[]

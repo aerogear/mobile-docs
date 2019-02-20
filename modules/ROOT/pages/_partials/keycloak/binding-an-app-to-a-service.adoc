@@ -4,7 +4,7 @@
 = Binding a {mobile-client} with the {keycloak-service} Service
 
 To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
-This association is called *binding* and it is necessary for your mobile app to use that service.
+This association is called *binding* and it is necessary for your Mobile App to use that service.
 
 This section describes how to set up the {keycloak-service} service.
 
@@ -33,7 +33,7 @@ NOTE: It is possible to bind a {mobile-client} with a mobile service in the Open
 
 +
 image::mobile-clients-services-idm-parameters.png[]
-NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.
+NOTE: Use `Public` when binding a {mobile-client} to {keycloak-service}. When binding mobile services to each other, use `Bearer`.
 
 The {service-name} service will now be expandable, details about the service can be viewed.
 
