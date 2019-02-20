@@ -1,0 +1,11 @@
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+= Supported Versions
+
+Generally speaking, AeroGear Mobile Services aim to support the latest versions of tools and technologies. As of Feb 2019, the following versions are tested and supported:
+
+* Cordova: version 8
+* Nodejs: version 8 and 10
+* Android SDK: API level 27
+* XCode: version 10.1
