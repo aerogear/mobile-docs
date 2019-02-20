@@ -94,6 +94,7 @@ include::{partialsdir}/attributes.adoc[]
 ** xref:showcase-apps.adoc#certs[Using Self Signed Certs]
 ** xref:showcase-apps.adoc#features[Demonstrating the Showcase App Features]
 
+* xref:supported_versions.adoc[Supported Versions]
 * xref:ref_api.adoc[API Reference]
 * xref:mobile-cli.adoc[Mobile CLI]
 * xref:glossary.adoc[Glossary]
