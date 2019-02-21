@@ -1,0 +1,5 @@
+:service-name: {sync-service}
+
+= Binding a {mobile-client} with {service-name}
+
+include::../generic-binding.adoc[]

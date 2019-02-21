@@ -21,7 +21,6 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 
 [discrete]
 === Procedure
-
 . To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
 
 . To demonstrate {keycloak-service}:
@@ -39,6 +38,34 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+
+. To demonstrate {sync-service}:
++
+NOTE: You can only demonstrate {sync-service} on Cordova.
+
+.. Provision a PostgreSQL database if there isn't one available. 
+... Login to the OpenShift web console, create a new project or use an existing one
+... Click on the `Add to Project` dropdown on the top right, and choose `Browse Catalog`
+... Select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database. Take notes of the values for `PostgreSQL Connection Username`, `PostgreSQL Connection Password` and `PostgreSQL Database Name`. You will need them later.
+.. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
++
+[options="header"]
+|====
+|Field|Value
+|Sync Application Name|syncshowcase
+|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
+|Sync Application health endpoint| health
+|Sync Application metrics endpoint| metrics
+|Sync App Port|4000
+|Sync App GraphQL Endpoint| graphql
+|Database Server Hostname|*Hostname of the PostgreSQL server*
+|Database Server Port|*Port number of the PostgreSQL server, usually should be 5432*
+|Database Server Username|*Username of the PostgreSQL database connection*
+|Database Server Password|*Password of the PostgreSQL database connection*
+|Database name|*PostgreSQL database name*
+|====
+.. xref:data-sync.adoc#sync-server-binding-keycloak[Protect the {sync-service} app using {keycloak-service}]
+
 
 [[setting-up-the-showcase-app]]
 [#app]
@@ -62,6 +89,14 @@ include::../cloning-showcase-app.adoc[]
 
 [tabs]
 ====
+Cordova::
++
+--
+. You will need to create a project on link:https://firebase.google.com/[Firebase^].
+. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here^] to download `google-services.json` from your Firebase project.
+. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
+Firebase Cloud Messaging console.
+--
 // tag::excludeDownstream[]
 Android::
 +
@@ -82,16 +117,6 @@ NOTE: Make sure to protect the p12 file with a password.
 +
 NOTE: The exported p12 file with the password will be used later when binding your {mobile-client} to the {unifiedpush-service}.
 --
-// end::excludeDownstream[]
-Cordova::
-+
---
-. You will need to create a project on link:https://firebase.google.com/[Firebase^].
-. Follow steps outlined link:https://support.google.com/firebase/answer/7015592?hl=en[here^] to download `google-services.json` from your Firebase project.
-. Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
-Firebase Cloud Messaging console.
---
-// tag::excludeDownstream[]
 Xamarin::
 +
 --
@@ -108,6 +133,8 @@ Xamarin::
 . xref:push-notifications.adoc#binding-a-mobile-client-with-the-push-notifications-service[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
 +
 NOTE: This step also creates a variant as described in xref:push-notifications.adoc[ {unifiedpush-service} Service] terminology.
+
+. xref:data-sync.adoc#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
 
 include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 

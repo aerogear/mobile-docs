@@ -11,6 +11,15 @@ NOTE: The mobile-services.json file is the link between your provisioned service
 
 [tabs]
 ====
+Cordova::
++
+--
+
+Copy the content of mobile-services.json file and paste it to the following location in your application project to replace the value of `config`
+
+`src/mobile-services.js`
+
+--
 // tag::excludeDownstream[]
 Android::
 +
@@ -32,17 +41,6 @@ Move mobile-services.json to the following location in your application project:
 NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
 
 --
-// end::excludeDownstream[]
-Cordova::
-+
---
-
-Move mobile-services.json to the following location in your application project:
-
-`src/mobile-services.json`
-
---
-// tag::excludeDownstream[]
 Xamarin::
 +
 --
