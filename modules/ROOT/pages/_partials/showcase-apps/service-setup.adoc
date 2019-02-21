@@ -40,6 +40,8 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
 . To demonstrate {sync-service}:
++
+NOTE: You can only demonstrate {sync-service} on Cordova.
 
 .. Provision a PostgreSQL database if there isn't one available. 
 ... Login to the OpenShift web console, create a new project or use an existing one
