@@ -10,7 +10,7 @@ content:
     branches: HEAD
 ui:
   bundle:
-    url: https://github.com/aerogear/finp/raw/AEROGEAR-8578/build/ui-bundle.zip
+    url: https://github.com/finp/antora-ui/raw/AEROGEAR-8578/build/ui-bundle.zip
     snapshot: true
 
 asciidoc:
