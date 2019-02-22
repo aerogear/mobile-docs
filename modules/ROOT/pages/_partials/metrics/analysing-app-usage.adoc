@@ -2,7 +2,7 @@
 
 = Analyzing App Usage
 
-This guide shows how to use app metrics to provide rich visualizations regarding app usage that can then drive development planning, for example, when should support for  version x.y of app end?'
+This guide shows how to use app metrics to provide rich visualizations regarding app usage that can then drive development planning, for example, when the support for version x.y of app should end.
 
 [discrete]
 == Viewing Dashboards
@@ -16,14 +16,6 @@ There are 2 dashboards where App Metrics data is shown:
 In general, the summary data that is visible on the 'Mobile Services' Dashboard is also available on the 'Mobile App Metrics' dashboard, but in more detail.
 
 [discrete]
-== Analyzing App launches
-
-An App launch is a metric event that occurs when an App is launched on a device.
-The total number of App launches for a given time shows how many times an App was launched in that time, regardless of if it was the same device or different devices.
-It can be useful as a gauge on how much activity the App has.
-However, as it doesn't take into account multiple launches from the same device, it isn't useful as a gauge for 'stickiness' of the App.
-
-[discrete]
 == Analyzing unique clients
 
 Every metric event has a unique client identifier associated with it.
@@ -34,6 +26,15 @@ This can be useful as a gauge on how many active App users there currently are.
 The time range is an important factor when viewing the number of unique clients.
 Viewing unique clients for the last year gives a very different insight than for the last week.
 In Grafana, the time range can be changed in the top right of the Dashboard view.
+
+[discrete]
+== Analyzing App launches
+
+An App launch is a metric event that occurs when an App is launched on a device.
+The total number of App launches for a given time shows how many times an App was launched in that time, regardless of if it was the same device or different devices.
+It can be useful as a gauge on how much activity the App has.
+However, as it doesn't take into account multiple launches from the same device, it isn't useful as a gauge for 'stickiness' of the App.
+
 
 [discrete]
 == Analyzing unique clients per App
