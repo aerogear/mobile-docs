@@ -8,9 +8,19 @@
 
 [tabs]
 ====
+Cordova::
++
+--
+[source,bash,subs="attributes"]
+----
+$ npm install
+$ npm run ionic:build
+----
+--
 // tag::excludeDownstream[]
 Android::
 +
+--
 [source,bash,subs="attributes"]
 ----
 $ ./gradlew assembleDebug
@@ -26,22 +36,10 @@ Run this command to install dependencies:
 . Run this command to install dependencies:
 +
 [source,bash]
-+
 ----
 $ pod install
 ----
 --
-// end::excludeDownstream[]
-Cordova::
-+
---
-[source,bash,subs="attributes"]
-----
-$ npm install
-$ npm run ionic:build
-----
---
-// tag::excludeDownstream[]
 Xamarin::
 +
 --
@@ -60,27 +58,6 @@ $ nuget restore
 
 [tabs]
 ====
-// tag::excludeDownstream[]
-Android::
-+
---
-Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
-no connected device, it installs and runs the application on the emulator.
-
-[source,bash,subs="attributes"]
-----
-$ ./gradlew installDebug
-----
---
-iOS::
-+
---
-Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
-
-NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
-
---
-// end::excludeDownstream[]
 Cordova::
 +
 --
@@ -103,6 +80,25 @@ $ ionic cordova run android --emulator    # run on the Android emulator
 ----
 --
 // tag::excludeDownstream[]
+Android::
++
+--
+Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
+no connected device, it installs and runs the application on the emulator.
+
+[source,bash,subs="attributes"]
+----
+$ ./gradlew installDebug
+----
+--
+iOS::
++
+--
+Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
+
+NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
+
+--
 Xamarin::
 +
 --
