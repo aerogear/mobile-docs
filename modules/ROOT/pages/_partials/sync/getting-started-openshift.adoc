@@ -1,0 +1,73 @@
+= Prerequisites
+* [x] You have Docker installed.
+* [x] You have access to an OpenShift cluster with the Service Catalog.
+* [x] You have completed the server getting started guide.
+
+= Overview
+
+To connect your Data Sync server and client to other mobile services, you need to run your application in OpenShift.  Data Sync provides a service catalog item to help with this.
+
+Data Sync requires your server application to be packaged as a Docker formatted container and published to a public respository such as link:https://hub.docker.com/[Docker hub]. 
+
+= Building and publishing the server container
+
+To build a server into a container, create a `Dockerfile` in the project's directory.  This container will need to include your server source code, its dependencies, and be configured to execute your server.
+
+As an example:
+
+[source,dockerfile]
+----
+FROM node:8
+WORKDIR /usr/src/app
+# copy Node.js specific files 
+COPY package*.json ./
+# copy application source file to the workdir
+COPY index.js . 
+RUN npm install
+# TCP port that application is listening on
+EXPOSE 4000
+CMD [ "node", "index.js" ]
+---- 
+
+Build the Docker container and tag it:
+[source,bash]
+----
+$ docker build . --tag  <your-repo>/<container-name>
+----
+
+Push your container to Dockerhub's repository :
+[source,bash]
+----
+$ docker push <your-repo>/<container-name>
+----
+
+
+= Provisioning {sync-service} Service
+
+include::../generic-provisioning.adoc[]
+
+Fill in all of the required parameters for the service:
+
+image:sync-app-creation-dialog.png[Sync Application Creation Dialog]
+
+.Configuration
+[options="header"]
+|====
+|Field|Default|Description
+|Sync Application Name||Fill in name of your {sync-service} application 
+|Sync Application Docker image||Fill in URL too your {sync-service} application docker image 
+|Sync Application Docker image version|latest|Tag of your docker image
+|Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
+|Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
+|Sync Application Port||Port number that {sync-service} application is listening on
+|Database Server Hostname||Database server hostname that is used to connect by the {sync-service}
+|Database Server Port||Database server port that is used to connect by the {sync-service}
+|Database Server Username||Database server username that is used to connect by the {sync-service}
+|Database Server Password||Database server password that is used to connect by the {sync-service}
+|Database name||Name of the database that is used to connect by the {sync-service}
+|Use SSL?|false|Use SSL connection to the SQL server
+|====
+
+include::../generic-provisioning-end.adoc[]
+
+Once the provision is completed, you should be able to see it in the Mobile Developer Console: go to the Mobile Developer Console and click on any mobile client, and you should see the newly provisioned {sync-service} server in the `Unbound Services` section. If you want your client app to use the {sync-service} server, just click on `Bind To App` button and complete the wizard. Once it's bound, copy the updated `mobile-services.json` file to your client app and you can then initialise the {sync-service} client SDK.
