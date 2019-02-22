@@ -24,6 +24,9 @@ include::_partials/sync/server-realtime-updates.adoc[leveloffset=2]
 [#sync-server-auth]
 include::_partials/sync/server-auth.adoc[leveloffset=2]
 
+[#server-files]
+include::_partials/sync/server-files.adoc[leveloffset=2]
+
 [#sync-server-metrics]
 include::_partials/sync/server-metrics.adoc[leveloffset=2]
 
@@ -66,6 +69,10 @@ include::_partials/sync/js-client-realtime-updates.adoc[leveloffset=2]
 
 [#sync-js-client-auth]
 include::_partials/sync/js-client-auth.adoc[leveloffset=2]
+
+[#js-client-files]
+include::_partials/sync/js-client-files.adoc[leveloffset=2]
+
 
 [#sync-js-client-metrics]
 include::_partials/sync/js-client-metrics.adoc[leveloffset=2]
