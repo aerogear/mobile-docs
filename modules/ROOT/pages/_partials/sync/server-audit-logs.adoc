@@ -122,7 +122,7 @@ The link:https://github.com/aerogear/voyager-server/blob/master/examples/auditLo
 
 Alternatively, if the default audit logger does not match your requirements, you can create an audit logger that implements the `AuditLogger` interface as defined below.
 
-Definition of the `AuditLogger` interface is below:
+.Definition of the `AuditLogger` interface
 
 [source,typescript]
 ----
