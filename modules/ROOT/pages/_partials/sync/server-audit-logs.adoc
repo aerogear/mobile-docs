@@ -108,7 +108,7 @@ Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/p
 const auditLogger = require('@aerogear/voyager-audit')
 ----
 
-2. Inject the auditLogger module into {sync-server}. This will enable audit logging within your application.
+2. Inject the auditLogger module into the {sync-server}. This enables audit logging within your application.
  
 [source,javascript]
 ----
