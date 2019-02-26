@@ -137,23 +137,36 @@ To resolve conflicts on the client side, a `conflictResolutionStrategy` needs to
 
 If none is provided, by default, the `clientVersionWins` strategy is used. This means the SDK will automatically override the server data with the current client data. 
 
-It is very easy to provide a custom conflict resolution strategy: it is a function that will take in the current server data, and client data as parameters, and the return value will be the resolved data. 
+It is very easy to provide a custom conflict resolution strategy. It takes two parameters, `strategies` and `default`.
 
-Here is an examples:
+* strategies - a dictionary object defining the custom behaviour for any mutation you which to specify
+* default - the default behaviour to use if one of your mutations is not listed in `strategies`
+
+
+An example can be seen below:
 
 [source,javascript]
 ----
 
-//defind a custom conflict resolver
+//define a custom conflict resolver
 let updateTaskConflictResolver = (serverData, clientData) => {
     ...
     return Object.assign(serverData, clientData);
 };
 
+//define a default where the clientData is used
+let defaultConflictResolver = (serverData, clientData) => {
+    return clientData
+}
+
 //pass it to the config object
 let config = {
 ...
-  conflictStrategy: {"TaskUpdated": updateTaskConflictResolver}
+  conflictStrategy: {
+    strategies: {
+      "TaskUpdated": updateTaskConflictResolver
+    },
+    default: defaultConflictResolver
 ...
 }
 ----
