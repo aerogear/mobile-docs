@@ -133,7 +133,8 @@ export interface AuditLogger {
 }
 ----
 
-Following example implements an `AuditLogger` and injects it to {sync-server}. This implementation redacts the arguments using a `myCustomRedactionFunction` function.
+The following example implements an `AuditLogger` and injects it into the {sync-server}. 
+The example redacts the arguments using a `myCustomRedactionFunction` function.
 
 [source,typescript]
 ----
