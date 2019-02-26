@@ -22,6 +22,7 @@ An audit log example message is shown below.
   "pid": 11889,
   "hostname": "localhost.localdomain",
   "tag": "AUDIT",
+  "logType" "RESOLVER_COMPLETION",
   "msg": "",
   "operationType": "query",
   "fieldName": "hello",
@@ -107,7 +108,7 @@ Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/p
 const auditLogger = require('@aerogear/voyager-audit')
 ----
 
-3. Inject the auditLogger module into {sync-server}. This will enable audit logging within your application.
+2. Inject the auditLogger module into {sync-server}. This will enable audit logging within your application.
  
 [source,javascript]
 ----
@@ -118,6 +119,111 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 ----
 
 The link:https://github.com/aerogear/voyager-server/blob/master/examples/auditLogging[Audit Logging Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
+
+Alternatively, if the default audit logger does not match the requirements, you can implement your own audit logger which implements the `AuditLogger` interface.
+
+Definition of the `AuditLogger` interface is below:
+
+[source,typescript]
+----
+export interface AuditLogger {
+  logResolverCompletion(msg: string, success: boolean, obj: any, args: any, context: any, info: GraphQLResolveInfo): void
+  logConflict (msg: string, serverData: any, clientData: any, obj: any, args: any, context: any, info: GraphQLResolveInfo): void
+  auditLog(msg: string, obj: any, args: any, context: any, info: GraphQLResolveInfo): void
+}
+----
+
+Following example implements an `AuditLogger` and injects it to {sync-server}. This implementation redacts the arguments using a `myCustomRedactionFunction` function.
+
+[source,typescript]
+----
+
+const { buildPath } = require('@aerogear/voyager-tools')
+// ...
+
+const auditLogger = {
+  auditLog: function(msg, obj, args, context, info){
+    console.log(JSON.stringify(
+      {
+        audit: {
+          tag: 'AUDIT',
+          logType: logType,
+          msg: msg || '',
+          requestId: context && context.request ? context.request.id : '',
+          operationType: info.operation.operation,
+          fieldName: info.fieldName,
+          parentTypeName: info.parentType.name,
+          path: buildPath(info.path),
+          parent: obj,
+          arguments: myCustomRedactionFunction(args),
+          clientInfo: context && context.request && context.request.body && context.request.body.extensions && context.request.body.extensions.metrics || undefined,
+          authenticated: !!(context && context.auth && context.auth.isAuthenticated()),
+          userInfo: (context && context.auth && context.auth.accessToken) ? context.auth.accessToken.content : undefined
+        }
+      }
+    ));
+  },
+
+  logResolverCompletion: function(msg, success, obj, args, context, info){
+    console.log(JSON.stringify(
+      {
+        audit: {
+          tag: 'AUDIT',
+          logType: 'RESOLVER_COMPLETION',
+          msg: msg || '',
+          requestId: context && context.request ? context.request.id : '',
+          operationType: info.operation.operation,
+          fieldName: info.fieldName,
+          parentTypeName: info.parentType.name,
+          path: buildPath(info.path),
+          success,
+          parent: obj,
+          arguments: myCustomRedactionFunction(args),
+          clientInfo: context && context.request && context.request.body && context.request.body.extensions && context.request.body.extensions.metrics || undefined,
+          authenticated: !!(context && context.auth && context.auth.isAuthenticated()),
+          userInfo: (context && context.auth && context.auth.accessToken) ? context.auth.accessToken.content : undefined
+        }
+      }
+    ));
+  },
+
+  logConflict: function (msg, serverData, clientData, obj, args, context, info) {
+    console.log(JSON.stringify(
+      {
+        audit: {
+          tag: 'AUDIT',
+          logType: LOG_TYPE_CONFLICT,
+          msg: msg || '',
+          requestId: context && context.request ? context.request.id : '',
+          operationType: info.operation.operation,
+          fieldName: info.fieldName,
+          parentTypeName: info.parentType.name,
+          path: buildPath(info.path),
+          parent: obj,
+          arguments: myCustomRedactionFunction(args),
+          clientInfo: context && context.request && context.request.body && context.request.body.extensions && context.request.body.extensions.metrics || undefined,
+          authenticated: !!(context && context.auth && context.auth.isAuthenticated()),
+          userInfo: (context && context.auth && context.auth.accessToken) ? context.auth.accessToken.content : undefined,
+          conflict: true,
+          conflictData: {
+            message: msg,
+            myCustomRedactionFunction(serverData),
+            myCustomRedactionFunction(clientData),
+          }
+        }
+      }
+    ));
+  }
+}
+
+// ...
+
+const voyagerConfig = {
+  auditLogger
+}
+const server = VoyagerServer(apolloConfig, voyagerConfig)
+
+----
 
 = Sending Device Information in {sync-client}
 
