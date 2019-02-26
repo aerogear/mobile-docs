@@ -138,7 +138,7 @@ To resolve conflicts on the client side, a `conflictStrategy` needs to be provid
 To implement a custom conflict resolution strategy provide at least one of the parameters below.
 
 * strategies - a dictionary object where each key is the name of a mutation and the value is the custom action to take for a conflict caused by that mutation
-* default - the default behaviour to use if one of your mutations is not listed in `strategies`
+* default - the default behavior to use if one of your mutations is not listed in `strategies`
 
 NOTE: If strategies are provided but no default then `clientVersionWins` will become the default. This will only be used if a mutation you have not specified causes a conflict.
 
