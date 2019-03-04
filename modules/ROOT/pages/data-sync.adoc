@@ -33,22 +33,6 @@ include::_partials/sync/server-metrics.adoc[leveloffset=2]
 [#sync-server-audit-logs]
 include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
 
-[#sync-server-openshift]
-== Running {sync-service} on OpenShift
-
-[#sync-server-getting-started-openshift]
-include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
-
-[#sync-server-getting-started-mdc-client]
-include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
-
-
-[#sync-server-binding]
-include::_partials/sync/binding.adoc[leveloffset=2]
-
-[#sync-server-binding-keycloak]
-include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
-
 [#sync-js-client]
 == {sync-service} Javascript Client
 
@@ -82,6 +66,22 @@ include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 
 [#sync-js-client-advanced-topics]
 include::_partials/sync/js-client-advanced-topics.adoc[leveloffset=2]
+
+[#sync-server-openshift]
+== Running {sync-service} on OpenShift
+
+[#sync-server-getting-started-openshift]
+include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
+
+[#sync-server-getting-started-mdc-client]
+include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
+
+
+[#sync-server-binding]
+include::_partials/sync/binding.adoc[leveloffset=2]
+
+[#sync-server-binding-keycloak]
+include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
 
 [#sync-sample-app]
 == Showcase App
