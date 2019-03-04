@@ -1,10 +1,10 @@
-= Prerequisites
+= Connecting a Client
+
+== Prerequisites
 * [x] You have access to an OpenShift cluster with the Service Catalog.
 * [x] You have completed the OpenShift getting started guide.
 * [x] You have created a mobile client and bound your data sync server.
 * [x] You have completed the client getting started guide.
-
-= Connecting a Client
 
 Once a service is bound to a mobile client, MDC will provide a mobile-services.json file that is used by the AeroGear client libraries to automatically configure the Data Sync client.  It is very important that you use your version of this file and not the one used in this example as system specific values will be different.
 
