@@ -157,12 +157,12 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
      //    A conflict occurs
      if (conflictHandler.hasConflict(task, clientData)) {
        // If a conflict is detected, resolve it on the server using one of the default strategies.
-       const { resolvedState, response } = conflictHandler.resolveOnServer(strategies.clientWins, task, clientData)
+       const { resolvedState, response } = await conflictHandler.resolveOnServer(strategies.clientWins, task, clientData)
        
-       // 4. Persist the update to the database
+       // persist the resolved data to the database and then return the conflict response
        await context.db('tasks')
          .update(resolvedState)
-         .where('id', resolcedState.id)
+         .where('id', resolvedState.id)
          .returning('*')
          .then((rows) => rows[0])
 
