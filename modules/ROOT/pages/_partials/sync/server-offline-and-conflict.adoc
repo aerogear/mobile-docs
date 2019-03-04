@@ -149,21 +149,19 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
  {
    updateTask: async (obj, clientData, context, info) => {
      // 1. Read the Object from the database. This example uses Knex https://knexjs.org/.
-     const task = wait context.db('tasks').select().where('id', clientData.id).then((rows) => rows[0])
+     const task = await context.db('tasks').select().where('id', clientData.id).then((rows) => rows[0])
 
      // 2. Conflict Detection using `VersionedObjectState`
      //    If the version number from the database does not match the one sent by the client
      //    A conflict occurs
      if (conflictHandler.hasConflict(task, clientData)) {
        // If a conflict is detected, resolve it on the server using one of the default strategies.
-       const { resolvedState, response } = conflictHandler.resolveOnServer(strategies.serverWins, task, clientData)
-       // persist the resolved data to the database and then return the conflict response
-       await persistToDatabase(resolvedState)
+       const { resolvedState, response } = conflictHandler.resolveOnServer(strategies.clientWins, task, clientData)
        
        // 4. Persist the update to the database
        await context.db('tasks')
-         .update(clientData)
-         .where('id', clientData.id)
+         .update(resolvedState)
+         .where('id', resolcedState.id)
          .returning('*')
          .then((rows) => rows[0])
 
@@ -188,17 +186,30 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
 
 When there is no conflict, `conflictHandler.nextState(clientData)` is called and the data is persisted. When a conflict occurs, the following happens.
 
-* `conflictHandler.resolveOnServer` is called with the `serverWins` strategy. In this case, the `resolvedState` will be the current server record with an updated version number. *The resolvedState must be persisted as the version is updated.*
+* `conflictHandler.resolveOnServer` is called with the `clientWins` strategy. In this case, the `resolvedState` will be the new data provided by the client. The newly `resolvedState` should be persisted.
 * `conflictHandler.resolveOnServer` also returns a `response`, which should be returned to the client.
 
 The `response` object is a `ConflictResolution` object that tells the client there was a conflict, that it was resolved on the server and provides the new `resolvedState`. In most cases, the client needs to know about conflicts that happen on the server. This allows the client to handle the conflict accordingly. For example, the screen the user is looking at might need to be refreshed with new data after a conflict.
 
 == Conflict Resolution Strategies
 
-There are two default conflict resolution strategies.
+There is one default conflict resolution strategy.
 
 * `clientWins` - This strategy accepts the data provided by the client.
-* `serverWins` - This strategy rejects the client data and uses the server data instead.
+
+== Conflict Resolution using the `reject` Function
+
+It is possible to implement a 'server wins' style strategy using the `reject` method. This is useful in conflict cases where we want to reject the client's changes and force the client to use the latest data stored on the sever.
+
+[source,javascript]
+----
+// If a conflict is detected, call the reject function 
+// to keep the server side data and force the client to update
+if (conflictHandler.hasConflict(serverData, clientData)) {
+  return conflictHandler.reject(task, clientData)
+}
+// otherwise continue and perform the standard mutation logic
+----
 
 == Custom Conflict Resolution Strategies
 
