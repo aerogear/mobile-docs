@@ -220,7 +220,7 @@ In most real world cases, the conflict resolution strategies used by your applic
 ----
 function customResolutionStrategy (serverState, clientState) {
   return {
-    title: `${serverState.msg} ${clientData.msg}`
+    title: `${serverState.title} ${clientState.title}`
   }
 }
 ----
@@ -231,8 +231,8 @@ Use the custom strategy in your resolvers the same way as the previous examples.
 
 [source, javascript]
 ----
-if (conflictHandler.hasConflict(task, clientData)) {
-  // If a conflict is detected, resolve it on the server using one of the default strategies.
+if (conflictHandler.hasConflict(serverData, clientData)) {
+  // If a conflict is detected, resolve it on the server using the custom strategy.
   const { resolvedState, response } = conflictHandler.resolveOnServer(customResolutionStrategy, serverData, clientData)
   // persist the resolved data to the database and then return the conflict response
   await persistToDatabase(resolvedState)
