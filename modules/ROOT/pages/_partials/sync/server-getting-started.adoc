@@ -1,26 +1,34 @@
 = Prerequisites
-* [x] You have Node.js and npm installed.
-* [x] You have created an empty node.js project with `npm init` and added the link:https://expressjs.com/[express] and graphql modules.
 
-= Creating a Server App
+* [x] You have Node.js and npm installed.
+* [x] You have created a node.js project
+
+== Hello World {sync-service}
 
 {sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
 
 {sync-server} is the starting point for developing a {sync-service} application. Used with link:https://expressjs.com/[Express], this module leverages Apollo Server and provides extension points for additional features and integrations.
 
-== Hello World Sync
 
-Let's begin with writing our server with a "Hello World" example.  You will add the libraries to your node.js project, create the index.js file, run the server, and confirm that it works.
+In this example, you add libraries to your node.js project, create an `index.js` file, run the server, and confirm that it works.
 
-.Add our libraries to your Node.js application,
+. Add libraries to your Node.js application,
++
+====
 [source,bash]
 ----
-npm install @aerogear/voyager-server
+$ npm install graphql <1>
+$ npm install express <2>
+$ npm install @aerogear/voyager-server <3>
 ----
 
-Below is a simple code example to get up and running with {sync-server}
+<1> See https://graphql.org/
+<2> See https://expressjs.com/ 
+<3> The {sync-server} library that enables data sync
+====
 
-.index.js
+. Create an `index.js` file with the following content:
++
 [source,javascript]
 ----
 const express = require('express')
@@ -58,12 +66,31 @@ app.listen(4000, () =>
 )
 ----
 
-Now we should run our service and see that it works.
-
+. Run the server:
++
 [source,bash]
 ----
-node index.js
-# Should output 🚀 Server ready at http://localhost:4000/graphql
+$ node index.js
+
+🚀 Server ready at http://localhost:4000/graphql
 ----
 
-The server should now be running.  You can browse to `http://localhost:4000/graphql` and interact with the playgroud.
+. Browse `http://localhost:4000/graphql` and interact with the playground. For example:
++
+[source,javascript]
+----
+{
+  hello
+}
+----
+
+. Check the output. For the example above, the output should be:
++
+[source,javascript]
+----
+{
+  "data": {
+    "hello": "Hello world"
+  }
+}
+----
