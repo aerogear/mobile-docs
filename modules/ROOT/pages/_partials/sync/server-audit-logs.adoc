@@ -228,7 +228,7 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 
 = Sending Device Information in {sync-client}
 
-See the <<#sync-clien-audit-logs, {sync-client} Audit Logs>> section for more information.
+See the <<#sync-js-client-audit-logs, {sync-client} Audit Logs>> section for more information.
 
 
 = Exploring Audit Logs

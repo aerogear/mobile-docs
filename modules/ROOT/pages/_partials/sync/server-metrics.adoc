@@ -18,7 +18,7 @@ const metrics = require('@aerogear/voyager-metrics')
 [source,javascript]
 ----
 const app = express()
-keycloakService.applyAuthMiddleware(app, { path: '/metrics' })
+metrics.applyMetricsMiddlewares(app, { path: '/metrics' })
 ----
 
 3. Inject the metrics module into {sync-server}. This will ensure metrics at the GraphQL level can be exposed.
