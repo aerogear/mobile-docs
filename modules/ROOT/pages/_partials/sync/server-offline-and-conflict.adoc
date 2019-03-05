@@ -67,15 +67,15 @@ A *conflict* occurs when the version number sent by the client does not match th
 
 == Using Version Based Conflict Resolution
 
-1. Import the link:https://npmjs.com/package/@aerogear/voyager-conflicts[@aerogear/voyager-conflicts] package.
-
+. Import the link:https://npmjs.com/package/@aerogear/voyager-conflicts[@aerogear/voyager-conflicts] package.
++
 [source,javascript]
 ----
 const { conflictHandler } = require('@aerogear/voyager-conflicts')
 ----
 
-2. Add a version field to the GraphQL type that should support conflict resolution. The version should also be stored in the data storage.
-
+. Add a version field to the GraphQL type that should support conflict resolution. The version should also be stored in the data storage.
++
 [source,graphql]
 ----
 type Task {
@@ -84,8 +84,8 @@ type Task {
 }
 ----
 
-3. Add an example mutation.
-
+. Add an example mutation.
++
 [source,graphql]
 ----
 type Mutation {
@@ -93,8 +93,8 @@ type Mutation {
 }
 ----
 
-4. Implement the resolver.
-
+. Implement the resolver.
++
 Conflicts can be resolved either on the client or the server. Depending on the strategy used, the resolver implementation will differ.
 Please see the sections below for the individual implementations.
 
