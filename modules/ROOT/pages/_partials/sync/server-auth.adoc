@@ -57,9 +57,14 @@ The link:https://github.com/aerogear/voyager-server/blob/master/examples/keycloa
 If you have set up a subscription server as described in xref:sync-server-realtime-updates[Realtime Updates] and you have set up {keycloak-service} as described above then your application should make use of the `onConnect` function to validate the token provided by the client. An example implementation of `onConnect` is shown below with a `KeycloakService` set up as shown above in xref:sync-server-auth[Setting Up Keycloak Protection in {sync-server}].
 
 ```
-  onConnect: async connectionParams => {
-    return await keycloakService.validateToken(connectionParams)
-  }
+  new SubscriptionServer ({
+    execute,
+    subscribe,
+    onConnect: async connectionParams => {
+      return await keycloakService.validateToken(connectionParams)
+    },
+    schema: server.schema
+  }, ...)
 ```
 
 = Using the `@hasRole` Directive in a Schema
