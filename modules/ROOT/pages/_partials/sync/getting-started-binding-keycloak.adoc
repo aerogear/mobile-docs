@@ -19,7 +19,7 @@ The following command will create a secret called `sync-keycloak-doc`. It will c
 
 [source, bash]  
 ----
-oc create secret generic {sync-service}-keycloak-doc \
+oc create secret generic sync-keycloak-doc \
   --from-file=keycloak=./keycloak.json 
 ----
 
