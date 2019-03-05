@@ -9,6 +9,7 @@ To connect your Data Sync server and client to other mobile services, you need t
 
 Data Sync requires your server application to be packaged as a Docker formatted container and published to a public respository such as link:https://hub.docker.com/[Docker hub]. 
 
+[#building-and-publishing-the-container]
 = Building and publishing the server container
 
 To build a server into a container, create a `Dockerfile` in the project's directory.  This container will need to include your server source code, its dependencies, and be configured to execute your server.

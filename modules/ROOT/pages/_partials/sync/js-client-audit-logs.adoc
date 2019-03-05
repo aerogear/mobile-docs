@@ -1,4 +1,3 @@
-[#sync-clien-audit-logs]
 = Audit Logs
 
 As described in the <<#sync-server-audit-logs, Server Audit Logs>> section, device information can be logged as part of an audit log message. To enable it:
