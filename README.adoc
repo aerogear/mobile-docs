@@ -113,7 +113,6 @@ If you create a link, use the following whenever possible:
  
  
 
-
 . Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
 
 
