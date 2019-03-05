@@ -59,34 +59,6 @@ exampleQuery(...) @onlineOnly {
 }
 ----
 
-=== Squashing Mutations
-
-By default, multiple changes performed on the same object ID and with the same mutation will be automatically merged when the client is offline. The advantages of this approach are it can reduce the number of mutations that need to be stored, and reduce the number of replays when the client is online again. If this behavior is not desired, it can be turned off at different levels.
-
-==== Global Squashing
-
-This feature is on by default at a global level, it can be turned off in the config using the `mergeOfflineMutations` option.
-
-[source,javascript]
-----
-let config = {
-...
-  mergeOfflineMutations: false
-...
-}
-----
-
-==== Mutation Level Squashing
-
-To disable this feature at a mutation level, the `@noSqush` directive can be used to annotate mutations:
-
-[source, graphql]
-----
-exampleMutation(...) @noSquash {
-  ...
-}
-----
-
 [#sync-client-offline-queue-listener]
 == Listening for Events
 

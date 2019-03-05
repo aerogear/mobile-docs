@@ -28,6 +28,7 @@ Pluggable conflict resolution is a concept that allows developers to define thei
 The conflict detection and resolution is enabled by {sync-server}, while the fetching and storing of data is the responsibility of the developer.
 
 Pluggable conflict resolution supports the following implementations:
+
 * `VersionedObjectState` - depends on version field supplied in objects (used by default when importing conflictHandler)
 * `HashObjectState` - depends on hash calculated from entire object
 
