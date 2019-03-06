@@ -10,7 +10,9 @@ The following services are available:
 * link:push-notifications.html[{unifiedpush-service}]
 * link:mobile-metrics.html[{metrics-service}]
 * link:mobile-cicd.html[{mobile-ci-cd-service}]
-* link:device-security.html[{device-security-service}]
+* Security
+** link:device-security.html[{device-security-service}]
+** xref:security-service.adoc[Application Security]
 * link:data-sync.html[{sync-service}]
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
