@@ -70,7 +70,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:data-sync.adoc#auth[Authentication for {sync-service} Service]
 *** xref:data-sync.adoc#authorization[Authorization for {sync-service} Service]
 
-** Security
+** xref:security.adoc[Security]
 *** xref:security-service.adoc[{mobile-security-service}]
 **** xref:security-service.adoc#introduction[Introduction]
 **** xref:security-service.adoc#setup[Setting Up]
