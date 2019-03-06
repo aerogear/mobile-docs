@@ -1,0 +1,24 @@
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+= Security Services
+
+There are two security services available:
+
+
+[cols=","]
+|===
+
+| link:security.adoc[Device Security Service]
+
+| link:security-service.adoc[Mobile Security Service]
+
+
+a|
+include::_partials/generic-service-intros.adoc[tags=device-security-service]
+
+a| 
+
+include::_partials/generic-service-intros.adoc[tags=security-service]
+|===

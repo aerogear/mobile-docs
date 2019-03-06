@@ -1,0 +1,12 @@
+
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+:toclevels: 4
+
+:toc:
+
+= Provisioning the {mobile-security-service} Service
+
+[[introduction]]
