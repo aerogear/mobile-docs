@@ -17,30 +17,33 @@ Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/vo
 
 = Setting Up Keycloak Protection in {sync-server}
 
-1. Import the `@aerogear/voyager-keycloak` module
+. Import the `@aerogear/voyager-keycloak` module
 
++
 [source,javascript]
 ----
 const { KeycloakSecurityService } = require('@aerogear/voyager-keycloak')
 ----
 
-2. Read the Keycloak config and pass it to initialise the `KeycloakSecurityService`.
+. Read the Keycloak config and pass it to initialise the `KeycloakSecurityService`.
 
++
 [source,javascript]
 ----
 const keycloakConfig = JSON.parse(fs.readFileSync(path.resolve(__dirname, './path/to/keycloak.json')))
 const keycloakService = new KeycloakSecurityService(keycloakConfig)
 ----
 
-3. Use the `keycloakService` instance to protect your app:
+. Use the `keycloakService` instance to protect your app:
 
++
 [source,javascript]
 ----
 const app = express()
 keycloakService.applyAuthMiddleware(app)
 ----
 
-4. The last piece of work to do is telling Voyager server that the `keycloakService` above will be used as the security service:
+. The last piece of work to do is telling Voyager server that the `keycloakService` above will be used as the security service:
 
 [source,javascript]
 ----

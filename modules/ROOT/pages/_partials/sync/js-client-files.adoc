@@ -8,9 +8,9 @@ The binary upload implementation uses the `apollo-upload-client` package built b
 The upload functionality uses the GraphQL multipart form requests specification.
 The File upload needs to be implemented on both server and client:
 
-1) On the client HTML FileList objects are mapped into a mutation and sent to the server in a multipart request.
+1. On the client HTML FileList objects are mapped into a mutation and sent to the server in a multipart request.
 
-2) On the server: The multipart request is handled. The server processes it and provides an upload argument to a resolver. 
+2. On the server: The multipart request is handled. The server processes it and provides an upload argument to a resolver. 
 In the resolver function, the upload promise resolves an object.
 
 NOTE: File upload is based on link:https://github.com/jaydenseric/graphql-multipart-request-spec[graphql-multipart-request-spec]
