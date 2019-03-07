@@ -54,6 +54,9 @@ Cordova::
 
 NOTE: You can only develop push applications using Ionic. Plain Cordova is not supported.
 
+. Add the following code to your app:
+
++
 [source,bash]
 ----
 pushObject.on('notification').subscribe(data => {
@@ -61,7 +64,7 @@ pushObject.on('notification').subscribe(data => {
 });
 ----
 
-Review the documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^] for details about using the plugin. 
+. Review the documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^] for details about using the plugin. 
 
 
 --
