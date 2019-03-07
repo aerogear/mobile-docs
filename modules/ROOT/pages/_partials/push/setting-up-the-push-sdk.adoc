@@ -188,6 +188,8 @@ Cordova::
 
 [source,javascript]
 ----
+import { PushRegistration } from "@aerogear/push";
+
 const push = PushNotification.init({
     android: {},
     ios: {
@@ -212,6 +214,7 @@ push.on('registration', data => {
 
 [source,javascript]
 ----
+import { PushRegistration } from "@aerogear/push";
 import { Push } from "@ionic-native/push";
 
 const pushObject = new Push().init({

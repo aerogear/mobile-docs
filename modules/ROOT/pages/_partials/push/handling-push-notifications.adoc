@@ -54,11 +54,14 @@ Cordova::
 
 NOTE: You can only develop push applications using Ionic. Plain Cordova is not supported.
 
-. Install the plugin:
+. Add the following code to your app:
+
 +
 [source,bash]
 ----
-$ npm install --save @ionic-native/push
+pushObject.on('notification').subscribe(data => {
+    // Handle incoming message
+});
 ----
 
 . Review the documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^] for details about using the plugin. 
