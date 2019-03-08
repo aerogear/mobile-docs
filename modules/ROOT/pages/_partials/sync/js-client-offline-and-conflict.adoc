@@ -143,6 +143,7 @@ let config = {
       "TaskDeleted": deleteTaskConflictResolver
     },
     default: defaultConflictResolver
+  }
 ...
 }
 ----
