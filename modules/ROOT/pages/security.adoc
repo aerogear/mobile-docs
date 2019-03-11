@@ -12,7 +12,7 @@ There are two security services available:
 
 | link:security.adoc[Device Security Service]
 
-| link:security-service.adoc[Mobile Security Service]
+| link:app-security.adoc[App Security Service]
 
 
 a|

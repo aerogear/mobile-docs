@@ -15,7 +15,7 @@ ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
 
-= Using the {mobile-security-service} Service
+= Using the {app-security-service} Service
 
 == Prerequisites
 

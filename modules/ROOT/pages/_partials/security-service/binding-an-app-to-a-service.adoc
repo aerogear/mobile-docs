@@ -6,7 +6,7 @@
 To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.
 
-This section describes how to set up the {mobile-security-service} service.
+This section describes how to set up the {app-security-service} service.
 
 .Prerequisites
 
@@ -27,9 +27,9 @@ image::mobile-clients-services-all-unbound.png[]
 +
 NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
 
-. Click *Bind to App* for {mobile-security-service}.
+. Click *Bind to App* for {app-security-service}.
 
-. Fill out the binding parameters required by the {mobile-security-service} Service.
+. Fill out the binding parameters required by the {app-security-service} Service.
 
 
-The {mobile-security-service} service will now be expandable, details about the service can be viewed.
+The {app-security-service} service will now be expandable, details about the service can be viewed.
