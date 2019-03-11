@@ -1,0 +1,35 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='binding-an-app-to-{context}']
+= Binding a {mobile-client} with the {keycloak-service} Service
+
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+This section describes how to set up the {mobile-security-service} service.
+
+.Prerequisites
+
+* You have created a {mobile-client}.
+
+.Procedure
+
+To bind a {mobile-client} with a mobile service:
+
+. Launch {mobile-developer-console}.
+
+. Click on the {mobile-client} on the Overview screen.
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
+
++
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Click *Bind to App* for {mobile-security-service}.
+
+. Fill out the binding parameters required by the {mobile-security-service} Service.
+
+
+The {mobile-security-service} service will now be expandable, details about the service can be viewed.

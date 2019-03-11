@@ -1,12 +1,28 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-// start {partialsdir}/attributes.adoc[]
-include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
-
-:toclevels: 4
-
-:toc:
-
+[id='provisioning-the-{context}']
 = Provisioning the {mobile-security-service} Service
 
-[[introduction]]
+This section describes how to set up the {mobile-security-service} Service.
+
+.Prerequisites
+
+* You have logged into the OpenShift console and the {mobile-developer-console}.
+
+.Procedure
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the {mobile-security-service} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
++
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.

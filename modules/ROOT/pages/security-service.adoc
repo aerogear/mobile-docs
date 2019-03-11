@@ -24,9 +24,9 @@ ifdef::context[:parent-context: {context}]
 
 [[setting-up-the-security-service]]
 == Setting Up the {security-service} Service
-// include::_partials/security-service/provisioning-security.adoc[leveloffset=+2]
-// include::_partials/security-service/binding-an-app-to-a-service.adoc[leveloffset=+2]
-// include::_partials/security-service/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+include::_partials/security-service/provisioning-security.adoc[leveloffset=+2]
+include::_partials/security-service/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::_partials/security-service/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
 
 
 
