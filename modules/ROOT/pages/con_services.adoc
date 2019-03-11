@@ -12,7 +12,7 @@ The following services are available:
 * link:mobile-cicd.html[{mobile-ci-cd-service}]
 * Security
 ** link:device-security.html[{device-security-service}]
-** xref:security-service.adoc[Application Security]
+** xref:app-security.adoc[{app-security-service}]
 * link:data-sync.html[{sync-service}]
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
