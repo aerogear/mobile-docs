@@ -1,8 +1,8 @@
-To make it easier for developers to get started with our {sync-service} framework, we have built link:https://github.com/aerogear/ionic-showcase[a sample application] for developers to play with. In this app, developers can try out the many of the features offered by the {sync-service} framework, including:
+The link:https://github.com/aerogear/ionic-showcase[sample application] demonstrates features offered by the {sync-service} framework, including:
 
 * GraphQL Schema
 * Offline Storage
 * Conflict Resolution
 * Subscriptions
 
-To try it, please go to the xref:showcase-apps.adoc[Showcase Apps] section and follow the instructions.
+See the xref:showcase-apps.adoc[Showcase Apps] section for instructions about how to run it.

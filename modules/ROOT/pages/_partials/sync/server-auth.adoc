@@ -7,7 +7,7 @@ Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/vo
 * Authorization - Use the `@hasRole()` directive within the GraphQL schema to implement role based access control (RBAC) on the GraphQL level.
 * Integration with GraphQL context - Use the `context` object within the GraphQL resolvers to access user credentials and several helper functions.
 
-= Prerequisites
+.Prerequisites
 
 * There is a Keycloak service available.
 * You must add a valid `keycloak.json` config file to your project. 

@@ -1,4 +1,4 @@
-= Prerequisites
+.Prerequisites
 * [x] You have Node.js and npm installed.
 * [x] You have created an empty web project that supports ES6.  The link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
 * [x] You have completed the server getting started guide and the application is running.

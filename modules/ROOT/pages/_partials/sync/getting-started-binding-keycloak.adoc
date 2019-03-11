@@ -2,7 +2,7 @@
 
 In this section, we will show you how to protect your {sync-service} application using the {keycloak-service} service.
 
-== Prerequisites
+.Prerequisites
 
 - There is a {keycloak-service} service available.
 - You have provisioned a {sync-service} application using our playbook.
