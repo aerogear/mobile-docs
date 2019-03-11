@@ -54,9 +54,6 @@ include::_partials/sync/js-client-auth.adoc[leveloffset=2]
 [#js-client-files]
 include::_partials/sync/js-client-files.adoc[leveloffset=2]
 
-[#sync-js-client-metrics]
-include::_partials/sync/js-client-metrics.adoc[leveloffset=2]
-
 [#sync-js-client-audit-logs]
 include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 

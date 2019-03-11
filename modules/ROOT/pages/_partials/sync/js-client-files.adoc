@@ -40,18 +40,18 @@ The following example demonstrates how to upload a profile picture:
 
 [source, javascript]
 ----
+import gql from 'graphql-tag'
+import { Mutation } from 'react-apollo'
 
-const config = {
-    import gql from 'graphql-tag'
-    import { Mutation } from 'react-apollo'
-
-    export const UPLOAD_PROFILE = gql`
-    mutation changeProfilePicture($file: Upload!) {
-        changeProfilePicture(file: $file) {
-            ...UserFragment
-        }
-    }
-    `;
+export const UPLOAD_PROFILE = gql`
+mutation changeProfilePicture($file: Upload!) {
+  changeProfilePicture(file: $file) {
+    filename
+    mimetype
+    encoding
+  }
+}
+`;
 ----
 
 
