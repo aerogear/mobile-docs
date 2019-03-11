@@ -23,7 +23,7 @@ ifdef::context[:parent-context: {context}]
 * You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
 
 [[setting-up-the-security-service]]
-== Setting Up the {security-service} Service
+== Setting Up the {app-security-service} Service
 include::_partials/app-security/provisioning-security.adoc[leveloffset=+2]
 include::_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]

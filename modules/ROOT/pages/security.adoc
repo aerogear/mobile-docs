@@ -10,9 +10,9 @@ There are two security services available:
 [cols=","]
 |===
 
-| link:security.adoc[Device Security Service]
+a| xref:device-security.adoc[Device Security Service]
 
-| link:app-security.adoc[App Security Service]
+a| xref:app-security.adoc[App Security Service]
 
 
 a|
