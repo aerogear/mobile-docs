@@ -296,7 +296,7 @@ sed \
  kibanaImportTemplate.json > kibanaImport.json
 ----
 
-You may find `kibanaImportTemplate.json` link:./kibanaImportTemplate.json[here].
+You may find `kibanaImportTemplate.json` link:https://raw.githubusercontent.com/aerogear/voyager-server/master/doc/guides/kibanaImportTemplate.json[here].
 
 Once the `kibanaImport.json` file is generated, it has to be imported into Kibana. 
 
