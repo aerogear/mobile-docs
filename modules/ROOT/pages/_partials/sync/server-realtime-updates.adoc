@@ -15,7 +15,7 @@ In this example schema, we first set up a `Task` type, and then define the Mutat
 When a new task is created, the resolver for that task publishes the result of this mutation to the `TaskCreated` channel.
 
 ```
-const { gql } = require('@aerogear/apollo-voyager-server')
+const { gql } = require('@aerogear/voyager-server')
 
 const typeDefs = gql `
 type Task {
@@ -60,16 +60,17 @@ Following on from the example server described in xref:sync-server-getting-start
 ```
 const http = require('http')
 const { SubscriptionServer } = require('subscriptions-transport-ws')
+const { execute, subscribe } = require('graphql')
 
 const httpServer = http.createServer(app)
 
 server.applyMiddleware({ app })
-  httpServer.listen({ 4000,
-}, () => {
+
+httpServer.listen(4000, () => {
   new SubscriptionServer ({
     execute,
     subscribe,
-    schema: voyagerServer.schema
+    schema: server.schema
   }, {
     server: httpServer,
     path: '/graphql'

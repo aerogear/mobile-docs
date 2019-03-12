@@ -61,19 +61,16 @@ getTasks() {
   tasks.subscribeToMore({
     document: TASK_ADDED_SUBSCRIPTION,
     updateQuery: (prev, { subscriptionData }) => {
-      if(subscribtionData.data){
-        const newTask = subscribtionData.data.taskAdded;
-        if (allTasks.find(task) => task.id === createTask.id)) {
+      if(subscriptionData.data){
+        const newTask = subscriptionData.data.taskAdded;
+        if (prev.allTasks.find(task => task.id === newTask.id)) {
           return prev;
         } else {
-          return allTasks: [
-              ...prev,
-              newTask
-            ];
-          }
-        } else {
-          return prev
+          return Object.assign({}, prev, {
+            allTasks: [...prev.allTasks, newTask]
+          });
         }
+      }
     }
   });
   return tasks;
@@ -115,21 +112,19 @@ An example of using the provided Cordova Network Status, which is an implementat
 This code should be used to re-run a query upon the client coming back to an online state.
 [source, javascript]
 ----
-    const { CordovaNetworkStatus, NetworkInfo } = require("@aerogear/voyager-client");
-    const networkStatus = new CordovaNetworkStatus();
-    const tasks = []
+const { CordovaNetworkStatus, NetworkInfo } = require("@aerogear/voyager-client");
+const networkStatus = new CordovaNetworkStatus();
 
-    networkStatus.onStatusChangeListener({
-      onStatusChange(networkInfo: NetworkInfo) {
-        self.online = networkInfo.online;
-        if (self.online) {
-          this.tasks = return client.watchQuery({
-            query: GET_TASKS
-          });
-        }
-      }
-    });
-
+networkStatus.onStatusChangeListener({
+  onStatusChange(networkInfo: NetworkInfo) {
+    const online = networkInfo.online;
+    if (online) {
+      client.watchQuery({
+        query: GET_TASKS
+      });
+    }
+  }
+});
 ----
 
 

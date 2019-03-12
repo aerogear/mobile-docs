@@ -6,22 +6,24 @@ The `@aerogear/voyager-metrics` module can be used to mount a metrics middleware
 
 == Enabling Metrics in {sync-server}
 
-1. Import the `@aerogear/voyager-metrics` module
+. Import the `@aerogear/voyager-metrics` module
 
++
 [source,javascript]
 ----
 const metrics = require('@aerogear/voyager-metrics')
 ----
 
-2. Apply the metrics middleware to your Express app. This will expose metrics at the given endpoint.
+. Apply the metrics middleware to your Express app. This will expose metrics at the given endpoint.
 
++
 [source,javascript]
 ----
 const app = express()
-keycloakService.applyAuthMiddleware(app, { path: '/metrics' })
+metrics.applyMetricsMiddlewares(app, { path: '/metrics' })
 ----
 
-3. Inject the metrics module into {sync-server}. This will ensure metrics at the GraphQL level can be exposed.
+. Inject the metrics module into {sync-server}. This will ensure metrics at the GraphQL level can be exposed.
 
 [source,javascript]
 ----
