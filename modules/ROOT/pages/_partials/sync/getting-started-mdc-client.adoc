@@ -1,6 +1,6 @@
 = Connecting a Client
 
-== Prerequisites
+.Prerequisites
 * [x] You have access to an OpenShift cluster with the Service Catalog.
 * [x] You have completed the OpenShift getting started guide.
 * [x] You have created a mobile client and bound your data sync server.

@@ -1,9 +1,7 @@
-= File Upload Server
+= Enabling file uploads
 
 {sync-server} provides support for uploading binary data along with the GraphQL queries.
 The implementation relies on upstream `Apollo Server` capabilities.
-
-== Introduction
 
 The upload functionality uses the GraphQL multipart form requests specification.
 File upload needs to be implemented on both server and client:
@@ -15,7 +13,7 @@ In the resolver function, the upload promise resolves an object.
 
 NOTE: File upload is based on link:https://github.com/jaydenseric/graphql-multipart-request-spec[graphql-multipart-request-spec]
 
-= Building Resolvers with File Uploads Support
+.Procedure
 
 To enable file uploads, create a schema and use the `Upload` scalar.
 For example:

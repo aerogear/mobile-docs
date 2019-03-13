@@ -34,7 +34,7 @@ Pluggable conflict resolution supports the following implementations:
 
 Implementations are based on the `ObjectState` interface that can be extended to provide custom implementation for conflict detection.
 
-== Prerequisites
+.Prerequisites
 
 * GraphQL server with resolvers.
 * Database or any other form of data storage that can cause data conflicts.
