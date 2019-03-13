@@ -75,9 +75,6 @@ include::_partials/sync/js-client-getting-started.adoc[leveloffset=2]
 [#sync-js-client-offline-and-conflict]
 include::_partials/sync/js-client-offline-and-conflict.adoc[leveloffset=2]
 
-[#sync-js-client-data-access]
-include::_partials/sync/js-client-data-access.adoc[leveloffset=2]
-
 [#sync-js-client-realtime-updates]
 include::_partials/sync/js-client-realtime-updates.adoc[leveloffset=2]
 
@@ -87,16 +84,11 @@ include::_partials/sync/js-client-auth.adoc[leveloffset=2]
 [#js-client-files]
 include::_partials/sync/js-client-files.adoc[leveloffset=2]
 
-
-[#sync-js-client-metrics]
-include::_partials/sync/js-client-metrics.adoc[leveloffset=2]
-
 [#sync-js-client-audit-logs]
 include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
 
 [#sync-js-client-advanced-topics]
 include::_partials/sync/js-client-advanced-topics.adoc[leveloffset=2]
-
 
 [#sync-server-openshift]
 == Running {sync-service} on OpenShift
@@ -113,7 +105,6 @@ include::_partials/sync/binding.adoc[leveloffset=2]
 
 [#sync-server-binding-keycloak]
 include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
-
 
 [#sync-sample-app]
 == Showcase App
