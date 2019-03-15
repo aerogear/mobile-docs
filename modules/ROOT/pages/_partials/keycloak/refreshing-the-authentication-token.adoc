@@ -61,7 +61,7 @@ Retrieve the keycloak adapter object and refresh the access token, when possible
 
 [source,javascript]
 ----
-authService.service.extract().updateToken(30).then(() => {
+authService.extract().updateToken(30).then(() => {
     // Token has been refreshed
 });
 ----
