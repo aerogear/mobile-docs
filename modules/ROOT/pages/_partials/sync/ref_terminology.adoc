@@ -1,9 +1,5 @@
-
-
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_terminology_{sync-service}
-
-[id='{context}_ref_terminology']
+[id='ref_terminology_{context}']
 
 = {sync-service} Terminology
 
