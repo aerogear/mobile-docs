@@ -58,9 +58,9 @@ image::sync-app-creation-dialog.png[Sync Application Creation Dialog]
 |Sync Application Name||Fill in name of your {sync-service} application
 |Sync Application Docker image||Fill in URL too your {sync-service} application docker image
 |Sync Application Docker image version|latest|Tag of your docker image
-|Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
-|Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
 |Sync Application Port||Port number that {sync-service} application is listening on
+|Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)
+|Sync Application GraphQL Endpoint|/graphql|Path to the GraphQL endpoint (default value is recommended)
 |Database Server Hostname||Database server hostname that is used to connect by the {sync-service}
 |Database Server Port||Database server port that is used to connect by the {sync-service}
 |Database Server Username||Database server username that is used to connect by the {sync-service}
