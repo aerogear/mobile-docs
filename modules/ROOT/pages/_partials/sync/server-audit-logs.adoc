@@ -99,7 +99,7 @@ The `userInfo` property is available only if {sync-server} is protected by an id
 
 = Enabling Audit Logging in Voyager Server
 
-Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/package/@aerogear/voyager-audit[@aerogear/voyager-audit] 
+Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/package/@aerogear/voyager-audit[@aerogear/voyager-audit]
 
 . Import the `@aerogear/voyager-audit` module
 
@@ -110,7 +110,7 @@ const auditLogger = require('@aerogear/voyager-audit')
 ----
 
 . Inject the auditLogger module into the {sync-server}. This enables audit logging within your application.
- 
+
 [source,javascript]
 ----
 const voyagerConfig = {
@@ -134,7 +134,7 @@ export interface AuditLogger {
 }
 ----
 
-The following example implements an `AuditLogger` and injects it into the {sync-server}. 
+The following example implements an `AuditLogger` and injects it into the {sync-server}.
 The example redacts the arguments using a `myCustomRedactionFunction` function.
 
 [source,typescript]
@@ -246,13 +246,13 @@ All application logs printed to `stdout` are sent to ElasticSearch by Fluentd. H
 OpenShift logging can be enabled as described in link:https://docs.okd.io/3.11/install_config/aggregate_logging.html[OpenShift documentation].
 
 Once enabled, OpenShift logging will create a Fluentd instance per cluster node that reads the `stdout` and `stderr` of the pods in that node
-and pushes the readings to the centralized ElasticSearch instance. Documents created in ElasticSearch instance can be then explored and 
+and pushes the readings to the centralized ElasticSearch instance. Documents created in ElasticSearch instance can be then explored and
 visualized by the Kibana instance, which is also installed by OpenShift logging.
 
 OpenShift logging creates an index per namespace and that index is only available to users who have access to that namespace.
 It also creates the index patterns in Kibana in the same way.
 
-By default, OpenShift also provides a https://www.elastic.co/guide/en/elasticsearch/client/curator/current/about.html[curator] which deletes the old 
+By default, OpenShift also provides a https://www.elastic.co/guide/en/elasticsearch/client/curator/current/about.html[curator] which deletes the old
 log messages from ElasticSearch to reduce storage needs and improve performance. This has an impact on audit trails and also metrics.
 
 For long term audit trails, curator can be configured to delete messages older than your choice. If this is not sufficient,
@@ -271,7 +271,7 @@ dashboard are created in Kibana. These then can be used to have an overview of t
 
 See the screenshot of the provided dashboard below.
 
-image:kibana-dashboard-screenshot.png[]
+image::kibana-dashboard-screenshot.png[]
 
 OpenShift logging creates ElasticSearch indices per namespace and the index names have the format `project.<project-name>.<project-uid>`.
 For example `project.myproject.49f9a0b6-09b5-11e9-9597-069f7827c758`.
@@ -298,7 +298,7 @@ sed \
 
 You may find `kibanaImportTemplate.json` link:https://raw.githubusercontent.com/aerogear/voyager-server/master/doc/guides/kibanaImportTemplate.json[here].
 
-Once the `kibanaImport.json` file is generated, it has to be imported into Kibana. 
+Once the `kibanaImport.json` file is generated, it has to be imported into Kibana.
 
 To do that:
 
@@ -328,7 +328,7 @@ At the moment, no mechanisms are provided to overcome this problem.
 
 = Viewing the Dashboard and Audit Logs
 
-When the Kibana saved objects are imported, a dashboard is available with several visualizations that can be used as an 
+When the Kibana saved objects are imported, a dashboard is available with several visualizations that can be used as an
 overview of the Voyager application status.
 
 At the bottom of the dashboard, audit log messages can be explored directly.

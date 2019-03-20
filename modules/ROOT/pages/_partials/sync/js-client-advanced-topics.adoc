@@ -51,7 +51,7 @@ By default mutations are not applied to the UI until responses are received from
  import { createOptimisticResponse } from "@aerogear/voyager-client";
 
  client.mutate({
-   mutation: ADD_TASK, 
+   mutation: ADD_TASK,
    variables: item,
    optimisticResponse: createOptimisticResponse("createTask", "Task", item);
  });

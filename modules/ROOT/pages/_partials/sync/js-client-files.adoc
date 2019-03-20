@@ -10,12 +10,12 @@ The File upload needs to be implemented on both server and client:
 
 1. On the client HTML FileList objects are mapped into a mutation and sent to the server in a multipart request.
 
-2. On the server: The multipart request is handled. The server processes it and provides an upload argument to a resolver. 
+2. On the server: The multipart request is handled. The server processes it and provides an upload argument to a resolver.
 In the resolver function, the upload promise resolves an object.
 
 NOTE: File upload is based on link:https://github.com/jaydenseric/graphql-multipart-request-spec[graphql-multipart-request-spec]
 
-== Enabling File Upload 
+== Enabling File Upload
 
 File upload feature needs to be enabled by passing `fileUpload` flag to config object:
 
@@ -31,10 +31,10 @@ const config = {
 //create a new client
 ----
 
-= Uploading Files from GraphQL 
+= Uploading Files from GraphQL
 
 File upload capability adds a new GraphQL scalar `Upload` that can be used for mutations that operate on binary data.
-The `Upload` scalar maps html `FileList` HTML5 object in GraphQL schemas. 
+The `Upload` scalar maps html `FileList` HTML5 object in GraphQL schemas.
 The first step required to work with binary uploads is to write mutation that will contain `Upload` scalar.
 The following example demonstrates how to upload a profile picture:
 
@@ -66,7 +66,7 @@ The following example shows file upload in a React application.
 ----
 
 const uploadOneFile = () => {
-  return (   
+  return (
     <Mutation mutation={UPLOAD_PROFILE}>
       {uploadFile => (
         <input

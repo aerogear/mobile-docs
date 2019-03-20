@@ -5,4 +5,4 @@ The link:https://github.com/aerogear/ionic-showcase[sample application] demonstr
 * Conflict Resolution
 * Subscriptions
 
-See the xref:showcase-apps.adoc[Showcase Apps] section for instructions about how to run it.
+See the Showcase Apps section for instructions about how to run it.

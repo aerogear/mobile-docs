@@ -71,7 +71,7 @@ const core = init({
   ]
 });
 
-async function helloWorld() { 
+async function helloWorld() {
   let client = await createClient({
     openShiftConfig:core.config
   });

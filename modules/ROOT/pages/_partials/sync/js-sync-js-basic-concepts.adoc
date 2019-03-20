@@ -1,6 +1,6 @@
 = Introduction
 
-The {sync-client} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features: 
+The {sync-client} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features:
 
 * Offline query and mutation support
 * Conflict detection and resolution
@@ -31,7 +31,7 @@ To work with cache effectively, it is recommended that developers use the `cache
   });
 ----
 
-The cache is populated by subscriptions, pooling or regular queries happening in UI. Please see <<#client-offline-support, Offline Support>> section for more details.
+The cache is populated by subscriptions, pooling or regular queries happening in UI. Please see the _client-offline-support, Offline Support_ section for more details.
 
 == Required Field in GraphQL Types
 

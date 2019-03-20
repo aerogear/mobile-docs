@@ -23,7 +23,7 @@ $ npm install @aerogear/voyager-server <3>
 ----
 
 <1> See https://graphql.org/
-<2> See https://expressjs.com/ 
+<2> See https://expressjs.com/
 <3> The {sync-server} library that enables data sync
 ====
 

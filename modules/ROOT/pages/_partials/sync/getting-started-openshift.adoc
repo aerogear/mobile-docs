@@ -7,7 +7,7 @@
 
 To connect your Data Sync server and client to other mobile services, you need to run your application in OpenShift.  Data Sync provides a service catalog item to help with this.
 
-Data Sync requires your server application to be packaged as a Docker formatted container and published to a public respository such as link:https://hub.docker.com/[Docker hub]. 
+Data Sync requires your server application to be packaged as a Docker formatted container and published to a public respository such as link:https://hub.docker.com/[Docker hub].
 
 [#building-and-publishing-the-container]
 = Building and publishing the server container
@@ -20,15 +20,15 @@ As an example:
 ----
 FROM node:8
 WORKDIR /usr/src/app
-# copy Node.js specific files 
+# copy Node.js specific files
 COPY package*.json ./
 # copy application source file to the workdir
-COPY index.js . 
+COPY index.js .
 RUN npm install
 # TCP port that application is listening on
 EXPOSE 4000
 CMD [ "node", "index.js" ]
----- 
+----
 
 Build the Docker container and tag it:
 [source,bash]
@@ -49,14 +49,14 @@ include::../generic-provisioning.adoc[]
 
 Fill in all of the required parameters for the service:
 
-image:sync-app-creation-dialog.png[Sync Application Creation Dialog]
+image::sync-app-creation-dialog.png[Sync Application Creation Dialog]
 
 .Configuration
 [options="header"]
 |====
 |Field|Default|Description
-|Sync Application Name||Fill in name of your {sync-service} application 
-|Sync Application Docker image||Fill in URL too your {sync-service} application docker image 
+|Sync Application Name||Fill in name of your {sync-service} application
+|Sync Application Docker image||Fill in URL too your {sync-service} application docker image
 |Sync Application Docker image version|latest|Tag of your docker image
 |Sync Application health endpoint|/|Path to the health endpoint (default value is recommended)
 |Sync Application metrics endpoint|/metrics|Path to the metrics endpoint (default value is recommended)

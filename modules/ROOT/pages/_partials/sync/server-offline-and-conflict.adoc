@@ -135,7 +135,7 @@ Please see the sections below for the individual implementations.
 }
 ----
 
-In the example above, `conflictHandler.resolveOnClient` is used when a conflict is detected. `resolveOnClient` returns a `response` object which should be returned to the client. The `response` contains the conflicting data and some metadata which the client can use to resolve the conflict. 
+In the example above, `conflictHandler.resolveOnClient` is used when a conflict is detected. `resolveOnClient` returns a `response` object which should be returned to the client. The `response` contains the conflicting data and some metadata which the client can use to resolve the conflict.
 
 Since the conflict will be resolved on the client, it is not required to persist the data. However, if there is no conflict, the data sent by the client should be persisted.
 
@@ -161,7 +161,7 @@ const { conflictHandler, strategies } = require('@aerogear/voyager-conflicts')
      if (conflictHandler.hasConflict(task, clientData)) {
        // If a conflict is detected, resolve it on the server using one of the default strategies.
        const { resolvedState, response } = await conflictHandler.resolveOnServer(strategies.clientWins, task, clientData)
-       
+
        // persist the resolved data to the database and then return the conflict response
        await context.db('tasks')
          .update(resolvedState)
@@ -207,7 +207,7 @@ It is possible to implement a 'server wins' style strategy using the `reject` me
 
 [source,javascript]
 ----
-// If a conflict is detected, call the reject function 
+// If a conflict is detected, call the reject function
 // to keep the server side data and force the client to update
 if (conflictHandler.hasConflict(serverData, clientData)) {
   return conflictHandler.reject(task, clientData)
@@ -228,7 +228,7 @@ function customResolutionStrategy (serverState, clientState) {
 }
 ----
 
-This example takes string values from the server and the client records, merges them together and returns the newly resolved object. This example is a little contrived but it shows how any strategy could be implemented. 
+This example takes string values from the server and the client records, merges them together and returns the newly resolved object. This example is a little contrived but it shows how any strategy could be implemented.
 
 Use the custom strategy in your resolvers the same way as the previous examples.
 

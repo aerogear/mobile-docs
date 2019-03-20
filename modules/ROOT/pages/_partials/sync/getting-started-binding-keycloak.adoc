@@ -17,10 +17,10 @@ Any application that connects to {keycloak-service} must consume a keycloak.json
 
 The following command will create a secret called `sync-keycloak-doc`. It will contain one key, `keycloak`, and its value is the text of your keycloak.json file.
 
-[source, bash]  
+[source, bash]
 ----
 oc create secret generic sync-keycloak-doc \
-  --from-file=keycloak=./keycloak.json 
+  --from-file=keycloak=./keycloak.json
 ----
 
 You can view the secret with either `oc get secret sync-keycloak-doc` or the OpenShift web console.
@@ -54,7 +54,7 @@ spec:
 
 == Apply the patch
 
-After replacing `$YOUR_DEPLOYMENT_CONFIG_NAME` with the deployment config name, run the following command to patch the deployment configuration and trigger your application to redeploy. 
+After replacing `$YOUR_DEPLOYMENT_CONFIG_NAME` with the deployment config name, run the following command to patch the deployment configuration and trigger your application to redeploy.
 
 [source, bash]
 ----

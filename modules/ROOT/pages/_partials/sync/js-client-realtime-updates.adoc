@@ -13,7 +13,7 @@ The architecture of websockets is as follows:
 
 Websockets are a perfect solution for delivering messages to currently active clients. To receive updates the
 client must be currently connected to the websocket server, updates made over this websocket while the client is offline
-will not be consumed by the client. For this use case xref:push-notifications.adoc[Push Notifications] are recommended.
+will not be consumed by the client. For this use case Push Notifications are recommended.
 
 {sync-client} comes with subscription support out of the box including auto-reconnection upon device restart or network reconnect.
 To enable subscriptions on your client set the following
@@ -126,5 +126,3 @@ networkStatus.onStatusChangeListener({
   }
 });
 ----
-
-

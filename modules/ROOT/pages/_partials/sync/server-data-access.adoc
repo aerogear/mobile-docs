@@ -1,6 +1,6 @@
 = Data Access
 
-A {sync-service} application will most likely need to access to a database. The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application. 
+A {sync-service} application will most likely need to access to a database. The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
 
 From a very high level, here are the steps to access data from a database in a {sync-service} application:
 
@@ -10,7 +10,7 @@ From a very high level, here are the steps to access data from a database in a {
 
 == Initialize Database Connection
 
-Generally speaking, the application should set up the database connection on start, and fail if the connection can not be established. In order to connect to the database, usually the information like the hostname and port number of the database server, the credentials to authenticate will be required. It is recommended to use environment variables to set these details. 
+Generally speaking, the application should set up the database connection on start, and fail if the connection can not be established. In order to connect to the database, usually the information like the hostname and port number of the database server, the credentials to authenticate will be required. It is recommended to use environment variables to set these details.
 
 If the application is going to be deployed on OpenShift as described in the <<Running {sync-service} on OpenShift>> section, then the following environment variables will be setup for the application automatically:
 
@@ -108,13 +108,3 @@ const resolvers = {
 ----
 
 Similarly, if there are mutations, the database connection can be used in the resolvers to insert or update data to the database.
-
-
-
-
-
-
-
-
-
-

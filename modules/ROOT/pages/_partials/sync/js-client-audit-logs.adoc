@@ -12,7 +12,7 @@ cordova plugin add cordova-plugin-aerogear-metrics
 
 . Set `auditLogging` to true when creating a client instance.
 
-+ 
++
 [source,javascript]
 ----
 import { createClient } from '@aerogear/voyager-client';

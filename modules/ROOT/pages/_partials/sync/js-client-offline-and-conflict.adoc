@@ -86,7 +86,7 @@ If conflicts need to be handled on client side, developers can either use the de
 
 Pluggable conflict resolution is a concept that allows developers to implement their own conflict detection and resolution logic regardless of the data storage.
 
-It has two parts: one for detecting conflicts, and the other for resolving conflicts. 
+It has two parts: one for detecting conflicts, and the other for resolving conflicts.
 
 To detect conflicts, developers can use either the default version-based conflict detection mechanism, or provide their own implementation via the `conflictStateProvider` option in the config object that is used to initialize the sync client.
 
@@ -96,7 +96,7 @@ To resolve conflicts, developers can either use the default conflict resolution 
 
 === Version Based Conflict Detection
 
-For more details about how it works, please check the <<#server-version-based-conflict-resolution, Voyager server document>>.
+For more details about how it works, please check the _server-version-based-conflict-resolution, Voyager server document_.
 
 On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
 
@@ -166,4 +166,3 @@ let config = {
 ...
 }
 ----
-
