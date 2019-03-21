@@ -1,0 +1,38 @@
+= Introduction
+
+The {sync-client} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features:
+
+* Offline query and mutation support
+* Conflict detection and resolution
+* Authentication and authorization support
+* Audit logging
+
+Because the {sync-client} is an extension to Apollo, it works with all the frameworks that Apollo supports.
+
+For React:
+https://www.apollographql.com/docs/react/
+
+For Angular:
+https://www.apollographql.com/docs/angular/
+
+== Cache
+
+In order to support offline use cases, the client SDK strongly leverages Apollo Cache layer. Please refer link: https://www.apollographql.com/docs/react/advanced/caching.html[their documentation] for more information about caching in Apollo GraphQL.
+
+=== Querying Data
+
+To work with cache effectively, it is recommended that developers use the `cache-first` fetchPolicy when perform queries.
+
+[source, javascript]
+----
+  return this.apollo.watchQuery({
+    query: YOUR_QUERY,
+    fetchPolicy: 'cache-first',
+  });
+----
+
+The cache is populated by subscriptions, pooling or regular queries happening in UI. Please see the _client-offline-support, Offline Support_ section for more details.
+
+== Required Field in GraphQL Types
+
+A field called `id` is required in all the types when design the GraphQL schema for an application. The client SDK expects this field to be returned from the server for a query. Without this field some offline functionalities will not work properly.

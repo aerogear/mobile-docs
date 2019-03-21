@@ -1,0 +1,110 @@
+= Data Access
+
+A {sync-service} application will most likely need to access to a database. The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
+
+From a very high level, here are the steps to access data from a database in a {sync-service} application:
+
+. Initialize the database connection on app start.
+. Add the database connection to the `context` object.
+. Retrieve/persist data to the database in the application's resolvers.
+
+== Initialize Database Connection
+
+Generally speaking, the application should set up the database connection on start, and fail if the connection can not be established. In order to connect to the database, usually the information like the hostname and port number of the database server, the credentials to authenticate will be required. It is recommended to use environment variables to set these details.
+
+If the application is going to be deployed on OpenShift as described in the <<Running {sync-service} on OpenShift>> section, then the following environment variables will be setup for the application automatically:
+
+[options="header"]
+|====
+|Field Name|Environment Variable Name
+|Database Server Hostname|DB_HOSTNAME
+|Database Server Port|DB_PORT
+|Database Server Username|DB_USERNAME
+|Database Server Password|DB_PASSWORD
+|Database name|DB_NAME
+|Use SSL|DB_SSL
+|====
+
+It is highly recommended that the application use these environment variables to setup the database connection.
+
+For example, if an application needs to connect to a PostgreSQL database (where all tables and schemas are already set up) then a database connection can be established on app start as follows:
+
+[source,javascript]
+----
+//knex is a SQL query builder
+const knex = require('knex')
+
+const config = {
+  database: process.env.DB_NAME || 'users',
+  user: process.env.DB_USERNAME || 'postgresql',
+  password: process.env.DB_PASSWORD || 'postgres',
+  host: process.env.DB_HOSTNAME || '127.0.0.1',
+  port: process.env.DB_PORT || '5432'
+}
+
+const db = knex({
+  client: 'pg',
+  connection: config
+})
+----
+
+== Add Database Connection to the `context` Object
+
+Add the database connection to the `context` object so that a resolver can access the database.
+
+From a very high level, the `context` object is an object shared by all resolvers in a particular query, and is used to contain per-request state, including authentication information, dataloader instances, and anything else that should be taken into account when resolving the query. For more information, please check link:https://www.apollographql.com/docs/apollo-server/essentials/data.html#context[the Apollo doc on the context argument].
+
+It is very easy to add the database connection to the `context` object. Following the example from the section above, the database connection can be added to the `context` object like this:
+
+[source,javascript]
+----
+const typeDefs = //define the schema
+const resolvers = //define the resolvers
+
+const apolloConfig = {
+  typeDefs,
+  resolvers,
+  context: {
+    db: db.client
+  }
+}
+
+const voyagerConfig = {...} //other config for the Voyager server
+const apolloServer = VoyagerServer(apolloConfig, voyagerConfig)
+----
+
+== Use the Database Connection in Resolvers
+
+Now the database connection is available in the `context` object, it can be used in resolvers to retrieve/persist data.
+
+Use the same example from the sections above, here is the schema for the application:
+
+[source,graphql]
+----
+type Task {
+  id: ID!
+  version: Int
+  title: String!
+  description: String!
+}
+
+type Query {
+  allTasks(first: Int, after: String): [Task],
+}
+----
+
+
+In the resolver for the `allTasks` query, the database connection can be used to retrieve data from the database:
+
+[source,javascript]
+----
+const resolvers = {
+  Query: {
+    allTasks: async (obj, args, context) => {
+      return context.db.select().from('tasks') //use `db` from the `context` object
+    }
+  }
+}
+----
+
+Similarly, if there are mutations, the database connection can be used in the resolvers to insert or update data to the database.

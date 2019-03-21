@@ -1,0 +1,38 @@
+= Metrics
+
+{sync-server} can expose a variety of useful metrics that can be consumed and visualised by the {metrics-service} service. (Prometheus for data collection and Grafana for Visualisation).
+
+The `@aerogear/voyager-metrics` module can be used to mount a metrics middleware, exposing a metrics endpoint that can be consumed by prometheus (default: `/metrics`).
+
+== Enabling Metrics in {sync-server}
+
+. Import the `@aerogear/voyager-metrics` module
+
++
+[source,javascript]
+----
+const metrics = require('@aerogear/voyager-metrics')
+----
+
+. Apply the metrics middleware to your Express app. This will expose metrics at the given endpoint.
+
++
+[source,javascript]
+----
+const app = express()
+metrics.applyMetricsMiddlewares(app, { path: '/metrics' })
+----
+
+. Inject the metrics module into {sync-server}. This will ensure metrics at the GraphQL level can be exposed.
+
+[source,javascript]
+----
+const voyagerConfig = {
+  metrics
+}
+const server = VoyagerServer(apolloConfig, voyagerConfig)
+----
+
+The link:https://github.com/aerogear/voyager-server/blob/master/examples/metrics[Metrics Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
+
+include::../metrics/monitoring-sync.adoc[leveloffset=2]

@@ -1,0 +1,128 @@
+= Realtime Updates
+
+Subscriptions are a core concept of GraphQL and one which allow us to enable real time updates of data
+from the server to the client.
+To do this GraphQL Subscriptions utilise websockets to enable clients to subscribe to published changes.
+
+The architecture of websockets is as follows:
+
+* Client connects to websocket server
+* Upon certain events, the server can publish the results of these events to the websocket
+* Any _currently connected_ client to that websocket will receive these results
+* The client can close the connection at any time and will no longer recieve updates
+
+Websockets are a perfect solution for delivering messages to currently active clients. To receive updates the
+client must be currently connected to the websocket server, updates made over this websocket while the client is offline
+will not be consumed by the client. For this use case Push Notifications are recommended.
+
+{sync-client} comes with subscription support out of the box including auto-reconnection upon device restart or network reconnect.
+To enable subscriptions on your client set the following
+paramater in the {sync-client} config object. A DataSyncConfig interface is also available from {sync-client} if you wish to use it.
+
+== Setting up a Client to use Subscriptions
+
+To set up a client to use subscriptions simply provide a wsUrl string in the config object.
+
+```
+const config = {
+    wsUrl: "ws://your_websocket_url"
+}
+```
+Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. Once this object is created, use it to initialise {sync-client} with:
+
+```
+const { createClient } = require("@aerogear/voyager-client");
+
+const client = createClient(config)
+```
+
+== Using Subscriptions
+
+Once the client is configured we can then make use of subscriptions. There are many ways to do this, however some are
+preferred over others.
+
+A standard flow to utilise subscriptions is as follows:
+
+1. Make a network query to get data from the server
+1. Watch the cache for changes to queries
+1. Subscribe to changes pushed from the server
+1. Unsubscibe when leaving the view where there is an active subscription
+
+We can see this happening in the three examples below. `subscribeToMore` ensures that any further updates received from the server force the updateQuery function to be called with `subscriptionData` from the server. Using `subscribeToMore` we can ensure the cache is easily updated as all GraphQL
+queries are automatically notified. For more information please see: link:https://www.apollographql.com/docs/angular/features/subscriptions.html#subscribe-to-more[subscribeToMore Docs].
+
+[source,javascript]
+----
+getTasks() {
+  const tasks = client.watchQuery({
+    query: GET_TASKS
+  });
+
+  tasks.subscribeToMore({
+    document: TASK_ADDED_SUBSCRIPTION,
+    updateQuery: (prev, { subscriptionData }) => {
+      if(subscriptionData.data){
+        const newTask = subscriptionData.data.taskAdded;
+        if (prev.allTasks.find(task => task.id === newTask.id)) {
+          return prev;
+        } else {
+          return Object.assign({}, prev, {
+            allTasks: [...prev.allTasks, newTask]
+          });
+        }
+      }
+    }
+  });
+  return tasks;
+}
+----
+
+NOTE: In the above example some deduplication is performed to ensure the same task is not returned to the UI when it is
+already present.
+
+We can then use this query in our application to subscribe to changes so that the front end is always updated when new
+data is returned from the server.
+
+[source,javascript]
+----
+this.tasks = [];
+this.getTasks().subscribe(result => {
+  this.tasks = result.data && result.data.allTasks;
+})
+----
+
+Note that it is also a good idea to unsubscribe from a query upon leaving a page. This prevents possible memory leaks.
+This can be done by calling unsubscribe() as shown in the following example. This code should be placed in the appropriate place.
+
+[source, javascript]
+----
+this.getTasks().unsubscribe();
+----
+
+== Client Network State Changes
+
+When using subscriptions to provide your client with realtime updates it is important to monitor network state. This is
+because of the architecture of websockets as described xref:sync-js-client-realtime-updates[above]. The problem is that if the
+client goes offline for any amount of time and some updates occur on the server in this time then the
+client will be out of sync. To remedy this {sync-client} provides a `NetworkStatus` interface which can be used along with
+the `NetworkInfo` interface to implement custom checks of network status. For more information about how to import and configure a
+custom network status checker please see xref:sync-js-client-advanced-topics[Advanced Topics].
+
+An example of using the provided Cordova Network Status, which is an implementation of the NetworkStatus interface can be seen below.
+This code should be used to re-run a query upon the client coming back to an online state.
+[source, javascript]
+----
+const { CordovaNetworkStatus, NetworkInfo } = require("@aerogear/voyager-client");
+const networkStatus = new CordovaNetworkStatus();
+
+networkStatus.onStatusChangeListener({
+  onStatusChange(networkInfo: NetworkInfo) {
+    const online = networkInfo.online;
+    if (online) {
+      client.watchQuery({
+        query: GET_TASKS
+      });
+    }
+  }
+});
+----

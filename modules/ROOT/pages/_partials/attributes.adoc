@@ -39,7 +39,12 @@
 
 // Sync Service
 :sync-service: Data Sync
-:data-sync-version: 0.1.0
+:sync-server: Voyager Server
+:sync-client: Voyager Client
+
+// TODO: fix this. There are versions on the backend framework libs
+// And a version on the sync client (independent of each other also)
+// :data-sync-version:
 
 :SDK: AeroGear SDK
 :ios-sdk: AeroGear SDK for iOS

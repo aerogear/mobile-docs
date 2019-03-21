@@ -1,0 +1,12 @@
+= {sync-service}
+
+NOTE: This is only available in the Cordova showcase app.
+
+NOTE: To demonstrate all the features that {sync-service} offers, it's best to run the same app on multiple devices at the same time.
+
+From the showcase app:
+
+. Press the *Manage Tasks* menu item.
+. View tasks created by other people and try to edit them. See them changed on other devices.
+. Create new tasks and see them show up on other devices.
+. Bring the device offline by switching to *Airplane Mode*, create a few more tasks and edit a few existing tasks. Then switch the device back online and see them changed on other devices.
