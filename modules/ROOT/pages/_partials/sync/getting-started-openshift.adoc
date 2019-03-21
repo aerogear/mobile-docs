@@ -1,7 +1,7 @@
 .Prerequisites
-* [x] You have Docker installed.
-* [x] You have access to an OpenShift cluster with the Service Catalog.
-* [x] You have completed the server getting started guide.
+* You have Docker installed.
+* You have access to an OpenShift cluster with the Service Catalog.
+* You have completed the server getting started guide.
 
 = Overview
 

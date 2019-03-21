@@ -6,7 +6,7 @@ The `@aerogear/voyager-metrics` module can be used to mount a metrics middleware
 
 == Enabling Metrics in {sync-server}
 
-. Import the `@aerogear/voyager-metrics` module
+. Import the `@aerogear/voyager-metrics` module.
 
 +
 [source,javascript]
@@ -40,9 +40,9 @@ The link:https://github.com/aerogear/voyager-server/blob/master/examples/metrics
 
 .Prerequisites
 
-* [x] You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
-* [x] You have provisioned your xref:data-sync.adoc#sync-server-openshift[{sync-service}] service.
-* [x] You have enabled metrics in {sync-server}.
+* You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
+* You have provisioned your xref:data-sync.adoc#sync-server-openshift[{sync-service}] service.
+* You have enabled metrics in {sync-server}.
 
 NOTE: The {metrics-service} Service and your {sync-server} application must be provisioned in the same OpenShift project to access data.
 

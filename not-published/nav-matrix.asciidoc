@@ -5,52 +5,52 @@ include::_partials/attributes.adoc[]
 [discrete]
 == Prerequisites
 
-* [x] You have set up xref:getting-started.adoc#setting-up-aerogear-mobile-services-on-openshift[AeroGear Mobile Services] on OpenShift.
+* You have set up xref:getting-started.adoc#setting-up-aerogear-mobile-services-on-openshift[AeroGear Mobile Services] on OpenShift.
 
-* [x] You have xref:getting-started.adoc#registering[registered a mobile app] to create a {mobile-client}.
+* You have xref:getting-started.adoc#registering[registered a mobile app] to create a {mobile-client}.
 
 
-== Procedure 
+== Procedure
 
 After choosing a mobile service, use the following table to navigate to the step you want to perform (click the service name to view a description of that service) :
 
 .Mobile Services
 |===
-|Service |Provisioning |Binding| Coding |Service Consoles 
+|Service |Provisioning |Binding| Coding |Service Consoles
 
 |xref:keycloak/index.adoc[{keycloak-service}]
-|xref:keycloak/provisioning.adoc[Provisioning {keycloak-service}] 
-|xref:keycloak/binding.adoc[Binding to {keycloak-service}] 
+|xref:keycloak/provisioning.adoc[Provisioning {keycloak-service}]
+|xref:keycloak/binding.adoc[Binding to {keycloak-service}]
 |xref:keycloak/coding.adoc[Coding for Authenication]
 |xref:keycloak/{keycloak-ui}.adoc[{keycloak-ui}]
 
 
 | xref:security/index.adoc[{device-security-service}]
 | N/A
-| N/A 
+| N/A
 | Device Trust Checks and Certificate Pinning
 | N/A
 
 |xref:push/index.adoc[{unifiedpush-service}]
-|xref:push/provisioning.adoc[Provisioning {keycloak-service}] 
-|xref:push/binding.adoc[Binding to {unifiedpush-service}] 
+|xref:push/provisioning.adoc[Provisioning {keycloak-service}]
+|xref:push/binding.adoc[Binding to {unifiedpush-service}]
 |xref:push/coding.adoc[Coding for {unifiedpush-service}]
 |xref:push/admin-ui.adoc[{push-ui}]
 
 |xref:metrics/index.adoc[{metrics-service}]
-|xref:metrics/provisioning.adoc[Provisioning {metrics-service}] 
-|xref:metrics/binding.adoc[Binding to {metrics-service}] 
+|xref:metrics/provisioning.adoc[Provisioning {metrics-service}]
+|xref:metrics/binding.adoc[Binding to {metrics-service}]
 |xref:metrics/coding.adoc[Adding Metrics to your App]
 |xref:metrics/grafana-ui.adoc[{grafana-ui}] and xref:metrics/prometheus-ui.adoc[{prometheus-ui}]
 
 |xref:mobilecicd/index.adoc[{mobile-ci-cd-service}]
-|xref:mobilecicd/provisioning.adoc[Provisioning {mobile-ci-cd-service}] 
+|xref:mobilecicd/provisioning.adoc[Provisioning {mobile-ci-cd-service}]
 |N/A
 |xref:mobilecicd/running-a-build.adoc[Building an App]
 |xref:mobilecicd/mobilecicd-ui.adoc[{mobilecicd-ui}]
 
 |xref:sync/index.adoc[{sync-service}]
-|xref:sync/binding.adoc[Binding to {sync-service}] 
+|xref:sync/binding.adoc[Binding to {sync-service}]
 
 |xref:sync/adding-sync-to-your-app.adoc[Adding Sync to your App]
 |xref:sync/data_sources_ui.adoc[]

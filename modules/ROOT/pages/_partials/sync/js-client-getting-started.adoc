@@ -1,7 +1,7 @@
 .Prerequisites
-* [x] You have Node.js and npm installed.
-* [x] You have created an empty web project that supports ES6.  The link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
-* [x] You have completed the server getting started guide and the application is running.
+* You have Node.js and npm installed.
+* You have created an empty web project that supports ES6.  The link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
+* You have completed the server getting started guide and the application is running.
 
 This section describes how to use the {sync-client} to create mobile and web applications that can communicate with the Voyager server application.
 
@@ -55,4 +55,4 @@ async function helloWorld() {
 helloWorld();
 ----
 
-You can build and run this code in your project.  You should see "Hello world" in your JavaScript console.  At this point your server and your client are able to talk to each other.
+You can build and run this code in your project. You should see "Hello world" in your JavaScript console. The server and client can now communicate.

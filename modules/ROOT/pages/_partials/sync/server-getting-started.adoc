@@ -1,7 +1,7 @@
 .Prerequisites
 
-* [x] You have Node.js and npm installed.
-* [x] You have created a node.js project
+* You have Node.js and npm installed.
+* You have created a node.js project.
 
 == Hello World {sync-service}
 

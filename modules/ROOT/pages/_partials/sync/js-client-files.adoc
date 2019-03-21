@@ -13,7 +13,7 @@ The File upload needs to be implemented on both server and client:
 2. On the server: The multipart request is handled. The server processes it and provides an upload argument to a resolver.
 In the resolver function, the upload promise resolves an object.
 
-NOTE: File upload is based on link:https://github.com/jaydenseric/graphql-multipart-request-spec[graphql-multipart-request-spec]
+NOTE: File upload is based on link:https://github.com/jaydenseric/graphql-multipart-request-spec[graphql-multipart-request-spec].
 
 == Enabling File Upload
 
