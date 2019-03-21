@@ -1,0 +1,37 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='sending-a-push-notification-{context}']
+= Sending a Push Notification using the {push-ui}
+
+The {push-ui} allows you to send Push Notifications.
+
+.Prerequisites
+
+ * Make sure the {unifiedpush-service} service is provisioned.
+ * Select a route in OpenShift.
+ * Login with your OpenShift credentials.
+
+NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
+
+.Procedure
+
+. Open the {push-ui} in a browser.
+
+. Select the target application from the home page and click *Send Notification To This App*.
++
+image::send1.png[Send a Push]
+
+. When the _Send Push_ dialog displays, enter text in the *Message* form.
++
+image::send2.png[Enter the payload]
+
+. Click *Send Push Notification* to send the message to the target application.
++
+image::PushMessage.png[You got a notification!]
+
+NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
+
+[discrete]
+== Additional Information
+
+* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].

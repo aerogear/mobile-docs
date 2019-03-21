@@ -13,8 +13,7 @@ Use Grafana’s exposed URL to monitor the {keycloak-service} Service.
 
 .Procedure
 
-. Navigate to Grafana’s exposed URL.
-. Click Log in → Home
+. Navigate to Grafana.
 . Select *Keycloak Metrics*.
 
 .Additional resources

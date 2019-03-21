@@ -1,5 +1,16 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
+// tag::excludeDownstream[]
+:docs-create-user: https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html
+:docs-user-creds: https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+:docs-create-user: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#create-new-user
+:docs-user-creds: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#user_credentials
+// end::excludeUpstream[]
+
+
 [id='configuring-{context}']
 = Configuring the {keycloak-service} Service
 
@@ -19,9 +30,9 @@ For an explanation of these terms, see link:{sso-docs-link}[{sso-name} Documenta
 
 . If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
 
-. If the _Keycloak Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
+. If the _{idm-name} Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
 
-. Click on the *Keycloak Realm URL* link to open the Keycloak Administration Console.
+. Click on the *{idm-name} Realm URL* link to open the {idm-name} Administration Console.
 +
 // TODO: @wei will default credentials always be as follows?
 . Log in to the Administration console using the credentials you specified when xref:provisioning-the-keycloak-service[Provisioning] the service (defaults to admin/admin).
@@ -95,6 +106,7 @@ Depending on the target platform, set the additional value as described in eithe
 
 . Save your changes.
 
-. Create a new user account as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[Creating a New User].
+. Creating a new user account as described in link:{docs-create-user}[Creating a New User].
 
-. Set up credentials for the new user as described in link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[User Credentials].
+. Set up credentials for the new user as described in link:{docs-user-creds}[User Credentials].
+

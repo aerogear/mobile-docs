@@ -1,5 +1,13 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
+// tag::excludeDownstream[]
+:docs-oicd: https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+:docs-oicd: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#openid_connect_v1_0_identity_providers
+// end::excludeUpstream[]
+
 [id='adding-log-out-option-{context}']
 
 = Adding Log Out Option to your Mobile App
@@ -7,7 +15,7 @@
 The following section describes how to perform a logout.
 
 NOTE: To perform *backchannel or federated logouts*, you must enable the Backchannel Logout option for the federated identity provider.
-More information is available in the Keycloak documentation under link:https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html[OICD Identity Providers^].
+More information is available in the {idm-name} documentation under link:{docs-oicd}[OICD Identity Providers^].
 
 .Prerequisites
 

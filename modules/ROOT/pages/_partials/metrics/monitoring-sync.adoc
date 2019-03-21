@@ -1,6 +1,6 @@
 = Monitoring a {sync-server} Application
 
-== Prerequisites
+.Prerequisites
 
 * [x] You have provisioned the xref:mobile-metrics.adoc[{metrics-service} service].
 * [x] You have provisioned your xref:data-sync.adoc#sync-server-openshift[{sync-service}] service.
@@ -17,7 +17,7 @@ After the {metrics-service} Service (includes Grafana for visualization and the 
 you should be able to see the "Data Sync Metrics - <your app name>" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in ->
 Home -> Select *Data Sync Metrics - <your app name>*).
 
-== Dashboard panel descriptions
+=== Dashboard panel descriptions
 
 The Data Sync dashboard consists of several panels which give you an overview of the specific
 events and resources, such as memory usage, CPU usage, resolved operation count etc.
@@ -26,7 +26,7 @@ The dashboard is separated into 2 section. "Client" section shows some basic met
 
 Below you will find a detailed description of each panel and its values.
 
-== Singlestat Panels
+.Singlestat Panels
 
 Singlestat panels show you the main summary of a single data series.
 
@@ -34,7 +34,7 @@ Singlestat panels show you the main summary of a single data series.
 
 * *Memory Usage*: The amount of memory currently used by the {sync-server} application.
 
-== Graph panels
+.Graph panels
 
 Used to show how certain values change over time, e.g. the number of operations resolved.
 
@@ -63,3 +63,4 @@ Used to show how certain values change over time, e.g. the number of operations 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
 * link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]
+=======

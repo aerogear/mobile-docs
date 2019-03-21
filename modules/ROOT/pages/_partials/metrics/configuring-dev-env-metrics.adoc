@@ -1,5 +1,0 @@
-= Configuring your Development Environment for the {metrics-service} Service
-
-:service-name: Metrics
-
-include::../generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]

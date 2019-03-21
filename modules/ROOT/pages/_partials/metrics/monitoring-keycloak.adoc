@@ -1,28 +1,39 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-
+[id='monitoring-idm-with-{context}']
 = Monitoring the {keycloak-service} Service
 
-== Prerequisites
-
-* [x] The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
-
-== Overview
-
 After the {metrics-service} Service (includes Grafana for visualization and the Prometheus monitoring system) and {keycloak-service} Service are provisioned,
-you should be able to see the "Keycloak Metrics" in the list of available dashboards (navigate to Grafana's exposed URL -> Log in -> Home -> Select *Keycloak Metrics*).
+you should be able to see the "{idm-name} Metrics" in the list of available dashboards.
 
-== Dashboard panel descriptions
+.Prerequisites
 
-The Keycloak dashboard consists of several panels which give you an overview of the specific
+* The {metrics-service} Service and {keycloak-service} Service must be provisioned in the same OpenShift project to access data.
+
+.Procedure
+
+. Navigate to Grafana.
+. Select *{idm-name} Metrics*.
+
+[discrete]
+== Additional resources
+
+* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel^]
+* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel^]
+* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart^]
+
+=== Dashboard panel descriptions
+
+The {idm-name} dashboard consists of several panels which give you an overview of the specific
 events, such as the number of registered users, memory usage etc.
 
 Below you will find a detailed description of each panel and its values.
 
-== Singlestat Panels
+.Singlestat Panels
 
 Singlestat panels show you the main summary of a single data series.
 
-* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. Keycloak, Github, Facebook etc.
+* *Total Registrations*: Total number of registered (non-admin) users. This number comprises all successful registrations made via various providers, e.g. {idm-name}, Github, Facebook etc.
 
 * *Total Logins*: Total number of successful logins (only non-admin users) over all providers.
 
@@ -30,7 +41,7 @@ Singlestat panels show you the main summary of a single data series.
 
 * *Current Memory*: The amount of memory currently used by the {keycloak-service} Service
 
-== Graph panels
+.Graph panels
 
 Used to show how certain values change over time, e.g. the number of successful logins.
 
@@ -44,18 +55,10 @@ Used to show how certain values change over time, e.g. the number of successful 
 ** *Commited*: The amount of memory that is guaranteed to be available for use (by JVM)
 ** *Max*: The maximum amount of memory that can be used for memory management
 
-
-== Pie Charts
+.Pie Charts
 
 Used to show the distribution of data, e.g. the number of logins per identity provider.
 
 * *Logins Per Provider*: Overview of the successful (non-admin) user logins per provider
 
 * *Registrations Per Provider*: Overview of the successful (non-admin) user registrations per provider.
-
-[discrete]
-== Related Information
-
-* link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel^]
-* link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel^]
-* link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart^]
