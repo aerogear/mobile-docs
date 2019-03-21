@@ -3,6 +3,8 @@ include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :service-name: Data Sync
+:sync-server: Sync Server
+:sync-client: Sync Client
 
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
 :context: sync
