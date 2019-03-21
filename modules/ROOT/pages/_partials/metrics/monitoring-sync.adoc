@@ -63,4 +63,3 @@ Used to show how certain values change over time, e.g. the number of operations 
 * link:http://docs.grafana.org/features/panels/singlestat/#singlestat-panel[Singlestat Panel]
 * link:http://docs.grafana.org/features/panels/graph/#graph-panel[Graph Panel]
 * link:https://grafana.com/plugins/grafana-piechart-panel[Pie Chart]
-=======
