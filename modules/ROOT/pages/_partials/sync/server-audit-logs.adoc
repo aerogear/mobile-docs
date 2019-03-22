@@ -102,7 +102,6 @@ The `userInfo` property is available only if {sync-server} is protected by an id
 Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/package/@aerogear/voyager-audit[@aerogear/voyager-audit]
 
 . Import the `@aerogear/voyager-audit` module
-
 +
 [source,javascript]
 ----
@@ -110,7 +109,7 @@ const auditLogger = require('@aerogear/voyager-audit')
 ----
 
 . Inject the auditLogger module into the {sync-server}. This enables audit logging within your application.
-
++
 [source,javascript]
 ----
 const voyagerConfig = {
