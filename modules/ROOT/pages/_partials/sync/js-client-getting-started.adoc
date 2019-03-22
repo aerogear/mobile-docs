@@ -1,6 +1,6 @@
 .Prerequisites
 * You have Node.js and npm installed.
-* You have created an empty web project that supports ES6.  The link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
+* You have created an empty web project that supports ES6, for example, using the link:https://webpack.js.org/guides/getting-started/[webpack getting started] project is a useful guide.
 * You have completed the server getting started guide and the application is running.
 
 This section describes how to use the {sync-client} to create mobile and web applications that can communicate with the Voyager server application.

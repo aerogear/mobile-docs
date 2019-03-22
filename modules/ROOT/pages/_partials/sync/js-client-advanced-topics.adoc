@@ -38,11 +38,17 @@ The {sync-client} uses the link:https://www.npmjs.com/package/debug[debug module
 
 To enable debug logs please execute the following code in a browser's console:
 
-* `localStorage.debug = 'AeroGearSync:*'`
+[source, javascript]
+----
+`localStorage.debug = 'AeroGearSync:*'`
+----
 
 Certain features can be enabled separately:
 
-* `localStorage.debug = 'AeroGearSync:OfflineMutations*'`
+[source, javascript]
+----
+`localStorage.debug = 'AeroGearSync:OfflineMutations*'`
+----
 
 == Optimistic UI
 
