@@ -36,7 +36,7 @@ Build the Docker container and tag it:
 $ docker build . --tag  <your-repo>/<container-name>
 ----
 
-Push your container to Dockerhub's repository :
+Push your container to Dockerhub's repository:
 [source,bash]
 ----
 $ docker push <your-repo>/<container-name>
