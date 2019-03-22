@@ -1,6 +1,11 @@
 = Data Access
 
-A {sync-service} application will most likely need to access to a database. The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
+Typically, a {sync-service} application needs to access to a database.
+
+NOTE: {org-name} recommends that you store data in a secure location.
+If you use a database, it is your responsibility to administer, maintain and backup that database.
+
+The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
 
 From a very high level, here are the steps to access data from a database in a {sync-service} application:
 
