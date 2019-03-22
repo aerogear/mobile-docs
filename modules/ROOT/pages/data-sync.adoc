@@ -12,15 +12,34 @@ include::_partials/attributes.adoc[]
 :toc:
 
 [[introduction]]
-Unlike other AeroGear mobile services which provide a server and an API, Data Sync is a library that is used to develop services. Typically, you develop a {sync-service} service as follows:
 
-* Design a link:https://graphql.org/learn[GraphQL] schema.
-* Develop a server side service.
-* Containerize your server and deploy it to OpenShift as a Data Sync App.
-* Bind your mobile app to that data sync server app.
-* Configure your mobile app to point to the data sync server app.
-* Complete your mobile app development.
-* Build and run your mobile app.
+Data Sync is a JavaScript framework that enables a developer add real time synchronization and enhanced offline capabilities to mobile applications. 
+
+Data Sync includes two components:
+
+{sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
+
+* {sync-client} is a client side JavaScript library for building web and mobile applications backed by {sync-server}.
+
+Features include:
+
+* Real Time Synchronisation
+* Conflict Resolution
+* Robust offline experience
+* Authentication and Authorization (using the Identity Management service)
+* Metrics (using the  Mobile Metrics Service)
+* Audit Logging
+
+
+Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
+
+. Design a link:https://graphql.org/learn[GraphQL] schema.
+. Develop a server side service.
+. Containerize your server and deploy it to OpenShift as a Data Sync App.
+. Bind your mobile app to that data sync server app.
+. Configure your mobile app to point to the data sync server app.
+. Complete your mobile app development.
+. Build and run your mobile app.
 
 
 include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
