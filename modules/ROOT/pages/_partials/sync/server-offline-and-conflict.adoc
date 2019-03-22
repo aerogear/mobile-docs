@@ -38,6 +38,9 @@ Implementations are based on the `ObjectState` interface that can be extended to
 
 * GraphQL server with resolvers.
 * Database or any other form of data storage that can cause data conflicts.
+Red Hat recommends that you store data in a secure location.
+If you use a database, it is your responsibility to administer, maintain and backup that database.
+If you use any other form of data storage, you are responsible for backing up the data.
 
 == Version Based Conflict Resolution
 
