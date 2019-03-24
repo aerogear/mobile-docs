@@ -1,5 +1,5 @@
 .Prerequisites
-* You have Docker installed.
+* You have Docker installed on your local machine.
 * You have access to an OpenShift cluster with the Service Catalog.
 * You have completed the server getting started guide.
 

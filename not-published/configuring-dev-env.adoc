@@ -4,8 +4,8 @@ include::_partials/attributes.adoc[]
 
 == Prerequisites
 
-* You have provisioned one of the {product-name}.
-* You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
+* [x] You have provisioned one of the {product-name}.
+* [x] You have associated the service with a {mobile-client} as described in xref:binding-mobile-app-record-to-mobile-services.adoc[Binding a {mobile-client} with Mobile Services].
 
 include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 

@@ -8,12 +8,12 @@ The architecture of websockets is as follows:
 
 * Client connects to websocket server.
 * Upon certain events, the server can publish the results of these events to the websocket.
-* Any _currently connected_ client to that websocket will receive these results.
-* The client can close the connection at any time and will no longer recieve updates.
+* Any _currently connected_ client to that websocket receives these results.
+* The client can close the connection at any time and no longer receives updates.
 
-Websockets are a perfect solution for delivering messages to currently active clients. To receive updates the
-client must be currently connected to the websocket server, updates made over this websocket while the client is offline
-will not be consumed by the client. For this use case Push Notifications are recommended.
+Websockets are a perfect solution for delivering messages to currently active clients.
+To receive updates the client must be currently connected to the websocket server, updates made over this websocket while the client is offline are not consumed by the client.
+For this use case Push Notifications are recommended.
 
 {sync-client} comes with subscription support out of the box including auto-reconnection upon device restart or network reconnect.
 To enable subscriptions on your client set the following
@@ -23,33 +23,36 @@ paramater in the {sync-client} config object. A DataSyncConfig interface is also
 
 To set up a client to use subscriptions simply provide a wsUrl string in the config object.
 
-```
+[source,javascript]
+----
 const config = {
     wsUrl: "ws://your_websocket_url"
 }
-```
+----
 Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. Once this object is created, use it to initialise {sync-client} with:
 
-```
+
+[source,javascript]
+----
 const { createClient } = require("@aerogear/voyager-client");
 
 const client = createClient(config)
-```
+-----
 
 == Using Subscriptions
 
-Once the client is configured we can then make use of subscriptions. There are many ways to do this, however some are
-preferred over others.
-
 A standard flow to utilise subscriptions is as follows:
 
-1. Make a network query to get data from the server
-1. Watch the cache for changes to queries
-1. Subscribe to changes pushed from the server
-1. Unsubscibe when leaving the view where there is an active subscription
+. Make a network query to get data from the server
+. Watch the cache for changes to queries
+. Subscribe to changes pushed from the server
+. Unsubscibe when leaving the view where there is an active subscription
 
-We can see this happening in the three examples below. `subscribeToMore` ensures that any further updates received from the server force the updateQuery function to be called with `subscriptionData` from the server. Using `subscribeToMore` we can ensure the cache is easily updated as all GraphQL
-queries are automatically notified. For more information please see: link:https://www.apollographql.com/docs/angular/features/subscriptions.html#subscribe-to-more[subscribeToMore Docs].
+In the three examples below, `subscribeToMore` ensures that any further updates received from the server force the updateQuery function to be called with `subscriptionData` from the server.
+
+Using `subscribeToMore` ensures the cache is easily updated as all GraphQL queries are automatically notified.
+
+For more information please see: link:https://www.apollographql.com/docs/angular/features/subscriptions.html#subscribe-to-more[subscribeToMore Docs].
 
 [source,javascript]
 ----
@@ -80,7 +83,7 @@ getTasks() {
 NOTE: In the above example some deduplication is performed to ensure the same task is not returned to the UI when it is
 already present.
 
-We can then use this query in our application to subscribe to changes so that the front end is always updated when new
+You can then use this query in our application to subscribe to changes so that the front end is always updated when new
 data is returned from the server.
 
 [source,javascript]
