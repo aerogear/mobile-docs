@@ -1,7 +1,9 @@
 [#sync-server-auth]
-= Authentication and Authorization using Keycloak
+= Authentication and Authorization using {idm-name}
 
-Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/voyager-keycloak[@aerogear/voyager-keycloak] module, it is possible to add security to a {sync-server} application. `@aerogear/voyager-keycloak` provides the following features out of the box.
+Using the {keycloak-service} service and the link:https://www.npmjs.com/package/@aerogear/voyager-keycloak[@aerogear/voyager-keycloak] module, it is possible to add security to a {sync-server} application.
+
+The `@aerogear/voyager-keycloak` module provides the following features out of the box:
 
 * Authentication - Ensure only authenticated users can access your server endpoints, including the main GraphQL endpoint.
 * Authorization - Use the `@hasRole()` directive within the GraphQL schema to implement role based access control (RBAC) on the GraphQL level.
@@ -9,7 +11,7 @@ Using a Keycloak service and the link:https://www.npmjs.com/package/@aerogear/vo
 
 .Prerequisites
 
-* There is a Keycloak service available.
+* There is a {idm-name} service available.
 * You must add a valid `keycloak.json` config file to your project.
   ** Create a client for your application in the Keycloak administration console.
   ** Click on the Installation tab.

@@ -295,19 +295,16 @@ sed \
  kibanaImportTemplate.json > kibanaImport.json
 ----
 
-You may find `kibanaImportTemplate.json` link:https://raw.githubusercontent.com/aerogear/voyager-server/master/doc/guides/kibanaImportTemplate.json[here].
+A template, `kibanaImportTemplate.json` is available from the link:https://raw.githubusercontent.com/aerogear/voyager-server/master/doc/guides/kibanaImportTemplate.json[Voyager GitHub repo].
 
-Once the `kibanaImport.json` file is generated, it has to be imported into Kibana.
-
-To do that:
+Once the `kibanaImport.json` file is generated, import it into Kibana:
 
 * Open Kibana (URL: https://kibana.<YOUR OPENSHIFT APPS SUBDOMAIN>)
 * Click *Management* in the left
 * Click *Saved Objects*
 * Click *Import* and select `kibanaImport.json`
 
-Imported saved objects have ids and names that have the project name or the UID in them. So, they may be created for each
-namespace without affecting each other.
+Imported saved objects include the project name or the UID in their names, so that saved objects in differnt namespaces do not affect each other.
 
 
 [NOTE]
@@ -332,4 +329,4 @@ overview of the Voyager application status.
 
 At the bottom of the dashboard, audit log messages can be explored directly.
 
-For more information on how to use Kibana, please consult link:https://www.elastic.co/products/kibana[Kibana documentation].
+For more information on how to use Kibana, see the link:https://www.elastic.co/products/kibana[Kibana documentation].

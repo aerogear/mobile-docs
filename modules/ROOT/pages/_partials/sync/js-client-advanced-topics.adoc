@@ -40,14 +40,14 @@ To enable debug logs please execute the following code in a browser's console:
 
 [source, javascript]
 ----
-`localStorage.debug = 'AeroGearSync:*'`
+localStorage.debug = 'AeroGearSync:*'
 ----
 
 Certain features can be enabled separately:
 
 [source, javascript]
 ----
-`localStorage.debug = 'AeroGearSync:OfflineMutations*'`
+localStorage.debug = 'AeroGearSync:OfflineMutations*'
 ----
 
 == Optimistic UI
