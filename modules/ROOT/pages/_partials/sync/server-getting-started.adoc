@@ -1,7 +1,7 @@
 .Prerequisites
 
-* [x] You have Node.js and npm installed.
-* [x] You have created a node.js project
+* You have Node.js and npm installed.
+* You have created a node.js project.
 
 == Hello World {sync-service}
 
@@ -95,7 +95,8 @@ $ node index.js
 }
 ----
 
-To make it easier for developers to get started with our {sync-service} framework, see the link:https://github.com/aerogear/ionic-showcase[sample application]. In this app, you can explore a more complex schema.
+To get started with the  {sync-service} framework, see the link:https://github.com/aerogear/ionic-showcase[sample application].
+In this app, you can explore a more complex schema.
 
 Before proceeding, make sure you have an understanding of the following GraphQL concepts:
 

@@ -45,7 +45,7 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
   }
 ----
 
-For more information, please check out link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
+For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
 === Online Only Queries
 
@@ -61,14 +61,14 @@ exampleQuery(...) @onlineOnly {
 [#sync-client-offline-queue-listener]
 == Listening for Events
 
-In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events will be emitted:
+In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events are emitted:
 
 * `onOperationEnqueued` - Called when new operation is being added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
 * `onOperationFailure` - Called when back online and operation fails with GraphQL error
 * `queueCleared` - Called when offline operation queue is cleared
 
-This listener can be used to build UIs that can show pending changes.
+You can use this listener to build User Interfaces that show pending changes.
 
 //TODO: code example
 
@@ -78,7 +78,7 @@ A *conflict* occurs whenever two or more clients try to modify the same data in 
 
 *Conflict resolution* is how the application detects and resolves the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
 
-The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, please refer to <<#sync-server-offline-and-conflict, Voyager server document>>.
+The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, see the <<#sync-server-offline-and-conflict, Voyager server document>>.
 
 If conflicts need to be handled on client side, developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism.
 
@@ -96,7 +96,7 @@ To resolve conflicts, developers can either use the default conflict resolution 
 
 === Version Based Conflict Detection
 
-For more details about how it works, please check the _server-version-based-conflict-resolution, Voyager server document_.
+For more details about how it works, see the _server-version-based-conflict-resolution, Voyager server document_.
 
 On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
 
@@ -108,12 +108,13 @@ To resolve conflicts on the client side, a `conflictStrategy` needs to be provid
 
 To implement a custom conflict resolution strategy provide at least one of the parameters below.
 
-* strategies - a dictionary object where each key is the name of a mutation and the value is the custom action to take for a conflict caused by that mutation
+* strategies - a dictionary object where each key is the name of a mutation and the value is the custom action for a conflict caused by that mutation
 * default - the default behavior to use if one of your mutations is not listed in `strategies`
 
-NOTE: If strategies are provided but no default then `clientVersionWins` will become the default. This will only be used if a mutation you have not specified causes a conflict.
+NOTE: If strategies are provided but no default then `clientVersionWins` becomes the default.
+If a mutation causes a conflict and you have not specified a conflict resolution strategy for that mutation, the system uses the `clientVersionWins` strategy.
 
-An example can be seen below:
+For example:
 
 [source,javascript]
 ----
@@ -148,7 +149,7 @@ let config = {
 }
 ----
 
-NOTE: Client strategy will be ignored when conflicts are resolved on the server.
+NOTE: Client strategy is ignored when conflicts are resolved on the server.
 
 === Listening to Conflicts
 

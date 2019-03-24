@@ -4,7 +4,7 @@
 
 A core concept of the GraphQL specification is an operation type called `Subscription`.
 These subscriptions can be leveraged to provide a mechanism for real time updates.
-For more information on GraphQL subscriptions please see link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions].
+For more information on GraphQL subscriptions  see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].
 
 == Schema
 
@@ -54,10 +54,15 @@ const resolvers = {
 NOTE: The pubSub mechanism used in the above example is deliberately ommited to focus on the GraphQL aspects of
 Subscriptions. For more information on the available PubSub implementations see: link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html#PubSub-Implementations[PubSub Implementations].
 
-To then setup the server the `subscriptions-transport-ws` package can be used. For more information on how to use
-and configure `SubscriptionServer` please see: link:https://www.apollographql.com/docs/graphql-subscriptions/setup.html#subscription-server[Apollo Subscription Server].
+Use the `subscriptions-transport-ws` package to set up the server.
+
+For more information on how to use and configure `SubscriptionServer` see the link:https://www.apollographql.com/docs/graphql-subscriptions/setup.html#subscription-server[Apollo Subscription Server documentation].
+
+
 Following on from the example server described in xref:sync-server-getting-started[Getting Started] we can add subscriptions as follows by introducing http and wraping our express app.
-```
+
+
+----
 const http = require('http')
 const { SubscriptionServer } = require('subscriptions-transport-ws')
 const { execute, subscribe } = require('graphql')
@@ -77,8 +82,9 @@ httpServer.listen(4000, () => {
   })
 })
 
-```
+----
+
 
 For documentation on how to use Subscriptions on your client, see xref:sync-js-client-realtime-updates[Realtime Updates].
 
-NOTE: For information on how to protect this subscription server with {keycloak-service} please see xref:sync-server-auth[Authentication and Authorization using Keycloak].
+NOTE: For information on how to protect this subscription server with {keycloak-service} see xref:sync-server-auth[Authentication and Authorization using Keycloak].
