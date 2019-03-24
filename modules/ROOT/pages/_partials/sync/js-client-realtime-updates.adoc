@@ -29,6 +29,7 @@ const config = {
     wsUrl: "ws://your_websocket_url"
 }
 ----
+
 Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. Once this object is created, use it to initialise {sync-client} with:
 
 
@@ -37,7 +38,7 @@ Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. On
 const { createClient } = require("@aerogear/voyager-client");
 
 const client = createClient(config)
------
+----
 
 == Using Subscriptions
 
@@ -52,7 +53,7 @@ In the three examples below, `subscribeToMore` ensures that any further updates 
 
 Using `subscribeToMore` ensures the cache is easily updated as all GraphQL queries are automatically notified.
 
-For more information please see: link:https://www.apollographql.com/docs/angular/features/subscriptions.html#subscribe-to-more[subscribeToMore Docs].
+For more information, see the  link:https://www.apollographql.com/docs/angular/features/subscriptions.html#subscribe-to-more[subscribeToMore documentation].
 
 [source,javascript]
 ----
@@ -104,15 +105,20 @@ this.getTasks().unsubscribe();
 
 == Client Network State Changes
 
-When using subscriptions to provide your client with realtime updates it is important to monitor network state. This is
-because of the architecture of websockets as described xref:sync-js-client-realtime-updates[above]. The problem is that if the
-client goes offline for any amount of time and some updates occur on the server in this time then the
-client will be out of sync. To remedy this {sync-client} provides a `NetworkStatus` interface which can be used along with
-the `NetworkInfo` interface to implement custom checks of network status. For more information about how to import and configure a
-custom network status checker please see xref:sync-js-client-advanced-topics[Advanced Topics].
+When using subscriptions to provide your client with realtime updates it is important to monitor network state.
+
+This is because of the architecture of websockets as described xref:sync-js-client-realtime-updates[above].
+
+The problem is that if the client goes offline for any amount of time and some updates occur on the server in this time then the client will be out of sync.
+
+To remedy this {sync-client} provides a `NetworkStatus` interface which can be used along with the `NetworkInfo` interface to implement custom checks of network status.
+
+For more information about how to import and configure a custom network status checker, see xref:sync-js-client-advanced-topics[Advanced Topics].
 
 An example of using the provided Cordova Network Status, which is an implementation of the NetworkStatus interface can be seen below.
-This code should be used to re-run a query upon the client coming back to an online state.
+
+Use this code to re-run a query after a client returns to an online state.
+
 [source, javascript]
 ----
 const { CordovaNetworkStatus, NetworkInfo } = require("@aerogear/voyager-client");

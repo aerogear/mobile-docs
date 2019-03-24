@@ -102,7 +102,7 @@ type Mutation {
 . Implement the resolver.
 
 Conflicts can be resolved either on the client or the server. Depending on the strategy used, the resolver implementation will differ.
-Please see the sections below for the individual implementations.
+See the sections below for the individual implementations.
 
 == Resolving Conflicts on the Client
 

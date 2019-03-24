@@ -1,6 +1,6 @@
 = Introduction
 
-The {sync-client} is built on top of the popular link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], and it adds the following additional features:
+The {sync-client} uses the link:https://www.apollographql.com/docs/react[Apollo GraphQL Javascript client], adding the following features:
 
 * Offline query and mutation support
 * Conflict detection and resolution
@@ -17,11 +17,12 @@ https://www.apollographql.com/docs/angular/
 
 == Cache
 
-In order to support offline use cases, the client SDK strongly leverages Apollo Cache layer. Please refer link: https://www.apollographql.com/docs/react/advanced/caching.html[their documentation] for more information about caching in Apollo GraphQL.
+In order to support offline use cases, the client SDK strongly leverages Apollo Cache layer.
+See the link:https://www.apollographql.com/docs/react/advanced/caching.html[Apollo cache documentation] for more information.
 
 === Querying Data
 
-To work with cache effectively, it is recommended that developers use the `cache-first` fetchPolicy when perform queries.
+To work with cache effectively, {org-name} recommends using the `cache-first` fetchPolicy when performing queries.
 
 [source, javascript]
 ----
@@ -31,8 +32,11 @@ To work with cache effectively, it is recommended that developers use the `cache
   });
 ----
 
-The cache is populated by subscriptions, pooling or regular queries happening in UI. Please see the _client-offline-support, Offline Support_ section for more details.
+The cache is populated by subscriptions, pooling or regular queries happening in UI.
+See the _client-offline-support, Offline Support_ section for more details.
 
 == Required Field in GraphQL Types
 
-A field called `id` is required in all the types when design the GraphQL schema for an application. The client SDK expects this field to be returned from the server for a query. Without this field some offline functionalities will not work properly.
+A field called `id` is required in all the types when design the GraphQL schema for an application.
+The client SDK expects this field to be returned from the server for a query.
+Without this field some offline functionalities does not work properly.

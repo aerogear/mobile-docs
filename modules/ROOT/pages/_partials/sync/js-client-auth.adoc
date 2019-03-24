@@ -30,4 +30,4 @@ const config = {
 //create a new client
 ----
 
-For information about how to perform authentication and authorization on the server, please check out <<#sync-server-auth, Server Authentication and Authorization Guide>>.
+For information about how to perform authentication and authorization on the server, see the <<#sync-server-auth, Server Authentication and Authorization Guide>>.

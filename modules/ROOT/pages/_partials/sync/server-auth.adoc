@@ -45,8 +45,8 @@ const app = express()
 keycloakService.applyAuthMiddleware(app)
 ----
 
-. The last piece of work to do is telling Voyager server that the `keycloakService` above will be used as the security service:
-
+. Configure the Voyager server so that the `keycloakService` is used as the security service:
++
 [source,javascript]
 ----
 const voyagerConfig = {

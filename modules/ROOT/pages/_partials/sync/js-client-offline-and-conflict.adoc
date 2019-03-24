@@ -45,7 +45,7 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
   }
 ----
 
-For more information, please check out link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
+For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
 === Online Only Queries
 
@@ -78,7 +78,7 @@ A *conflict* occurs whenever two or more clients try to modify the same data in 
 
 *Conflict resolution* is how the application detects and resolves the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
 
-The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, please refer to <<#sync-server-offline-and-conflict, Voyager server document>>.
+The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, see the <<#sync-server-offline-and-conflict, Voyager server document>>.
 
 If conflicts need to be handled on client side, developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism.
 
@@ -96,7 +96,7 @@ To resolve conflicts, developers can either use the default conflict resolution 
 
 === Version Based Conflict Detection
 
-For more details about how it works, please check the _server-version-based-conflict-resolution, Voyager server document_.
+For more details about how it works, see the _server-version-based-conflict-resolution, Voyager server document_.
 
 On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
 
