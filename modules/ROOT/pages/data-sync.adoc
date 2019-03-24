@@ -10,16 +10,16 @@ include::_partials/attributes.adoc[]
 :context: sync
 
 [id='{context}']
-= Developing a {sync-service} App
+= Developing a {sync-service} Application
 :toc:
 
 [[introduction]]
 
-Data Sync is a JavaScript framework that enables a developer add real time synchronization and enhanced offline capabilities to mobile applications. 
+Data Sync is a JavaScript framework that enables a developer add real time synchronization and enhanced offline capabilities to mobile applications.
 
 Data Sync includes two components:
 
-{sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
+* {sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
 
 * {sync-client} is a client side JavaScript library for building web and mobile applications backed by {sync-server}.
 
@@ -78,11 +78,12 @@ include::_partials/sync/server-auth.adoc[leveloffset=2]
 [#server-files]
 include::_partials/sync/server-files.adoc[leveloffset=2]
 
+=== Metrics and Logging
 [#sync-server-metrics]
-include::_partials/sync/server-metrics.adoc[leveloffset=2]
+include::_partials/sync/server-metrics.adoc[leveloffset=3]
 
 [#sync-server-audit-logs]
-include::_partials/sync/server-audit-logs.adoc[leveloffset=2]
+include::_partials/sync/server-audit-logs.adoc[leveloffset=3]
 
 [#sync-js-client]
 == {sync-service} Javascript Client

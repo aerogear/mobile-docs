@@ -61,7 +61,9 @@ exampleQuery(...) @onlineOnly {
 [#sync-client-offline-queue-listener]
 == Listening for Events
 
-In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events are emitted:
+To handle all notifications about offline related events, use the *offlineQueueListener`* listener in the config object
+
+The following events are emitted:
 
 * `onOperationEnqueued` - Called when new operation is being added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
