@@ -14,7 +14,7 @@ For more details about how to provision the {mobile-ci-cd-service} service, plea
 
 == Creating a Build
 
-After the {mobile-ci-cd-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app, etc. 
+After the {mobile-ci-cd-service} service is provisioned, you need to create a new build config for the {mobile-client}. You need to provide more information about the mobile app here depending on the platform. For example, the repo of the source code, the type of the build, the keys used to sign the app, etc.
 
 image:mobile-clients-build-config.png[]
 
@@ -36,7 +36,7 @@ image:mobile-clients-builds-complete.png[Available Mobile Clients]
 
 If you do not have a QR code scanner you can also download the artifact from the URL in the OpenShift web console. Once downloaded connect a device to your local machine.
 
-* For iOS applications open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation. 
+* For iOS applications open XCode and navigate to Window > Devices and Simulators. Here you can install your mobile application by pressing `+` button at the bottom, then choose your download IPA file for installation.
 
 * For Android applications move the APK file into the device directory. On your device locate and select the APK file and select install.
 

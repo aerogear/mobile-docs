@@ -12,6 +12,6 @@ NOTE: You can filter the catalog items to only show mobile specific items by sel
 +
 NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*.
 
-// start generic-provisioning-end.adoc[]
-include::generic-provisioning-end.adoc[]
-// end generic-provisioning-end.adoc[]
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning the Mobile Developer Console may take some time.
