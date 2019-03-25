@@ -299,7 +299,7 @@ A template, `kibanaImportTemplate.json` is available from the link:https://raw.g
 
 Once the `kibanaImport.json` file is generated, import it into Kibana:
 
-* Open Kibana (URL: https://kibana.<YOUR OPENSHIFT APPS SUBDOMAIN>)
+* Open Kibana using `https://kibana.<domain>.com`. Replace `<domain>` with the name of the cluster's main domain.
 * Click *Management* in the left
 * Click *Saved Objects*
 * Click *Import* and select `kibanaImport.json`
