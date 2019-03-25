@@ -1,6 +1,17 @@
 = Setting up {org-name} {product-name} on OpenShift
 
-{product-name} run natively on link:https://www.openshift.org/[OpenShift^]. The installation script in the following steps installs {product-name} on OpenShift.
+{product-name} run natively on link:https://www.openshift.org/[OpenShift^].
+
+// tag::excludeDownstream[]
+
+There are two options for installing {product-name}:
+
+* using an installation script
+* using the OpenShift CLI
+
+Typically, developers use the installation script method.
+
+// end::excludeDownstream[]
 
 [[prerequisites]]
 .Prerequisites
@@ -13,7 +24,7 @@
 +
 // tag::excludeDownstream[]
 NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minishift to xref:local-setup[setup OpenShift locally].
-// end::excludeDownstream[]
+
 * link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
 
 * link:https://www.docker.com/[Docker^]
@@ -21,6 +32,9 @@ NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minish
 * A local mobile development environment for the platform you want to develop on.
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
+
+// end::excludeDownstream[]
+
 
 // tag::excludeDownstream[]
 == Installing {product-name} using the installer script
@@ -69,7 +83,7 @@ $ ansible-playbook install-mobile-services.yml
 .. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
 
 // end::excludeDownstream[]
-== Installing {product-name}
+== Installing {product-name} using the OpenShift CLI
 
 . Log in to the OpenShift console as a user with `cluster-admin` privileges using the `oc` command.
 . Create a Custom Resource Definition file:
