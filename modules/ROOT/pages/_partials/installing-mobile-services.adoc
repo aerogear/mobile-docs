@@ -88,7 +88,7 @@ $ ansible-playbook install-mobile-services.yml
 . Log in to the OpenShift console as a user with `cluster-admin` privileges using the `oc` command.
 . Create a Custom Resource Definition file:
 +
-[source,bash,subs="attributes"]
+[source,bash]
 ----
 cat > /tmp/crd.yaml << EOF
 apiVersion: apiextensions.k8s.io/v1beta1
