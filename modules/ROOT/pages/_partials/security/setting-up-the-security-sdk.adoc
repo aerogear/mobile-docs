@@ -3,6 +3,8 @@
 [id='setting-up-sdk-{context}']
 = Setting up {device-security-service} service SDK
 
+This guide will help you to set up the {device-security-service} service SDK in your App.
+
 == Importing the libraries
 
 [tabs]

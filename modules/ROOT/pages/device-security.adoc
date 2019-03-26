@@ -29,17 +29,14 @@ NOTE: Device Security is not currently associated with an OpenShift service, so 
 
 include::_partials/security/ref_terminology.adoc[leveloffset=+2]
 
-[[setting-up-the-push-service]]
+[[setting-up-the-device-security-service]]
 == Configuring your Development Environment for the {device-security-service} Service
-include::_partials/security/1_downloading-configuration-file.adoc[leveloffset=+1]
-include::_partials/security/2_configuring-the-service.adoc[leveloffset=+2]
-include::_partials/security/3_setting-up-the-security-sdk.adoc[leveloffset=+2]
-include::_partials/security/4_performing-device-checks.adoc[leveloffset=+1]
-include::_partials/security/5_pinning-certificates.adoc[leveloffset=+1]
+include::_partials/security/downloading-configuration-file.adoc[leveloffset=+1]
+include::_partials/security/setting-up-the-security-sdk.adoc[leveloffset=+2]
+include::_partials/security/performing-device-checks.adoc[leveloffset=+1]
+include::_partials/security/pinning-certificates.adoc[leveloffset=+1]
 
-== Additional resources
 
-* <***TODO***>
 
 // Restore the context to what it was before this assembly.
 ifdef::parent-context[:context: {parent-context}]
