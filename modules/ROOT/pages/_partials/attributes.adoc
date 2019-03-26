@@ -53,3 +53,14 @@
 :xamarin-sdk: AeroGear SDK for Xamarin
 
 :mobile-developer-console: Mobile Developer Console
+
+// links 
+
+:link-product-doc-home: https://docs.aerogear.org/aerogear/latest/
+//:rn-link: {link-product-doc-home}1.0_release_notes
+:idm-guide-link: {link-product-doc-home}identity-management
+:metrics--guide-link: {link-product-doc-home}mobile-metrics
+:push-guide-link: {link-product-doc-home}push-notifications
+:device-security-guide-link: {link-product-doc-home}device-security
+:data-sync--guide-link: {link-product-doc-home}data-sync
+:getting-started--guide-link: {link-product-doc-home}getting-started
