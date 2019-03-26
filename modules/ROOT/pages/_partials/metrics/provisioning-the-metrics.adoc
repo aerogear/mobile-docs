@@ -1,0 +1,50 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='provisioning-the-{context}']
+= Provisioning the {metrics-service} Service
+
+This section describes how to set up the {metrics-service} Mobile Service.
+
+.Prerequisites
+
+* You have logged into the OpenShift console and the {mobile-developer-console}.
+
+.Procedure
+
+. Log into the OpenShift console.
+. Create a new project or choose an existing project.
+. Click *Add to Project* and choose *Browse Catalog* from the options.
++
+You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
+. Click *Services* and choose the {service-name} service.
++
+image::catalog-mobile-services.png[]
+
+. Follow the wizard for provisioning that service.
++
+NOTE: If prompted to *Create a Binding*, choose *Do not bind at this time*
++
+When provisioning the service, you are prompted to set the following:
++
+.Configuration
+[options="header"]
+|====
+|Field|Description
+|Grafana Storage Size (Gb)|Size of persistent volume for Grafana (default value is recommended)
+|Prometheus Storage Size (Gb)|Size of persistent volume for Prometheus (default value is recommended)
+|Postgres Storage Size (Gb)|Size of persistent volume for Postgres (default value is recommended)
+|Postgres User|User name that will be used to connect to postgres ('user' will be used if blank)
+|Postgres Password|Password to connect to Postgres (generated if blank)
+|====
++
+[NOTE]
+====
+If you choose to generate the Postgres password, you can later retrieve the password using:
+[source,bash]
+----
+$ oc describe dc postgres-metrics -n <myproject> | grep POSTGRESQL_PASSWORD
+----
+====
+
+Once the wizard steps are completed, navigate to the Project Overview in OpenShift to see the newly provisioned service.
+Provisioning a service may take some time.

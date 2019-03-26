@@ -1,7 +1,23 @@
+:service-name: {sync-service}
 
+= Binding a {mobile-client} with {service-name}
 
-:service-name: Data Sync
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
 
-= Binding a {mobile-client} with the {service-name} Service
+To bind a {mobile-client} with a mobile service:
 
-include::../generic-binding.adoc[]
+.Procedure
+
+. Launch {mobile-developer-console}
+
+. Click on the {mobile-client} on the Overview screen
+
+. Navigate to *Mobile Services* tab.
++
+image::mobile-clients-services-all-unbound.png[]
++
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Press *Bind to App* in the {service-name}
+. Fill out the binding parameters required by the {service-name} Service.

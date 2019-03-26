@@ -51,7 +51,7 @@ The content of the +alert+ key belongs to the metadata, which is deleted after 3
 * You are developing an Ionic app, plain Cordova is not supported.
 
 
-include::_partials/push/ref_terminology.adoc[leveloffset=+2]
+include::_partials/push/ref_terminology.adoc[leveloffset=+1]
 
 [[setting-up-the-push-service]]
 == Setting Up the {unifiedpush-service} Mobile Service

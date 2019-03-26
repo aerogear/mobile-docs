@@ -70,11 +70,20 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
+. Add `* file:` to `default-src` in the `Content-Security-Policy` meta tag inside the `index.html` file:
++
+[source,html]
+----
+<meta http-equiv="Content-Security-Policy" content="default-src * file: 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+----
+. Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
++
 [source,bash]
 ----
 $ npm install @aerogear/auth
 ----
+. Use e.g `browserify` so that you can use the `require` statement
+. In the `init` snippet use `require` instead of `import`
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -170,6 +179,32 @@ authService.init(initOptions)
 You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
 
 NOTE: Initialization also enables authentication.
+
+.To use self-signed certificates with Cordova Android:
+. Create a file `network_security_config.xml` in your project with the following code:
++
+[source,xml]
+----
+<network-security-config>
+  <base-config>
+    <trust-anchors>
+      <certificates src="user"/>
+      <certificates src="system"/>
+    </trust-anchors>
+  </base-config>
+</network-security-config>
+----
+. Include it into the `config.xml` file for the `android` platform
++
+[source,xml]
+----
+<resource-file src="network_security_config.xml" target="app/src/main/res/xml/network_security_config.xml" />
+<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+    <application android:networkSecurityConfig="@xml/network_security_config" />
+</edit-config>
+----
+. Add `xmlns:android="http://schemas.android.com/apk/res/android"` to the `widget` tag in the `config.xml` file
+
 // tag::excludeDownstream[]
 --
 Xamarin::

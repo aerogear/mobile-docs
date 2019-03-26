@@ -1,6 +1,16 @@
 
 [tabs]
 ====
+Cordova::
++
+--
+[source,bash,subs="attributes"]
+----
+$ git clone https://github.com/aerogear/ionic-showcase.git
+$ cd ionic-showcase
+$ git checkout {release-number}
+----
+--
 // tag::excludeDownstream[]
 Android::
 +
@@ -22,18 +32,6 @@ $ cd ios-showcase-template
 $ git checkout {release-number}
 ----
 --
-// end::excludeDownstream[]
-Cordova::
-+
---
-[source,bash,subs="attributes"]
-----
-$ git clone https://github.com/aerogear/cordova-showcase-template.git
-$ cd cordova-showcase-template
-$ git checkout {release-number}
-----
---
-// tag::excludeDownstream[]
 Xamarin::
 +
 --

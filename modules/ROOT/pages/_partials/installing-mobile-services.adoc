@@ -1,11 +1,20 @@
-
-
 = Setting up {org-name} {product-name} on OpenShift
 
-{product-name} run natively on link:https://www.openshift.org/[OpenShift^]. The installation script in the following steps installs {product-name} on OpenShift.
+{product-name} run natively on link:https://www.openshift.org/[OpenShift^].
+
+// tag::excludeDownstream[]
+
+There are two options for installing {product-name}:
+
+* using an installation script
+* using the OpenShift CLI
+
+Typically, developers use the installation script method.
+
+// end::excludeDownstream[]
 
 [[prerequisites]]
-== Prerequisites
+.Prerequisites
 
 * OpenShift 3.11 instance
 +
@@ -13,6 +22,7 @@
 +
 ** You need to have full access to this OpenShift instance, i.e. user with `cluster-admin` privileges.
 +
+// tag::excludeDownstream[]
 NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minishift to xref:local-setup[setup OpenShift locally].
 
 * link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
@@ -23,10 +33,11 @@ NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minish
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
 
-[[procedure]]
-== Procedure
+// end::excludeDownstream[]
 
-=== Automated Install
+
+// tag::excludeDownstream[]
+== Installing {product-name} using the installer script
 
 . Clone the Mobile Services Installer repository:
 +
@@ -71,12 +82,13 @@ $ ansible-playbook install-mobile-services.yml
 
 .. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
 
-=== Manual Install
+// end::excludeDownstream[]
+== Installing {product-name} using the OpenShift CLI
 
-. Login to your OpenShift instance as user with `cluster-admin` privileges using `oc`
-. Prepare the Custom Resource Definition file for mobile:
+. Log in to the OpenShift console as a user with `cluster-admin` privileges using the `oc` command.
+. Create a Custom Resource Definition file:
 +
-[source,bash,subs="attributes"]
+[source,bash]
 ----
 cat > /tmp/crd.yaml << EOF
 apiVersion: apiextensions.k8s.io/v1beta1
@@ -117,7 +129,9 @@ oc create -f /tmp/crd.yaml
 oc create clusterrole mobileclient-admin --verb=create,delete,get,list,patch,update,watch --resource=mobileclients
 oc adm policy add-cluster-role-to-group mobileclient-admin system:authenticated
 ----
-. Update the configurations of Automation Service Broker to add new registries:
+
+. Update the configuration of the Automation Service Broker to add new registries:
+
 .. Edit the config map object using `oc`
 +
 [source,bash,subs="attributes"]
@@ -146,6 +160,7 @@ registry:
   white_list:
   - '.*mobile-developer-console-apb$'
 ----
+
 .. Update the following attributes in the `openshift` section of the config:
 +
 [source,yaml,subs="attributes"]
@@ -161,6 +176,7 @@ openshift:
 broker:
   launch_apb_on_bind: true
 ----
+
 .. Save the configmap object, and restart the automation service broker:
 +
 [source,bash,subs="attributes"]
@@ -174,6 +190,8 @@ oc rollout latest openshift-automation-service-broker -n openshift-automation-se
 
 .. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
 
+
+// tag::excludeDownstream[]
 [id='additional-resources']
 [discrete]
 = Additional resources
@@ -275,3 +293,4 @@ $ oc status
 ----
 +
 NOTE: Browser may redirect you to `localhost`. If that happens just enter the URL again and make sure to add `/console` at the end.
+// end::excludeDownstream[]

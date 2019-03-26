@@ -8,3 +8,6 @@
 .idea
 /public/
 /TODO/
+.idea.
+
+**/.DS_Store
