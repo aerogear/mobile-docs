@@ -29,11 +29,11 @@ To set up a client to use subscriptions:
 [source,javascript]
 ----
 const config = {
-    <wsUrl>: "ws://your_websocket_url"
+    wsUrl: "ws://<your_websocket_url>"
 }
 ----
 +
-where `<wsUrl>` is the full URL of the websocket endpoint of your GraphQL server. 
+where `<your_websocket_url>` is the full URL of the websocket endpoint of your GraphQL server. 
 
 . Use the object from step 1 to initialise {sync-client}:
 +

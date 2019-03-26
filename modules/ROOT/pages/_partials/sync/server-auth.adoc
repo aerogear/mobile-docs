@@ -90,7 +90,7 @@ The `@hasRole` usage is as follows:
   * Example - `@hasRole(role: ["admin", "editor"])`
   * If the authenticated user has at least one of the roles in the list, they will be authorized.
 
-The default behaviour is to check client roles. For example, `@hasRole(role: "admin"])` will check that user has a client role called `admin`. `@hasRole(role: "realm:admin"])` will check if that user has a realm role called `admin`
+The default behaviour is to check client roles. For example, `@hasRole(role: "admin")` will check that user has a client role called `admin`. `@hasRole(role: "realm:admin")` will check if that user has a realm role called `admin`
 
 The syntax for checking a realm role is `@hasRole(role: "realm:<role>")`. For example, `@hasRole(role: "realm:admin")`. Using a list of roles, it is possible to check for both client and realm roles at the same time.
 

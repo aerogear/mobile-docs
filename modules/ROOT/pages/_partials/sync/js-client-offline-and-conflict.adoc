@@ -61,7 +61,7 @@ exampleQuery(...) @onlineOnly {
 [#sync-client-offline-queue-listener]
 == Listening for Events
 
-To handle all notifications about offline related events, use the *offlineQueueListener`* listener in the config object
+To handle all notifications about offline related events, use the *offlineQueueListener* listener in the config object
 
 The following events are emitted:
 
