@@ -1,7 +1,8 @@
-= Realtime Updates
+= Implementing realtime updates
 
-Subscriptions are a core concept of GraphQL and one which allow us to enable real time updates of data
-from the server to the client.
+A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.
+For more information on GraphQL subscriptions  see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].
+
 To do this GraphQL Subscriptions utilise websockets to enable clients to subscribe to published changes.
 
 The architecture of websockets is as follows:
@@ -19,20 +20,23 @@ For this use case Push Notifications are recommended.
 To enable subscriptions on your client set the following
 paramater in the {sync-client} config object. A DataSyncConfig interface is also available from {sync-client} if you wish to use it.
 
-== Setting up a Client to use Subscriptions
+== Setting up a client to use subscriptions
 
-To set up a client to use subscriptions simply provide a wsUrl string in the config object.
+To set up a client to use subscriptions:
 
+. Provide a `wsUrl` string in the config object as follows:
++
 [source,javascript]
 ----
 const config = {
-    wsUrl: "ws://your_websocket_url"
+    <wsUrl>: "ws://your_websocket_url"
 }
 ----
++
+where `<wsUrl>` is the full URL of the websocket endpoint of your GraphQL server. 
 
-Where wsUrl is the full URL of the websocket endpoint of your GraphQL server. Once this object is created, use it to initialise {sync-client} with:
-
-
+. Use the object from step 1 to initialise {sync-client}:
++
 [source,javascript]
 ----
 const { createClient } = require("@aerogear/voyager-client");
@@ -103,21 +107,15 @@ This can be done by calling unsubscribe() as shown in the following example. Thi
 this.getTasks().unsubscribe();
 ----
 
-== Client Network State Changes
+== Handling network state changes
 
-When using subscriptions to provide your client with realtime updates it is important to monitor network state.
+When using subscriptions to provide your client with realtime updates it is important to monitor network state because the client will be out of sync if the server if updated when the the client is offline.
 
-This is because of the architecture of websockets as described xref:sync-js-client-realtime-updates[above].
-
-The problem is that if the client goes offline for any amount of time and some updates occur on the server in this time then the client will be out of sync.
-
-To remedy this {sync-client} provides a `NetworkStatus` interface which can be used along with the `NetworkInfo` interface to implement custom checks of network status.
+To avoid this, {sync-client} provides a `NetworkStatus` interface which can be used along with the `NetworkInfo` interface to implement custom checks of network status.
 
 For more information about how to import and configure a custom network status checker, see xref:sync-js-client-advanced-topics[Advanced Topics].
 
-An example of using the provided Cordova Network Status, which is an implementation of the NetworkStatus interface can be seen below.
-
-Use this code to re-run a query after a client returns to an online state.
+Use the following example to re-run a query after a client returns to an online state:
 
 [source, javascript]
 ----
