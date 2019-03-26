@@ -1,11 +1,10 @@
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: ref_terminology_{device-security-service}
 
-[id='{context}_ref_terminology']
-
+[id='security-terminology-{context}']
 = {device-security-service} Terminology
 
 This section describes terminology that is associated with {device-security-service}.
+
 
 Root Access Detection (ROOT_ENABLED)::
 Use it to help prevent your app running in a device that has been rooted/jailbroken. A device is considered rooted if *any* of the following are true:
@@ -13,9 +12,10 @@ Use it to help prevent your app running in a device that has been rooted/jailbro
 - A custom key has been used to sign the kernel
 - The `su` binaries are present
 
+// tag::excludeDownstream[]
+
 [tabs]
 ====
-// tag::excludeDownstream[]
 Android::
 +
 --
@@ -28,20 +28,18 @@ iOS::
 --
 This check is not available for iOS.
 --
-// end::excludeDownstream[]
 Cordova::
 +
 --
 This check is not available for Cordova.
 --
-// tag::excludeDownstream[]
 Xamarin::
 +
 --
 This check is not available for Xamarin.
 --
-// end::excludeDownstream[]
 ====
+// end::excludeDownstream[]
 
 Developer Mode Detection (DEVELOPER_MODE_ENABLED)::
 To detect if Developer Mode has been enabled on the device the `DeviceCheckType#DEVELOPER_MODE_ENABLED` function can be used. This function uses Android’s link:https://developer.android.com/reference/android/provider/Settings.html[Settings^] class.

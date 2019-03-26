@@ -1,10 +1,11 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
+[id='setting-up-sdk-{context}']
+= Setting up {device-security-service} service SDK
 
-include::configuring-dev-env-security.adoc[]
+This guide will help you to set up the {device-security-service} service SDK in your App.
 
-== Setting up {device-security-service} service SDK
-
-=== Importing the libraries
+== Importing the libraries
 
 [tabs]
 ====

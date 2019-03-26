@@ -2,23 +2,42 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
+:toclevels: 4
+
 :toc:
 
-= Device Security
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-// start security/index.adoc[leveloffset=1]
-include::_partials/security/index.adoc[leveloffset=1]
-// end security/index.adoc[leveloffset=1]
-// start security/coding.adoc[leveloffset=1]
-[#setup]
-include::_partials/security/coding.adoc[leveloffset=1]
-// end security/coding.adoc[leveloffset=1]
-[#device-trust]
-// start security/proc_performing-device-checks.adoc[leveloffset=1]
-include::_partials/security/proc_performing-device-checks.adoc[leveloffset=1]
-// end security/proc_performing-device-checks.adoc[leveloffset=1]
-[#cert-pinning]
-// start security/proc_pinning-certificates.adoc[leveloffset=1]
-include::_partials/security/proc_pinning-certificates.adoc[leveloffset=1]
-// end security/proc_pinning-certificates.adoc[leveloffset=1]
+:context: security
+ifdef::context[:parent-context: {context}]
 
+[id='a-collection-of-modules']
+= Using the {device-security-service} Service
+
+The Device Security service allows you to easily configure and manage device security, and trust checks for your mobile application.
+
+* Perform a range of device trust checks on the mobile device, such as checking if the device is rooted, and allows you take proactive action based on the results.
+* Distribute SSL certificates with a Mobile App to create a direct chain of trust (certificate pinning).
+
+NOTE: Device Security is not currently associated with an OpenShift service, so there are no provisioning or binding tasks associated with using Device Security.
+
+.Prerequisites
+
+* You understand {device-security-service}.
+* You have logged into the OpenShift console and the Mobile Developer Console.
+* You are developing an Ionic app, plain Cordova is not supported.
+
+include::_partials/security/ref_terminology.adoc[leveloffset=+2]
+
+[[setting-up-the-device-security-service]]
+== Configuring your Development Environment for the {device-security-service} Service
+include::_partials/security/downloading-configuration-file.adoc[leveloffset=+1]
+include::_partials/security/setting-up-the-security-sdk.adoc[leveloffset=+2]
+include::_partials/security/performing-device-checks.adoc[leveloffset=+1]
+include::_partials/security/pinning-certificates.adoc[leveloffset=+1]
+
+
+
+// Restore the context to what it was before this assembly.
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]
