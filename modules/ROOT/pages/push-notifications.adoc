@@ -33,7 +33,7 @@ Currently the service supports:
 The {unifiedpush-service} service offers a unified Notification Service API to the above mentioned Push Network Services.
 It can be seen as a _broker_ that distributes push messages to different 3rd party Push Networks.
 
-[NOTE] 
+[NOTE]
 ====
 * The payload of the push notification is delivered to 3rd party Push Network providers, Google or Apple. {org-name} recommends that users do not send any sensitive personal or confidential information (for example, a social security number, financial account or transactional information) as part of any Push Notification. Users of push notifications should not have an expectation of secure transmission.
 
@@ -50,19 +50,18 @@ The content of the +alert+ key belongs to the metadata, which is deleted after 3
 * You have logged into the OpenShift console and the Mobile Developer Console.
 * You are developing an Ionic app, plain Cordova is not supported.
 
-
 include::_partials/push/ref_terminology.adoc[leveloffset=+1]
-
 [[setting-up-the-push-service]]
 == Setting Up the {unifiedpush-service} Mobile Service
 include::_partials/push/obtaining_firebase_cloud_messaging_credentials.adoc[leveloffset=+2]
 include::_partials/push/enable_push_notifications_for_ios_app.adoc[leveloffset=+2]
 include::_partials/push/provisioning-the-push.adoc[leveloffset=+2]
 include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2]
-== Configuring your development environment for the {unifiedpush-service} Service
+[[setting-up-the-push-client-app]]
+== Configuring your client app
 include::_partials/push/downloading-configuration-file.adoc[leveloffset=+2]
 include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2]
-
+include::_partials/push/registering_device.adoc[leveloffset=+1]
 include::_partials/push/sending-a-push-notification.adoc[leveloffset=+1]
 include::_partials/push/handling-push-notifications.adoc[leveloffset=+1]
 
