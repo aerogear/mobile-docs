@@ -7,7 +7,8 @@ To receive native push notifications from a Push Network, for example APNs or FC
 This device-token is passed, by the operating system, to the mobile application.
 Refer to the operating system and Push Network documentation for further details.
 
-Everytime when a mobile application launches it receives the above mentioned ```device-token```, via a _platform-specific_ method (or callback). Since the Push Network (e.g. APNs or FCM) _may_ assign a **new** token to a device, it is _recommended_ to _always_ (re)register the ```device-token``` with the _AeroGear UnifiedPush Server_.
+Every time a user launches a mobile app,  that app receives the  ```device-token```, from a _platform-specific_ method (or callback). 
+Since the Push Network  may assign a new token to a device, {org-name} recommends that the app registers the ```device-token``` with the UnifiedPush Server each time.
 
 The required metadata for an ```Installation```:
 
