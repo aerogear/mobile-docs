@@ -61,7 +61,6 @@ implementation "com.google.firebase:firebase-messaging:[version]"
 iOS::
 +
 --
-
 . Add the dependency to your Podfile
 +
 [source,ruby]
@@ -70,23 +69,19 @@ target '[TARGET NAME]' do
     pod 'AGSPush', '[VERSION]'
 end
 ----
-
 . Update the dependencies
 +
 [source,bash]
 ----
 $ pod install
 ----
-
 . Import the SDK
 +
 [source,swift]
 ----
 import AGSPush
 ----
-
 --
-
 Cordova::
 +
 --
