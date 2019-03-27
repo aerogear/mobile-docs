@@ -52,10 +52,16 @@ Cordova::
 --
 // end::excludeDownstream[]
 
-NOTE: You can only develop push applications using Ionic. Plain Cordova is not supported.
+. For plain Cordova, install the push plugin:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-push
+----
+
+. For Ionic, review the push plugin documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^]. 
 
 . Add the following code to your app:
-
 +
 [source,bash]
 ----
@@ -64,7 +70,6 @@ pushObject.on('notification').subscribe(data => {
 });
 ----
 
-. Review the documentation at link:https://ionicframework.com/docs/native/push[Ionic Push plugin^] for details about using the plugin. 
 
 
 --
