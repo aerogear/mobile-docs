@@ -3,7 +3,9 @@
 [id='registering-device']
 = Registering device on {unifiedpush-service} Service
 
-To receive native push notifications from a Push Network (e.g. APNs, FCM), the mobile device is identified with a unique device-token, assigned by the actual Push Network. This device-token is passed, by the underlying Operating-System, to the mobile application. Details are different on each platform and not part of this document.
+To receive native push notifications from a Push Network, for example APNs or FCM, the mobile device is identified with a unique device-token assigned by that Push Network. 
+This device-token is passed, by the operating system, to the mobile application.
+Refer to the operating system and Push Network documentation for further details.
 
 Everytime when a mobile application launches it receives the above mentioned ```device-token```, via a _platform-specific_ method (or callback). Since the Push Network (e.g. APNs or FCM) _may_ assign a **new** token to a device, it is _recommended_ to _always_ (re)register the ```device-token``` with the _AeroGear UnifiedPush Server_.
 
