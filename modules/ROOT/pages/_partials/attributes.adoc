@@ -23,6 +23,7 @@
 :keycloak-ui: Keycloak Admin UI
 :keycloak-dashboard: Auth Dashboard
 :idm-name: Keycloak
+:idm-docs-link: https://www.keycloak.org/documentation.html 
 
 // Push Service
 
