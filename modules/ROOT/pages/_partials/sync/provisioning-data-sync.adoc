@@ -1,5 +1,5 @@
 
-= Provisioning {sync-service} Service
+= Provisioning the {sync-service} server application as a service
 
 To provision the {service-name} mobile service:
 

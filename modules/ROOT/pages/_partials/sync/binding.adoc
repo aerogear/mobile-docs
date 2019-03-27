@@ -1,8 +1,7 @@
-:service-name: {sync-service}
 
-= Binding a {mobile-client} with {service-name}
+= Binding a {mobile-client} with the {sync-service} server application service
 
-To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+To use {product-name}, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.
 
 To bind a {mobile-client} with a mobile service:
