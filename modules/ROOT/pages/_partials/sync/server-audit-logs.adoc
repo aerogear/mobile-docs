@@ -8,7 +8,7 @@ Audit logging is a mechanism to track all of the actions that occur inside your 
 
 // This overview is what is called *metrics* in the rest of this document.
 
-= Audit Logging Architecture
+== Audit Logging Architecture
 
 Audit logging can be enabled in {sync-server} using the link:https://www.npmjs.com/package/@aerogear/voyager-audit[@aerogear/voyager-audit] module. When enabled, all actions such as GraphQL mutations, queries and subscriptions are logged in great detail to `stdout` in JSON format.
 
@@ -95,9 +95,9 @@ An audit log example message is shown below.
 
 The `clientInfo` property of the audit log message is available only if the client is sending the client information to {sync-server}. That has to be enabled separately in the client. Additionally, data in that property can only be collected if the app is a Cordova app or a native app. Simple web clients cannot get the device, client nor app details and cannot send this information.
 
-The `userInfo` property is available only if {sync-server} is protected by an identity manager, such as {idm-name}, and if the user is authenticated. See <<#sync-server-auth, Authentication and Authorization using Keycloak>>.
+The `userInfo` property is available only if {sync-server} is protected by an identity manager, such as {idm-name}, and if the user is authenticated. See  see xref:sync-server-auth[].
 
-= Enabling Audit Logging in Voyager Server
+== Enabling Audit Logging in Voyager Server
 
 Audit logging is enabled in {sync-server} using the link:https://www.npmjs.com/package/@aerogear/voyager-audit[@aerogear/voyager-audit]
 
@@ -226,12 +226,12 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 
 ----
 
-= Sending Device Information in {sync-client}
+== Sending Device Information in {sync-client}
 
 See the <<#sync-js-client-audit-logs, {sync-client} Audit Logs>> section for more information.
 
 
-= Exploring Audit Logs
+== Exploring Audit Logs
 
 {sync-server} simply prints audit logs to `stdout` and it is the responsibility of another component to pick up these logs and provide
 functionality to the user to make use of the logs.
@@ -240,7 +240,7 @@ The *EFK stack* (ElasticSearch, Fluentd and Kibana) on OpenShift is the recommen
 
 All application logs printed to `stdout` are sent to ElasticSearch by Fluentd. However, the audit log messages printed by `@aerogear/voyager-audit` are printed in a format that is used by the Kibana dashboards.
 
-= Configuring OpenShift Logging
+== Configuring OpenShift Logging
 
 OpenShift logging can be enabled as described in link:https://docs.okd.io/3.11/install_config/aggregate_logging.html[OpenShift documentation].
 
@@ -261,7 +261,7 @@ In terms of metrics, curator's deletion age config should not be set shorter tha
 to see the metrics for.
 
 
-= Importing Kibana Saved Objects
+== Importing Kibana Saved Objects
 
 Kibana is a visualization tool that has a great integration with ElasticSearch.
 

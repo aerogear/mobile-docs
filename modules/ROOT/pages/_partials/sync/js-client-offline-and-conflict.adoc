@@ -1,4 +1,4 @@
-= Offline support
+= Supporting offline operations
 
 The {sync-client} provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the {sync-client} uses a mutation store to support offline mutations.
 
@@ -61,7 +61,9 @@ exampleQuery(...) @onlineOnly {
 [#sync-client-offline-queue-listener]
 == Listening for Events
 
-In order to get notification about offline related events, the `offlineQueueListener` in the config object should be used. The following events are emitted:
+To handle all notifications about offline related events, use the *offlineQueueListener* listener in the config object
+
+The following events are emitted:
 
 * `onOperationEnqueued` - Called when new operation is being added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
