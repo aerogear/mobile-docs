@@ -4,7 +4,7 @@
 
 The link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/NetworkStatus.ts[NetworkStatus] interface can be used to check the current network status, or register a listener to perform certain actions when the status of the network changes.
 
-Two default implementations are provided to support link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/WebNetworkStatus.ts[web browsers] and link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/CordovaNetworkStatus.ts[Cordova]. The following example demonstrates how to register a listener using `CordovaNetworkStatus`:
+Two default implementations are provided to support link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/WebNetworkStatus.ts[web browsers] and link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/CordovaNetworkStatus.ts[Cordova]. The following example demonstrates how to register a listener using `CordovaNetworkStatus`:
 
 [source, javascript]
 ----
