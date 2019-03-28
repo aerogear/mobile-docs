@@ -118,7 +118,7 @@ const voyagerConfig = {
 const server = VoyagerServer(apolloConfig, voyagerConfig)
 ----
 
-The link:https://github.com/aerogear/voyager-server/blob/master/examples/auditLogging[Audit Logging Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
+The link:https://github.com/aerogear/voyager-server/tree/master/examples/audit_logging[Audit Logging Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
 
 Alternatively, if the default audit logger does not match your requirements, you can create an audit logger that implements the `AuditLogger` interface as defined below.
 
