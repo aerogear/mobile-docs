@@ -1,3 +1,4 @@
+[id="conflict-resolution-{context}"]
 = Conflict Resolution
 
 Applications that allow users to modify data while offline most likely have to deal with conflicts.
@@ -11,13 +12,13 @@ In a GraphQL server, conflict detection and resolution happens exclusively in *m
 
 == Resolving Conflicts
 
-At a very high level, there is a typical flow to detecting and resolving conflicts.
+At a high level, there is a typical flow to detecting and resolving conflicts.
 
-1. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation.
-2. *Read the Object* - The server reads the current object the client is trying to modify from the data source (usually a database).
-3. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there was a conflict. The developer can choose _how the comparison_ is done.
-4. *Conflict Resolution* - Conflict resolution can be deferred to the client or it can be done on the server. The developer can choose the resolution strategy.
-5. *Persist the Data* - Conflict Resolution on the server results in a new object which should be persisted.
+. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation.
+. *Read the Object* - The server reads the current object the client is trying to modify from the data source (usually a database).
+. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there was a conflict. The developer can choose _how the comparison_ is done.
+. *Conflict Resolution* - Conflict resolution can be deferred to the client or it can be done on the server. The developer can choose the resolution strategy.
+. *Persist the Data* - Conflict Resolution on the server results in a new object which should be persisted.
 
 The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict resolution* to help developers with the *Conflict Detection* and *Conflict Resolution* steps.
 
@@ -69,6 +70,8 @@ The server updates the version, persists the changes and sends back the new obje
 A *conflict* occurs when the version number sent by the client does not match the version stored in the server. This means a different client already updated the object.
 
 == Using Version Based Conflict Resolution
+
+.Procedure
 
 . Import the link:https://npmjs.com/package/@aerogear/voyager-conflicts[@aerogear/voyager-conflicts] package.
 
