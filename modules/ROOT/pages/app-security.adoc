@@ -22,13 +22,15 @@ ifdef::context[:parent-context: {context}]
 * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 * You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
 
-[[setting-up-the-security-service]]
+[[setup]]
 == Setting Up the {app-security-service} Service
 include::_partials/app-security/provisioning-security.adoc[leveloffset=+2]
 include::_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
 
-
+[[monitoring]]
+== Using the {app-security-service} Admin dashboard
+include::_partials/app-security/using-the-admin-ui.adoc[leveloffset=+2]
 
 == Additional resources
 

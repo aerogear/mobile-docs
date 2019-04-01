@@ -1,0 +1,58 @@
+= Accessing the dashboard
+
+The {app-security-service} Admin console is viewed by opening the dashboard URL in a browser. This URL is seen in the list of available services in the Mobile Developer Console (MDC) after the {app-security-service} Service has been provisioned.
+
+= Dashboard overview
+
+The {app-security-service} Admin dashboard allows you to monitor your applications and the versions of those applications.
+
+Opening the admin dashboard presents the applications view. Clicking on an application opens a details view for that application.
+
+Below is a detailed description of each of these views and the data you can expect each to contain.
+
+= Applications view
+
+The applications view lists details for your applications:
+
+* *App Name*: The name of the application
+* *App ID*: The fully qualified and unique name of the application
+* *Deployed Versions*: Total number of currently deployed versions.
+* *Current Installs*: Total number of current installed versions of the application.
+* *Launches*: Total number of application launches.
+
+Clicking on an application opens an application details view with more detailed information.
+
+= Application details view
+
+This view lists detailed information for the versions of that application:
+
+* *App Version*: The name of the application.
+* *Current Installs*: Total number of currently installed versions.
+* *Launches*: Total number of launches of this version of the application.
+* *Last launched*: The last time this application version was launched.
+* *Disable on Startup*: Whether this application version is disabled on startup.
+* *Custom Disable Message*: A custom message that can be included to note the reason this application version has been disabled.
+
+A breadcrumb link at the top of the view links back to the previous screen.
+
+== _Enabling/ Disabling an application version_
+
+To enable/ disable one or more versions of the application:
+
+* toggle the checkbox for that version in the *Disable on Startup* column. 
+* confirm these changes by clicking the *Save* button to persist these changes. 
+
+Navigating away from this screen with unsaved changes prompts you to save or discard these changes.
+
+To disable all versions of an application:
+
+* click the *Disable App* button
+
+== _Adding/ updating a custom disabled message_
+
+To add or update a custom message for the version(s) of an application:
+
+* enter the message in the text field for that version under the *Custom Disable Message* column.
+* confirm these changes by clicking the *Save* button to persist these changes.
+
+Navigating away from this screen with unsaved changes prompts you to save or discard these changes.
