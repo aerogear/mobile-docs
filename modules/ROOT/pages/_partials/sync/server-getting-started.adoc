@@ -1,18 +1,20 @@
-.Prerequisites
-
-* You have Node.js and npm installed.
-* You have created a node.js project.
-
-== Hello World {sync-service}
+[id="getting-started-with-hello-world-{context}"]
+= Getting Started with Hello World {sync-service}
 
 {sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
 
 {sync-server} is the starting point for developing a {sync-service} application. Used with link:https://expressjs.com/[Express], this module leverages Apollo Server and provides extension points for additional features and integrations.
 
-
 In this example, you add libraries to your node.js project, create an `index.js` file, run the server, and confirm that it works.
 
-. Add libraries to your Node.js application,
+.Prerequisites
+
+* You have Node.js and npm installed.
+* You have created a node.js project.
+
+.Procedure
+
+. Add libraries to your Node.js application:
 +
 ====
 [source,bash]
