@@ -1,9 +1,10 @@
+[id="realtime-updates-{context}"]
 = Realtime Updates
 
 A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.
-For more information on GraphQL subscriptions  see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation]. 
-To enable Subscriptions on the server, create an appropriate schema similar to the following example. 
+To enable Subscriptions on the server, create an appropriate schema similar to the following example.
 
+.Procedure
 
 . Create a schema to support subscriptions.
 +
@@ -82,8 +83,8 @@ httpServer.listen(4000, () => {
 
 NOTE: For information on how to protect this subscription server with {keycloak-service} see xref:sync-server-auth[].
 
-
 .Additional Information
 
-For documentation on how to use Subscriptions on your client, see xref:sync-js-client-realtime-updates[Realtime Updates].
+* For more information on GraphQL subscriptions, see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].
 
+* For documentation on how to use Subscriptions on your client, see xref:sync-js-client-realtime-updates[Realtime Updates].
