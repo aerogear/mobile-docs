@@ -29,7 +29,7 @@ include::_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
 
 [[monitoring]]
-== Using the {app-security-service} Admin dashboard
+== Using the {app-security-service} Console
 include::_partials/app-security/using-the-admin-ui.adoc[leveloffset=+2]
 
 == Additional resources

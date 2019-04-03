@@ -1,12 +1,12 @@
-= Accessing the dashboard
+= Accessing the console
 
-The {app-security-service} Admin console is viewed by opening the dashboard URL in a browser. This URL is seen in the list of available services in the Mobile Developer Console (MDC) after the {app-security-service} Service has been provisioned.
+The {app-security-service} Console is viewed by opening the console URL in a browser. This URL is seen in the list of available services in the Mobile Developer Console (MDC) after the {app-security-service} Service has been provisioned.
 
-= Dashboard overview
+= Console overview
 
-The {app-security-service} Admin dashboard allows you to monitor your applications and the versions of those applications.
+The {app-security-service} Console allows you to monitor your applications and the versions of those applications.
 
-Opening the admin dashboard presents the applications view. Clicking on an application opens a details view for that application.
+Opening the console presents the applications view. Clicking on an application opens a details view for that application.
 
 Below is a detailed description of each of these views and the data you can expect each to contain.
 
