@@ -150,7 +150,6 @@ NOTE: The mobile-services.json file is the link between your provisioned service
 
 [source,javascript]
 ----
-
 let config = {
   "version": 1,
   "namespace": "voyager",
