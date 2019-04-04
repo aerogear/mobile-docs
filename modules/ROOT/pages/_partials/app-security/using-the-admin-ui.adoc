@@ -4,27 +4,28 @@ The {app-security-service} Console is viewed by opening the console URL in a bro
 
 = Console overview
 
-The {app-security-service} Console allows you to monitor your applications and the versions of those applications.
+The {app-security-service} Console allows you to monitor applications, their respective versions, and disable versions of those applications.
 
 Opening the console presents the applications view. Clicking on an application opens a details view for that application.
 
-Below is a detailed description of each of these views and the data you can expect each to contain.
+Below is a detailed description of each of these views and the information you can expect each to contain.
 
 = Applications view
 
 The applications view lists details for your applications:
 
-* *App Name*: The name of the application
-* *App ID*: The fully qualified and unique name of the application
+* *App Name*: The name of the application.
+* *App ID*: The fully qualified and unique name of the application.
 * *Deployed Versions*: Total number of currently deployed versions.
 * *Current Installs*: Total number of current installed versions of the application.
 * *Launches*: Total number of application launches.
 
-Clicking on an application opens an application details view with more detailed information.
+Clicking on an application in the table opens a view with further information and the ability to disable versions of the application.
 
 = Application details view
 
-This view lists detailed information for the versions of that application:
+This view provides statistics and information about each deployed version of an application:
+
 
 * *App Version*: The name of the application.
 * *Current Installs*: Total number of currently installed versions.
@@ -33,26 +34,26 @@ This view lists detailed information for the versions of that application:
 * *Disable on Startup*: Whether this application version is disabled on startup.
 * *Custom Disable Message*: A custom message that can be included to note the reason this application version has been disabled.
 
-A breadcrumb link at the top of the view links back to the previous screen.
+A breadcrumb at the top of the view navigates back to the previous screen.
 
-== _Enabling/ Disabling an application version_
+== _Enabling/Disabling an application version_
 
-To enable/ disable one or more versions of the application:
+To enable/disable one or more versions of the application:
 
-* toggle the checkbox for that version in the *Disable on Startup* column. 
-* confirm these changes by clicking the *Save* button to persist these changes. 
+. toggle the checkbox for that version in the *Disable on Startup* column. 
+. confirm these changes by clicking the *Save* button to persist these changes. 
 
 Navigating away from this screen with unsaved changes prompts you to save or discard these changes.
 
 To disable all versions of an application:
 
-* click the *Disable App* button
+* click the *Disable App* button.
 
-== _Adding/ updating a custom disabled message_
+== _Adding/updating a custom disabled message_
 
 To add or update a custom message for the version(s) of an application:
 
-* enter the message in the text field for that version under the *Custom Disable Message* column.
-* confirm these changes by clicking the *Save* button to persist these changes.
+. enter the message in the text field for that version under the *Custom Disable Message* column.
+. confirm these changes by clicking the *Save* button to persist these changes.
 
 Navigating away from this screen with unsaved changes prompts you to save or discard these changes.
