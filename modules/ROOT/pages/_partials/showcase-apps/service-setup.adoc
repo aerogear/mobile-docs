@@ -187,10 +187,11 @@ Copy the contents of `mobile-services.json` and add it to the contents of the `c
 
 [source,javascript]
 ----
+
 let config = {
   "version": 1,
-  "namespace": "demo",
-  "clientId": "test-mobile-client",
+  "namespace": "voyager",
+  "clientId": "voyager-ionic-example",
   "services": []
 };
 
