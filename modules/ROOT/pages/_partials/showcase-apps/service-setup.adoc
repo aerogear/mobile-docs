@@ -139,7 +139,7 @@ NOTE: This step also creates a variant as described in xref:push-notifications.a
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
-NOTE: This section is only for the Ionic platform.
+NOTE: This section only applies to the Ionic platform.
 
 . Open your {mobile-client} in Mobile Developer Console.
 . Copy the `mobile-services.json` configuration to your clipboard.
