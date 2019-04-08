@@ -32,7 +32,6 @@ Features include:
 * Metrics (using the  Mobile Metrics Service)
 * Audit Logging
 
-
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
 . Design a link:https://graphql.org/learn[GraphQL] schema.
@@ -42,7 +41,6 @@ Unlike other mobile services which provide a server and an API, Data Sync is a f
 . Configure your mobile app to point to the data sync server app.
 . Complete your mobile app development.
 . Build and run your mobile app.
-
 
 include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 
@@ -124,7 +122,6 @@ include::_partials/sync/provisioning-data-sync.adoc[leveloffset=2]
 
 [#sync-server-getting-started-mdc-client]
 include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
-
 
 [#sync-server-binding]
 include::_partials/sync/binding.adoc[leveloffset=2]

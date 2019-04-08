@@ -1,5 +1,5 @@
+[id="accessing-data-{context}"]
 = Accessing Data
-
 
 Typically, a {sync-service} application accesses a database.
 The GraphQL specification and {sync-server} modules do not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
@@ -9,7 +9,9 @@ If you use a database, it is your responsibility to administer, maintain and bac
 
 The GraphQL specification and {sync-server} modules not require an application to use a particular type of database, and the developer of the application can choose a database that is most suitable for the application.
 
-From a very high level, here are the steps to access data from a database in a {sync-service} application:
+From a high level, this section describes the steps to access data from a database in a {sync-service} application:
+
+.Procedure
 
 . Initialize the database connection on app start.
 . Add the database connection to the `context` object.
