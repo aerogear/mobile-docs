@@ -1,0 +1,43 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+include::configuring-dev-env-app-security.adoc[]
+
+== Setting up {app-security-service} service SDK
+
+=== Importing the libraries
+
+[tabs]
+====
+
+// end::excludeDownstream[]
+Cordova::
++
+--
+
+. Install the link:https://www.npmjs.com/package/@aerogear/security[AeroGear Security] package from link:https://www.npmjs.com/[NPM^]:
++
+[source,bash]
+----
+$ npm install @aerogear/security --save
+----
+
+. Add the link:https://www.npmjs.com/package/@aerogear/cordova-plugin-aerogear-security[AeroGear Security plugin^] for Cordova:
++
+[source,bash]
+----
+$ cordova plugin add @aerogear/cordova-plugin-aerogear-security
+----
+
+. Import and instantiate `SecurityService` to start using the SDK:
++
+[source,javascript]
+----
+const SecurityService = require("@aerogear/security");
+
+const appSecurity = new SecurityService.AppSecurity(app.config);
+----
++
+NOTE: Any new instantiation of `SecurityService` returns the same instance.
+
+--
+====
