@@ -51,10 +51,9 @@ For more information, see link:https://www.apollographql.com/docs/react/essentia
 
 Apollo client holds all mutation parameters in memory.
 An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache. 
-As result all _optimisticResponses_ will disappear from application after restart and it will appear back only when application becomes online and they will be replicated to server.
+As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
 
 To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
-Adding update functions will reapply optimistic responses, which will show all offline data after application restarts.
 
 [source, javascript]
 ----
