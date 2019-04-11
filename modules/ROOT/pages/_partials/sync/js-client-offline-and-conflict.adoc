@@ -47,6 +47,27 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
 
 For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
+=== Global Update Functions
+
+Apollo client holds all mutation parameters in memory.
+An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache. 
+As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
+
+To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
+
+[source, javascript]
+----
+const updateFunctions = {
+  // Can contain update functions from each component
+  ...ItemUpdates,
+  ...TasksUpdates
+}
+
+let config = {
+  mutationCacheUpdates: updateFunctions,
+}
+----
+
 === Online Only Queries
 
 To ensure certain queries are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used to annotate a query, as the example shown below:
