@@ -70,7 +70,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-. Add `* file:` to `default-src` in the `Content-Security-Policy` meta tag inside the `index.html` file:
+. Add the following code to the `index.html` file:
 +
 [source,html]
 ----
