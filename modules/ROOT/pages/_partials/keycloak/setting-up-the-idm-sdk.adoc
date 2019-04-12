@@ -70,7 +70,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-. Add the following code to the `index.html` file:
+. Add the following code to `index.html` located in `src/` :
 +
 [source,html]
 ----
