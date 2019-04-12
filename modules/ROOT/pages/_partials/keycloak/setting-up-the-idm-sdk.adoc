@@ -82,8 +82,8 @@ Cordova::
 ----
 $ npm install @aerogear/auth
 ----
-. Use `browserify` so that you can use the `require` statement.
-. In the `init` snippet, use `require` instead of `import`
+. In order for a node module to work in a browser (and on Cordova), use `browserify` to allow for the use of a `require` statement.
+
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -158,8 +158,10 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Import and initialize Auth:
 
+. Import and initialize Auth.
+. Replace `import` with `require` in the `init` section, as displayed in the following snippet:
++
 [source,javascript]
 ----
 const Auth = require('@aerogear/auth').Auth;
