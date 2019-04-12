@@ -196,7 +196,7 @@ NOTE: Initialization also enables authentication.
   </base-config>
 </network-security-config>
 ----
-. Include it into the `config.xml` file for the `android` platform
+. For the `android` platform, include the following code in the `config.xml` file:
 +
 [source,xml]
 ----
