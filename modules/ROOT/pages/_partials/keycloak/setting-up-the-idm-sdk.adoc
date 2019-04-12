@@ -82,8 +82,8 @@ Cordova::
 ----
 $ npm install @aerogear/auth
 ----
-. Use e.g `browserify` so that you can use the `require` statement
-. In the `init` snippet use `require` instead of `import`
+. Use `browserify` so that you can use the `require` statement.
+. In the `init` snippet, use `require` instead of `import`
 // tag::excludeDownstream[]
 --
 Xamarin::
