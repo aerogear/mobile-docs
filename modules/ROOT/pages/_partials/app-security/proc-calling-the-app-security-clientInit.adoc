@@ -22,7 +22,13 @@ appSecurity.clientInit()
     from the server set by the admin.
   */
 }).catch(err  => {
-    // Login error
+  /**
+    You can handle errors connecting to the 
+    mobile security service here. i.e. if the
+    client is offline that error will be caught 
+    here and you can return a response at this 
+    point
+    */
 });
 ----
 // tag::excludeDownstream[]
