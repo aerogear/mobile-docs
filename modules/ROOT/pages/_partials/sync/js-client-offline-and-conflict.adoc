@@ -49,8 +49,9 @@ For more information, see link:https://www.apollographql.com/docs/react/essentia
 
 == Offline Workflow
 
-By design `client.mutate` function will resolve to error when offline.
-Developers can detect offline error and watch offline change to notify app
+When offline `client.mutate` function will return immediately after is called.
+Returned promise will resolve into error (catch method)
+Developers can detect if error is an offline error and watch for change to be replicated back to server.
 
 [source, javascript]
 ----
@@ -64,11 +65,7 @@ Developers can detect offline error and watch offline change to notify app
   });
 ----
 
-> Note: Additionally to watching individual mutations framework offers global offline listener that can be supplied when creating client.
-
-## Global Update Functions
-
-
+Note: Additionally to watching individual mutations framework offers global offline listener that can be supplied when creating client.
 
 
 === Global Update Functions
