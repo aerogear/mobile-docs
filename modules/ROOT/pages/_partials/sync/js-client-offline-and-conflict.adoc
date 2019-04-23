@@ -66,7 +66,7 @@ For example:
   });
 ----
 
-Note: Additionally to watching individual mutations framework offers global offline listener that can be supplied when creating client.
+NOTE:  In addition to watching individual mutations, you can add a global offline listener when creating a client.
 
 
 === Global Update Functions
