@@ -54,7 +54,7 @@ If a mutation occurs while the device is offline, the client.mutate function:
 - returns immediately
 - returns a promise with an error
 
-You can check error object to isolate errors relating to offline state.
+You can check the _error_ object to isolate errors relating to offline state.
 `watchOfflineChange` method on error object will allow to watch when a change will be synced back to server,
 after the device is online again.
 
