@@ -49,9 +49,14 @@ For more information, see link:https://www.apollographql.com/docs/react/essentia
 
 == Offline Workflow
 
-When offline `client.mutate` function will return immediately after is called.
-Returned promise will resolve into error (`catch` method is triggered).
-Developers can detect if error is an offline error and watch for change to be replicated back to server.
+If a mutation occurs while the device is offline, the client.mutate function:
+
+- returns immediately
+- returns a promise with an error
+
+You can check error object to isolate errors relating to offline state.
+`watchOfflineChange` method on error object will allow to watch when a change will be synced back to server,
+after the device is online again.
 
 For example: 
 [source, javascript]
