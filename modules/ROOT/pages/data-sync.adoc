@@ -120,6 +120,9 @@ include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
 [#sync-server-provisioning-data-sync]
 include::_partials/sync/provisioning-data-sync.adoc[leveloffset=2]
 
+[#sync-server-provisioning-data-sync-templates]
+include::_partials/sync/openshift-templates.adoc[leveloffset=2]
+
 [#sync-server-getting-started-mdc-client]
 include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
 

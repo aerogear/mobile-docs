@@ -1,0 +1,25 @@
+
+= Provisioning the {sync-service} server applications using templates
+
+{sync-service} offers following OpenShift templates
+that will help developers with provisioning their DataSync applications to OpenShift platform.
+
+Templates:
+- DataSync Gateway: Provides a way for developers to deploy Node.JS API Gateway application directly from source code. Server can connect with other services running on OpenShift or connect to external data sources.
+Template will use Node s2i to build new image.  
+
+- DataSync Showcase
+Showcase application will deploy fully functional server with example Task implementation. 
+Server side requires client application available in https://github.com/aerogear/ionic-showcase
+
+> Note: Showcase server template can be used only for demo purposes and it should not be used in production.
+
+
+// tag::excludeUpstream[]
+When running on Red Hat Managed Integration templates will be available in Mobile > App category
+// end::excludeUpstream[]
+
+
+// tag::excludeDownstream[]
+Templates along with documentation can be found in link:https://github.com/aerogear/datasync-deployment repository.
+// end::excludeDownstream[]
