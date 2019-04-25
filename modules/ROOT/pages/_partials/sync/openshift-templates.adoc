@@ -8,7 +8,7 @@ Templates:
 
 - DataSync App
 
-Provides a way for developers to deploy Node.JS application directly from source code. Server can connect with other services running on OpenShift or connect to external data sources like database running on the separate server.
+Provides a way for developers to deploy Node.js data sync application directly from source code. This server can connect with other services running on OpenShift or connect to external data sources.
 Developers can connect with any services and deploy application directly from source code.
 Template will use Node s2i to build new image.  
 
