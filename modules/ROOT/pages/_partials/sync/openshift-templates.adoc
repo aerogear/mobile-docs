@@ -6,11 +6,11 @@ that will help developers with provisioning their DataSync applications to OpenS
 
 Templates:
 
-- DataSync API Gateway
+- DataSync App
 
-Provides a way for developers to deploy Node.JS API Gateway application directly from source code. Server can connect with other services running on OpenShift or connect to external data sources like database running on the separate server.
-Developers can connect with any services and deploy application directly from source code.
-Template will use Node s2i to build new image.  
+The DataSync App template allows developers to deploy the Node.js DataSync App on Openshift using source code only.  _Node s2i_  is used to build the DataSync App image.
+
+The DataSync App can connect with other services running on OpenShift and can also connect to external data sources.
 
 - DataSync Showcase
 
