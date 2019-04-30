@@ -36,36 +36,52 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 +
 For more information about features, see xref:identity-management.adoc[{keycloak-service} Service]
 
-
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
 . To demonstrate {sync-service}:
 +
 NOTE: You can only demonstrate {sync-service} on Cordova.
 
-.. Provision a PostgreSQL database if there isn't one available.
-... Login to the OpenShift web console, create a new project or use an existing one
-... Click on the `Add to Project` dropdown on the top right, and choose `Browse Catalog`
-... Select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database. Take notes of the values for `PostgreSQL Connection Username`, `PostgreSQL Connection Password` and `PostgreSQL Database Name`. You will need them later.
+.. Provision a PostgreSQL database if there is none available.
+... Login to OpenShift and, create a new project or use an existing project.
+... Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
++
+NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connection Password`, and `PostgreSQL Database Name` as they are required when provisioning {sync-service}.
+... Click `Browse Catalog` and select `Mobile` -> `Data Sync`.
 .. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
 +
+On the
 [options="header"]
 |====
 |Field|Value
-|Sync Application Name|syncshowcase
-|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
-|Sync Application health endpoint| health
-|Sync Application metrics endpoint| metrics
-|Sync App Port|4000
-|Sync App GraphQL Endpoint| graphql
-|Database Server Hostname|*Hostname of the PostgreSQL server*
-|Database Server Port|*Port number of the PostgreSQL server, usually should be 5432*
-|Database Server Username|*Username of the PostgreSQL database connection*
-|Database Server Password|*Password of the PostgreSQL database connection*
-|Database name|*PostgreSQL database name*
+|Sync Application Name| syncshowcase
+|Sync Application Docker image| docker.io/aerogear/voyager-server-example-task
+|Sync Application Docker image version| latest
+|Sync App Port| 4000
+|Sync Application metrics endpoint| /metrics
+|Sync App GraphQL Endpoint| /graphql
+|Database Server Hostname| Hostname of the PostgreSQL server, usually *postgresql*
+|Database Server Port| Port number of the PostgreSQL server, usually *5432*
+|Database Server Username| *Username of the PostgreSQL database connection*
+|Database Server Password| *Password of the PostgreSQL database connection*
+|Database name| *PostgreSQL database name*
 |====
-.. xref:data-sync.adoc#sync-server-binding-keycloak[Protect the {sync-service} app using {keycloak-service}]
+// .. xref:data-sync.adoc#sync-server-binding-keycloak[Protect the {sync-service} app using {keycloak-service}]
++
+.. Provision the Mobile Developer Console
+... Click `Browse Catalog` and select `Mobile` -> `Mobile Developer Console`.
+... Complete the wizard to start the deployment of the *Mobile Developer Console*.
 
+[[creating-the-data-sync-app-binding]]
+== Creating the Data Sync App binding
+
+[discrete]
+=== Prerequisites
+
+include::../generic-local-mobile-dev-envir-reqs.adoc[]
+
+[discrete]
+=== Procedure
 
 [[setting-up-the-showcase-app]]
 [#app]
