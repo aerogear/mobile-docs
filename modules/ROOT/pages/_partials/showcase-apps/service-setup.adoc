@@ -111,9 +111,8 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 module.exports = config;
 ----
 
-[[configuring-the-showcase-app-to-point-to-the-provisioned-data-sync-service]]
-[#app]
-== Configuring the Showcase App to point to the provisioned Data Sync service
+[[configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service]]
+== Configuring the Showcase App to point at the provisioned Data Sync service
 
 [discrete]
 === Prerequisites
@@ -151,17 +150,41 @@ let config = {
 module.exports = config;
 ----
 
-[[running-the-showcase-app]]
-[#app]
-== Running the showcase app
+[[running-the-showcase-app-with-data-sync-configured]]
+== Running the showcase app with Data Sync configured
 
 [discrete]
 === Prerequisites
 
-xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
+xref:configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service[Configuring the Showcase App to point at the provisioned Data Sync service]
 
 [discrete]
 === Procedure
+
+. Open a terminal and browse to the showcase app root folder.
+. Install Ionic 4:
++
+[source, bash]
+----
+npm install -g ionic@4
+----
++
+. Install dependencies:
++
+[source, bash]
+----
+npm install
+----
++
+. Run the showcase app with Data Sync configured:
++
+[source, bash]
+----
+npm run start
+----
++
+. Once the process has finished, the showcase app is displayed in a browser at _http://localhost:8100/_.
++
 
 
 [[setting-up-the-showcase-app]]
