@@ -17,7 +17,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 [discrete]
 === Prerequisites
 
-* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 
 [discrete]
 === Procedure
@@ -38,17 +38,15 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
-. To demonstrate {sync-service}:
-+
-NOTE: You can only demonstrate {sync-service} on Cordova.
+== Demonstrate the {sync-service}
 
-.. Provision a PostgreSQL database if there is none available.
-... Login to OpenShift and, create a new project or use an existing project.
-... Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
+. Provision a PostgreSQL database if there is none available.
+.. Login to OpenShift and, create a new project or use an existing project.
+.. Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
 +
 NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connection Password`, and `PostgreSQL Database Name` as they are required when provisioning {sync-service}.
-... Click `Browse Catalog` and select `Mobile` -> `Data Sync`.
-.. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
+.. Click `Browse Catalog` and select `Mobile` -> `Data Sync`.
+. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
 +
 On the
 [options="header"]
@@ -66,22 +64,21 @@ On the
 |Database Server Password| *Password of the PostgreSQL database connection*
 |Database name| *PostgreSQL database name*
 |====
-// .. xref:data-sync.adoc#sync-server-binding-keycloak[Protect the {sync-service} app using {keycloak-service}]
 +
-.. Provision the Mobile Developer Console
-... Click `Browse Catalog` and select `Mobile` -> `Mobile Developer Console`.
-... Complete the wizard to start the deployment of the *Mobile Developer Console*.
+. Provision the Mobile Developer Console
+.. Click `Browse Catalog` and select `Mobile` -> `Mobile Developer Console`.
+.. Complete the wizard to start the deployment of the *Mobile Developer Console*.
 
 [[creating-the-data-sync-mobile-app-binding]]
-== Creating the Data Sync Mobile App binding
+=== Creating the Data Sync Mobile App binding
 
 [discrete]
-=== Prerequisites
+==== Prerequisites
 
 xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
-=== Procedure
+==== Procedure
 
 . Log in to the Mobile Developer Console by clicking on the Mobile Developer Console link within Openshift.
 . Click *Create Mobile App*, and complete the wizard to create a Mobile App.
@@ -112,15 +109,15 @@ module.exports = config;
 ----
 
 [[configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service]]
-== Configuring the Showcase App to point at the provisioned Data Sync service
+=== Configuring the Showcase App to point at the provisioned Data Sync service
 
 [discrete]
-=== Prerequisites
+==== Prerequisites
 
 xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
 
 [discrete]
-=== Procedure
+==== Procedure
 
 1. Clone the showcase app
 +
@@ -151,15 +148,15 @@ module.exports = config;
 ----
 
 [[running-the-showcase-app-with-data-sync-configured]]
-== Running the showcase app with Data Sync configured
+=== Running the showcase app with Data Sync configured
 
 [discrete]
-=== Prerequisites
+==== Prerequisites
 
 xref:configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service[Configuring the Showcase App to point at the provisioned Data Sync service]
 
 [discrete]
-=== Procedure
+==== Procedure
 
 . Open a terminal and browse to the showcase app root folder.
 . Install Ionic 4:
@@ -184,7 +181,6 @@ npm run start
 ----
 +
 . Once the process has finished, the showcase app is displayed in a browser at _http://localhost:8100/_.
-+
 
 
 [[setting-up-the-showcase-app]]
