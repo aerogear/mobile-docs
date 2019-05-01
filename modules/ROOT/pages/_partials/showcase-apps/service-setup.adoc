@@ -72,16 +72,44 @@ On the
 ... Click `Browse Catalog` and select `Mobile` -> `Mobile Developer Console`.
 ... Complete the wizard to start the deployment of the *Mobile Developer Console*.
 
-[[creating-the-data-sync-app-binding]]
-== Creating the Data Sync App binding
+[[creating-the-data-sync-mobile-app-binding]]
+== Creating the Data Sync Mobile App binding
 
 [discrete]
 === Prerequisites
 
-include::../generic-local-mobile-dev-envir-reqs.adoc[]
+xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
 === Procedure
+
+. Log in to the Mobile Developer Console by clicking on the Mobile Developer Console link within Openshift.
+. Click *Create Mobile App*, and complete the wizard to create a Mobile App.
+. Click on the newly created *Mobile App* and click *Mobile Services*.
+. The Data Sync provisioned service should be available under the _Unbound Services_ heading. Click *Bind to App* and follow the wizard.
+. When the binding completes, click on *configuration*. The configuration for the Data Sync Mobile App is displayed, for example:
++
+[source,javascript]
+----
+{
+  "version": 1,
+  "namespace": "test12",
+  "clientId": "test16",
+  "services": [
+    {
+      "id": "8565c444-6bed-33e9-8616-0af08791569c",
+      "name": "sync-app-syncshowcase-test16",
+      "type": "sync-app",
+      "url": "https://sync-app-syncshowcase-test.testbed.com/graphql",
+      "config": {
+        "websocketUrl": "wss://sync-app-syncshowcase-test.testbed.com/graphql"
+      }
+    }
+  ]
+}
+
+module.exports = config;
+----
 
 [[setting-up-the-showcase-app]]
 [#app]
@@ -90,7 +118,7 @@ include::../generic-local-mobile-dev-envir-reqs.adoc[]
 [discrete]
 === Prerequisites
 
-include::../generic-local-mobile-dev-envir-reqs.adoc[]
+xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
 
 [discrete]
 === Procedure
