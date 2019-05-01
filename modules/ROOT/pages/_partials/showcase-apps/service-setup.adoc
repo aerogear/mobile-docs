@@ -100,9 +100,9 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
       "id": "8565c444-6bed-33e9-8616-0af08791569c",
       "name": "sync-app-syncshowcase-test16",
       "type": "sync-app",
-      "url": "https://sync-app-syncshowcase-test.testbed.com/graphql",
+      "url": "https://sync-app-syncshowcase.testbed.com/graphql",
       "config": {
-        "websocketUrl": "wss://sync-app-syncshowcase-test.testbed.com/graphql"
+        "websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
       }
     }
   ]
@@ -111,6 +111,59 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 module.exports = config;
 ----
 
+[[configuring-the-showcase-app-to-point-to-the-provisioned-data-sync-service]]
+[#app]
+== Configuring the Showcase App to point to the provisioned Data Sync service
+
+[discrete]
+=== Prerequisites
+
+xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
+
+[discrete]
+=== Procedure
+
+1. Clone the showcase app
++
+include::../cloning-showcase-app.adoc[]
++
+2. Incorporate the Data Sync Mobile App code into the *mobile-services.js* file located within _src_:
++
+[source,javascript]
+----
+let config = {
+  "version": 1,
+  "namespace": "test12",
+  "clientId": "test16",
+  "services": [
+    {
+    "id": "8565c444-6bed-33e9-8616-0af08791569c",
+    "name": "sync-app-syncshowcase-test16",
+    "type": "sync-app",
+    "url": "https://sync-app-syncshowcase.testbed.com/graphql",
+    "config": {
+      "websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
+      }
+}
+  ]
+};
+
+module.exports = config;
+----
+
+[[running-the-showcase-app]]
+[#app]
+== Running the showcase app
+
+[discrete]
+=== Prerequisites
+
+xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
+
+[discrete]
+=== Procedure
+
+
 [[setting-up-the-showcase-app]]
 [#app]
 == Setting Up the Showcase App
@@ -118,7 +171,7 @@ module.exports = config;
 [discrete]
 === Prerequisites
 
-xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
+xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
 === Procedure
