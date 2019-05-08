@@ -40,7 +40,7 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 == Demonstrate the {sync-service}
 
-. Provision a PostgreSQL database if there is none available.
+. Ensure a PostgreSQL database is available so that you can connect to it at a later stage.
 .. Login to OpenShift and, create a new project or use an existing project.
 .. Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
 +
