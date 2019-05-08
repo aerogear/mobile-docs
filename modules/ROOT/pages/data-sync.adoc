@@ -63,7 +63,7 @@ include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 
 [#sync-server-creating-a-datasource-stub-mapping]
-include::_partials/sync/server-creating-a-datasource-stub-mapping.adoc
+include::_partials/sync/server-creating-a-datasource-stub-mapping.adoc[leveloffset=2]
 
 [#sync-server-offline-and-conflict]
 include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
