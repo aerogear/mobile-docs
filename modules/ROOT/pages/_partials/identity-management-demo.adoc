@@ -12,7 +12,8 @@ From the showcase app:
 Cordova::
 +
 --
-. Login on app start. You will need to click on the `Login` button on the page first and then a new page will appear to enter credentials.
+. To log in, click the *Login* button on the first page.
+. A login page is displayed, enter your credentials.
 . Once the login is successful, go to *User Profile* page and see the basic and roles information about the user.
 --
 // tag::excludeDownstream[]
