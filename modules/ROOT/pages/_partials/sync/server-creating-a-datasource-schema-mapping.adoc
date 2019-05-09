@@ -1,19 +1,19 @@
-[id="server-creating-a-datasource-stub-mapping-{context}"]
-= Creating a data source stub mapping
+[id="server-creating-a-datasource-schema-mapping-{context}"]
+= Creating a data source schema mapping
 
-This section describes how to create a stub in the Sync Server for the following data source mapping:
+This section describes how to create a schema in the Sync Server for the following data source mapping:
 
-. Employee
+[.Employee]
 |===
-| employee_id, ID
-| employee_name, String
+| employee_id, `ID`
+| employee_name, `String`
 |===
 
-. Category
+[.Category]
 |===
-| category_id, ID
-| employee_type, String
-| security_clearance, ID
+| category_id, `ID`
+| employee_type, `String`
+| security_clearance, `ID`
 |===
 
 .Prerequisites
@@ -89,7 +89,7 @@ app.listen(4000, () =>
 )
 ----
 
-. Stop the server and start it:
+. Stop the server, and start it using the following command:
 +
 [source,bash]
 ----
@@ -97,8 +97,10 @@ $ node index.js
 
 🚀 Server ready at http://localhost:4000/graphql
 ----
-
-. Browse `http://localhost:4000/graphql` and interact with the playground. For example, to list Employees:
++
+. Open an internet browser and browse to `http://localhost:4000/graphql`.
++
+. To list Employees, execute the following command in the Graphql window:
 +
 [source,javascript]
 ----
@@ -112,7 +114,7 @@ $ node index.js
 
 .Verification steps
 
-. Check the output. For the example above, the output should be:
+. For the example above, the output should be:
 +
 [source,javascript]
 ----
