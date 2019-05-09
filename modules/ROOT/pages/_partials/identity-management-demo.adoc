@@ -2,6 +2,8 @@
 
 = {keycloak-service}
 
+NOTE: Please make sure you have https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[created a user] and https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[set up credentials] first.
+
 // tag::idm-demo[]
 From the showcase app:
 
@@ -10,7 +12,7 @@ From the showcase app:
 Cordova::
 +
 --
-. Login on app start.
+. Login on app start. You will need to click on the `Login` button on the page first and then a new page will appear to enter credentials.
 . Once the login is successful, go to *User Profile* page and see the basic and roles information about the user.
 --
 // tag::excludeDownstream[]

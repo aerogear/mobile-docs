@@ -146,18 +146,6 @@ NOTE: This section only applies to the Ionic platform.
  Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
 NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
-. Copy the contents of `mobile-services.json` and add it to the contents of the `config` object located in `src/mobile-services.js`, for example:
-
-[source,javascript]
-----
-let config = {
-  "version": 1,
-  "namespace": "voyager",
-  "clientId": "voyager-ionic-example",
-  "services": []
-};
-
-module.exports = config;
-----
+. Copy the contents of `mobile-services.json` and paste them to `src/mobile-services.json` file.
 
 include::../build-and-deploy.adoc[]
