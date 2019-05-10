@@ -1,28 +1,26 @@
 [id="server-creating-a-datasource-schema-mapping-{context}"]
 = Creating a data source schema mapping
 
-This section describes how to create a schema in the Sync Server for the following data source mapping:
+This section describes how to create a GraphQL schema for an existing data source schema.
 
-[.Employee]
-|===
-| employee_id, `ID`
-| employee_name, `String`
-|===
+For this procedure, the following describes the existing data source schema:
 
-[.Category]
-|===
-| category_id, `ID`
-| employee_type, `String`
-| security_clearance, `ID`
-|===
+Table `Employee`
+image::server-creating-a-datasource-schema-category.png[]
+
+Table `Category`
+image::server-creating-a-datasource-schema-category.png[]
 
 .Prerequisites
 
 * xref:getting-started-with-hello-world-{context}[].
+* You are familiar with {sync-server} operations, for example, stopping and starting {sync-server}.
 
 .Procedure
 
-. Edit the `index.js` and replace its contents with the following content:
+. If the {sync-server} is running, stop it.
++
+. Edit the `index.js` file and replace its contents with the following content:
 +
 [source,javascript]
 ----
@@ -88,15 +86,8 @@ app.listen(4000, () =>
   console.log(`🚀 Server ready at http://localhost:4000/graphql`)
 )
 ----
-
-. Stop the server, and start it using the following command:
 +
-[source,bash]
-----
-$ node index.js
-
-🚀 Server ready at http://localhost:4000/graphql
-----
+. Start the server
 +
 . Open an internet browser and browse to `http://localhost:4000/graphql`.
 +
@@ -114,7 +105,7 @@ $ node index.js
 
 .Verification steps
 
-. For the example above, the output should be:
+For the example above, the output should be:
 +
 [source,javascript]
 ----
