@@ -5,13 +5,19 @@ This section describes how to create a GraphQL schema for an existing data sourc
 
 For this procedure, the following describes the existing data source schema:
 
-Table `Employee`.
+[.Employee]
+|===
+| employee_id, `ID`
+| employee_name, `String`
+| category_id, `ID`
+|===
 
-image::server-creating-a-datasource-schema-employee.png[Employee]
-
-Table `Category`.
-
-image::server-creating-a-datasource-schema-category.png[Category]
+[.Category]
+|===
+| category_id, `ID`
+| employee_type, `String`
+| security_clearance, `ID`
+|===
 
 .Prerequisites
 
@@ -29,36 +35,16 @@ image::server-creating-a-datasource-schema-category.png[Category]
 const express = require('express')
 const { VoyagerServer, gql } = require('@aerogear/voyager-server')
 
-// Stub that reflects data source mapping
-const Employee = [{
-    employee_id: 1,
-    employee_name:"Eddie",
-    Category: {
-        category_id: 1,
-        employee_type: "Manager",
-        security_clearance: 1
-    }
-},
-{
-    employee_id: 2,
-    employee_name:"Max",
-    Category: {
-        category_id: 1,
-        employee_type: "Associate",
-        security_clearance: 2
-    }
-}]
+// A replica of an existing data source schema
+const employees = [{employee_id: 1, employee_name: "joe", cateory_id: 1 }, {employee_id: 2, employee_name: "john", cateory_id: 2}];
+const categories = [{category_id: 1, employee_type:"Manager", security_clearance: 1}, {category_id: 2, employee_type:"Associate", security_clearance: 2}];
 
 //Graphql schema for mapping to data source mapping
 const typeDefs = gql`
   type Employee {
       employee_id: ID!,
       employee_name: String!
-  }
-  type Category {
-      category_id: ID!,
-      employee_type: String!,
-      security_clearance: ID!
+      category: Category
   }
   type Query {
     listEmployees: [Employee]
@@ -69,7 +55,12 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     listEmployees: (obj, args, context, info) => {
-      return Employee;
+      return employees;
+    }
+  },
+  Employee: {
+    category(employee) {
+        return filter(categories, {category_id: employee.cateory_id});
     }
   }
 }
@@ -108,7 +99,7 @@ app.listen(4000, () =>
 .Verification steps
 
 For the example above, the output should be:
-+
+
 [source,javascript]
 ----
 {
