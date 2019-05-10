@@ -7,7 +7,7 @@ For this procedure, the following describes the existing data source schema:
 
 Table `Employee`.
 
-image::server-creating-a-datasource-schema-category.png[Employee]
+image::server-creating-a-datasource-schema-employee.png[Employee]
 
 Table `Category`.
 
