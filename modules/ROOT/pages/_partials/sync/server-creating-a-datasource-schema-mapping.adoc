@@ -5,11 +5,13 @@ This section describes how to create a GraphQL schema for an existing data sourc
 
 For this procedure, the following describes the existing data source schema:
 
-Table `Employee`
-image::server-creating-a-datasource-schema-category.png[]
+Table `Employee`.
 
-Table `Category`
-image::server-creating-a-datasource-schema-category.png[]
+image::server-creating-a-datasource-schema-category.png[Employee]
+
+Table `Category`.
+
+image::server-creating-a-datasource-schema-category.png[Category]
 
 .Prerequisites
 
