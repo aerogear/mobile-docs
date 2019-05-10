@@ -2,7 +2,7 @@
 
 :product-name: Mobile Services
 
-:release-number: 1.0.0
+:release-number: 2.0.0
 :xamarin-sdk-release-number: 2.0.1
 :ios-sdk-release-number: 2.0.0
 :android-sdk-release-number: 2.0.0
@@ -23,7 +23,7 @@
 :keycloak-ui: Keycloak Admin UI
 :keycloak-dashboard: Auth Dashboard
 :idm-name: Keycloak
-:idm-docs-link: https://www.keycloak.org/documentation.html 
+:idm-docs-link: https://www.keycloak.org/documentation.html
 
 // Push Service
 
@@ -55,7 +55,7 @@
 
 :mobile-developer-console: Mobile Developer Console
 
-// links 
+// links
 
 :link-product-doc-home: https://docs.aerogear.org/aerogear/latest
 //:rn-link: {link-product-doc-home}/1.0_release_notes
