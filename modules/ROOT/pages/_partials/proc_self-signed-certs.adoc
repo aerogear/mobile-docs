@@ -71,6 +71,8 @@ If you are using the email or cloud service approach, once the certificate file 
 +
 However, if you are using the USB approach, you will need to install the certificate manually:go to Settings > Security & location > Advanced > Encryption & credentials > Install from SD card, you will be prompted to choose a file. Navigate to the `Downloads` folder and you should see the certificate file. Tap on the certificate file and Android system should detect the
 certificate and let you install it. Here is https://support.google.com/nexus/answer/2844832?hl=en[a sample guide for Google Nexus devices].
+
+A simple way to test if the self-signed certificate has been installed correctly is to open the OpenShift web console in a browser (like Google Chrome) on the device and you should not get any warnings or errors about the certificate.
 --
 iOS::
 +
@@ -104,6 +106,8 @@ screen instructions to install it.
 Go to Settings > General > About > Certificate Trust Settings, and enable the newly installed root certificate. More instructions can be found on the
 https://support.apple.com/en-us/HT204477[Apple support site]
 --
+
+A simple way to test if the self-signed certificate has been installed correctly is to open the OpenShift web console in a browser (like Safari) on the device and you should not get any warnings or errors about the certificate.
 ====
 
 [[trust-self-signed-cert]]
