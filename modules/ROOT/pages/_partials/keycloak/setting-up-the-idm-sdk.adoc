@@ -180,9 +180,10 @@ You can pass `login-required` or `check-sso` to the init function. `login-requir
 
 NOTE: Initialization also enables authentication.
 
-If you want to use self-signed certificates with your Cordova application, please follow the instructions link:showcase-apps.html#certs[here].
-
 // tag::excludeDownstream[]
+
+If you want to use self-signed certificates with your Cordova application, follow the link:showcase-apps.html#certs[instructions for the showcase app].
+
 --
 Xamarin::
 +
@@ -225,8 +226,6 @@ var authService = AuthService.InitializeService();
 var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
 authService.Configure(authConfig);
 ----
-
-If you want to use self-signed certificates with your Cordova application, please follow the instructions link:showcase-apps.html#certs[here].
 --
 // end::excludeDownstream[]
 ====
