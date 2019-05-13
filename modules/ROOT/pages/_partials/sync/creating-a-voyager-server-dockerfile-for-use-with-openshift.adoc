@@ -1,0 +1,54 @@
+[id="creating-a-voyager-server-dockerfile-for-use-with-openshift-{context}"]
+= Creating a voyager server dockerfile for use with OpenShift
+
+This section describes how to create a dockerfile using a local voyager server repo.
+
+Although it is not covered in this section, you can add the Apollo Voyager Client.
+For more information, see xref:server-getting-started-with-an-example-data-source-{context}[Getting started with an example data source].
+
+.Prerequisites
+
+* You have cloned the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
+* Docker is installed and is running on your local machine. Use `sudo systemctl start docker` to start docker.
+
+.Procedure
+
+. Open a terminal and browse to the Apollo Voyager Server repo on your local machine.
++
+. Create a Docker file, for example, `touch Dockerfile`.
++
+. Open the Docker file and add the following content, then save the changes:
++
+[source,dockerfile]
+----
+FROM node:8
+WORKDIR /usr/src/app
+# copy Node.js specific files
+COPY package*.json ./
+# copy application source file to the workdir
+COPY index.js .
+RUN npm install
+# TCP port that application is listening on
+EXPOSE 4000
+CMD [ "node", "index.js" ]
+----
++
+. Build the Docker container and tag it:
++
+[source,bash]
+----
+$ docker build -t aerogear/showcase-server:latest .
+----
+
+.Verification steps
+
+For the example above, the output should be:
+[source,bash]
+----
+$ Successfully built 6490624e298b
+$ Successfully tagged aerogear/showcase-server:latest
+----
+
+.Additional resources
+
+* For more information about Docker, see link:https://docs.docker.com/compose/gettingstarted/[Get started with Docker Compose].
