@@ -32,11 +32,14 @@ For this procedure, the following describes the existing data source schema:
 +
 [source,javascript]
 ----
+
 const express = require('express')
+//Include our server libraries
 const { VoyagerServer, gql } = require('@aerogear/voyager-server')
 
-// A replica of an existing data source schema
+// Stub that reflects data source mapping
 const employees = [{employee_id: 1, employee_name: "joe", cateory_id: 1 }, {employee_id: 2, employee_name: "john", cateory_id: 2}];
+
 const categories = [{category_id: 1, employee_type:"Manager", security_clearance: 1}, {category_id: 2, employee_type:"Associate", security_clearance: 2}];
 
 //Graphql schema for mapping to data source mapping
@@ -46,12 +49,17 @@ const typeDefs = gql`
       employee_name: String!
       category: Category
   }
+  type Category {
+      category_id: ID!,
+      employee_type: String!,
+      security_clearance: ID!
+  }
   type Query {
     listEmployees: [Employee]
   }
 `
 
-//Create the appropriate resolver for the schema
+//Create the resolvers for your schema
 const resolvers = {
   Query: {
     listEmployees: (obj, args, context, info) => {
@@ -91,7 +99,8 @@ app.listen(4000, () =>
 {
   listEmployees
   {
-		employee_name
+		employee_id,
+    employee_name,
   }
 }
 ----
@@ -106,10 +115,12 @@ For the example above, the output should be:
   "data": {
     "listEmployees": [
       {
-        "employee_name": "Eddie"
+        "employee_id": "1",
+        "employee_name": "joe"
       },
       {
-        "employee_name": "Max"
+        "employee_id": "2",
+        "employee_name": "john"
       }
     ]
   }
