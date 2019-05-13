@@ -80,7 +80,7 @@ You are prompted to choose a file.
 .. Navigate to the `Downloads` folder and choose the certificate file.
 The Android system detects the certificate and lets you install it. For more information, see the link:https://support.google.com/nexus/answer/2844832?hl=en[sample guide for Google Nexus devices].
 
-To verify the self-signed certificate is installed correctly, use a browser on the deveice to open the OpenShift web console. You should not see any warnings or errors about the certificate.
+To verify the self-signed certificate is installed correctly, use a browser on the device to open the OpenShift web console. You should not see any warnings or errors relating to the certificate.
 --
 iOS::
 +
