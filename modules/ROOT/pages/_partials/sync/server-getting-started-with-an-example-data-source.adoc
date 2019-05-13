@@ -42,7 +42,7 @@ const employees = [{employee_id: 1, employee_name: "joe", cateory_id: 1 }, {empl
 
 const categories = [{category_id: 1, employee_type:"Manager", security_clearance: 1}, {category_id: 2, employee_type:"Associate", security_clearance: 2}];
 
-//Graphql schema for mapping to data source mapping
+//GraphQL schema for mapping to data source mapping
 const typeDefs = gql`
   type Employee {
       employee_id: ID!,
@@ -73,7 +73,7 @@ const resolvers = {
   }
 }
 
-//Initialize the library with your Graphql information
+//Initialize the library with your GraphQL information
 const server = VoyagerServer({
   typeDefs,
   resolvers
@@ -88,11 +88,11 @@ app.listen(4000, () =>
 )
 ----
 +
-. Start the server
+. Start the server.
 +
 . Open an internet browser and browse to `http://localhost:4000/graphql`.
 +
-. To list Employees, execute the following command in the Graphql window:
+. To list Employees, execute the following command in the GraphQL window:
 +
 [source,javascript]
 ----
@@ -130,3 +130,4 @@ For the example above, the output should be:
 .Additional resources
 
 * For more information about Mutations, Queries and Input Types, please see link:https://graphql.org/graphql-js/mutations-and-input-types/[Mutations and Input Types].
+* For more information about Resolver Maps, see link:https://www.apollographql.com/docs/graphql-tools/resolvers#resolver-map[Resolver Maps].
