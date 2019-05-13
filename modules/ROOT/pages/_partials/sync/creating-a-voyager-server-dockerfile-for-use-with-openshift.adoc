@@ -1,7 +1,7 @@
 [id="creating-a-voyager-server-dockerfile-for-use-with-openshift-{context}"]
 = Creating a voyager server dockerfile for use with OpenShift
 
-This section describes how to create a dockerfile using a local voyager server repo.
+This section describes how to create a container image using a local voyager server repo.
 
 Although it is not covered in this section, you can add the Apollo Voyager Client.
 For more information, see xref:server-getting-started-with-an-example-data-source-{context}[Getting started with an example data source].
