@@ -58,4 +58,3 @@ REPOSITORY                                 TAG                 IMAGE ID         
 aerogear/showcase-server                   latest              6490624e298b        3 hours ago         1.1GB
 ----
 
-.Additional resources
