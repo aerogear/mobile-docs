@@ -1,5 +1,5 @@
-[id="server-creating-a-datasource-schema-mapping-{context}"]
-= Creating a data source schema mapping
+[id="server-getting-started-with-an-example-data-source-{context}"]
+= Getting started with an example data source
 
 This section describes how to create a GraphQL schema for an existing data source schema.
 
