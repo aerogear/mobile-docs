@@ -37,7 +37,8 @@ CMD [ "node", "index.js" ]
 +
 [source,bash]
 ----
-$ docker build -t aerogear/showcase-server:latest .
+$ docker build -t aerogear/showcase-server:latest
+----
 +
 NOTE: Alternatively, you can use `Podman` to build a Docker container: `podman build -t aerogear/showcase-server:latest .`
 
