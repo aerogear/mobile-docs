@@ -59,8 +59,8 @@ To install the cert on a real Android device:
 . Copy the file to your device using one of the following methods:
 +
 * Email attachment (Recommended) - Email the certificate to an address accessible from the device and download the attachment.
-* Cloud service - Use a cloud storage service such as Dropbox or Google Drive which is accessible from the device, and download from the device.
-* USB - Attach the device to the machine using USB and drag the certificate to a devices file system.
+* Cloud service - Use a cloud storage service such as Dropbox or Google Drive that is accessible from the device, and download from the device.
+* USB - Attach the device to a computer and drag the certificate to a devices file system.
 ** Use the https://support.google.com/nexus/answer/2840804?hl=en[example guide for Google Nexus devices].
 The procedure might be different for other devices.
 ** Use the link:https://developer.android.com/studio/command-line/adb[Android Debug Bridge (adb) documentation^] for the push command to push the certificate to the connected device, for example:
@@ -107,7 +107,7 @@ To install the cert on a real iOS device:
 . Copy the file to your device using one of the following methods:
 +
 * Email attachment (Recommended) - Email the certificate to an address accessible from the device and download the attachment.
-* Cloud service - Use a cloud storage service such as Dropbox or Google Drive which is accessible from the device, and download from the device.
+* Cloud service - Use a cloud storage service such as Dropbox or Google Drive that is accessible from the device, and download from the device.
 
 . Add the certificate to your device:
 +
