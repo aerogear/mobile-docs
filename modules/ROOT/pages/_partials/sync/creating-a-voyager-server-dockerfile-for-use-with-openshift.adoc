@@ -60,4 +60,3 @@ aerogear/showcase-server                   latest              6490624e298b     
 
 .Additional resources
 
-* For more information about Docker, see link:https://docs.docker.com/compose/gettingstarted/[Get started with Docker Compose].
