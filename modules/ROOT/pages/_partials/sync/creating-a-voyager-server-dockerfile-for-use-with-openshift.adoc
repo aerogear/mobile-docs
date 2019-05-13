@@ -41,14 +41,21 @@ $ docker build -t aerogear/showcase-server:latest
 ----
 +
 NOTE: Alternatively, you can use `Podman` to build a Docker container: `podman build -t aerogear/showcase-server:latest .`
-
-.Verification steps
-
-For the example above, the output should be:
++
+. Once the process is complete, a success message is displayed:
 [source,bash]
 ----
 $ Successfully built 6490624e298b
 $ Successfully tagged aerogear/showcase-server:latest
+----
+
+.Verification steps
+
+For the example above, to verify if a container image has been created locally, execute `docker images` and a similar message is displayed:
+[source,bash]
+----
+REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE
+aerogear/showcase-server                   latest              6490624e298b        3 hours ago         1.1GB
 ----
 
 .Additional resources
