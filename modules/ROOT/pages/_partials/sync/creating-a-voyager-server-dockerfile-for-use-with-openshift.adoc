@@ -15,7 +15,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 
 . Open a terminal and browse to the Apollo Voyager Server repo on your local machine.
 +
-. Create a Docker file, for example, `touch Dockerfile`.
+. Create a Dockerfile, for example, `touch Dockerfile`.
 +
 . Open the Docker file and add the following content, then save the changes:
 +
