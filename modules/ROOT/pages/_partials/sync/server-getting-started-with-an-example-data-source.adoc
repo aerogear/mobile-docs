@@ -32,7 +32,6 @@ For this procedure, the following describes the existing data source schema:
 +
 [source,javascript]
 ----
-
 const express = require('express')
 //Include our server libraries
 const { VoyagerServer, gql } = require('@aerogear/voyager-server')
@@ -64,11 +63,6 @@ const resolvers = {
   Query: {
     listEmployees: (obj, args, context, info) => {
       return employees;
-    }
-  },
-  Employee: {
-    category(employee) {
-        return filter(categories, {category_id: employee.cateory_id});
     }
   }
 }
