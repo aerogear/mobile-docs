@@ -62,6 +62,9 @@ include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 [#sync-server-getting-started]
 include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 
+[#sync-server-getting-started-with-an-example-data-source]
+include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+
 [#sync-server-offline-and-conflict]
 include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
 
