@@ -57,4 +57,3 @@ For the example above, to verify if a container image has been created locally, 
 REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE
 aerogear/showcase-server                   latest              6490624e298b        3 hours ago         1.1GB
 ----
-
