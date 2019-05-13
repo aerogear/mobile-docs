@@ -1,4 +1,4 @@
-[id="creating-a-voyager-server-dockerfile-for-use-with-openshift-{context}"]
+[id="creating-a-voyager-server-container-image-for-use-with-openshift-{context}"]
 = Creating a voyager server container image for use with OpenShift
 
 This section describes how to create a container image using a local voyager server repo.
