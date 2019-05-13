@@ -37,7 +37,7 @@ CMD [ "node", "index.js" ]
 +
 [source,bash]
 ----
-$ docker build -t aerogear/showcase-server:latest .
+$ podman build -t aerogear/showcase-server:latest .
 ----
 
 .Verification steps
