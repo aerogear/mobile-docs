@@ -33,7 +33,7 @@ EXPOSE 4000
 CMD [ "node", "index.js" ]
 ----
 +
-. Build the Docker container and tag it:
+. Build the container image and tag it:
 +
 [source,bash]
 ----
