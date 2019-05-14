@@ -180,32 +180,10 @@ You can pass `login-required` or `check-sso` to the init function. `login-requir
 
 NOTE: Initialization also enables authentication.
 
-.To use self-signed certificates with Cordova Android:
-. Create a file `network_security_config.xml` in your project with the following code:
-+
-[source,xml]
-----
-<network-security-config>
-  <base-config>
-    <trust-anchors>
-      <certificates src="user"/>
-      <certificates src="system"/>
-    </trust-anchors>
-  </base-config>
-</network-security-config>
-----
-. Include it into the `config.xml` file for the `android` platform
-+
-[source,xml]
-----
-<resource-file src="network_security_config.xml" target="app/src/main/res/xml/network_security_config.xml" />
-<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-    <application android:networkSecurityConfig="@xml/network_security_config" />
-</edit-config>
-----
-. Add `xmlns:android="http://schemas.android.com/apk/res/android"` to the `widget` tag in the `config.xml` file
-
 // tag::excludeDownstream[]
+
+To use self-signed certificates with your Cordova application, complete the following instructions link:showcase-apps.html#certs[here].
+
 --
 Xamarin::
 +
@@ -247,27 +225,6 @@ MobileCore core = MobileCoreIOS.Init(app.GetType().Assembly);
 var authService = AuthService.InitializeService();
 var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
 authService.Configure(authConfig);
-----
-
-. To use self-signed certificates with Xamarin Android:
-.. Create a file at `Resources/xml/network_security_config.xml` with the following code:
-+
-[source,xml]
-----
-<network-security-config>
-  <base-config>
-    <trust-anchors>
-      <certificates src="user"/>
-      <certificates src="system"/>
-    </trust-anchors>
-  </base-config>
-</network-security-config>
-----
-.. Add the following value to the `<application>` tag in `AndroidManifest.xml`:
-+
-[source,xml]
-----
-android:networkSecurityConfig="@xml/network_security_config"
 ----
 --
 // end::excludeDownstream[]
