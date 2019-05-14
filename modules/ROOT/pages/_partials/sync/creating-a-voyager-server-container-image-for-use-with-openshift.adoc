@@ -17,7 +17,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 +
 . Create a Dockerfile, for example, `touch Dockerfile`.
 +
-. Open the Docker file and add the following content, then save the changes:
+. Open the Dockerfile and add the following content, then save the changes:
 +
 [source,dockerfile]
 ----
