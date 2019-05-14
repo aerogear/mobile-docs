@@ -65,6 +65,9 @@ include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 [#sync-server-getting-started-with-an-example-data-source]
 include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
 
+[#creating-a-voyager-server-container-image-for-use-with-openshift]
+include::_partials/sync/creating-a-voyager-server-container-image-for-use-with-openshift.adoc[leveloffset=2]
+
 [#sync-server-offline-and-conflict]
 include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
 
