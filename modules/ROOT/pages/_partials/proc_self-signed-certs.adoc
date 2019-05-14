@@ -12,7 +12,7 @@ Most client devices have a list of well-known and trusted certificate authoritie
 A typical OpenShift development environment uses self-signed certificates that are not signed by any of the trusted certificate authorities.
 In such an environment, the client devices cannot establish secure connections with the back-end services that are running on a local OpenShift cluster.
 
-To work around the problem, you must manually extract the root certificate from the cluster, install it on the device and make sure your application trusts the new certificate as described below.
+The suggested workaround is to manually extract the root certificate from the cluster, install it on the device, and make sure your application trusts the new certificate.
 
 [[extracting-root-ca]]
 == 1. Extracting the OpenShift Root Certificate Authority Cert
@@ -44,18 +44,19 @@ Android::
 --
 To install the cert on an Android emulator:
 
-. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to ensure the certificate can be installed.
-. Drag and drop the certificate file to the emulator. Check that the file is copied to the `Downloads` folder on the device.
+. https://support.google.com/android/answer/2819522?hl=en[Set screen lock] on the mobile device to allow for the installation of the certificate.
+
+. Click on the *certificate file* and drag it onto the emulator. It should be copied to the _Downloads_ folder on the device.
+
 . Install the certificate on your device:
 +
-.. Go to Settings > Security & location > Advanced > Encryption & credentials > Install from SD card.
-You are prompted to choose a file.
+.. To choose a file, navigate to _Settings > Security & location > Advanced > Encryption & credentials > Install from SD card_. From here, navigate to the _Downloads_ folder and you should see the certificate file.
 .. Navigate to the `Downloads` folder and choose the certificate file.
 The Android system detects the certificate and lets you install it. For more information, see the link:https://support.google.com/nexus/answer/2844832?hl=en[sample guide for Google Nexus devices].
 
 To install the cert on a real Android device:
 
-. https://support.google.com/android/answer/2819522?hl=en[Enable screen lock] on the mobile device to ensure the certificate can be installed.
+. https://support.google.com/android/answer/2819522?hl=en[Enable screen lock] on the mobile device to allow for the installation of the certificate.
 . Copy the file to your device using one of the following methods:
 +
 * Email attachment (Recommended) - Email the certificate to an address accessible from the device and download the attachment.

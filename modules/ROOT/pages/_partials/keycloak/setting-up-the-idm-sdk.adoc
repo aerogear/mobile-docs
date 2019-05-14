@@ -182,7 +182,7 @@ NOTE: Initialization also enables authentication.
 
 // tag::excludeDownstream[]
 
-If you want to use self-signed certificates with your Cordova application, follow the link:showcase-apps.html#certs[instructions for the showcase app].
+To use self-signed certificates with your Cordova application, complete the following instructions link:showcase-apps.html#certs[here].
 
 --
 Xamarin::
