@@ -9,7 +9,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 .Prerequisites
 
 * You have cloned the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
-* Docker is installed and is running on your local machine. Use `sudo systemctl start docker` to start docker. As an alternative, use `podman`, or `buildah`.
+* Docker is installed and is running on your local machine. As an alternative, use `podman`, or `buildah`.
 
 .Procedure
 
