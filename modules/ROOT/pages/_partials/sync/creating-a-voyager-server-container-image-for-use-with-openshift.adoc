@@ -13,7 +13,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 
 .Procedure
 
-. Open a terminal and browse to the Apollo Voyager Server repo on your local machine.
+. Open a terminal and browse to the _Apollo Voyager Server_ repo on your local machine.
 +
 . Create a Dockerfile, for example, `touch Dockerfile`.
 +
@@ -40,7 +40,7 @@ CMD [ "node", "index.js" ]
 $ docker build -t aerogear/showcase-server:latest
 ----
 +
-NOTE: Alternatively, you can use `Podman` to build a Docker container: `podman build -t aerogear/showcase-server:latest .`
+NOTE: Alternatively, you can use `Podman` to build a container image: `podman build -t aerogear/showcase-server:latest .`.
 +
 . Once the process is complete, a success message is displayed:
 [source,bash]
@@ -51,7 +51,7 @@ $ Successfully tagged aerogear/showcase-server:latest
 
 .Verification steps
 
-For the example above, to verify if a container image has been created locally, execute `docker images` and a similar message is displayed:
+For the example above, to verify if a container image has been created locally, execute `docker images` in the terminal and a similar message is displayed:
 [source,bash]
 ----
 REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE
