@@ -98,8 +98,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Authentication is enabled during initialization as described in the section xref:setting-up-sdk-{context}[].
-To manually redirect to the login screen, add the following code to the `< ? >` file:
+Authentication is enabled during initialization as described in the section xref:setting-up-sdk-{context}[]. To manually redirect to the login screen, use:
 [source,javascript]
 ----
 authService.login().then(() => {
