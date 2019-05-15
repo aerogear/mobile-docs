@@ -19,6 +19,8 @@ include::_partials/sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDo
 
 include::_partials/sync/data-sync-case-study-generic.adoc[leveloffset=2,tags=!excludeDownstream]]
 
+include::_partials/sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]]
+
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
 . Design a link:https://graphql.org/learn[GraphQL] schema.
