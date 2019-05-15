@@ -42,7 +42,7 @@ Unlike other mobile services which provide a server and an API, Data Sync is a f
 . Complete your mobile app development.
 . Build and run your mobile app.
 
-include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
+include::_partials/sync/ref-data-sync-terminology.adoc[leveloffset=+2]
 
 [id='{context}_additional-resources-{context}']
 
