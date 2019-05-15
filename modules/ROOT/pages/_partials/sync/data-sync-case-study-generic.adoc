@@ -1,0 +1,30 @@
+[id="data-sync-case-study-generic-{context}"]
+= Data Sync case study
+For example, "Keyboard shortcuts for ___" or "Command options for ___." This helps readers and search engines find the information quickly.
+
+This section describes a typical Data Sync case study that includes:
+
+* Mobile and web Sync Clients built using the Data Sync Server framework.
+* Node.js Sync Server built using the Data Sync framework that includes a GraphQL based API.
+* Data sources that include PostgreSQL, MongoDB, and back-end data sources.
+
+.Data Sync case study
+[options="header"]
+|====
+|Component|Description
+|Sync Client| Multiple Sync Clients transmitting to, and receiving data from, the Sync Server.
+|Sync Server| Sync Server
+|Data sources| column 1
+|====
+
+// tag::excludeDownstream[]
+
+image::data-sync-case-study-generic.png[Sync Client and Sync Server communication]
+
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+
+image::data-sync-case-study-generic.png[Sync Client and Sync Server communication]
+
+// end::excludeUpstream[]
