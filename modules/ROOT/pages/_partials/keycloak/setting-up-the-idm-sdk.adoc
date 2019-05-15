@@ -82,7 +82,7 @@ Cordova::
 ----
 $ npm install @aerogear/auth
 ----
-. In order for a node module to work in a browser (and on Cordova), use `browserify` to allow for the use of a `require` statement.
+Use a JavaScript blunder e.g `browserify` so that you can use node modules in Cordova. We recommend the `require` statement rather that `import` for the use of the @aerogear/auth module as outline in the code snippet below.
 
 // tag::excludeDownstream[]
 --
