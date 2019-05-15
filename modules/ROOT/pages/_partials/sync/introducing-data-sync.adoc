@@ -12,13 +12,17 @@ An app built using the Data Sync framework comprises of two components:
 
 * The Sync Client is a JavaScript client offering client side extensions and server side integration. The Sync Client can be integrated into frameworks such as React and Angular.
 
-tag::excludeDownstream[]
-image::sync-client-sync-server.png[Sync Client and Sync Server communication]
-end::excludeDownstream[]
+// tag::excludeDownstream[]
 
-tag::excludeUpstream[]
 image::sync-client-sync-server.png[Sync Client and Sync Server communication]
-end::excludeUpstream[]
+
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+
+image::sync-client-sync-server.png[Sync Client and Sync Server communication]
+
+// end::excludeUpstream[]
 
 * The Sync Server is a framework for building Node.js based GraphQL API.
 The Sync Server offers enterprise extensions for ensuring data security, integrity, and monitoring.
