@@ -160,7 +160,6 @@ Cordova::
 // end::excludeDownstream[]
 
 . Import and initialize Auth.
-. Replace `import` with `require` in the `init` section, as displayed in the following snippet:
 +
 [source,javascript]
 ----
