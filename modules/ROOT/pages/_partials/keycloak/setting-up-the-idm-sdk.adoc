@@ -164,6 +164,7 @@ Cordova::
 +
 [source,javascript]
 ----
+const Auth = require('@aerogear/auth').Auth;
 const authService = new Auth(app.config);
 const initOptions = { onLoad: "login-required" };
 
