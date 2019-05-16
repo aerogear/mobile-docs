@@ -47,6 +47,33 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
 
 For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
+== Offline Workflow
+
+If a mutation occurs while the device is offline, the client.mutate function:
+
+- returns immediately
+- returns a promise with an error
+
+You can check the _error_ object to isolate errors relating to offline state.
+Invoking the `watchOfflineChange()` method on an _error_ object watches for when an offline change is synced with the server, and sends an notification when triggered.
+after the device is online again.
+
+For example: 
+[source, javascript]
+----
+  client.mutate(...).catch((error)=> {
+    // 1. Detect if this was an offline error
+   if(error.networkError && error.networkError.offline){
+     const offlineError: OfflineError =  error.networkError;
+     // 2. We can still track when offline change is going to be replicated.
+     offlineError.watchOfflineChange().then(...)
+   }
+  });
+----
+
+NOTE:  In addition to watching individual mutations, you can add a global offline listener when creating a client.
+
+
 === Global Update Functions
 
 Apollo client holds all mutation parameters in memory.

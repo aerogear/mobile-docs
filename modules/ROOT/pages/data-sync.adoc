@@ -62,6 +62,12 @@ include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 [#sync-server-getting-started]
 include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 
+[#sync-server-getting-started-with-an-example-data-source]
+include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+
+[#creating-a-voyager-server-container-image-for-use-with-openshift]
+include::_partials/sync/creating-a-voyager-server-container-image-for-use-with-openshift.adoc[leveloffset=2]
+
 [#sync-server-offline-and-conflict]
 include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
 
@@ -119,6 +125,9 @@ include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
 
 [#sync-server-provisioning-data-sync]
 include::_partials/sync/provisioning-data-sync.adoc[leveloffset=2]
+
+[#sync-server-provisioning-data-sync-templates]
+include::_partials/sync/openshift-templates.adoc[leveloffset=2]
 
 [#sync-server-getting-started-mdc-client]
 include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
