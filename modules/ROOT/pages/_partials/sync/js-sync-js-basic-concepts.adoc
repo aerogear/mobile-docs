@@ -20,7 +20,7 @@ https://www.apollographql.com/docs/angular/
 In order to support offline use cases, the client SDK strongly leverages Apollo Cache layer.
 See the link:https://www.apollographql.com/docs/react/advanced/caching.html[Apollo cache documentation] for more information.
 
-> Note: Cache will use IndexedDB implementation by default providing reliable and performant way to store data
+> NOTE: As part of the Apollo Cache implementation, the client SDK uses IndexedDB by default to store data. 
 
 === Querying Data
 
