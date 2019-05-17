@@ -82,7 +82,7 @@ Cordova::
 ----
 $ npm install @aerogear/auth --save
 ----
-Use a JavaScript blunder e.g `browserify` so that you can use node modules in Cordova. We recommend the `require` statement rather that `import` for the use of the @aerogear/auth module as outline in the code snippet below.
+Use a JavaScript bundler, for example, `browserify` so that you can use node modules in Cordova. {org-name} recommends using the `require` statement rather than `import` for the the @aerogear/auth module as shown below:
 
 // tag::excludeDownstream[]
 --
