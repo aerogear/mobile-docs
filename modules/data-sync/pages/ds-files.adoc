@@ -1,0 +1,16 @@
+// start {partialsdir}/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+
+[id='{context}']
+= Allowing users upload files from your mobile app
+:toc:
+
+== Server
+[#server-files]
+include::_partials/server-files.adoc[leveloffset=2]
+
+== Client
+[#js-client-files]
+include::_partials/js-client-files.adoc[leveloffset=2]

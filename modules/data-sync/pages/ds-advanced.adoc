@@ -2,7 +2,5 @@
 include::ROOT:page$attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-
-[id='{context}']
-= Querying a GraphQL schema
-:toc:
+[#sync-js-client-advanced-topics]
+include::_partials/js-client-advanced-topics.adoc[leveloffset=0]

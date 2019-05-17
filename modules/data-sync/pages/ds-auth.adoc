@@ -1,0 +1,15 @@
+// start {partialsdir}/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+
+[id='{context}']
+= Authentication and Authorization
+:toc:
+
+[#sync-server-auth]
+include::_partials/server-auth.adoc[leveloffset=2]
+
+
+[#sync-js-client-auth]
+include::_partials/js-client-auth.adoc[leveloffset=2]

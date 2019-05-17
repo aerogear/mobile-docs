@@ -1,0 +1,16 @@
+// start {partialsdir}/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+
+[id='{context}']
+= Implementing realtime updates using subscriptions
+:toc:
+
+== Server
+[#sync-server-realtime-updates]
+include::_partials/server-realtime-updates.adoc[leveloffset=2]
+
+== Client
+[#sync-js-client-realtime-updates]
+include::_partials/js-client-realtime-updates.adoc[leveloffset=2]

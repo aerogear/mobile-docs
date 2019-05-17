@@ -4,5 +4,5 @@ include::ROOT:page$attributes.adoc[]
 
 
 [id='{context}']
-= Querying a GraphQL schema
+= Performing mutations on a GraphQL schema
 :toc:

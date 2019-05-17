@@ -1,0 +1,16 @@
+// start {partialsdir}/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+
+[id='{context}']
+= Using audit logs
+:toc:
+
+== Server
+[#sync-server-audit-logs]
+include::_partials/server-audit-logs.adoc[leveloffset=3]
+
+== Client
+[#sync-js-client-audit-logs]
+include::_partials/js-client-audit-logs.adoc[leveloffset=2]

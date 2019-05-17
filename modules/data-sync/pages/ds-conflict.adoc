@@ -1,0 +1,16 @@
+// start {partialsdir}/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+
+[id='{context}']
+= Handling conflicts
+:toc:
+
+== Server
+[#sync-server-offline-and-conflict]
+include::_partials/server-offline-and-conflict.adoc[leveloffset=2]
+
+== Client
+[#sync-js-client-offline-and-conflict]
+include::_partials/js-client-offline-and-conflict.adoc[leveloffset=2]

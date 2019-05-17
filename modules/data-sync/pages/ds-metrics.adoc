@@ -4,5 +4,8 @@ include::ROOT:page$attributes.adoc[]
 
 
 [id='{context}']
-= Querying a GraphQL schema
+= Using Metrics
 :toc:
+
+[#sync-server-metrics]
+include::_partials/server-metrics.adoc[leveloffset=3]

@@ -4,5 +4,10 @@ include::ROOT:page$attributes.adoc[]
 
 
 [id='{context}']
-= Querying a GraphQL schema
+= Supporting offline 
 :toc:
+
+
+[#sync-js-client-offline-and-conflict]
+include::_partials/js-client-offline-and-conflict.adoc[leveloffset=2]
+
