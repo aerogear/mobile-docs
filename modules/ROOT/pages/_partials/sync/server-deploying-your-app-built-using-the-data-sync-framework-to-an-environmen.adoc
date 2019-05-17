@@ -1,5 +1,5 @@
-[id="server-deploying-your-app-built-using-the-data-sync-framework-to-production-{context}"]
-= Deploying your app built using the data sync framework to Production
+[id="server-deploying-your-app-built-using-the-data-sync-framework-to-an-environment-{context}"]
+= Deploying your app built using the data sync framework to an environment
 
 This section describes how to deploy an app using the Data Sync framework to Production.
 The app is built from source code.
@@ -219,11 +219,38 @@ parameters:
 +
 Note: The value for the _Git Repository URL_ should match the URL for your github repo.
 +
-. Once the _application_ is created, click *Close*.
+. Once your application is created, click *Close*.
 
 .Verification steps
 
-For the example above, the output should be:
+. Click *Applications > Deployments* to display the _Deployments_ screen.
++
+. Click on the name of your application to view the deployment options.
++
+. Click *Environment* and then input `NODE_ENV` into the _Name_ field and `development` into the accompanying _Value_ field.
++
+Note: This triggers an automatic redeployment.
++
+. Browse to the _Overview_ screen and click on the URL to open your application in a browser.
++
+Note: _ok_ is displayed in the browser.
++
+. Add `qraphql` to the end of the URL to open GraphQL in the browser.
++
+. To list Employees, execute the following command in the GraphQL window:
++
+[source,javascript]
+----
+{
+  listEmployees
+  {
+		employee_id,
+    employee_name,
+  }
+}
+----
++
+. The output is displayed:
 
 [source,javascript]
 ----
@@ -245,5 +272,4 @@ For the example above, the output should be:
 
 .Additional resources
 
-* For more information about Mutations, Queries and Input Types, please see link:https://graphql.org/graphql-js/mutations-and-input-types/[Mutations and Input Types].
-* For more information about Resolver Maps, see link:https://www.apollographql.com/docs/graphql-tools/resolvers#resolver-map[Resolver Maps].
+* For more information about deploying to Production environments, see link:https://github.com/aerogear/datasync-deployment[DataSync Production Deployment].
