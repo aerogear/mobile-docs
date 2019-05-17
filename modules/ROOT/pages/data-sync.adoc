@@ -17,7 +17,7 @@ include::_partials/attributes.adoc[]
 
 include::_partials/sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/sync/data-sync-case-study-generic.adoc[leveloffset=2,tags=!excludeDownstream]
+// include::_partials/sync/data-sync-case-study-generic.adoc[leveloffset=2,tags=!excludeDownstream]
 
 include::_partials/sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
 
