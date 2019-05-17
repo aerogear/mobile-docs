@@ -77,3 +77,91 @@ The `OptimisticResponse` feature and the <<#sync-client-offline-queue-listener, 
 //tag::excludeDownstream[]
 See the xref:showcase-apps.adoc[Showcase Apps section] for more information.
 //end::excludeDownstream[]
+
+== Cache Update Helpers
+
+{sync-client} provides an out of the box solution for managing updates to your application's cache.
+It can intelligently generate cache update methods for both mutations and subscriptions.
+
+=== Mutations
+
+An example of how to use these helper methods for mutations can be seen below. To use these methods simply create an offline client as described in <<offline-client>> and then make use of the available `offlineMutation` method which wraps Apollo's `mutate` method. In the following example we prepare an offline mutation which aims to add a task and then update the `GET_TASK` query in our client's cache.
+
+[source, javascript]
+----
+const { createMutationOptions, CacheOperation } = require('@aerogear/voyager-client');
+
+const mutationOptions = {
+  mutation: ADD_TASK,
+  variables: {
+    title: 'item title'
+  },
+  updateQuery: {
+    query: GET_TASKS,
+    variables: {
+      filterBy: 'some filter'
+    }
+  },
+  typeName: 'Task',
+  operationType: CacheOperation.ADD,
+  idField: 'id'
+};
+
+client.offlineMutation<Task>(options);
+----
+
+If you do not wish to use the offline client you can also use the `createMutationOptions` function directly. This function provides an Apollo compatible `MutationOptions` object to pass to your pre-existing client.
+This is shown below where `mutationOptions` is the same object shown in the above code example.
+
+[source, javascript]
+----
+const { CacheOperation } = require('@aerogear/voyager-client');
+
+const options = createMutationOptions(mutationOptions);
+
+client.mutate<Task>(options);
+----
+
+=== Subscriptions
+
+{sync-client} also provides a subscription helper which can generate the necessary options to be used with Apollo Client's `subscribeToMore` function.
+
+To use this helper, we first need to create some options. These options should take the folowing form:
+
+[source, javascript]
+----
+const { CacheOperation } = require('@aerogear/voyager-client');
+
+const options = {
+  subscriptionQuery: TASK_ADDED_SUBSCRIPTION,
+  cacheUpdateQuery: GET_TASKS,
+  operationType: CacheOperation.ADD
+}
+----
+
+This options object will be used to inform the subscription helper that for every data object
+received because of the `TASK_ADDED_SUBSCRIPTION` the `GET_TASKS` query should also be kept up to date in the cache.
+
+We can then create the necessary options in the following way:
+
+[source, javascript]
+----
+const { createSubscriptionOptions } = require('@aerogear/voyager-client');
+
+const subscriptionOptions = createSubscriptionOptions(options);
+----
+
+We can then use the `subscribeToMore` function of our `ObservableQuery` to complete the subscription.
+
+[source, javascript]
+----
+
+const query = client.watchQuery<AllTasks>({
+  query: GET_TASKS
+});
+
+query.subscribeToMore(subscriptionOptions);
+----
+
+The cache will now be kept up to date with automatic data deduplication being performed.
+
