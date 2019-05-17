@@ -1,4 +1,4 @@
-[id="server-deploying-your-app-built-using-the-data-sync-framework-to-an-environment-{context}"]
+[id="server-deploying-your-app-built-using-the-data-sync-framework-to-a-development-environment-{context}"]
 = Deploying your app built using the data sync framework to an environment
 
 This section describes how to deploy an app using the Data Sync framework to an environment.
