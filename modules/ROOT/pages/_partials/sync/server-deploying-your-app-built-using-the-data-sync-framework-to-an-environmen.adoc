@@ -1,15 +1,15 @@
 [id="server-deploying-your-app-built-using-the-data-sync-framework-to-an-environment-{context}"]
 = Deploying your app built using the data sync framework to an environment
 
-This section describes how to deploy an app using the Data Sync framework to Production.
-The app is built from source code.
+This section describes how to deploy an app using the Data Sync framework to an environment.
+The app is built from source code. For more information, see https://github.com/aerogear/voyager-server[Apollo Voyager Server].
 
-For this procedure, an example app is deployed to Production.
+For this procedure, an example app is deployed to an environment.
 For more information, see xref:server-getting-started-with-an-example-data-source-{context}[Getting started with an example data source].
 
 .Prerequisites
 
-* You have a production environment running RHMI.
+* You have a running environment.
 * You have cloned the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
 * An understanding of `git`.
 
@@ -207,7 +207,7 @@ parameters:
 +
 . Replace the value `https://github.com/aerogear/voyager-server` with the URL for your github repo, and save the file.
 +
-. Log in to the Production environment and browse to a project.
+. Log in to the environment and browse to a project.
 +
 . Click *Add to Project > Import YAML/JSON* to open a screen that allows the user to input raw `yaml` code.
 +
