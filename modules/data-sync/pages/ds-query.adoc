@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::_partials/attributes.adoc[]
+include::ROOT:page$attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :service-name: Data Sync
@@ -15,11 +15,11 @@ include::_partials/attributes.adoc[]
 
 [[introduction]]
 
-include::_partials/sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
+include::_partials/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/sync/data-sync-case-study-generic.adoc[leveloffset=2,tags=!excludeDownstream]
+include::_partials/data-sync-case-study-generic.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
+include::_partials/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
 
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
@@ -31,7 +31,7 @@ Unlike other mobile services which provide a server and an API, Data Sync is a f
 . Complete your mobile app development.
 . Build and run your mobile app.
 
-include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
+include::_partials/ref_terminology.adoc[leveloffset=+2]
 
 [id='{context}_additional-resources-{context}']
 
@@ -49,84 +49,84 @@ include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 == {sync-service} Server
 
 [#sync-server-getting-started]
-include::_partials/sync/server-getting-started.adoc[leveloffset=2]
+include::_partials/server-getting-started.adoc[leveloffset=2]
 
 [#sync-server-getting-started-with-an-example-data-source]
-include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+include::_partials/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
 
 [#creating-a-voyager-server-container-image-for-use-with-openshift]
-include::_partials/sync/creating-a-voyager-server-container-image-for-use-with-openshift.adoc[leveloffset=2]
+include::_partials/creating-a-voyager-server-container-image-for-use-with-openshift.adoc[leveloffset=2]
 
 [#sync-server-offline-and-conflict]
-include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
+include::_partials/server-offline-and-conflict.adoc[leveloffset=2]
 
 [#sync-server-data-access]
-include::_partials/sync/server-data-access.adoc[leveloffset=2]
+include::_partials/server-data-access.adoc[leveloffset=2]
 
 [#sync-server-realtime-updates]
-include::_partials/sync/server-realtime-updates.adoc[leveloffset=2]
+include::_partials/server-realtime-updates.adoc[leveloffset=2]
 
 [#sync-server-auth]
-include::_partials/sync/server-auth.adoc[leveloffset=2]
+include::_partials/server-auth.adoc[leveloffset=2]
 
 [#server-files]
-include::_partials/sync/server-files.adoc[leveloffset=2]
+include::_partials/server-files.adoc[leveloffset=2]
 
 === Metrics and Logging
 [#sync-server-metrics]
-include::_partials/sync/server-metrics.adoc[leveloffset=3]
+include::_partials/server-metrics.adoc[leveloffset=3]
 
 [#sync-server-audit-logs]
-include::_partials/sync/server-audit-logs.adoc[leveloffset=3]
+include::_partials/server-audit-logs.adoc[leveloffset=3]
 
 [#sync-js-client]
 == {sync-service} Javascript Client
 
 [#sync-js-basic-concepts]
-include::_partials/sync/js-sync-js-basic-concepts.adoc[leveloffset=2]
+include::_partials/js-sync-js-basic-concepts.adoc[leveloffset=2]
 
 [#sync-js-client-getting-started]
-include::_partials/sync/js-client-getting-started.adoc[leveloffset=2]
+include::_partials/js-client-getting-started.adoc[leveloffset=2]
 
 [#sync-js-client-offline-and-conflict]
-include::_partials/sync/js-client-offline-and-conflict.adoc[leveloffset=2]
+include::_partials/js-client-offline-and-conflict.adoc[leveloffset=2]
 
 [#sync-js-client-realtime-updates]
-include::_partials/sync/js-client-realtime-updates.adoc[leveloffset=2]
+include::_partials/js-client-realtime-updates.adoc[leveloffset=2]
 
 [#sync-js-client-auth]
-include::_partials/sync/js-client-auth.adoc[leveloffset=2]
+include::_partials/js-client-auth.adoc[leveloffset=2]
 
 [#js-client-files]
-include::_partials/sync/js-client-files.adoc[leveloffset=2]
+include::_partials/js-client-files.adoc[leveloffset=2]
 
 [#sync-js-client-audit-logs]
-include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
+include::_partials/js-client-audit-logs.adoc[leveloffset=2]
 
 [#sync-js-client-advanced-topics]
-include::_partials/sync/js-client-advanced-topics.adoc[leveloffset=2]
+include::_partials/js-client-advanced-topics.adoc[leveloffset=2]
 
 [#sync-server-openshift]
 == Running {sync-service} on OpenShift
 
 [#sync-server-getting-started-openshift]
-include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
+include::_partials/getting-started-openshift.adoc[leveloffset=2]
 
 [#sync-server-provisioning-data-sync]
-include::_partials/sync/provisioning-data-sync.adoc[leveloffset=2]
+include::_partials/provisioning-data-sync.adoc[leveloffset=2]
 
 [#sync-server-provisioning-data-sync-templates]
-include::_partials/sync/openshift-templates.adoc[leveloffset=2]
+include::_partials/openshift-templates.adoc[leveloffset=2]
 
 [#sync-server-getting-started-mdc-client]
-include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
+include::_partials/getting-started-mdc-client.adoc[leveloffset=2]
 
 [#sync-server-binding]
-include::_partials/sync/binding.adoc[leveloffset=2]
+include::_partials/binding.adoc[leveloffset=2]
 
 [#sync-server-binding-keycloak]
-include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
+include::_partials/getting-started-binding-keycloak.adoc[leveloffset=2]
 
 [#sync-sample-app]
 == Showcase App
-include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]
+include::_partials/getting-started-showcase-app.adoc[leveloffset=2]
