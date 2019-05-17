@@ -165,3 +165,41 @@ query.subscribeToMore(subscriptionOptions);
 
 The cache will now be kept up to date with automatic data deduplication being performed.
 
+==== Mutliple Subscriptions
+
+{sync-client} also provides the ability automatically to call `subscribeToMore` on your `ObservableQuery`. This can be useful
+in a situation where you may have multiple subscriptions which can affect one single query. For example, if you have a
+`TaskAdded`, `TaskDeleted` and a `TaskUpdated` subscription would need three separate `subscribeToMore` function calls. This can become
+tedious as your number of subscriptions grow. To combat this, we can use the `subscribeToMoreHelper` function from {sync-client} to automatically handle this for us by passing
+it an array of subscriptions and their corresponding queries which need to be updated.
+
+[source, javascript]
+----
+const { CacheOperation } = require('@aerogear/voyager-client');
+
+const addOptions = {
+  subscriptionQuery: TASK_ADDED_SUBSCRIPTION,
+  cacheUpdateQuery: GET_TASKS,
+  operationType: CacheOperation.ADD
+}
+
+const deleteOptions = {
+  subscriptionQuery: TASK_DELETED_SUBSCRIPTION,
+  cacheUpdateQuery: GET_TASKS,
+  operationType: CacheOperation.DELETE
+}
+
+const updateOptions = {
+  subscriptionQuery: TASK_UPDATED_SUBSCRIPTION,
+  cacheUpdateQuery: GET_TASKS,
+  operationType: CacheOperation.REFRESH
+}
+
+const query = client.watchQuery<AllTasks>({
+  query: GET_TASKS
+});
+
+subscribeToMoreHelper(query, [addOptions, deleteOptions, updateOptions]);
+----
+
+
