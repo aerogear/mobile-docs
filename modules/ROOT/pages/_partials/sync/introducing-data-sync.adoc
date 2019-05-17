@@ -20,7 +20,7 @@ image::sync-client-sync-server.png[Sync Client and Sync Server communication]
 
 // tag::excludeUpstream[]
 
-image::sync-client-sync-server.png[Sync Client and Sync Server communication]
+// image::sync-client-sync-server.png[Sync Client and Sync Server communication]
 
 // end::excludeUpstream[]
 
