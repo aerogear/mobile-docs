@@ -11,13 +11,10 @@ npm install @aerogear/app
 ----
 import { init } from "@aerogear/app";
 
+const authService = new Auth(app.config);
+
 const aerogearConfig = {
-    let config = {
-    "version": 1,
-    "namespace": "voyager",
-    "clientId": "voyager-ionic-example",
-    "services": []
-    };
+    // Replace with your own configuration
 
     module.exports = config;
 };
