@@ -244,8 +244,8 @@ Note: _ok_ is displayed in the browser.
 {
   listEmployees
   {
-		employee_id,
-    employee_name,
+    employee_id,
+    employee_name
   }
 }
 ----
