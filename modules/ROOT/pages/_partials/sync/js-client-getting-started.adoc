@@ -27,8 +27,7 @@ Core to connect to and query our server application would look like the followin
 // gql is a utility function that handles gql queries
 import gql from 'graphql-tag';
 
-// createClient configures the Data Sync client based on options you provide
-import {createClient} from '@aerogear/voyager-client';
+import { OfflineClient } from '@aerogear/voyager-client';
 
 // For our client application, we will connect to the local service.
 let config = {
@@ -39,7 +38,8 @@ let config = {
 async function helloWorld() {
 
   // Actually create the client
-  let client = await createClient(config);
+  let offlineClient = new OfflineClient(config);
+  let client = await offlineClient.init();
 
   // Execute the hello query
   client.query({

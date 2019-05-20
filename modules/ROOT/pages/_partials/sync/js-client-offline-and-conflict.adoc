@@ -16,7 +16,7 @@ Developers can attach listeners to get notification about if a update is applied
 
 By default queries are cached based on the type and `id` field, and the results of performed queries are cached as well and they will be available when the client is offline.
 
-Because of this, when mutations that can change query results are performed, the `refetchQueries` or `update` options of the `mutate` method should be used to ensure the local cache is kept up to date.
+Because of this, when mutations that can change query results are performed, the `refetchQueries` or `update` options of the `mutate` method should be used to ensure the local cache is kept up to date. {sync-client} also provides cache helper functions and an offline client to reduce the amount of code required. Please see <<cache-update-helpers>> for more information.
 
 In the following example, the app will perform an `ADD_TASK` mutation which will create a new task. The app also has a `GET_TASKS` query to list all the tasks. In order to make sure the cache for the `GET_TASKS` query is kept up to date whenever a new task is created, the `update` option is used to add the newly created task to the cache:
 
@@ -47,6 +47,36 @@ In the following example, the app will perform an `ADD_TASK` mutation which will
 
 For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
+== Offline Client
+
+If you need to support offline use cases, {sync-client} comes with some functionality that may be useful.
+It provides an `OfflineClient` class which exposes the following functionality:
+
+* Automatically ensuring your application's local cache is kept up to date. This client will automatically generate `update` methods mentioned in the previous section. See: <<cache-update-helpers>>
+* Giving you direct access to the offline store the client uses.
+* Register multiple offline event listeners. See: <<sync-client-offline-queue-listener>>
+
+To create this client the following code example can be used:
+
+[source,javascript]
+----
+import { OfflineClient } from '@aerogear/voyager-client';
+
+let config = {
+  httpUrl: "Your",
+  wsUrl: "ws://localhost:4000/graphql",
+}
+
+async function setupClient() {
+
+  let offlineClient = new OfflineClient(config);
+  let client = await offlineClient.init();
+}
+
+setupClient();
+----
+
+
 == Offline Workflow
 
 If a mutation occurs while the device is offline, the client.mutate function:
@@ -58,7 +88,7 @@ You can check the _error_ object to isolate errors relating to offline state.
 Invoking the `watchOfflineChange()` method on an _error_ object watches for when an offline change is synced with the server, and sends an notification when triggered.
 after the device is online again.
 
-For example: 
+For example:
 [source, javascript]
 ----
   client.mutate(...).catch((error)=> {
@@ -77,7 +107,7 @@ NOTE:  In addition to watching individual mutations, you can add a global offlin
 === Global Update Functions
 
 Apollo client holds all mutation parameters in memory.
-An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache. 
+An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache.
 As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
 
 To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
