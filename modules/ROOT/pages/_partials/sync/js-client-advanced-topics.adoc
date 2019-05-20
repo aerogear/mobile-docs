@@ -107,7 +107,7 @@ const mutationOptions = {
   idField: 'id'
 };
 
-client.offlineMutation<Task>(options);
+client.offlineMutation<Task>(mutationOptions);
 ----
 
 If you do not wish to use the offline client you can also use the `createMutationOptions` function directly. This function provides an Apollo compatible `MutationOptions` object to pass to your pre-existing client.
@@ -115,8 +115,6 @@ This is shown below where `mutationOptions` is the same object shown in the abov
 
 [source, javascript]
 ----
-const { CacheOperation } = require('@aerogear/voyager-client');
-
 const options = createMutationOptions(mutationOptions);
 
 client.mutate<Task>(options);
@@ -142,7 +140,7 @@ const options = {
 This options object will be used to inform the subscription helper that for every data object
 received because of the `TASK_ADDED_SUBSCRIPTION` the `GET_TASKS` query should also be kept up to date in the cache.
 
-We can then create the necessary options in the following way:
+We can then create the required cache update functions in the following way:
 
 [source, javascript]
 ----
@@ -151,7 +149,7 @@ const { createSubscriptionOptions } = require('@aerogear/voyager-client');
 const subscriptionOptions = createSubscriptionOptions(options);
 ----
 
-We can then use the `subscribeToMore` function of our `ObservableQuery` to complete the subscription.
+To use this helper we then pass this `subscriptionOptions` variable to the `subscribeToMore` function of our `ObservableQuery`.
 
 [source, javascript]
 ----
@@ -165,11 +163,11 @@ query.subscribeToMore(subscriptionOptions);
 
 The cache will now be kept up to date with automatic data deduplication being performed.
 
-==== Mutliple Subscriptions
+==== Multiple Subscriptions
 
-{sync-client} also provides the ability automatically to call `subscribeToMore` on your `ObservableQuery`. This can be useful
+{sync-client} also provides the ability to automatically call `subscribeToMore` on your `ObservableQuery`. This can be useful
 in a situation where you may have multiple subscriptions which can affect one single query. For example, if you have a
-`TaskAdded`, `TaskDeleted` and a `TaskUpdated` subscription would need three separate `subscribeToMore` function calls. This can become
+`TaskAdded`, `TaskDeleted` and a `TaskUpdated` subscription you would need three separate `subscribeToMore` function calls. This can become
 tedious as your number of subscriptions grow. To combat this, we can use the `subscribeToMoreHelper` function from {sync-client} to automatically handle this for us by passing
 it an array of subscriptions and their corresponding queries which need to be updated.
 

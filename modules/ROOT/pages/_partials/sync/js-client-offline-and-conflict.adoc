@@ -49,9 +49,10 @@ For more information, see link:https://www.apollographql.com/docs/react/essentia
 
 == Offline Client
 
-{sync-client} also comes with an offline client to improve the offline development experience. This wrapper can be used for a number of reasons, including:
+If you need to support offline use cases, {sync-client} comes with some functionality that may be useful.
+It provides an `OfflineClient` class which exposes the following functionality:
 
-* Automatically ensuring your application's local cache is kept up to date. This client will automatically generate `update` method mentioned in the previous section. See: <<cache-update-helpers>>
+* Automatically ensuring your application's local cache is kept up to date. This client will automatically generate `update` methods mentioned in the previous section. See: <<cache-update-helpers>>
 * Giving you direct access to the offline store the client uses.
 * Register multiple offline event listeners. See: <<sync-client-offline-queue-listener>>
 
@@ -106,7 +107,7 @@ NOTE:  In addition to watching individual mutations, you can add a global offlin
 === Global Update Functions
 
 Apollo client holds all mutation parameters in memory.
-An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache. 
+An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache.
 As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
 
 To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
