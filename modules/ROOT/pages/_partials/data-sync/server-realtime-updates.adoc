@@ -1,5 +1,5 @@
 [id="realtime-updates-{context}"]
-= Realtime Updates
+= Configuring your server for real-time updates
 
 A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.
 To enable Subscriptions on the server, create an appropriate schema similar to the following example.

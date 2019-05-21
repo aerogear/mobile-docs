@@ -1,4 +1,4 @@
-= File Upload Client
+= Implementing file upload on the client
 
 {sync-client} provides support for uploading binary data along with the GraphQL queries.
 The binary upload implementation uses the `apollo-upload-client` package built by the Apollo community.

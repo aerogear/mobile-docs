@@ -4,13 +4,9 @@ include::_partials/attributes.adoc[]
 
 
 [id='{context}']
-= Implementing realtime updates using subscriptions
+= Supporting real-time updates in your mobile app
 :toc:
 
-== Server
-[#sync-server-realtime-updates]
-include::_partials/data-sync/server-realtime-updates.adoc[leveloffset=2]
+include::_partials/data-sync/server-realtime-updates.adoc[leveloffset=1]
 
-== Client
-[#sync-js-client-realtime-updates]
-include::_partials/data-sync/js-client-realtime-updates.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-realtime-updates.adoc[leveloffset=1]

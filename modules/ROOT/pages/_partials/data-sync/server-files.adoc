@@ -1,4 +1,4 @@
-= Enabling file uploads
+= Enabling file uploads on the server
 
 {sync-server} provides support for uploading binary data along with the GraphQL queries.
 The implementation relies on upstream `Apollo Server` capabilities.

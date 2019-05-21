@@ -1,4 +1,4 @@
-= Implementing realtime updates
+= Implementing real-time updates on on the client
 
 A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.
 For more information on GraphQL subscriptions  see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].

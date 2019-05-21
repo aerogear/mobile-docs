@@ -4,13 +4,10 @@ include::_partials/attributes.adoc[]
 
 
 [id='{context}']
-= Using audit logs
+= Enabling audit logs and viewing reports
 :toc:
 
-== Server
-[#sync-server-audit-logs]
-include::_partials/data-sync/server-audit-logs.adoc[leveloffset=3]
+include::_partials/data-sync/server-audit-logs.adoc[leveloffset=1]
 
-== Client
 [#sync-js-client-audit-logs]
-include::_partials/data-sync/js-client-audit-logs.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-audit-logs.adoc[leveloffset=1]

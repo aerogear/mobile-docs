@@ -1,13 +1,4 @@
-// start {partialsdir}/attributes.adoc[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
 
-
-[id='{context}']
-= Supporting offline 
-:toc:
-
-
-[#sync-js-client-offline-and-conflict]
-include::_partials/data-sync/js-client-offline-and-conflict.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-offline.adoc[leveloffset=0]
 
