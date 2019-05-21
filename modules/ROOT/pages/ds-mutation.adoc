@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 

@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 :service-name: Data Sync
@@ -15,7 +15,7 @@ include::ROOT:page$attributes.adoc[]
 
 
 [#sync-server-getting-started]
-include::_partials/server-getting-started.adoc[leveloffset=2]
+include::_partials/data-sync/server-getting-started.adoc[leveloffset=2]
 
 [#sync-server-getting-started-with-an-example-data-source]
-include::_partials/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+include::_partials/data-sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]

@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 
@@ -9,5 +9,5 @@ include::ROOT:page$attributes.adoc[]
 
 
 [#sync-js-client-offline-and-conflict]
-include::_partials/js-client-offline-and-conflict.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-offline-and-conflict.adoc[leveloffset=2]
 

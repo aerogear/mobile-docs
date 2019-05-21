@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 
@@ -8,4 +8,4 @@ include::ROOT:page$attributes.adoc[]
 :toc:
 
 [#sync-server-metrics]
-include::_partials/server-metrics.adoc[leveloffset=3]
+include::_partials/data-sync/server-metrics.adoc[leveloffset=3]

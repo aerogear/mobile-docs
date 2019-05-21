@@ -1,24 +1,24 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 [id='{context}']
 = Running a {sync-service} app on OpenShift
 :toc:
 [#sync-server-getting-started-openshift]
-include::_partials/getting-started-openshift.adoc[leveloffset=1]
+include::_partials/data-sync/getting-started-openshift.adoc[leveloffset=1]
 
 [#sync-server-provisioning-data-sync]
-include::_partials/provisioning-data-sync.adoc[leveloffset=1]
+include::_partials/data-sync/provisioning-data-sync.adoc[leveloffset=1]
 
 [#sync-server-provisioning-data-sync-templates]
-include::_partials/openshift-templates.adoc[leveloffset=1]
+include::_partials/data-sync/openshift-templates.adoc[leveloffset=1]
 
 [#sync-server-getting-started-mdc-client]
-include::_partials/getting-started-mdc-client.adoc[leveloffset=1]
+include::_partials/data-sync/getting-started-mdc-client.adoc[leveloffset=1]
 
 [#sync-server-binding]
-include::_partials/binding.adoc[leveloffset=1]
+include::_partials/data-sync/binding.adoc[leveloffset=1]
 
 [#sync-server-binding-keycloak]
-include::_partials/getting-started-binding-keycloak.adoc[leveloffset=1]
+include::_partials/data-sync/getting-started-binding-keycloak.adoc[leveloffset=1]

@@ -1,4 +1,4 @@
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 
 :service-name: Data Sync
 :sync-server: Sync Server
@@ -13,9 +13,9 @@ include::ROOT:page$attributes.adoc[]
 
 [[introduction]]
 
-include::_partials/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
+include::_partials/data-sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
+include::_partials/data-sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
 
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
@@ -27,7 +27,7 @@ Unlike other mobile services which provide a server and an API, Data Sync is a f
 . Complete your mobile app development.
 . Build and run your mobile app.
 
-include::_partials/ref_terminology.adoc[leveloffset=+2]
+include::_partials/data-sync/ref_terminology.adoc[leveloffset=+2]
 
 [id='{context}_additional-resources-{context}']
 

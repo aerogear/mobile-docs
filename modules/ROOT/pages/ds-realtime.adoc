@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 
@@ -9,8 +9,8 @@ include::ROOT:page$attributes.adoc[]
 
 == Server
 [#sync-server-realtime-updates]
-include::_partials/server-realtime-updates.adoc[leveloffset=2]
+include::_partials/data-sync/server-realtime-updates.adoc[leveloffset=2]
 
 == Client
 [#sync-js-client-realtime-updates]
-include::_partials/js-client-realtime-updates.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-realtime-updates.adoc[leveloffset=2]

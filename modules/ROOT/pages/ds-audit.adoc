@@ -1,5 +1,5 @@
 // start {partialsdir}/attributes.adoc[]
-include::ROOT:page$attributes.adoc[]
+include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
 
@@ -9,8 +9,8 @@ include::ROOT:page$attributes.adoc[]
 
 == Server
 [#sync-server-audit-logs]
-include::_partials/server-audit-logs.adoc[leveloffset=3]
+include::_partials/data-sync/server-audit-logs.adoc[leveloffset=3]
 
 == Client
 [#sync-js-client-audit-logs]
-include::_partials/js-client-audit-logs.adoc[leveloffset=2]
+include::_partials/data-sync/js-client-audit-logs.adoc[leveloffset=2]
