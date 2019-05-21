@@ -70,7 +70,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-. Add `* file:` to `default-src` in the `Content-Security-Policy` meta tag inside the `index.html` file:
+. Add the following code to `index.html` located in `src/` :
 +
 [source,html]
 ----
@@ -82,8 +82,8 @@ Cordova::
 ----
 $ npm install @aerogear/auth
 ----
-. Use e.g `browserify` so that you can use the `require` statement
-. In the `init` snippet use `require` instead of `import`
+Use a JavaScript bundler, for example, `browserify` so that you can use node modules in Cordova. {org-name} recommends using the `require` statement rather than `import` for the the @aerogear/auth module as shown below:
+
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -158,12 +158,12 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Import and initialize Auth:
 
+. Import and initialize Auth.
++
 [source,javascript]
 ----
 const Auth = require('@aerogear/auth').Auth;
-
 const authService = new Auth(app.config);
 const initOptions = { onLoad: "login-required" };
 
