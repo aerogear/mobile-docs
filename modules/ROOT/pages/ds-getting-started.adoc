@@ -1,21 +1,3 @@
-// start {partialsdir}/attributes.adoc[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
 
-:service-name: Data Sync
-:sync-server: Sync Server
-:sync-client: Sync Client
-
-//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: sync
-
-[id='{context}']
-= Getting Started with {sync-service}
-:toc:
-
-
-[#sync-server-getting-started]
-include::_partials/data-sync/server-getting-started.adoc[leveloffset=2]
-
-[#sync-server-getting-started-with-an-example-data-source]
-include::_partials/data-sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+include::_partials/data-sync/server-getting-started.adoc[leveloffset=0]

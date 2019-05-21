@@ -61,17 +61,17 @@ include::{partialsdir}/attributes.adoc[]
 
 ** xref:data-sync.adoc[{sync-service}]
 *** xref:ds-getting-started.adoc[Getting Started]
-*** xref:ds-query.adoc[Querying]
-*** xref:ds-mutation.adoc[Mutation]
+*** xref:ds-query.adoc[Queries]
+*** xref:ds-mutation.adoc[Mutations]
 *** xref:ds-offline.adoc[Offline]
-*** xref:ds-realtime.adoc[Subscriptions - Realtime Updates]
-*** xref:ds-auth.adoc[Authentication and Authorization]
+*** xref:ds-realtime.adoc[Realtime Updates]
+*** xref:ds-auth.adoc[Authz]
 *** xref:ds-metrics.adoc[Metrics]
 *** xref:ds-conflict.adoc[Conflict Resolution]
 *** xref:ds-files.adoc[File Upload]
 *** xref:ds-audit.adoc[Audit Logs]
 *** xref:ds-advanced.adoc[Advanced Topics]
-*** xref:ds-openshift.adoc[Running {sync-service} in OpenShift]
+*** xref:ds-openshift.adoc[Running on OpenShift]
 
 
 
