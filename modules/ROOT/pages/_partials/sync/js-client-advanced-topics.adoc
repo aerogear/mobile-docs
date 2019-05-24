@@ -85,7 +85,9 @@ It can intelligently generate cache update methods for both mutations and subscr
 
 === Mutations
 
-An example of how to use these helper methods for mutations can be seen below. To use these methods simply create an offline client as described in <<offline-client>> and then make use of the available `offlineMutation` method which wraps Apollo's `mutate` method. In the following example we prepare an offline mutation which aims to add a task and then update the `GET_TASK` query in our client's cache.
+The following example shows how to use these helper methods for mutations. 
+To use these methods, create an offline client as described in <<offline-client>> and then use the  `offlineMutation` method.
+The `offlineMutation` function accepts a `MutationHelperOptions` object as a parameter.
 
 [source, javascript]
 ----
@@ -106,6 +108,28 @@ const mutationOptions = {
   operationType: CacheOperation.ADD,
   idField: 'id'
 };
+----
+
+We can also provide more than one query to update in the cache by providing an array to the `updateQuery` parameter:
+
+[source, javascript]
+----
+
+const mutationOptions = {
+  ...
+  updateQuery: [
+    { query: GET_TASKS, variables: {} }
+  ]
+  ,
+  ...
+};
+----
+
+The following example shows how to prepare an offline mutation to add a task using the `mutationOptions` object and how to update the `GET_TASK` query for the client's cache.
+
+[source, javascript]
+----
+const { createMutationOptions, CacheOperation } = require('@aerogear/voyager-client');
 
 client.offlineMutation<Task>(mutationOptions);
 ----

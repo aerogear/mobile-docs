@@ -125,6 +125,25 @@ let config = {
 }
 ----
 
+You can also use `getUpdateFunction` to automatically generate functions:
+
+[source, javascript]
+----
+const { createMutationOptions, CacheOperation } = require('@aerogear/voyager-client');
+
+const updateFunctions = {
+  // Can contain update functions from each component
+  createTask: getUpdateFunction('createTask', 'id', GET_TASKS, CacheOperation.ADD),
+  deleteTask: getUpdateFunction('deleteTask', 'id', GET_TASKS, CacheOperation.DELETE)
+}
+
+let config = {
+  ...
+  mutationCacheUpdates: updateFunctions,
+  ...
+}
+----
+
 === Online Only Queries
 
 To ensure certain queries are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used to annotate a query, as the example shown below:
