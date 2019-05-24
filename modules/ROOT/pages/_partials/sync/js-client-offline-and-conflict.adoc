@@ -125,7 +125,7 @@ let config = {
 }
 ----
 
-You can also use provided `getUpdateFunction` to automatically generate these functions for you. In this case, the above would become:
+You can also use `getUpdateFunction` to automatically generate functions:
 
 [source, javascript]
 ----
