@@ -1,3 +1,5 @@
+= Querying a Data Sync server using a Data Sync client
+
 .Prerequisites
 * You have Node.js and npm installed.
 * You have created an empty web project that supports ES6, for example, using the link:https://webpack.js.org/guides/getting-started/[webpack getting started] guide.

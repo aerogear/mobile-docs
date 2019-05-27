@@ -2,7 +2,4 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-
-[id='{context}']
-= Querying a GraphQL schema
-:toc:
+include::_partials/data-sync/js-client-getting-started.adoc[]
