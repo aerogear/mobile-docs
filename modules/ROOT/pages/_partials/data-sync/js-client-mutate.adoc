@@ -1,17 +1,9 @@
-= Querying a Data Sync server using a Data Sync client
+= Adding a mutation to a Data Sync client
 
 .Prerequisites
 * You have Node.js and npm installed.
 * You have created an empty web project that supports ES6, for example, using the link:https://webpack.js.org/guides/getting-started/[webpack getting started] guide.
 * You have completed the server getting started guide and the application is running.
-
-This section describes how to use the {sync-client} to create mobile and web applications that can communicate with the Voyager server application.
-
-Data Sync provides JavaScript libraries which integrate your javascript app using with a server that also uses Data Sync.  
-The client libraries are based on the link:https://www.apollographql.com/docs/react/api/apollo-client.html[Apollo client].
-
-Connecting our client to the server "Hello World" example. 
-You will add the libraries to your mobile project, configure the client classes, connect to the server, and confirm that it works.
 
 .Add our libraries to your javascript client,
 [source,bash]
@@ -23,8 +15,6 @@ Below is a simple code example to connect to and query our {sync-server}.
 To configure the client, a configuration object should be used. 
 At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. 
 If the client app uses subscription as well, then the `wsUrl` field is required too.
-
-Core to connect to and query our server application would look like the following:
 
 .src/index.js
 [source,javascript]
@@ -40,16 +30,23 @@ let config = {
   wsUrl: "ws://localhost:4000/graphql",
 }
 
-async function helloWorld() {
+async function addPerson() {
 
   // Actually create the client
   let offlineClient = new OfflineClient(config);
   let client = await offlineClient.init();
 
-  // Execute the hello query
+  // Execute the mutation
   client.query({
       fetchPolicy: 'network-only',
-      query: gql`{hello}
+      query: gql`mutation {
+  post(
+    name: "John Doe"
+    address: "1 Red Hill"
+  ) {
+    id
+  }
+}
 }`
     })
     //Print the response of the query
@@ -58,7 +55,17 @@ async function helloWorld() {
     });
 }
 
-helloWorld();
+addPerson();
 ----
 
-You can build and run this code in your project. You should see "Hello world" in your JavaScript console. The server and client can now communicate.
+You can build and run this code in your project. You should see the following in your JavaScript console:
+
+----
+{
+  "data": {
+    "post": {
+      "id": "person-1"
+    }
+  }
+}
+----

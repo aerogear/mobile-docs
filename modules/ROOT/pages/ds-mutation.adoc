@@ -2,7 +2,4 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-
-[id='{context}']
-= Performing mutations on a GraphQL schema
-:toc:
+include::_partials/data-sync/js-client-mutate.adoc[]
