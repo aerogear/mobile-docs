@@ -50,8 +50,11 @@ $ node index.js
 [source,javascript]
 ----
 {
-  hello
+  addressBook {
+    name
+  }
 }
+
 ----
 
 . Check the output. For the example above, the output should be:
@@ -60,7 +63,11 @@ $ node index.js
 ----
 {
   "data": {
-    "hello": "Hello world"
+    "addressBook": [
+      {
+        "name": "H World"
+      }
+    ]
   }
 }
 ----

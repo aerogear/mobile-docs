@@ -27,7 +27,7 @@ Core to connect to and query our server application would look like the followin
 [source,javascript]
 ----
 // gql is a utility function that handles gql queries
-import gql from 'graphql-tag';
+//import gql from 'graphql-tag';
 
 import { OfflineClient } from '@aerogear/voyager-client';
 
@@ -46,7 +46,13 @@ async function helloWorld() {
   // Execute the hello query
   client.query({
       fetchPolicy: 'network-only',
-      query: gql`{hello}`
+      query: gql`{
+  addressBook {
+    id
+    name
+    address
+  }
+}`
     })
     //Print the response of the query
     .then( ({data}) => {
