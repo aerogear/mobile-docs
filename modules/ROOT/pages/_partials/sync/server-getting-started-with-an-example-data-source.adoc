@@ -21,7 +21,7 @@ For this procedure, the following describes the existing data source schema:
 
 .Prerequisites
 
-* xref:getting-started-with-hello-world-{context}[].
+* link:https://github.com/jstaffor/mobile-docs/blob/master/modules/ROOT/pages/_partials/sync/server-getting-started.adoc[Getting Started with Hello World Data Sync].
 * You are familiar with {sync-server} operations, for example, stopping and starting {sync-server}.
 
 .Procedure
@@ -93,7 +93,7 @@ app.listen(4000, () =>
 {
   listEmployees
   {
-		employee_id,
+    employee_id,
     employee_name,
   }
 }
