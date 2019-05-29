@@ -1,43 +1,15 @@
 include::_partials/attributes.adoc[]
 
-:service-name: Data Sync
-:sync-server: Sync Server
-:sync-client: Sync Client
-
-//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: sync
-
-[id='{context}']
 = Developing a {sync-service} Application
-:toc:
-
-[[introduction]]
-
-include::_partials/data-sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
-
-include::_partials/data-sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
 
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
 . Design a link:https://graphql.org/learn[GraphQL] schema.
-. Develop a server side service.
-. Containerize your server and deploy it to OpenShift as a Data Sync App.
-. Bind your mobile app to that data sync server app.
-. Configure your mobile app to point to the data sync server app.
+. Develop a Data Sync server and Data Sync client, with the features you require, for example, real-time updates.
+. Containerize your Data Sync server and deploy it to OpenShift.
+. Bind your mobile app to that Data Sync server.
+. Configure your mobile app to point to the Data Sync server.
 . Complete your mobile app development.
 . Build and run your mobile app.
 
-include::_partials/data-sync/ref_terminology.adoc[leveloffset=+2]
-
-[id='{context}_additional-resources-{context}']
-
-.Additional resources
-
-* link:https://graphql.org/learn[Learn GraphQL]
-* link:https://github.com/aerogear/voyager-server[Voyager Server GitHub repository]
-* link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync[Voyager Client GitHub repository]
-* link:https://www.apollographql.com/docs/apollo-server[Apollo Server]
-* link:https://www.apollographql.com/docs/react[Apollo Client]
-
-:service-name: {sync-service}
 
