@@ -62,8 +62,11 @@ include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 [#sync-server-getting-started]
 include::_partials/sync/server-getting-started.adoc[leveloffset=2]
 
-[#sync-server-getting-started-with-an-example-data-source]
-include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
+[#server-getting-started-with-an-example-data-source-schema]
+include::_partials/sync/server-getting-started-with-an-example-data-source-schema.adoc[leveloffset=2]
+
+[#server-create-a-graphql-schema-for-an-existing-data-source]
+include::_partials/sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[leveloffset=2]
 
 [#server-deploying-your-app-built-using-the-data-sync-framework-to-a-development-environment]
 include::_partials/sync/server-deploying-your-app-built-using-the-data-sync-framework-to-a-development-environment.adoc[leveloffset=2]
