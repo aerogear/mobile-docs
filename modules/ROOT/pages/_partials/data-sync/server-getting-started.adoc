@@ -1,11 +1,11 @@
 [id="getting-started-with-hello-world-{context}"]
 = Getting Started with Hello World {sync-service}
 
-In this example, you add the {sync-server} library to your node.js project, create an `index.js` file, run the server, and query GraphQL.
+In this example, you add the {sync-server} library to your link:https://expressjs.com/[Express] node.js project, create an `index-1.js` file, run the server, and query GraphQL.
 
 * {sync-server} is a set of Node.js libraries that can be used to build a Data Sync server.
 
-* {sync-server} is the starting point for developing a {sync-service} application. Used with link:https://expressjs.com/[Express], this module leverages Apollo Server and provides extension points for additional features and integrations.
+* {sync-server} is the starting point for developing a {sync-service} application. 
 
 
 .Prerequisites
@@ -30,50 +30,18 @@ $ npm install @aerogear/voyager-server <3>
 <3> The {sync-server} library that enables data sync
 ====
 
-. Create an `index.js` file with the following content:
+. Create an `index-1.js` file with the following content:
 +
 [source,javascript]
 ----
-const express = require('express')
-//Include our server libraries
-const { VoyagerServer, gql } = require('@aerogear/voyager-server')
-
-//Provide your graphql schema
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-//Create the resolvers for your schema
-const resolvers = {
-  Query: {
-    hello: (obj, args, context, info) => {
-      return `Hello world`
-    }
-  }
-}
-
-//Initialize the library with your Graphql information
-const server = VoyagerServer({
-  typeDefs,
-  resolvers
-})
-
-//Connect the server to express
-const app = express()
-server.applyMiddleware({ app })
-
-app.listen(4000, () =>
-  console.log(`🚀 Server ready at http://localhost:4000/graphql`)
-)
+include::index-1.js[]
 ----
 
 . Run the server:
 +
 [source,bash]
 ----
-$ node index.js
+$ node index-1.js
 
 🚀 Server ready at http://localhost:4000/graphql
 ----
