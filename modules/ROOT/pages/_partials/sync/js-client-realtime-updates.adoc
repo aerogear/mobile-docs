@@ -69,24 +69,14 @@ getTasks() {
   tasks.subscribeToMore({
     document: TASK_ADDED_SUBSCRIPTION,
     updateQuery: (prev, { subscriptionData }) => {
-      if(subscriptionData.data){
-        const newTask = subscriptionData.data.taskAdded;
-        if (prev.allTasks.find(task => task.id === newTask.id)) {
-          return prev;
-        } else {
-          return Object.assign({}, prev, {
-            allTasks: [...prev.allTasks, newTask]
-          });
-        }
-      }
+    // Update logic here.
     }
   });
   return tasks;
 }
 ----
 
-NOTE: In the above example some deduplication is performed to ensure the same task is not returned to the UI when it is
-already present.
+To allow {sync-client} to automatically generate the `updateQuery` function for you, please see the <<#cache-update-helpers, Cache Update Helpers>> section.
 
 You can then use this query in our application to subscribe to changes so that the front end is always updated when new
 data is returned from the server.

@@ -82,9 +82,8 @@ func application(_ application: UIApplication,
 Cordova::
 +
 --
-
+[sidebar]
 .Using plain Cordova
-
 [source,javascript]
 ----
 import { PushRegistration } from "@aerogear/push";
@@ -108,9 +107,8 @@ push.on('registration', data => {
     });
 });
 ----
-
+[sidebar]
 .Using Ionic
-
 [source,javascript]
 ----
 import { PushRegistration } from "@aerogear/push";
