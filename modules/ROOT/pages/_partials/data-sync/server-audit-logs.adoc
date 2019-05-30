@@ -1,5 +1,5 @@
 [#sync-server-audit-logs]
-= Audit Logs
+= Enabling audit logs on the server
 
 Audit logging is a mechanism to track all of the actions that occur inside your application. Audit Logging in {sync-server} provides two main benefits.
 

@@ -1,0 +1,3 @@
+include::_partials/attributes.adoc[]
+
+include::_partials/data-sync/server-getting-started.adoc[leveloffset=0]

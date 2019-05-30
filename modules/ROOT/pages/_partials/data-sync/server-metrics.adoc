@@ -1,4 +1,5 @@
-= Metrics
+= Monitoring a {sync-server}
+:toc:
 
 {sync-server} can expose a variety of useful metrics that can be consumed and visualised by the {metrics-service} service. (Prometheus for data collection and Grafana for Visualisation).
 

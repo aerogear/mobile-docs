@@ -1,143 +1,15 @@
-// start {partialsdir}/attributes.adoc[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
 
-:service-name: Data Sync
-:sync-server: Sync Server
-:sync-client: Sync Client
-
-//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-:context: sync
-
-[id='{context}']
 = Developing a {sync-service} Application
-:toc:
-
-[[introduction]]
-
-Data Sync is a JavaScript framework that enables a developer add real time synchronization and enhanced offline capabilities to mobile applications.
-
-Data Sync includes two components:
-
-* {sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
-
-* {sync-client} is a client side JavaScript library for building web and mobile applications backed by {sync-server}.
-
-Features include:
-
-* Real Time Synchronisation
-* Conflict Resolution
-* Robust offline experience
-* Authentication and Authorization (using the Identity Management service)
-* Metrics (using the  Mobile Metrics Service)
-* Audit Logging
 
 Unlike other mobile services which provide a server and an API, Data Sync is a framework that you use to develop services. Typically, you develop a {sync-service} service as follows:
 
 . Design a link:https://graphql.org/learn[GraphQL] schema.
-. Develop a server side service.
-. Containerize your server and deploy it to OpenShift as a Data Sync App.
-. Bind your mobile app to that data sync server app.
-. Configure your mobile app to point to the data sync server app.
+. Develop a Data Sync server and Data Sync client, with the features you require, for example, real-time updates.
+. Containerize your Data Sync server and deploy it to OpenShift.
+. Bind your mobile app to that Data Sync server.
+. Configure your mobile app to point to the Data Sync server.
 . Complete your mobile app development.
 . Build and run your mobile app.
 
-include::_partials/sync/ref_terminology.adoc[leveloffset=+2]
 
-[id='{context}_additional-resources-{context}']
-
-.Additional resources
-
-* link:https://graphql.org/learn[Learn GraphQL]
-* link:https://github.com/aerogear/voyager-server[Voyager Server GitHub repository]
-* link:https://github.com/aerogear/aerogear-js-sdk/tree/master/packages/sync[Voyager Client GitHub repository]
-* link:https://www.apollographql.com/docs/apollo-server[Apollo Server]
-* link:https://www.apollographql.com/docs/react[Apollo Client]
-
-:service-name: {sync-service}
-
-[#sync-server]
-== {sync-service} Server
-
-[#sync-server-getting-started]
-include::_partials/sync/server-getting-started.adoc[leveloffset=2]
-
-[#sync-server-getting-started-with-an-example-data-source]
-include::_partials/sync/server-getting-started-with-an-example-data-source.adoc[leveloffset=2]
-
-[#creating-a-voyager-server-container-image-for-use-with-openshift]
-include::_partials/sync/creating-a-voyager-server-container-image-for-use-with-openshift.adoc[leveloffset=2]
-
-[#sync-server-offline-and-conflict]
-include::_partials/sync/server-offline-and-conflict.adoc[leveloffset=2]
-
-[#sync-server-data-access]
-include::_partials/sync/server-data-access.adoc[leveloffset=2]
-
-[#sync-server-realtime-updates]
-include::_partials/sync/server-realtime-updates.adoc[leveloffset=2]
-
-[#sync-server-auth]
-include::_partials/sync/server-auth.adoc[leveloffset=2]
-
-[#server-files]
-include::_partials/sync/server-files.adoc[leveloffset=2]
-
-=== Metrics and Logging
-[#sync-server-metrics]
-include::_partials/sync/server-metrics.adoc[leveloffset=3]
-
-[#sync-server-audit-logs]
-include::_partials/sync/server-audit-logs.adoc[leveloffset=3]
-
-[#sync-js-client]
-== {sync-service} Javascript Client
-
-[#sync-js-basic-concepts]
-include::_partials/sync/js-sync-js-basic-concepts.adoc[leveloffset=2]
-
-[#sync-js-client-getting-started]
-include::_partials/sync/js-client-getting-started.adoc[leveloffset=2]
-
-[#sync-js-client-offline-and-conflict]
-include::_partials/sync/js-client-offline-and-conflict.adoc[leveloffset=2]
-
-[#sync-js-client-realtime-updates]
-include::_partials/sync/js-client-realtime-updates.adoc[leveloffset=2]
-
-[#sync-js-client-auth]
-include::_partials/sync/js-client-auth.adoc[leveloffset=2]
-
-[#js-client-files]
-include::_partials/sync/js-client-files.adoc[leveloffset=2]
-
-[#sync-js-client-audit-logs]
-include::_partials/sync/js-client-audit-logs.adoc[leveloffset=2]
-
-[#sync-js-client-advanced-topics]
-include::_partials/sync/js-client-advanced-topics.adoc[leveloffset=2]
-
-[#sync-server-openshift]
-== Running {sync-service} on OpenShift
-
-[#sync-server-getting-started-openshift]
-include::_partials/sync/getting-started-openshift.adoc[leveloffset=2]
-
-[#sync-server-provisioning-data-sync]
-include::_partials/sync/provisioning-data-sync.adoc[leveloffset=2]
-
-[#sync-server-provisioning-data-sync-templates]
-include::_partials/sync/openshift-templates.adoc[leveloffset=2]
-
-[#sync-server-getting-started-mdc-client]
-include::_partials/sync/getting-started-mdc-client.adoc[leveloffset=2]
-
-[#sync-server-binding]
-include::_partials/sync/binding.adoc[leveloffset=2]
-
-[#sync-server-binding-keycloak]
-include::_partials/sync/getting-started-binding-keycloak.adoc[leveloffset=2]
-
-[#sync-sample-app]
-== Showcase App
-include::_partials/sync/getting-started-showcase-app.adoc[leveloffset=2]

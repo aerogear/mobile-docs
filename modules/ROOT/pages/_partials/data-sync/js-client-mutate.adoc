@@ -1,0 +1,71 @@
+= Adding a mutation to a Data Sync client
+
+.Prerequisites
+* You have Node.js and npm installed.
+* You have created an empty web project that supports ES6, for example, using the link:https://webpack.js.org/guides/getting-started/[webpack getting started] guide.
+* You have completed the server getting started guide and the application is running.
+
+.Add our libraries to your javascript client,
+[source,bash]
+----
+npm install @aerogear/voyager-client
+----
+
+Below is a simple code example to connect to and query our {sync-server}.  
+To configure the client, a configuration object should be used. 
+At a minimum, the `httpUrl` field is required and it is the url of the Voyager server application. 
+If the client app uses subscription as well, then the `wsUrl` field is required too.
+
+.src/index.js
+[source,javascript]
+----
+// gql is a utility function that handles gql queries
+//import gql from 'graphql-tag';
+
+import { OfflineClient } from '@aerogear/voyager-client';
+
+// For our client application, we will connect to the local service.
+let config = {
+  httpUrl: "http://localhost:4000/graphql",
+  wsUrl: "ws://localhost:4000/graphql",
+}
+
+async function addPerson() {
+
+  // Actually create the client
+  let offlineClient = new OfflineClient(config);
+  let client = await offlineClient.init();
+
+  // Execute the mutation
+  client.query({
+      fetchPolicy: 'network-only',
+      query: gql`mutation {
+  post(
+    name: "John Doe"
+    address: "1 Red Hill"
+  ) {
+    id
+  }
+}
+}`
+    })
+    //Print the response of the query
+    .then( ({data}) => {
+      console.log(data.hello)
+    });
+}
+
+addPerson();
+----
+
+You can build and run this code in your project. You should see the following in your JavaScript console:
+
+----
+{
+  "data": {
+    "post": {
+      "id": "person-1"
+    }
+  }
+}
+----

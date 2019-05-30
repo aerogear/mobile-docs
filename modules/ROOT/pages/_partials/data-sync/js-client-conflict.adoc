@@ -1,0 +1,84 @@
+= Resolving conflicts on the client
+
+A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
+
+*Conflict resolution* is how the application detects and resolves the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
+
+The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, see the <<#sync-server-offline-and-conflict, Voyager server document>>.
+
+If conflicts need to be handled on client side, developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism.
+
+
+== Version Based Conflict Detection
+
+For more details about how it works, see the _server-version-based-conflict-resolution, Voyager server document_.
+
+On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
+
+//TODO: code example
+
+== Conflict Resolution Strategies
+
+To resolve conflicts on the client side, a `conflictStrategy` needs to be provided. If none is provided, by default, the `clientVersionWins` strategy is used. This means the SDK will automatically override the server data with the current client data.
+
+To implement a custom conflict resolution strategy provide at least one of the parameters below.
+
+* strategies - a dictionary object where each key is the name of a mutation and the value is the custom action for a conflict caused by that mutation
+* default - the default behavior to use if one of your mutations is not listed in `strategies`
+
+NOTE: If strategies are provided but no default then `clientVersionWins` becomes the default.
+If a mutation causes a conflict and you have not specified a conflict resolution strategy for that mutation, the system uses the `clientVersionWins` strategy.
+
+For example:
+
+[source,javascript]
+----
+
+//define a custom conflict resolver
+let updateTaskConflictResolver = (serverData, clientData) => {
+    ...
+    return Object.assign(serverData, clientData);
+};
+
+let deleteTaskConflictResolver = (serverData, clientData) => {
+    ...
+    return serverData;
+}
+
+//define a default where the clientData is used
+let defaultConflictResolver = (serverData, clientData) => {
+    return clientData
+}
+
+//pass it to the config object
+let config = {
+...
+  conflictStrategy: {
+    strategies: {
+      "TaskUpdated": updateTaskConflictResolver,
+      "TaskDeleted": deleteTaskConflictResolver
+    },
+    default: defaultConflictResolver
+  }
+...
+}
+----
+
+NOTE: Client strategy is ignored when conflicts are resolved on the server.
+
+== Listening to Conflicts
+
+Developers can supply their own `conflictListener` implementation to get notifications about conflicts:
+
+[source,javascript]
+----
+let config = {
+...
+  conflictListener: {
+    conflictOccurred: function(operationName, resolvedData, server, client) {
+      console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
+    }
+  }
+...
+}
+----

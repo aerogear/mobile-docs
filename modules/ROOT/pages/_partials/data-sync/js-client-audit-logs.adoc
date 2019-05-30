@@ -1,4 +1,4 @@
-= Audit Logs
+= Enabling audit logs on the client
 
 As described in the <<#sync-server-audit-logs, Server Audit Logs>> section, device information can be logged as part of an audit log message. To enable it:
 

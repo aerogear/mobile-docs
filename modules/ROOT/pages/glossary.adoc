@@ -8,21 +8,14 @@ include::_partials/attributes.adoc[]
 
 = Glossary
 
-// start mobile_terminology.adoc[leveloffset=+1]
 include::_partials/mobile_terminology.adoc[leveloffset=+1]
-// end mobile_terminology.adoc[leveloffset=+1]
-// start sync/ref_terminology.adoc[leveloffset=+1]
-include::_partials/sync/ref_terminology.adoc[leveloffset=+1]
-// end sync/ref_terminology.adoc[leveloffset=+1]
-// start keycloak/ref_terminology.adoc[leveloffset=+1]
+
+include::_partials/data-sync/ref_terminology.adoc[leveloffset=+1]
+
 include::_partials/keycloak/idm_glossary.adoc[leveloffset=+1]
-// end keycloak/ref_terminology.adoc[leveloffset=+1]
-// start push/ref_terminology.adoc[leveloffset=+1]
+
 include::_partials/push/ref_terminology.adoc[leveloffset=+1]
-// end push/ref_terminology.adoc[leveloffset=+1]
-// start mobilecicd/ref_terminology.adoc[leveloffset=+1]
+
 include::_partials/mobilecicd/ref_terminology.adoc[leveloffset=+1]
-// end mobilecicd/ref_terminology.adoc[leveloffset=+1]
-// start security/ref_terminology.adoc[leveloffset=+1]
+
 include::_partials/security/ref_terminology.adoc[leveloffset=+1]
-// end security/ref_terminology.adoc[leveloffset=+1]

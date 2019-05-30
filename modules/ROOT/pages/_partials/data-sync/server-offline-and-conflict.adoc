@@ -1,5 +1,5 @@
 [id="conflict-resolution-{context}"]
-= Conflict Resolution
+= Resolving conflicts on the server
 
 Applications that allow users to modify data while offline most likely have to deal with conflicts.
 A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
@@ -25,6 +25,12 @@ The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict 
 == Pluggable Conflict Resolution
 
 Pluggable conflict resolution is a concept that allows developers to define their own logic for *conflict detection* and *conflict resolution*, regardless of the data storage.
+
+It has two parts: one for detecting conflicts, and the other for resolving conflicts.
+
+To detect conflicts, developers can use either the default version-based conflict detection mechanism, or provide their own implementation via the `conflictStateProvider` option in the config object that is used to initialize the sync client.
+
+To resolve conflicts, developers can either use the default conflict resolution strategy, or provide their own ones via the `conflictStrategy` option in the config object.
 
 The conflict detection and resolution is enabled by {sync-server}, while the fetching and storing of data is the responsibility of the developer.
 

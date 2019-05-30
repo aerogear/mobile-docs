@@ -1,0 +1,3 @@
+include::_partials/attributes.adoc[]
+
+include::_partials/data-sync/js-client-advanced-topics.adoc[leveloffset=0]
