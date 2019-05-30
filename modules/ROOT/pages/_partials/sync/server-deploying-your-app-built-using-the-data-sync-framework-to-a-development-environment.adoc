@@ -1,7 +1,7 @@
-[id="server-deploying-your-app-built-using-the-data-sync-framework-to-a-development-environment-{context}"]
-= Deploying your app built using the data sync framework to an environment
+[id="server-deploying-a-data-sync-server-on-openshfit-{context}"]
+= Deploying a Data Sync server on OpenShift
 
-This section describes how to deploy an app using the Data Sync framework to an environment.
+This section describes how to deploy an app built using the Data Sync framework to OpenShift.
 The app is built from source code. For more information, see https://github.com/aerogear/voyager-server[Apollo Voyager Server].
 
 For this procedure, an example app is deployed to an environment.
