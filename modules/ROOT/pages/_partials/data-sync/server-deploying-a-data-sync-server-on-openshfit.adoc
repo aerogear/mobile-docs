@@ -10,7 +10,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 .Prerequisites
 
 * You have a running OpenShift environment.
-* You have forked the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
+* You have forked the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] and the forked repo must be public.
 * You understand `git`.
 
 .Procedure
@@ -28,7 +28,6 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 [source,yaml]
 ----
 
----
 ---
 kind: Template
 apiVersion: v1
@@ -271,3 +270,4 @@ Note: _ok_ is displayed in the browser.
 .Additional resources
 
 * For more information about deploying to Production environments, see link:https://github.com/aerogear/datasync-deployment[DataSync Production Deployment].
+* For more information about using a private repo, see link:https://docs.openshift.com/container-platform/3.9/dev_guide/builds/build_inputs.html#source-clone-secrets[Source Clone Secrets].
