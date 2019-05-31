@@ -4,14 +4,14 @@
 This section describes how to deploy an app built using the Data Sync framework to OpenShift.
 The app is built from source code. For more information, see https://github.com/aerogear/voyager-server[Apollo Voyager Server].
 
-For this procedure, an example app is deployed to an environment.
+For this procedure, an example app is deployed to an OpenShift environment.
 For more information, see xref:server-getting-started-with-an-example-data-source-{context}[Getting started with an example data source].
 
 .Prerequisites
 
-* You have a running environment.
-* You have cloned the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
-* An understanding of `git`.
+* You have a running OpenShift environment.
+* You have forked the link:https://github.com/aerogear/voyager-server[Apollo Voyager Server] locally.
+* You understand `git`.
 
 .Procedure
 
@@ -19,7 +19,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 +
 . Copy the contents from `index.js` and use this code to replace the contents in `examples/basic/server.js`.
 +
-. Save these changes and commit the changes to a github repository.
+. Save these changes and commit the changes to your forked github repository.
 +
 . Create a blank `yaml` file locally.
 +
@@ -28,6 +28,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 [source,yaml]
 ----
 
+---
 ---
 kind: Template
 apiVersion: v1
@@ -108,9 +109,6 @@ objects:
     - type: GitHub
       github:
         secret: "${GITHUB_WEBHOOK_SECRET}"
-    - type: Generic
-      generic:
-        secret: "${GENERIC_WEBHOOK_SECRET}"
 - kind: DeploymentConfig
   apiVersion: v1
   metadata:
@@ -164,7 +162,7 @@ parameters:
   displayName: Git Repository URL
   description: The URL of the repository with your application source code.
   required: true
-  value: 'https://github.com/aerogear/voyager-server'
+  value: 'https://github.com/jstaffor/data-sync-spinoff'
 - name: BUILDER_IMAGE
   displayName: S2I Builder Image
   description: The S2I builder image to use when building this application

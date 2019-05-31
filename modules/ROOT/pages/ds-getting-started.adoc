@@ -1,3 +1,5 @@
 include::_partials/attributes.adoc[]
 
 include::_partials/data-sync/server-getting-started.adoc[leveloffset=0]
+
+include::_partials/data-sync/server-deploying-a-data-sync-server-on-openshfit.adoc[leveloffset=0]
