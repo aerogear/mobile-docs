@@ -19,7 +19,4 @@ Create a GraphQL schema for an existing data source schema.
 
 .Additional resources
 
-* link:https://docs.okd.io/latest/using_images/db_images/mysql.html[MySQL].
-* link:https://docs.okd.io/latest/using_images/db_images/postgresql.html[PostgreSQL].
-* link:https://docs.okd.io/latest/using_images/db_images/mongodb.html[MongoDB].
-* link:https://docs.okd.io/latest/using_images/db_images/mariadb.html[MariaDB].
+* For more information on data sources, see link:https://docs.okd.io/latest/using_images/db_images/mysql.html[MySQL], link:https://docs.okd.io/latest/using_images/db_images/postgresql.html[PostgreSQL], link:https://docs.okd.io/latest/using_images/db_images/mongodb.html[MongoDB], or link:https://docs.okd.io/latest/using_images/db_images/mariadb.html[MariaDB].
