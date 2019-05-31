@@ -1,27 +1,11 @@
-[id="server-getting-started-with-an-example-data-source-{context}"]
-= Getting started with an example data source
+[id="server-create-a-graphql-schema-for-an-existing-data-source-{context}"]
+= Create a GraphQL schema for an existing data source schema.
 
-This section describes how to create a GraphQL schema for an existing data source schema.
-
-For this procedure, the following describes the existing data source schema:
-
-[.Employee]
-|===
-| employee_id, `ID`
-| employee_name, `String`
-| category_id, `ID`
-|===
-
-[.Category]
-|===
-| category_id, `ID`
-| employee_type, `String`
-| security_clearance, `ID`
-|===
+Create a GraphQL schema for an existing data source schema.
 
 .Prerequisites
 
-* xref:getting-started-with-hello-world-{context}[].
+* link:https://github.com/jstaffor/mobile-docs/blob/master/modules/ROOT/pages/_partials/sync/server-getting-started.adoc[Getting Started with Hello World Data Sync].
 * You are familiar with {sync-server} operations, for example, stopping and starting {sync-server}.
 
 .Procedure
@@ -93,7 +77,7 @@ app.listen(4000, () =>
 {
   listEmployees
   {
-		employee_id,
+    employee_id,
     employee_name,
   }
 }
