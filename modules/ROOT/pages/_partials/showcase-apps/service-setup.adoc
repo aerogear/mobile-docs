@@ -45,10 +45,10 @@ NOTE: You can only demonstrate {sync-service} on Cordova.
 
 // end::excludeDownstream[]
 
-== Demonstrate the {sync-service}
+== Demonstrating {sync-service}
 
-. Ensure a PostgreSQL database is available so that you can connect to it at a later stage.
-.. Login to OpenShift and, create a new project or use an existing project.
+. Provision a PostgreSQL database.
+.. Log in to OpenShift and browse to an existing project, or create a new project.
 .. Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
 +
 NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connection Password`, and `PostgreSQL Database Name` as they are required when provisioning {sync-service}.
@@ -130,7 +130,7 @@ xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App
 +
 include::../cloning-showcase-app.adoc[]
 +
-2. Incorporate the Data Sync Mobile App code into the *mobile-services.js* file located within _src_:
+2. Incorporate the Data Sync Mobile App code into the *mobile-services.json* file located within _src_:
 +
 [source,javascript]
 ----
