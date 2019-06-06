@@ -136,8 +136,8 @@ include::../cloning-showcase-app.adoc[]
 ----
 let config = {
   "version": 1,
-  "namespace": "test12",
-  "clientId": "test16",
+  "namespace": "voyager",
+  "clientId": "voyager-ionic-example",
   "services": [
     {
     "id": "8565c444-6bed-33e9-8616-0af08791569c",
