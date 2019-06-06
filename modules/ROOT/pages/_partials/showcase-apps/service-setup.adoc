@@ -93,23 +93,21 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 . The Data Sync provisioned service should be available under the _Unbound Services_ heading. Click *Bind to App* and follow the wizard.
 . When the binding completes, click on *configuration*. The configuration for the Data Sync Mobile App is displayed, for example:
 +
-[source,javascript]
+[source,json]
 ----
 {
-  "version": 1,
-  "namespace": "test12",
-  "clientId": "test16",
-  "services": [
-    {
-      "id": "8565c444-6bed-33e9-8616-0af08791569c",
-      "name": "sync-app-syncshowcase-test16",
-      "type": "sync-app",
-      "url": "https://sync-app-syncshowcase.testbed.com/graphql",
-      "config": {
-        "websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
-      }
-    }
-  ]
+	"version": 1,
+	"namespace": "voyager",
+	"clientId": "voyager-ionic-example",
+	"services": [{
+		"id": "8565c444-6bed-33e9-8616-0af08791569c",
+		"name": "sync-app-syncshowcase-test16",
+		"type": "sync-app",
+		"url": "https://sync-app-syncshowcase.testbed.com/graphql",
+		"config": {
+			"websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
+		}
+	}]
 }
 
 module.exports = config;
