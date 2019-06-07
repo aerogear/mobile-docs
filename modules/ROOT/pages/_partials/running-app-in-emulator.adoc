@@ -22,10 +22,15 @@ Cordova::
 +
 --
 
+Install dependencies:
+
+. `npm install -g cordova@8 ionic@4`
+. `npm install`
+
 Cordova cross-platform applications can be run in the following emulators:
 
-* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#android[Android^]
-* link:https://cordova.apache.org/docs/en/2.7.0/guide/command-line/#ios[iOS^]
+* Android: `npm run ionic:android`
+* iOS: `npm run ionic:ios`
 
 +
 NOTE: A running emulator on macOS is required to run an iOS application.
