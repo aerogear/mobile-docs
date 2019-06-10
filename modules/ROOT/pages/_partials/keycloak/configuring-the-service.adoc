@@ -62,7 +62,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set the additional value to `\http://localhost/\*`. 
+Set the additional value to `http://localhost*`. 
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -92,7 +92,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set additional value to `\http://localhost/\*`. 
+Set additional value to `http://localhost*`. 
 // tag::excludeDownstream[]
 --
 Xamarin::

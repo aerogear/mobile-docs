@@ -15,12 +15,13 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 == Setting up Mobile Services to Demonstrate Showcase Apps
 
 [discrete]
-=== Prerequisites
+.Prerequisites
 
-* [x] You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 
 [discrete]
-=== Procedure
+.Procedure
+
 . To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
 
 . To demonstrate {keycloak-service}:
@@ -36,35 +37,155 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 +
 For more information about features, see xref:identity-management.adoc[{keycloak-service} Service]
 
-
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
-. To demonstrate {sync-service}:
-+
+// tag::excludeDownstream[]
+
 NOTE: You can only demonstrate {sync-service} on Cordova.
 
-.. Provision a PostgreSQL database if there isn't one available.
-... Login to the OpenShift web console, create a new project or use an existing one
-... Click on the `Add to Project` dropdown on the top right, and choose `Browse Catalog`
-... Select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database. Take notes of the values for `PostgreSQL Connection Username`, `PostgreSQL Connection Password` and `PostgreSQL Database Name`. You will need them later.
-.. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
+// end::excludeDownstream[]
+
+== Demonstrating {sync-service}
+
+. Provision a PostgreSQL database.
+.. Log in to OpenShift and browse to an existing project, or create a new project.
+.. Click `Browse Catalog` and select `Databases` -> `Postgres` -> `PostgreSQL`, and complete the wizard to start the deployment of the database.
++
+NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connection Password`, and `PostgreSQL Database Name` as they are required when provisioning {sync-service}.
+.. Click `Browse Catalog` and select `Mobile` -> `Data Sync`.
+. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
 +
 [options="header"]
++
 |====
 |Field|Value
-|Sync Application Name|syncshowcase
-|Sync Application Docker image|http://docker.io/aerogear/voyager-server-example-task
-|Sync Application health endpoint| health
-|Sync Application metrics endpoint| metrics
-|Sync App Port|4000
-|Sync App GraphQL Endpoint| graphql
-|Database Server Hostname|*Hostname of the PostgreSQL server*
-|Database Server Port|*Port number of the PostgreSQL server, usually should be 5432*
-|Database Server Username|*Username of the PostgreSQL database connection*
-|Database Server Password|*Password of the PostgreSQL database connection*
-|Database name|*PostgreSQL database name*
+|Sync Application Name| syncshowcase
+|Sync Application Docker image| docker.io/aerogear/voyager-server-example-task
+|Sync Application Docker image version| latest
+|Sync App Port| 4000
+|Sync Application metrics endpoint| /metrics
+|Sync App GraphQL Endpoint| /graphql
+|Database Server Hostname| Hostname of the PostgreSQL server, usually *postgresql*
+|Database Server Port| Port number of the PostgreSQL server, usually *5432*
+|Database Server Username| *Username of the PostgreSQL database connection*
+|Database Server Password| *Password of the PostgreSQL database connection*
+|Database name| *PostgreSQL database name*
 |====
-.. xref:data-sync.adoc#sync-server-binding-keycloak[Protect the {sync-service} app using {keycloak-service}]
++
+. Provision the Mobile Developer Console
+.. Click `Browse Catalog` and select `Mobile` -> `Mobile Developer Console`.
+.. Complete the wizard to start the deployment of the *Mobile Developer Console*.
+
+[[creating-the-data-sync-mobile-app-binding]]
+=== Creating the Data Sync Mobile App binding
+
+[discrete]
+.Prerequisites
+
+xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
+
+[discrete]
+.Procedure
+
+. Log in to the Mobile Developer Console by clicking on the Mobile Developer Console link within Openshift.
+. Click *Create Mobile App*, and complete the wizard to create a Mobile App.
+. Click on the newly created *Mobile App* and click *Mobile Services*.
+. The Data Sync provisioned service should be available under the _Unbound Services_ heading. Click *Bind to App* and follow the wizard.
+. When the binding completes, click on *configuration*. The configuration for the Data Sync Mobile App is displayed, for example:
++
+[source,json]
+----
+{
+	"version": 1,
+	"namespace": "voyager",
+	"clientId": "voyager-ionic-example",
+	"services": [{
+		"id": "8565c444-6bed-33e9-8616-0af08791569c",
+		"name": "sync-app-syncshowcase-test16",
+		"type": "sync-app",
+		"url": "https://sync-app-syncshowcase.testbed.com/graphql",
+		"config": {
+			"websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
+		}
+	}]
+}
+
+module.exports = config;
+----
+
+[[configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service]]
+=== Configuring the Showcase App to point at the provisioned Data Sync service
+
+[discrete]
+.Prerequisites
+
+xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App binding]
+
+[discrete]
+.Procedure
+
+1. Clone the showcase app
++
+include::../cloning-showcase-app.adoc[]
++
+2. Incorporate the Data Sync Mobile App code into the *mobile-services.json* file located within _src_:
++
+[source,javascript]
+----
+let config = {
+  "version": 1,
+  "namespace": "voyager",
+  "clientId": "voyager-ionic-example",
+  "services": [
+    {
+    "id": "8565c444-6bed-33e9-8616-0af08791569c",
+    "name": "sync-app-syncshowcase-test16",
+    "type": "sync-app",
+    "url": "https://sync-app-syncshowcase.testbed.com/graphql",
+    "config": {
+      "websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
+      }
+}
+  ]
+};
+
+module.exports = config;
+----
+
+[[running-the-showcase-app-with-data-sync-configured]]
+=== Running the showcase app with Data Sync configured
+
+[discrete]
+.Prerequisites
+
+xref:configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service[Configuring the Showcase App to point at the provisioned Data Sync service]
+
+[discrete]
+.Procedure
+
+. Open a terminal and browse to the showcase app root folder.
+. Install Ionic 4:
++
+[source, bash]
+----
+npm install -g ionic@4
+----
++
+. Install dependencies:
++
+[source, bash]
+----
+npm install
+----
++
+. Run the showcase app with Data Sync configured:
++
+[source, bash]
+----
+npm run start
+----
++
+. Once the process has finished, the showcase app is displayed in a browser at _http://localhost:8100/_.
 
 
 [[setting-up-the-showcase-app]]
@@ -72,12 +193,12 @@ NOTE: You can only demonstrate {sync-service} on Cordova.
 == Setting Up the Showcase App
 
 [discrete]
-=== Prerequisites
+.Prerequisites
 
-include::../generic-local-mobile-dev-envir-reqs.adoc[]
+xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
-=== Procedure
+.Procedure
 
 1. Clone the showcase app and checkout the release tag {release-number}
 

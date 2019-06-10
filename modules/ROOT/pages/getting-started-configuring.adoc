@@ -94,7 +94,7 @@ It is recommended to use the Bundle Identifier of the iOS app as the schema of t
 Cordova::
 +
 --
-Redirect url is `\http://localhost/\*`, without `:/callback`. Web Origin is `\http://localhost/*`.
+Redirect url is `http://localhost*`. Web Origin is `http://localhost*`.
 --
 Xamarin::
 +
