@@ -41,7 +41,7 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 // tag::excludeUpstream[]
 
-NOTE: You can only demonstrate {sync-service} on Cordova.
+NOTE: You can only demonstrate {sync-service} on Cordova or Ionic.
 
 // end::excludeUpstream[]
 
