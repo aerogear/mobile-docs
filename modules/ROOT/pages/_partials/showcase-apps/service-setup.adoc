@@ -39,12 +39,6 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
-// tag::excludeUpstream[]
-
-NOTE: You can only demonstrate {sync-service} on Cordova or Ionic.
-
-// end::excludeUpstream[]
-
 == Demonstrating {sync-service}
 
 . Provision a PostgreSQL database.
