@@ -39,12 +39,6 @@ For more information about features, see xref:identity-management.adoc[{keycloak
 
 . To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
 
-// tag::excludeDownstream[]
-
-NOTE: You can only demonstrate {sync-service} on Cordova.
-
-// end::excludeDownstream[]
-
 == Demonstrating {sync-service}
 
 . Provision a PostgreSQL database.
@@ -109,9 +103,9 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 		}
 	}]
 }
-
-module.exports = config;
 ----
++
+. Copy the content to your clipboard.
 
 [[configuring-the-showcase-app-to-point-at-the-provisioned-data-sync-service]]
 === Configuring the Showcase App to point at the provisioned Data Sync service
@@ -127,30 +121,8 @@ xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App
 1. Clone the showcase app
 +
 include::../cloning-showcase-app.adoc[]
-+
-2. Incorporate the Data Sync Mobile App code into the *mobile-services.json* file located within _src_:
-+
-[source,javascript]
-----
-let config = {
-  "version": 1,
-  "namespace": "voyager",
-  "clientId": "voyager-ionic-example",
-  "services": [
-    {
-    "id": "8565c444-6bed-33e9-8616-0af08791569c",
-    "name": "sync-app-syncshowcase-test16",
-    "type": "sync-app",
-    "url": "https://sync-app-syncshowcase.testbed.com/graphql",
-    "config": {
-      "websocketUrl": "wss://sync-app-syncshowcasetestbed.com/graphql"
-      }
-}
-  ]
-};
 
-module.exports = config;
-----
+2. Paste the Data Sync Mobile App configuration content into the *mobile-services.json* file located within _src_.
 
 [[running-the-showcase-app-with-data-sync-configured]]
 === Running the showcase app with Data Sync configured
