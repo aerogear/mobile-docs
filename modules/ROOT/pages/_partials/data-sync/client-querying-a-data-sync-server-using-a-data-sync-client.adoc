@@ -1,0 +1,21 @@
+[id="client-querying-a-data-sync-server-using-a-data-sync-client-{context}"]
+= Querying a Data Sync Server using a Data Sync Client
+
+Build a Data Sync Client that queries a Data Sync Server.
+Both the Data Sync Client and the Data Sync Server are running locally.
+
+.Prerequisites
+
+* link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[Getting started with an example data source schema].
+
+.Procedure
+
+.Create a basic _webpack_ project by cloning this link:https://github.com/jstaffor/webpack-getting-started/tree/edf4249dbf2c9eaf98ecf130aa617fab27062070[repo].
+
+.Verification steps
+
+//***TODO***
+
+.Additional resources
+
+* For more information about webpack, see link:https://webpack.js.org/guides/getting-started/[Getting Started].
