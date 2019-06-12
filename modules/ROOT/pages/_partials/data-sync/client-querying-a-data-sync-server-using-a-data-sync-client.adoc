@@ -6,14 +6,14 @@ Both the Data Sync Client and the Data Sync Server are running locally.
 
 .Prerequisites
 
-* link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[Getting started with an example data source schema] is running locally.
+* The example in link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[Getting started with an example data source schema] runs locally.
 * Basic knowledge of `npm`.
 
 .Procedure
 
 . Create a basic link:https://webpack.js.org/guides/getting-started/[_webpack project_] or alternatively clone this link:https://github.com/jstaffor/webpack-getting-started[Webpack Getting Started] repo.
 +
-. Open a terminal and navigate into the repo.
+. Open a terminal and navigate into the cloned project.
 +
 . To add the necessary Data Sync Client javascript libraries to your basic _webpack project_, execute the following commands:
 +
@@ -23,7 +23,7 @@ npm install @aerogear/voyager-client
 npm install graphql-tag
 ----
 +
-. Build the project and ensure that it successfully builds before continuing by executing `npm run build` - the output should be similar to:
+Before continuing, build the project and ensure that it successfully builds by executing `npm run build` - the output should be similar to:
 +
 [source,bash]
 ----
@@ -88,7 +88,6 @@ Built at: 2019-06-12 10:52:31
   Asset     Size  Chunks                    Chunk Names
 main.js  275 KiB       0  [emitted]  [big]  main
 ----
-+
 
 .Verification steps
 
