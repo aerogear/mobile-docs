@@ -2,7 +2,7 @@
 = Querying a Data Sync Server using a Data Sync Client
 
 Build a Data Sync Client that queries a Data Sync Server.
-Both the Data Sync Client and the Data Sync Server are running locally.
+Both the Data Sync Client and the Data Sync Server will be running locally in this procedure.
 
 .Prerequisites
 
@@ -23,7 +23,7 @@ npm install @aerogear/voyager-client
 npm install graphql-tag
 ----
 +
-Before continuing, build the project and ensure that it successfully builds by executing `npm run build` - the output should be similar to:
+. Before continuing, build the project and ensure that it successfully builds by executing `npm run build` - the output should be similar to:
 +
 [source,bash]
 ----
@@ -108,4 +108,4 @@ length:2
 
 .Additional resources
 
-* For more information about webpack, see link:https://webpack.js.org/guides/getting-started/[Getting Started].
+* For more information about _webpack_, see link:https://webpack.js.org/guides/getting-started/[Getting Started].
