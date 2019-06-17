@@ -98,7 +98,7 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 // TODO: @wei will default credentials always be as follows?
 . Log in to the Administration console using the credentials you specified when xref:provisioning[Provisioning] the service (defaults to admin/admin).
 
-. Select `Clients` from the left navigation menu.
+. Select *Clients* from the left navigation menu.
 +
 // TODO: with a cordova app, I didn't see mobile development platform
 . Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
