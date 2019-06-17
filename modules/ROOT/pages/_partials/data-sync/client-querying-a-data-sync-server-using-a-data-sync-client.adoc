@@ -11,7 +11,7 @@ Both the Data Sync Client and the Data Sync Server will be running locally in th
 
 .Procedure
 
-. Create a basic link:https://webpack.js.org/guides/getting-started/[_webpack project_] or alternatively clone this link:https://github.com/jstaffor/webpack-getting-started[Webpack Getting Started] repo.
+. Create a basic link:https://webpack.js.org/guides/getting-started/[_webpack project_] repo.
 +
 . Open a terminal and navigate into the cloned project.
 +
