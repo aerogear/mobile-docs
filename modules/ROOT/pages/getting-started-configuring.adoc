@@ -167,7 +167,7 @@ Depending on the target platform, set the additional value as described in eithe
 
 . Save your changes.
 
-. Creating a new user account as described in link:{docs-create-user}[Creating a New User].
+. Create a new user account as described in link:{docs-create-user}[Creating a New User].
 
 . Set up credentials for the new user as described in link:{docs-user-creds}[User Credentials].
 
