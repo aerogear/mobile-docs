@@ -102,7 +102,7 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 . Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
 
 
-. Add an additional entry to *Valid Redirect URIs*.
+. Add an additional entry to the *Valid Redirect URIs* input field.
 +
 [tabs]
 ====
