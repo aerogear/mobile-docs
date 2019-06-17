@@ -82,6 +82,12 @@ Cordova::
 ----
 $ npm install @aerogear/auth
 ----
+. Install cordova-plugin-inappbrowser:
++
+[source,bash]
+----
+$ cordova plugin add cordova-plugin-inappbrowser
+----
 Use a JavaScript bundler, for example, `browserify` so that you can use node modules in Cordova. {org-name} recommends using the `require` statement rather than `import` for the the @aerogear/auth module as shown below:
 
 // tag::excludeDownstream[]
