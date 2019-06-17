@@ -105,7 +105,3 @@ main.js  275 KiB       0  [emitted]  [big]  main
 1:{employee_id: "2", employee_name: "john", __typename: "Employee"}
 length:2
 ----
-
-.Additional resources
-
-* For more information about _webpack_, see link:https://webpack.js.org/guides/getting-started/[Getting Started].
