@@ -87,9 +87,7 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 
 . Log into the {mobile-developer-console} and navigate to the {mobile-client} screen.
 
-. Select the *Mobile Services* tab.
-
-. If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
+. Select the *Mobile Services* tab and if a spinning icon is displayed to the right of the {keycloak-service} entry, wait for the binding process to complete.
 
 . If the _{idm-name} Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
 
