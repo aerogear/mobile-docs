@@ -142,7 +142,7 @@ Depending on the platform, set the redirect URL as described in either the Andro
 Android::
 +
 --
-Use the package name of the Android app to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+Use the package name of the Android app to avoid conflicts, for example, `com.aerogear.androidshowcase`.
 --
 iOS::
 +
