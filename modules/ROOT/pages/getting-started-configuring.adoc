@@ -147,7 +147,7 @@ Use the package name of the Android app to avoid conflicts, for example, `com.ae
 iOS::
 +
 --
-Use the Bundle Identifier of the iOS app. (e.g. `org.aerogear.ios-showcase-template`)
+Use the Bundle Identifier of the iOS app, for example, `org.aerogear.ios-showcase-template`.
 --
 Cordova::
 +
