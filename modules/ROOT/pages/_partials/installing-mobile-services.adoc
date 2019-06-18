@@ -199,7 +199,7 @@ oc rollout latest openshift-automation-service-broker -n openshift-automation-se
 [[local-setup]]
 == Local OpenShift setup
 
-You can run OpenShift locally on your machine. There are two scripts in Mobile Developer Console repository which will create the cluster using Minishift or `oc cluster up`, and enable {org-name} {product-name}.
+You can run OpenShift locally on your machine. There are two scripts in Mobile Services Installer repository which will create the cluster using Minishift or `oc cluster up`, and enable {org-name} {product-name}.
 
 NOTE: On Mac only Minishift is currently supported.
 

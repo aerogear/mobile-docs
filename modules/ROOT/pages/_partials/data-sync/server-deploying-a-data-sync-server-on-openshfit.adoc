@@ -161,7 +161,7 @@ parameters:
   displayName: Git Repository URL
   description: The URL of the repository with your application source code.
   required: true
-  value: 'https://github.com/jstaffor/data-sync-spinoff'
+  value: 'https://github.com/aerogear/voyager-server'
 - name: BUILDER_IMAGE
   displayName: S2I Builder Image
   description: The S2I builder image to use when building this application
