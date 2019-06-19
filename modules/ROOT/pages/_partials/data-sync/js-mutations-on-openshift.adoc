@@ -1,0 +1,7 @@
+Mutations have been successfully tested with:
+
+* A local instance of the "Data Sync Client" running locally: https://github.com/jstaffor/data-sync-client-spinoff/commits/master
+NOTE: For more information, see https://github.com/jstaffor/data-sync-server-spinoff/commit/1bcfe9fbe7822d9c3e7303b9e515257d1f049217.
+
+* An instance of the "Data Sync Server" running in openshift: https://github.com/jstaffor/data-sync-server-spinoff/commits/master
+NOTE: For more information, see commit https://github.com/jstaffor/data-sync-client-spinoff/commit/667ae63061c1ac92948ec48ff8c2f096c7420b39.
