@@ -71,7 +71,7 @@ async function queryEmployees() {
     })
     //Print the response of the query
     .then( ({data}) => {
-      console.log(data.listEmployees)
+      document.write(JSON.stringify(data))
     });
 }
 
