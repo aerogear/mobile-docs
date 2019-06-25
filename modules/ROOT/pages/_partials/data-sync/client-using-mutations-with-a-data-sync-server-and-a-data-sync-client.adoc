@@ -1,7 +1,7 @@
-[id="client-using-mutations-with-a-data-sync-server-and-a-data-sync-client-{context}"]
-= Using Mutations with a Data Sync Server and a Data Sync Client
+[id="client-querying-a-data-sync-server-using-a-data-sync-client-{context}"]
+= Querying a Data Sync Server using a Data Sync Client
 
-Build a Data Sync Client that uses mutations on a Data Sync Server.
+Build a Data Sync Client that queries a Data Sync Server.
 Both the Data Sync Client and the Data Sync Server will be running locally in this procedure.
 
 .Prerequisites
@@ -50,7 +50,7 @@ let config = {
   wsUrl: "ws://localhost:4000/graphql",
 }
 
-async function queryEmployees() {
+async function queryPeople() {
 
   // Actually create the client
   let offlineClient = new OfflineClient(config);
@@ -61,10 +61,10 @@ async function queryEmployees() {
       fetchPolicy: 'network-only',
       query: gql`
       {
-        listEmployees
-        {
-      		employee_id,
-          employee_name,
+        addressBook {
+          name
+          address
+
         }
       }
       `
@@ -75,7 +75,7 @@ async function queryEmployees() {
     });
 }
 
-queryEmployees();
+queryPeople();
 ----
 +
 . Build the project again by executing `npm run build` - the _size_ of the `main.js` file should have increased:
@@ -91,17 +91,11 @@ main.js  275 KiB       0  [emitted]  [big]  main
 
 .Verification steps
 
-. Ensure that link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[Getting started with an example data source schema] is running.
+. Ensure that link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-using-mutations-with-a-data-sync-server-and-a-data-sync-client.adoc[using Mutations with a Data Sync Server] is running.
 +
-. Open `/dist/index.html` in a web browser.
-+
-. Open the web browser's _Console_.
-+
-. Expand the data in the Console and you should see the following content:
+. Open `/dist/index.html` in a web browser and you should see the following content:
 +
 [source,bash]
 ----
-0:{employee_id: "1", employee_name: "joe", __typename: "Employee"}
-1:{employee_id: "2", employee_name: "john", __typename: "Employee"}
-length:2
+{"addressBook":[{"name":"Alice Roberts","address":"1 Red Square, Waterford","__typename":"Person"}]}
 ----

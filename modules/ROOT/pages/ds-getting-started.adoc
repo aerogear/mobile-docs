@@ -8,4 +8,6 @@ include::_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data
 
 include::_partials/data-sync/client-querying-a-data-sync-server-using-a-data-sync-client.adoc[leveloffset=0]
 
+include::_partials/data-sync/server-using-mutations-with-a-data-sync-server-and-a-data-sync-client.adoc[leveloffset=0]
+
 include::_partials/data-sync/client-using-mutations-with-a-data-sync-server-and-a-data-sync-client.adoc[leveloffset=0]
