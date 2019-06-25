@@ -1,8 +1,8 @@
-[id="client-querying-a-data-sync-server-using-a-data-sync-client-{context}"]
-= Querying a Data Sync Server using a Data Sync Client
+[id="client-using-a-data-sync-client-to-query-a-mutation-on-a-data-sync-server-{context}"]
+= Using a Data Sync Client to query a mutation on a Data Sync Server
 
-Build a Data Sync Client that queries a Data Sync Server.
-Both the Data Sync Client and the Data Sync Server will be running locally in this procedure.
+Build a Data Sync Server and query the mutation.
+The Data Sync Server will be running locally in this procedure.
 
 .Prerequisites
 
