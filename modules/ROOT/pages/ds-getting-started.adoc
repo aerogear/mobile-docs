@@ -7,3 +7,5 @@ include::_partials/data-sync/server-getting-started-with-an-example-data-source-
 include::_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[leveloffset=0]
 
 include::_partials/data-sync/client-querying-a-data-sync-server-using-a-data-sync-client.adoc[leveloffset=0]
+
+include::_partials/data-sync/client-using-mutations-with-a-data-sync-server-and-a-data-sync-client.adoc[leveloffset=0]
