@@ -1,5 +1,5 @@
-[id="client-using-a-data-sync-client-to-query-a-mutation-on-a-data-sync-server-{context}"]
-= Using a Data Sync Client to query a mutation on a Data Sync Server
+[id="client-mutating-a-data-sync-server-using-a-data-sync-client-{context}"]
+= Mutating a Data Sync server using a Data Sync client
 
 Build a Data Sync Server and query the mutation.
 The Data Sync Server will be running locally in this procedure.
@@ -23,17 +23,7 @@ npm install @aerogear/voyager-client
 npm install graphql-tag
 ----
 +
-. Before continuing, build the project and ensure that it successfully builds by executing `npm run build` - the output should be similar to:
-+
-[source,bash]
-----
-Hash: af3fac784fa617d45d8e
-Version: webpack 4.33.0
-Time: 309ms
-Built at: 2019-12-31 10:10:10
-  Asset      Size  Chunks             Chunk Names
-main.js  70.4 KiB       0  [emitted]  main
-----
+. Before continuing, build the project and ensure that it successfully builds by executing `npm run build`.
 +
 . Replace the contents of `/src/index.js` with:
 +
@@ -78,16 +68,7 @@ async function queryPeople() {
 queryPeople();
 ----
 +
-. Build the project again by executing `npm run build` - the _size_ of the `main.js` file should have increased:
-+
-[source,bash]
-----
-Version: webpack 4.33.0
-Time: 4859ms
-Built at: 2019-06-12 10:52:31
-  Asset     Size  Chunks                    Chunk Names
-main.js  275 KiB       0  [emitted]  [big]  main
-----
+. Build the project again by executing `npm run build`.
 
 .Verification steps
 

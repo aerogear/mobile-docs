@@ -7,11 +7,11 @@ The Data Sync Server will be running locally in this procedure.
 .Prerequisites
 
 * link:https://github.com/jstaffor/mobile-docs/blob/master/modules/ROOT/pages/_partials/sync/server-getting-started.adoc[Getting Started with Hello World Data Sync].
-* You are familiar with {sync-server} operations, for example, stopping and starting {sync-server}.
+* You are familiar with Data Sync Server operations, for example, stopping and starting Data Sync Server.
 
 .Procedure
 
-. If the {sync-server} is running, stop it.
+. If the Data Sync Server is running, stop it.
 +
 . Edit the `index.js` file and replace its contents with the following content:
 +
