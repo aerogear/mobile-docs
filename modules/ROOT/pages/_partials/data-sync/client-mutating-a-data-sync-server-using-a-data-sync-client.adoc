@@ -6,7 +6,7 @@ The Data Sync Server will be running locally in this procedure.
 
 .Prerequisites
 
-* The example in link:https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[Getting started with an example data source schema] runs locally.
+* The example in xref:server-using-mutations-with-a-data-sync-server-and-a-data-sync-client-{context}[Using Mutations with a Data Sync Server] runs locally.
 * Basic knowledge of `npm`.
 
 .Procedure
