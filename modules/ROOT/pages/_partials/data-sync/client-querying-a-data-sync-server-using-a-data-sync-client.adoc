@@ -6,8 +6,7 @@ Both the Data Sync Client and the Data Sync Server will be running locally in th
 
 .Prerequisites
 
-* The example in xref:server-create-a-graphql-schema-for-an-existing-data-source-{context}[Getting started with an example data source schema] runs locally.
-* Basic knowledge of `npm`.
+Basic knowledge of `npm`.
 
 .Procedure
 
