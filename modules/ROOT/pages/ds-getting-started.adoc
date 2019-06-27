@@ -5,5 +5,3 @@ include::_partials/data-sync/server-getting-started.adoc[leveloffset=0]
 include::_partials/data-sync/server-getting-started-with-an-example-data-source-schema.adoc[leveloffset=0]
 
 include::_partials/data-sync/server-create-a-graphql-schema-for-an-existing-data-source.adoc[leveloffset=0]
-
-include::_partials/data-sync/client-querying-a-data-sync-server-using-a-data-sync-client.adoc[leveloffset=0]
