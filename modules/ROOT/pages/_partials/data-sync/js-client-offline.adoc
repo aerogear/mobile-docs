@@ -1,0 +1,174 @@
+= Supporting offline functionality in your mobile app
+:toc:
+
+The {sync-client} provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when perform queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the {sync-client} uses a mutation store to support offline mutations.
+
+image::datasync-features.png[]
+
+The mutation store is effectively a persisted queue, and it is used to hold query and mutation requests when the client is offline. If a client goes offline for a long period of time, it will be able to negotiate local updates with the server using conflict resolution strategies.
+
+When a client becomes online from the offline state, the mutations that are persisted locally will be replicated back to the server, as shown in the diagram below:
+
+image::datasync-going_offline.png[]
+
+Developers can attach listeners to get notification about if a update is applied on the server or not, and take appropriate actions.
+
+== Mutations and Local Cache
+
+By default queries are cached based on the type and `id` field, and the results of performed queries are cached as well and they will be available when the client is offline.
+
+Because of this, when mutations that can change query results are performed, the `refetchQueries` or `update` options of the `mutate` method should be used to ensure the local cache is kept up to date. {sync-client} also provides cache helper functions and an offline client to reduce the amount of code required. Please see <<cache-update-helpers>> for more information.
+
+In the following example, the app will perform an `ADD_TASK` mutation which will create a new task. The app also has a `GET_TASKS` query to list all the tasks. In order to make sure the cache for the `GET_TASKS` query is kept up to date whenever a new task is created, the `update` option is used to add the newly created task to the cache:
+
+[source, javascript]
+----
+  client.mutate({
+    mutation: ADD_TASK, variables: item,
+    update: updateCacheOnAdd
+  });
+
+  function updateCacheOnAdd(cache, { data: { createTask } }) {
+    let { allTasks } = cache.readQuery({ query: GET_TASKS });
+    if (allTasks) {
+      if (!allTasks.find((task) => task.id === createTask.id)) {
+        allTasks.push(createTask);
+      }
+    } else {
+      allTasks = [createTask];
+    }
+    cache.writeQuery({
+      query: GET_TASKS,
+      data: {
+        'allTasks': allTasks
+      }
+    });
+  }
+----
+
+For more information, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
+
+== Offline Client
+
+If you need to support offline use cases, {sync-client} comes with some functionality that may be useful.
+It provides an `OfflineClient` class which exposes the following functionality:
+
+* Automatically ensuring your application's local cache is kept up to date. This client will automatically generate `update` methods mentioned in the previous section. See: <<cache-update-helpers>>
+* Giving you direct access to the offline store the client uses.
+* Register multiple offline event listeners. See: <<sync-client-offline-queue-listener>>
+
+To create this client the following code example can be used:
+
+[source,javascript]
+----
+import { OfflineClient } from '@aerogear/voyager-client';
+
+let config = {
+  httpUrl: "Your",
+  wsUrl: "ws://localhost:4000/graphql",
+}
+
+async function setupClient() {
+
+  let offlineClient = new OfflineClient(config);
+  let client = await offlineClient.init();
+}
+
+setupClient();
+----
+
+
+== Offline Workflow
+
+If a mutation occurs while the device is offline, the client.mutate function:
+
+- returns immediately
+- returns a promise with an error
+
+You can check the _error_ object to isolate errors relating to offline state.
+Invoking the `watchOfflineChange()` method on an _error_ object watches for when an offline change is synced with the server, and sends an notification when triggered.
+after the device is online again.
+
+For example:
+[source, javascript]
+----
+  client.mutate(...).catch((error)=> {
+    // 1. Detect if this was an offline error
+   if(error.networkError && error.networkError.offline){
+     const offlineError: OfflineError =  error.networkError;
+     // 2. We can still track when offline change is going to be replicated.
+     offlineError.watchOfflineChange().then(...)
+   }
+  });
+----
+
+NOTE:  In addition to watching individual mutations, you can add a global offline listener when creating a client.
+
+
+=== Global Update Functions
+
+Apollo client holds all mutation parameters in memory.
+An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache.
+As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
+
+To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
+
+[source, javascript]
+----
+const updateFunctions = {
+  // Can contain update functions from each component
+  ...ItemUpdates,
+  ...TasksUpdates
+}
+
+let config = {
+  mutationCacheUpdates: updateFunctions,
+}
+----
+
+You can also use `getUpdateFunction` to automatically generate functions:
+
+[source, javascript]
+----
+const { createMutationOptions, CacheOperation } = require('@aerogear/voyager-client');
+
+const updateFunctions = {
+  // Can contain update functions from each component
+  createTask: getUpdateFunction('createTask', 'id', GET_TASKS, CacheOperation.ADD),
+  deleteTask: getUpdateFunction('deleteTask', 'id', GET_TASKS, CacheOperation.DELETE)
+}
+
+let config = {
+  ...
+  mutationCacheUpdates: updateFunctions,
+  ...
+}
+----
+
+=== Online Only Queries
+
+To ensure certain queries are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used to annotate a query, as the example shown below:
+
+[source, graphql]
+----
+exampleQuery(...) @onlineOnly {
+  ...
+}
+----
+
+[#sync-client-offline-queue-listener]
+== Listening for Events
+
+To handle all notifications about offline related events, use the *offlineQueueListener* listener in the config object
+
+The following events are emitted:
+
+* `onOperationEnqueued` - Called when new operation is being added to offline queue
+* `onOperationSuccess` - Called when back online and operation succeeds
+* `onOperationFailure` - Called when back online and operation fails with GraphQL error
+* `queueCleared` - Called when offline operation queue is cleared
+
+You can use this listener to build User Interfaces that show pending changes.
+
+//TODO: code example
+

@@ -70,11 +70,26 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
+. Add the following code to `index.html` located in `src/` :
++
+[source,html]
+----
+<meta http-equiv="Content-Security-Policy" content="default-src * file: 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+----
+. Install the link:https://www.npmjs.com/package/@aerogear/auth[AeroGear Auth] package from link:https://www.npmjs.com/[NPM^]:
++
 [source,bash]
 ----
 $ npm install @aerogear/auth
 ----
+. Install cordova-plugin-inappbrowser:
++
+[source,bash]
+----
+$ cordova plugin add cordova-plugin-inappbrowser
+----
+Use a JavaScript bundler, for example, `browserify` so that you can use node modules in Cordova. {org-name} recommends using the `require` statement rather than `import` for the the @aerogear/auth module as shown below:
+
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -149,12 +164,12 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Import and initialize Auth:
 
+. Import and initialize Auth.
++
 [source,javascript]
 ----
 const Auth = require('@aerogear/auth').Auth;
-
 const authService = new Auth(app.config);
 const initOptions = { onLoad: "login-required" };
 
@@ -170,7 +185,11 @@ authService.init(initOptions)
 You can pass `login-required` or `check-sso` to the init function. `login-required` will authenticate the client if the user is logged in to Keycloak or display the login page if not. `check-sso` will only authenticate the client if the user is already logged in. If the user is not logged in the browser will be redirected back to the application and remain unauthenticated. By default, the `check-sso` option is used.
 
 NOTE: Initialization also enables authentication.
+
 // tag::excludeDownstream[]
+
+To use self-signed certificates with your Cordova application, complete the following instructions link:showcase-apps.html#certs[here].
+
 --
 Xamarin::
 +
@@ -212,27 +231,6 @@ MobileCore core = MobileCoreIOS.Init(app.GetType().Assembly);
 var authService = AuthService.InitializeService();
 var authConfig = AuthenticationConfig.Builder.RedirectUri("org.aerogear.mobile.example:/callback").Build();
 authService.Configure(authConfig);
-----
-
-. To use self-signed certificates with Xamarin Android:
-.. Create a file at `Resources/xml/network_security_config.xml` with the following code:
-+
-[source,xml]
-----
-<network-security-config>
-  <base-config>
-    <trust-anchors>
-      <certificates src="user"/>
-      <certificates src="system"/>
-    </trust-anchors>
-  </base-config>
-</network-security-config>
-----
-.. Add the following value to the `<application>` tag in `AndroidManifest.xml`:
-+
-[source,xml]
-----
-android:networkSecurityConfig="@xml/network_security_config"
 ----
 --
 // end::excludeDownstream[]

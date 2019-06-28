@@ -6,14 +6,14 @@ include::_partials/attributes.adoc[]
 
 The following services are available:
 
-* link:identity-management.html[{keycloak-service}]
-* link:push-notifications.html[{unifiedpush-service}]
-* link:mobile-metrics.html[{metrics-service}]
-* link:mobile-cicd.html[{mobile-ci-cd-service}]
+* xref:identity-management.adoc[{keycloak-service}]
+* xref:push-notifications.adoc[{unifiedpush-service}]
+* xref:mobile-metrics.adoc[{metrics-service}]
+* xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
 * Security
-** link:device-security.html[{device-security-service}]
+** xref:device-security.adoc[{device-security-service}]
 ** xref:app-security.adoc[{app-security-service}]
-* link:data-sync.html[{sync-service}]
+* xref:data-sync.adoc[{sync-service}]
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 

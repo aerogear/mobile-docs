@@ -1,0 +1,5 @@
+// start {partialsdir}/attributes.adoc[]
+include::_partials/attributes.adoc[]
+// end {partialsdir}/attributes.adoc[]
+
+include::_partials/data-sync/js-client-mutate.adoc[]

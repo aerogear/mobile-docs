@@ -16,7 +16,7 @@
 
 This section guides you through configuring the redirect url and web origin for a client in {idm-name}.
 This is required to enable OpenID authentication.
-For an explanation of these terms, see link:{sso-docs-link}[{sso-name} Documentation].
+For an explanation of these terms, see link:{idm-docs-link}[{idm-name} Documentation].
 
 .Prerequisites
 
@@ -62,7 +62,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set the additional value to `\http://localhost/\*`. 
+Set the additional value to `http://localhost*`. 
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -92,7 +92,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set additional value to `\http://localhost/\*`. 
+Set additional value to `http://localhost*`. 
 // tag::excludeDownstream[]
 --
 Xamarin::

@@ -13,8 +13,11 @@ The {push-ui} allows you to send Push Notifications.
 
 NOTE: On first login you need to provide the OpenShift OAuth service permissions to read your user account.
 
-.Procedure
-
+[tabs]
+====
+Admin UI::
++
+--
 . Open the {push-ui} in a browser.
 
 . Select the target application from the home page and click *Send Notification To This App*.
@@ -26,12 +29,101 @@ image::send1.png[Send a Push]
 image::send2.png[Enter the payload]
 
 . Click *Send Push Notification* to send the message to the target application.
+--
+Java API::
 +
-image::PushMessage.png[You got a notification!]
+--
+. Add https://github.com/aerogear/aerogear-unifiedpush-java-client/[unifiedpush-java-client] as a dependency to your project.
+
++
+[source,xml]
+----
+<dependency>
+  <groupId>org.jboss.aerogear</groupId>
+  <artifactId>unifiedpush-java-client</artifactId>
+  <version>[version]</version>
+</dependency>
+----
+
+. Send the message to the target application.
+
++
+[source,java]
+----
+final PushSender sender = DefaultPushSender
+        .withRootServerURL("<pushServerURL e.g http(s)//host:port/context>")
+        .pushApplicationId("<pushApplicationId e.g. 1234456-234320>")
+        .masterSecret("<masterSecret e.g. 1234456-234320>")
+        .build();
+
+final UnifiedMessage unifiedMessage = UnifiedMessage
+        .withMessage()
+        .alert("Hello from Java Sender API!")
+        .build();
+
+sender.send(unifiedMessage, () -> {
+    //do cool stuff
+});
+----
+--
+Node.js API::
++
+--
+. Add https://github.com/aerogear/aerogear-unifiedpush-nodejs-client/[unifiedpush-node-sender] as a dependency to your project.
+
++
+[source,bash]
+----
+npm i unifiedpush-node-sender
+----
+
+. Send the message to the target application.
+
++
+[source,javascript]
+----
+var agSender = require("unifiedpush-node-sender"),
+  settings = {
+    url: "<pushServerURL e.g http(s)//host:port/context>",
+    applicationId: "<pushApplicationId e.g. 1234456-234320>",
+    masterSecret: "<masterSecret e.g. 1234456-234320>"
+  },
+  message = {
+    alert: "Hello from the Node.js Sender API!"
+  },
+  options = {
+    config: {
+        ttl: 3600,
+    }
+  };
+
+agSender.Sender(settings)
+    .send(message, options)
+    .on("success", function(response) {
+        console.log("success called", response);
+    });
+----
+--
+REST::
++
+. Send the message to the target application.
++
+--
+[source,bash]
+----
+curl -u "<pushApplicationId>:<masterSecret>"  \
+   -v -H "Accept: application/json" -H "Content-type: application/json"  \
+   -X POST  -d \
+  '{
+     "message": {
+      "alert": "Hello from the curl HTTP Sender!",
+      "sound": "default"
+     }
+   }'  \
+   <pushServerURL>
+----
+--
+====
 
 NOTE: The 3rd party Push Network is responsible for delivering the Push Notification to the target application.
 
-[discrete]
-== Additional Information
-
-* To access {unifiedpush-service} using the RESTful endpoints, see the link:https://www.aerogear.org/docs/specs/aerogear-unifiedpush-rest/[API documentation].

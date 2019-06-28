@@ -2,9 +2,9 @@
 
 == Viewing mobile services
 
-In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to services. 
-To show the list of services, go to the application *Overview* screen and to the *Mobile Services* tab. 
-There is a list of services available to be bound to the {mobile-client} and list of services that have already been bound to the client.
+In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to the appropriate services.
+To show the list of services, navigate to the application *Overview* screen and to the *Mobile Services* tab.
+A list of bound and available services is displayed.
 
 image::mobile-clients-mobile-services.png[]
 
@@ -16,40 +16,43 @@ The *Mobile Services* tab in the {mobile-client} view shows the provisioned serv
 to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
 the *Create Binding* button.
 
-You can bind a service by clicking *Bind to App* (image is the example of a Push Service).
+You can bind your {mobile-client} to a service by :
 
+. Click *Bind to App* (example image shows a Push Service binding).
++
 image::mobile-clients-service-bind-1.png[]
 
-At the second step you can fill in configuration details for the binding (image is the example of a Push Service). 
-
+. Fill in configuration details for the binding (example image shows a Push Service binding).
++
 image::mobile-clients-service-bind-2.png[]
 
-Press *Create* to create the binding (image is the example of a Push Service).
-
+. Press *Create* to create the binding (example image shows a Push Service binding).
++
 image::mobile-clients-service-bind-3.png[]
 
-*Note:* You can safely close the dialog, everything is processed in the background.
+NOTE: You can safely close the dialog, the process continues in the background.
 
 After the binding is complete, the configuration in `mobile-services.json` for the {mobile-client} is updated in the
-*Configuration* tab. This configuration is used by your app to interact with the bound services.
+*Configuration* tab.
+This configuration is used by your app to interact with the bound services.
 
 image::mobile-clients-overview-mobile-services-json.png[]
 
-=== Multiple service bindings
+.Multiple service bindings
 
-It's most usual to have only one binding per service in the application but in some cases it's possible to create multiple bindings. 
-There will be *Bind to App* button on the already bound service. The process for binding is the same.
+Typically, you create only one binding per service but in some cases it is possible to create multiple bindings.
+In this case, a  *Bind to App* button is displayed for an already bound service.
 
 image::mobile-clients-service-multibinding.png[]
 
 
-== Unbinding mobile services
+.Unbinding mobile services
 
-To remove the binding press the image:3dots.png[] button and select *Delete*. 
+To remove the binding press the image:3dots.png[] button and select *Delete*.
 
 image::mobile-clients-service-unbind.png[]
 
-=== Multiple services unbinding
+.Multiple services unbinding
 
 If there are multiple bindings for the service there will be more options for the deletion.
 

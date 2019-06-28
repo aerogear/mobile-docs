@@ -1,6 +1,16 @@
 
 = Registering a {mobile-client}
 
-After provisioning Mobile Developer Console, the next step is to register a {mobile-client} for the mobile application that you are going to develop.
+After provisioning Mobile Developer Console, the next step is to register the {mobile-client} that you are going to develop.
 
-include::mobile-client-registration-procedure.adoc[]
+.Procedure
+
+To create a {mobile-client}:
+
+. Log into the OpenShift console.
+. Choose project where you have previously deployed Mobile Developer Console.
+. Open Mobile Developer Console by clicking on its route in the *Overview* screen.
+. Log into the *Mobile Developer Console*.
+. Click on `Create Mobile App` button.
+. Enter a name for your {mobile-client}.
+. Click `Create` button.
