@@ -1,0 +1,50 @@
+= Accessing the console
+
+To access the {app-security-service} Console:
+
+. Retrieve the console URL from the list of available services in the Mobile Developer Console (MDC).
+. Open the URL in a browser.
+
+The console is only available after the {app-security-service} Service has been provisioned. 
+
+= Console overview
+
+The {app-security-service} Console allows you to monitor applications, their respective versions, and disable versions of those applications.
+
+Opening the console lists all applications. Click on an application to view version details for that application.
+
+Below is a detailed description of each of these views and the information you can expect each to contain.
+
+= Application details view
+
+This view provides statistics and information about each deployed version of an application:
+
+
+* *App Version*: The version of the application.
+* *Current Installs*: Total number of current installed versions of this version of the application.
+* *Launches*: Total number of launches of this version of the application.
+* *Last launched*: The last time this application version was launched.
+* *Disable on Startup*: Whether this application version is disabled on startup.
+* *Custom Disable Message*: A custom message that is displayed when this version of the mobile app is disabled.
+
+== Enabling and Disabling an application version
+
+To enable/disable one or more versions of the application:
+
+. Toggle the checkbox for that version in the *Disable on Startup* column. 
+. Confirm these changes by clicking the *Save* button to persist these changes. 
+
+Navigating away from this screen with unsaved changes prompts you to save or discard these changes.
+
+To disable all versions of an application:
+
+* Click the *Disable App* button.
+
+== Adding or updating a custom disabled message
+
+To add or update a custom message for the version(s) of an application:
+
+. Enter the message in the text field for that version under the *Custom Disable Message* column.
+. Confirm these changes by clicking the *Save* button to persist these changes.
+
+Navigating away from this screen with unsaved changes prompts you to save or discard these changes.

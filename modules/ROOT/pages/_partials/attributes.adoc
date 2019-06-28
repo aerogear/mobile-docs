@@ -38,6 +38,7 @@
 
 // Device Security
 :device-security-service: Device Security
+:app-security-service: App Security
 
 // Sync Service
 :sync-service: Data Sync

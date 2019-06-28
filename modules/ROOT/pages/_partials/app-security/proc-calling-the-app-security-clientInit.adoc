@@ -1,0 +1,36 @@
+= Using the {app-security-service} Service
+
+Call the appSecurity clientInit function to implement the App Security Service. Call this service on application initialization.
+ 
+[tabs]
+====
+Cordova::
++
+--
+// end::excludeDownstream[]
+[source,javascript]
+----
+appSecurity.clientInit()
+.then(clientInit => {
+  /**  
+    You can use clientInit.data.disabled boolean 
+    to check if app has been disabled by admin.
+
+    The disabled message is returned if the app is 
+    disabled at clientInit.data.disabledMessage  
+    This contains a string with a disabled message 
+    from the server set by the admin.
+  */
+}).catch(err  => {
+  /**
+    You can handle errors connecting to the 
+    mobile security service here. i.e. if the
+    client is offline that error will be caught 
+    here and you can return a response at this 
+    point
+    */
+});
+----
+// tag::excludeDownstream[]
+--
+====
