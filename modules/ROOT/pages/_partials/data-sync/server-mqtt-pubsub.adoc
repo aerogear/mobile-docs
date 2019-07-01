@@ -1,0 +1,31 @@
+[id="realtime-updates-{context}"]
+= GraphQL MQTT PubSub Setup
+
+This section specifically describes how to set up an MQTT `PubSub` for powering GraphQL subscriptions. For more generic information about PubSub mechanisms, read <<configure-a-publish-subscribe-mechanism,Configure a Publish Subscribe Mechanism>>.
+
+The https://npm.im/@aerogear/graphql-mqtt-subscriptions[`@aerogear/graphql-mqtt-subscriptions`] module provides an `AsyncIterator` interface used for <<define-subscriptions-in-the-schema-and-implement-subscription-resolvers,implementing subscription resolvers>> It allows you to connect our GraphQL server to an MQTT broker to support horizontally scalable subscriptions.
+
+.Procedure
+
+. Initialize an MQTT client and pass it into `@aerogeaar/graphql-mqtt-subscriptions`
+
+[source,js]
+----
+const mqtt = require('mqtt')
+const { MQTTPubSub } = require('@aerogear/graphql-mqtt-subscriptions')
+
+const client = mqtt.connect('mqtt://test.mosquitto.org', {
+  reconnectPeriod: 1000,
+})
+
+const pubsub = new MQTTPubSub({
+  client
+})
+----
+
+In the example, an mqtt client is created using `mqtt.connect` and then this client is passed into an `MQTTPubSub` instance. This `pubsub` can now be used to publish and subscribe to events in the server.
+
+.Additional Information
+
+* Read the https://www.npmjs.com/package/mqtt#connect[documentation for `mqtt.connect`].
+* Read the https://npmjs.com/package/@aerogear/graphql-mqtt-subscriptions[documentation for MQTTPubSub]

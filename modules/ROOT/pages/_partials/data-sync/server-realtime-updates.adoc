@@ -2,83 +2,117 @@
 = Configuring your server for real-time updates
 
 A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.
-To enable Subscriptions on the server, create an appropriate schema similar to the following example.
+To enable Subscriptions on the server, these steps must be followed.
+
+* Configure SubscriptionServer using voyager-subscriptions.
+* Configure a Publish Subscribe Mechanism.
+* Define Subscriptions in the Schema and Implement Subscription Resolvers.
+
+A typical Voyager Server setup without subscriptions is shown below.
+
+[source,js]
+----
+const apolloServer = VoyagerServer({
+  typeDefs,
+  resolvers
+})
+
+const app = express()
+apolloServer.applyMiddleware({ app })
+
+app.listen({ port }, () =>
+  console.log(`🚀 Server ready at http://localhost:${port}${apolloServer.graphqlPath}`)
+)
+----
+
+Follow the procedure to enable subscriptions on the server.
 
 .Procedure
 
-. Create a schema to support subscriptions.
+. Configure SubscriptionServer using `@aerogear/voyager-subscriptions`
 +
-For example, in the following schema a `Task` type is defined, followed by required Mutations and Subscriptions.
-When a new task is created, the resolver for that task publishes the result of this mutation to the `TaskCreated` channel.
-+
-[source,javascript]
+[source,js]
 ----
-const { gql } = require('@aerogear/voyager-server')
+const { createSubscriptionServer } = require('@aerogear/voyager-subscriptions')
 
-const typeDefs = gql `
-type Task {
-  id: ID!
-  title: String!
-  description: String!
+const apolloServer = VoyagerServer({
+  typeDefs,
+  resolvers
+})
+
+const app = express()
+apolloServer.applyMiddleware({ app })
+
+const server = app.listen({ port }, () =>
+  console.log(`🚀 Server ready at http://localhost:${port}${apolloServer.graphqlPath}`)
+
+  createSubscriptionServer({ schema: apolloServer.schema }, {
+    server,
+    path: '/graphql'
+  })
+)
+----
++
+`createSubscriptionServer` installs handlers for managing websocket connections and delivering subscriptions on the server. It is a thin wrapper around `SubscriptionServer` from the popular https://npm.im/subscriptions-transport-ws[subscriptions-transport-ws] module that provides integrations with other modules such as `@aerogear/voyager-keycloak`.
+`createSubscriptionServer` returns a `SubscriptionServer` instance and it supports all of the same arguments and options.
++
+
+. Configure a Publish Subscribe Mechanism
++
+Subscriptions depend on a https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern[publish subscribe] mechanism to generate the events that notify a subscription. There are https://www.apollographql.com/docs/apollo-server/features/subscriptions/#pubsub-implementations[several `PubSub` implementations] available based on the `PubSubEngine` interface.
++
+[source,js]
+----
+const { PubSub } = require('apollo-server')
+
+const pubsub = new PubSub()
+----
++
+This example uses the default `PubSub` provided by `apollo-server`. This is an in memory implementation which is useful for prototyping but not suitable for production. We recommend using link:npm.im/@aerogear/graphql-mqtt-subscriptions[MQTT PubSub] in production.
++
+. Define Subscriptions in the Schema and Implement Subscription Resolvers 
++
+Subscriptions are a root level type. They are defined in the schema similar to `Query` and `Mutation`. For example, in the following schema, a `Task` type is defined, as well as required Mutations and Subscriptions.
++
+----
+type Subscription {
+  taskCreated: Task
 }
 
 type Mutation {
   createTask(title: String!, description: String!): Task
 }
 
-type Subscription {
-  taskCreated: Task
+type Task {
+  id: ID!
+  title: String!
+  description: String!
 }
-`
+----
++
+Inside the resolver map, Subscription resolvers return an `AsyncIterator,` which listens for events.
+To generate an event, the `publish` method is used on the `pubsub` implementation. `pubsub.publish` can be called anywhere but it is usually called inside a Mutation resolver.
++
+In the example, when a new task is created, the `createTask` resolver publishes the result of this mutation to the `TaskCreated` channel.
++
+[source,js]
+----
+const TASK_CREATED = 'TaskCreated'
 
 const resolvers = {
-    Mutation: {
-        createTask: async (obj, args, context, info) => {
-            const result = tasks.create(args)
-            pubSub.publish('TaskCreated', {
-                taskCreated: result
-              });
-            return result
-        }
-    },
-    Subscription: {
-        taskCreated: {
-            subscribe: () => pubSub.asyncIterator('TaskCreated')
-        }
+  Subscription: {
+    taskCreated: {
+      subscribe: () => pubSub.asyncIterator(TASK_CREATED)
+    }
+  },
+  Mutation: {
+    createTask: async (obj, args, context, info) => {
+      const task = tasks.create(args)
+      pubSub.publish(TASK_CREATED, { taskCreated: task })
+      return task
+    }
   },
 }
-----
-+
-NOTE: The pubSub mechanism used in the above example is deliberately ommited to focus on the GraphQL aspects of
-Subscriptions. For more information on the available PubSub implementations see: link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html#PubSub-Implementations[PubSub Implementations].
-
-. Use the `subscriptions-transport-ws` package to set up the server.
-+
-For more information on how to use and configure `SubscriptionServer` see the link:https://www.apollographql.com/docs/graphql-subscriptions/setup.html#subscription-server[Apollo Subscription Server documentation].
-+
-Using the example server described in xref:sync-server-getting-started[] you can add subscriptions as follows by introducing http and wraping our express app:
-+
-[source,javascript]
-----
-const http = require('http')
-const { SubscriptionServer } = require('subscriptions-transport-ws')
-const { execute, subscribe } = require('graphql')
-
-const httpServer = http.createServer(app)
-
-server.applyMiddleware({ app })
-
-httpServer.listen(4000, () => {
-  new SubscriptionServer ({
-    execute,
-    subscribe,
-    schema: server.schema
-  }, {
-    server: httpServer,
-    path: '/graphql'
-  })
-})
-
 ----
 
 NOTE: For information on how to protect this subscription server with {keycloak-service} see xref:sync-server-auth[].
@@ -88,3 +122,5 @@ NOTE: For information on how to protect this subscription server with {keycloak-
 * For more information on GraphQL subscriptions, see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].
 
 * For documentation on how to use Subscriptions on your client, see xref:sync-js-client-realtime-updates[Realtime Updates].
+
+
