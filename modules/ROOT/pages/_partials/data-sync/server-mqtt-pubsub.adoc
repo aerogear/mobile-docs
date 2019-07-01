@@ -1,4 +1,4 @@
-[id="realtime-updates-{context}"]
+[id="mqtt-pubsub-{context}"]
 = GraphQL MQTT PubSub Setup
 
 This section specifically describes how to set up an MQTT `PubSub` for powering GraphQL subscriptions. For more generic information about PubSub mechanisms, read <<configure-a-publish-subscribe-mechanism,Configure a Publish Subscribe Mechanism>>.
