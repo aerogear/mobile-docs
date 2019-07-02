@@ -22,13 +22,13 @@ AMQ Online has a vast number of configuration options which should be considered
 
 At a minimum, the following steps must be done to enable MQTT messaging.
 
-* Create an AddressSpace
-* Create an Address
-* Create a MessagingUser
+* Create an `AddressSpace`
+* Create an `Address`
+* Create a `MessagingUser`
 
-== Create an AddressSpace
+== Create an `AddressSpace`
 
-A user can request messaging resources by creating an address space. An address space is the first resource you must create. There are two types of address spaces `standard` and `brokered`. The `brokered` address space must be used for MQTT based applications. The following definition can be used to create a brokered address space.
+A user can request messaging resources by creating an `AddressSpace`. An `AddressSpace` is the first resource you must create. There are two types of `AddressSpace`. `standard` and `brokered`. The `brokered` `AddressSpace` must be used for MQTT based applications. The following definition can be used to create a brokered `AddressSpace`.
 
 ----
 apiVersion: enmasse.io/v1beta1
@@ -40,58 +40,58 @@ spec:
   plan: brokered-single-broker
 ----
 
-Create the address space.
+Create the `AddressSpace`.
 
 ----
 oc create -f brokered-address-space.yaml
 ----
 
-Get the details of the address space.
+Get the details of the `AddressSpace`.
 
 ----
-oc get <address space name> -o yaml
+oc get <`AddressSpace` name> -o yaml
 ----
 
 The output will display information including various connection details for connecting applications.
 
-See https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#create-address-space-cli-messaging[Creating address spaces using the command line] for more information.
+See https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#create-address-space-cli-messaging[Creating `AddressSpace`s using the command line] for more information.
 
-== Create an Address
+== Create an `Address`
 
-An address is part of an address space and represents a destination for sending and receiving messages. An address is created and used to represent a topic in MQTT terms. For MQTT, a `topic` address type must be used.
+An `Address` is part of an `AddressSpace` and represents a destination for sending and receiving messages. An `Address` is created and used to represent a topic in MQTT terms. For MQTT, a `topic` `Address` type must be used.
 
 ----
 apiVersion: enmasse.io/v1beta1
 kind: Address
 metadata:
-    name: myaddressspace.myaddress # must have the format <address space name>.<address name>
+    name: myaddressspace.myaddress # must have the format <`AddressSpace` name>.<address name>
 spec:
     address: myaddress
     type: topic
     plan: brokered-topic
 ----
 
-Create the address using the command line.
+Create the `Address` using the command line.
 
 ----
 oc create -f topic-address.yaml
 ----
 
-NOTE: In the xref:#realtime-updates-{context}[Configuring your server for real-time updates] guide, the usage of `pubsub.asyncIterator()` is described. An address must be created for each topic name passed into `pubsub.asyncIterator()`.
+NOTE: In the xref:#realtime-updates-{context}[Configuring your server for real-time updates] guide, the usage of `pubsub.asyncIterator()` is described. An `Address` must be created for each topic name passed into `pubsub.asyncIterator()`.
 
 See https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#create-address-cli-messaging[Creating addresses using the command line] for more information.
 
-== Create a MessagingUser
+== Create a `MessagingUser`
 
-A messaging client connects using a MessagingUser. A MessagingUser specifies an authorization policy that controls which addresses may be used and the operations that may be performed on those addresses.
+A messaging client connects using a `MessagingUser`. A `MessagingUser` specifies an authorization policy that controls which addresses may be used and the operations that may be performed on those addresses.
 
-Users are configured as MessagingUser resources. Users can be created, deleted, read, updated, and listed.
+Users are configured as `MessagingUser` resources. Users can be created, deleted, read, updated, and listed.
 
 ----
 apiVersion: user.enmasse.io/v1beta1
 kind: MessagingUser
 metadata:
-  name: myaddressspace.mymessaginguser # must be in the format <address space name>.<username>
+  name: myaddressspace.mymessaginguser # must be in the format <`AddressSpace` name>.<username>
 spec:
   username: mymessaginguser
   authentication:
@@ -102,13 +102,13 @@ spec:
       operations: ["send", "recv"]
 ----
 
-Create the messaging user.
+Create the `MessagingUser`.
 
 ----
 oc create -f my-messaging-user.yaml
 ----
 
-An application can now connect to an AMQ Online address using this ``MessagingUser``'s credentials. For more information see https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#con-user-model-messaging[AMQ Online User Model].
+An application can now connect to an AMQ Online `Address` using this `MessagingUser`'s credentials. For more information see https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#con-user-model-messaging[AMQ Online User Model].
 
 = Using GraphQL MQTT PubSub with AMQ Online
 
@@ -116,22 +116,22 @@ An application can now connect to an AMQ Online address using this ``MessagingUs
 
 * OpenShift cluster
 * AMQ Online is installed in the OpenShift cluster
-* The appropriate AMQ Online resources are available for MQTT Applications (AddressSpace, Address, MessagingUser)
+* The appropriate AMQ Online resources are available for MQTT Applications (`AddressSpace`, Address, `MessagingUser`)
 
-This guide describes how to use https://npm.im/@aerogear/graphql-mqtt-subscriptions[`@aerogear/graphql-mqtt-subscriptions`] to connect to an AMQ Online address.
+This guide describes how to use https://npm.im/@aerogear/graphql-mqtt-subscriptions[`@aerogear/graphql-mqtt-subscriptions`] to connect to an AMQ Online `Address`.
 
-The connection details for an Address Space can be retrieved from the terminal.
+The connection details for an `AddressSpace` can be retrieved from the terminal.
 
 ----
 oc get addressspace <addressspace> -o yaml
 ----
 
-In most cases, there are two options for connecting to an AMQ Online address.
+In most cases, there are two options for connecting to an AMQ Online `Address`.
 
 * Using the service hostname - Allows clients to connect from within the OpenShift cluster.
 * Using the external hostname - Allows clients to connect from outside the OpenShift cluster.
 
-== Connecting to an AMQ Online Address Using the Service Hostname
+== Connecting to an AMQ Online `Address` Using the Service Hostname
 
 It is recommended that applications running inside OpenShift connect using the service hostname. The service hostname is only accessible within the OpenShift cluster. This ensures messages routed between your application and AMQ Online stay within the OpenShift cluster and never go onto the public internet.
 
@@ -190,12 +190,12 @@ There are some additional options passed into `mqtt.connect`
 * `rejectUnauthorizated` - Must be set to false, otherwise the connection will fail. This tells the client to ignore certificate errors. Again, this is needed because the client is presented with multiple certificates and one of the certificates is for a different hostname than the one being requested, which normally results in an error.
 * `port` - must be set to 5761 for tls connections to the service hostname.
 
-== Connecting to an AMQ Online Address Using the External Hostname
+== Connecting to an AMQ Online `Address` Using the External Hostname
 
 The external hostname allows connections from outside the OpenShift cluster. This is useful for the following cases.
 
 * Production applications running outside of OpenShift connecting and publishing messages.
-* Quick Prototyping and local development. A non-production Address Space could be created, allowing developers to connect applications from their local environments.
+* Quick Prototyping and local development. A non-production `AddressSpace` could be created, allowing developers to connect applications from their local environments.
 
 The external hostname is typically TLS only for security reasons. It can be retrieved using the terminal.
 
