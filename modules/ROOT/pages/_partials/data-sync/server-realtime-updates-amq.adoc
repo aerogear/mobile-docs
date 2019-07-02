@@ -204,7 +204,7 @@ The external hostname is typically TLS only for security reasons. It can be retr
 oc get addressspace <addressspace name> -o jsonpath='{.status.endpointStatuses[?(@.name=="messaging")].externalHost
 ----
 
-Connect to the external hostname using the same sample code in <<connecting-using-tls,Connecting using TLS>>. The only difference is that the `port` property must be set to `443`.
+Connect to the external hostname using the same sample code in xref:connecting-using-tls[Connecting using TLS]. The only difference is that the `port` property must be set to `443`.
 
 == Recommended Configuration Using Environment Variables
 
