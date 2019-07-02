@@ -16,6 +16,7 @@ ifdef::context[:parent-context: {context}]
 [id='a-collection-of-modules']
 
 = Using the {app-security-service} Service
+:page-partial:
 
 == Prerequisites
 

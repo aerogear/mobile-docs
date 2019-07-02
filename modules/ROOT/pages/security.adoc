@@ -2,23 +2,15 @@
 include::_partials/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 
-= Security Services
+= Making your mobile app secure
 
-There are two security services available:
+This guide does not address all mobile security topics. See <link> for an introduction to mobile security.
+{org-name} helps you achieve security using:
 
-
-[cols=","]
-|===
-
-a| xref:device-security.adoc[Device Security Service]
-
-a| xref:app-security.adoc[App Security Service]
+* {app-security-service} service - remotely disable specific app variants
+* {device-security-service} - for example, disallow running app on rooted devices
 
 
-a|
-include::_partials/generic-service-intros.adoc[tags=device-security-service]
+include::app-security.adoc[leveloffset=1]
+include::device-security.adoc[leveloffset=1]
 
-a| 
-
-include::_partials/generic-service-intros.adoc[tags=security-service]
-|===
