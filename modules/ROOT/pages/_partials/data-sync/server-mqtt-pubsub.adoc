@@ -9,7 +9,9 @@ It connects the {sync-service} server to an MQTT broker to support horizontally 
 .Procedure
 
 . Initialize an MQTT client and pass it into `@aerogeaar/graphql-mqtt-subscriptions`
-
++
+[%collapsible]
+====
 [source,js]
 ----
 const mqtt = require('mqtt')
@@ -23,6 +25,7 @@ const pubsub = new MQTTPubSub({
   client
 })
 ----
+====
 
 In the example, an mqtt client is created using `mqtt.connect` and then this client is passed into an `MQTTPubSub` instance. This `pubsub` can now be used to publish and subscribe to events in the server.
 

@@ -7,6 +7,9 @@ include::_partials/attributes.adoc[]
 = Supporting real-time updates in your mobile app
 :toc:
 
+
+include::_partials/data-sync/realtime-intro.adoc[leveloffset=1]
+
 include::_partials/data-sync/server-realtime-updates.adoc[leveloffset=1]
 
 include::_partials/data-sync/server-mqtt-pubsub.adoc[leveloffset=1]
