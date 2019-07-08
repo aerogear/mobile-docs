@@ -3,7 +3,7 @@ SDKs for our Mobile Services are available for a variety of platforms, including
 Click on the link:#[✔] to see the API reference documentation:
 
 |===
-| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service} | {app-security-service} | Data Sync
+| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service} | {app-security-service} | Data Sync Client
 
 | Android
 | link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
