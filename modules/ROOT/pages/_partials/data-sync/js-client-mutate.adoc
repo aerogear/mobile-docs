@@ -29,7 +29,6 @@ async function addPerson() {
 
   // Execute the mutation
   client.mutate({
-      fetchPolicy: 'network-only',
       mutation: gql`
        mutation {
          post(name: "John Doe", address: "1 Red Hill") {
