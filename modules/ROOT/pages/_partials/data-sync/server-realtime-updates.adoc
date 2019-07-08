@@ -1,16 +1,5 @@
 [id="realtime-updates-{context}"]
-= Configuring your server for real-time updates
-
-To enable Subscriptions on the server:
-
-* Configure SubscriptionServer using voyager-subscriptions.
-+
-This allows you create GraphQL subscription types in your schema. 
-* Configure a Publish Subscribe Mechanism.
-+
-This provides a channel to push updates to your client.
-
-* Define Subscriptions in the Schema and implement subscription resolvers.
+= Implementing real-time updates on a Data Sync server 
 
 The follow code shows typical code for a Data Sync Server without subscriptions:
 
@@ -33,11 +22,15 @@ app.listen({ port }, () =>
 ====
 
 
-.Procedure
+== Configuring SubscriptionServer using voyager-subscription
 
-To enable subscriptions for the Data Sync server:
+To allow you create GraphQL subscription types in your schema:
 
-WARNING: This example uses the default `PubSub` provided by `apollo-server`. This is an in memory implementation which is useful for prototyping but not suitable for production. We recommend using link:npm.im/@aerogear/graphql-mqtt-subscriptions[MQTT PubSub] in production.
+. Install the `@aerogear/voyager-subscriptions` package:
++
+----
+$ npm i @aerogear/voyager-subscriptions
+----
 
 . Configure SubscriptionServer using `@aerogear/voyager-subscriptions`
 +
@@ -75,7 +68,13 @@ The `createSubscriptionServer` code:
 * provides integrations with other modules such as `@aerogear/voyager-keycloak`.
 +
 See https://npm.im/subscriptions-transport-ws[subscriptions-transport-ws] module for more information about arguments and options.
-+
+
+
+== Configuring a Publish Subscribe Mechanism
+
+WARNING: This is an in memory implementation which is useful for prototyping but not suitable for production. {org-name} recommends using link:npm.im/@aerogear/graphql-mqtt-subscriptions[MQTT PubSub] in production. See xref:amq-online[] for more details.
+
+To provide a channel to push updates to the client using the default `PubSub` provided by `apollo-server`:
 
 . Configure a Publish Subscribe Mechanism
 +
@@ -90,8 +89,11 @@ const { PubSub } = require('apollo-server')
 const pubsub = new PubSub()
 ----
 ====
-+
-. Define Subscriptions in the Schema and Implement Subscription Resolvers 
+
+
+== Defining subscriptions in the schema
+
+. Define Subscriptions in the Schema 
 +
 Subscriptions are a root level type. They are defined in the schema similar to `Query` and `Mutation`. For example, in the following schema, a `Task` type is defined, as well as required Mutations and Subscriptions.
 +
@@ -113,7 +115,10 @@ type Task {
 }
 ----
 ====
-+
+
+
+== Implementing resolvers
+
 Inside the resolver map, Subscription resolvers return an `AsyncIterator,` which listens for events.
 To generate an event, the `publish` method is used on the `pubsub` implementation. `pubsub.publish` can be called anywhere but it is usually called inside a Mutation resolver.
 +
@@ -144,9 +149,7 @@ const resolvers = {
 
 NOTE: This subscription server does not enforce authentication or authorization. See {keycloak-service} see xref:sync-server-auth[].
 
-.Additional Information
-
-* For more information on GraphQL subscriptions, see the link:https://www.apollographql.com/docs/apollo-server/features/subscriptions.html[Subscriptions documentation].
+Additional Information
 
 * For documentation on how to use Subscriptions on your client, see xref:sync-js-client-realtime-updates[Realtime Updates].
 
