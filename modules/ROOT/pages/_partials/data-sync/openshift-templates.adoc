@@ -8,13 +8,15 @@ Templates:
 
 - DataSync App
 
-The DataSync App template allows developers to deploy the Node.js DataSync App on Openshift using source code only.  _Node s2i_  is used to build the DataSync App image.
+The DataSync App template allows developers to deploy the Node.js DataSync App on Openshift using source code only.
+_Node s2i_  is used to build the Data Sync App image.
+NOTE: You must set the `NODE_ENV` environment variable to `development` and redeploy the pod to ensure access to the GraphQL playground.
 
 The DataSync App can connect with other services running on OpenShift and can also connect to external data sources.
 
 - DataSync Showcase
 
-Showcase application will deploy fully functional server with example Task implementation. 
+Showcase application will deploy fully functional server with example Task implementation.
 Server side requires client application available on github link:https://github.com/aerogear/ionic-showcase[aerogear/ionic-showcase]
 
 > Note: Showcase server template can be used only for demo purposes and it should not be used in production.
