@@ -29,14 +29,15 @@ Click on the link:#[✔] to see the API reference documentation:
 | Xamarin
 | link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_core.html[✔]
 | link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_auth.html[✔]
-| 
+|
 | link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_security.html[✔]
 |
 
-| {data-sync-service}
+| Data Sync
 |
 |
 |
 | link:https://docs.aerogear.org/api/cordova/latest/voyager-client/[✔]
 |
+
 |===
