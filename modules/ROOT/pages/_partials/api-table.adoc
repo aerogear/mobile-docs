@@ -3,7 +3,7 @@ SDKs for our Mobile Services are available for a variety of platforms, including
 Click on the link:#[✔] to see the API reference documentation:
 
 |===
-| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service} | {app-security-service}
+| Platform | Core | {keycloak-service} | {unifiedpush-service} | {device-security-service} | {app-security-service} | {data-sync-service}
 
 | Android
 | link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
@@ -31,5 +31,12 @@ Click on the link:#[✔] to see the API reference documentation:
 | link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_auth.html[✔]
 | 
 | link:/api/xamarin/latest/namespace_aero_gear_1_1_mobile_1_1_security.html[✔]
+|
+
+| {data-sync-service}
+|
+|
+|
+| link:https://docs.aerogear.org/api/cordova/latest/voyager-client/[✔]
 |
 |===
