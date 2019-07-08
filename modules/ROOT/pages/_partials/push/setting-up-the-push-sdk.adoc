@@ -93,13 +93,6 @@ Cordova::
 $ cordova plugin add @aerogear/cordova-plugin-aerogear-push
 ----
 
-. Ionic Apps require an additional dependency, the link:https://ionicframework.com/docs/native/push/[Ionic Native Push Library^]
-+
-[source,bash]
-----
-$ npm install --save @ionic-native/push
-----
-
 . Install the Unified Push Server package needed for device registration:
 +
 [source,bash]
