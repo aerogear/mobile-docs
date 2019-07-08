@@ -60,6 +60,7 @@ $ node index-2.js
 
 
 
+
 . Add the following libraries to your javascript client:
 +
 [source,bash]
@@ -67,6 +68,8 @@ $ node index-2.js
 npm install @aerogear/voyager-client
 npm install graphql-tag
 ----
++
+NOTE: A prerequisite is that you have created an empty web project that supports ES6, for example, using the link:https://webpack.js.org/guides/getting-started/[webpack getting started] guide.
 
 . Create an `index.js` file to make the same query as step 1, but from JavaScript. 
 +
@@ -81,7 +84,7 @@ import gql from 'graphql-tag';
 
 import { OfflineClient } from '@aerogear/voyager-client';
 
-// For our client application, we will connect to the local service.
+// connect to the local service.
 let config = {
   httpUrl: "http://localhost:4000/graphql",
   wsUrl: "ws://localhost:4000/graphql",
@@ -114,7 +117,10 @@ async function queryPeople() {
 queryPeople();
 ----
 
-. Build and run the client application, the output should be similar to the following:
+. Build and run the client application.
+. Browse the client application and check the console output.
++
+It should include an array similar to the following:
 +
 ----
 address: "1 Red Square, Waterford"
