@@ -9,7 +9,8 @@ Templates:
 - DataSync App
 
 The DataSync App template allows developers to deploy the Node.js DataSync App on Openshift using source code only.
-_Node s2i_  is used to build the Data Sync App image, however, in the Data Sync App's _Environment_ section you must input `NODE_ENV` into the _Name_ field and `development` into the accompanying _Value_ field. For the changes to take affect, the pod must be redeployed.
+_Node s2i_  is used to build the Data Sync App image.
+NOTE: You must set the `NODE_ENV` environment variable to `development` and redeploy the pod to ensure access to the GraphQL playground.
 
 The DataSync App can connect with other services running on OpenShift and can also connect to external data sources.
 
