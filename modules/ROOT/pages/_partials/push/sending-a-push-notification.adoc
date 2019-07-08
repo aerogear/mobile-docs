@@ -120,7 +120,7 @@ curl -u "<pushApplicationId>:<masterSecret>"  \
       "sound": "default"
      }
    }'  \
-   <pushServerURL>
+   <pushServerURL>/rest/sender
 ----
 --
 ====
