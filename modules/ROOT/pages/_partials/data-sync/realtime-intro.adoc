@@ -9,7 +9,7 @@ When coding for real-time updates, you use the following modules:
 
 * @aerogear/voyager-server - supports clients that use voyager-client to enable GraphQL queries and mutations
 * @aerogear/voyager-subscriptions - supports clients that use voyager-client to enable GraphQL subscriptions
-* @aerogear/graph-mqtt-subscriptions - supports GraphQL resolvers connections to a MQTT broker
+* @aerogear/graphql-mqtt-subscriptions - supports GraphQL resolvers connections to a MQTT broker
 
 GraphQL Subscriptions enable clients to subscribe to server events over a websocket connection.
 
