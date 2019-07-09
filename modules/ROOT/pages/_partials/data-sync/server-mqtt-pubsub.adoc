@@ -1,9 +1,11 @@
 [id="mqtt-pubsub-{context}"]
 = Configuring a Publish Subscribe mechanism
 
+You can use the Apollo PubSub mechanism for development, but you must use the MQTT PubSub mechanism for production.
+
 == Using the Apollo PubSub mechanism
 
-The xref:realtime-updates-{context}[] section describes how to set up the default `PubSub` provided by `apollo-server`. For a production system, you require link:npm.im/@aerogear/graphql-mqtt-subscriptions[MQTT PubSub] in production.
+The xref:realtime-updates-{context}[] section describes how to set up the default `PubSub` provided by `apollo-server`. For a production system, you require link:npm.im/@aerogear/graphql-mqtt-subscriptions[MQTT PubSub].
 
 
 == Using the MQTT PubSub mechanism
@@ -11,10 +13,10 @@ The xref:realtime-updates-{context}[] section describes how to set up the defaul
 The https://npm.im/@aerogear/graphql-mqtt-subscriptions[`@aerogear/graphql-mqtt-subscriptions`] module provides an `AsyncIterator` interface used for xref:realtime-updates-{context}[implementing subscription resolvers]
 It connects the {sync-service} server to an MQTT broker to support horizontally scalable subscriptions.
 
-.Procedure
 
-. Initialize an MQTT client and pass it into `@aerogeaar/graphql-mqtt-subscriptions`
-+
+
+To initialize an MQTT client and pass it into `@aerogeaar/graphql-mqtt-subscriptions`
+
 [%collapsible]
 ====
 [source,js]
@@ -36,5 +38,5 @@ In the example, an mqtt client is created using `mqtt.connect` and then this cli
 
 .Additional Information
 
-* Read the https://www.npmjs.com/package/mqtt#connect[documentation for `mqtt.connect`].
-* Read the https://npmjs.com/package/@aerogear/graphql-mqtt-subscriptions[documentation for MQTTPubSub]
+* link:https://www.npmjs.com/package/mqtt#connect[mqtt.connect documentation].
+* link:https://npmjs.com/package/@aerogear/graphql-mqtt-subscriptions[MQTTPubSub documentation]
