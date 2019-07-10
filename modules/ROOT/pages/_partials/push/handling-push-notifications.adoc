@@ -52,15 +52,8 @@ Cordova::
 --
 // end::excludeDownstream[]
 
-. Install the push plugin:
-+
-[source,bash]
-----
-$ cordova plugin add @aerogear/cordova-plugin-aerogear-push
-----
+Add the following code to your app:
 
-. Add the following code to your app:
-+
 [source,bash]
 ----
 PushRegistration.onMessageReceived((notification: any) => {
