@@ -1,8 +1,8 @@
 = Configuring AMQ Online for MQTT Messaging
 
-Red Hat AMQ supports the MQTT protocol which makes it a suitable Pubsub technology for powering GraphQL subscriptions at scale. 
+Red Hat AMQ supports the MQTT protocol which makes it a suitable PubSub technology for powering GraphQL subscriptions at scale. 
 
-This document provides recommendations for
+This section provides recommendations for
 
 * Configuring AMQ Online for MQTT messaging.
 * Connecting to AMQ Online and using it as a pubsub within server applications.
@@ -15,22 +15,25 @@ This document provides recommendations for
 
 * http://mqtt.org/[MQTT] stands for MQ Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol.
 
+// tag::excludeDownstream[]
 .Prerequisites
 
 * OpenShift Cluster
 * AMQ Online is installed in the OpenShift cluster
+// end::excludeDownstream[]
 
-AMQ Online has a vast number of configuration options which should be considered to suit the specific needs of your application. This section establishes some base guidelines for configuring AMQ Online for MQTT messaging, enabling GraphQL subscriptions.
+AMQ Online includes many configuration options that could address the specific needs of your application. 
+The minimum configuration steps for using AMQ Online for MQTT messaging and enabling GraphQL subscriptions are
 
-At a minimum, the following steps must be done to enable MQTT messaging.
+. Create an `AddressSpace`
+. Create an `Address`
+. Create a `MessagingUser`
 
-* Create an `AddressSpace`
-* Create an `Address`
-* Create a `MessagingUser`
+== Creating an address space
 
-== Creating an AddressSpace
-
-A user can request messaging resources by creating an `AddressSpace`. An `AddressSpace` is the first resource you must create. There are two types of `AddressSpace`. `standard` and `brokered`. The `brokered` `AddressSpace` must be used for MQTT based applications. The following definition can be used to create a brokered `AddressSpace`.
+A user can request messaging resources by creating an `AddressSpace`. There are two types of address space, `standard` and `brokered`. 
+You must use the `brokered` address space for MQTT based applications. 
+The following example definition (CRD) creates a brokered `AddressSpace`:
 
 ----
 apiVersion: enmasse.io/v1beta1
@@ -42,25 +45,29 @@ spec:
   plan: brokered-single-broker
 ----
 
-Create the `AddressSpace`.
-
+. Create the `AddressSpace`.
++
 ----
 oc create -f brokered-address-space.yaml
 ----
 
-Get the details of the `AddressSpace`.
-
+. Get the details of the `AddressSpace`.
++
 ----
 oc get <`AddressSpace` name> -o yaml
 ----
++
+The output displays information about the address space, including details required for connecting applications.
 
-The output will display information including various connection details for connecting applications.
+.Additional Information
 
-See https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#create-address-space-cli-messaging[Creating `AddressSpace`s using the command line] for more information.
+See https://access.redhat.com/documentation/en-us/red_hat_amq/7.3/html-single/using_amq_online_on_openshift_container_platform/index#create-address-space-cli-messaging[Creating address spaces using the command line] for more information.
 
 == Creating an Address
 
-An `Address` is part of an `AddressSpace` and represents a destination for sending and receiving messages. An `Address` is created and used to represent a topic in MQTT terms. For MQTT, a `topic` `Address` type must be used.
+An adress is part of an `AddressSpace` and represents a destination for sending and receiving messages. 
+You use an `Address` to represent an MQTT topic. 
+For MQTT, you must use a `topic` adress type.
 
 ----
 apiVersion: enmasse.io/v1beta1
@@ -73,8 +80,8 @@ spec:
     plan: brokered-topic
 ----
 
-Create the `Address` using the command line.
-
+. Create the `Address` using the command line.
++
 ----
 oc create -f topic-address.yaml
 ----

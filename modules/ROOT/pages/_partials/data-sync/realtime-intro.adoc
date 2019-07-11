@@ -1,7 +1,7 @@
 [id="realtime-intro-{context}"]
 = Introduction to real-time updates
 
-After you have developed some queries and mutations, you might want to implement real-time updates.
+After developing some queries and mutations, you might want to implement real-time updates.
 These are supported in the GraphQL specification by an operation type called `Subscription`.
 To support scalable, reliable subscriptions in a production environment, Data Sync implements subscriptions using an MQTT PubSub subscription mechanism, however you might want to use the Apollo PubSub module to develop proof-of-concept applications.  
 
@@ -23,8 +23,6 @@ The flow can be summarized as follows:
 To receive updates, the client must be currently connected to the server.
 The client does not receive events from subscriptions while offline.
 To support inactive clients, use Push Notifications.
-
-{sync-client} comes with subscription support out of the box including auto-reconnection upon device restart or network reconnect.
 
 .Additional resources
 

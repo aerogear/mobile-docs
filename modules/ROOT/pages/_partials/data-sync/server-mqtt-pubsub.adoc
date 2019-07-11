@@ -10,12 +10,13 @@ The xref:realtime-updates-{context}[] section describes how to set up the defaul
 
 == Using the MQTT PubSub mechanism
 
+// TODO: check link
 The https://npm.im/@aerogear/graphql-mqtt-subscriptions[`@aerogear/graphql-mqtt-subscriptions`] module provides an `AsyncIterator` interface used for xref:realtime-updates-{context}[implementing subscription resolvers]
 It connects the {sync-service} server to an MQTT broker to support horizontally scalable subscriptions.
 
 
 
-To initialize an MQTT client and pass it into `@aerogeaar/graphql-mqtt-subscriptions`
+Initialize an MQTT client and pass that client to the `@aerogeaar/graphql-mqtt-subscriptions` module, for example:
 
 [%collapsible]
 ====
@@ -34,7 +35,8 @@ const pubsub = new MQTTPubSub({
 ----
 ====
 
-In the example, an mqtt client is created using `mqtt.connect` and then this client is passed into an `MQTTPubSub` instance. This `pubsub` can now be used to publish and subscribe to events in the server.
+In the example, an `mqtt` client is created using `mqtt.connect` and then this client is passed into an `MQTTPubSub` instance. 
+The `pubsub` instance can then be used to publish and subscribe to events in the server.
 
 .Additional Information
 
