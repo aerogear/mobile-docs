@@ -17,7 +17,7 @@ The Data Sync client can be integrated into frameworks such as React and Angular
 The Data Sync server offers enterprise extensions for ensuring data security, integrity, and monitoring.
 It can be integrated into existing Node.js application.
 
-The {data-sync-service} framework uses the link:https://www.apollographql.com/[Apollo platform] as the GraphQL implementation.
+The {sync-service} framework uses the link:https://www.apollographql.com/[Apollo platform] as the GraphQL implementation.
 
 .Additional resources
 
