@@ -82,56 +82,16 @@ func application(_ application: UIApplication,
 Cordova::
 +
 --
-[sidebar]
-.Using plain Cordova
 [source,javascript]
 ----
 import { PushRegistration } from "@aerogear/push";
 
-const push = PushNotification.init({
-    android: {},
-    ios: {
-        alert: "true",
-        badge: "true",
-        sound: "true"
-    }
-});
-
-// Registration handler
-push.on('registration', data => {
-    // PushRegistration is part of @aerogear/push
-    new PushRegistration(app.config).register(data.registrationId).then(() => {
-        // Registration with UPS successful, you can now send push notifications from the UPS UI
-    }).catch(err => {
-        // Error on device registration
-    });
+new PushRegistration(app.config).register().then(() => {
+    // Registration with UPS successful, you can now send push notifications from the UPS UI
+}).catch(err => {
+    // Error on device registration
 });
 ----
-[sidebar]
-.Using Ionic
-[source,javascript]
-----
-import { PushRegistration } from "@aerogear/push";
-import { Push } from "@ionic-native/push";
-
-const pushObject = new Push().init({
-    android: {},
-    ios: {
-        alert: true,
-        badge: true,
-        sound: true
-    }
-});
-
-pushObject.on('registration').subscribe(data => {
-    new PushRegistration(app.config).register(data.registrationId).then(() => {
-        // Registration with UPS successful, you can now send push notifications from the UPS UI
-    }).catch(err => {
-        //Error on device registration
-    });
-});
-----
-
 --
 // tag::excludeDownstream[]
 Xamarin::
