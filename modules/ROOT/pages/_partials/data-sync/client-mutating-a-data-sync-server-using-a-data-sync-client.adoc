@@ -34,30 +34,27 @@ import gql from 'graphql-tag';
 
 import { OfflineClient } from '@aerogear/voyager-client';
 
-// For our client application, we will connect to the local service.
+// connect to the local service.
 let config = {
   httpUrl: "http://localhost:4000/graphql",
   wsUrl: "ws://localhost:4000/graphql",
 }
 
-async function queryPeople() {
+async function addPerson() {
 
   // Actually create the client
   let offlineClient = new OfflineClient(config);
   let client = await offlineClient.init();
 
-  // Execute the query
-  client.query({
-      fetchPolicy: 'network-only',
-      query: gql`
-      {
-        addressBook {
-          name
-          address
-
-        }
-      }
-      `
+  // Execute the mutation
+  client.mutate({
+      mutation: gql`
+       mutation {
+         post(name: "John Doe", address: "1 Red Hill") {
+           id
+         }
+       }
+       `
     })
     //Print the response of the query
     .then( ({data}) => {
@@ -65,7 +62,7 @@ async function queryPeople() {
     });
 }
 
-queryPeople();
+addPerson();
 ----
 +
 . Build the project again by executing `npm run build`.
@@ -78,5 +75,5 @@ queryPeople();
 +
 [source,bash]
 ----
-{"addressBook":[{"name":"Alice Roberts","address":"1 Red Square, Waterford","__typename":"Person"}]}
+{"post":{"id":"person-1","__typename":"Person"}}
 ----
