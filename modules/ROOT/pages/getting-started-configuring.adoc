@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+include::{remote-loc}{partialsdir}/attributes.adoc[]
 
 // tag::excludeDownstream[]
 :docs-create-user: https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html
@@ -20,7 +20,7 @@ include::{partialsdir}/attributes.adoc[]
 
 [[registering]]
 // start registering-a-mobile-app.adoc[leveloffset=1]
-include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
+include::{remote-loc}_partials/registering-a-mobile-app.adoc[leveloffset=1]
 // end registering-a-mobile-app.adoc[leveloffset=1]
 
 [[provisioning]]
@@ -33,14 +33,14 @@ This section introduces the procedures for using {product-name} by guiding you t
 :service-name: Identity Management
 
 // start {partialsdir}/generic-provisioning.adoc[]
-include::_partials/generic-provisioning.adoc[]
+include::{remote-loc}_partials/generic-provisioning.adoc[]
 // end {partialsdir}/generic-provisioning.adoc[]
 
 NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
 For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
 
 // start {partialsdir}/generic-provisioning-end.adoc[]
-include::_partials/generic-provisioning-end.adoc[]
+include::{remote-loc}_partials/generic-provisioning-end.adoc[]
 // end {partialsdir}/generic-provisioning-end.adoc[]
 
 [id='{keycloak-service}-configuration-additional-resources']
@@ -65,7 +65,7 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 :service-name: Identity Management
 == Binding a {mobile-client} with the {service-name} Service
 
-include::_partials/generic-binding.adoc[]
+include::{remote-loc}_partials/generic-binding.adoc[]
 +
 image::mobile-clients-services-idm-parameters.png[]
 NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.

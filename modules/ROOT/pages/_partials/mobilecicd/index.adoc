@@ -7,5 +7,5 @@
 [#introduction]
 = Introduction to the {mobile-ci-cd-service} Service
 
-include::../generic-service-intros.adoc[tags=mobilecicd-service]
+include::{remote-loc}../generic-service-intros.adoc[tags=mobilecicd-service]
 

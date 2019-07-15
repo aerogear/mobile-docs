@@ -18,7 +18,7 @@ Android::
 
 For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation^].
 
-include::./conf-dev-env-android.adoc[]
+include::{remote-loc}./conf-dev-env-android.adoc[]
 
 For Service specific steps, see:
 
@@ -33,7 +33,7 @@ iOS::
 
 For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation^].
 
-include::./conf-dev-env-ios.adoc[]
+include::{remote-loc}./conf-dev-env-ios.adoc[]
 
 For Service specific steps, see:
 
@@ -49,7 +49,7 @@ Cordova::
 
 For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation^].
 
-include::./conf-dev-env-cordova.adoc[]
+include::{remote-loc}./conf-dev-env-cordova.adoc[]
 
 For Service specific steps, see:
 
@@ -65,7 +65,7 @@ Xamarin::
 
 For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation^].
 
-include::./conf-dev-env-xamarin.adoc[]
+include::{remote-loc}./conf-dev-env-xamarin.adoc[]
 
 For Service specific steps, see:
 

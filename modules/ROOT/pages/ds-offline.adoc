@@ -1,4 +1,4 @@
 include::_partials/attributes.adoc[]
 
-include::_partials/data-sync/js-client-offline.adoc[leveloffset=0]
+include::{remote-loc}_partials/data-sync/js-client-offline.adoc[leveloffset=0]
 

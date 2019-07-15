@@ -6,11 +6,11 @@ include::_partials/attributes.adoc[]
 
 [[introduction]]
 
-include::_partials/data-sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
+include::{remote-loc}_partials/data-sync/introducing-data-sync.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/data-sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
+include::{remote-loc}_partials/data-sync/data-sync-technical-overview.adoc[leveloffset=2,tags=!excludeDownstream]
 
-include::_partials/data-sync/ref_terminology.adoc[leveloffset=+2]
+include::{remote-loc}_partials/data-sync/ref_terminology.adoc[leveloffset=+2]
 
 [id='{context}_additional-resources-{context}']
 

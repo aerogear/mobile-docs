@@ -7,7 +7,7 @@ include::_partials/attributes.adoc[]
 = Enabling audit logs and viewing reports
 :toc:
 
-include::_partials/data-sync/server-audit-logs.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/server-audit-logs.adoc[leveloffset=1]
 
 [#sync-js-client-audit-logs]
-include::_partials/data-sync/js-client-audit-logs.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/js-client-audit-logs.adoc[leveloffset=1]

@@ -1,11 +1,11 @@
-include::{partialsdir}/attributes.adoc[]
+include::{remote-loc}{partialsdir}/attributes.adoc[]
 
 // start installing-mobile-services.adoc[leveloffset=1]
-include::_partials/installing-mobile-services.adoc[leveloffset=0]
+include::{remote-loc}_partials/installing-mobile-services.adoc[leveloffset=0]
 // end installing-mobile-services.adoc[leveloffset=1]
 
 [[provision-mdc]]
 // start {partialsdir}/provision-mdc.adoc[]
-include::_partials/provision-mdc.adoc[]
+include::{remote-loc}_partials/provision-mdc.adoc[]
 // end {partialsdir}/provision-mdc.adoc[]
 

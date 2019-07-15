@@ -1,5 +1,7 @@
 :org-name: AeroGear
 
+:remote-loc: ./
+
 :product-name: Mobile Services
 
 :release-number: 1.0.0

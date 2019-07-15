@@ -120,7 +120,7 @@ xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App
 
 1. Clone the showcase app
 +
-include::../cloning-showcase-app.adoc[]
+include::{remote-loc}../cloning-showcase-app.adoc[]
 
 2. Paste the Data Sync Mobile App configuration content into the *mobile-services.json* file located within _src_.
 
@@ -174,7 +174,7 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 
 1. Clone the showcase app and checkout the release tag {release-number}
 
-include::../cloning-showcase-app.adoc[]
+include::{remote-loc}../cloning-showcase-app.adoc[]
 
 // TODO: fix link and numbering
 [start=2]
@@ -242,4 +242,4 @@ NOTE: The mobile-services.json file is the link between your provisioned service
 +
 . Copy the contents of the `mobile-services.json` file and paste them into the `mobile-services.json` located in `src`.
 
-include::../build-and-deploy.adoc[]
+include::{remote-loc}../build-and-deploy.adoc[]

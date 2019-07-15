@@ -24,15 +24,15 @@ ifdef::context[:parent-context: {context}]
 
 [[setup]]
 == Setting Up the {app-security-service} Service
-include::_partials/app-security/provisioning-security.adoc[leveloffset=+2]
-include::_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2]
-include::_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
-include::_partials/app-security/setting-up-the-app-security-sdk.adoc[leveloffset=+2]
-include::_partials/app-security/proc-calling-the-app-security-clientInit.adoc[leveloffset=+2]
+include::{remote-loc}_partials/app-security/provisioning-security.adoc[leveloffset=+2]
+include::{remote-loc}_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::{remote-loc}_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+include::{remote-loc}_partials/app-security/setting-up-the-app-security-sdk.adoc[leveloffset=+2]
+include::{remote-loc}_partials/app-security/proc-calling-the-app-security-clientInit.adoc[leveloffset=+2]
 
 [[monitoring]]
 == Using the {app-security-service} Console
-include::_partials/app-security/using-the-admin-ui.adoc[leveloffset=+2]
+include::{remote-loc}_partials/app-security/using-the-admin-ui.adoc[leveloffset=+2]
 
 == Additional resources
 

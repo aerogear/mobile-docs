@@ -6,19 +6,19 @@ include::_partials/attributes.adoc[]
 = Running a {sync-service} app on OpenShift
 :toc:
 [#sync-server-getting-started-openshift]
-include::_partials/data-sync/getting-started-openshift.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/getting-started-openshift.adoc[leveloffset=1]
 
 [#sync-server-provisioning-data-sync]
-include::_partials/data-sync/provisioning-data-sync.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/provisioning-data-sync.adoc[leveloffset=1]
 
 [#sync-server-provisioning-data-sync-templates]
-include::_partials/data-sync/openshift-templates.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/openshift-templates.adoc[leveloffset=1]
 
 [#sync-server-getting-started-mdc-client]
-include::_partials/data-sync/getting-started-mdc-client.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/getting-started-mdc-client.adoc[leveloffset=1]
 
 [#sync-server-binding]
-include::_partials/data-sync/binding.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/binding.adoc[leveloffset=1]
 
 [#sync-server-binding-keycloak]
-include::_partials/data-sync/getting-started-binding-keycloak.adoc[leveloffset=1]
+include::{remote-loc}_partials/data-sync/getting-started-binding-keycloak.adoc[leveloffset=1]

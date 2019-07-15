@@ -1,0 +1,87 @@
+asciidoctor: WARNING: app-security.adoc: line 30: tag 'excludeUpstream' not found in include file: modules/ROOT/pages/_partials/app-security/configuring-the-service.adoc
+asciidoctor: WARNING: ref_terminology.adoc: line 4: section title out of sequence: expected level 1, got level 2
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: ds-introduction.adoc: line 10: tag 'excludeDownstream' not found in include file: modules/ROOT/pages/_partials/data-sync/introducing-data-sync.adoc
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: skipping reference to missing attribute: context
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: ERROR: getting-started-configuring.adoc: line 13: level 0 sections can only be used when doctype is book
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: getting-started-configuring.adoc: line 50: section title out of sequence: expected level 2, got level 3
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: skipping reference to missing attribute: idm-name
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: skipping reference to missing attribute: org-name
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: skipping reference to missing attribute: idm-name
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-developer-console
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: idm-name
+asciidoctor: WARNING: skipping reference to missing attribute: idm-name
+asciidoctor: WARNING: skipping reference to missing attribute: idm-name
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: skipping reference to missing attribute: org-name
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: ERROR: getting-started-running.adoc: line 4: level 0 sections can only be used when doctype is book
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: dropping line containing reference to missing attribute: remote-loc
+asciidoctor: WARNING: skipping reference to missing attribute: org-name
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: skipping reference to missing attribute: mobile-client
+asciidoctor: WARNING: skipping reference to missing attribute: keycloak-service
+asciidoctor: WARNING: skipping reference to missing attribute: product-name
+asciidoctor: WARNING: monitoring-keycloak.adoc: line 25: section title out of sequence: expected level 3, got level 4
+asciidoctor: WARNING: mobile-metrics.adoc: line 46: tag 'excludeUpstream' not found in include file: modules/ROOT/pages/_partials/metrics/setting-up-sdk.adoc
+asciidoctor: WARNING: setting-up-sdk.adoc: line 64: unterminated open block
+asciidoctor: WARNING: monitoring-keycloak.adoc: line 25: section title out of sequence: expected level 2, got level 3
+asciidoctor: WARNING: security.adoc: line 24: tag 'security-service' not found in include file: modules/ROOT/pages/_partials/generic-service-intros.adoc
+asciidoctor: WARNING: showcase-apps.adoc: line 17: tag 'excludeUpstream' not found in include file: modules/ROOT/pages/_partials/showcase-apps/service-setup.adoc
+asciidoctor: WARNING: service-setup.adoc: line 79: invalid style for paragraph: discrete
+asciidoctor: WARNING: service-setup.adoc: line 116: invalid style for paragraph: discrete
+asciidoctor: WARNING: service-setup.adoc: line 133: invalid style for paragraph: discrete
+asciidoctor: WARNING: service-setup.adoc: line 170: invalid style for paragraph: discrete

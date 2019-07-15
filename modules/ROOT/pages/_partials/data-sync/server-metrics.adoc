@@ -34,7 +34,7 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 
 The link:https://github.com/aerogear/voyager-server/blob/master/examples/metrics[Metrics Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
 
-// include::../metrics/monitoring-sync.adoc[leveloffset=2]
+// include::{remote-loc}../metrics/monitoring-sync.adoc[leveloffset=2]
 == Monitoring a {sync-server} Application
 
 .Prerequisites

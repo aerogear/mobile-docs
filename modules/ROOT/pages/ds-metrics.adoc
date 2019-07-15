@@ -1,3 +1,3 @@
 include::_partials/attributes.adoc[]
 
-include::_partials/data-sync/server-metrics.adoc[leveloffset=0]
+include::{remote-loc}_partials/data-sync/server-metrics.adoc[leveloffset=0]

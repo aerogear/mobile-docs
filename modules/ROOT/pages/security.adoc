@@ -16,9 +16,9 @@ a| xref:app-security.adoc[App Security Service]
 
 
 a|
-include::_partials/generic-service-intros.adoc[tags=device-security-service]
+include::{remote-loc}_partials/generic-service-intros.adoc[tags=device-security-service]
 
 a| 
 
-include::_partials/generic-service-intros.adoc[tags=security-service]
+include::{remote-loc}_partials/generic-service-intros.adoc[tags=security-service]
 |===

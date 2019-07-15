@@ -6,5 +6,5 @@ include::_partials/attributes.adoc[]
 You can find the links to the API reference of each module for each platform in the table below. 
 
 // start {partialsdir}/api-table.adoc[]
-include::_partials/api-table.adoc[]
+include::{remote-loc}_partials/api-table.adoc[]
 // end {partialsdir}/api-table.adoc[]

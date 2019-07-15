@@ -1,2 +1,2 @@
 :moduledir: ..
-include::{moduledir}/_attributes.adoc[]
+include::{remote-loc}{moduledir}/_attributes.adoc[]
