@@ -1,84 +1,157 @@
-= Resolving conflicts on the client
+= Resolving Conflicts on the Client
 
-A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
+At a high level, there is a typical flow to resolving conflicts on the client.
 
-*Conflict resolution* is how the application detects and resolves the conflict and ensures the correct data is stored. In most cases, the way conflicts are detected and resolved are incredibly specific to an application and the underlying data storage.
+. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation.
+. *Read the Object* - The server reads the current object the client is trying to modify from the data source (usually a database).
+. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there was a conflict. If there is a conflict, the server returns a response to the client containing information outlined in <<#error-structure, Structure of the Conflict Error>>
+. *Conflict Resolution* - The client attempts to resolve this conflict and makes a new request to the server in the hope that this data is no longer conflicted.
 
-The {sync-service} SDK provides some utilities to help applications detect and resolve conflicts on either server or client side. To handle conflicts on client side, developers need to configure their resolvers on the server side to return conflicts back to clients first. For more information, see the <<#sync-server-offline-and-conflict, Voyager server document>>.
+The conflict resolution implementation will require additional elements in your application in order to work:
 
-If conflicts need to be handled on client side, developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism.
+- A `returnType` added to the context of any mutation // TODO
+- Additional metadata inside types (for example version field) depending on the conflict implementation you chose. see: <<#version-based-conflict, Version Based Conflict Detection>>
+- Server-side resolvers to return conflicts back to clients first. For more information, see: <<#conflict-resolution-{context}, Server Side Conflict Detection>>.
 
+Developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism. By default when no changes were made on the same fields, the implementation will try to resend the modified payload back to the server. When changes on the server and the client cover the same fields one of the specified conflict resolution strategies can be used. The default strategy will apply client changes on top of the server side data. Developers can modify strategies to suit their needs.
 
-== Version Based Conflict Detection
+== Working with Conflict Resolution on the Client
 
-For more details about how it works, see the _server-version-based-conflict-resolution, Voyager server document_.
+To enable conflict resolution we fist need to configure our server side resolvers to perform conflict detection. Detection can rely on many different implementations and return the conflict error back to the client. For more information about how to do this, please see <<#conflict-resolution-{context}, Server Side Conflict Detection>>.
 
-On the client side, if this default implementation is used, developers need to make sure the version value is always passed to the server when a mutation is invoked.
+The client will then automatically resolve them based on the current strategy and notify listeners if the developer supplied any.
 
-//TODO: code example
+Conflict resolution will work out of the box with the recommended defaults and does not require any specific handling on the client.
 
-== Conflict Resolution Strategies
+> For advanced use cases developers may customize their conflict implementation by supplying a custom `conflictProvider` in their application config. See <<#conflict-resolution-strategies,Conflict Resolution Strategies>> below.
 
-To resolve conflicts on the client side, a `conflictStrategy` needs to be provided. If none is provided, by default, the `clientVersionWins` strategy is used. This means the SDK will automatically override the server data with the current client data.
+== Default Conflict Implementation
 
-To implement a custom conflict resolution strategy provide at least one of the parameters below.
-
-* strategies - a dictionary object where each key is the name of a mutation and the value is the custom action for a conflict caused by that mutation
-* default - the default behavior to use if one of your mutations is not listed in `strategies`
-
-NOTE: If strategies are provided but no default then `clientVersionWins` becomes the default.
-If a mutation causes a conflict and you have not specified a conflict resolution strategy for that mutation, the system uses the `clientVersionWins` strategy.
+By default, conflict resolution is configured to rely on a `version` field on each GraphQL type. A version field will also need to be saved to the database in order to detect changes on the server.
 
 For example:
 
 [source,javascript]
 ----
-
-//define a custom conflict resolver
-let updateTaskConflictResolver = (serverData, clientData) => {
-    ...
-    return Object.assign(serverData, clientData);
-};
-
-let deleteTaskConflictResolver = (serverData, clientData) => {
-    ...
-    return serverData;
-}
-
-//define a default where the clientData is used
-let defaultConflictResolver = (serverData, clientData) => {
-    return clientData
-}
-
-//pass it to the config object
-let config = {
-...
-  conflictStrategy: {
-    strategies: {
-      "TaskUpdated": updateTaskConflictResolver,
-      "TaskDeleted": deleteTaskConflictResolver
-    },
-    default: defaultConflictResolver
-  }
-...
+type User {
+  id: ID!
+  version: String!
+  name: String!
 }
 ----
 
-NOTE: Client strategy is ignored when conflicts are resolved on the server.
+The version field is controlled on the server and will map the last version that was sent from the server. All operations on the version field happen automatically, however, users need to make sure that the version field is always passed to the server for mutations that supports conflict resolution:
 
-== Listening to Conflicts
+[source,javascript]
+----
+type Mutation {
+  updateUser(id: ID!, version: String!): User
+}
+----
 
-Developers can supply their own `conflictListener` implementation to get notifications about conflicts:
+Alternatively developers can create input elements that can be reused in every mutation and support conflict resolution.
+
+[source,javascript]
+----
+type Mutation {
+  updateUser(user: UserInput): User
+}
+----
+
+[#conflict-resolution-strategies]
+== Conflict Resolution Strategies
+
+{sync-service} allows developers to define custom conflict resolution strategies. You can provide custom conflict resolution strategies to the client in the config by using the provided `ConflictResolutionStrategies` type. By default developers do not need to pass any strategy as `UseClient` is the default. Custom strategies can also be used to provide different resolution strategies for certain operations:
+
+[source,javascript]
+----
+let customStrategy = {
+  resolve = (base, server, client, operationName) => {
+    let resolvedData;
+    switch (operationName) {
+      case "updateUser":
+        delete client.socialKey
+        resolvedData = Object.assign(base, server, client)
+        break
+      case "updateRole":
+        client.role = "none"
+        resolvedData = Object.assign(base, server, client)
+        break
+      default:
+        resolvedData = Object.assign(base, server, client)
+    }
+    return resolvedData
+  }
+}
+----
+
+This custom strategy provides two distinct strategies to be used when a conflict occurs. They are based on the name of the operation to give developers granular control. To use this custom strategy pass it as an argument to conflictStrategy in your config object:
 
 [source,javascript]
 ----
 let config = {
 ...
-  conflictListener: {
-    conflictOccurred: function(operationName, resolvedData, server, client) {
-      console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)} client: ${JSON.stringify(client)} `);
-    }
-  }
+  conflictStrategy: customStrategy
 ...
 }
+----
+
+== Listening to Conflicts
+
+{sync-service} allows developers to receive information about the data conflict that occurred between the client and the server.
+
+When a conflict occurs {sync-service} will attempt to do a field level resolution of data - meaning it will check all fields of your type to see if both the client or server has changed the same field. The client can be notified in one of two scenarios.
+
+If both client and server have changed any of the same fields then the `conflictOccurred` method of your `ConflictListener` will be triggered.
+
+If the client and server have not changed any of the same fields and the data can be easily merged then the `mergeOccurred` method of your `ConflictListener` will be triggered.
+
+Developers can supply their own `conflictListener` implementation
+
+[source,javascript]
+----
+class ConflictLogger implements ConflictListener {
+  conflictOccurred(operationName, resolvedData, server, client) {
+    console.log("Conflict occurred with the following:")
+    console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)}, client: ${JSON.stringify(client)}, operation:  ${JSON.stringify(operationName)}`);
+  }
+  mergeOccurred(operationName, resolvedData, server, client) {
+    console.log("Merge occurred with the following:")
+    console.log(`data: ${JSON.stringify(resolvedData)}, server: ${JSON.stringify(server)}, client: ${JSON.stringify(client)}, operation:  ${JSON.stringify(operationName)}`);
+  }
+}
+
+let config = {
+...
+  conflictListener: new ConflictLogger()
+...
+}
+----
+
+== Pre-Conflict Errors
+
+{sync-service} provides a mechanism for developers to check for a 'pre-conflict' before a mutation occurs. It does this out of the box by checking whether or not the data being sent conflicts locally. This happens when a mutation (or the act of creating a mutation) is initiated and before being sent new data arrives via subscriptions.
+
+An example of when this is useful could be when a user performs the following actions:
+
+. Open a form on their device
+. Begin working on the pre-populated data on this form
+. Whilst working the client receives new data from the server via subscriptions
+. The client is now conflicted but the user is unaware.
+. When the user presses submit {sync-service} notices that their data is conflicted and provides the developer with a way to warn the user.
+
+To use this feature, and therefore potentially save unecessary round-trips to the server with data which is definitely conflicted, developers can make use of the error returned by {sync-service}. An example of how developers can use this error can be seen below.
+
+[source,javascript]
+----
+return client.offlineMutation({
+  ...
+}).then(result => {
+  // handle the result
+}).catch(error => {
+  if (error.networkError && error.networkError.localConflict) {
+    // handle pre-conflict here by potentially
+    // providing an alert with a chance to update data before pressing send again
+  }
+})
 ----

@@ -1,0 +1,19 @@
+[id="conflict-resolution-introduction"]
+
+= Introduction
+
+Applications that allow users to modify data while offline most likely have to deal with conflicts. A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
+
+*Example:* A user tried to modify a record while they were offline. When they came back online, they discovered that the record was already deleted.
+
+When talking about conflicts, it can usually be broken down into two parts.
+
+* *Conflict Detection* is the ability of an application to detect the presence of outdated data which cannot be stored without possible data loss occuring.
+
+* *Conflict Resolution* is how the application handles the conflict and ensures the correct data is stored.
+
+In most cases, the way conflicts are detected and resolved are specific to an application and the underlying data storage.
+
+In a GraphQL server, conflict detection happens exclusively in *mutations*.
+
+{sync-server} provides mechanisms for conflict detection while the {sync-service} SDK provides some utilities to help applications resolve conflicts client-side.

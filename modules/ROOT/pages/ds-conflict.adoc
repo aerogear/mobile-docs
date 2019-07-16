@@ -4,8 +4,10 @@ include::_partials/attributes.adoc[]
 
 
 [id='{context}']
-= Resolving conflicts in your Data Sync app
+= Resolving Conflicts in your Data Sync app
 :toc:
+
+include::_partials/data-sync/conflicts-introduction.adoc[leveloffset=1]
 
 include::_partials/data-sync/server-offline-and-conflict.adoc[leveloffset=1]
 
