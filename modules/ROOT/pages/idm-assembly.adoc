@@ -5,7 +5,7 @@
 include::{remote-loc}_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
 include::{remote-loc}_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=+2]
 include::{remote-loc}_partials/keycloak/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
-== Configuring an development environment for the {keycloak-service} Service
+== Configuring your development environment for the {keycloak-service} Service
 include::{remote-loc}_partials/keycloak/downloading-configuration-file.adoc[leveloffset=+2]
 include::{remote-loc}_partials/keycloak/setting-up-the-idm-sdk.adoc[leveloffset=+2]
 
