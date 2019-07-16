@@ -4,7 +4,7 @@ include::_partials/attributes.adoc[]
 
 = Making your mobile app secure
 
-This guide does not address all mobile security topics. See <link> for an introduction to mobile security.
+This guide does not address all mobile security topics. See the link:https://www.owasp.org/index.php/OWASP_Mobile_Security_Project[OWASP Mobile Security Project] for an introduction to mobile security.
 {org-name} helps you achieve security using:
 
 * {app-security-service} service - remotely disable specific app variants

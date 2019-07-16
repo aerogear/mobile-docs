@@ -37,7 +37,7 @@
 :mobilecicd-ui: Jenkins UI
 
 // Device Security
-:device-security-service: device checks
+:device-security-service: Device Checks
 :app-security-service: Mobile Security
 
 // Sync Service
