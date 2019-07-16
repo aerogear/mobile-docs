@@ -9,15 +9,42 @@ At a high level, there is a typical flow to resolving conflicts on the client.
 
 The conflict resolution implementation will require additional elements in your application in order to work:
 
-- A `returnType` added to the context of any mutation // TODO
-- Additional metadata inside types (for example version field) depending on the conflict implementation you chose. see: <<#version-based-conflict, Version Based Conflict Detection>>
+- A `returnType` added to the context of any mutation. see: <<#working-with-conflicts-client, Working With Conflict Resolution on the Client>>.
+- Additional metadata inside types (for example version field) depending on the conflict implementation you chose. see: <<#version-based-conflict, Version Based Conflict Detection>>.
 - Server-side resolvers to return conflicts back to clients first. For more information, see: <<#conflict-resolution-{context}, Server Side Conflict Detection>>.
 
 Developers can either use the default conflict resolution implementations, or implement their own ones thanks to the pluggable conflict resolution mechanism. By default when no changes were made on the same fields, the implementation will try to resend the modified payload back to the server. When changes on the server and the client cover the same fields one of the specified conflict resolution strategies can be used. The default strategy will apply client changes on top of the server side data. Developers can modify strategies to suit their needs.
 
+[#working-with-conflicts-client]
 == Working with Conflict Resolution on the Client
 
 To enable conflict resolution we fist need to configure our server side resolvers to perform conflict detection. Detection can rely on many different implementations and return the conflict error back to the client. For more information about how to do this, please see <<#conflict-resolution-{context}, Server Side Conflict Detection>>.
+
+Next, we need to provide mutations with one extra piece of information used to resolve any conflicts. This is done by using the context and the piece of information is a parameter `returnType`. This parameter defines the Object type you are operating on.
+
+If using {sync-service}'s `offlineMutation` you can provide this parameter directly as follows:
+
+[source,javascript]
+----
+client.offlineMutation({
+  ...
+  returnType: 'Task'
+  ...
+})
+----
+
+or if using Apollo's mutate function:
+
+[source,javascript]
+----
+client.mutate({
+  ...
+  context: {
+    returnType: 'Task'
+  }
+  ...
+})
+----
 
 The client will then automatically resolve them based on the current strategy and notify listeners if the developer supplied any.
 
