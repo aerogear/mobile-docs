@@ -1,0 +1,29 @@
+:PAGE_PARTIAL:
+
+[[setting-up-the-idm-service]]
+== Setting Up the {keycloak-service} Service
+include::{remote-loc}_partials/keycloak/provisioning-the-idm.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+== Configuring your development environment for the {keycloak-service} Service
+include::{remote-loc}_partials/keycloak/downloading-configuration-file.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/setting-up-the-idm-sdk.adoc[leveloffset=+2]
+
+[[adding-user-authentication-to-your-mobile-app]]
+== Adding User Authentication to your Mobile App
+// include::{remote-loc}_partials/keycloak/getting-started-with-user-authentication.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/implementing-authentication.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/refreshing-the-authentication-token.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/adding-log-out-option.adoc[leveloffset=+2,tags=!excludeUpstream]
+include::{remote-loc}_partials/keycloak/authenticating-with-a-back-end-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+
+include::{remote-loc}_partials/keycloak/adding-access-control.adoc[leveloffset=2]
+
+[[adding-sso-to-your-mobile-app]]
+== Adding SSO to your Mobile App
+// include::{remote-loc}_partials/keycloak/getting-started-with-sso.adoc[leveloffset=+2]
+include::{remote-loc}_partials/keycloak/using-sso.adoc[leveloffset=+2]
+
+[[monitoring]]
+// start metrics/monitoring-keycloak.adoc[leveloffset=1]
+include::{remote-loc}_partials/metrics/monitoring-keycloak.adoc[leveloffset=2]
