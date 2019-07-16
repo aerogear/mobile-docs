@@ -38,6 +38,8 @@ const pubsub = new MQTTPubSub({
 In the example, an `mqtt` client is created using `mqtt.connect` and then this client is passed into an `MQTTPubSub` instance. 
 The `pubsub` instance can then be used to publish and subscribe to events in the server.
 
+// TODO maybe link or show example code in showcase app?
+
 .Additional Information
 
 * link:https://www.npmjs.com/package/mqtt#connect[mqtt.connect documentation].

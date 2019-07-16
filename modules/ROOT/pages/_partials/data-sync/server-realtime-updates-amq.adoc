@@ -33,8 +33,11 @@ The minimum configuration steps for using AMQ Online for MQTT messaging and enab
 
 A user can request messaging resources by creating an `AddressSpace`. There are two types of address space, `standard` and `brokered`. 
 You must use the `brokered` address space for MQTT based applications. 
-The following example definition (CRD) creates a brokered `AddressSpace`:
 
+.Procedure
+. Create an address space definition, for example, the following example definition (CRD) creates a brokered `AddressSpace`:
++
+[source,yaml,options="nowrap"]
 ----
 apiVersion: enmasse.io/v1beta1
 kind: AddressSpace
@@ -51,7 +54,7 @@ spec:
 oc create -f brokered-address-space.yaml
 ----
 
-. Get the details of the `AddressSpace`.
+. Check the status of the address space:
 +
 ----
 oc get <`AddressSpace` name> -o yaml
@@ -69,6 +72,7 @@ An adress is part of an `AddressSpace` and represents a destination for sending 
 You use an `Address` to represent an MQTT topic. 
 For MQTT, you must use a `topic` adress type.
 
+. Create an address definition:
 ----
 apiVersion: enmasse.io/v1beta1
 kind: Address
@@ -80,21 +84,25 @@ spec:
     plan: brokered-topic
 ----
 
-. Create the `Address` using the command line.
+. Create the address:
 +
 ----
 oc create -f topic-address.yaml
 ----
 
-NOTE: In the xref:#realtime-updates-{context}[Configuring your server for real-time updates] guide, the usage of `pubsub.asyncIterator()` is described. An `Address` must be created for each topic name passed into `pubsub.asyncIterator()`.
+NOTE: See the xref:#realtime-updates-{context}[Configuring your server for real-time updates] guide for more information about using `pubsub.asyncIterator()`. An `Address` must be created for each topic name passed into `pubsub.asyncIterator()`.
+
+.Additional Information
 
 See https://access.redhat.com/documentation/en-us/red_hat_amq/7.2/html-single/using_amq_online_on_openshift_container_platform/index#create-address-cli-messaging[Creating addresses using the command line] for more information.
 
-== Creating a MessagingUser
+== Creating an AMQ Online user
 
-A messaging client connects using a `MessagingUser`. A `MessagingUser` specifies an authorization policy that controls which addresses may be used and the operations that may be performed on those addresses.
+A messaging client connects using an AMQ Online user, also known as a`MessagingUser`. 
+A `MessagingUser` specifies an authorization policy that controls which addresses can be used and the operations that can be performed on those addresses.
 
-Users are configured as `MessagingUser` resources. Users can be created, deleted, read, updated, and listed.
+Users are configured as `MessagingUser` resources. 
+Users can be created, deleted, read, updated, and listed.
 
 ----
 apiVersion: user.enmasse.io/v1beta1
