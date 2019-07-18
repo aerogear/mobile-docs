@@ -155,9 +155,9 @@ const resolvers = {
 ----
 ====
 
-NOTE: This subscription server does not implement authentication or authorization. See {keycloak-service} see xref:sync-server-auth[] for information about implementing authenication and authorization.
+NOTE: This subscription server does not implement authentication or authorization. For information about implementing authenication and authorization, see xref:ds-auth.adoc[Supporting authentication and authorization in your mobile app].
 
-. Additional Information
+.Additional Information
 
 For information on how to use subscriptions in your client code, see xref:sync-js-client-realtime-updates[Realtime Updates].
 
