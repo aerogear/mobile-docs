@@ -2,7 +2,7 @@
 
 = Introduction
 
-Applications that allow users to modify data while offline most likely have to deal with conflicts. A *conflict* occurs whenever two or more clients try to modify the same data in between synchronizations.
+Applications that allow users to modify data while offline must deal with conflicts. A *conflict* occurs when two or more clients try to modify the same data in between synchronizations.
 
 *Example:* A user tried to modify a record while they were offline. When they came back online, they discovered that the record was already deleted.
 
