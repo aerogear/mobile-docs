@@ -23,7 +23,7 @@ This section provides recommendations for
 // end::excludeDownstream[]
 
 AMQ Online includes many configuration options that could address the specific needs of your application. 
-The minimum configuration steps for using AMQ Online for MQTT messaging and enabling GraphQL subscriptions are
+The minimum configuration steps for using AMQ Online for MQTT messaging and enabling GraphQL subscriptions are:
 
 . Create an `AddressSpace`
 . Create an `Address`
