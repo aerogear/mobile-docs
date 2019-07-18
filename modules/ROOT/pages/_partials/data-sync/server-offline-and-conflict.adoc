@@ -4,9 +4,9 @@
 
 At a high level, there is a typical flow to detecting conflicts.
 
-. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation.
-. *Read the Object* - The server reads the current object the client is trying to modify from the data source (usually a database).
-. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there was a conflict. The developer can choose _how the comparison_ is done.
+. *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation
+. *Read the Object* - The server reads the current object that the client is trying to modify from the data source
+. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there is a conflict. The developer can choose _how_ the comparison is performed.
 
 == Pluggable Conflict Detection
 The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict detection* to help developers with the *Conflict Detection* steps regardless of their storage.
@@ -15,8 +15,8 @@ The conflict detection is enabled by {sync-server}, while the fetching and stori
 
 Pluggable conflict detection supports the following implementations:
 
-* `VersionedObjectState` - depends on version field supplied in objects (used by default when importing conflictHandler). For details, please see: xref:version-based-conflict[]
-* `HashObjectState` - depends on hash calculated from the entire object. For details, please see: xref:hash-based-conflict[]
+* `VersionedObjectState` - depends on the version field supplied in objects (the version field is used by default when importing conflictHandler). For details, please see: xref:version-based-conflict[]
+* `HashObjectState` - depends on a hash calculated from the entire object. For details, please see: xref:hash-based-conflict[]
 
 These implementations are based on the `ObjectState` interface that can be extended to provide custom implementations for conflict detection.
 
@@ -64,7 +64,7 @@ type Mutation {
 }
 ----
 
-. Implement the resolver. Every conflict can be handled using a set of predefined steps, please see below for an example.
+. Implement the resolver. Every conflict can be handled using a set of predefined steps. Please see below for an example.
 
 +
 [source,javascript]
@@ -81,7 +81,7 @@ if(conflict) {
 db.save(clientData.id, clientData)
 ----
 
-In the example above, the `throw` statement ensures the client receives all necessary data to resolve the conflict client-side. For more information about this data please see xref:error-structure[Structure of the Conflict Error].
+In the example above, the `throw` statement ensures that the client receives all necessary data to resolve the conflict client-side. For more information about this data, please see xref:error-structure[Structure of the Conflict Error].
 
 Since the conflict will be resolved on the client, it is not required to persist the data. However, if there is no conflict, the data sent by the client should be persisted. For more information on resolving the conflict client-side, please see: xref:resolving-conflicts-on-the-client-2[Resolving Conflicts on the Client].
 
@@ -100,7 +100,7 @@ Hash based conflict detection is a mechanism to detect conflicts based on the _t
 const { HashObjectState } = require('@aerogear/voyager-conflicts')
 ----
 
-. When using the `HashObjectState` implementation you must provide your own hashing function. The function signature should be as follows:
+. When using the `HashObjectState` implementation, a hashing function must be provided. The function signature should be as follows:
 
 +
 [source, javascript]
@@ -121,7 +121,7 @@ const hashFunction = (object) {
 const conflictHandler = new HashObjectState(hashFunction)
 ----
 
-. Implement the resolver. Every conflict can be handled using a set of predefined steps, please see below for an example.
+. Implement the resolver. Every conflict can be handled using a set of predefined steps. Please see below for an example.
 
 +
 [source,javascript]
