@@ -102,7 +102,7 @@ Subscriptions depend on a https://en.wikipedia.org/wiki/Publish%E2%80%93subscrib
 
 Subscriptions are a root level type. 
 They are defined in the schema similar to `Query` and `Mutation`. 
-For example, in the following schema, a `Task` type is defined, as well as mutations and subscriptions.
+For example, in the following schema, a `Task` type is defined and so are mutations and subscriptions.
 
 [%collapsible]
 ====
