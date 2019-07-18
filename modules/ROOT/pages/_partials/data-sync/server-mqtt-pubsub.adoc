@@ -1,4 +1,4 @@
-[id="mqtt-pubsub-{context}"]
+[id="pub-sub"]
 = Configuring a Publish Subscribe mechanism
 
 You can use the Apollo PubSub mechanism for development, but you must use the MQTT PubSub mechanism for production.

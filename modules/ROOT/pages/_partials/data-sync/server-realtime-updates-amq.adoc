@@ -253,7 +253,7 @@ const client = mqtt.connect({
   servername: host,
   username: '<MessagingUser name>',
   password: '<MessagingUser password>',
-  port: 5761,
+  port: 443,
   protocol: 'tls',
   rejectUnauthorized: false,
 })
