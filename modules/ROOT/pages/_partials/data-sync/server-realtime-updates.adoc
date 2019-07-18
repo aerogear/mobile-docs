@@ -75,7 +75,7 @@ The `createSubscriptionServer` code:
 
 .Additional Information
 
-See https://npm.im/subscriptions-transport-ws[subscriptions-transport-ws] module for more information about arguments and options.
+For more information about arguments and options, see the https://npm.im/subscriptions-transport-ws[subscriptions-transport-ws] module.
 
 
 == Implementing a Publish Subscribe Mechanism
