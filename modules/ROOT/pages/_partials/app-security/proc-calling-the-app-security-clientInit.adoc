@@ -1,4 +1,4 @@
-= Coding your mobile app to use the {app-security-service} service
+= Implementing the {app-security-service} service in your mobile app
 
 Call the appSecurity clientInit function to implement the App Security Service. 
 Call this service on application initialization, for example:
