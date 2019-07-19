@@ -12,7 +12,7 @@ include::_partials/attributes.adoc[]
 ifdef::context[:parent-context: {context}]
 
 [id='device-checks']
-= Adding {device-security-service} to your mobile app
+= Implementing {device-security-service} in your mobile app
 :page-partial:
 
 The Device Security service allows you to easily configure and manage device security, and trust checks for your mobile application.
