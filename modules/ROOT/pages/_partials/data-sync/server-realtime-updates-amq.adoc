@@ -35,7 +35,7 @@ A user can request messaging resources by creating an `AddressSpace`. There are 
 You must use the `brokered` address space for MQTT based applications. 
 
 .Procedure
-. Create an address space definition, for example, the following example definition (CRD) creates a brokered `AddressSpace`:
+. Create an address space, for example, the following resource creates a brokered `AddressSpace`:
 +
 [source,yaml,options="nowrap"]
 ----
