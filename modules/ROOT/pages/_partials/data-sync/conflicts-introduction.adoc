@@ -16,4 +16,4 @@ In most cases, the way conflicts are detected and resolved are specific to an ap
 
 In a GraphQL server, conflict detection happens exclusively in *mutations*.
 
-{sync-server} provides mechanisms for conflict detection while the {sync-service} SDK provides some utilities to help applications resolve conflicts client-side.
+{sync-server} provides conflict detection on the server side while {sync-client} provides conflict resolution on the client side.

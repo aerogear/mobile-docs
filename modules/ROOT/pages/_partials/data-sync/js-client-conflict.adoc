@@ -78,15 +78,6 @@ type Mutation {
 }
 ----
 
-Alternatively, input elements that can be reused in every mutation, and support conflict resolution, can be created.
-
-[source,javascript]
-----
-type Mutation {
-  updateUser(user: UserInput): User
-}
-----
-
 [#conflict-resolution-strategies]
 == Conflict Resolution Strategies
 

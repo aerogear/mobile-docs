@@ -64,7 +64,7 @@ type Mutation {
 }
 ----
 
-. Implement the resolver. Every conflict can be handled using a set of predefined steps. Please see below for an example.
+. Implement the resolver. Every conflict can be handled using a set of predefined steps, for example:
 
 +
 [source,javascript]
@@ -121,7 +121,7 @@ const hashFunction = (object) {
 const conflictHandler = new HashObjectState(hashFunction)
 ----
 
-. Implement the resolver. Every conflict can be handled using a set of predefined steps. Please see below for an example.
+. Implement the resolver. Every conflict can be handled using a set of predefined steps, for example:
 
 +
 [source,javascript]
