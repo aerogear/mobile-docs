@@ -29,7 +29,7 @@ This view provides statistics and information about each deployed version of an 
 * *Disable on Startup*: Whether this application version is disabled on startup.
 * *Custom Disable Message*: A custom message that is displayed when this version of the mobile app is disabled.
 
-== Enabling and disabling a mobile app
+== Enabling and disabling mobile app versions
 
 To enable/disable one or more versions of the application:
 
