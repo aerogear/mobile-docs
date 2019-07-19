@@ -12,8 +12,6 @@ Discussions about conflicts can be broken down into two parts.
 
 * *Conflict Resolution* is how the application handles the conflict and ensures the correct data is stored.
 
-In most cases, the way conflicts are detected and resolved are specific to an application and the underlying data storage.
-
-In a GraphQL server, conflict detection happens exclusively in *mutations*.
+In most cases, the way conflicts are detected and resolved are specific to an application and the underlying data storage. You implement conflict detection exclusively in the code associated with mutations.
 
 {sync-server} provides conflict detection on the server side while {sync-client} provides conflict resolution on the client side.
