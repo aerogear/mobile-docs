@@ -1,4 +1,4 @@
-= Controlling mobile apps using the Mobile Security Console
+= Managing mobile apps using the Mobile Security Console
 
 To access the {app-security-service} Console:
 
