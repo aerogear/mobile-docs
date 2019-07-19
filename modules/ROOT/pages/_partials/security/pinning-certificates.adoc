@@ -1,6 +1,6 @@
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-[id='certificate-pinning-{context}']
+[id='certificate-pinning_{context}']
 = Certificate Pinning in Android Devices
 
 link:https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning[Certificate pinning^] can be enabled in individual SDKs through the `mobile-services.json` file.

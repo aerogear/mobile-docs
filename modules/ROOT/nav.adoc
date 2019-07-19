@@ -77,16 +77,15 @@ include::{partialsdir}/attributes.adoc[]
 
 
 
-** xref:security.adoc[Mobile Security]
-*** xref:security.adoc[{app-security-service}]
-**** xref:security.adoc#app-introduction[Introduction]
+** xref:security.adoc[Secure your app]
+*** xref:security.adoc#app-security[{app-security-service}]
 **** xref:security.adoc#app-setup[Setting Up]
-**** xref:security.adoc#monitoring[Monitoring App Security]
+**** xref:security.adoc#app-coding[Coding]
+**** xref:security.adoc#console[Console]
 *** xref:security.adoc[Device Checks]
-**** xref:security.adoc#device-introduction[Introduction]
-**** xref:security.adoc#setup[Setting Up]
-**** xref:security.adoc#device-trust[Performing Device Trust Checks]
-**** xref:security.adoc#cert-pinning[Certificate Pinning]
+**** xref:security.adoc#setting-up-the-device-security-service[Setting Up]
+**** xref:security.adoc#performing-device-trust-checks_security[Performing Device Trust Checks]
+**** xref:security.adoc#certificate-pinning_security[Certificate Pinning]
 
 * xref:showcase-apps.adoc[Showcase Apps]
 ** xref:showcase-apps.adoc#setup[Service Setup]
