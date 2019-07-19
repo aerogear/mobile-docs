@@ -216,16 +216,6 @@ const client = mqtt.connect({
 
 const pubsub = new MQTTPubSub({ client })
 ----
-+
-[NOTE]
-====
-The options for `mqtt.connect` are:
-
-* `servername` - When connecting to a message broker in OpenShift using TLS, this property must be set otherwise the connection will fail. The reason for this is because the messages are being routed through a proxy resulting in the client being presented with multiple certificates. By setting the `servername`, the client will use https://en.wikipedia.org/wiki/Server_Name_Indication[Server Name Indication (SNI)] to request the correct certificate as part of the TLS connection setup.
-* `protocol` - Must be set to `'tls'`
-* `rejectUnauthorizated` - Must be set to false, otherwise the connection will fail. This tells the client to ignore certificate errors. Again, this is needed because the client is presented with multiple certificates and one of the certificates is for a different hostname than the one being requested, which normally results in an error.
-* `port` - must be set to 5761 for tls connections to the service hostname.
-====
 
 . To connect to an AMQ Online `Address` using the external hostname:
 +
@@ -259,6 +249,15 @@ const client = mqtt.connect({
 
 const pubsub = new MQTTPubSub({ client })
 ----
+
+. If you use TLS, note the following additional `mqtt.connect` options:
++
+* `servername` - when connecting to a message broker in OpenShift using TLS, this property must be set otherwise the connection will fail, because the messages are being routed through a proxy resulting in the client being presented with multiple certificates. By setting the `servername`, the client will use https://en.wikipedia.org/wiki/Server_Name_Indication[Server Name Indication (SNI)] to request the correct certificate as part of the TLS connection setup.
+* `protocol` - must be set to `'tls'`
+* `rejectUnauthorizated` - must be set to false, otherwise the connection will fail. This tells the client to ignore certificate errors. Again, this is needed because the client is presented with multiple certificates and one of the certificates is for a different hostname than the one being requested, which normally results in an error.
+* `port` - must be set to 5761 for service hostname or 443 for external hostname.
+
+
 
 == Using environment variables for configuration
 
