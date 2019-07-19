@@ -69,8 +69,7 @@ See https://access.redhat.com/documentation/en-us/red_hat_amq/7.3/html-single/us
 == Creating an Address
 
 An adress is part of an `AddressSpace` and represents a destination for sending and receiving messages. 
-You use an `Address` to represent an MQTT topic. 
-For MQTT, you must use a `topic` adress type.
+Use an `Address` with type `topic` to represent an MQTT topic.
 
 . Create an address definition:
 +
@@ -196,7 +195,7 @@ const client = mqtt.connect({
 const pubsub = new MQTTPubSub({ client })
 ----
 
-.. To encrypt all messages between your application and the AMQ Online broker, use the TLS broker, for example:
+.. To encrypt all messages between your application and the AMQ Online broker, enable TLS, for example:
 +
 [source,js]
 ----
