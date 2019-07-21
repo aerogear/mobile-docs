@@ -4,8 +4,5 @@
   "devDependencies": {
     "@antora/cli": "2.0.0",
     "@antora/site-generator-default": "2.0.0"
-  },
-  "dependencies": {
-    "asciidoctor": "^2.0.3"
   }
 }
