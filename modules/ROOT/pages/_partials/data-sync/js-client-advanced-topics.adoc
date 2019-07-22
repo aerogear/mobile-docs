@@ -73,7 +73,7 @@ To detect if the provided data is an optimistic response, the `optimisticRespons
 
 // When using `OptimisticReponse` helper from SDK specific mutations that create new element response is going to have client side generated id. Subsequent edits for this objects will also refer to this id. When becoming online, all offline changes are going to be performed in specific order updating client side id with id returned from server for subsequent edits.
 
-The `OptimisticResponse` feature and the <<#sync-client-offline-queue-listener, offlineQueueListener>> can be used together to deliver great offline experience for an application. 
+The `OptimisticResponse` feature and the <<#sync-client-offline-queue-listener, offlineQueueListener>> can be used together to deliver great offline experience for an application.
 
 //tag::excludeDownstream[]
 See the xref:showcase-apps.adoc[Showcase Apps section] for more information.
@@ -86,7 +86,7 @@ It can intelligently generate cache update methods for both mutations and subscr
 
 === Mutations
 
-The following example shows how to use these helper methods for mutations. 
+The following example shows how to use these helper methods for mutations.
 To use these methods, create an offline client as described in <<offline-client>> and then use the  `offlineMutation` method.
 The `offlineMutation` function accepts a `MutationHelperOptions` object as a parameter.
 
