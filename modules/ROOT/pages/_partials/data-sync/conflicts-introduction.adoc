@@ -1,0 +1,17 @@
+[id="conflict-resolution-introduction"]
+
+= Introduction
+
+Applications that allow users to modify data while offline must deal with conflicts. A *conflict* occurs when two or more clients try to modify the same data in between synchronizations.
+
+*Example:* A user modifies a record while offline. When back online, they discover that the record has been deleted by another user.
+
+Discussions about conflicts can be broken down into two parts.
+
+* *Conflict Detection* is the ability of an application to detect the presence of outdated data which cannot be stored without possible data loss occuring.
+
+* *Conflict Resolution* is how the application handles the conflict and ensures the correct data is stored.
+
+In most cases, the way conflicts are detected and resolved are specific to an application and the underlying data storage. You implement conflict detection exclusively in the code associated with mutations.
+
+{sync-server} provides conflict detection on the server side while {sync-client} provides conflict resolution on the client side.
