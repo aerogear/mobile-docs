@@ -11,8 +11,9 @@ include::_partials/attributes.adoc[]
 :context: security
 ifdef::context[:parent-context: {context}]
 
-[id='a-collection-of-modules']
-= Using the {device-security-service} Service
+[id='device-checks']
+= Implementing {device-security-service} in your mobile app
+:page-partial:
 
 The Device Security service allows you to easily configure and manage device security, and trust checks for your mobile application.
 
@@ -33,7 +34,9 @@ include::_partials/security/ref_terminology.adoc[leveloffset=+2]
 == Configuring your Development Environment for the {device-security-service} Service
 include::_partials/security/downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/security/setting-up-the-security-sdk.adoc[leveloffset=+2]
+
 include::_partials/security/performing-device-checks.adoc[leveloffset=+1]
+
 include::_partials/security/pinning-certificates.adoc[leveloffset=+1]
 
 
