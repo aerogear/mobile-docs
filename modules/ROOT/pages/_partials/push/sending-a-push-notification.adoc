@@ -82,26 +82,32 @@ npm i unifiedpush-node-sender
 +
 [source,javascript]
 ----
-var agSender = require("unifiedpush-node-sender"),
-  settings = {
-    url: "<pushServerURL e.g http(s)//host:port/context>",
-    applicationId: "<pushApplicationId e.g. 1234456-234320>",
-    masterSecret: "<masterSecret e.g. 1234456-234320>"
-  },
-  message = {
-    alert: "Hello from the Node.js Sender API!"
-  },
-  options = {
-    config: {
-        ttl: 3600,
-    }
-  };
+const agSender = require('unifiedpush-node-sender');
 
-agSender.Sender(settings)
-    .send(message, options)
-    .on("success", function(response) {
-        console.log("success called", response);
-    });
+const settings = {
+  url: "<pushServerURL e.g http(s)//host:port/context>",
+  applicationId: "<pushApplicationId e.g. 1234456-234320>",
+  masterSecret: "<masterSecret e.g. 1234456-234320>"
+
+};
+
+const message = {
+  alert: "Hello from the Node.js Sender API!"
+};
+
+const options = {
+  config: {
+    ttl: 3600
+  }
+};
+
+agSender(settings).then((client) => {
+  client.sender.send(message, options).then((response) => {
+    console.log('success', response);
+  }).catch((error) => {
+    console.log('error', error);
+  })
+});
 ----
 --
 REST::
