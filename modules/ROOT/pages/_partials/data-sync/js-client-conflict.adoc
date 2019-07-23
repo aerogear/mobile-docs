@@ -54,7 +54,7 @@ client.mutate({
 })
 ----
 
-The client automatically resolves the conflicts based on the current strategy and notify listeners as required.
+The client automatically resolves the conflicts based on the current strategy and notifies listeners as required.
 
 Conflict resolution works with the recommended defaults and does not require any specific handling on the client.
 
