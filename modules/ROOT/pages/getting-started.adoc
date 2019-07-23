@@ -1,8 +1,9 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 = Getting Started with {org-name} {product-name}
+:page-partial:
 
 == Introduction
 
