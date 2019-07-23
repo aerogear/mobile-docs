@@ -9,6 +9,7 @@
   ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
 [context.production.environment]
+  command = "/opt/build/repo/bin/netlify-build.sh"
 
 [context.deploy-preview]
-  command = "URL=$DEPLOY_PRIME_URL node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml"
+  command = "/opt/build/repo/bin/netlify-build.sh"
