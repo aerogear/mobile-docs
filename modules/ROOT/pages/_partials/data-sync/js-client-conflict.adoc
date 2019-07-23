@@ -41,7 +41,7 @@ client.offlineMutation({
 })
 ----
 
-If using Apollo's mutate function, provide the the `returnType` paramter as follows:
+If using Apollo's mutate function, provide the `returnType` parameter as follows:
 
 [source,javascript]
 ----
