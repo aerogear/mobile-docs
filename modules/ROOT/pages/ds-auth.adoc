@@ -3,7 +3,7 @@ include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
 
-[id='{context}']
+[id='auth_{context}']
 = Supporting authentication and authorization in your mobile app
 :page-partial:
 :toc:
@@ -11,7 +11,6 @@ include::_partials/attributes.adoc[]
 [#sync-server-auth]
 include::_partials/data-sync/server-auth.adoc[leveloffset=1]
 
-[#sync-server-auth-websockets]
 include::_partials/data-sync/server-auth-websockets.adoc[leveloffset=1]
 
 [#sync-js-client-auth]

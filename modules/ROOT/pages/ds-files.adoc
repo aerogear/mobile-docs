@@ -3,7 +3,7 @@ include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
 
-[id='{context}']
+[id='files{context}']
 = Allowing users upload files from your mobile app
 :page-partial:
 :toc:
