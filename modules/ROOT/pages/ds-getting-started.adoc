@@ -2,5 +2,5 @@
 include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
-include::_partials/data-sync/server-getting-started.adoc[leveloffset=0]
+include::_partials/data-sync/server-getting-started.adoc[leveloffset=1]
 
