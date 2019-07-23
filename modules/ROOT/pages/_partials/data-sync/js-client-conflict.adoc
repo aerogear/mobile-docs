@@ -27,11 +27,14 @@ To enable conflict resolution, the server side resolvers must be configured to p
 Detection can rely on different implementations and return the conflict error back to the client. 
 See <<#conflict-resolution-{context}, Server Side Conflict Detection>> for more information.
 
-You must provide mutations with the context, that is the `returnType` parameter to resolve conflicts.
+.Procedure
+
+Provide the mutation context with the `returnType` parameter to resolve conflicts.
 This parameter defines the Object type being operated on.
+You can implement this in two ways:
 
-If using {sync-service}'s `offlineMutation` you can provide the `returnType` parameter directly as follows:
-
+* If using {sync-service}'s `offlineMutation` you can provide the `returnType` parameter directly as follows:
++
 [source,javascript]
 ----
 client.offlineMutation({
@@ -41,8 +44,8 @@ client.offlineMutation({
 })
 ----
 
-If using Apollo's mutate function, provide the `returnType` parameter as follows:
-
+* If using Apollo's `mutate` function, provide the `returnType` parameter as follows:
++
 [source,javascript]
 ----
 client.mutate({
