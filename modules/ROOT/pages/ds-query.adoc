@@ -1,5 +1,5 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 include::_partials/data-sync/js-client-query.adoc[]

@@ -1,10 +1,11 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 
 [id='{context}']
 = Supporting authentication and authorization in your mobile app
+:page-partial:
 :toc:
 
 [#sync-server-auth]

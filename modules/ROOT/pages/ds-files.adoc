@@ -1,10 +1,11 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 
 [id='{context}']
 = Allowing users upload files from your mobile app
+:page-partial:
 :toc:
 
 include::_partials/data-sync/server-files.adoc[leveloffset=1]

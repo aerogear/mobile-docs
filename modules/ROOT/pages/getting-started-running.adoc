@@ -1,7 +1,9 @@
-include::{partialsdir}/attributes.adoc[]
-
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
 
 = Setting Up your Local Development Environment
+:page-partial:
 :toc:
 
 .Prerequisites
