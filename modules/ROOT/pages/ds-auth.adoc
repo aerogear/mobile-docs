@@ -2,8 +2,7 @@
 include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
-
-[id='auth_{context}']
+[id='data-sync-auth']
 = Supporting authentication and authorization in your mobile app
 :page-partial:
 :toc:
