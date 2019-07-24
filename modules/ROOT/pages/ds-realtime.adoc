@@ -2,7 +2,7 @@
 include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
-[id='{context}']
+[id='realtime_{context}']
 = Supporting real-time updates in your mobile app
 :page-partial:
 :toc:

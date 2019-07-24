@@ -3,7 +3,7 @@ include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
 
-[id='{context}']
+[id='conflict_{context}']
 = Resolving Conflicts in your Data Sync app
 :page-partial:
 :toc:

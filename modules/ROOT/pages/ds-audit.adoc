@@ -3,7 +3,7 @@ include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
 
-[id='{context}']
+[id='audit_{context}']
 = Enabling audit logs and viewing reports
 :page-partial:
 :toc:

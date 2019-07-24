@@ -1,3 +1,4 @@
+[[offline-client]]
 = Supporting offline functionality in your mobile app
 :toc:
 

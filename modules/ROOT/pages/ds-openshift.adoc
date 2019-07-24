@@ -3,7 +3,7 @@ include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
 
-[id='{context}']
+[id='openshift_{context}']
 = Running a {sync-service} app on OpenShift
 :page-partial:
 :toc:
