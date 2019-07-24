@@ -8,5 +8,5 @@ As of July 2019, the following versions are tested and supported:
 
 * Cordova: version 9
 * Nodejs: version Node v10.16.0 (LTS) and Node v12.x
-* Android SDK: API level 29
+* Android SDK: API level 28
 * XCode: version 10.2
