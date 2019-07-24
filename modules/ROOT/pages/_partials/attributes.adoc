@@ -65,5 +65,7 @@
 :metrics-guide-link: {link-product-doc-home}/mobile-metrics
 :push-guide-link: {link-product-doc-home}/push-notifications
 :device-security-guide-link: {link-product-doc-home}/device-security
-:data-sync-guide-link: {link-product-doc-home}/data-sync
 :getting-started-guide-link: {link-product-doc-home}/getting-started
+
+:data-sync-guide-link: {link-product-doc-home}/data-sync
+:data-sync-queries-link: {link-product-doc-home}/ds-query.html
