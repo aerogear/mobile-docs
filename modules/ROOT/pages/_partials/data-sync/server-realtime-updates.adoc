@@ -1,5 +1,5 @@
 [id="realtime-updates-{context}"]
-= Implementing real-time updates on a Data Sync server 
+= Implementing real-time updates on a Data Sync server
 
 The follow code shows typical code for a Data Sync Server without subscriptions:
 
@@ -67,8 +67,8 @@ const server = app.listen({ port }, () =>
 +
 The `createSubscriptionServer` code:
 +
-* returns a `SubscriptionServer` instance 
-* installs handlers for 
+* returns a `SubscriptionServer` instance
+* installs handlers for
 ** managing websocket connections
 ** delivering subscriptions on the server
 * provides integrations with other modules such as `@aerogear/voyager-keycloak`.
@@ -100,8 +100,8 @@ Subscriptions depend on a https://en.wikipedia.org/wiki/Publish%E2%80%93subscrib
 
 == Defining subscriptions in the schema
 
-Subscriptions are a root level type. 
-They are defined in the schema similar to `Query` and `Mutation`. 
+Subscriptions are a root level type.
+They are defined in the schema similar to `Query` and `Mutation`.
 For example, in the following schema, a `Task` type is defined and so are mutations and subscriptions.
 
 [%collapsible]
@@ -127,7 +127,7 @@ type Task {
 == Implementing resolvers
 
 Inside the resolver map, subscription resolvers return an `AsyncIterator,` which listens for events.
-To generate an event, call the `publish` method. 
+To generate an event, call the `publish` method.
 The `pubsub.publish` code is typically located inside a mutation resolver.
 
 In the following example, when a new task is created, the `createTask` resolver publishes the result of this mutation to the `TaskCreated` channel.
@@ -155,10 +155,8 @@ const resolvers = {
 ----
 ====
 
-NOTE: This subscription server does not implement authentication or authorization. For information about implementing authenication and authorization, see xref:ds-auth.adoc[Supporting authentication and authorization in your mobile app].
+NOTE: This subscription server does not implement authentication or authorization. For information about implementing authenication and authorization, see Supporting authentication and authorization in your mobile app.
 
 .Additional Information
 
 For information on how to use subscriptions in your client code, see xref:sync-js-client-realtime-updates[Realtime Updates].
-
-
