@@ -1,24 +1,22 @@
 [id="conflict-resolution-{context}"]
 
-= Detecting Conflicts on the Server
+= Detecting conflicts on the server
 
-At a high level, there is a typical flow to detecting conflicts.
+A typical flow for detecting conflicts includes the following steps:
 
 . *A Mutation Occurs* - A client tries to modify or delete an object on the server using a GraphQL mutation
 . *Read the Object* - The server reads the current object that the client is trying to modify from the data source
-. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there is a conflict. The developer can choose _how_ the comparison is performed.
+. *Conflict Detection* - The server compares the current object with the data sent by the client to see if there is a conflict. 
+The developer chooses how the comparison is performed.
 
-== Pluggable Conflict Detection
-The `aerogear/voyager-conflicts` module uses the concept of *pluggable conflict detection* to help developers with the *Conflict Detection* steps regardless of their storage.
+The `aerogear/voyager-conflicts` module helps developers with the *Conflict Detection* steps regardless of the storage technology, while the fetching and storing of data is the responsibility of the developer.
 
-The conflict detection is enabled by {sync-server}, while the fetching and storing of data is the responsibility of the developer.
-
-Pluggable conflict detection supports the following implementations:
+This release supports the following implementations:
 
 * `VersionedObjectState` - depends on the version field supplied in objects (the version field is used by default when importing conflictHandler). For details, please see: xref:version-based-conflict[]
 * `HashObjectState` - depends on a hash calculated from the entire object. For details, please see: xref:hash-based-conflict[]
 
-These implementations are based on the `ObjectState` interface that can be extended to provide custom implementations for conflict detection.
+These implementations are based on the `ObjectState` interface and that interface can be extended to provide custom implementations for conflict detection.
 
 .Prerequisites
 
@@ -29,7 +27,7 @@ If you use a database, it is your responsibility to administer, maintain and bac
 If you use any other form of data storage, you are responsible for backing up the data.
 
 [#version-based-conflict]
-== Version Based Conflict Detection
+== Implementing version based conflict detection
 
 Version based conflict resolution is the recommended and simplest approach for conflict detection and resolution. The core idea is that every object has a `version` property with an integer value. A *conflict* occurs when the version number sent by the client does not match the version stored in the server. This means a different client has already updated the object.
 
@@ -86,7 +84,7 @@ In the example above, the `throw` statement ensures that the client receives all
 Since the conflict will be resolved on the client, it is not required to persist the data. However, if there is no conflict, the data sent by the client should be persisted. For more information on resolving the conflict client-side, please see: xref:resolving-conflicts-on-the-client-2[Resolving Conflicts on the Client].
 
 [#hash-based-conflict]
-== Hash Based Conflict Detection
+== Implementing hash based conflict detection
 
 Hash based conflict detection is a mechanism to detect conflicts based on the _total_ object being updated by the client. It does this by hashing each object and comparing the hashes. This tells the server whether or not the objects are equivalent and can be considered conflict free.
 
@@ -144,7 +142,7 @@ Since the conflict will be resolved on the client, it is not required to persist
 
 
 [#error-structure]
-== Structure of the Conflict Error
+== About the structure of the conflict error
 
 The server needs to return a specific error when a conflict is detected containing both the server and client states. This allows the client to resolve the conflict.
 
@@ -164,4 +162,3 @@ The server needs to return a specific error when a conflict is detected containi
         }
  }
 ----
-

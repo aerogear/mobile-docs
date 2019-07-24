@@ -4,7 +4,7 @@
 
 Prerequisites:
 
-* xref:authentication-and-authorization-{context}[Configure Data Sync Server for Authentication and Authorization]
+* xref:sync-server-auth[Configure Data Sync Server for Authentication and Authorization]
 * xref:ds-realtime.adoc#realtime-updates-{context}[Configuring Your Server for real-time updates]
 
 This section describes how to implement Authentication and Authorization over websockets with {idm-name}. For more generic documentation on Authentication over Websockets, read Apollo's https://www.apollographql.com/docs/apollo-server/features/subscriptions/#authentication-over-websocket[Authentication Over Websocket] document.

@@ -1,3 +1,4 @@
+[[sync-js-client-advanced-topics]]
 = Advanced Topics
 :toc:
 
@@ -79,6 +80,7 @@ The `OptimisticResponse` feature and the <<#sync-client-offline-queue-listener, 
 See the xref:showcase-apps.adoc[Showcase Apps section] for more information.
 //end::excludeDownstream[]
 
+[[cache-update-helpers]]
 == Cache Update Helpers
 
 {sync-client} provides an out of the box solution for managing updates to your application's cache.

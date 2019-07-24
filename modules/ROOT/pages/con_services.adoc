@@ -1,7 +1,10 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
+
 = Mobile Services
+:page-partial:
+
 {org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
 
 The following services are available:

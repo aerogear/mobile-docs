@@ -1,4 +1,5 @@
 [[authentication-and-authorization]]
+[[sync-server-auth]]
 = Configuring your server for authentication and authorization using {idm-name}
 
 Using the {keycloak-service} service and the link:https://www.npmjs.com/package/@aerogear/voyager-keycloak[@aerogear/voyager-keycloak] module, it is possible to add security to a {sync-server} application.

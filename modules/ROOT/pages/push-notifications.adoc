@@ -1,6 +1,6 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 :toclevels: 4
 
@@ -13,6 +13,7 @@ ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
 = Using the {unifiedpush-service} Mobile Service
+:page-partial:
 
 [[introduction]]
 The {unifiedpush-service} service allows you to send native push notifications to different mobile operating systems.

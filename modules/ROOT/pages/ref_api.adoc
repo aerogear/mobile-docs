@@ -1,7 +1,9 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
+
 = AeroGear API Reference
+:page-partial:
 
 You can find the links to the API reference of each module for each platform in the table below. 
 

@@ -1,8 +1,9 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 = Registering a {mobile-client}
+:page-partial:
 
 After the setup is completed, the next thing you need to do is to register a {mobile-client} for the mobile app that you are going to develop.
 
