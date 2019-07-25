@@ -9,3 +9,7 @@ Generally speaking, AeroGear Mobile Services aim to support the latest versions 
 * Nodejs: version 8 and 10
 * Android SDK: API level 27
 * XCode: version 10.1
+
+== Additional information
+
+{org-name} does not support Ionic projects that include link:https://capacitor.ionicframework.com/docs/getting-started/with-ionic/[Capacitor].
