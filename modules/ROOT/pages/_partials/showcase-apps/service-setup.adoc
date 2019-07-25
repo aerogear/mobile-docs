@@ -14,31 +14,47 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 [#setup]
 == Setting up Mobile Services to Demonstrate Showcase Apps
 
-[discrete]
+// tag::excludeDownstream[]
 .Prerequisites
 
 * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
 
-[discrete]
+// end::excludeDownstream[]
+
 .Procedure
 
+// tag::excludeDownstream[]
 . To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
+// end::excludeDownstream[]
 
 . To demonstrate {keycloak-service}:
 
-.. xref:identity-management.adoc#provisioning-the-identity-management-service[Provision the {keycloak-service} service].
+// tag::excludeDownstream[]
+.. xref:{identity-management.adoc}#provisioning-the-identity-management-service[Provision the {keycloak-service} service].
+// end::excludeDownstream[]
 
-.. xref:identity-management.adoc#configuring-the-service[Set up the {keycloak-service} service].
+.. link:{idm-guide-link}#configuring-the-service[Set up the {keycloak-service} service].
 
-.. Create a new user to authenticate as. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[here].
+.. Create a new user to authenticate using the link:{idm-docs-link}[{keycloak-service} documentation].
 
-.. Set credentials for the created user. Follow the steps link:https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[here].
+.. Set credentials for the created user. Follow the steps link:{idm-docs-link}[documentation].
 
 +
-For more information about features, see xref:identity-management.adoc[{keycloak-service} Service]
+For more information about features, see link:{idm-guide-link}[{keycloak-service} Service]
 
-. To demonstrate {unifiedpush-service}, xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+// tag::excludeDownstream[]
+. To demonstrate {unifiedpush-service}xref:push-notifications.adoc#provisioning-push-notifications-service[Provision the {unifiedpush-service} service]. For more information about features, see xref:push-notifications.adoc[{unifiedpush-service} Service]
+// end::excludeDownstream[]
 
+// tag::excludeUpstream[]
+. To demonstrate {unifiedpush-service} the see link:{push-guide-link}[{unifiedpush-service} Service]
+
+. To demonstrate {sync-service}, perform the Data Sync solution pattern available from the Solution Explorer.
+// end::excludeUpstream[]
+
+
+
+// tag::excludeDownstream[]
 == Demonstrating {sync-service}
 
 . Provision a PostgreSQL database.
@@ -158,6 +174,9 @@ npm run start
 ----
 +
 . Once the process has finished, the showcase app is displayed in a browser at _http://localhost:8100/_.
+
+
+// end::excludeDownstream[]
 
 
 [[setting-up-the-showcase-app]]
