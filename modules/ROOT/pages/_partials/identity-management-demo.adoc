@@ -9,14 +9,14 @@ From the showcase app:
 
 [tabs]
 ====
-Cordova::
+Ionic::
 +
 --
 . To log in, click the *Login* button.
 . A login page is displayed, enter your credentials.
 . Once the login is successful, go to *User Profile* page and see the basic and roles information about the user.
 --
-// tag::excludeDownstream[]
+// tag::excludeAll[]
 Others::
 +
 --
@@ -26,6 +26,6 @@ Others::
 Once the login is successful, you will be taken back to the showcase
 application where you can see the roles and basic information of the user you have just logged in with.
 --
-// end::excludeDownstream[]
+// end::excludeAll[]
 ====
 // end::idm-demo[]

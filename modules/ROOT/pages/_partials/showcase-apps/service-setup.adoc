@@ -198,10 +198,10 @@ include::../cloning-showcase-app.adoc[tags=!excludeAll]
 // TODO: fix link and numbering
 [start=2]
 . The following steps will help you enable Push Notifications in a showcase application.
-
++
 [tabs]
 ====
-Cordova::
+Ionic::
 +
 --
 . You will need to create a project on link:https://firebase.google.com/[Firebase^].
@@ -209,7 +209,7 @@ Cordova::
 . Overwrite the file `app/google-services.json` with the `google-services.json` file you downloaded from
 Firebase Cloud Messaging console.
 --
-// tag::excludeDownstream[]
+////
 Android::
 +
 --
@@ -234,31 +234,32 @@ Xamarin::
 --
 {unifiedpush-service} Service is not supported on Xamarin.
 --
-// end::excludeDownstream[]
+////
 ====
 
 [#binding]
 == Binding the Showcase {mobile-client} to {product-name}
 
+// tag::excludeDownstream[]
 . xref:mobile-metrics.adoc#binding-a-mobile-client-with-the-metrics-service[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
-. xref:identity-management.adoc#binding-a-mobile-client-with-the-identity-management-service[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
-. xref:push-notifications.adoc#binding-a-mobile-client-with-the-push-notifications-service[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
-+
-NOTE: This step also creates a variant as described in xref:push-notifications.adoc[ {unifiedpush-service} Service] terminology.
+// end::excludeDownstream[]
 
-. xref:data-sync.adoc#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
+. link:{idm-guide-link}#binding-a-mobile-client-with-the-identity-management-service[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
+. link:{push-guide-link}#binding-a-mobile-client-with-the-push-notifications-service[Bind the {mobile-client} to the {unifiedpush-service} service] if you want to demonstrate {unifiedpush-service}.
++
+NOTE: This step also creates a variant as described in link:{push-guide-link}[ {unifiedpush-service} Service] terminology.
+
+. link:{sync-guide-link}#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
 
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
-
-NOTE: This section only applies to the Ionic platform.
 
 . Open your {mobile-client} in Mobile Developer Console.
 . Copy the `mobile-services.json` configuration to your clipboard.
  Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
-NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+NOTE: The mobile-services.json file is the link between the mobile services running on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
 +
 . Copy the contents of the `mobile-services.json` file and paste them into the `mobile-services.json` located in `src`.
 
-include::../build-and-deploy.adoc[]
+include::../build-and-deploy.adoc[tags=!excludeAll]
