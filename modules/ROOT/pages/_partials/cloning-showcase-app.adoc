@@ -11,7 +11,7 @@ $ cd ionic-showcase
 $ git checkout {release-number}
 ----
 --
-// tag::excludeDownstream[]
+// tag::excludeAll[]
 Android::
 +
 --
@@ -42,5 +42,5 @@ $ cd xamarin-showcase-template
 $ git checkout {release-number}
 ----
 --
-// end::excludeDownstream[]
+// end::excludeAll[]
 ====

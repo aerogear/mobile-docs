@@ -191,9 +191,9 @@ xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile S
 [discrete]
 .Procedure
 
-1. Clone the showcase app and checkout the release tag {release-number}
-
-include::../cloning-showcase-app.adoc[]
+1. Clone the showcase app and checkout the release tag {showcase-version}
++
+include::../cloning-showcase-app.adoc[tags=!excludeAll]
 
 // TODO: fix link and numbering
 [start=2]

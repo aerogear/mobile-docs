@@ -1,0 +1,1 @@
+include::showcase-apps-all.adoc[tags=!excludeUpstream]
