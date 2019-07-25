@@ -1,24 +1,17 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
-= Security Services
+= Securing your mobile app
+:page-partial:
 
-There are two security services available:
+This guide does not address all mobile security topics. See the link:https://www.owasp.org/index.php/OWASP_Mobile_Security_Project[OWASP Mobile Security Project] for an introduction to mobile security.
+{org-name} helps you achieve security:
 
-
-[cols=","]
-|===
-
-a| xref:device-security.adoc[Device Security Service]
-
-a| xref:app-security.adoc[App Security Service]
+* xref:app-security[Using the {app-security-service} service] - remotely disable specific app variants
+* xref:device-checks[Adding {device-security-service} to your mobile app] - for example, disable app on rooted devices
 
 
-a|
-include::_partials/generic-service-intros.adoc[tags=device-security-service]
+include::app-security.adoc[leveloffset=1]
+include::device-security.adoc[leveloffset=1]
 
-a| 
-
-include::_partials/generic-service-intros.adoc[tags=security-service]
-|===

@@ -35,7 +35,9 @@ For an explanation of these terms, see link:{idm-docs-link}[{idm-name} Documenta
 . Click on the *{idm-name} Realm URL* link to open the {idm-name} Administration Console.
 +
 // TODO: @wei will default credentials always be as follows?
+// tag::excludeDownstream[]
 . Log in to the Administration console using the credentials you specified when xref:provisioning-the-keycloak-service[Provisioning] the service (defaults to admin/admin).
+// end::excludeDownstream[]
 
 . Select `Clients` from the left navigation menu.
 +
@@ -62,7 +64,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set the additional value to `http://localhost*`. 
+Set the additional value to `http://localhost*`.
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -92,7 +94,7 @@ Cordova::
 +
 --
 // end::excludeDownstream[]
-Set additional value to `http://localhost*`. 
+Set additional value to `http://localhost*`.
 // tag::excludeDownstream[]
 --
 Xamarin::
@@ -109,4 +111,3 @@ Depending on the target platform, set the additional value as described in eithe
 . Creating a new user account as described in link:{docs-create-user}[Creating a New User].
 
 . Set up credentials for the new user as described in link:{docs-user-creds}[User Credentials].
-

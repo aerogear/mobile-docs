@@ -1,12 +1,13 @@
-// start {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
 include::_partials/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// end::excludeDownstream[]
 
 :toc:
 
 :context: glossary
 
 = Glossary
+:page-partial:
 
 include::_partials/mobile_terminology.adoc[leveloffset=+1]
 

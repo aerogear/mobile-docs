@@ -1,13 +1,8 @@
-= Using the {app-security-service} Service
+= Implementing the {app-security-service} service in your mobile app
 
-Call the appSecurity clientInit function to implement the App Security Service. Call this service on application initialization.
+Call the appSecurity clientInit function to implement the App Security Service. 
+Call this service on application initialization, for example:
  
-[tabs]
-====
-Cordova::
-+
---
-// end::excludeDownstream[]
 [source,javascript]
 ----
 appSecurity.clientInit()
@@ -31,6 +26,3 @@ appSecurity.clientInit()
     */
 });
 ----
-// tag::excludeDownstream[]
---
-====

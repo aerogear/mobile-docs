@@ -1,3 +1,4 @@
+[[sync-js-client-realtime-updates]]
 = Implementing real-time updates on on the client
 
 A core concept of the GraphQL specification is an operation type called `Subscription`, they provide a mechanism for real time updates.

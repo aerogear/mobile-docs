@@ -1,4 +1,6 @@
-include::{partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
 
 // tag::excludeDownstream[]
 :docs-create-user: https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html
@@ -11,6 +13,7 @@ include::{partialsdir}/attributes.adoc[]
 // end::excludeUpstream[]
 
 = Configuring your {mobile-client} and Mobile Service in OpenShift
+:page-partial:
 :toc:
 
 .Prerequisite 

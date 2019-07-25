@@ -1,5 +1,5 @@
-[#sync-server-auth]
-[id="authentication-and-authorization-{context}"]
+[[authentication-and-authorization]]
+[[sync-server-auth]]
 = Configuring your server for authentication and authorization using {idm-name}
 
 Using the {keycloak-service} service and the link:https://www.npmjs.com/package/@aerogear/voyager-keycloak[@aerogear/voyager-keycloak] module, it is possible to add security to a {sync-server} application.
@@ -58,20 +58,6 @@ const server = VoyagerServer(apolloConfig, voyagerConfig)
 
 The link:https://github.com/aerogear/voyager-server/blob/master/examples/keycloak[Keycloak Example Server Guide] has an example server based off the instructions above and shows all of the steps needed to get it running.
 
-== Protecting Subscriptions using {idm-name}
-
-If you have set up a subscription server as described in xref:sync-server-realtime-updates[Realtime Updates] and you have set up {keycloak-service} as described above then your application should make use of the `onConnect` function to validate the token provided by the client. An example implementation of `onConnect` is shown below with a `KeycloakService` set up as shown above in xref:sync-server-auth[Setting Up Keycloak Protection in {sync-server}].
-
-```
-  new SubscriptionServer ({
-    execute,
-    subscribe,
-    onConnect: async connectionParams => {
-      return await keycloakService.validateToken(connectionParams)
-    },
-    schema: server.schema
-  }, ...)
-```
 == Using the hasRole directive in a schema
 
 The Voyager Keycloak module provides the `@hasRole` directive to define role based authorisation in your schema. The `@hasRole` directive is a special annotation that can be applied to
