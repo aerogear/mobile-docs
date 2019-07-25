@@ -61,13 +61,13 @@
 
 :link-product-doc-home: https://docs.aerogear.org/aerogear/latest
 //:rn-link: {link-product-doc-home}/1.0_release_notes
-:idm-guide-link: {link-product-doc-home}/identity-management
-:metrics-guide-link: {link-product-doc-home}/mobile-metrics
-:push-guide-link: {link-product-doc-home}/push-notifications
-:device-security-guide-link: {link-product-doc-home}/device-security
-:getting-started-guide-link: {link-product-doc-home}/getting-started
+:idm-guide-link: {link-product-doc-home}/identity-management.html
+:metrics-guide-link: {link-product-doc-home}/mobile-metrics.html
+:push-guide-link: {link-product-doc-home}/push-notifications.html
+:device-security-guide-link: {link-product-doc-home}/device-security.html
+:getting-started-guide-link: {link-product-doc-home}/getting-started.html
 
-:data-sync-guide-link: {link-product-doc-home}/data-sync
+:data-sync-guide-link: {link-product-doc-home}/data-sync.html
 :data-sync-queries-link: {link-product-doc-home}/ds-query.html
 :data-sync-auth-link: {link-product-doc-home}/ds-auth.html
 
