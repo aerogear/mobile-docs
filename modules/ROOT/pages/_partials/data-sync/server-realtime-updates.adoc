@@ -155,7 +155,7 @@ const resolvers = {
 ----
 ====
 
-NOTE: This subscription server does not implement authentication or authorization. For information about implementing authenication and authorization, see xref:ds-auth.adoc[Supporting authentication and authorization in your mobile app].
+NOTE: This subscription server does not implement authentication or authorization. For information about implementing authenication and authorization, see link:{data-sync-auth-link}[Supporting authentication and authorization in your mobile app].
 
 .Additional Information
 

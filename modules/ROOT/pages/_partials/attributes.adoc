@@ -69,3 +69,5 @@
 
 :data-sync-guide-link: {link-product-doc-home}/data-sync
 :data-sync-queries-link: {link-product-doc-home}/ds-query.html
+:data-sync-auth-link: {link-product-doc-home}/ds-auth.html
+
