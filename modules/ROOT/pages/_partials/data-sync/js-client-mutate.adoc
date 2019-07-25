@@ -2,7 +2,7 @@
 
 .Prerequisites
 * You have Node.js and npm installed.
-* You have completed xref:ds-query.adoc[Queries section] and the server is still running.
+* You have completed link:{data-sync-queries-link}[Queries section] and the server is still running.
 
 
 . Modify the client application to perform the mutation:
