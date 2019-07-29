@@ -32,7 +32,7 @@ image::mobile-clients-service-bind-3.png[]
 
 NOTE: You can safely close the dialog, the process continues in the background.
 
-After the binding is complete, the configuration in `mobile-services.json` for the {mobile-client} is updated in the
+After the binding is complete, the JSON in the *Configuration* tab is automatically updated.
 *Configuration* tab, and this configuration is used by your app to interact with the bound services.
 
 .Multiple service bindings
