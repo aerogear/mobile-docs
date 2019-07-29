@@ -32,11 +32,8 @@ image::mobile-clients-service-bind-3.png[]
 
 NOTE: You can safely close the dialog, the process continues in the background.
 
-After the binding is complete, the configuration in `mobile-services.json` for the {mobile-client} is updated in the
-*Configuration* tab.
-This configuration is used by your app to interact with the bound services.
-
-image::mobile-clients-overview-mobile-services-json.png[]
+After the binding is complete, the JSON in the *Configuration* tab is automatically updated.
+Putting this JSON into the `mobile-services.json` file for your mobile app enables your app to communicate with bound mobile services.
 
 .Multiple service bindings
 
@@ -57,4 +54,3 @@ image::mobile-clients-service-unbind.png[]
 If there are multiple bindings for the service there will be more options for the deletion.
 
 image::mobile-clients-service-multibinding-delete.png[]
-
