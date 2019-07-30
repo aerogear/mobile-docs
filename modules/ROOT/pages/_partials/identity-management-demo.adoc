@@ -4,7 +4,7 @@
 
 NOTE: Please make sure you have https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[created a user] and https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[set up credentials] first.
 
-// tag::idm-demo[]
+
 From the showcase app:
 
 [tabs]
@@ -28,4 +28,4 @@ application where you can see the roles and basic information of the user you ha
 --
 // end::excludeAll[]
 ====
-// end::idm-demo[]
+

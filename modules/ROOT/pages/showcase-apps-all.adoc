@@ -7,40 +7,29 @@ include::_partials/attributes.adoc[]
 = Using the Showcase Mobile App
 :page-partial:
 
-// start showcase-apps/index.adoc[leveloffset=1]
-include::_partials/showcase-apps/index.adoc[leveloffset=1]
-// end showcase-apps/index.adoc[leveloffset=1]
+include::_partials/showcase-apps/index.adoc[leveloffset=1,tags={include-tags}]
 
 
-// start showcase-apps/service-setup.adoc[leveloffset=1]
-include::_partials/showcase-apps/service-setup.adoc[leveloffset=2]
-// end showcase-apps/service-setup.adoc[leveloffset=1]
+include::_partials/showcase-apps/service-setup.adoc[leveloffset=2,tags={include-tags}]
 
 
 // tag::excludeDownstream[]
 [#certs]
 
-include::_partials/proc_self-signed-certs.adoc[leveloffset=1]
+include::_partials/proc_self-signed-certs.adoc[leveloffset=1,tags={include-tags}]
 // end::excludeDownstream[]
 
 [#features]
 == Demonstrating the ShowCase App Features
-// start {partialsdir}/identity-management-demo.adoc[leveloffset=2]
-include::_partials/identity-management-demo.adoc[leveloffset=2]
-// end {partialsdir}/identity-management-demo.adoc[leveloffset=2]
 
-// start showcase-apps/sync-dmo.adoc[leveloffset=2]
-include::_partials/showcase-apps/sync.adoc[leveloffset=2]
-// end showcase-apps/sync-dmo.adoc[leveloffset=2]
+include::_partials/identity-management-demo.adoc[leveloffset=2,tags={include-tags}]
 
-// start showcase-apps/device-security.adoc[leveloffset=2}]
-include::_partials/showcase-apps/security.adoc[leveloffset=2}]
-// end showcase-apps/device-security.adoc[leveloffset=2}]
+include::_partials/showcase-apps/sync.adoc[leveloffset=2,tags={include-tags}]
 
-// start showcase-apps/push-notifications.adoc[leveloffset=2}]
-include::_partials/showcase-apps/push-notifications.adoc[leveloffset=2}]
-// end showcase-apps/push-notifications.adoc[leveloffset=2}]
+include::_partials/showcase-apps/security.adoc[leveloffset=2},tags={include-tags}]
+
+include::_partials/showcase-apps/push-notifications.adoc[leveloffset=2},tags={include-tags}]
 
 // tag::excludeDownstream[]
-include::_partials/showcase-apps/metrics.adoc[leveloffset=2]
+include::_partials/showcase-apps/metrics.adoc[leveloffset=2,tags={include-tags}]
 // end::excludeDownstream[]

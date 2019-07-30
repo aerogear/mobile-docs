@@ -136,7 +136,7 @@ xref:creating-the-data-sync-mobile-app-binding[Creating the Data Sync Mobile App
 
 1. Clone the showcase app
 +
-include::../cloning-showcase-app.adoc[]
+include::../cloning-showcase-app.adoc[tags=!excludeAll]
 
 2. Paste the Data Sync Mobile App configuration content into the *mobile-services.json* file located within _src_.
 

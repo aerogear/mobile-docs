@@ -1,1 +1,3 @@
-include::showcase-apps-all.adoc[tags=!excludeUpstream]
+:include-tags: !excludeUpstream;!excludeAll
+
+include::showcase-apps-all.adoc[tags={include-tags}]
