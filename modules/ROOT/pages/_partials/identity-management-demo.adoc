@@ -14,7 +14,7 @@ Ionic::
 --
 . To log in, click the *Login* button.
 . A login page is displayed, enter your credentials.
-. Once the login is successful, go to *User Profile* page and see the basic and roles information about the user.
+. Once the login is successful, navigate to *User Profile* page and see the roles and basic information about the user.
 --
 // tag::excludeAll[]
 Others::
