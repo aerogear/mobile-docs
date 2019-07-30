@@ -35,7 +35,7 @@ For more information about `mutate` and the options available, see link:https://
 The @aerogear/voyager-client module provides an `OfflineClient` class which exposes the following functionality:
 
 * direct access to the mutation store.
-* allows you register multiple offline event listeners, see <<sync-client-offline-queue-listener>>
+* allows you to register multiple offline event listeners, see <<sync-client-offline-queue-listener>>
 * automatically ensures the mobile app's local cache is kept up to date. This client automatically generates `update` methods, see <<cache-update-helpers>>
 
 To create the client:
