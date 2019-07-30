@@ -5,7 +5,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 
 . Set up the appropriate services as described in xref:setup[].
 . Set up the showcase app as described in xref:app[].
-. Register your showcase app as described in xref:registering-a-mobile-app.adoc[Registering a Mobile App].
+. Register your showcase app as described in link:{getting-started-guide-link}[Registering a Mobile App].
 . Bind your {mobile-client} to the appropriate services as described in xref:binding[]
 . Copy the `mobile-services.json` file to your IDE as described in xref:downloading-the-mobile-services-configuration-file[]
 . Build and run your showcase app  as described in xref:build[].
