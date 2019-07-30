@@ -2,6 +2,10 @@
 include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
+ifndef::include-tags[]
+:include-tags: !excludeAll
+endif::include-tags[]
+
 :toc:
 
 = Using the Showcase Mobile App
