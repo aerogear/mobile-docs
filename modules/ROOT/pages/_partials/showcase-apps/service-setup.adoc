@@ -47,7 +47,7 @@ For more information about features, see link:{idm-guide-link}[{keycloak-service
 // end::excludeDownstream[]
 
 // tag::excludeUpstream[]
-. To demonstrate {unifiedpush-service} the see link:{push-guide-link}[{unifiedpush-service} Service]
+. To demonstrate {unifiedpush-service}, see link:{push-guide-link}[{unifiedpush-service} Service]
 
 . To demonstrate {sync-service}, perform the Data Sync solution pattern available from the Solution Explorer.
 // end::excludeUpstream[]
