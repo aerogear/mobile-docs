@@ -2,7 +2,9 @@
 
 = {keycloak-service}
 
-NOTE: Please make sure you have https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html[created a user] and https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html[set up credentials] first.
+.Prerequisite
+
+Make sure you have created a user and set up credentials for that user as describe in the link:{idm-docs-link}[{idm-name} Documentation].
 
 
 From the showcase app:
