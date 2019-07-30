@@ -260,6 +260,6 @@ NOTE: This step also creates a variant as described in link:{push-guide-link}[ {
 +
 NOTE: The mobile-services.json file is the link between the mobile services running on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
 +
-. Copy the contents of the `mobile-services.json` file and paste them into the `mobile-services.json` located in `src`.
+. Copy the contents of the `mobile-services.json` file into the `mobile-services.json` file located in `src`.
 
 include::../build-and-deploy.adoc[tags=!excludeAll]
