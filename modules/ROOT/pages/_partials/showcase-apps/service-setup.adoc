@@ -30,7 +30,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 . To demonstrate {keycloak-service}:
 
 // tag::excludeDownstream[]
-.. xref:{identity-management.adoc}#provisioning-the-identity-management-service[Provision the {keycloak-service} service].
+.. link:{idm-guide-link}/#provisioning-the-identity-management-service[Provision the {keycloak-service} service].
 // end::excludeDownstream[]
 
 .. link:{idm-guide-link}#configuring-the-service[Set up the {keycloak-service} service].
