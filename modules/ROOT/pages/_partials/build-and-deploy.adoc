@@ -8,7 +8,7 @@
 
 [tabs]
 ====
-Cordova::
+Ionic::
 +
 --
 [source,bash,subs="attributes"]
@@ -17,7 +17,7 @@ $ npm install
 $ npm run ionic:build
 ----
 --
-// tag::excludeDownstream[]
+// tag::excludeAll[]
 Android::
 +
 --
@@ -50,7 +50,7 @@ Run this command to install dependencies (optional):
 $ nuget restore
 ----
 --
-// end::excludeDownstream[]
+// end::excludeAll[]
 ====
 
 [start=2]
@@ -58,7 +58,7 @@ $ nuget restore
 
 [tabs]
 ====
-Cordova::
+Ionic::
 +
 --
 To run the showcase app, use these commands:
@@ -79,7 +79,7 @@ $ ionic cordova run android --device      # run on a connected device
 $ ionic cordova run android --emulator    # run on the Android emulator
 ----
 --
-// tag::excludeDownstream[]
+// tag::excludeAll[]
 Android::
 +
 --
@@ -115,5 +115,5 @@ Xamarin::
 
 NOTE: If no android devices are selectable, it could mean that no virtual android devices has been configured. To add one, click on *Tools->Device Manager->Add Device*
 --
-// end::excludeDownstream[]
+// end::excludeAll[]
 ====

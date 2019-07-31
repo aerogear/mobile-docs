@@ -16,11 +16,9 @@ To use Device Trust in the showcase app:
 . View the results of the Device security checks.
 . Navigate to the {grafana-ui}, and view the metrics as described in xref:mobile-metrics.adoc[Analyzing App Usage].
 
-== {app-security-service}
+== {app-security-service} Service
 
-Application Trust will allow you to connect to the Mobile Security Service and that can be used to enable or disable an application from a remote console. 
-
-NOTE: The service it will not disable the showcase application it will only demonstrate the functionality.
+Application Trust allows you to connect to the Mobile Security Service and that allows you to enable or disable a mobile app from the {app-security-service} console. 
 
 To use Application Trust in the showcase app:
 
