@@ -24,7 +24,7 @@ By default queries and the results of mutations are cached.
 
 Mutations can change query results, make sure to call the `refetchQueries` or `update` options of the `mutate` method to ensure the local cache is kept up to date. 
 
-The @aerogear/voyager-client module also provides cache helper functions to reduce the amount of code required, as described in  <<cache-update-helpers>>.
+The @aerogear/voyager-client module also provides cache helper functions to reduce the amount of code required, as described in <<cache-update-helpers>>.
 
 For more information about `mutate` and the options available, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
