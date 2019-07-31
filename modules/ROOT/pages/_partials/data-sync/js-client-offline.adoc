@@ -2,29 +2,46 @@
 = Supporting offline functionality in your mobile app
 :toc:
 
-The {sync-client} provides first class support for performing GraphQL operations while offline. This is because the SDK uses the "cache-first" strategy when performing queries, regardless of the network status of the client. As illustrated in the diagram below, all the queries will be performed against the cache, and the Apollo client will manage filling the cache with data from the server. On top of that, the {sync-client} uses a mutation store to support offline mutations.
+== About offline functionality
+
+Your mobile app can run offline and allow users to query and create mutations using the @aerogear/voyager-client module. 
+
+As shown in the diagram below, all queries are performed against the cache, a mutation store supports offline mutations.
 
 image::datasync-features.png[]
 
-The mutation store is effectively a persisted queue, and it is used to hold  mutation requests when the client is offline. If a client goes offline for a long period of time, it will be able to negotiate local updates with the server using conflict resolution strategies.
+NOTE: The mutation store is sometimes referred to as the offline store.
 
-When a client becomes online from the offline state, the mutations that are persisted locally will be replicated back to the server, as shown in the diagram below:
+If a client goes offline for a long period of time, the mutation store negotiates local updates with the server using conflict resolution strategies.
+
+When a client comes online again, the mutations are replicated back to the server, as shown in the diagram below:
 
 image::datasync-going_offline.png[]
 
-Developers can attach listeners to get notification about if a update is applied on the server or not, and take appropriate actions.
+Developers can attach listeners to get notifications about updates applied on the server or failing, and take appropriate actions.
+
+.Mutations and Local Cache
+
+By default queries and the results of mutations are cached.
+
+Mutations can change query results, make sure to call the `refetchQueries` or `update` options of the `mutate` method to ensure the local cache is kept up to date. 
+
+The @aerogear/voyager-client module also provides cache helper functions to reduce the amount of code required, as described in xref:cache-update-helpers[].
+
+For more information about `mutate` and the options available, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
+
 
 [#setup-offline-client]
-== Offline Client
+== Creating an offline client 
 
-If you need to support offline use cases, {sync-client} comes with some functionality that may be useful.
-It provides an `OfflineClient` class which exposes the following functionality:
 
-* Automatically ensuring your application's local cache is kept up to date. This client will automatically generate `update` methods mentioned in the previous section. See: <<cache-update-helpers>>
-* Giving you direct access to the offline store the client uses.
-* Register multiple offline event listeners. See: <<sync-client-offline-queue-listener>>
+The @aerogear/voyager-client module provides an `OfflineClient` class which exposes the following functionality:
 
-To create this client the following code example can be used:
+* direct access to the mutation store
+* allows you register multiple offline event listeners as described in xref:sync-client-offline-queue-listener[]
+* automatically ensures the mobile app's local cache is kept up to date. This client automatically generates `update` methods as described in xref:cache-update-helpers[].
+
+To create the client:
 
 [source,javascript]
 ----
@@ -44,19 +61,11 @@ async function setupClient() {
 setupClient();
 ----
 
-Once setup is complete this `client` can be used in place of your regular Apollo Client as it supports all the same functionality.
+This client can replace an Apollo client as it supports the same functionality.
 
-== Mutations and Local Cache
 
-By default queries are cached based on the object type and `id` field, and the results of performed queries are cached as well and they will be available when the client is offline.
 
-Because of this, when mutations that can change query results are performed, the `refetchQueries` or `update` options of the `mutate` method should be used to ensure the local cache is kept up to date. {sync-client} also provides cache helper functions and an offline client to reduce the amount of code required. Please see <<cache-update-helpers>> for more information.
-
-For more information about `mutate` and the options available, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
-
-== Offline Workflow
-
-=== Performing Mutations While Offline
+= Detecting mutations while offline
 
 If a mutation occurs while the device is offline, the `client.mutate` function:
 
@@ -79,14 +88,18 @@ For example:
   });
 ----
 
-NOTE:  In addition to watching individual mutations, you can add a global offline listener when creating a client. See: <<#sync-client-offline-queue-listener, Offline Queue Listeners>>
+NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in xref:sync-client-offline-queue-listener[].
 
-=== Using offlineMutate
+= Performing mutations while offline
 
-{sync-client} provides an `offlineMutate` method which extends Apollo's mutate function with some extra functionality. This includes automatically adding some fields {sync-client} relies on to each operation's context. To set up the offline client, see <<#setup-offline-client, Setting up the Offline Client>>.
+The @aerogear/voyager-client module provides an `offlineMutate` method which extends Apollo's mutate function with some extra functionality. 
+This includes automatically adding some fields to each operation's context. 
 
-Once set up is complete, `offlineMutate` is then available to use. It is important to note that `offlineMutate` accepts the same parameters as `mutate` with the additional (optional) parameters also available.
+To set up the offline client, see xref:setup-offline-client[].
 
+Once set up is complete, `offlineMutate` is then available to use. 
+
+Note: The `offlineMutate` method accepts the same parameters as `mutate` with some additional optional parameters also available.
 
 
 [source,javascript]
@@ -107,10 +120,13 @@ Once set up is complete, `offlineMutate` is then available to use. It is importa
 <3> The field on the object used to identify it. Defaults to "id" if not provided.
 <4> The type of object being operated on.
 
-=== Global Update Functions
+== Supporting app restarts while offline
 
-Apollo client holds all mutation parameters in memory. An offline Apollo client will continue to store mutation parameters and once online, it will restore all mutations to memory. Any Update Functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimisticResponses after a restart. _Update functions_ supplied to mutations cannot be saved in the cache.
-As a result, all _optimisticResponses_ will disappear from the application after a restart and it will only reappear when the Apollo client becomes online and successfully syncs with the server.
+An Apollo client holds all mutation parameters in memory. 
+An offline Apollo client continues to store mutation parameters and once online, it restores all mutations to memory. 
+Any update functions that are supplied to mutations cannot be cached by an Apollo client resulting in the loss of all optimistic responses after a restart. 
+_Update functions_ supplied to mutations cannot be saved in the cache.
+As a result, all _optimisticResponses_ disappear from the application after a restart and  only reappear when the Apollo client becomes online and successfully syncs with the server.
 
 To prevent the loss of all _optimisticResponses_ after a restart, you can configure the _Update Functions_ to restore all _optimisticResponses_.
 
@@ -156,9 +172,9 @@ let config = {
 }
 ----
 
-=== Online Only Queries
+== Ensuring specified mutations are performed online only
 
-If you wish to ensure certain queries or mutations are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used.
+If you wish to ensure certain queries or mutations are only executed when the client is online, use the GraphQL directive `@onlineOnly`, for example:
 
 [source, graphql]
 ----
@@ -168,7 +184,7 @@ exampleQuery(...) @onlineOnly {
 ----
 
 [#sync-client-offline-queue-listener]
-=== Listening for Events
+== Listening for events
 
 To handle all notifications about offline related events, use the *offlineQueueListener* listener in the config object
 
@@ -182,15 +198,15 @@ The following events are emitted:
 You can use this listener to build User Interfaces that show pending changes.
 
 [[cache-update-helpers]]
-=== Cache Update Helpers
+== Using cache update helpers
 
-{sync-client} provides an out of the box solution for managing updates to your application's cache.
+The @aerogear/voyager-client module provides an out of the box solution for managing updates to your application's cache.
 It can intelligently generate cache update methods for both mutations and subscriptions.
 
-==== Mutations
+=== Using cache update helpers for mutations
 
 The following example shows how to use these helper methods for mutations.
-To use these methods, create an offline client as described in <<offline-client>> and then use the  `offlineMutate` method.
+To use these methods, create an offline client as described in xref:setup-offline-client[] and then use the  `offlineMutate` method.
 The `offlineMutate` function accepts a `MutationHelperOptions` object as a parameter.
 
 [source, javascript]
@@ -214,7 +230,7 @@ const mutationOptions = {
 };
 ----
 
-We can also provide more than one query to update in the cache by providing an array to the `updateQuery` parameter:
+You can also provide more than one query to update the cache by providing an array to the `updateQuery` parameter:
 
 [source, javascript]
 ----
@@ -238,8 +254,9 @@ const { createMutationOptions, CacheOperation } = require('@aerogear/voyager-cli
 client.offlineMutate<Task>(mutationOptions);
 ----
 
-If you do not wish to use the offline client you can also use the `createMutationOptions` function directly. This function provides an Apollo compatible `MutationOptions` object to pass to your pre-existing client.
-This is shown below where `mutationOptions` is the same object shown in the above code example.
+If you do not want to use the offline client you can also use the `createMutationOptions` function directly. 
+This function provides an Apollo compatible `MutationOptions` object to pass to your pre-existing client.
+The following example shows how to use this function where `mutationOptions` is the same object as the previous code example.
 
 [source, javascript]
 ----
@@ -248,11 +265,11 @@ const options = createMutationOptions(mutationOptions);
 client.mutate<Task>(options);
 ----
 
-==== Subscriptions
+=== Using cache update helpers for subscriptions
 
-{sync-client} also provides a subscription helper which can generate the necessary options to be used with Apollo Client's `subscribeToMore` function.
+The @aerogear/voyager-client module provides a subscription helper which can generate the necessary options to be used with Apollo Client's `subscribeToMore` function.
 
-To use this helper, we first need to create some options. These options should take the folowing form:
+To use this helper, we first need to create some options, for example:
 
 [source, javascript]
 ----
@@ -265,10 +282,10 @@ const options = {
 }
 ----
 
-This options object will be used to inform the subscription helper that for every data object
+This options object informs the subscription helper that for every data object
 received because of the `TASK_ADDED_SUBSCRIPTION` the `GET_TASKS` query should also be kept up to date in the cache.
 
-We can then create the required cache update functions in the following way:
+You can then create the required cache update functions:
 
 [source, javascript]
 ----
@@ -277,7 +294,7 @@ const { createSubscriptionOptions } = require('@aerogear/voyager-client');
 const subscriptionOptions = createSubscriptionOptions(options);
 ----
 
-To use this helper we then pass this `subscriptionOptions` variable to the `subscribeToMore` function of our `ObservableQuery`.
+To use this helper, pass this `subscriptionOptions` variable to the `subscribeToMore` function of our `ObservableQuery`.
 
 [source, javascript]
 ----
@@ -289,15 +306,14 @@ const query = client.watchQuery<AllTasks>({
 query.subscribeToMore(subscriptionOptions);
 ----
 
-The cache will now be kept up to date with automatic data deduplication being performed.
+The cache is kept up to date while automatically performing data deduplication.
 
-===== Multiple Subscriptions
+=== Using cache update helpers for multiple subscriptions
 
-{sync-client} also provides the ability to automatically call `subscribeToMore` on your `ObservableQuery`. This can be useful
-in a situation where you may have multiple subscriptions which can affect one single query. For example, if you have a
-`TaskAdded`, `TaskDeleted` and a `TaskUpdated` subscription you would need three separate `subscribeToMore` function calls. This can become
-tedious as your number of subscriptions grow. To combat this, we can use the `subscribeToMoreHelper` function from {sync-client} to automatically handle this for us by passing
-it an array of subscriptions and their corresponding queries which need to be updated.
+The @aerogear/voyager-client module provides the ability to automatically call `subscribeToMore` on your `ObservableQuery`. 
+This can be useful in a situation where you may have multiple subscriptions which can affect one single query. 
+For example, if you have a `TaskAdded`, `TaskDeleted`, and a `TaskUpdated` subscription you require three separate `subscribeToMore` function calls. 
+To avoid this, use the `subscribeToMoreHelper` function from the @aerogear/voyager-client module to automatically handle this by passing an array of subscriptions and their corresponding queries:
 
 [source, javascript]
 ----
@@ -328,11 +344,16 @@ const query = client.watchQuery<AllTasks>({
 subscribeToMoreHelper(query, [addOptions, deleteOptions, updateOptions]);
 ----
 
-== Detecting Network Status
+= Detecting Network Status
 
-The link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/NetworkStatus.ts[NetworkStatus] interface can be used to check the current network status, or register a listener to perform certain actions when the status of the network changes.
+Use the NetworkStatus interface to check the current network status, or to register a listener which performs actions when the status of the network changes.
 
-Two default implementations are provided to support link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/WebNetworkStatus.ts[web browsers] and link:https://github.com/aerogear/aerogear-js-sdk/blob/master/packages/sync/src/offline/network/CordovaNetworkStatus.ts[Cordova]. The following example demonstrates how to register a listener using `CordovaNetworkStatus`:
+Two default implementations are provided:
+
+* *WebNetworkStatus*  for web browsers
+* *CordovaNetworkStatus* for Cordova
+
+The following example demonstrates how to register a listener using `CordovaNetworkStatus`:
 
 [source, javascript]
 ----
