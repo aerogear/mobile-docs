@@ -1,0 +1,39 @@
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+ifndef::include-tags[]
+:include-tags: !excludeAll
+endif::include-tags[]
+
+:toc:
+
+= Using the Showcase Mobile App
+:page-partial:
+
+include::_partials/showcase-apps/index.adoc[leveloffset=1,tags={include-tags}]
+
+
+include::_partials/showcase-apps/service-setup.adoc[leveloffset=2,tags={include-tags}]
+
+
+// tag::excludeDownstream[]
+[#certs]
+
+include::_partials/proc_self-signed-certs.adoc[leveloffset=1,tags={include-tags}]
+// end::excludeDownstream[]
+
+[#features]
+== Demonstrating the ShowCase App features
+
+include::_partials/identity-management-demo.adoc[leveloffset=2,tags={include-tags}]
+
+include::_partials/showcase-apps/sync.adoc[leveloffset=2,tags={include-tags}]
+
+include::_partials/showcase-apps/security.adoc[leveloffset=2},tags={include-tags}]
+
+include::_partials/showcase-apps/push-notifications.adoc[leveloffset=2},tags={include-tags}]
+
+// tag::excludeDownstream[]
+include::_partials/showcase-apps/metrics.adoc[leveloffset=2,tags={include-tags}]
+// end::excludeDownstream[]
