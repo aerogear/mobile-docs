@@ -1,5 +1,5 @@
 
-if [ $1 != 'local' ]; then
+if [[ -z $1 ]]; then
 
  echo 'netlify-publish-adoc'
  node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml
