@@ -1,17 +1,17 @@
 
 [tabs]
 ====
-Cordova::
+Ionic::
 +
 --
 [source,bash,subs="attributes"]
 ----
 $ git clone https://github.com/aerogear/ionic-showcase.git
 $ cd ionic-showcase
-$ git checkout {release-number}
+$ git checkout{showcase-version}
 ----
 --
-// tag::excludeDownstream[]
+// tag::excludeAll[]
 Android::
 +
 --
@@ -19,7 +19,7 @@ Android::
 ----
 $ git clone https://github.com/aerogear/android-showcase-template.git
 $ cd android-showcase-template
-$ git checkout {release-number}
+$ git checkout{showcase-version}
 ----
 --
 iOS::
@@ -29,7 +29,7 @@ iOS::
 ----
 $ git clone https://github.com/aerogear/ios-showcase-template.git
 $ cd ios-showcase-template
-$ git checkout {release-number}
+$ git checkout{showcase-version}
 ----
 --
 Xamarin::
@@ -39,8 +39,8 @@ Xamarin::
 ----
 $ git clone https://github.com/aerogear/xamarin-showcase-template.git
 $ cd xamarin-showcase-template
-$ git checkout {release-number}
+$ git checkout{showcase-version}
 ----
 --
-// end::excludeDownstream[]
+// end::excludeAll[]
 ====
