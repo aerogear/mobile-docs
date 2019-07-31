@@ -1,13 +1,10 @@
 
-if [[ -z $1 ]]; then
-
- echo 'netlify-publish-adoc'
- node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml
+echo 'netlify-publish-adoc'
+node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-site.yml
  
- echo 'node-publish-adoc'
- gem install asciidoctor
+echo 'node-publish-adoc'
+gem install asciidoctor
 
-fi
 
 for filename in ../modules/ROOT/pages/*.adoc; do
 
