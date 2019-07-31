@@ -17,7 +17,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 // tag::excludeDownstream[]
 .Prerequisites
 
-* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You are running OpenShift with {product-name} as described in link:{getting-started-guide-link}/[Setting up AeroGear {product-name} on OpenShift].
 
 // end::excludeDownstream[]
 
