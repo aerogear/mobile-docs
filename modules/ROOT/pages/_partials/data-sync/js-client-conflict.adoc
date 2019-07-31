@@ -33,11 +33,11 @@ Provide the mutation context with the `returnType` parameter to resolve conflict
 This parameter defines the Object type being operated on.
 You can implement this in two ways:
 
-* If using {sync-service}'s `offlineMutation` you can provide the `returnType` parameter directly as follows:
+* If using {sync-service}'s `offlineMutate` you can provide the `returnType` parameter directly as follows:
 +
 [source,javascript]
 ----
-client.offlineMutation({
+client.offlineMutate({
   ...
   returnType: 'Task'
   ...
@@ -184,7 +184,7 @@ An example of how developers can use this error:
 
 [source,javascript]
 ----
-return client.offlineMutation({
+return client.offlineMutate({
   ...
 }).then(result => {
   // handle the result
