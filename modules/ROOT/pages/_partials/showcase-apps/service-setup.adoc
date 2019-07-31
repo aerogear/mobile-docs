@@ -92,7 +92,7 @@ NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connect
 [discrete]
 .Prerequisites
 
-xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
+link:{data-sync-guide-link}/#setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
 .Procedure
@@ -186,7 +186,7 @@ npm run start
 [discrete]
 .Prerequisites
 
-xref:setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
+link:{data-sync-guide-link}/#setting-up-mobile-services-to-demonstrate-showcase-apps[Setting up Mobile Services to Demonstrate Showcase Apps]
 
 [discrete]
 .Procedure
