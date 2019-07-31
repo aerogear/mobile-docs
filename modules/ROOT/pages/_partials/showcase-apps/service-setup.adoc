@@ -251,7 +251,7 @@ NOTE: This step also creates a variant as described in link:{push-guide-link}[ {
 
 . link:{sync-guide-link}#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
 
-//[[downloading-the-mobile-services-configuration-file]]
+[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
 . Open your {mobile-client} in Mobile Developer Console.
