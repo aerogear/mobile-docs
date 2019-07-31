@@ -85,7 +85,7 @@ For example:
   });
 ----
 
-NOTE:  In addition to watching individual mutations, you can add a global offline listener when creating a client as described in <<#sync-client-offline-queue-listener, Offline Queue Listeners>>.
+NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in <<#sync-client-offline-queue-listener, Offline Queue Listeners>>.
 
 = Performing mutations while offline
 
