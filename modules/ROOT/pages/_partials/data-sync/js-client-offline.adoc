@@ -24,7 +24,7 @@ By default queries and the results of mutations are cached.
 
 Mutations can change query results, make sure to call the `refetchQueries` or `update` options of the `mutate` method to ensure the local cache is kept up to date. 
 
-The @aerogear/voyager-client module also provides cache helper functions to reduce the amount of code required, as described in <<cache-update-helpers>>.
+The @aerogear/voyager-client module also provides cache helper functions to reduce the amount of code required, as described in xref:cache-update-helpers[].
 
 For more information about `mutate` and the options available, see link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's document about mutations].
 
@@ -32,11 +32,12 @@ For more information about `mutate` and the options available, see link:https://
 [#setup-offline-client]
 == Creating an offline client 
 
+
 The @aerogear/voyager-client module provides an `OfflineClient` class which exposes the following functionality:
 
-* direct access to the mutation store.
-* allows you to register multiple offline event listeners, see <<sync-client-offline-queue-listener>>
-* automatically ensures the mobile app's local cache is kept up to date. This client automatically generates `update` methods, see <<cache-update-helpers>>
+* direct access to the mutation store
+* allows you register multiple offline event listeners as described in xref:sync-client-offline-queue-listener[]
+* automatically ensures the mobile app's local cache is kept up to date. This client automatically generates `update` methods as described in xref:cache-update-helpers[].
 
 To create the client:
 
@@ -85,14 +86,14 @@ For example:
   });
 ----
 
-NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in <<#sync-client-offline-queue-listener, Offline Queue Listeners>>.
+NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in xref:sync-client-offline-queue-listener[].
 
 = Performing mutations while offline
 
 The @aerogear/voyager-client module provides an `offlineMutate` method which extends Apollo's mutate function with some extra functionality. 
 This includes automatically adding some fields to each operation's context. 
 
-To set up the offline client, see <<#setup-offline-client, Setting up the Offline Client>>.
+To set up the offline client, see xref:setup-offline-client[].
 
 Once set up is complete, `offlineMutate` is then available to use. 
 
@@ -203,7 +204,7 @@ It can intelligently generate cache update methods for both mutations and subscr
 === Using cache update helpers for mutations
 
 The following example shows how to use these helper methods for mutations.
-To use these methods, create an offline client as described in <<offline-client>> and then use the  `offlineMutate` method.
+To use these methods, create an offline client as described in xref:setup-offline-client[] and then use the  `offlineMutate` method.
 The `offlineMutate` function accepts a `MutationHelperOptions` object as a parameter.
 
 [source, javascript]
