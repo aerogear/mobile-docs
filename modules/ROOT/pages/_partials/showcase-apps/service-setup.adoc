@@ -24,7 +24,7 @@ Showcase apps demonstrate many features of {product-name}. To see these features
 .Procedure
 
 // tag::excludeDownstream[]
-. To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service] For more information about features, see xref:mobile-metrics.adoc[{metrics-service} Service]
+. To demonstrate {metrics-service}, xref:mobile-metrics.adoc#provisioning-metrics-service[Provision the {metrics-service} service]. For more information about features, see link:{metrics-guide-link}/[{metrics-service} Service].
 // end::excludeDownstream[]
 
 . To demonstrate {keycloak-service}:
