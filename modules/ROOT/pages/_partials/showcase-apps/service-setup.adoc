@@ -241,7 +241,7 @@ Xamarin::
 == Binding the Showcase {mobile-client} to {product-name}
 
 // tag::excludeDownstream[]
-. xref:mobile-metrics.adoc#binding-a-mobile-client-with-the-metrics-service[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
+. link:{metrics-guide-link}#binding-a-mobile-client-with-the-metrics-service[Bind the {mobile-client} to the {metrics-service} service] if you want to demonstrate the {metrics-service} service.
 // end::excludeDownstream[]
 
 . link:{idm-guide-link}#binding-a-mobile-client-with-the-identity-management-service[Bind the {mobile-client} to the {keycloak-service} service] if you want to demonstrate authentication.
