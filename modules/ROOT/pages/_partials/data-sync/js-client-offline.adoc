@@ -10,6 +10,8 @@ As shown in the diagram below, all queries are performed against the cache, a mu
 
 image::datasync-features.png[]
 
+NOTE: The mutation store is sometimes referred to as the offline store.
+
 If a client goes offline for a long period of time, the mutation store negotiates local updates with the server using conflict resolution strategies.
 
 When a client comes online again, the mutations are replicated back to the server, as shown in the diagram below:
@@ -170,9 +172,9 @@ let config = {
 }
 ----
 
-== Performing queries while online only
+== Ensuring specified mutations are performed online only
 
-If you wish to ensure certain queries or mutations are only executed when the client is online, a GraphQL directive called `@onlineOnly` can be used.
+If you wish to ensure certain queries or mutations are only executed when the client is online, use the GraphQL directive `@onlineOnly`, for example:
 
 [source, graphql]
 ----
