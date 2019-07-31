@@ -63,7 +63,7 @@ For more information about features, see link:{idm-guide-link}[{keycloak-service
 +
 NOTE: Record the value for `PostgreSQL Connection Username`, `PostgreSQL Connection Password`, and `PostgreSQL Database Name` as they are required when provisioning {sync-service}.
 .. Click `Browse Catalog` and select `Mobile` -> `Data Sync`.
-. Provision a new {sync-service} app from the catalog as described in xref:data-sync.adoc#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
+. Provision a new {sync-service} app from the catalog as described in link:{data-sync-guide-link}/#sync-server-openshift[Running Data Sync in OpenShift] with the following parameters:
 +
 [options="header"]
 +
