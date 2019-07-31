@@ -309,7 +309,7 @@ The cache is kept up to date while automatically performing data deduplication.
 
 The @aerogear/voyager-client module provides the ability to automatically call `subscribeToMore` on your `ObservableQuery`. 
 This can be useful in a situation where you may have multiple subscriptions which can affect one single query. 
-For example, if you have a `TaskAdded`, `TaskDeleted` and a `TaskUpdated` subscription you  need three separate `subscribeToMore` function calls. 
+For example, if you have a `TaskAdded`, `TaskDeleted`, and a `TaskUpdated` subscription you require three separate `subscribeToMore` function calls. 
 To avoid this, use the `subscribeToMoreHelper` function from the @aerogear/voyager-client module to automatically handle this by passing  an array of subscriptions and their corresponding queries:
 
 [source, javascript]
