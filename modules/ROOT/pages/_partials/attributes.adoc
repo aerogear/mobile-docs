@@ -1,3 +1,5 @@
+// tag::excludeDownstream[]
+
 :org-name: AeroGear
 
 :product-name: Mobile Services
@@ -72,3 +74,4 @@
 :data-sync-queries-link: {link-product-doc-home}/ds-query.html
 :data-sync-auth-link: {link-product-doc-home}/ds-auth.html
 
+// end::excludeDownstream[]
