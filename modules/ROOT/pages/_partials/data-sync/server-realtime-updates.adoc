@@ -53,7 +53,7 @@ const apolloServer = VoyagerServer({
 
 const app = express()
 apolloServer.applyMiddleware({ app })
-const port = 4000;
+const port = 4000
 
 const server = app.listen({ port }, () => {
   console.log(`🚀 Server ready at http://localhost:${port}${apolloServer.graphqlPath}`)
