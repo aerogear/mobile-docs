@@ -19,14 +19,14 @@ const resolvers = {
 }
 
 //Initialize the library with your Graphql information
-const apolloserver = VoyagerServer({
+const apolloServer = VoyagerServer({
   typeDefs,
   resolvers
 })
 
 //Connect the server to express
 const app = express()
-apolloserver.applyMiddleware({ app })
+apolloServer.applyMiddleware({ app })
 
 app.listen(4000, () =>
   console.log(`🚀 Server ready at http://localhost:4000/graphql`)
