@@ -2,7 +2,7 @@
 include::_partials/attributes.adoc[]
 // end::excludeDownstream[]
 
-= Getting Started with {org-name} {product-name}
+= Getting Started with {product-name}
 :page-partial:
 
 == Introduction
