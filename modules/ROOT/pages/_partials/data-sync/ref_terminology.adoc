@@ -4,10 +4,13 @@
 
 This section describes terminology that is associated with Data Sync.
 
-.Data Sync terminology
+.Data Sync terms
 
-Data Sync framework:: Data Sync is a JavaScript framework that enables a developer to add the capability to synchronize data in real-time for both mobile and web clients.
-The Data Sync framework consists of two components, the _Sync Server_ and the _Sync Client_.
+GraphQL:: A query language for your API, and a server-side runtime for executing queries that use a type system. For more information, see link:https://graphql.org/learn[GraphQL].
+
+Apollo:: link:https://www.apollographql.com/[Apollo] is an implementation of GraphQL designed for the needs of product engineering teams building modern, data-driven applications.
+Apollo includes two open-source libraries, Apollo Server and Apollo Client.
+The Data Sync Framework leverages Apollo functionality.
 
 Sync Server:: The Sync Server is a framework for building Node.js based GraphQL API.
 
@@ -15,4 +18,4 @@ Sync Client:: The Sync Client is a JavaScript client offering client side extens
 
 Data sources:: Data Sync framework is typically used in conjunction with a data source for data persistence however, an app built using the Data Sync framework works without a data source.
 
-GraphQL:: A query language for your API, and a server-side runtime for executing queries that use a type system. For more information, see link:https://graphql.org/learn[GraphQL].
+Data Sync framework:: Data Sync is a JavaScript framework that enables a developer to add the capability to synchronize data in real-time for both mobile and web clients.
