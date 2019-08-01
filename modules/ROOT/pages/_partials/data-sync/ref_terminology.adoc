@@ -1,14 +1,21 @@
 //':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
-[id='ref_terminology_{context}']
+[id='ref-data-sync-terminology-{context}']
+= Data Sync terminology
 
-= {sync-service} Terminology
+This section describes terminology that is associated with Data Sync.
 
-This section describes terminology that is associated with {sync-service}.
+.Data Sync terms
 
-GraphQL:: A query language for your API, and a server-side runtime for executing queries by using a type system you define for your data. An alternative approach to REST for building APIs and applications. See link:https://graphql.org/learn[GraphQL].
+GraphQL:: A query language for your API, and a server-side runtime for executing queries that use a type system. For more information, see link:https://graphql.org/learn[GraphQL].
 
-Apollo:: Apollo is an implementation of GraphQL designed for the needs of product engineering teams building modern, data-driven applications. Apollo includes two open-source libraries, Apollo Server and Apollo Client. See link:https://www.apollographql.com[Apollo].
+Apollo:: link:https://www.apollographql.com/[Apollo] is an implementation of GraphQL designed for the needs of product engineering teams building modern, data-driven applications.
+Apollo includes two open-source libraries, Apollo Server and Apollo Client.
+The Data Sync Framework leverages Apollo functionality.
 
-Apollo Server:: Apollo Server is a library for building GraphQL APIs in Node.js. A developer defines a GraphQL schema and a set of resolvers to implement each part of the schema. See link:https://www.apollographql.com/docs/apollo-server[Apollo Server].
+Sync Server:: The Sync Server is a framework for building Node.js based GraphQL API.
 
-Apollo Client:: Apollo Client is a JavaScript client library for building web and mobile applications powered by a GraphQL API. See link:https://www.apollographql.com/docs/react[Apollo Client].
+Sync Client:: The Sync Client is a JavaScript client offering client side extensions and server side integration. The Sync Client can be integrated into frameworks such as React and Angular.
+
+Data sources:: Data Sync framework is typically used in conjunction with a data source for data persistence however, an app built using the Data Sync framework works without a data source.
+
+Data Sync framework:: Data Sync is a JavaScript framework that enables a developer to add the capability to synchronize data in real-time for both mobile and web clients.
