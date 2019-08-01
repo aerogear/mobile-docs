@@ -66,6 +66,7 @@ $ node index-2.js
 [source,bash]
 ----
 npm install @aerogear/voyager-client
+npm install graphql
 npm install graphql-tag
 ----
 +
