@@ -1,7 +1,5 @@
 = Security Services
 
-// tag::excludeDownstream[]
-
 == {device-security-service}
 
 Device Trust page will check the mobile device for and give a security rating for the device based on the following checks
@@ -16,8 +14,8 @@ To use Device Trust in the showcase app:
 . Press the *Security* menu item.
 . From the drop down press *Device Trust*.
 . View the results of the Device security checks.
+// tag::excludeDownstream[]
 . Navigate to the {grafana-ui}, and view the metrics as described in xref:mobile-metrics.adoc[Analyzing App Usage].
-
 // end::excludeDownstream[]
 
 == {app-security-service} Service
