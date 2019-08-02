@@ -1,6 +1,6 @@
+:toclevels: 4
 include::_partials/attributes.adoc[tags={include-tags}]
 
-:toclevels: 4
 
 :toc:
 

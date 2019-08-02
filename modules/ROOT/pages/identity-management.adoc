@@ -1,22 +1,14 @@
+:toclevels: 4
 include::_partials/attributes.adoc[tags={include-tags}]
 
-:toclevels: 4
-
-:toc:
-
 // For more information, see: https://redhat-documentation.github.io/modular-docs/
-
 :context: idm
 ifdef::context[:parent-context: {context}]
-
 :installation-link: getting-started.html
 :docs-link: https://www.keycloak.org/documentation.html
-
-
 [id='a-collection-of-modules']
-
 = Using the {keycloak-service} Mobile Service
-:page-partial:
+:toc:
 
 [[introduction]]
 The {keycloak-service} service allows you to add authentication and authorization to your mobile app.
