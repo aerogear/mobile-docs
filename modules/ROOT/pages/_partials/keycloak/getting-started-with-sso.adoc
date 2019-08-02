@@ -7,7 +7,7 @@ The Auth SDK uses OpenID Connect http://openid.net/specs/openid-connect-core-1_0
 
 Before getting started with SSO, ensure that:
 
-* You have completed all steps in xref:adding-access-control-{keycloak-service}[Adding Access Control to your Mobile App].
+* You have completed all steps in xref:adding-access-control[Adding Access Control to your Mobile App].
 * Two {mobile-client}s bound to the {keycloak-service} service.
 * Two Mobile Apps built and running on the same device that are using the AeroGear SDK Auth module.
 
