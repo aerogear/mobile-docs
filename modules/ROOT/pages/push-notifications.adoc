@@ -54,20 +54,20 @@ The content of the +alert+ key belongs to the metadata, which is deleted after 3
 * link:https://developer.apple.com/notifications/[Apple Push Notification Service^]
 * link:https://firebase.google.com/products/cloud-messaging/[Firebase Cloud Messaging^]
 
-include::_partials/push/ref_terminology.adoc[leveloffset=+1]
+include::_partials/push/ref_terminology.adoc[leveloffset=+1,tags={include-tags}]
 [[setting-up-the-push-service]]
 == Setting Up the {unifiedpush-service} Mobile Service
-include::_partials/push/obtaining_firebase_cloud_messaging_credentials.adoc[leveloffset=+2]
-include::_partials/push/enable_push_notifications_for_ios_app.adoc[leveloffset=+2]
-include::_partials/push/provisioning-the-push.adoc[leveloffset=+2]
-include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::_partials/push/obtaining_firebase_cloud_messaging_credentials.adoc[leveloffset=+2,tags={include-tags}]
+include::_partials/push/enable_push_notifications_for_ios_app.adoc[leveloffset=+2,tags={include-tags}]
+include::_partials/push/provisioning-the-push.adoc[leveloffset=+2,tags={include-tags}]
+include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2,tags={include-tags}]
 [[setting-up-the-push-client-app]]
 == Configuring your client app
-include::_partials/push/downloading-configuration-file.adoc[leveloffset=+2]
-include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2]
-include::_partials/push/registering_device.adoc[leveloffset=+1]
-include::_partials/push/sending-a-push-notification.adoc[leveloffset=+1]
-include::_partials/push/handling-push-notifications.adoc[leveloffset=+1]
+include::_partials/push/downloading-configuration-file.adoc[leveloffset=+2,tags={include-tags}]
+include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2,tags={include-tags}]
+include::_partials/push/registering_device.adoc[leveloffset=+1,tags={include-tags}]
+include::_partials/push/sending-a-push-notification.adoc[leveloffset=+1,tags={include-tags}]
+include::_partials/push/handling-push-notifications.adoc[leveloffset=+1,tags={include-tags}]
 
 
 // Restore the context to what it was before this assembly.
