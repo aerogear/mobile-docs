@@ -1,8 +1,5 @@
-// tag::excludeDownstream[]
-include::_partials/attributes.adoc[]
-// end::excludeDownstream[]
-
 :toclevels: 4
+include::_partials/attributes.adoc[tags={include-tags}]
 
 :toc:
 

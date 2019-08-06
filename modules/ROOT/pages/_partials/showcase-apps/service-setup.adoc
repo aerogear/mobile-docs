@@ -248,7 +248,7 @@ Xamarin::
 +
 NOTE: This step also creates a variant as described in link:{push-guide-link}[ {unifiedpush-service} Service] terminology.
 
-. link:{sync-guide-link}#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
+. link:{data-sync-guide-link}#sync-server-binding[Bind the {mobile-client} to the {sync-service} app] if you want to demonstrate {sync-service}.
 
 [[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
