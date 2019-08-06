@@ -12,10 +12,12 @@ include::_partials/attributes.adoc[]
 include::_partials/mdc-introduction.adoc[]
 // end {partialsdir}/mdc-introduction.adoc[]
 
+// tag::excludeDownstream[]
 [#provision-mdc]
 // start {partialsdir}/provision-mdc.adoc[]
 include::_partials/provision-mdc.adoc[]
 // end {partialsdir}/provision-mdc.adoc[]
+// end::excludeDownstream[]
 
 [#registering]
 // start registering-a-mobile-app.adoc[leveloffset=1]
