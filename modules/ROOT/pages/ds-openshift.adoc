@@ -10,9 +10,6 @@ include::_partials/attributes.adoc[]
 [#sync-server-getting-started-openshift]
 include::_partials/data-sync/getting-started-openshift.adoc[leveloffset=1]
 
-[#sync-server-provisioning-data-sync]
-include::_partials/data-sync/provisioning-data-sync.adoc[leveloffset=1]
-
 [#sync-server-provisioning-data-sync-templates]
 include::_partials/data-sync/openshift-templates.adoc[leveloffset=1]
 
