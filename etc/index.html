@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkthroughs (aka Solution Patterns)</title>
+    <link rel="stylesheet" href="etc/awsm.css">
+    <script src="etc/asciidoctor.js"></script>  
+
+  </head>
+  <body>
+    <header>
+      <h1>Integreatly User Documentation</h1>
+      <nav>
+        <ul>
+          <li><a href="https://integr8ly.github.io/tutorial-web-app-walkthroughs">Walkthroughs</a></li>
+          <li><a href="https://integr8ly.github.io/user-documentation/">User Documentation</a></li>
+          <li><a href="https://github.com/integr8ly">GitHub Org</a></li>
+        </ul>
+      </nav>
+    </header>
+<aside>
+  Repos:
+  <li><a href="https://github.com/integr8ly/tutorial-web-app-walkthroughs">Walkthroughs</a></li>
+  <li><a href="https://github.com/integr8ly/tutorial-web-app">WebApp</a></li>
+  <li><a href="https://github.com/integr8ly/user-documentation">Docs</a></li>
+</aside>  
+
+    <main>
+      <article>
+        <section>
+           <div id="target" class="col-md-12">
+            <script>
+         
+             var asciidoctor = Asciidoctor();
+             var content = "include::etc/index.adoc[leveloffset=+1]";
+             const html0 = asciidoctor.convert(content,{safe: 'server', attributes: {PRODUCTx: 'BMX'}});      
+             document.getElementById('target').innerHTML = html0;
+             var fname = (location.search.match(/e=(.*)/)[1]);
+             var content = "include::"+ fname + "[leveloffset=+1]";
+             
+             const html = asciidoctor.convert(content,{safe: 'server', attributes: {PRODUCTx: 'BMX'}});      
+             document.getElementById('target').innerHTML = html;
+            </script>      
+           </div>
+
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>Integreatly</abbr>.
+      </p>
+    </footer>
+  </body>
+</html>

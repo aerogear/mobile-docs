@@ -1,0 +1,6 @@
+= User Documentation
+
+* link:index.html?e=modules/ROOT/pages//getting-started.adoc[Getting Started]
+
+* link:index.html?e=modules/ROOT/pages//release-notes.adoc[Release Notes]
+

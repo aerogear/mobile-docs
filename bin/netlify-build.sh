@@ -13,3 +13,5 @@ for filename in ../modules/ROOT/pages/*.adoc; do
   ../bin/asciidoc-coalescer.rb -a include-tags="!excludeDownstream;!excludeAll" $filename > ../build/site/$(basename "$filename")
 
 done
+
+cp ../etc ../build/site/
