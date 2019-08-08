@@ -15,3 +15,4 @@ for filename in ../modules/ROOT/pages/*.adoc; do
 done
 
 cp -r ../etc ../build/site/
+cp ../etc/index.html ../build/site/index.html
