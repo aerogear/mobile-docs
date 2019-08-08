@@ -14,4 +14,4 @@ for filename in ../modules/ROOT/pages/*.adoc; do
 
 done
 
-cp ../etc ../build/site/
+cp -r ../etc ../build/site/
