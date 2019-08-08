@@ -9,8 +9,9 @@ gem install asciidoctor
 
 for filename in ../modules/ROOT/pages/*.adoc; do
 
-   echo $filename
-  ../bin/asciidoc-coalescer.rb -a include-tags="!excludeDownstream;!excludeAll" $filename > ../build/site/$(basename "$filename")
+  echo $filename
+  cat ../bin/downstream-attributes $filename > temp.txt
+  ../bin/asciidoc-coalescer.rb -a include-tags="!excludeDownstream;!excludeAll" temp.txt > ../build/site/$(basename "$filename")
 
 done
 

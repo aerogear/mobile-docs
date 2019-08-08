@@ -1,6 +1,4 @@
-// tag::excludeDownstream[]
-include::_partials/attributes.adoc[]
-// end::excludeDownstream[]
+include::_partials/attributes.adoc[tags={include-tags}]
 
 = Getting Started with {product-name}
 :page-partial:
@@ -15,7 +13,7 @@ With OpenShift's Container technology providing a secure, scalable backend platf
 A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
 
 // start {partialsdir}/mdc-introduction.adoc[]
-include::_partials/mdc-introduction.adoc[]
+include::_partials/mdc-introduction.adoc[tags={include-tags}]
 // end {partialsdir}/mdc-introduction.adoc[]
 
 IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.

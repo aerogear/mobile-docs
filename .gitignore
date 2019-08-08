@@ -2,6 +2,7 @@
 /node_modules/
 /.cache/
 *rantora.adoc
+*.tmp
 
 /.vscode/
 .ts/
