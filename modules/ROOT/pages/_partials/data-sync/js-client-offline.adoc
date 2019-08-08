@@ -174,11 +174,11 @@ let config = {
 
 == Ensuring specified mutations are performed online only
 
-If you wish to ensure certain queries or mutations are only executed when the client is online, use the GraphQL directive `@onlineOnly`, for example:
+If you wish to ensure certain mutations are only executed when the client is online, use the GraphQL directive `@onlineOnly`, for example:
 
 [source, graphql]
 ----
-exampleQuery(...) @onlineOnly {
+exampleMutation(...) @onlineOnly {
   ...
 }
 ----
