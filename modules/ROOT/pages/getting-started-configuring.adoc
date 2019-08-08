@@ -16,9 +16,11 @@ include::_partials/attributes.adoc[]
 :page-partial:
 :toc:
 
+// tag::excludeDownstream[]
 .Prerequisite 
 
 * {product-name} is running as described in xref:getting-started-installing.adoc[Setting up {org-name} {product-name} on OpenShift]
+// end::excludeDownstream[]
 
 
 [[registering]]
@@ -26,6 +28,7 @@ include::_partials/attributes.adoc[]
 include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
 // end registering-a-mobile-app.adoc[leveloffset=1]
 
+// tag::excludeDownstream[]
 [[provisioning]]
 == Provisioning your First Service
 
@@ -63,6 +66,8 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 * *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
 
 * *URL of the shared service*: Enter a value if you want to use an existing shared service.
+// end::excludeDownstream[]
+
 
 [[binding]]
 :service-name: Identity Management
@@ -96,8 +101,12 @@ For an explanation of these terms, see link:https://www.keycloak.org/documentati
 
 . Click on the *{idm-name} Realm URL* link to open the {idm-name} Administration Console.
 +
-// TODO: @wei will default credentials always be as follows?
-. Log in to the Administration console using the credentials you specified when xref:provisioning[Provisioning] the service (defaults to admin/admin).
+// tag::excludeDownstream[]
+. Log in to the Administration console using the credentials you specified when xref:provisioning-the-keycloak-service[Provisioning] the service (defaults to admin/admin).
+// end::excludeDownstream[]
+// tag::excludeUpstream[]
+. Log in to the Administration console (default admin/admin).
+// end::excludeUpstream[]
 
 . Select *Clients* from the left navigation menu.
 +
@@ -172,7 +181,10 @@ Depending on the target platform, set the additional value as described in eithe
 
 . Create credentials for the new user as described in link:{docs-user-creds}[User Credentials].
 
+// tag::excludeDownstream[]
+
 .Next Steps 
 
 * xref:getting-started-running.adoc[Configure the {org-name} showcase app for your mobile platform] (Android, iOS, Cordova or Xamarin)
 * xref:getting-started-running.adoc#running[Run the showcase app and make calls to the {keycloak-service} service]
+// end::excludeDownstream[]
