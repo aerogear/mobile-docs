@@ -1,0 +1,6 @@
+Category,UserStory,Type,ModuleID,Title,VerifiedInVersion,QuickstartID,Comments,Jira
+test3,"As a Developer I want to add offline features to my app",assembly,implementing-offline,Offline,,,,
+test3,"As a Developer I want to add offline features to my app",procedure,implementing-offline,Offline,,,,
+test3,"As a Developer I want to add offline features to my app",procedure,implementing-offlineagain,Offline,,,,
+test3,"As a Developer I want to add real-time features to my app",assembly,implementing-real-time,Real-time,,,,
+test3,"As a Developer I want to add real-time features to my app",procedure,implementing-real-time,Real-time,,,,
