@@ -1,6 +1,7 @@
-Level,Category,UserStory,Type,ModuleID,Title,VerifiedInVersion,QuickstartID,Comments,Jira
-1,.,"As a Developer I want to add offline features to my app",assembly,implementing-offline,Offline,,,,
-,.,"As a Developer I want to add offline features to my app",procedure,implementing-offline,Offline,,,,
-,.,"As a Developer I want to add offline features to my app",procedure,implementing-offlineagain,Offline,,,,
-1,.,"As a Developer I want to add real-time features to my app",assembly,implementing-real-time,Real-time,,,,
-,.,"As a Developer I want to add real-time features to my app",procedure,implementing-real-time,Real-time,,,,
+Level,Nav,Category,Type,ModuleID,Jira,Title,UserStory,VerifiedInVersion,QuickstartID,Comments
+1,"Mobile Services",.,concept,con_services,,"Mobile Services",,,,"needs updating"
+2,"Data Sync",.,procedure,data-sync,,"Developing a Data Sync Application",,,,
+3,Introduction,.,assembly,ds-introduction,,None,,,,"needs updating"
+,,.,concept,introducing-data-sync.adoc,,"Introducing Data Sync",,,,
+,,.,concept,technical-overview.adoc,,"Technical Overview",,,,
+,,.,reference,ref_terminology.adoc,,"Data Sync Terminology",,,,

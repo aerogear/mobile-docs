@@ -1,0 +1,7 @@
+Category	UserStory	Type	ModuleID	Title	VerifiedInVersion	QuickstartID	Comments	Jira
+.		concept	con_services	Mobile Services			needs updating	
+.		procedure	data-sync	Developing a Data Sync Application				
+.		assembly	ds-introduction	None			needs updating	
+.		concept	introducing-data-sync.adoc	Introducing Data Sync				
+.		concept	technical-overview.adoc	Technical Overview				
+.		reference	ref_terminology.adoc	Data Sync Terminology				

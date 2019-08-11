@@ -1,9 +1,13 @@
 #!/bin/bash
 echo $SHELL
-ssconvert brownfield.gnumeric temp.csv
+ssconvert -S brownfield.gnumeric temp-%s.csv
 
-sed -E 's/("([^"]*)")?,/\2\t/g' temp.csv > temp.tsv
+for filename in ./*.csv; do
 
-q -H -t -D , "SELECT Category,UserStory,Type,ModuleID,Title,VerifiedInVersion,QuickstartID,Comments,Jira
-FROM ./temp.tsv WHERE Category = '.'"
+ sed -E 's/("([^"]*)")?,/\2\t/g' $filename > $filename.tsv
+
+ q -H -t -O -D , "SELECT Category,UserStory,Type,ModuleID,Title,VerifiedInVersion,QuickstartID,Comments,Jira
+FROM ./$filename.tsv WHERE Category = '.'" > nebel$filename
+
+done
 
