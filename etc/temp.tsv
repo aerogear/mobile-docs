@@ -1,0 +1,6 @@
+Level	Category	UserStory	Type	ModuleID	Title	VerifiedInVersion	QuickstartID	Comments	Jira
+1	.	As a Developer I want to add offline features to my app	assembly	implementing-offline	Offline				
+	.	As a Developer I want to add offline features to my app	procedure	implementing-offline	Offline				
+	.	As a Developer I want to add offline features to my app	procedure	implementing-offlineagain	Offline				
+1	.	As a Developer I want to add real-time features to my app	assembly	implementing-real-time	Real-time				
+	.	As a Developer I want to add real-time features to my app	procedure	implementing-real-time	Real-time				
