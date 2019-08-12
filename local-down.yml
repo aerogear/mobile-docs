@@ -22,4 +22,4 @@ asciidoc:
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
-    include-tags: '!excludeUpstream'
+    include-tags: '!excludeDownstream'

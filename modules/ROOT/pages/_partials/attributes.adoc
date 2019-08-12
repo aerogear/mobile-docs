@@ -1,7 +1,7 @@
 // tag::excludeDownstream[]
 :org-name: AeroGear
-
 :product-name: Mobile Services
+// end::excludeDownstream[]
 
 :release-number: 1.0.0
 :showcase-version: 0.8.0
@@ -72,4 +72,16 @@
 :data-sync-guide-link: {link-product-doc-home}/data-sync.html
 :data-sync-queries-link: {link-product-doc-home}/ds-query.html
 :data-sync-auth-link: {link-product-doc-home}/ds-auth.html
-// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+:org-name: Red Hat
+:product-name: Mobile Developer Services
+
+:keycloak-ui: Red Hat SSO Admin UI
+:idm-name: Red Hat Single Sign-On
+:idm-docs-link:  https://access.redhat.com/products/red-hat-single-sign-on
+
+:context: downstream
+
+// end::excludeUpstream[]
+
