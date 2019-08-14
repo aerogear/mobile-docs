@@ -1,1 +1,11 @@
-
+Level,Nav,Category,Type,ModuleID,Jira,Title,UserStory,VerifiedInVersion,QuickstartID,Comments
+1,"Getting Started",.,concept,getting-started,,"Getting started with Mobile Developer Services",,,,
+2,Installing,.,assembly,getting-started-installing,,Installing,,,,"out of scope"
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+2,Configuring,,assembly,getting-started-running,,"Setting Up your Local Development Environment",,,,
