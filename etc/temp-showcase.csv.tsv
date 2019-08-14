@@ -1,1 +1,11 @@
-
+Level	Nav	Category	Type	ModuleID	Jira	Title	UserStory	VerifiedInVersion	QuickstartID	Comments
+1	Showcase Apps	.	assembly	showcase-apps		Using the Showcase Mobile App				
+		.	concept	index.adoc						
+		.	procedure	service-setup.adoc						
+		.	procedure	proc_self-signed-certs.adoc						
+		.	assembly			Demonstrating the ShowCase App features				TODO
+		.	procedure	identity-management-demo.adoc						
+		.	procedure	sync.adoc						
+		.	procedure	security.adoc						
+		.	procedure	push-notifications.adoc						
+		.	procedure	metrics.adoc						
