@@ -40,6 +40,8 @@ Cordova::
 --
 // end::excludeDownstream[]
 `src/mobile-services.json`
+
+NOTE: To run the Cordova app on the Android device you also need to download the `google-services.json` from Firebase and put it on the root folder of your project.
 // tag::excludeDownstream[]
 --
 Xamarin::
