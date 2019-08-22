@@ -92,6 +92,17 @@ new PushRegistration(app.config).register().then(() => {
     // Error on device registration
 });
 ----
+
+NOTE: Optionally, you can pass the parameters below to the register method
+
+[source,javascript]
+----
+{
+  alias: 'some-alias',
+  categories: ['one', 'or', 'more', 'categories'],
+  timeout: 5000 // in milliseconds
+}
+----
 --
 // tag::excludeDownstream[]
 Xamarin::
