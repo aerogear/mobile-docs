@@ -54,8 +54,10 @@ Cordova::
 
 Add the following code to your app:
 
-[source,bash]
+[source,javascript]
 ----
+import { PushRegistration } from "@aerogear/push";
+
 PushRegistration.onMessageReceived((notification: any) => {
   console.log('Received a push notification', notification);
 });
