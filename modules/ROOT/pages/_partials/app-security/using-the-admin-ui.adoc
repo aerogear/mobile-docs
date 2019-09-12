@@ -11,9 +11,11 @@ The console is only available after the {app-security-service} Service has been 
 
 .Overview of the Mobile Security Console
 
-The {app-security-service} Console allows you to monitor applications, their respective versions, and disable versions of those applications.
+The {app-security-service} Console allows you to monitor mobile apps, deployed versions, and disable versions of those mobile apps.
 
-Opening the console lists all applications. Click on an application to view version details for that application.
+Opening the console lists all applications. Click on an application to view deployed versions of that mobile app.
+
+A deployed version is registered with the Mobile Security service when a version of the app is released, for example, 1.2.3, and that version of the app is run on a device at least once.
 
 Below is a detailed description of each of these views and the information you can expect each to contain.
 
