@@ -1,7 +1,0 @@
-Level,Nav,Category,Type,ModuleID,Jira,Title,UserStory,VerifiedInVersion,QuickstartID,Comments
-1,"Mobile Services",.,concept,con_services,,"Mobile Services",,,,"needs updating"
-2,"Data Sync",.,procedure,data-sync,,"Developing a Data Sync Application",,,,
-3,Introduction,.,assembly,ds-introduction,,None,,,,"needs updating"
-,,.,concept,introducing-data-sync.adoc,,"Introducing Data Sync",,,,
-,,.,concept,technical-overview.adoc,,"Technical Overview",,,,
-,,.,reference,ref_terminology.adoc,,"Data Sync Terminology",,,,
