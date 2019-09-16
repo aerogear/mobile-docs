@@ -18,6 +18,8 @@ A configuration file named `mobile-services.json` acts as the link between your 
 include::_partials/mdc-introduction.adoc[]
 // end {partialsdir}/mdc-introduction.adoc[]
 
+// tag::excludeDownstream[]
+
 IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.
 
 This guide shows you how to:
@@ -27,3 +29,5 @@ This guide shows you how to:
 * xref:getting-started-running.adoc[Set up a local development environment]
 * xref:getting-started-running.adoc#running[Configure the {org-name} showcase app for your mobile platform] (Android, iOS, Cordova or Xamarin)
 * xref:getting-started-running.adoc#running-emulator[Run the showcase app and make calls to the {keycloak-service} service]
+
+// tag::excludeDownstream[]
