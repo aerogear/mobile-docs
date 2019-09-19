@@ -30,4 +30,4 @@ This guide shows you how to:
 * xref:getting-started-running.adoc#running[Configure the {org-name} showcase app for your mobile platform] (Android, iOS, Cordova or Xamarin)
 * xref:getting-started-running.adoc#running-emulator[Run the showcase app and make calls to the {keycloak-service} service]
 
-// tag::excludeDownstream[]
+// end::excludeDownstream[]
