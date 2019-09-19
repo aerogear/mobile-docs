@@ -104,6 +104,29 @@ NOTE: Optionally, you can pass the parameters below to the register method
 }
 ----
 --
+REST::
++
+Registering a device using a REST call.
++
+--
+[source,bash]
+----
+curl -u "<variantID>:<variantSecret>"  \
+   -v -H "Accept: application/json" -H "Content-type: application/json"  \
+   -H "aerogear-push-id: someid" \
+   -X POST <pushServerURL>/rest/registry/device \
+   -d '{ \
+       "deviceToken" : "<deviceToken>", \
+       "deviceType" : "<deviceType>", \
+       "operatingSystem" : "<operatingSystem>", \
+       "osVersion": "<osVersion>", \
+       "alias" : "username or email", \ 
+       "categories" : ["example1", "example2"] \ 
+        }' 
+----
+
+If you are using firebase, you also must subscribe to a topic of the variantID, and each of the categories in the registration request using the subscribeToTopic method. More information about that can be found https://firebase.google.com/docs/cloud-messaging/android/topic-messaging[here] for android, and https://firebase.google.com/docs/cloud-messaging/js/topic-messaging#subscribe_the_client_app_to_a_topic[here] for web.
+--
 // tag::excludeDownstream[]
 Xamarin::
 +
