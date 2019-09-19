@@ -1,0 +1,99 @@
+
+[id=schema]
+[[_schema]]
+== Definitions
+
+[[_app]]
+=== App
+App is the model struct for apps
+
+
+[options="header", cols=".^3a,.^4a"]
+|===
+|Name|Schema
+|**appId** +
+__optional__|string
+|**appName** +
+__optional__|string
+|**deletedAt** +
+__optional__|string
+|**deployedVersions** +
+__optional__|< <<_version,Version>> > array
+|**id** +
+__optional__|string
+|**numOfAppLaunches** +
+__optional__|integer (int64)
+|**numOfCurrentInstalls** +
+__optional__|integer (int64)
+|**numOfDeployedVersions** +
+__optional__|integer (int64)
+|===
+
+
+[[_device]]
+=== Device
+Device model
+
+
+[options="header", cols=".^3a,.^4a"]
+|===
+|Name|Schema
+|**appId** +
+__optional__|string
+|**deviceId** +
+__optional__|string
+|**deviceType** +
+__optional__|string
+|**deviceVersion** +
+__optional__|string
+|**id** +
+__optional__|string
+|**version** +
+__optional__|string
+|**versionId** +
+__optional__|string
+|===
+
+
+[[_user]]
+=== User
+User is the model struct for users
+
+
+[options="header", cols=".^3a,.^4a"]
+|===
+|Name|Schema
+|**email** +
+__optional__|string
+|**username** +
+__optional__|string
+|===
+
+
+[[_version]]
+=== Version
+Version model
+
+
+[options="header", cols=".^3a,.^4a"]
+|===
+|Name|Schema
+|**appId** +
+__optional__|string
+|**devices** +
+__optional__|< <<_device,Device>> > array
+|**disabled** +
+__optional__|boolean
+|**disabledMessage** +
+__optional__|string
+|**id** +
+__optional__|string
+|**lastLaunchedAt** +
+__optional__|string
+|**numOfAppLaunches** +
+__optional__|integer (int64)
+|**numOfCurrentInstalls** +
+__optional__|integer (int64)
+|**version** +
+__optional__|string
+|===

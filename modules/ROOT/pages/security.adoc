@@ -14,4 +14,3 @@ This guide does not address all mobile security topics. See the link:https://www
 
 include::app-security.adoc[leveloffset=1]
 include::device-security.adoc[leveloffset=1]
-
