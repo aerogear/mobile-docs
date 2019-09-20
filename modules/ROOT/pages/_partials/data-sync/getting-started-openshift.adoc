@@ -18,7 +18,7 @@ As an example:
 
 [source,dockerfile]
 ----
-FROM node:8
+FROM node:10
 WORKDIR /usr/src/app
 # copy Node.js specific files
 COPY package*.json ./
