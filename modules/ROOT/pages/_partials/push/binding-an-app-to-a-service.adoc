@@ -36,7 +36,13 @@ To bind a {mobile-client} with a mobile service:
 
 . Navigate to *Mobile Services* tab.
 +
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-unbound-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
 image::mobile-clients-services-all-unbound.png[]
+// end::excludeDownstream[]
 
 +
 NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
@@ -63,8 +69,8 @@ iOS::
 +
 --
 - Select `iOS` from the `Mobile Client Type` list.
-- Obtain an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide]. 
-- Encode the certificate using base64 and paste the encoded certificate into the field labeled `iOS .p12 file`. 
+- Obtain an APNs client TLS certificate. Refer to link:https://help.apple.com/developer-account/#/dev82a71386a[official Apple guide].
+- Encode the certificate using base64 and paste the encoded certificate into the field labeled `iOS .p12 file`.
 +
 If you are using macOS:
 +

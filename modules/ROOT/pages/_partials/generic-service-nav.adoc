@@ -5,5 +5,10 @@
 
 . Navigate to *Mobile Services* tab.
 +
-image::mobile-clients-services-all-unbound.png[]
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-unbound-down.png[]
+// end::excludeUpstream[]
 
+// tag::excludeDownstream[]
+image::mobile-clients-services-all-unbound.png[]
+// end::excludeDownstream[]
