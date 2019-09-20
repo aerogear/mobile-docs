@@ -29,21 +29,14 @@ include::_partials/generic-local-mobile-dev-envir-reqs.adoc[]
 
 === Cloning the Showcase App
 
-// start {partialsdir}/cloning-showcase-app.adoc[]
-include::_partials/cloning-showcase-app.adoc[]
-// end {partialsdir}/cloning-showcase-app.adoc[]
+include::_partials/cloning-showcase-app.adoc[tags=!excludeAll]
 
-
-// start {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
-// end {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
 
 
 == Building the app
 
-// start {partialsdir}/build-and-deploy.adoc[tags=build]
-include::_partials/build-and-deploy.adoc[tags=build]
-// end {partialsdir}/build-and-deploy.adoc[tags=build]
+include::_partials/build-and-deploy.adoc[tags=!excludeAll]
 
 // start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
 include::_partials/proc_self-signed-certs.adoc[leveloffset=1]

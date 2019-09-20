@@ -23,7 +23,7 @@ NOTE: Device Security is not currently associated with an OpenShift service, so 
 * You have logged into the OpenShift console and the Mobile Developer Console.
 * You are developing an Ionic app, plain Cordova is not supported.
 
-include::_partials/security/ref_terminology.adoc[leveloffset=+2]
+include::_partials/security/ref_terminology.adoc[leveloffset=+1]
 
 [[setting-up-the-device-security-service]]
 == Configuring your Development Environment for the {device-security-service} Service

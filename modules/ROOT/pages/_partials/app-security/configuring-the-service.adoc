@@ -14,7 +14,7 @@
 
 . Select the *Mobile Services* tab.
 
-. If a binding to the {app-security-service}service is in progress, a spinning icon is displayed to the right of the {app-security-service}entry. Wait for the binding process to complete.
+. If a binding to the {app-security-service} service is in progress, a spinning icon is displayed to the right of the {app-security-service}entry. Wait for the binding process to complete.
 
 
 . Save your changes.
