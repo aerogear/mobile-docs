@@ -75,8 +75,14 @@ NOTE: A realm manages a set of users, credentials, roles, and groups. A user bel
 
 include::_partials/generic-binding.adoc[]
 +
+// tag::excludeUpstream[]
+image::mobile-clients-services-idm-parameters-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
 image::mobile-clients-services-idm-parameters.png[]
-NOTE: Use `Public` when binding a {mobile-client} to a {service-name}. When binding mobile services to each other, use `Bearer`.
+NOTE: Use `Public` when binding a {mobile-client} to {metrics-service}. When binding mobile services to each other, use `Bearer`.
+// end::excludeDownstream[]
 
 The {service-name} service will now be expandable, details about the service can be viewed.
 
