@@ -21,7 +21,7 @@ For more information, see xref:server-getting-started-with-an-example-data-sourc
 +
 [source,dockerfile]
 ----
-FROM node:8
+FROM node:10
 WORKDIR /usr/src/app
 # copy Node.js specific files
 COPY package*.json ./

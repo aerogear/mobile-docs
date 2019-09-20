@@ -1,0 +1,7 @@
+
+Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
+
+image::mobile-services-arch-i8.png[]
+
+
+

@@ -5,10 +5,10 @@ include::_partials/attributes.adoc[tags={include-tags}]
 = Using the Showcase Mobile App
 :page-partial:
 
-include::_partials/showcase-apps/index.adoc[leveloffset=1,tags={include-tags}]
+// include::_partials/showcase-apps/index.adoc[leveloffset=1,tags={include-tags}]
 
 
-include::_partials/showcase-apps/service-setup.adoc[leveloffset=2,tags={include-tags}]
+include::_partials/showcase-apps/service-setup.adoc[leveloffset=1,tags={include-tags}]
 
 
 // tag::excludeDownstream[]
