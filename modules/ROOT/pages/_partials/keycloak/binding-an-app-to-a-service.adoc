@@ -22,7 +22,13 @@ To bind a {mobile-client} with a mobile service:
 
 . Navigate to *Mobile Services* tab.
 +
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-unbound-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
 image::mobile-clients-services-all-unbound.png[]
+// end::excludeDownstream[]
 
 +
 NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
