@@ -14,8 +14,6 @@ When a client comes online again, the mutations are replicated back to the serve
 
 Developers can attach listeners to get notifications about updates applied on the server or failing, and take appropriate actions.
 
-NOTE: If your business logic requires that certain mutations should only occur when online, you can include that logic using the `@onlineOnly` directive
-
 .Mutations and Local Cache
 
 By default queries and the results of mutations are cached.
