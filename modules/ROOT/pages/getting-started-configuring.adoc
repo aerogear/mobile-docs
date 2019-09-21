@@ -24,9 +24,22 @@ include::_partials/attributes.adoc[]
 
 
 [[registering]]
-// start registering-a-mobile-app.adoc[leveloffset=1]
-include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
-// end registering-a-mobile-app.adoc[leveloffset=1]
+
+== Registering a {mobile-client}
+
+After provisioning Mobile Developer Console, the next step is to register the {mobile-client} that you are going to develop.
+
+.Procedure
+
+To create a {mobile-client}:
+
+. Log into the OpenShift console.
+. Choose project where you have previously deployed Mobile Developer Console.
+. Open Mobile Developer Console by clicking on its route in the *Overview* screen.
+. Log into the *Mobile Developer Console*.
+. Click on `Create Mobile App` button.
+. Enter a name for your {mobile-client}.
+. Click `Create` button.
 
 // tag::excludeDownstream[]
 [[provisioning]]
