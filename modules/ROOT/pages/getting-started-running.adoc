@@ -34,7 +34,7 @@ include::_partials/cloning-showcase-app.adoc[tags=!excludeAll]
 include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
 
 
-== Building the app
+// == Building the app
 
 include::_partials/build-and-deploy.adoc[tags=!excludeAll]
 
