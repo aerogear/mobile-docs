@@ -68,6 +68,7 @@ include::_partials/push/setting-up-the-push-sdk.adoc[leveloffset=+2,tags={includ
 include::_partials/push/registering_device.adoc[leveloffset=+1,tags={include-tags}]
 include::_partials/push/sending-a-push-notification.adoc[leveloffset=+1,tags={include-tags}]
 include::_partials/push/handling-push-notifications.adoc[leveloffset=+1,tags={include-tags}]
+include::_partials/push/unregistering_device.adoc[leveloffset=+1,tags={include-tags}]
 
 
 // Restore the context to what it was before this assembly.
