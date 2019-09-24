@@ -20,17 +20,14 @@ You can bind your {mobile-client} to a service by :
 
 . Click *Bind to App* (example image shows a Push Service binding).
 +
-[source, javascript]
-----
-// checking if this is upstream or downstream
-if (excludeUpstream) {
-    image::mobile-clients-service-bind-1_down.png[]
-}
+// tag::excludeUpstream[]
+image::mobile-clients-service-bind-1_down.png[]
+// end::excludeUpstream[]
 
-if (excludeDownstream) {
-    image::mobile-clients-service-bind-1.png[]
-}
-----
+// tag::excludeDownstream[]
+image::mobile-clients-service-bind-1.png[]
+// end::excludeDownstream[]
+
 
 . Fill in configuration details for the binding (example image shows a Push Service binding).
 +
