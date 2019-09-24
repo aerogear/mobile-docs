@@ -125,7 +125,7 @@ curl -u "variantID:variantSecret"  \
         }' 
 ----
 
-If you are using firebase, you also must subscribe to a topic of the variantID, and each of the categories in the registration request using the subscribeToTopic method. More information about that can be found https://firebase.google.com/docs/cloud-messaging/android/topic-messaging[here] for android, and https://firebase.google.com/docs/cloud-messaging/js/topic-messaging#subscribe_the_client_app_to_a_topic[here] for web.
+The variant ID and variant secret can be found on the push application page. If you are using firebase, you also must subscribe to a topic of the variantID, and each of the categories in the registration request using the subscribeToTopic method. More information about that can be found https://firebase.google.com/docs/cloud-messaging/android/topic-messaging[here] for android, and https://firebase.google.com/docs/cloud-messaging/js/topic-messaging#subscribe_the_client_app_to_a_topic[here] for web.
 --
 // tag::excludeDownstream[]
 Xamarin::
