@@ -3,7 +3,7 @@
 [id='unregistering-device']
 = Unregistering device on {unifiedpush-service} Service
 
-It is also possible to unregister devices using the SDKs 
+This section describes how to unregister devices.
 
 [tabs]
 ====
