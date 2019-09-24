@@ -7,7 +7,7 @@ To show the list of services, navigate to the application *Overview* screen and 
 A list of bound and available services is displayed.
 
 // tag::excludeUpstream[]
-image::image::mobile-clients-mobile-services_down.png[]
+image::mobile-clients-mobile-services_down.png[]
 // end::excludeUpstream[]
 
 // tag::excludeDownstream[]
