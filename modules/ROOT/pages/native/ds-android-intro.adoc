@@ -1,0 +1,22 @@
+// tag::excludeDownstream[]
+include::../_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+
+
+=== Android Data Sync SDK
+
+---
+
+The support for an android data sync client is a wrapper for an apollo client. The apollo client is then used directly to https://graphql.org/learn/queries/[query] and https://moonhighway.com/understanding-graphql-mutations[mutate] your data against your custom API, as well as, create https://learn.hasura.io/graphql/android/subscriptions/2-apollo-subscription[subscriptions].  
+
+Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
+
+*Getting Started*
+^^^^^^^^^^^^^^^^
+Communicating with the GraphQL server starts with creating and configuring the appollo client. This is accomplished by instanciating an instance of org.aerogear.mobile.sync.SyncClient. The easiest way to do this is to use SyncClient as a Singleton:
+
+image::android-data-sync-query-ex.png[]
+
+
+link:./ds-SyncClient-class.html[Android SDK]

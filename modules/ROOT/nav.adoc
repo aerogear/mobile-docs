@@ -74,7 +74,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:ds-audit.adoc[Audit Logs]
 *** xref:ds-advanced.adoc[Advanced Topics]
 *** xref:ds-openshift.adoc[Running on OpenShift]
-*** xref:android/ds-android-intro.adoc[Android SDK]
+*** xref:android/ds-android-intro.adoc[Native SDK]
 
 
 
