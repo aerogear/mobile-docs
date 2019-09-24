@@ -1,0 +1,8 @@
+// tag::excludeDownstream[]
+include::../_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+= Android Data Sync SDK
+
+
+link:./ds-SyncClient-class.html[Android SDK]
