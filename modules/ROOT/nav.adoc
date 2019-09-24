@@ -74,6 +74,7 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:ds-audit.adoc[Audit Logs]
 *** xref:ds-advanced.adoc[Advanced Topics]
 *** xref:ds-openshift.adoc[Running on OpenShift]
+*** xref:android/ds-android-intro.adoc[Android SDK]
 
 
 
@@ -86,10 +87,6 @@ include::{partialsdir}/attributes.adoc[]
 **** xref:security.adoc#setting-up-the-device-security-service[Setting Up]
 **** xref:security.adoc#performing-device-trust-checks_security[Performing Device Trust Checks]
 **** xref:security.adoc#certificate-pinning_security[Certificate Pinning]
-*** xref:security-api.adoc[Mobile Security Service API]
-**** xref:security-api.adoc#_api[REST API]
-**** xref:security-api.adoc#_schema[REST API Schema]
-
 
 * xref:showcase-apps.adoc[Showcase Apps]
 ** xref:showcase-apps.adoc#setup[Service Setup]
