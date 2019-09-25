@@ -82,6 +82,7 @@ func application(_ application: UIApplication,
 Cordova::
 +
 --
+
 [source,javascript]
 ----
 import { PushRegistration } from "@aerogear/push";
@@ -103,6 +104,28 @@ NOTE: Optionally, you can pass the parameters below to the register method
   timeout: 5000 // in milliseconds
 }
 ----
+--
+// end::excludeDownstream[]
+REST::
++
+--
+[source,bash]
+----
+curl -u "variantID:variantSecret"  \
+   -v -H "Accept: application/json" -H "Content-type: application/json"  \
+   -H "aerogear-push-id: someid" \
+   -X POST https://SERVER:PORT/context/rest/registry/device/ \
+   -d '{ \
+       "deviceToken" : "<deviceToken>", \
+       "deviceType" : "<deviceType>", \
+       "operatingSystem" : "<operatingSystem>", \
+       "osVersion": "<osVersion>", \ 
+       "alias" : "username or email",  \
+       "categories" : ["example1", "example2"] \ 
+        }' 
+----
+
+The variant ID and variant secret can be found on the push application page. If you are using firebase, you also must subscribe to a topic of the variantID, and each of the categories in the registration request using the subscribeToTopic method. More information about that can be found https://firebase.google.com/docs/cloud-messaging/android/topic-messaging[here] for android, and https://firebase.google.com/docs/cloud-messaging/js/topic-messaging#subscribe_the_client_app_to_a_topic[here] for web.
 --
 // tag::excludeDownstream[]
 Xamarin::
