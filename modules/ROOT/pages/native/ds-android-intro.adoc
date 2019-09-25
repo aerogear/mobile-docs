@@ -4,19 +4,110 @@ include::../_partials/attributes.adoc[]
 
 
 
-=== Android Data Sync SDK
+=== Data Sync SDK for Native Android and IOS
 
 ---
 
-The support for an android data sync client is a wrapper for an apollo client. The apollo client is then used directly to https://graphql.org/learn/queries/[query] and https://moonhighway.com/understanding-graphql-mutations[mutate] your data against your custom API, as well as, create https://learn.hasura.io/graphql/android/subscriptions/2-apollo-subscription[subscriptions].  
+The support for native android and ios data sync clients is a wrapper for the apollo client, thus eliminating the need for custom apps to deal with the boilerplate code necessay to construct and configure the apollo client. The wrapper classes also provide the basic functions needed to query and mutate data against the custom graphQL api and subscribe to live streams.
+
+*Examples*
+^^^^^^^^^^
+
+*Query*
+
+Communicating with the GraphQL server starts with creating and configuring the appollo client. This is accomplished by using the android or ios wrapper classes. These classes eliminate the need to write creation and configuration boilerplate code. Examples of how to query for data against the custome graphQL API are shown below:
+
+[tabs]
+====
+GraphQK Schema::
++
+[source,graphql]
+--
+query FeedQuery($type: FeedType!, $limit: Int!) {
+  feedEntries: feed(type: $type, limit: $limit) {
+    id
+    repository {
+      name
+      full_name
+      owner {
+        login
+      }
+    }
+    postedBy {
+      login
+    }
+  }
+}
+--
+Android::
++
+[source,java]
+--
+import org.aerogear.mobile.sync.SyncClient
+import com.apollographql.apollo.api.Operation;
+
+// Treat SyncClient as a Singleton and use the static "instance" of SyncClient
+SyncClient client = SyncClient.getInstance();
+Query query = ...
+SyncQuery sq = client.query(query);
+Operation.data results = sq.execute();
+--
+iOS::
++
+[source,swift]
+--
+import Apollo
+import AgsSync
+
+// Treat Ags as a Singleton and use the static "instance" of AgsSync
+AgsSync client = AgsSync.instance;
+--
+====
+
+---
+
+*Mutations*
+
+The Apollo client wrapper classes can also be used to modify data against the custom graphQL API using 
+
+[tabs]
+====
+GraphQK Schema::
++
+[source,graphql]
+--
+
+--
+Android::
++
+[source,java]
+--
+import org.aerogear.mobile.sync.SyncClient
+import com.apollographql.apollo.api.Operation;
+
+// Treat SyncClient as a Singleton and use the static "instance" of SyncClient
+SyncClient client = SyncClient.getInstance();
+Query query = ...
+SyncQuery sq = client.query(query);
+Operation.data results = sq.execute();
+--
+iOS::
++
+[source,swift]
+--
+import Apollo
+import AgsSync
+
+// Treat Ags as a Singleton and use the static "instance" of AgsSync
+AgsSync client = AgsSync.instance;
+--
+====
+
+
+
+
 
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
 
-*Getting Started*
-^^^^^^^^^^^^^^^^
-Communicating with the GraphQL server starts with creating and configuring the appollo client. This is accomplished by instanciating an instance of org.aerogear.mobile.sync.SyncClient. The easiest way to do this is to use SyncClient as a Singleton:
-
-image::android-data-sync-query-ex.png[]
-
-
 link:./ds-SyncClient-class.html[Android SDK]
+
