@@ -19,10 +19,13 @@ Communicating with the GraphQL server starts with creating and configuring the a
 
 [tabs]
 ====
-GraphQK Schema::
+GraphQL Schema::
 +
 [source,graphql]
 --
+// The schema snippet defines the graphql api. 
+// The graphql/android build creates a java object the apollo client uses to query and mutate data against.
+
 query FeedQuery($type: FeedType!, $limit: Int!) {
   feedEntries: feed(type: $type, limit: $limit) {
     id
@@ -47,20 +50,57 @@ import org.aerogear.mobile.sync.SyncClient
 import com.apollographql.apollo.api.Operation;
 
 // Treat SyncClient as a Singleton and use the static "instance" of SyncClient
+
 SyncClient client = SyncClient.getInstance();
-Query query = ...
+FeedQuery query = FeedQuery.builder()
+                               .limit(10)
+                               .type(FeedType.HOT)
+                               .build()
 SyncQuery sq = client.query(query);
 Operation.data results = sq.execute();
 --
 iOS::
 +
-[source,swift]
 --
-import Apollo
-import AgsSync
 
-// Treat Ags as a Singleton and use the static "instance" of AgsSync
-AgsSync client = AgsSync.instance;
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSSync
+----
+
+. Get a reference of Apollo Client
++
+[source,swift]
+----
+import AGSSync
+
+ ...
+/**
+   get a reference of ApolloClient
+ */
+
+ var apollo = AGSSync.client
+----
+. Use the Apollo Client to make query against the Apollo server
+https://www.apollographql.com/docs/ios/fetching-queries/
 --
 ====
 
@@ -68,15 +108,20 @@ AgsSync client = AgsSync.instance;
 
 *Mutations*
 
-The Apollo client wrapper classes can also be used to modify data against the custom graphQL API using 
+The Apollo client wrapper classes can also be used to modify data in the backend data store against the custom graphQL API.
 
 [tabs]
 ====
-GraphQK Schema::
+GraphQL Schema::
 +
 [source,graphql]
 --
-
+// The graphql schema snippet below defines a mutation which can be used to write data to the backend data store.
+mutation UpvotePost($postId: Int!) {
+  upvotePost(postId: $postId) {
+    votes
+  }
+}
 --
 Android::
 +
@@ -87,9 +132,12 @@ import com.apollographql.apollo.api.Operation;
 
 // Treat SyncClient as a Singleton and use the static "instance" of SyncClient
 SyncClient client = SyncClient.getInstance();
-Query query = ...
-SyncQuery sq = client.query(query);
-Operation.data results = sq.execute();
+UpvotePostMutation mutation = UpvotePostMutation.builder()
+    .votes(3)
+    .build();
+
+SyncMuation sm = client.mutation(mutation);
+Operation.data = sm.execute();
 --
 iOS::
 +
@@ -101,10 +149,64 @@ import AgsSync
 // Treat Ags as a Singleton and use the static "instance" of AgsSync
 AgsSync client = AgsSync.instance;
 --
+. Use the Apollo Client to use muations against the Apollo server
+https://www.apollographql.com/docs/ios/mutations/
+====
+
+---
+
+*Subscriptions*
+
+The Apollo client wrapper classes can also be used to subscribe to and receive live streams from the specified url. 
+
+[tabs]
+====
+GraphQL Schema::
++
+[source,graphql]
+--
+// The graphql schema snippet below defines a subscription interface.
+
+subscription onCommentAdded($repoFullName: String!){
+  commentAdded(repoFullName: $repoFullName){
+    id
+    content
+  }
+}
+--
+Android::
++
+[source,java]
+--
+import org.aerogear.mobile.sync.SyncClient
+import com.apollographql.apollo.api.Operation;
+
+// Treat SyncClient as a Singleton and use the static "instance" of SyncClient
+SyncClient client = SyncClient.getInstance();
+UpvotePostMutation mutation = UpvotePostMutation.builder()
+    .votes(3)
+    .build();
+
+SyncMuation sm = client.mutation(mutation);
+Operation.data = sm.execute();
+--
+iOS::
++
+[source,swift]
+--
+import Apollo
+import AgsSync
+
+// Treat Ags as a Singleton and use the static "instance" of AgsSync
+AgsSync client = AgsSync.instance;
+--
+. Use the Apollo Client to use muations against the Apollo server
+https://www.apollographql.com/docs/ios/mutations/
 ====
 
 
-
+https://www.apollographql.com/docs/android/essentials/mutations/
+https://www.apollographql.com/docs/react/data/subscriptions/
 
 
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
