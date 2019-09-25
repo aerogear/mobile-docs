@@ -23,7 +23,7 @@ GraphQL Schema::
 +
 [source,graphql]
 --
-// The schema snippet defines the graphql api. 
+// The schema snippet defines the graphql api.
 // The graphql/android build creates a java object the apollo client uses to query and mutate data against.
 
 query FeedQuery($type: FeedType!, $limit: Int!) {
@@ -233,7 +233,7 @@ ApolloClient apolloClient = ApolloClient.builder()
             .addCustomTypeAdapter(CustomType.TIMESTAMPTZ, dateCustomTypeAdapter)
             .build();
 --
-iOSs::
+iOS::
 +
 --
 
@@ -273,6 +273,9 @@ import AGSSync
 
  var apollo = AGSSync.client
 ----
+
+. Use the ApolloWebSocket framework to do the subscription
+https://www.apollographql.com/docs/ios/api-reference/
 ====
 
 ---
@@ -282,5 +285,3 @@ import AGSSync
 The android Data Sync API can be found here: https://www.javadoc.io/doc/org.aerogear/android-sync/2.1.0-alpha.1
 +
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
-
-
