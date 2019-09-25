@@ -19,7 +19,7 @@ Communicating with the GraphQL server starts with creating and configuring the a
 
 [tabs]
 ====
-GraphQK Schema::
+GraphQL Schema::
 +
 [source,graphql]
 --
@@ -54,25 +54,59 @@ Operation.data results = sq.execute();
 --
 iOS::
 +
-[source,swift]
 --
-import Apollo
-import AgsSync
 
-// Treat Ags as a Singleton and use the static "instance" of AgsSync
-AgsSync client = AgsSync.instance;
---
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSSync
+----
+
+. Get a reference of Apollo Client
++
+[source,swift]
+----
+import AGSSync
+
+ ...
+/**
+   get a reference of ApolloClient
+ */
+
+ var apollo = AGSSync.client
+
+----
+
+. Use the Apollo Client to make query and communication with the Apollo server
+https://www.apollographql.com/docs/ios/fetching-queries/
 ====
 
 ---
 
 *Mutations*
 
-The Apollo client wrapper classes can also be used to modify data against the custom graphQL API using 
+The Apollo client wrapper classes can also be used to modify data against the custom graphQL API using
 
 [tabs]
 ====
-GraphQK Schema::
+GraphQL Schema::
 +
 [source,graphql]
 --
@@ -91,18 +125,50 @@ Query query = ...
 SyncQuery sq = client.query(query);
 Operation.data results = sq.execute();
 --
-iOS::
+iOSs::
++
+--
+
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
 +
 [source,swift]
---
-import Apollo
-import AgsSync
+----
+import AGSSync
+----
 
-// Treat Ags as a Singleton and use the static "instance" of AgsSync
-AgsSync client = AgsSync.instance;
---
-====
+. Get a reference of Apollo Client
++
+[source,swift]
+----
+import AGSSync
 
+ ...
+/**
+   get a reference of ApolloClient
+ */
+
+ var apollo = AGSSync.client
+
+----
+
+. Use the Apollo Client to make query and communication with the Apollo server
+https://www.apollographql.com/docs/ios/fetching-queries/
 
 
 
@@ -110,4 +176,3 @@ AgsSync client = AgsSync.instance;
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
 
 link:./ds-SyncClient-class.html[Android SDK]
-
