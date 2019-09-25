@@ -61,6 +61,7 @@ Operation.data results = sq.execute();
 --
 iOS::
 +
+<<<<<<< HEAD
 --
 
 . Add the dependency to your Podfile
@@ -142,22 +143,69 @@ Operation.data = sm.execute();
 iOS::
 +
 [source,swift]
+=======
+>>>>>>> 1d22386ddd7a73425786dc49c522e24ef9fd511e
 --
-import Apollo
-import AgsSync
 
+<<<<<<< HEAD
 // Treat Ags as a Singleton and use the static "instance" of AgsSync
 AgsSync client = AgsSync.instance;
 --
 . Use the Apollo Client to use muations against the Apollo server
 https://www.apollographql.com/docs/ios/mutations/
+=======
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync', '[VERSION]'
+end
+----
+
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSSync
+----
+
+. Get a reference of Apollo Client
++
+[source,swift]
+----
+import AGSSync
+
+ ...
+/**
+   get a reference of ApolloClient
+ */
+
+ var apollo = AGSSync.client
+
+----
+
+. Use the Apollo Client to make query and communication with the Apollo server
+https://www.apollographql.com/docs/ios/fetching-queries/
+>>>>>>> 1d22386ddd7a73425786dc49c522e24ef9fd511e
 ====
 
 ---
 
 *Subscriptions*
 
+<<<<<<< HEAD
 The Apollo client wrapper classes can also be used to subscribe to and receive live streams from the specified url. 
+=======
+The Apollo client wrapper classes can also be used to modify data against the custom graphQL API using
+>>>>>>> 1d22386ddd7a73425786dc49c522e24ef9fd511e
 
 [tabs]
 ====
@@ -190,20 +238,59 @@ UpvotePostMutation mutation = UpvotePostMutation.builder()
 SyncMuation sm = client.mutation(mutation);
 Operation.data = sm.execute();
 --
-iOS::
+iOSs::
 +
-[source,swift]
 --
-import Apollo
-import AgsSync
 
+<<<<<<< HEAD
 // Treat Ags as a Singleton and use the static "instance" of AgsSync
 AgsSync client = AgsSync.instance;
 --
 . Use the Apollo Client to use muations against the Apollo server
 https://www.apollographql.com/docs/ios/mutations/
 ====
+=======
+. Add the dependency to your Podfile
++
+[source,ruby]
+----
+target '[TARGET NAME]' do
+    pod 'AGSSync', '[VERSION]'
+end
+----
 
+. Update the dependencies
++
+[source,bash]
+----
+$ pod install
+----
+>>>>>>> 1d22386ddd7a73425786dc49c522e24ef9fd511e
+
+. Import the SDK
++
+[source,swift]
+----
+import AGSSync
+----
+
+. Get a reference of Apollo Client
++
+[source,swift]
+----
+import AGSSync
+
+ ...
+/**
+   get a reference of ApolloClient
+ */
+
+ var apollo = AGSSync.client
+
+----
+
+. Use the Apollo Client to make query and communication with the Apollo server
+https://www.apollographql.com/docs/ios/fetching-queries/
 
 https://www.apollographql.com/docs/android/essentials/mutations/
 https://www.apollographql.com/docs/react/data/subscriptions/
@@ -212,4 +299,3 @@ https://www.apollographql.com/docs/react/data/subscriptions/
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
 
 link:./ds-SyncClient-class.html[Android SDK]
-
