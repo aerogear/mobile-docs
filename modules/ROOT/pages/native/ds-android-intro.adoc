@@ -50,6 +50,7 @@ import org.aerogear.mobile.sync.SyncClient
 import com.apollographql.apollo.api.Operation;
 
 // Treat SyncClient as a Singleton and use the static "instance" of SyncClient
+// Populate and pass the FeedQuery object created from the graphQL schema.
 
 SyncClient client = SyncClient.getInstance();
 FeedQuery query = FeedQuery.builder()
@@ -190,7 +191,7 @@ import AGSSync
 ----
 
 . Use the Apollo Client to make query and communication with the Apollo server
-https://www.apollographql.com/docs/ios/fetching-queries/
+https://www.apollographql.com/docs/ios/mutations/
 ====
 
 ---
@@ -219,17 +220,18 @@ Android::
 +
 [source,java]
 --
-import org.aerogear.mobile.sync.SyncClient
-import com.apollographql.apollo.api.Operation;
+// The following example does not use the AeroGear SDK as the functionality for subscriptions is uncertain. Instead this example creates and ApolloClient directly.
+static final String GRAPHQL_WEBSOCKET_ENDPOINT = "wss://learn.hasura.io/graphql";
 
-// Treat SyncClient as a Singleton and use the static "instance" of SyncClient
-SyncClient client = SyncClient.getInstance();
-UpvotePostMutation mutation = UpvotePostMutation.builder()
-    .votes(3)
-    .build();
+OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
 
-SyncMuation sm = client.mutation(mutation);
-Operation.data = sm.execute();
+ApolloClient apolloClient = ApolloClient.builder()
+            .serverUrl(GRAPHQL_ENDPOINT)
+            .okHttpClient(okHttpClient)
+            .normalizedCache(normalizedCacheFactory, cacheKeyResolver)
+            .subscriptionTransportFactory(WebSocketSubscriptionTransport.Factory(GRAPHQL_WEBSOCKET_ENDPOINT, okHttpClient))
+            .addCustomTypeAdapter(CustomType.TIMESTAMPTZ, dateCustomTypeAdapter)
+            .build();
 --
 iOSs::
 +
@@ -270,16 +272,15 @@ import AGSSync
  */
 
  var apollo = AGSSync.client
-
 ----
+====
 
-. Use the Apollo Client to make query and communication with the Apollo server
-https://www.apollographql.com/docs/ios/fetching-queries/
+---
 
-https://www.apollographql.com/docs/android/essentials/mutations/
-https://www.apollographql.com/docs/react/data/subscriptions/
+*Conclusion*
 
-
+The android Data Sync API can be found here: https://www.javadoc.io/doc/org.aerogear/android-sync/2.1.0-alpha.1
++
 Information about the apollo graphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
 
-link:./ds-SyncClient-class.html[Android SDK]
+
