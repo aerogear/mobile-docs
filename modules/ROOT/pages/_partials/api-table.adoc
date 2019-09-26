@@ -9,9 +9,9 @@ Click on the link:#[✔] to see the API reference documentation:
 | link:http://www.javadoc.io/doc/org.aerogear/android-core/[✔]
 | link:http://www.javadoc.io/doc/org.aerogear/android-auth/[✔]
 | link:http://www.javadoc.io/doc/org.aerogear/android-push/[✔]
+| 
+|
 | link:https://www.javadoc.io/doc/org.aerogear/android-sync/2.1.0-alpha.1/[✔]
-|
-|
 
 | iOS
 | link:/api/ios/latest/core/[✔]
