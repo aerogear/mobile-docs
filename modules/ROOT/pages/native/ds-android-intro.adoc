@@ -238,9 +238,9 @@ ApolloClient apolloClient = ApolloClient.builder()
             .addCustomTypeAdapter(CustomType.TIMESTAMPTZ, dateCustomTypeAdapter)
             .build();
 
-// Currently, android support for subscriptions is greatly lacking likely does not work anyway. 
+// Currently, android support for subscriptions is greatly lacking and likely does not work anyway. 
 // In addition, subscriptions cannot be adequately described in terms of code snippets. So, for more
-// information on subscribing to data streams, see 
+// information on subscribing to data streams, see https://learn.hasura.io/graphql/android/subscriptions/1-subscription
 --
 iOS::
 +
@@ -290,6 +290,8 @@ https://www.apollographql.com/docs/ios/api-reference/
 ---
 
 *Conclusion*
+
+Javascript support Data Sync is fully functional and currently supported. However, Data Sync is neither fully functional nor currently supported. As of the writing of this documentation, it may be necessary to use the Apollo client for android and ios directly for some of the functions described above. Below is a list of additional resources.
 
 The android Data Sync API can be found here: https://www.javadoc.io/doc/org.aerogear/android-sync/2.1.0-alpha.1
 +
