@@ -95,7 +95,7 @@ Uploding files from a mobile client against the custom GraphQL schema requires t
 
 *Realtime Updates*
 
-The Apollo GraphQL clients supports realtime updates, however this features are not widely documented in official channel
+The Apollo GraphQL clients support realtime updates, however, these features are not widely documented in the official documentation
 
 [tabs]
 ====
