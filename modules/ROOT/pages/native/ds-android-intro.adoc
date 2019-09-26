@@ -8,7 +8,19 @@ include::../_partials/attributes.adoc[]
 
 ---
 
-The Data Sync feature for the Android and iOS SDKs are not fully functional. It is necessary to use the Apollo client for Android and iOS directly for the features described below.
+The Data Sync feature for the Android and iOS SDKs is satisfied by community supported Apollo GraphQL clients.
+Clients provide range of features
+
+- Query Pulling capabilities
+- Real time data synchronization using subscriptions
+- Offline storage using cache
+- Initializing offline data
+
+=== Limitations 
+What is not supported out of the box is an data edits (mutations). Developers can detect network errors in their apps and let user manualy reattempt by sending them later.
+
+Both IOS and Android provide offline database that is read only.when offline and can be synced by subscriptions.
+Frameworks do not offer data difference information but developers can get that by utilizing debezium - or any event queue that will persist history of changes.
 
 General information for GraphQL can be found here: https://www.howtographql.com/
 
@@ -27,6 +39,7 @@ Android::
 [source,text]
 --
 Performing queries against the custom GraphQL schema requires the use of an Android Apollo client object. Information on how to use the Apollo client is at https://www.apollographql.com/docs/android/essentials/queries/
+Example app: https://github.com/apollographql/frontpage-ios-app
 --
 iOS::
 +
@@ -82,7 +95,7 @@ Uploding files from a mobile client against the custom GraphQL schema requires t
 
 *Realtime Updates*
 
-The Apollo GraphQL client supports realtime updates
+The Apollo GraphQL clients supports realtime updates, however this features are not widely documented in official channel
 
 [tabs]
 ====
@@ -90,12 +103,12 @@ Android::
 +
 [source,text]
 --
-Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client to upload is at https://learn.hasura.io/graphql/android/subscriptions/1-subscription
+Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client for subscriptions is https://medium.com/@abody/apollo-graphql-and-kotlin-create-a-back-to-back-subscription-system-860b51389179
 --
 iOS::
 +
 --
-Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client to upload is at https://github.com/apollographql/apollo-ios
+Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client to subscribe for data is at https://stackoverflow.com/questions/51720378/how-to-implement-graphql-subscription-using-apollo-ios-client
 --
 ====
 
@@ -105,3 +118,4 @@ Apollo GraphQL supports subscriptions to realtime updates. Information on how to
 
 . Client SDK information: https://blog.apollographql.com/one-graphql-client-for-javascript-ios-and-android-64993c1b7991
 . Information on the Apollo GraphQL client for android can be found here: https://www.apollographql.com/docs/android/[appollo client for android].
+. Red Hat Product extensions for GraphQL https://github.com/aerogear/graphql-home
