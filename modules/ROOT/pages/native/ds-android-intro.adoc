@@ -4,12 +4,12 @@ include::../_partials/attributes.adoc[]
 
 
 
-=== Data Sync SDK for Native Android and IOS
+=== Data Sync SDK for Native Android and iOS
 
 ---
 
-The Data Sync feature for the android and IOS SDKs are neither fully functional nor currently supported. As of the writing of this document, it may be necessary to use the Apollo client for android and IOS directly for the features described below.
-+
+The Data Sync feature for the Android and iOS SDKs are not fully functional. It is necessary to use the Apollo client for Android and iOS directly for the features described below.
+
 General information for GraphQL can be found here: https://www.howtographql.com/
 
 
@@ -18,7 +18,7 @@ General information for GraphQL can be found here: https://www.howtographql.com/
 
 *Query*
 
-Communicating with the GraphQL server starts with creating and configuring the Apollo client. This is accomplished by using the Apollo client for android and IOS.
+Communicating with the GraphQL server starts with creating and configuring the Apollo client. This is accomplished by using the Apollo client for Android and iOS.
 
 [tabs]
 ====
@@ -26,13 +26,13 @@ Android::
 +
 [source,text]
 --
-Performing queries against the custom GraphQL schema requires the use of an android Apollo client object. Aerogear does provide support for queries in their android SDK. However, it is possible to use the android Apollo API directly. Information on how to use the Apollo client is at https://www.apollographql.com/docs/android/essentials/queries/
+Performing queries against the custom GraphQL schema requires the use of an Android Apollo client object. Information on how to use the Apollo client is at https://www.apollographql.com/docs/android/essentials/queries/
 --
 iOS::
 +
 [source,text]
 --
-Performing queries against the custom GraphQL schema requires the use of an Apollo client object. Aerogear does provide support for queries in their ios SDK. However, it is possible to use the swift Apollo API directly. Information on how to use the Apollo client is at https://www.apollographql.com/docs/ios/fetching-queries/
+Performing queries against the custom GraphQL schema requires the use of an Apollo client object. Information on how to use the Apollo client is at https://www.apollographql.com/docs/ios/fetching-queries/
 --
 ====
 
@@ -40,7 +40,7 @@ Performing queries against the custom GraphQL schema requires the use of an Apol
 
 *Mutations*
 
-Mutating data (CRUD operations) against the custom graphql schema.
+Mutating data (CRUD operations) against the custom GraphQL schema.
 
 [tabs]
 ====
@@ -48,13 +48,13 @@ Android::
 +
 [source,text]
 --
-Mutating data against the custom GraphQL schema requires the use of an android Apollo client object. Aerogear does provide support for mutations in their android SDK. However, it is possible to use the android Apollo API directly. Information on how to use the Apollo client to query data is at https://www.apollographql.com/docs/android/essentials/mutations/
+Inserting, modifying, and deleting data (mutations) against the custom GraphQL schema requires the use of an android Apollo client object. Information on how to use the Apollo client to query data is at https://www.apollographql.com/docs/android/essentials/mutations/
 --
 iOS::
 +
 [source,text]
 --
-Mutating data against the custom GraphQL schema requires the use of an android Apollo client object. Aerogear does provide support for mutations in their IOS SDK. However, it is possible to use the swift Apollo API directly. Information on how to use the Apollo client for mutations is at https://www.apollographql.com/docs/ios/mutations/
+Inserting, modifying, and deleting data (mutations) against the custom GraphQL schema requires the use of an Android Apollo client object. Information on how to use the Apollo client for mutations is at https://www.apollographql.com/docs/ios/mutations/
 --
 ====
 
@@ -62,20 +62,20 @@ Mutating data against the custom GraphQL schema requires the use of an android A
 
 *File Upload*
 
-The Apollo client can also be used to upload file from a mobile android and IOS device.
+The Apollo client can also be used to upload file from a mobile Android and iOS device.
 [tabs]
 ====
 Android::
 +
 [source,text]
 --
-Uploding files from a mobile client against the custom GraphQL schema requires the use of an android Apollo client object. Aerogear does provide support for mutations in their android SDK. However, it is possible to use the android Apollo API directly. Information on how to use the Apollo client to upload files is at https://github.com/apollographql/apollo-android#support-file-upload
+Uploding files from a mobile client against the custom GraphQL schema requires the use of an Android Apollo client object. Information on how to use the Apollo client to upload files is at https://github.com/apollographql/apollo-android#support-file-upload
 --
 iOS::
 +
 [source,text]
 --
-Uploding files from a mobile client against the custom GraphQL schema requires the use of a swift Apollo client object. Aerogear does provide support for mutations in their IOS SDK. However, it is possible to use the swift Apollo API directly. Information on how to use the Apollo client to upload is at https://www.apollographql.com/docs/ios/
+Uploding files from a mobile client against the custom GraphQL schema requires the use of an iOS Apollo client object. Information on how to use the Apollo client to upload is at https://www.apollographql.com/docs/ios/
 --
 ====
 
@@ -90,12 +90,12 @@ Android::
 +
 [source,text]
 --
-Apollo GraphQL supports subscriptions to realtime updates. Aerogear does provide support for subscriptions in their android SDK. However, it is possible to use the android Apollo API directly. Information on how to use the Apollo client to upload is at https://learn.hasura.io/graphql/android/subscriptions/1-subscription
+Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client to upload is at https://learn.hasura.io/graphql/android/subscriptions/1-subscription
 --
 iOS::
 +
 --
-Apollo GraphQL supports subscriptions to realtime updates. Aerogear does provide support for subscriptions in their swift SDK. However, it is possible to use the swift Apollo API directly. Information on how to use the Apollo client to upload is at https://github.com/apollographql/apollo-ios
+Apollo GraphQL supports subscriptions to realtime updates. Information on how to use the Apollo client to upload is at https://github.com/apollographql/apollo-ios
 --
 ====
 
