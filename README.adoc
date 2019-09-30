@@ -8,11 +8,9 @@ This readme introduces the standards for AeroGear docs.
 
 == Prerequisites
 
-To work with mobile-docs you must have the following software installed on your local machine.
+To work with mobile-docs you must have the latest antora version installed on your local machine.
 
-* link:https://docs.antora.org/antora/2.0/install/install-antora/[Antora CLI]
-* link:https://docs.antora.org/antora/2.0/install/install-antora/#install-the-default-antora-site-generator[Antora Default Site Generator]
-
+* link:https://docs.antora.org/a
 
 == Getting Started
 
