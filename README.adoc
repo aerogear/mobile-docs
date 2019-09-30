@@ -10,7 +10,7 @@ This readme introduces the standards for AeroGear docs.
 
 To work with mobile-docs you must have the latest antora version installed on your local machine.
 
-* link:https://docs.antora.org/a
+* link:https://docs.antora.org/
 
 == Getting Started
 
