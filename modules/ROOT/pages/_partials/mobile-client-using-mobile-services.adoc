@@ -6,7 +6,14 @@ In order to use services with a mobile app, the {mobile-client} associated with 
 To show the list of services, navigate to the application *Overview* screen and to the *Mobile Services* tab.
 A list of bound and available services is displayed.
 
+// tag::excludeUpstream[]
+image::mobile-clients-mobile-services_down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
 image::mobile-clients-mobile-services.png[]
+// end::excludeDownstream[]
+
 
 NOTE: Some services might support multiple binding and in that case a *Bind to App* button is also shown in a *Bound Services* row.
 
