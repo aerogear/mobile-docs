@@ -24,7 +24,7 @@ include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
 
 [#services]
 // start {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
-include::_partials/mobile-client-using-mobile-services.adoc[leveloffset=1]
+include::_partials/mobile-client-using-mobile-services.adoc[leveloffset=1,tags={include-tags}]
 // end {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
 
 [#building]
@@ -43,4 +43,3 @@ include::_partials/con_aerogear-sdk.adoc[leveloffset=1]
 // start {partialsdir}/api-table.adoc[]
 include::_partials/api-table.adoc[]
 // end {partialsdir}/api-table.adoc[]
-
