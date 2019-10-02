@@ -14,7 +14,6 @@ image::mobile-clients-mobile-services_down.png[]
 image::mobile-clients-mobile-services.png[]
 // end::excludeDownstream[]
 
-
 NOTE: Some services might support multiple binding and in that case a *Bind to App* button is also shown in a *Bound Services* row.
 
 == Binding mobile services
