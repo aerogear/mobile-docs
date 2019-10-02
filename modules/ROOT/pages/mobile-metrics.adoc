@@ -37,7 +37,7 @@ Identity management is monitored by the Mobile Metrics Service when it is provis
 [[setting-up-the-metrics-service]]
 == Setting Up the {metrics-service} Service
 include::_partials/metrics/provisioning-the-metrics.adoc[leveloffset=+2]
-include::_partials/metrics/binding-an-app-to-a-service.adoc[leveloffset=+2]
+include::_partials/metrics/binding-an-app-to-a-service.adoc[leveloffset=+2,tags={include-tags}]
 == Configuring your development environment for the {metrics-service} Service
 include::_partials/metrics/downloading-configuration-file.adoc[leveloffset=+1]
 include::_partials/metrics/setting-up-sdk.adoc[leveloffset=+1,tags=!excludeUpstream]

@@ -49,4 +49,10 @@ NOTE: Use `Public` when binding a {mobile-client} to a {keycloak-service}. When 
 
 The {keycloak-service} service will now be expandable, details about the service can be viewed.
 
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-idm-provisioned_down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
 image::mobile-clients-services-all-idm-provisioned.png[]
+// end::excludeDownstream[]
