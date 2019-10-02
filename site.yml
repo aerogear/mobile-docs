@@ -7,7 +7,7 @@ site:
 content:
   sources:
   - url: https://github.com/aerogear/mobile-docs.git
-    branches: [master, v2.0]
+    branches: [master, v2.0, native]
 ui:
   bundle:
     url: https://github.com/aerogear/antora-ui/raw/master/build/ui-bundle.zip
