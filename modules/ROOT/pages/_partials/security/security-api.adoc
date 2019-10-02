@@ -1,0 +1,355 @@
+[id='security-api_{context}']
+
+[[_api]]
+== Mobile Security Service REST API
+This is the server component of the AeroGear Mobile Security Service. It is a RESTful API that allows developers to view, enable and disable specific versions of applications on demand,
+with the information stored in a PostgreSQL database.
+
+The url prefix is http://<host>:<port>/api
+
+
+=== Checking REST Service
+
+Run the following curl command and check the output is as shown.
+
+[source,shell]
+----
+$ curl localhost:3000/api/apps
+[{"id":"0890506c-3dd1-43ad-8a09-21a4111a65a6","appId":"com.aerogear.testapp","appName":"Test App","numOfDeployedVersions":2,"numOfCurrentInstalls":3,"numOfAppLaunches":6000},{"id":"1b9e7a5f-af7c-4055-b488-72f2b5f72266","appId":"com.aerogear.foobar","appName":"Foobar","numOfDeployedVersions":0,"numOfCurrentInstalls":0,"numOfAppLaunches":0}]
+----
+
+NOTE: This endpoint will return all apps saved in the database. If you do not have data saved locally it will return no data with a `204 No Content` response code.
+
+TIP: You can install the https://www.getpostman.com/[Postman] tool which will be useful to call and test the REST API endpoints of this server.
+Following an image to show how it works.
+
+[[_getapps]]
+=== Retrieve list of apps
+....
+GET /apps
+....
+
+
+==== Description
+Returns root level information for all apps
+[source,shell]
+----
+$ curl localhost:3000/api/apps
+[{"id":"0890506c-3dd1-43ad-8a09-21a4111a65a6","appId":"com.aerogear.testapp","appName":"Test App","numOfDeployedVersions":2,"numOfCurrentInstalls":3,"numOfAppLaunches":6000},{"id":"1b9e7a5f-af7c-4055-b488-72f2b5f72266","appId":"com.aerogear.foobar","appName":"Foobar","numOfDeployedVersions":0,"numOfCurrentInstalls":0,"numOfAppLaunches":0}]
+----
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**appId** +
+__optional__|The app_id to filter the app by appId|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|<<_app,App>>
+|**204**|successful operation by no apps were found|No Content
+|**404**|App not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_updateappversions]]
+=== Update 1 or more versions of an app
+....
+PUT /apps/:id/versions
+....
+
+
+==== Description
+Update all versions informed of an app using the app id, including updating version information
+
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|The id for the app that will have its versions updated|string
+|**Body**|**body** +
+__required__|Updated 1 or more versions of an app|<<_version,Version>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful update|No Content
+|**400**|Invalid app and/or versions supplied|No Content
+|**404**|App not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_updateapp]]
+=== Disable all versions of an app
+....
+POST /apps/:id/versions/disable
+....
+
+
+==== Description
+Disable all versions of an app
+
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|The id for the app that will have all its versions updated|string
+|**Body**|**body** +
+__required__||<<_version,Version>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful update|No Content
+|**400**|Invalid app supplied|No Content
+|**404**|App not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_getactiveappbyid]]
+=== Get app by id
+....
+GET /apps/{id}
+....
+
+
+==== Description
+Retrieve all information for a single app including all child information
+
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|The id for the app that needs to be fetched.|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|<<_app,App>>
+|**400**|Invalid id supplied|No Content
+|**404**|App not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_deleteappbyid]]
+=== Does a soft delete at in the App
+....
+DELETE /apps/{id}
+....
+
+
+==== Description
+To do a a soft deleted at the App
+
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|The id for the app that needs to be fetched.|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**204**|successful operation|No Content
+|**400**|Invalid id supplied|No Content
+|**404**|App not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_health]]
+=== Check if the server can receive requests
+....
+GET /healthz
+....
+
+
+==== Description
+Check the health of the REST SERVICE API
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|No Content
+|**500**|Internal Server Error|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_initappfromdevice]]
+=== Init call from SDK
+....
+POST /init
+....
+
+
+==== Description
+Capture metrics from device and return if the app version they are using is disabled and has a set disabled message
+
+
+==== Parameters
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**body** +
+__required__|Updated app object|<<_version,Version>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|No Content
+|**400**|Invalid id supplied|No Content
+|**404**|Data not found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_metrics]]
+=== Retrieve all metrics for the Go server
+....
+GET /metrics
+....
+
+
+==== Description
+Get the metrics of the service
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_status]]
+=== Check if the server is running
+....
+GET /ping
+....
+
+
+==== Description
+Check the status of the REST SERVICE API
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|successful operation|No Content
+|===
+
+
+==== Produces
+
+* `application/json`
+
+
+[[_getuser]]
+=== Retrieve user
+....
+GET /user
+....
+
+
+==== Description
+Returns user
+
+
+==== Responses
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP Code|Description|Schema
+|**200**|sucessful operation|No Content
+|**404**|No user found|No Content
+|===
+
+
+==== Produces
+
+* `application/json`

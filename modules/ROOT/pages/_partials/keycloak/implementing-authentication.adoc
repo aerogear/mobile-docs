@@ -7,6 +7,27 @@
 
 * The `mobile-services.json` file is up-to-date in your development environment.
 
+sample section of `mobile-services.json`
+[source,json]
+----
+  "config": {
+    "auth-server-url": "https://sso-user-sso.apps.dbizzarr-b9fe.open.redhat.com/auth",  <!--1-->
+    "confidential-port": 0,
+    "public-client": true,
+    "realm": "showcase-app-2-realm",   <!--2-->
+    "resource": "showcase-app-2-client", <!--3-->
+    "ssl-required": "external"
+  },
+  "id": "65f3535c-d953-11e9-8f42-125dba193044",
+  "name": "keycloak",
+  "type": "keycloak",
+  "url": "https://sso-user-sso.apps.dbizzarr-b9fe.open.redhat.com/auth"
+},
+----
+<1> keycloak server base url
+<2> keycloak realm
+<3> keycloak clien Id for the app
+
 .Procedure
 
 To implement authentication using the Aerogear SDK:

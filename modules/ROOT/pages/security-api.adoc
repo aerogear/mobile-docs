@@ -1,0 +1,3 @@
+
+include::_partials/security/security-api-schema.adoc[tags={include-tags}]
+include::_partials/security/security-api.adoc[tags={include-tags}]
