@@ -20,13 +20,7 @@ This section describes how to set up the {metrics-service} service.
 
 . Navigate to *Mobile Services* tab.
 +
-// tag::excludeUpstream[]
-image::mobile-clients-services-all-unbound-down.png[]
-// end::excludeUpstream[]
-
-// tag::excludeDownstream[]
 image::mobile-clients-services-all-unbound.png[]
-// end::excludeDownstream[]
 
 +
 NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
@@ -35,22 +29,10 @@ NOTE: It is possible to bind a {mobile-client} with a mobile service in the Open
 . Fill out the binding parameters required by the {metrics-service} Service.
 
 +
-// tag::excludeUpstream[]
-image::mobile-clients-services-idm-parameters-down.png[]
-// end::excludeUpstream[]
-
-// tag::excludeDownstream[]
 image::mobile-clients-services-all-idm-provisioned.png[]
-// end::excludeDownstream[]
 
 NOTE: Use `Public` when binding a {mobile-client} to {metrics-service}. When binding mobile services to each other, use `Bearer`.
 
 The {service-name} service will now be expandable, details about the service can be viewed.
 
-// tag::excludeUpstream[]
-image::mobile-clients-services-all-idm-provisioned_down.png[]
-// end::excludeUpstream[]
-
-// tag::excludeDownstream[]
 image::mobile-clients-services-all-idm-provisioned.png[]
-// end::excludeDownstream[]
