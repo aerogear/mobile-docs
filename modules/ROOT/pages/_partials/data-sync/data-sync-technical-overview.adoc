@@ -5,13 +5,13 @@ This section describes the technical aspects of Data Sync.
 
 // tag::excludeDownstream[]
 
-image::data-sync-technical-overview.png[Data Sync Technical Overview]
+image::RHMDS_Data_Sync_35_0919_framework.png[Data Sync Technical Overview]
 
 // end::excludeDownstream[]
 
 // tag::excludeUpstream[]
 
-image::data-sync-technical-overview.png[Data Sync Technical Overview]
+image::RHMDS_Data_Sync_35_0919_framework.png[Data Sync Technical Overview]
 
 // end::excludeUpstream[]
 
