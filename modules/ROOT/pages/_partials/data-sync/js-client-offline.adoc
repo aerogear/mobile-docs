@@ -4,6 +4,8 @@
 
 == About offline functionality
 
+image::RHMDS_Data_Sync_35_0919_online-offline.png[]
+
 Your mobile app can run offline and allow users to query and create mutations using the @aerogear/voyager-client module. 
 
 All queries are performed against the cache, a mutation store (or offline store) supports offline mutations.
