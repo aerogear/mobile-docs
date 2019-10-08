@@ -9,6 +9,8 @@ include::_partials/attributes.adoc[]
 
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
 
+image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
+
 // tag::excludeDownstream[]
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 // end::excludeDownstream[]
