@@ -9,8 +9,6 @@ include::_partials/attributes.adoc[]
 
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
 
-image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
-
 // tag::excludeDownstream[]
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 // end::excludeDownstream[]
@@ -19,6 +17,10 @@ With OpenShift's Container technology providing a secure, scalable backend platf
 {mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back-end for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally. {mobile-client}s allow you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service}, {metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement.
 
 A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
+
+// tag::excludeUpstream[]
+image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
+// end::excludeUpstream[]
 
 // start {partialsdir}/mdc-introduction.adoc[]
 include::_partials/mdc-introduction.adoc[]
