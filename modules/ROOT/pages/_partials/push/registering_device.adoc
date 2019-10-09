@@ -79,6 +79,34 @@ func application(_ application: UIApplication,
 
 --
 // end::excludeDownstream[]
+
+Web::
++
+--
+[source,javascript]
+----
+import { PushRegistration } from "@aerogear/push";
+
+new PushRegistration(app.config)
+  .register({serviceWorker: 'your-service-worker.js'}).then(() => {
+    // Registration with UPS successful, you can now send push notifications from the UPS UI
+}).catch(err => {
+    // Error on device registration
+});
+----
+
+NOTE: Optionally, you can pass the parameters below to the register method
+
+[source,javascript]
+----
+{  
+  alias: 'some-alias',
+  categories: ['one', 'or', 'more', 'categories'],
+  timeout: 5000 // in milliseconds
+}
+----
+--
+
 Cordova::
 +
 --

@@ -82,6 +82,17 @@ $ pod install
 import AGSPush
 ----
 --
+Web::
++
+--
+// end::excludeDownstream[]
+. Install the Unified Push Server package needed for device registration:
++
+[source,bash]
+----
+$ npm install --save @aerogear/push
+----
+--
 Cordova::
 +
 --
@@ -99,7 +110,6 @@ $ cordova plugin add @aerogear/cordova-plugin-aerogear-push
 ----
 $ npm install --save @aerogear/push
 ----
-
 --
 // tag::excludeDownstream[]
 Xamarin::
