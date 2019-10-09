@@ -47,6 +47,21 @@ The {SDK} for iOS does not provide a way to handle incoming messages. Instead, f
 
 --
 
+Web::
++
+--
+Add the following code to your app:
+
+[source,javascript]
+----
+import { PushRegistration } from "@aerogear/push";
+
+PushRegistration.onMessageReceived((notification: any) => {
+  console.log('Received a push notification', notification);
+});
+----
+--
+
 Cordova::
 +
 --
@@ -71,4 +86,6 @@ Xamarin::
 This feature is not yet supported in the AeroGear Xamarin SDK
 --
 // end::excludeDownstream[]
+
+--
 ====

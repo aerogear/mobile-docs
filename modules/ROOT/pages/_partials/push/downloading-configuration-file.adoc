@@ -33,7 +33,13 @@ iOS::
 --
 `<app directory>/mobile-services.json`
 NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
-
+--
+Web::
++
+--
+// end::excludeDownstream[]
+????? `src/mobile-services.json`
+// tag::excludeDownstream[]
 --
 Cordova::
 +
