@@ -87,8 +87,9 @@ Web::
 ----
 import { PushRegistration } from "@aerogear/push";
 
+// Register your app for push notification, passing the relative URL to your service worker
 new PushRegistration(app.config)
-  .register({serviceWorker: 'your-service-worker.js'}).then(() => {
+  .register({serviceWorker: '/path/to/your-service-worker.js'}).then(() => {
     // Registration with UPS successful, you can now send push notifications from the UPS UI
 }).catch(err => {
     // Error on device registration
@@ -105,6 +106,41 @@ NOTE: Optionally, you can pass the parameters below to the register method
   timeout: 5000 // in milliseconds
 }
 ----
+
+WARNING: It is very important that you provide the correct path to your service worker: it will be responsible of
+receiving the push notification and, optionally, hand it over to your application.
+
+A typical implementation for a simple service worker could be:
+
+.service-worker.js
+[source,javascript]
+----
+self.addEventListener('push', event => {
+  const data = event.data.text();
+  const msg_chan = new MessageChannel();
+
+  // Check if the app is open
+  clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      // hand the notification over to any running instance of the webapp
+      client.postMessage(data, [msg_chan.port2]);
+    })
+    if (clients.length === 0) {
+      // No web browser tabs are pointing to our webapp: 
+      // open a system notification
+      event.waitUntil(
+        self.registration.showNotification(data)
+      );
+    }
+  });
+});
+
+self.addEventListener('install', function (event) {
+  self.skipWaiting();
+});
+----
+
+For details about how to create a service worker, please refer to the link:https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API[official documentation^].
 --
 
 Cordova::
