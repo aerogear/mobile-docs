@@ -38,7 +38,7 @@ Web::
 +
 --
 // end::excludeDownstream[]
-????? `src/mobile-services.json`
+Add the mobile-services.json in your assets folder
 // tag::excludeDownstream[]
 --
 Cordova::
