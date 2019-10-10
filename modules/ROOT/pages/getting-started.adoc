@@ -18,6 +18,10 @@ With OpenShift's Container technology providing a secure, scalable backend platf
 
 A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
 
+// tag::excludeUpstream[]
+image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
+// end::excludeUpstream[]
+
 // start {partialsdir}/mdc-introduction.adoc[]
 include::_partials/mdc-introduction.adoc[]
 // end {partialsdir}/mdc-introduction.adoc[]

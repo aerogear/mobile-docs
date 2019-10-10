@@ -98,5 +98,4 @@ include::{partialsdir}/attributes.adoc[]
 
 * xref:supported_versions.adoc[Supported Versions]
 * xref:ref_api.adoc[API Reference]
-* xref:mobile-cli.adoc[Mobile CLI]
 * xref:glossary.adoc[Glossary]

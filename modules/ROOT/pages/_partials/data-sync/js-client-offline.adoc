@@ -12,6 +12,8 @@ If a client goes offline for a long period of time, the mutation store negotiate
 
 When a client comes online again, the mutations are replicated back to the server.
 
+image::RHMDS_Data_Sync_35_0919_online-offline.png[]
+
 Developers can attach listeners to get notifications about updates applied on the server or failing, and take appropriate actions.
 
 .Mutations and Local Cache
