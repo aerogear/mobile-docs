@@ -3,27 +3,21 @@
 {product-name} run natively on link:https://www.openshift.org/[OpenShift^].
 
 // tag::excludeDownstream[]
-
-There are two options for installing {product-name}:
-
-* using an installation script
-* using the OpenShift CLI
-
-Typically, developers use the installation script method.
-
-// end::excludeDownstream[]
-
 [[prerequisites]]
 .Prerequisites
 
 * OpenShift 3.11 instance
 +
-** This instance must have Service Catalog, Ansible Service Broker and Template Service Broker services installed.
-+
 ** You need to have full access to this OpenShift instance, i.e. user with `cluster-admin` privileges.
 +
-// tag::excludeDownstream[]
 NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minishift to xref:local-setup[setup OpenShift locally].
++
+* If you are using Minishift, or if the OpenShift cluster doesn't already have a secret to access `https://registry.redhat.io`, then a service account is required to access `https://registry.redhat.io`.
++
+** This is because IDM service uses productized images that are stored in this registry.
+** To get a service account, go to `https://registry.redhat.io`, then click on `Service Accounts` tab on the top right corner, and then login using your Red Hat developer account. Click on `New Service Account` to create a new one. Take note of the username and password.
+** For more information, please check link:https://docs.openshift.com/container-platform/3.11/install_config/configuring_red_hat_registry.html[Accessing and Configuring the Red Hat Registry].
+
 
 * link:https://www.openshift.org/download.html[OpenShift client tools^] version 3.11
 
@@ -33,10 +27,6 @@ NOTE: If you don't have OpenShift instance you can use `oc cluster up` or Minish
 
 * link:https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html[Ansible 2.7.x^] installed on the machine where you want to run the installation scripts from
 
-// end::excludeDownstream[]
-
-
-// tag::excludeDownstream[]
 == Installing {product-name} using the installer script
 
 . Clone the Mobile Services Installer repository:
@@ -72,124 +62,38 @@ $ chcon -Rt svirt_sandbox_file_t .
 +
 [source,bash]
 ----
-$ ansible-playbook install-mobile-services.yml
+$ ansible-playbook install-mobile-services.yml -e registry_username="<registry_service_account_username>" -e registry_password="<registry_service_account_password>" -e openshift_master_url="<public_url_of_openshift_master>"
 ----
 +
-
-. Verify the installation:
-+
-.. Browse to the Web console of your OpenShift instance and log in.
-
-.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
-
-// end::excludeDownstream[]
-== Installing {product-name} using the OpenShift CLI
-
-. Log in to the OpenShift console as a user with `cluster-admin` privileges using the `oc` command.
-. Create a Custom Resource Definition file:
+If the cluster can already access the Red Hat container registry, you can skip the part that sets up the pull secrets:
 +
 [source,bash]
 ----
-cat > /tmp/crd.yaml << EOF
-apiVersion: apiextensions.k8s.io/v1beta1
-kind: CustomResourceDefinition
-metadata:
-  name: mobileclients.mobile.k8s.io
-spec:
-  group: mobile.k8s.io
-  version: v1alpha1
-  scope: Namespaced
-  names:
-    plural: mobileclients
-    singular: mobileclient
-    kind: MobileClient
-    shortNames:
-    - mc
-  validation:
-    openAPIV3Schema:
-      properties:
-        spec:
-          properties:
-            apiKey:
-              type: string
-              pattern: '(\w{8}-\w{4}-\w{4}-\w{4}-\w{11})'
-            name:
-              type: string
-              pattern: '([\w-])'
-            dmzUrl:
-              type: string
-              nullable: true
-EOF
-----
-. Run the following commands to setup the Custom Resource on OpenShift:
-+
-[source,bash,subs="attributes"]
-----
-oc create -f /tmp/crd.yaml
-oc create clusterrole mobileclient-admin --verb=create,delete,get,list,patch,update,watch --resource=mobileclients
-oc adm policy add-cluster-role-to-group mobileclient-admin system:authenticated
+$ ansible-playbook install-mobile-services.yml -e openshift_master_url="<public_url_of_openshift_master>" --skip-tags "pullsecret"
 ----
 
-. Update the configuration of the Automation Service Broker to add new registries:
-
-.. Edit the config map object using `oc`
+. You will also need to update the CORS configuration of the OpenShift cluster to allow the mobile developer console to communicate with the OpenShift API server (you only need to do this once).
 +
-[source,bash,subs="attributes"]
-----
-oc edit configmap broker-config -n openshift-automation-service-broker
-----
-.. Add the following new registries to the `registry` section of the config:
+** If you are using minishift, you should run [this script](./scripts/minishift-cors.sh).
+** Otherwise, you should run [this playbook](./update-master-cors-config.yml) to update the master config of the OpenShift cluster. To run this playbook, you need to:
 +
-[source,yaml,subs="attributes"]
-----
-registry:
-- type: dockerhub
-  name: ag
-  url: https://registry.hub.docker.com
-  org: aerogearcatalog
-  tag: 1.0.0
-  white_list:
-    - '.*-apb$'
-  black_list:
-    - '.*mobile-developer-console-apb$'
-- type: dockerhub
-  name: ag-mdc
-  org: aerogearcatalog
-  tag: 1.0.0-alpha
-  url: https://registry.hub.docker.com
-  white_list:
-  - '.*mobile-developer-console-apb$'
-----
-
-.. Update the following attributes in the `openshift` section of the config:
+*** Get the host names of the master nodes by running `oc get nodes`. Take notes of the host names.
+*** Copy [the sample hosts inventory file](./inventories/hosts.template), and update it to add the correct host names for master nodes.
+*** You should also make sure that you can ssh into the master nodes from the workstation.
+*** Run the playbook and specify the inventory file:
 +
-[source,yaml,subs="attributes"]
+[source,bash]
 ----
-openshift:
-  image_pull_policy: Always
-  sandbox_role: admin
+$ ansible-playbook -i ./inventories/hosts update-master-cors-config.yml
 ----
-.. Update the following attributes in the `broker` section of the config:
 +
-[source,yaml,subs="attributes"]
-----
-broker:
-  launch_apb_on_bind: true
-----
-
-.. Save the configmap object, and restart the automation service broker:
-+
-[source,bash,subs="attributes"]
-----
-oc rollout latest openshift-automation-service-broker -n openshift-automation-service-broker
-----
+NOTE: This playbook will restart the api and controller servers of the OpenShift cluster.
 
 . Verify the installation:
 +
-.. Browse to the Web console of your OpenShift instance and log in.
+.. Make sure all the pods are running in the `mobile-developer-services` project
 
-.. Check that the _Mobile_ tab is displayed in the service catalog. If this tab is not displayed, wait a few minutes to make sure that the installation process has completed.
-
+// end::excludeDownstream[]
 
 // tag::excludeDownstream[]
 [id='additional-resources']
@@ -265,6 +169,8 @@ Minishift::
 --
 [source,bash]
 ----
+$ export REGISTRY_USERNAME=<registry_service_account_username>
+$ export REGISTRY_PASSWORD=<registry_service_account_password>
 $ ./scripts/minishift.sh
 ----
 --
@@ -273,6 +179,8 @@ oc cluster up::
 --
 [source,bash]
 ----
+$ export REGISTRY_USERNAME=<registry_service_account_username>
+$ export REGISTRY_PASSWORD=<registry_service_account_password>
 $ ./scripts/oc-cluster-up.sh
 ----
 ====
