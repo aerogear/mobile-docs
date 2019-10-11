@@ -87,7 +87,7 @@ Web::
 ----
 import { PushRegistration } from "@aerogear/push";
 
-// Register your app for push notification, passing the relative URL to your service worker
+// Register your app for push notifications, passing the relative URL to your service worker
 new PushRegistration(app.config)
   .register({serviceWorker: '/path/to/your-service-worker.js'}).then(() => {
     // Registration with UPS successful, you can now send push notifications from the UPS UI
@@ -107,8 +107,8 @@ NOTE: Optionally, you can pass the parameters below to the register method
 }
 ----
 
-WARNING: It is very important that you provide the correct path to your service worker: it will be responsible of
-receiving the push notification and, optionally, hand it over to your application.
+NOTE: Service worker will be responsible for receiving the push notification and, 
+optionally, hand it over to your application.
 
 A typical implementation for a simple service worker could be:
 
