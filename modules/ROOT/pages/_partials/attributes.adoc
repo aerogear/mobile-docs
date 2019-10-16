@@ -5,7 +5,7 @@
 
 :release-number: 1.0.0
 :showcase-version: 0.8.0
-:installer-release-number: 2.0.0
+:installer-release-number: 3.0.0
 :xamarin-sdk-release-number: 2.0.1
 :ios-sdk-release-number: 2.0.0
 :android-sdk-release-number: 2.0.0
