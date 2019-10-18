@@ -42,6 +42,15 @@ include::{partialsdir}/attributes.adoc[]
 *** xref:push-notifications.adoc#sending-a-push-notification-push[Sending a Notification]
 *** xref:push-notifications.adoc#handling-push-notifications-push[Handling a Notification]
 
+** xref:web-push-notifications.adoc[Web Push Notifications]
+*** xref:web-push-notifications.adoc#introduction[Introduction]
+*** xref:web-push-notifications.adoc#setting-up-the-web-push-service[Setting Up]
+*** xref:web-push-notifications.adoc#setting-up-the-web-push-client-app[App configuration]
+*** xref:web-push-notifications.adoc#registering-device[Registering device]
+*** xref:web-push-notifications.adoc#sending-a-web-push-notification-push[Sending a Notification]
+*** xref:web-push-notifications.adoc#handling-web-push-notifications-push[Handling a Notification]
+
+
 ** xref:mobile-metrics.adoc[{metrics-service}]
 *** xref:mobile-metrics.adoc#introduction[Introduction]
 *** xref:mobile-metrics.adoc#setting-up-the-metrics-service[Setting Up]
