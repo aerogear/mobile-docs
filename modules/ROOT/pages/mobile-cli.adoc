@@ -7,7 +7,7 @@ include::{partialsdir}/attributes.adoc[]
 
 = Getting Started with the {mobile-cli}
 
-The Mobile CLI allows developers work with {product-name} from the command line, for example using the following commands:
+The Mobile CLI allows developers to work with {product-name} from the command line, for example using the following commands:
 
 [source,bash]
 ----
@@ -44,25 +44,25 @@ context and information needed to show you relevant information around
 your particular mobile runtime as well as allowing us to setup the
 different kind of client builds required.
 * *ClientConfig* The client config, is a resource created by aggregating
-together all of the available service configs. This resource is the
-configuration required in order to consume your mobile aware services
+all of the available service configs. This resource is the
+configuration required to consume the mobile aware services
 from your mobile client. It is used by the client SDKs for the various
 mobile services.
 * *ServiceConfig:* The service config contains the services' information
 that is used to configure the Mobile SDK. For more information see
 link:./docs/service_config.md[here].
-* *ClientBuild* The client build is backed by a regular BuildConfig,
-however the CLI will help you create this BuildConfig with as little
+* *ClientBuild* The client build is backed by a regular BuildConfig;
+however, the CLI will help you create this BuildConfig with as little
 effort as possible. This allows you to focus on just the mobile parts
-rather than needing to understand how to setup and manage a buildconfig
+rather than needing to understand how to setup and manage a Buildconfig
 and builds. For example, it will help you manage build credentials, and
-keys and ensure the build integrates seamlessly with the aereogear
+keys and ensure the build integrates seamlessly with the Aereogear
 mobile build farm.
 * *Binding* The binding is backed by a binding resource in the service
-catalog. Once again we try to remove the need to understand how to
+catalog. Once again, we try to remove the need to understand how to
 create the native objects so that you can focus on being productive and
 building your mobile app. When doing a binding, you will be able to
-integrate different mobile services together. For example when using
+integrate different mobile services together. For example, when using
 sync and keycloak you can bind them together and have your sync service
 protected by keycloak. This is as simple as
 `mobile create integration <consuming_service_instance_id> <providing_service_instance_id>`

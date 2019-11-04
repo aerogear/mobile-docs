@@ -3,7 +3,7 @@ include::{partialsdir}/attributes.adoc[]
 // end {partialsdir}/attributes.adoc[]
 = AeroGear API Reference
 
-You can find the links to the API reference of each module for each platform in the table below. 
+You can find links to the API reference of each module for each platform in the table below. 
 
 // start {partialsdir}/api-table.adoc[]
 include::{partialsdir}/api-table.adoc[]
