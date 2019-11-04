@@ -1,20 +1,27 @@
-// start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
 = Mobile Services
+:page-partial:
+
 {org-name} {product-name} provide easily implemented solutions to common development challenges faced by mobile developers.
 
 The following services are available:
 
 * xref:identity-management.adoc[{keycloak-service}]
 * xref:push-notifications.adoc[{unifiedpush-service}]
-//* xref:runtime-connector.adoc[{custom-service}]
 * xref:mobile-metrics.adoc[{metrics-service}]
 * xref:mobile-cicd.adoc[{mobile-ci-cd-service}]
-* xref:device-security.adoc[{device-security-service}]
+* Security
+** xref:device-security.adoc[{device-security-service}]
+** xref:app-security.adoc[{app-security-service}]
 * xref:data-sync.adoc[{sync-service}]
 
 Below is a high-level architecture diagram, which outlines how your mobile apps and mobile services interact with one another:
 
-image::3steps.png[]
+image::mobile-services-arch.png[]
+//Image found in https://docs.google.com/drawings/d/1aFZinQb6UF8AuCisQ_xt0DsX75WxWC7a55ZiDT9Xwho/edit?usp=sharing
+
+
 

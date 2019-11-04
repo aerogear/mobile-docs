@@ -1,0 +1,22 @@
+[[access-mobile-client-build-logs]]
+= Viewing Build Logs
+
+== Viewing Build History in the OpenShift Console
+
+All of the builds related to your {mobile-client} can be seen in the **Builds** tab of your {mobile-client}. Each build can be expanded to show further information about the build configuration, latest build and build history.
+
+All builds have a *View Log* link associated with them to access the detailed logs of that build.
+
+
+== Viewing Build Logs in Jenkins
+
+. Navigate to the {mobile-client} and click the *Builds* tab.
+
+. Click the *View Log* link for the build, you are redirected to the Jenkins instance that has been running your build.
+
+. If prompted, log into OpenShift and accept the authorization request for:
++
+* user:info permission
+* user:check-access permission
+
+. View the log of the build. Based on your permissions to the OpenShift project, you might have access to other Jenkins capabilities, such as inspecting the build configuration or re-running the build with changes in the pipeline script.

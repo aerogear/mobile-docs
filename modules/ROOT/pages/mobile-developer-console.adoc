@@ -1,0 +1,45 @@
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+
+= Mobile Developer Console
+:toc:
+
+== Introduction
+
+// start {partialsdir}/mdc-introduction.adoc[]
+include::_partials/mdc-introduction.adoc[]
+// end {partialsdir}/mdc-introduction.adoc[]
+
+[#provision-mdc]
+// start {partialsdir}/provision-mdc.adoc[]
+include::_partials/provision-mdc.adoc[]
+// end {partialsdir}/provision-mdc.adoc[]
+
+[#registering]
+// start registering-a-mobile-app.adoc[leveloffset=1]
+include::_partials/registering-a-mobile-app.adoc[leveloffset=1]
+// end registering-a-mobile-app.adoc[leveloffset=1]
+
+[#services]
+// start {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
+include::_partials/mobile-client-using-mobile-services.adoc[leveloffset=1,tags={include-tags}]
+// end {partialsdir}/mobile-client-using-mobile-services.adoc[leveloffset=1]
+
+[#building]
+// start {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+include::_partials/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+// end {partialsdir}/mobile-client-configuring-and-running-builds.adoc[leveloffset=1]
+
+[#sdk]
+// start {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+include::_partials/con_aerogear-sdk.adoc[leveloffset=1]
+// end {partialsdir}/con_aerogear-sdk.adoc[leveloffset=1]
+
+
+== API Reference Documentation
+
+// start {partialsdir}/api-table.adoc[]
+include::_partials/api-table.adoc[]
+// end {partialsdir}/api-table.adoc[]

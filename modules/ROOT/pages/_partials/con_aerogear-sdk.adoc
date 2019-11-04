@@ -2,27 +2,23 @@
 
 After you have xref:getting-started.adoc#registering[registered] a {mobile-client}, xref:getting-started.adoc#binding[bound] the {mobile-client} to a mobile service, and xref:getting-started.adoc#downloading-the-mobile-services-configuration-file[downloaded] the mobile services configuration file, you can start developing your mobile app using mobile services.
 
-The {org-name} SDK supports the following platforms:
+The {org-name} SDK supports the following mobile platforms:
 
-[[android]]
-== Android
+* xref:android[Android]: SDK is hosted on link:https://bintray.com/bintray/jcenter[jCenter].
+* xref:ios[iOS]: SDK is hosted on link:https://cocoapods.org/[CocoaPods].
+* xref:cordova[Cordova]: SDK is hosted on link:https://www.npmjs.com/[npm].
+* xref:xamarin[Xamarin]: SDK is hosted on link:https://www.nuget.org/[NuGet].
 
-For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation, window="_blank"].
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
 
-include::{partialsdir}/conf-dev-env-android.adoc[]
+For information about how to develop Android apps, see  link:https://developer.android.com/studio/install[Android Documentation^].
 
-For Service specific steps, see:
-
-* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
-* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
-* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
-
-[[ios]]
-== iOS
-
-For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation, window="_blank"].
-
-include::{partialsdir}/conf-dev-env-ios.adoc[]
+include::./conf-dev-env-android.adoc[]
 
 For Service specific steps, see:
 
@@ -30,13 +26,14 @@ For Service specific steps, see:
 * xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
 * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
 
+--
+iOS::
++
+--
 
-[[cordova]]
-== Cordova
+For information about how to develop iOS apps, see link:https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.adoc[iOS Documentation^].
 
-For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation, window="_blank"].
-
-include::{partialsdir}/conf-dev-env-cordova.adoc[]
+include::./conf-dev-env-ios.adoc[]
 
 For Service specific steps, see:
 
@@ -44,14 +41,37 @@ For Service specific steps, see:
 * xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
 * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
 
-[[xamarin]]
-== Xamarin
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
 
-For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation, window="_blank"].
+For information about how to develop apps using Cordova, see link:https://cordova.apache.org/#getstarted[Cordova Documentation^].
 
-include::{partialsdir}/conf-dev-env-xamarin.adoc[]
+include::./conf-dev-env-cordova.adoc[]
+
+For Service specific steps, see:
+
+* xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
+* xref::push-notifications.adoc#importing-the-libraries[Steps for {unifiedpush-service}]
+* xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+
+For information about how to develop apps using Xamarin see link:https://developer.xamarin.com/getting-started/[Xamarin Documentation^].
+
+include::./conf-dev-env-xamarin.adoc[]
 
 For Service specific steps, see:
 
 * xref::identity-management.adoc#importing-the-libraries[Steps for {keycloak-service}]
 * xref::device-security.adoc#importing-the-libraries[Steps for {device-security-service}]
+
+--
+// end::excludeDownstream[]
+====

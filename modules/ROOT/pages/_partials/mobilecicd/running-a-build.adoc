@@ -1,0 +1,20 @@
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_building-a-mobile-app
+
+[id='{context}_proc_building-a-mobile-app']
+= Building a Mobile App
+
+To build a mobile app.
+
+. Open Mobile Developer Console and find the {mobile-client} you want to build.
+
+. Click on the name of the {mobile-client} to open the details view.
+
+. From the *Builds* tab, select the build configuration you want to build and click *Start Build*.
+
+. Check the mobile app build status by expanding the build configuration box.
++
+Each build step is displayed (along with the current step status: completed, error or running) based on the stages in your Jenkinsfile code.
+
+.  To view the full build log, click *view log* which redirects you to your Jenkins instance.

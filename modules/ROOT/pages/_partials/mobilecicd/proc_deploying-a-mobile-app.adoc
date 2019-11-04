@@ -1,0 +1,17 @@
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_deploying-a-mobile-app
+
+[id='{context}_proc_deploying-a-mobile-app']
+= Deploying a Mobile App
+
+You can use the OpenShift UI to deploy a mobile app by downloading the binary directly to the mobile device.
+This binary can be downloaded for any successful build in the build history.
+
+
+. Navigate to the {mobile-client} in the Mobile Developer Console and click the *Builds* tab.
+
+. Expand the *build configuration* that you want to deploy and click *Generate Download Link*.
+
+. To download the binary to your mobile device, scan the QR code using your mobile device.

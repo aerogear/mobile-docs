@@ -1,9 +1,0 @@
-include::{partialsdir}/attributes.adoc[]
-
-= {metrics-service}
-
-
-. Launch the showcase app. It automatically sends xref:metrics/analysing-app-usage.adoc[app and device metrics].
-. Navigate to the {grafana-ui}, and view the metrics.
-+
-If you perform xref:showcase-apps/device-security.adoc[device security] checks, related metrics are also displayed.
