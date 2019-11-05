@@ -10,4 +10,3 @@ To create a {mobile-client}:
 . Click on `Create Mobile App` button.
 . Enter name of your mobile application.
 . Click `Create` button.
-
