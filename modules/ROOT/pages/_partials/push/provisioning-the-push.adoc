@@ -3,8 +3,6 @@
 [id='provisioning-the-{context}']
 = Provisioning the {unifiedpush-service} Service
 
-This section describes how to set up the {unifiedpush-service} Service.
-
 .Procedure
 
 . Log into the OpenShift console.
@@ -12,7 +10,7 @@ This section describes how to set up the {unifiedpush-service} Service.
 . Click *Add to Project* and choose *Browse Catalog* from the options.
 +
 You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
-. Click *Services* and choose the {service-name} service.
+. Click *Services* and choose the *{unifiedpush-service}* service.
 +
 image::catalog-mobile-services.png[]
 
