@@ -20,7 +20,6 @@
 :metrics-service: Mobile Metrics
 :grafana-ui: G your backlog.
 
-￼OK, got itLearn morerafana
 :prometheus-ui: Prometheus
 
 // IDM Service
