@@ -3,13 +3,11 @@ runtime:
 site:
   title: AeroGear Mobile Services
   url: https://docs.aerogear.org
-  start_page: aerogear::getting-started
+  start_page: latest@aerogear::getting-started
 content:
   sources:
   - url: https://github.com/aerogear/mobile-docs.git
-    branches: master
-  - url: https://github.com/aerogear/mobile-security.git
-    branches: master
+    branches: [master, v2.0, v2.1, native]
 ui:
   bundle:
     url: https://github.com/aerogear/antora-ui/raw/master/build/ui-bundle.zip
@@ -17,9 +15,10 @@ ui:
 
 asciidoc:
   extensions:
-  - ./lib/remote-include-processor
+  - ./lib/tab-block.js
   attributes:
     experimental: ''
     idprefix: ''
     idseparator: '-'
     linkattrs: ''
+    include-tags: '!excludeUpstream;!excludeAll'

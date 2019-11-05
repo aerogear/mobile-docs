@@ -1,0 +1,774 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='performing-device-trust-checks_{context}']
+= Performing Device Trust Checks in your Device
+
+This section describes what Device Trust Checks are available and how to execute them for the supported platforms.
+Also note that Device Checks can be performed either individually or together.
+
+== Root Access Detection
+
+Use this to help prevent your app running in a device that has been rooted/jailbroken.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.ROOT_ENABLED);
+----
+
+--
+iOS::
++
+--
+
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(JailbrokenDeviceCheck())
+----
+
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .check(DeviceCheckType.rootEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+
+Use `ROOT_ENABLED` for Android:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED);
+----
+
+Use `JAILBREAK_ENABLED` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.JAILBREAK_ENABLED);
+----
+--
+// end::excludeDownstream[]
+====
+
+== Developer Mode Detection
+
+Use this to detect if Developer Mode has been enabled on the device.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEVELOPER_MODE_ENABLED);
+----
+--
+iOS::
++
+--
+This check is not available for iOS.
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+This check is not available for Cordova.
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEVELOPER_MODE_ENABLED);
+----
+--
+// end::excludeDownstream[]
+====
+
+
+== Debugger Detection
+
+Use this to detect if a debugger is attached to the app.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.DEBUGGER_ENABLED);
+----
+--
+iOS::
++
+--
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(DebuggerAttachedCheck())
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .check(DeviceCheckType.debugModeEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+Use `DEBUGGER_ENABLED` for Android:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ENABLED);
+----
+
+Use `DEBUGGER_ATTACHED` for iOS:
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.DEBUGGER_ATTACHED);
+----
+--
+// end::excludeDownstream[]
+====
+
+== Emulator Detection
+
+Use this to detect if the app is being run on an emulator.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.IS_EMULATOR);
+----
+--
+iOS::
++
+--
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(IsEmulatorCheck())
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .check(DeviceCheckType.isEmulator)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.IS_EMULATOR);
+----
+--
+// end::excludeDownstream[]
+====
+
+== Device Lock Detection
+
+Use this to detect if a device has a lock screen set (with pin, fingerprint, pattern...).
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.SCREEN_LOCK_ENABLED);
+----
+--
+iOS::
++
+--
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(DeviceLockEnabledCheck())
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+NOTE: For iOS devices this check requires iOS 8 or above.
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .check(DeviceCheckType.screenLockEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.SCREEN_LOCK_ENABLED);
+----
+--
+// end::excludeDownstream[]
+====
+
+== App Data Backup Detection
+
+Use this to detect whether the application’s data is configured to be synchronized across devices.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.BACKUP_ENABLED);
+----
+--
+iOS::
++
+--
+This check is not available for iOS.
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+This is not available for Cordova.
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.BACKUP_ENABLED);
+----
+--
+// end::excludeDownstream[]
+====
+
+== Device Encryption Detection
+
+Use this to detect whether a devices filesystem is encrypted.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.check(DeviceCheckType.ENCRYPTION_ENABLED);
+----
+--
+iOS::
++
+--
+This check is not available for iOS.
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+This is not available for Cordova.
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+WARNING: This check is available for Android only.
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ENCRYPTION_ENABLED);
+----
+--
+// end::excludeDownstream[]
+====
+
+== Invoking Multiple Device Checks
+
+Device Checks can be run in group, both synchronously and asynchronously.
+
+[discrete]
+=== Synchronously
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+. Get a `SyncCheckExecutor` from `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+SyncDeviceCheckExecutor syncCheckExecutor = securityService.getCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source, java]
+----
+Map<String, DeviceCheckResult> results = syncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+--
+iOS::
++
+--
+Invoke multiple checks using the `checkMany` function:
+[source, swift]
+----
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkMany(checks)
+----
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+Executing multiple checks synchronously is not directly supported. Instead, it's possible to use the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await[await^] operator.
+[source, javascript]
+----
+const results = await securityService.checkMany(
+    DeviceCheckType.rootEnabled,
+    DeviceCheckType.isEmulator,
+    // Add more checks here
+);
+----
+NOTE: `DeviceCheckResult` objects in the returning array stay in the same order they were provided.
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+. Build a `SyncDeviceCheckExecutor` from `SecurityService` and execute:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
+----
+--
+// end::excludeDownstream[]
+====
+
+[discrete]
+=== Asynchronously
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+. Get an `AsyncCheckExecutor` from `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+AsyncDeviceCheckExecutor asyncCheckExecutor = securityService.getAsyncCheckExecutor();
+----
+
+. Add your checks and execute synchronously:
++
+[source, java]
+----
+Map<String, Future<DeviceCheckResult>> results = asyncCheckExecutor
+    .addCheck(DeviceCheckType.<check_type>)
+    // Add more checks here
+    .execute();
+----
+--
+iOS::
++
+--
+Executing multiple checks asynchronously is not supported at the moment for this platform.
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+Invoke multiple checks using the `checkMany` method:
+[source, javascript]
+----
+const checkResults = securityService.checkMany(
+    DeviceCheckType.rootEnabled,
+    DevoceCheckType.isEmulator,
+    // Add more checks here
+)
+.then(results => {
+    // Handle results
+});
+----
+NOTE: This method returns a Promise with an array containing all `DeviceCheckResult` objects in the same order they were provided.
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+Executing multiple checks asynchronously is not supported at the moment for this platform.
+--
+// end::excludeDownstream[]
+====
+
+
+== Additional Resources
+
+[discrete]
+=== Adding Custom Device Checks
+
+It is possible to make use of your own custom checks. Follow the next steps depending on your platform to implement them:
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+
+. Extend the `AbstractDeviceCheck` interface:
++
+[source, java]
+----
+class CustomDeviceCheck extends AbstractDeviceCheck {
+
+    @Override
+    protected boolean execute(@NonNull final Context context) {
+        // Implement security check logic here
+        return false;
+    }
+
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, java]
+----
+SecurityService securityService = new SecurityService();
+
+DeviceCheck customDeviceCheck = new CustomDeviceCheck();
+DeviceCheckResult result = securityService.check(customDeviceCheck);
+----
+--
+iOS::
++
+--
+. Implement the `DeviceCheck` interface:
++
+[source, swift]
+----
+public class MyCustomCheck: DeviceCheck {
+
+    public let name = "Custom Check"
+
+    public init() {}
+
+    public func check() -> DeviceCheckResult {
+        // Implement security check logic here
+        return nil
+    }
+
+}
+----
+
+. Use the `check` function as usual:
++
+[source, swift]
+----
+let security = AGSSecurity()
+let result = security.check(MyCustomCheck())
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+. Implement the `DeviceCheck` interface:
++
+[source, javascript]
+----
+class CustomDeviceCheck implements DeviceCheck {
+
+    get name(): string {
+        return "My Custom Check";
+    }
+
+    public check(): Promise<DeviceCheckResult> {
+        // Implement device check logic here
+        return null;
+    }
+
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, javascript]
+----
+const securityService = new SecurityService(app.metrics);
+
+securityService.check(new CustomDeviceCheck())
+    .then(result => {
+        // Handle result
+    });
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+. Implement the `IDeviceCheck` interface:
++
+[source, c#]
+----
+class CustomDeviceCheck : IDeviceCheck
+{
+    public string GetName()
+    {
+        return "Custom check";
+    }
+
+    public string GetId()
+    {
+        return typeof(CustomDeviceCheck).FullName;
+    }
+
+    public DeviceCheckResult Check()
+    {
+        // Implement security check logic here
+        return null;
+    }
+}
+----
+
+. Instantiate it to execute it, using the instance of `SecurityService`:
++
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+
+DeviceCheckResult result = securityService.Check(new CustomDeviceCheck());
+----
+--
+// end::excludeDownstream[]
+====
+
+[discrete]
+=== Reporting Device Checks Results Via the Metrics Service
+
+In order to report the results of Device Checks utilize this service in conjunction with the Mobile Metrics service.
+
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+Report individual checks via the `checkAndSendMetric` method:
+
+[source, java]
+----
+MetricsService metricsService = MobileCore.getInstance(MetricsService.class);
+SecurityService securityService = new SecurityService();
+
+DeviceCheckResult result = securityService.checkAndSendMetric(DeviceCheckType.<check_type>, metricsService);
+----
+
+Or alternatively report multiple checks using a `CheckExecutor`:
+
+[source, java]
+----
+MetricsService metricsService = mobileCore.getInstance(MetricsService.class);
+Map<String, DeviceCheckResult> results = DeviceCheckExecutor.Builder.newSyncExecutor(this.getContext())
+    .withDeviceCheck(DeviceCheckType.<check_type>)
+    // Add other checks...
+    .withMetricsService(metricsService)
+    .build()
+    .execute();
+----
+--
+iOS::
++
+--
+Report individual checks via the `checkAndPublishMetric` function:
+
+[source, swift]
+----
+let result = security.checkAndPublishMetric(DeviceLockEnabledCheck())
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` function:
+
+[source, swift]
+----
+let checks = [DeviceLockEnabledCheck(), IsEmulatorCheck(), /** Add more checks here */ ]
+let results = security.checkManyAndPublishMetric(checks)
+----
+--
+// end::excludeDownstream[]
+Cordova::
++
+--
+Report individual checks via the `checkAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .checkAndPublishMetric(DeviceCheckType.rootEnabled)
+    .then(result => {
+        // Handle the security result metric
+        // result: { id: string, name: string, passed: boolean }
+    });
+----
+
+Or alternatively report multiple checks using the `checkManyAndPublishMetric` method:
+
+[source, javascript]
+----
+new SecurityService(app.metrics)
+    .checkManyAndPublishMetric(
+        DeviceCheckType.rootEnabled,
+        DeviceCheckType.isEmulator,
+        // Add more checks here
+    )
+    .then(results => {
+        // Handle the security results array
+    });
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+Report individual checks:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+DeviceCheckResult result = securityService.Check(DeviceChecks.ROOT_ENABLED, metricsService);
+----
+
+Or alternatively report multiple checks using a `CheckExecutor`:
+
+[source, c#]
+----
+var securityService = MobileCore.GetService<SecurityService>();
+var metricsService = MobileCore.GetService<MetricsService>();
+
+var checkExecutor = securityService.GetSyncExecutor()
+                        .WithDeviceCheck(DeviceChecks.ROOT_ENABLED)
+                        .WithDeviceCheck(DeviceChecks.DEVELOPER_MODE_ENABLED)
+                        .WithMetricsService(metricsService)
+                        // Add more checks here
+                        .Build()
+Dictionary<string, DeviceCheckResult> results = checkExecutor.Execute();
+----
+--
+// end::excludeDownstream[]
+====

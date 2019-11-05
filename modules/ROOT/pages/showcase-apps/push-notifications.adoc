@@ -1,8 +1,0 @@
-include::{partialsdir}/attributes.adoc[]
-
-= {unifiedpush-service}
-
-
-. Send a push notification as described in
-xref:push/proc_sending-a-push-notification.adoc[Sending a Push Notification]
-. Launch the showcase app and view the notification.

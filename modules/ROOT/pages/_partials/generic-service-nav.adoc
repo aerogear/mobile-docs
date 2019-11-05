@@ -1,8 +1,14 @@
 
-. Navigate to the *Overview* of your OpenShift project.
+. Launch {mobile-developer-console}
 
-. Select the {mobile-client} name listed in the {mobile-client}s section.
+. Click on the {mobile-client} on the Overview screen
 
 . Navigate to *Mobile Services* tab.
 +
-image::mobile-clients-services-all-unprovisioned.png[]
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-unbound-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
+image::mobile-clients-services-all-unbound.png[]
+// end::excludeDownstream[]

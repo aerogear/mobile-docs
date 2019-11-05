@@ -1,0 +1,55 @@
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+= Setting Up your Local Development Environment
+:page-partial:
+:toc:
+
+// tag::excludeDownstream[]
+.Prerequisites
+
+* xref:getting-started-installing.adoc[Set up {org-name} {product-name} on OpenShift]
+* xref:getting-started-configuring.adoc[Created a {mobile-client} and a Mobile Service] ({keycloak-service})
+// end::excludeDownstream[]
+
+
+== Supported Environments
+
+In order to perform local development, you will need to have set up a local development environment or IDE.
+{product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin.
+
+NOTE: You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
+
+include::_partials/generic-local-mobile-dev-envir-reqs.adoc[]
+
+[[running]]
+
+== Running your First Mobile App
+
+=== Cloning the Showcase App
+
+include::_partials/cloning-showcase-app.adoc[tags=!excludeAll]
+
+include::_partials/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=1]
+
+
+// == Building the app
+
+include::_partials/build-and-deploy.adoc[tags=!excludeAll]
+
+// start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
+include::_partials/proc_self-signed-certs.adoc[leveloffset=1]
+// end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
+
+
+[[running-emulator]]
+== Running the app in an emulator
+
+// start {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
+include::_partials/running-app-in-emulator.adoc[leveloffset=1]
+// end {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
+
+// start {partialsdir}/identity-management-demo.adoc[tags=idm-demo]
+include::_partials/identity-management-demo.adoc[tags=idm-demo]
+// end {partialsdir}/identity-management-demo.adoc[tags=idm-demo]

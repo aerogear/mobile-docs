@@ -1,0 +1,15 @@
+[build]
+  base = "netlify"
+  publish = "build/site"
+  command = "/opt/build/repo/bin/netlify-build.sh"
+
+[build.environment]
+  NODE_VERSION = "8"
+  BUILD_ONLY = "true"
+  ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+
+[context.production.environment]
+  command = "/opt/build/repo/bin/netlify-build.sh"
+
+[context.deploy-preview]
+  command = "/opt/build/repo/bin/netlify-build.sh"

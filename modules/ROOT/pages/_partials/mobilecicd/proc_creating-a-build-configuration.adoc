@@ -1,0 +1,36 @@
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: proc_creating-a-build-configuration
+
+[id='{context}_proc_creating-a-build-configuration']
+= Creating a Build Configuration
+
+You can use the Mobile Developer Console to create a new client build for an existing {mobile-client}.
+
+. Open Mobile Developer Console and find the {mobile-client} you want to build.
+
+. Click on the name of the {mobile-client} to open the details view.
+
+. From the *Builds* tab, select *Create Build* in the *Actions* menu. If no build configuration  exists, a *Start Build* button is displayed which allows you create a build configuration.
++
+The *Client Build Form* is displayed.
+
+.. Enter a unique name for the build configuration in the *Name* field.
+
+.. Enter the *Git Repository URL* for the {mobile-client} you want to build.
+
+.. Select the *Authentication Type* for the Git repository. For example, the {product-name} showcase apps are available to everyone, so you would choose *Public*. If your repo URL starts with `git@`, select *SSH*. If your repo URl starts with `http` and requires authentication, select *Basic*.
+
+.. If you select *Advanced Options* you can also specify:
++
+* Git Reference:: Optional branch, tag, or commit to checkout, default is master. This option can be used to select different branches of your application repo for different builds, for example, release vs develop.
+* Jenkins file path:: Optional path to where the Jenkinsfile is located in your application repo. The default is the root of the repo.
+
+. Select the *Build Type* for the build configuration. Typically you create two build configurations, one for debugging and another for release. 
++
+NOTE: Typically, for a *Release* build configuration, you need to add more information as described in xref:ref_source-configuration_ref_source-configuration[].
+
+. Create any environment variables that you want to pass to the build process and set values in the *Environment Variable* section of the form.
+
+. Click *Create*

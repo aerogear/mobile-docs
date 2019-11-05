@@ -1,58 +1,65 @@
-include::{partialsdir}/attributes.adoc[]
 
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
-. Navigate to your project in OpenShift.
-. On the *Overview* screen, expand your {mobile-client} to view the *CLIENT INFO*.
-. Copy the configuration to your clipboard.
+. Open your {mobile-client} in Mobile Developer Console.
+. Copy the `mobile-services.json` configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
 NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
-. Follow the next specific additional instructions depending on your platform:
+. Follow the platform-specific instructions:
 
-[role="primary"]
-.Android
+[tabs]
+====
+Cordova::
++
+--
 
-****
+Copy the content of mobile-services.json file and paste it to the following location in your application project to replace the value of `config`
 
-Locate this file at the following location in your application project:
+`src/mobile-services.js`
+
+--
+// tag::excludeDownstream[]
+Android::
++
+--
+
+Move mobile-services.json to the following location in your application project:
 
 `app/src/main/assets/mobile-services.json`
 
-****
+--
+iOS::
++
+--
 
-[role="secondary"]
-.iOS
-
-****
-
-Locate this file at the following location in your application project:
+Move mobile-services.json to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
-NOTE: Make sure this file is visible in Xcode, add the file if necessary.
+NOTE: Ensure that `mobile-services.json` is a member of the project in the Xcode Project Navigator.
 
-****
+--
+Cordova::
+// end::excludeDownstream[]
++
+--
 
-[role="secondary"]
-.Cordova
-
-****
-
-Locate this file at the following location in your application project:
+Move mobile-services.json to the following location in your application project:
 
 `src/mobile-services.json`
 
-****
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
 
-[role="secondary"]
-.Xamarin
-
-****
-
-Locate this file at the following location in your application project:
+Move mobile-services.json to the following location in your application project:
 
 `Resources/mobile-services.json`
 
-****
+--
+// end::excludeDownstream[]
+====
