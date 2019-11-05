@@ -3,7 +3,7 @@
 [id='provisioning-the-{context}']
 = Provisioning the {unifiedpush-service} Service
 
-This section describes how to set up the {unifiedpush-service} Mobile Service.
+This section describes how to set up the {unifiedpush-service} Service.
 
 .Procedure
 

@@ -26,7 +26,7 @@ The {unifiedpush-service} service allows you to send native push notifications t
 
 
 [[setting-up-the-push-service]]
-== Setting Up the {unifiedpush-service} Mobile Service
+== Setting Up the {unifiedpush-service} Service
 include::_partials/push/provisioning-the-push.adoc[leveloffset=+2,tags={include-tags}]
 include::_partials/push/binding-an-app-to-a-service.adoc[leveloffset=+2,tags={include-tags}]
 [[setting-up-the-push-client-app]]
