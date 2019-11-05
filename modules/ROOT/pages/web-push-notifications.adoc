@@ -10,7 +10,7 @@ include::_partials/attributes.adoc[tags={include-tags}]
 ifdef::context[:parent-context: {context}]
 
 [id='a-collection-of-modules']
-= Using the {unifiedpush-service} Mobile Service
+= Implementing {unifiedpush-service} in a Web App
 :page-partial:
 
 [[introduction]]
