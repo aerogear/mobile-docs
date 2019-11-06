@@ -61,8 +61,13 @@ This client can replace an Apollo client as it supports the same functionality.
 
 = Performing mutations while offline
 
-The @aerogear/voyager-client module provides an `offlineMutate` method which extends Apollo's `mutate` function with some extra functionality. 
-This includes automatically adding some fields to each operation's context. 
+@aerogear/voyager-client extends a regular Apollo client with an `offlineMutate` function. 
+When an app is considered offline, `offlineMutate` queues mutations to be fulfilled later, once the app is considered online again.
+When online, `offlineMutate` works exactly the same way as link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's `mutate`] function.
+
+Offline mutations are also persisted to ensure changes are saved across app and device restarts.
+As offline mutations are performed, the expected results from the server, known as optimistic responses can be displayed to the user.
+This enables experiences where users can work offline for extended periods of time, making several changes which will be fulfilled at a later time.
 
 To set up the offline client, see xref:setup-offline-client[].
 
