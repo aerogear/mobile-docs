@@ -13,7 +13,6 @@
 :service-name:
 
 :mobile-client: Mobile App
-:web-app: Web App
 :mobile-client-openshift: Mobile Client in your OpenShift project
 :mobile-cli: Mobile CLI
 
