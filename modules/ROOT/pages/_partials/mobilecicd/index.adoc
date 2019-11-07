@@ -1,0 +1,11 @@
+
+
+//':context:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:context: con_introduction-to-build
+
+[id='{context}_con_introduction-to-build']
+[#introduction]
+= Introduction to the {mobile-ci-cd-service} Service
+
+include::../generic-service-intros.adoc[tags=mobilecicd-service]
+

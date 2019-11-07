@@ -1,39 +1,54 @@
-= Mobile Metrics
+:toclevels: 4
+include::_partials/attributes.adoc[tags={include-tags}]
+
 :toc:
 
-// start metrics/index.adoc[leveloffset=1]
-include::metrics/index.adoc[leveloffset=1]
-// end metrics/index.adoc[leveloffset=1]
-[#setup]
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
 
-== Prerequisites
+:context: metrics
+ifdef::context[:parent-context: {context}]
 
-// start {partialsdir}/generic-provisioning-pre-req.adoc[]
-include::{partialsdir}/generic-provisioning-pre-req.adoc[]
-// end {partialsdir}/generic-provisioning-pre-req.adoc[]
+:installation-link: getting-started.html
+:docs-link: https://www.keycloak.org/documentation.html
 
-== Setting Up the Mobile Metrics Service
 
-// start metrics/provisioning.adoc[leveloffset=2]
-include::metrics/provisioning.adoc[leveloffset=2]
-// end metrics/provisioning.adoc[leveloffset=2]
-// start metrics/binding.adoc[leveloffset=2]
-include::metrics/binding.adoc[leveloffset=2]
-// end metrics/binding.adoc[leveloffset=2]
-// start metrics/configuring-dev-env-metrics.adoc[leveloffset=2]
-include::metrics/configuring-dev-env-metrics.adoc[leveloffset=2]
-// end metrics/configuring-dev-env-metrics.adoc[leveloffset=2]
-[#app]
-// start metrics/analysing-app-usage.adoc[leveloffset=1]
-include::metrics/analysing-app-usage.adoc[leveloffset=1]
-// end metrics/analysing-app-usage.adoc[leveloffset=1]
-[#identity]
+[id='a-collection-of-modules']
+
+= Using the {metrics-service} Mobile Service
+:page-partial:
+
+[[introduction]]
+The {metrics-service} service allows you to gather metrics on mobile apps, device versions, device security checks and back-end mobile service usage.
+
+* Monitor usage by version of mobile app, platform and SDK
+* Monitor interactions with the Identity Management service
+
+Identity management is monitored by the Mobile Metrics Service when it is provisioned. No configuration is needed.
+
+.Prerequisites
+
+// TODO: need to rewrite the following
+// * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
+
+// TODO: could we include this here in the assembly?
+// * Read the xref:reference-material-{context}[{metrics-service} Service terminology].
+
+[[setting-up-the-metrics-service]]
+== Setting Up the {metrics-service} Service
+include::_partials/metrics/provisioning-the-metrics.adoc[leveloffset=+2]
+include::_partials/metrics/binding-an-app-to-a-service.adoc[leveloffset=+2,tags={include-tags}]
+== Configuring your development environment for the {metrics-service} Service
+include::_partials/metrics/downloading-configuration-file.adoc[leveloffset=+1]
+include::_partials/metrics/setting-up-sdk.adoc[leveloffset=+1,tags=!excludeUpstream]
+include::_partials/metrics/analysing-app-usage.adoc[leveloffset=+1]
+
+[[monitoring]]
 // start metrics/monitoring-keycloak.adoc[leveloffset=1]
-include::metrics/monitoring-keycloak.adoc[leveloffset=1]
-// end metrics/monitoring-keycloak.adoc[leveloffset=1]
-[#sync]
-include::metrics/monitoring-sync.adoc[leveloffset=1]
-[#using-dashboards]
-include::metrics/using-dashboards.adoc[leveloffset=1]
+include::_partials/metrics/monitoring-keycloak.adoc[leveloffset=1]
+include::_partials/metrics/monitoring-sync.adoc[leveloffset=1]
+include::_partials/metrics/viewing-keycloak-dashboards.adoc[leveloffset=1]
 
-
+// Restore the context to what it was before this assembly.
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

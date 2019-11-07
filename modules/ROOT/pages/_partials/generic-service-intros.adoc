@@ -53,26 +53,10 @@ The {mobile-ci-cd-service} service allows you to automate the building of your n
 
 * Leverage your Jenkins expertise to manage and automate mobile builds.
 * Containerised builds on OpenShift for Android
-* Support for integrating OSX as build slaves for iOS builds
+* Support for integrating macOS as build slaves for iOS builds
 * Catch build errors early using automated builds
-* Build status is displayed on the {mobile-client} details page in the OpenShift console, along with the mobile services associated with that {mobile-client}
 
 //end::mobilecicd-service[]
-
-
-// change to {runtimeconnector-service} maybe
-
-= {custom-service}
-
-//tag::runtimeconnector-service[]
-
-The {custom-service} service allows you connect your mobile apps to your own back-end API servers.
-
-* Bind your mobile client to custom back-end API services and business logic
-* Ability to add custom configuration for a back-end service, which becomes accessible from your Mobile App
-
-//end::runtimeconnector-service[]
-
 
 
 // change to {device-security} maybe
@@ -93,14 +77,22 @@ NOTE: {device-security-service} is not currently associated with an OpenShift se
 = {sync-service}
 //tag::sync-service[]
 
-NOTE: The Data Sync mobile service is currently in development. Current released version is {data-sync-version}.
-The software is available for you to use and investigate, however it might not work as expected and functionality might change over time.
+The goal of {sync-service} is to make it easier for developers to build secure, production ready, real time APIs and applications with link:https://graphql.org/learn[GraphQL].
 
-The {sync-service} service allows you to synchronize data between multiple mobile clients and easily query exactly the data you need.
+{sync-service} is a JavaScript framework that developers can use to add real time synchronization and enhanced offline capabilities to their mobile applications. {sync-service} includes two components - {sync-server} and {sync-client}.
 
-* Synchronize data between multiple clients
-* Define and connect your own data sources
-* Retrieve and update your records using GraphQL
-* Robust offline experience and good performance thanks to Apollo caching
+{sync-server} is a set of Node.js libraries that can be used to build a custom backend {sync-service} service using GraphQL.
+
+{sync-client} is client side JavaScript library for building web and mobile applications backed by {sync-server}.
+
+{sync-server} and {sync-client} are based off the popular link:https://www.apollographql.com/docs/[Apollo] framework and add additional components to solve common problems.
+
+* Real Time Synchronisation
+* Conflict Resolution
+* Robust offline experience
+* Authentication and Authorization (using the {keycloak-service} service)
+* Metrics (using the AeroGear {metrics-service} Service)
+* Audit Logging
+
 
 //end::sync-service[]

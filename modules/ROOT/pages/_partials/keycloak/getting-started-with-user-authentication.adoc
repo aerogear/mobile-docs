@@ -1,0 +1,16 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='getting-started-with-user-authentication-{context}']
+= Getting Started with User Authentication
+
+You can add user authentication to your Apps for the supported platforms.
+Once added to your App, a browser window will open and prompt the user for login credentials.
+If the credentials are correct, a user is granted access to the App.
+
+Before getting started with User Authentication, ensure that:
+
+* You have completed all steps in xref:setting-up-the-idm-service[Setting Up the {keycloak-service} Service].
+
+.Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the concept module.

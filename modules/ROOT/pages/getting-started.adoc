@@ -1,125 +1,42 @@
-// start {partialsdir}/attributes.adoc[]
-include::{partialsdir}/attributes.adoc[]
-// end {partialsdir}/attributes.adoc[]
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
 
-:toc:
-
-= Getting Started with {org-name} {product-name}
+= Getting Started with {product-name}
+:page-partial:
 
 == Introduction
 
 {org-name} {product-name} provides solutions to common development challenges faced by mobile developers.
+
+// tag::excludeDownstream[]
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
+
+
+{mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back-end for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally. {mobile-client}s allow you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service}, {metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement.
+// end::excludeDownstream[]
+
+
+A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
+
+// tag::excludeUpstream[]
+image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
+// end::excludeUpstream[]
+
+// start {partialsdir}/mdc-introduction.adoc[]
+include::_partials/mdc-introduction.adoc[]
+// end {partialsdir}/mdc-introduction.adoc[]
+
+// tag::excludeDownstream[]
+
+IMPORTANT: {org-name} {product-name} is currently in a development phase. This makes it unsuitable for production deployment. Use this community release as an evaluation environment for developing and deploying mobile applications on Openshift.
 
 This guide shows you how to:
 
-* Set up {org-name} {product-name} on OpenShift
-* Create a {mobile-client} and a Mobile Service ({keycloak-service})
-* Set up a local development environment
-* Configure the {org-name} showcase app for your mobile platform (Android, iOS, Cordova or Xamarin).
-* Run the showcase app and make calls to the {keycloak-service} service.
+* xref:getting-started-installing.adoc[Set up {org-name} {product-name} on OpenShift]
+* xref:getting-started-configuring.adoc[Create a {mobile-client} and a Mobile Service] ({keycloak-service})
+* xref:getting-started-running.adoc[Set up a local development environment]
+* xref:getting-started-running.adoc#running[Configure the {org-name} showcase app for your mobile platform] (Android, iOS, Cordova or Xamarin)
+* xref:getting-started-running.adoc#running-emulator[Run the showcase app and make calls to the {keycloak-service} service]
 
-Make sure you satisfy all the requirements listed in the xref:prerequisites[] and that you have a mobile app development environment configured. Some experience with OpenShift administration would also be helpful.
-
-// start installing-mobile-services.adoc[leveloffset=1]
-include::{partialsdir}/installing-mobile-services.adoc[leveloffset=1]
-// end installing-mobile-services.adoc[leveloffset=1]
-[[registering]]
-// start {partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-include::{partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-// end {partialsdir}/registering-a-mobile-app.adoc[leveloffset=1]
-[[provisioning]]
-== Provisioning your First Service
-
-{product-name} provide commonly required features for mobile app development.
-
-This section introduces the procedures for using {product-name} by guiding you through the process using the Identity Management service. For a full list of available services, see xref:con_services.adoc[Mobile Services]
-
-:service-name: Identity Management
-
-// start {partialsdir}/generic-provisioning.adoc[]
-include::{partialsdir}/generic-provisioning.adoc[]
-// end {partialsdir}/generic-provisioning.adoc[]
-
-NOTE: When completing the {keycloak-service} provisioning wizard, you are prompted to enter configuration data. For the purposes of this guide, keep the default values.
-For more information about the {keycloak-service} provisioning wizard fields, see xref:{keycloak-service}-configuration-additional-resources[{keycloak-service} Configuration].
-
-// start {partialsdir}/generic-provisioning-end.adoc[]
-include::{partialsdir}/generic-provisioning-end.adoc[]
-// end {partialsdir}/generic-provisioning-end.adoc[]
-
-[id='{keycloak-service}-configuration-additional-resources']
-[discrete]
-=== Additional resources
-
-==== {keycloak-service} Configuration
-
-* *Keycloak admin username*: Username for Keycloak administration
-
-* *Keycloak admin password*: Password for the Keycloak admin user
-
-* *Name of the Keycloak realm*: Name of the keycloak realm. (defaults to current namespace)
-
-NOTE: A realm manages a set of users, credentials, roles, and groups. A user belongs to and logs into a realm. Realms are isolated from one another and can only manage and authenticate the users that they control.
-
-* *Connect to an existing shared service*: Select if you want to use an existing service and you have the URL and credentials to use that service.
-
-* *URL of the shared service*: Enter a value if you want to use an existing shared service.
-
-[[binding]]
-// start keycloak/binding.adoc[leveloffset=1]
-include::keycloak/binding.adoc[leveloffset=1]
-// end keycloak/binding.adoc[leveloffset=1]
-
-[[localdev]]
-// start keycloak/keycloak-setup.adoc[leveloffset=2]
-include::keycloak/keycloak-setup.adoc[leveloffset=2]
-// end keycloak/keycloak-setup.adoc[leveloffset=2]
-
-== Setting Up your Local Development Environment
-
-=== Supported Environments
-
-In order to perform local development, you will need to have set up a local development environment or IDE.
-{product-name} supports mobile app development across iOS Native, Android Native, Cordova and Xamarin.
-
-NOTE: You can only use the AeroGear Xamarin SDK to create iOS and Android Apps.
-
-include::{partialsdir}/generic-local-mobile-dev-envir-reqs.adoc[]
-
-[[running]]
-
-== Running your First Mobile App
-
-=== Cloning the Showcase App
-
-// start {partialsdir}/cloning-showcase-app.adoc[]
-include::{partialsdir}/cloning-showcase-app.adoc[]
-// end {partialsdir}/cloning-showcase-app.adoc[]
-
-
-// start {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
-// end {partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]
-
-
-=== Building the app
-
-// start {partialsdir}/build-and-deploy.adoc[tags=build]
-include::{partialsdir}/build-and-deploy.adoc[tags=build]
-// end {partialsdir}/build-and-deploy.adoc[tags=build]
-
-// start {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
-include::{partialsdir}/proc_self-signed-certs.adoc[leveloffset=2]
-// end {partialsdir}/proc_self-signed-certs.adoc[leveloffset=3]
-
-
-=== Running the app in an emulator
-
-// start {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
-include::{partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
-// end {partialsdir}/running-app-in-emulator.adoc[leveloffset=1]
-
-// start {partialsdir}/identity-management.adoc[tags=idm-demo]
-include::{partialsdir}/identity-management.adoc[tags=idm-demo]
-// end {partialsdir}/identity-management.adoc[tags=idm-demo]
+// end::excludeDownstream[]

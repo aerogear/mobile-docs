@@ -1,0 +1,58 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='binding-an-app-to-{context}']
+= Binding a {mobile-client} with the {keycloak-service} Service
+
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
+
+This section describes how to set up the {keycloak-service} service.
+
+.Prerequisites
+
+* You have created a {mobile-client}.
+
+.Procedure
+
+To bind a {mobile-client} with a mobile service:
+
+. Launch {mobile-developer-console}.
+
+. Click on the {mobile-client} on the Overview screen.
+
+. Navigate to *Mobile Services* tab.
++
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-unbound-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
+image::mobile-clients-services-all-unbound.png[]
+// end::excludeDownstream[]
+
++
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Click *Bind to App* for {keycloak-service}.
+
+. Fill out the binding parameters required by the {keycloak-service} Service.
+
++
+// tag::excludeUpstream[]
+image::mobile-clients-services-idm-parameters-down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
+image::mobile-clients-services-idm-parameters.png[]
+NOTE: Use `Public` when binding a {mobile-client} to a {keycloak-service}. When binding mobile services to each other, use `Bearer`.
+// end::excludeDownstream[]
+
+The {keycloak-service} service will now be expandable, details about the service can be viewed.
+
+// tag::excludeUpstream[]
+image::mobile-clients-services-all-idm-provisioned_down.png[]
+// end::excludeUpstream[]
+
+// tag::excludeDownstream[]
+image::mobile-clients-services-all-idm-provisioned.png[]
+// end::excludeDownstream[]

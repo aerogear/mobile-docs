@@ -1,4 +1,4 @@
-include::{partialsdir}/attributes.adoc[]
+
 
 [[building-and-deploying-the-showcase-apps]]
 [#build]
@@ -6,22 +6,29 @@ include::{partialsdir}/attributes.adoc[]
 
 . Build the Mobile App
 
-// tag::build[]
-
-[role="primary"]
-.Android
-
-****
+[tabs]
+====
+Ionic::
++
+--
+[source,bash,subs="attributes"]
+----
+$ npm install
+$ npm run ionic:build
+----
+--
+// tag::excludeAll[]
+Android::
++
+--
 [source,bash,subs="attributes"]
 ----
 $ ./gradlew assembleDebug
 ----
-****
-
-[role="secondary"]
-.iOS
-
-****
+--
+iOS::
++
+--
 Run this command to install dependencies:
 
 . Install CocoaPods as described in link:https://cocoapods.org/[] if it is not already installed.
@@ -29,67 +36,31 @@ Run this command to install dependencies:
 . Run this command to install dependencies:
 +
 [source,bash]
-+
 ----
 $ pod install
 ----
-****
-
-[role="secondary"]
-.Cordova
-
-****
-[source,bash,subs="attributes"]
-----
-$ npm install
-$ npm run ionic:build
-----
-****
-
-[role="secondary"]
-.Xamarin
-
-****
+--
+Xamarin::
++
+--
 Run this command to install dependencies (optional):
 
 [source,bash]
 ----
 $ nuget restore
 ----
-****
-// end::build[]
-
+--
+// end::excludeAll[]
+====
 
 [start=2]
 . Run the Mobile App
 
-[role="primary"]
-.Android
-
-****
-Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
-no connected device, it installs and runs the application on the emulator.
-
-[source,bash,subs="attributes"]
-----
-$ ./gradlew installDebug
-----
-****
-
-[role="secondary"]
-.iOS
-
-****
-Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
-
-NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
-
-****
-
-[role="secondary"]
-.Cordova
-
-****
+[tabs]
+====
+Ionic::
++
+--
 To run the showcase app, use these commands:
 
 [source,bash,subs="attributes"]
@@ -107,13 +78,30 @@ Alternatively, you can use Cordova commands directly to specify the target:
 $ ionic cordova run android --device      # run on a connected device
 $ ionic cordova run android --emulator    # run on the Android emulator
 ----
+--
+// tag::excludeAll[]
+Android::
++
+--
+Following command installs and runs the debug version of the showcase app on the connected device if any. If there is
+no connected device, it installs and runs the application on the emulator.
 
-****
+[source,bash,subs="attributes"]
+----
+$ ./gradlew installDebug
+----
+--
+iOS::
++
+--
+Open up `.xcworkspace` with Xcode  and click the *Build & Run* button in Xcode. This should start the showcase application in an emulator.
 
-[role="secondary"]
-.Xamarin
+NOTE: Do not use `.xcodeproj`. If you open up a project file instead of a workspace, dependencies will not be correctly configured.
 
-****
+--
+Xamarin::
++
+--
 1. Open up `xamarin-showcase-template.sln` with VisualStudio.
 2. If you didn't run `nuget restore` before, right click on the solution in the left pane then click on `Restore Nuget Packages`.
 3. In the top bar, select the project to run: `Example.Android` or `Example.iOS`
@@ -126,4 +114,6 @@ $ ionic cordova run android --emulator    # run on the Android emulator
 7. Click on the *Run* button in the top left
 
 NOTE: If no android devices are selectable, it could mean that no virtual android devices has been configured. To add one, click on *Tools->Device Manager->Add Device*
-****
+--
+// end::excludeAll[]
+====

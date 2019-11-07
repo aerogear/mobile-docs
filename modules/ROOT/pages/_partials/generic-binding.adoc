@@ -1,9 +1,14 @@
 
-To use mobile services, you must represent your mobile app in OpenShift using a {mobile-client}, and that {mobile-client} must be associated with the mobile service.
-This association is called *binding* and once it's done, your mobile app can use that service immediately.
+To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+This association is called *binding* and it is necessary for your mobile app to use that service.
 
-To associate a {mobile-client} with a mobile service:
+To bind a {mobile-client} with a mobile service:
 
-include::{partialsdir}/generic-binding-procedure.adoc[]
+.Procedure
 
+include::generic-service-nav.adoc[tags={include-tags}]
++ 
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+
+. Press *Bind to App* in the {service-name}
 . Fill out the binding parameters required by the {service-name} Service.

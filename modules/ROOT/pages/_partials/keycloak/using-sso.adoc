@@ -1,0 +1,31 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+[id='using-sso-{context}']
+// The `context` attribute enables module reuse. Every module's ID includes {context}, which ensures that the module has a unique ID even if it is reused multiple times in a guide.
+= Using SSO with the Device Browser
+
+The {org-name} mobile SDK uses OpenID Connect link:http://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] to implement SSO using a mobile device browser.
+
+.Prerequisites
+
+* You have completed all steps in xref:adding-access-control[Adding Access Control to your Mobile App].
+* Two {mobile-client}s bound to the {keycloak-service} service.
+* Two Mobile Apps built and running on the same device that are using the AeroGear SDK Auth module.
+
+.Procedure
+
+In the following procedure, the two apps are named **Email App** and **Messaging App**.
+Substitute the appropriate names for your SSO scenario.
+
+. Ensure the "Remember Me" option in {idm-name} is turned on. In the admin UI click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
+
+. Now that your two apps and {idm-name} clients are setup, sign into the *Email App* with the user you have previously created. You should be redirected to your device browser which should have loaded the {idm-name} login page.
+
+. Next, enter in your credentials, make sure check the *Remember Me* option and login. You have now been authenticated on the *Email App* via the browser.
+
+. Finally, try sign into the *Messaging App* and you should be automatically logged in as you have been previously authenticated in the *Email App* via the *_same_* browser.
+
+.Additional resources
+
+With iOS 11 and later, Apple has introduced SFAuthenticationSession for apps to perform SSO, instead of using the system Safari browser and there are known issues with this new feature.
+Sometimes, the user may have to enter their credentials again, even if they have logged in previously in another app.

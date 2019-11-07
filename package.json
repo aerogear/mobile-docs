@@ -1,0 +1,26 @@
+{
+  "name": "mobile-docs",
+  "version": "1.0.0",
+  "description": "Documentation for setting up and using Mobile Services on OpenShift",
+  "scripts": {
+    "build:local": "./bin/quick-build.sh local-site.yml",
+    "build": "./bin/build.sh",
+    "serve": "live-server ./build/site",
+    "watch": "watch 'npm run build:local' modules; npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aerogear/mobile-docs.git"
+  },
+  "author": "AeroGear",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/aerogear/mobile-docs/issues"
+  },
+  "homepage": "https://github.com/aerogear/mobile-docs#readme",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "watch": "^1.0.2",
+    "write-good": "^1.0.1"
+  }
+}

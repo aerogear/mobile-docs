@@ -1,45 +1,55 @@
 = Mobile Docs
+:toc: 1
+This repository is used to build the documentation site for AeroGear Mobile Services. To view the documentation please visit link:https://docs.aerogear.org[docs.aerogear.org].
 
 Our goal is to help users of AeroGear projects "understand things well and not feel like they're dealing with a capricious minor god instead of a product." footnote:[Laura Bailey]
 
 This readme introduces the standards for AeroGear docs.
 
-:toc: 1
+== Prerequisites
+
+To work with mobile-docs you must have the latest antora version installed on your local machine.
+
+* link:https://docs.antora.org/
+
+== Getting Started
+
+If you just want to edit or verify technical content, you can edit the file and jump to:
+
+* <<Using Antora to convert asciidoc to html>>
+* <<Using Antora with a live preview>>
+
 
 == Concepts, Procedures and Reference
 
-Concept::
+.Concept
 An introduction to a new term, process, module or component. For example, "Mobile Service" : what is it? why do I care? and how does it fit into my development environment?
 
 * Name file by slugifying title
 
 * Prefix filenames with con_
 
-Procedure::
+.Procedure
 The important information that gets me using AeroGear software, for example, write your procedure by answering the following questions:
-+
-. Who should perform this procedure?
-. Why am I performing this procedure? benefits or context in a higher level user story
-. What is the object of the task? eg adding a dashboard.. to what?
-. What do I need to know and/or do before installing or provisioning the software?
-. What do I need to do to provision the software?
-. What are the minimum configuration tasks that I need to do to get value from the software?
-. What additional information would be useful after completing procedure (eg, next steps)
 
+* Who should perform this procedure?
+* Why am I performing this procedure? benefits or context in a higher level user story
+* What is the object of the task? eg adding a dashboard.. to what?
+* What do I need to know and/or do before installing or provisioning the software?
+* What do I need to do to provision the software?
+* What are the minimum configuration tasks that I need to do to get value from the software?
+* What additional information would be useful after completing procedure (eg, next steps)
 * Name file by slugifying title
-
 * no prefix on filenames
 
 See link:https://redhat-documentation.github.io/modular-docs/#creating-procedure-modules[Creating Procedures]
 
-Reference::
+.Reference
 Information I might need to debug or extend the normal usage of AeroGear software. For example:
-+
+
 * API syntax and definitions
 * Configuration optionss 
-
 * Name file by slugifying title
-
 * Prefix filenames with ref_
 
 
@@ -56,65 +66,28 @@ Information I might need to debug or extend the normal usage of AeroGear softwar
 +
 With this information, you should be able to determine where the file should be located in the repo, eg modules/ROOT/push
 +
-If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include`
+If you intend to reuse a part of a file, create a partial in modules/ROOT/_partials and refer to it using an `include`.
++
+Only create links to the files in the `pages` directory. Links to files under `_partials` will not resolve.
+. Stick to present tense, eg `When you add the dashboard, it appears on `, not `When you add the dashboard, it will appear on `
 
-If you create a link, use the following whenever possible:
+== AsciiDoc
 
-* getting-started.adoc
-* con_services.adoc
-* device-security.adoc
-* getting-started.adoc
-* identity-management.adoc
-* mobile-cicd.adoc
-* mobile-cli.adoc
-* mobile-clients.adoc
-* mobile-metrics.adoc
-* push-notifications.adoc
-* ref_api.adoc
-//* runtime-connector.adoc
-* showcase-apps.adoc
- 
- 
-
-
-. Stick to present tense, eg `When you add the dashboard, it appears on ...`, not `When you add the dashboard, it will appear on ...`
-
-
-== Asciidoc
-
-For a fuller list of asciidoc syntax, see link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the quick reference], note the following syntax to avoid:
+For a ful list of asciidoc syntax, see link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the quick reference], note the following syntax to avoid:
 
 * Headings using --, ~~, ^^, ++ syntax
 * Markdown
 * Source block without syntax. Try to use syntax highlighting where possible, for example `[source, bash]`
 
-[NOTE]
---
-This page acts as example of documentation best practises:
-
-* introducing terms
-* a single  procedure
-* reference material
---
-
-== Modular Docs
-
-For more information and some useful templates, see link:https://redhat-documentation.github.io/modular-docs/[Modular Docs]
 
 [[using-antora]]
 == Using Antora to convert asciidoc to html
 
-NOTE: You can avoid using antora by building the docs online as described in https://github.com/finp/mobile-netlify
+NOTE: When you create a PR, an Antora preview is automatically generated. and is linked to the PR. If you are making a small change, this may be sufficient.
 
 After modifying documentation, you can validate your changes and preview the results by:
 
-. Install Antora globally as described in their https://docs.antora.org/antora/1.0/install/install-antora/[install guide].
-+
-NOTE: As part of Antora installation, you should install site-generator globally.
-+
-If you encounter a libcurl error on linux, follow the Option 1 instructions at:
-https://docs.antora.org/antora/1.0/install/troubleshoot-nodegit/
-
+. Install Antora v2 globally as described in their https://docs.antora.org/antora/2.0/install/install-antora/[install guide].
 
 . Fork this repo and set up origin and upstream remotes.
 
@@ -136,10 +109,53 @@ When building for publication use:
 ----
 ./bin/build.sh
 ----
-+
-
 
 NOTE: After changes to link:https://github.com/aerogear/antora-ui[antora-ui], you might need to run 'antora --pull --clean <site-file>' to pick up those changes.
+
+The `site.yml` currently creates HTML for:
+
+* master branch of this repo
+* v1.0 branch of this repo
+* master branch of the https://github.com/aerogear/mobile-security repo
+
+
+== Using Antora with a live preview
+
+
+.Prerequisites
+
+
+* link:https://nodejs.org/en/[Node.js]
+
+
+To create a live preview that picks up changes while working on the docs:
+
+
+. Install the dependencies specified in `package.json`.
++
+----
+npm install
+----
+
+
+. Run the following command to watch for changes in the `modules` folder and automatically rebuild the site.
++
+----
+npm run watch
+----
++
+You should see new output in the terminal window when changes are made. This indicates the site is being rebuilt automatically.
+
+. In a separate terminal, run the following command to serve the website.
++
+----
+npm run serve
+----
++
+This starts a static server that serves the built website. It will automatically open your browser and the current page will reload any time the site is rebuilt.
+
+NOTE: It usually takes 3-5 seconds to see the changes automatically reflected in your browser.
+
 
 
 == Editing
@@ -185,7 +201,7 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 3. Reference the code file you want to use (with a tags filter):
 +
 ----
- include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
+ // include::https://raw.githubusercontent.com/aerogear/ios-showcase-template/push-push/ios-showcase-template/push/PushHelper.swift[tags=push-ios-register]
 ----
 
 4. Add tags to the code repo, eg 
@@ -222,5 +238,41 @@ https://github.com/aerogear/mobile-docs/blob/master/modules/ROOT/pages/_partials
 +
 NOTE: You need to run mobile-docs:/bin/build.sh <site>.yml to make sure the temp files are in place when building site
 
+== Writing tools
 
+You can lint the English prose you've written using the following command:
+
+----
+
+$ ./node_modules/write-good/bin/write-good.js <path-to-adoc>
+----
+
+The output gives you suggestions as to how to improve the text, but many suggestions can be ignored.
+
+== Troubleshooting
+
+If you encounter problems creating a preview:
+
+. Delete the `build` and `.cache` directories.
+
+. Uninstall antora:
++
+----
+npm uninstall -g @antora/cli
+npm uninstall -g @antora/site-generator-default
+----
+
+. Reinstall antora v2:
++
+----
+npm i -g @antora/cli@2.0 @antora/site-generator-default@2.0
+----
+
+. Run
++
+----
+/bin/quick-build.sh local-site.yml
+----
+
+If there is still an issue, contact aerogear at googlegroups.com.
 
