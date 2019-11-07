@@ -10,7 +10,7 @@ The {org-name} mobile SDK uses OpenID Connect link:http://openid.net/specs/openi
 
 * You have completed all steps in xref:adding-access-control[Adding Access Control to your Mobile App].
 * Two {multi-mobile-client} bound to the {keycloak-service} service.
-* Two {multi-mobile-client} built and running on the same device that are using the AeroGear SDK Auth module.
+* Two {multi-mobile-client} built and running on the same device that use the AeroGear SDK Auth module.
 
 .Procedure
 

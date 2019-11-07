@@ -9,6 +9,6 @@ Before getting started with SSO, ensure that:
 
 * You have completed all steps in xref:adding-access-control[Adding Access Control to your Mobile App].
 * Two {multi-mobile-client} bound to the {keycloak-service} service.
-* Two Mobile Apps built and running on the same device that are using the AeroGear SDK Auth module.
+* Two {multi-mobile-client} built and running on the same device that use the AeroGear SDK Auth module.
 
 .Additional resources
