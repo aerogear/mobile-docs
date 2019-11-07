@@ -13,7 +13,7 @@ include::_partials/attributes.adoc[]
 With OpenShift's Container technology providing a secure, scalable backend platform, mobile developers can use the {org-name} SDK which supports a range of native (iOS & Android) and hybrid (Xamarin & Cordova) platforms to create secure, high quality apps and makes it easy to add features such as Push Notifications or Authentication.
 
 
-{mobile-client}s in OpenShift allow you to perform Cloud Native Mobile App Development using OpenShift as the back-end for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally. {mobile-client}s allow you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service}, {metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement.
+A {mobile-client} in OpenShift allows you to perform Cloud Native Mobile App Development using OpenShift as the back-end for your mobile apps. A {mobile-client} is a representation of the mobile app that you are developing locally. A {mobile-client} allows you to bind your mobile app to mobile services such as {keycloak-service}, {unifiedpush-service}, {metrics-service} and others. This makes many of the common tasks associated with mobile development much easier and quicker to implement.
 // end::excludeDownstream[]
 
 
