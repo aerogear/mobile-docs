@@ -184,7 +184,7 @@ The following events are emitted:
 * `onOperationEnqueued` - Called when a new operation is added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
 * `onOperationFailure` - Called when back online and operation fails with GraphQL error
-* `onOperationRequeued` - Called when an operation has placed back on the offline queue from storage. This typically happens on application restarts.
+* `onOperationRequeued` - Called when an operation has been placed back on the offline queue from storage. This typically happens on application restarts.
 * `queueCleared` - Called when offline operation queue is cleared
 
 [source, javascript]
