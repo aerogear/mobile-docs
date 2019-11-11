@@ -7,7 +7,7 @@
 
 To build a mobile app.
 
-. Open Mobile Developer Console and find the {mobile-client} you want to build.
+. Open the Mobile Developer Console and find the {short-mobile-client} you want to build.
 
 . Click on the name of the {mobile-client} to open the details view.
 

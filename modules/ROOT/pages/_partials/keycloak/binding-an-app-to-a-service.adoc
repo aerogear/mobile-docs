@@ -3,7 +3,7 @@
 [id='binding-an-app-to-{context}']
 = Binding a {mobile-client} with the {keycloak-service} Service
 
-To use mobile services, you must represent your mobile app in *Mobile Developer Console*, and that app must be associated with the mobile service.
+To use mobile services, you must represent your mobile app in the *Mobile Developer Console*, and that app must be associated with the mobile service.
 This association is called *binding* and it is necessary for your mobile app to use that service.
 
 This section describes how to set up the {keycloak-service} service.

@@ -1,7 +1,7 @@
 To provision the {service-name} mobile service:
 
 . Log into the OpenShift console.
-. Choose a project where you have previously provisioned Mobile Developer Console.
+. Choose a project where you have previously provisioned the Mobile Developer Console.
 . Select *Catalog* from the left hand menu.
 +
 You can filter the catalog items to only show mobile specific items by selecting the *Mobile* tab.

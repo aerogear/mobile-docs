@@ -24,7 +24,7 @@ include::_partials/keycloak/idm_glossary.adoc[leveloffset=+1]
 
 // TODO: need to rewrite the following
 // * You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
-* You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
+* You have provisioned the Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
 
 // TODO: could we include this here in the assembly?
 // * Read the xref:reference-material-{context}[{keycloak-service} Service terminology].
