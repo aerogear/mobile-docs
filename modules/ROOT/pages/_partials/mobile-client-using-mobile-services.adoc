@@ -3,6 +3,7 @@
 == Viewing mobile services
 
 In order to use services with a mobile app, the {mobile-client} associated with the app must be bound to the appropriate services.
+
 To show the list of services, navigate to the application *Overview* screen and to the *Mobile Services* tab.
 A list of bound and available services is displayed.
 
@@ -18,13 +19,12 @@ NOTE: Some services might support multiple binding and in that case a *Bind to A
 
 == Binding mobile services
 
-The *Mobile Services* tab in the {mobile-client} view shows the provisioned services that are available to be bound
-to the {mobile-client}. If a service has not yet been bound to a {mobile-client}, a binding can be created by selecting
+The *Mobile Services* tab in the {short-mobile-client} view shows the provisioned services that are available to be bound to the {short-mobile-client}. If a service has not yet been bound to a {short-mobile-client}, a binding can be created by selecting
 the *Bind to App* button.
 
-You can bind your {mobile-client} to a service by :
+You can bind your {mobile-client} to a service by:
 
-. Click *Bind to App* (example image shows a Push Service binding).
+. Clicking *Bind to App* (example image shows a Push Service binding).
 +
 // tag::excludeUpstream[]
 image::mobile-clients-service-bind-1_down.png[]
@@ -35,7 +35,7 @@ image::mobile-clients-service-bind-1.png[]
 // end::excludeDownstream[]
 
 
-. Fill in configuration details for the binding (example image shows a Push Service binding).
+. Fill in the configuration details for the binding (example image shows a Push Service binding).
 +
 image::mobile-clients-service-bind-2.png[]
 

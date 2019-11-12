@@ -17,7 +17,7 @@ Registering your Mobile App in the Mobile Developer Console (MDC), allows you to
 // end::excludeDownstream[]
 
 
-A configuration file named `mobile-services.json` acts as the link between your {mobile-client} in OpenShift and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
+A configuration file named `mobile-services.json` acts as the link between your {mobile-client} and your local app in development. This configuration file is used to initialize the {SDK} in your mobile app and to connect to the back-end {product-name} you have provisioned on OpenShift.
 
 // tag::excludeUpstream[]
 image::RHMDS_Data_Sync_35_0919_AeroGear.png[]
