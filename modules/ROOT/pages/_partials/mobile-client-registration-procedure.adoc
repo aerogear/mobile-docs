@@ -4,25 +4,9 @@
 To create a {mobile-client}:
 
 . Log into the OpenShift console.
-<<<<<<< HEAD
-. Choose your project.
-. Click *Add to Project* and choose *Browse Catalog* from the options.
-+
-You can filter the catalog items to only show mobile specific items by clicking the *Mobile* tab.
-+
-image:catalog-all.png[Available Mobile Clients]
-. Click the *Apps* tab and then choose the mobile platform (Android, iOS, Cordova or Xamarin) and follow the wizard.
-+
-NOTE: On the wizard's *configuration* screen, it is recommended that you input the name of the showcase application into the *Package Name* text box.
-+
-NOTE: When registering an iOS app, you are prompted for a bundle id. See the link:https://cocoacasts.com/what-are-app-ids-and-bundle-identifiers/[description of bundle identifiers] for more information.
-
-After the {mobile-client} is provisioned, you can navigate to it from Project Overview. The {mobile-client} view displays a list of mobile services that you can associate with the {mobile-client}, and offers to provision any mobile service that is in the service catalog but is not currently provisioned.
-=======
 . Choose project where you have previously deployed Mobile Developer Console.
 . Open Mobile Developer Console by clicking on its route in Overview screen.
 . Log into the Mobile Developer Console.
 . Click on `Create Mobile App` button.
 . Enter name of your mobile application.
 . Click `Create` button.
->>>>>>> 92d05211301045fb71039d9b2f1aab28afcdcd2a
