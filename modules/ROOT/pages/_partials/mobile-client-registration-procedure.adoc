@@ -4,7 +4,7 @@
 To create a {mobile-client}:
 
 . Log into the OpenShift console.
-. Choose the project where you have previously deployed Mobile Developer Console (MDC).
+. Choose the project where you previously deployed the Mobile Developer Console (MDC).
 . Open the Mobile Developer Console by clicking its route on the *Overview* screen.
 . Log into the Mobile Developer Console.
 . Click on the *Create Mobile App* button.
