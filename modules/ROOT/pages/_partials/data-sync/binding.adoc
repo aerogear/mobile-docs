@@ -10,7 +10,7 @@ To bind a {mobile-client} with a mobile service:
 
 . Launch {mobile-developer-console}
 
-. Click on the {mobile-client} on the Overview screen
+. Click the {short-mobile-client} on the *Overview* screen
 
 . Navigate to *Mobile Services* tab.
 +
