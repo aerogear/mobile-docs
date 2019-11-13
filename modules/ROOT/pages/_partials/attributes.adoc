@@ -12,7 +12,9 @@
 
 :service-name:
 
-:mobile-client: Mobile App
+:mobile-client: Mobile App in MDC
+:multi-mobile-client: Mobile Apps in MDC
+:short-mobile-client: Mobile App
 :mobile-client-openshift: Mobile Client in your OpenShift project
 :mobile-cli: Mobile CLI
 

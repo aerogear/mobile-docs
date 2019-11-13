@@ -2,11 +2,11 @@
 
 = Building Mobile Apps
 
-The *Builds* tab in the {mobile-client} view allows you to view the previous builds of the app, and triggers a new build of the app.
+The *Builds* tab in the {short-mobile-client} view allows you to view the previous builds of the app, and triggers a new build of the app.
 
 == Provisoning a {mobile-ci-cd-service} Service
 
-In order to build the {mobile-client} app, you first need to provision a {mobile-ci-cd-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {mobile-ci-cd-service} service.
+In order to build the {short-mobile-client}, you first need to provision a {mobile-ci-cd-service} service. If the service is not provisioned, use the link provided on the screen to browse all the available mobile services and provision a new {mobile-ci-cd-service} service.
 
 image:mobile-clients-no-service.png[]
 

@@ -2,11 +2,11 @@
 //[[downloading-the-mobile-services-configuration-file]]
 = Downloading the Mobile Services Configuration File
 
-. Open your {mobile-client} in Mobile Developer Console.
+. Open your {short-mobile-client} in the Mobile Developer Console.
 . Copy the `mobile-services.json` configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 +
-NOTE: The mobile-services.json file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all required configuration to initialise the various SDKs and get them hooked up/connected to the back-end services.
+NOTE: The `mobile-services.json` file is the link between your provisioned services on OpenShift and the mobile app you are developing. This file provides all the required configurations to initialise the various SDKs and get them hooked up/connected to the back-end services.
 . Follow the platform-specific instructions:
 
 [tabs]
@@ -15,7 +15,7 @@ Cordova::
 +
 --
 
-Copy the content of mobile-services.json file and paste it to the following location in your application project to replace the value of `config`
+Copy the content of `mobile-services.json` file and paste it to the following location in your application project to replace the value of `config`
 
 `src/mobile-services.js`
 
@@ -25,7 +25,7 @@ Android::
 +
 --
 
-Move mobile-services.json to the following location in your application project:
+Move `mobile-services.json` to the following location in your application project:
 
 `app/src/main/assets/mobile-services.json`
 
@@ -34,7 +34,7 @@ iOS::
 +
 --
 
-Move mobile-services.json to the following location in your application project:
+Move `mobile-services.json` to the following location in your application project:
 
 `<app directory>/mobile-services.json`
 
@@ -46,7 +46,7 @@ Cordova::
 +
 --
 
-Move mobile-services.json to the following location in your application project:
+Move `mobile-services.json` to the following location in your application project:
 
 `src/mobile-services.json`
 
@@ -56,7 +56,7 @@ Xamarin::
 +
 --
 
-Move mobile-services.json to the following location in your application project:
+Move `mobile-services.json` to the following location in your application project:
 
 `Resources/mobile-services.json`
 

@@ -27,7 +27,7 @@ include::_partials/attributes.adoc[]
 
 == Registering a {mobile-client}
 
-After provisioning Mobile Developer Console, the next step is to register the {mobile-client} that you are going to develop.
+After provisioning the Mobile Developer Console, the next step is to register the {mobile-client} that you are going to develop.
 
 .Procedure
 

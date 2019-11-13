@@ -13,7 +13,7 @@ After you change any configuration in the {mobile-developer-console}, it is impo
 
 .Procedure
 
-. Open your {mobile-client} in Mobile Developer Console.
+. Open your {short-mobile-client} in the Mobile Developer Console.
 . Copy the `mobile-services.json` configuration to your clipboard.
 . Save the contents of the clipboard to a new file called `mobile-services.json`.
 +

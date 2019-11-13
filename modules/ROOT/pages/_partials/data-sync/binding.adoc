@@ -10,7 +10,7 @@ To bind a {mobile-client} with a mobile service:
 
 . Launch {mobile-developer-console}
 
-. Click on the {mobile-client} on the Overview screen
+. Click the {short-mobile-client} on the *Overview* screen
 
 . Navigate to *Mobile Services* tab.
 +
@@ -22,7 +22,7 @@ image::mobile-clients-services-all-unbound-down.png[]
 image::mobile-clients-services-all-unbound.png[]
 // end::excludeDownstream[]
 +
-NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console, however such bindings are not valid for the purposes of this procedure.
+NOTE: It is possible to bind a {mobile-client} with a mobile service in the OpenShift console; however, such bindings are not valid for the purposes of this procedure.
 
 . Press *Bind to App* in the {service-name}
 . Fill out the binding parameters required by the {service-name} Service.

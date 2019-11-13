@@ -16,7 +16,7 @@ This section describes how to set up the {metrics-service} service.
 
 . Launch {mobile-developer-console}.
 
-. Click on the {mobile-client} on the Overview screen.
+. Click the {short-mobile-client} on the *Overview* screen.
 
 . Navigate to *Mobile Services* tab.
 +
