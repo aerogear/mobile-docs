@@ -1,0 +1,42 @@
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+
+:context: security-service
+ifdef::context[:parent-context: {context}]
+
+:installation-link: getting-started.html
+
+[id='app-security']
+
+= Using the {app-security-service} Service
+:page-partial:
+
+// tag::excludeDownstream[]
+.Prerequisites
+
+* You are running OpenShift with {product-name} as described in xref:getting-started.adoc[Setting up AeroGear {product-name} on OpenShift].
+* You have provisioned Mobile Developer Console as described in link:{installation-link}[Provisioning Mobile Developer Console].
+
+// end::excludeDownstream[]
+
+[[app-setup]]
+== Setting Up the {app-security-service} Service
+// tag::excludeDownstream[]
+include::_partials/app-security/provisioning-security.adoc[leveloffset=+2]
+// end::excludeDownstream[]
+include::_partials/app-security/binding-an-app-to-a-service.adoc[leveloffset=+2,tags={include-tags}]
+// include::_partials/app-security/configuring-the-service.adoc[leveloffset=+2,tags=!excludeUpstream]
+include::_partials/app-security/setting-up-the-app-security-sdk.adoc[leveloffset=+2]
+
+[[app-coding]]
+include::_partials/app-security/proc-calling-the-app-security-clientInit.adoc[leveloffset=+2]
+
+[[console]]
+include::_partials/app-security/using-the-admin-ui.adoc[leveloffset=+2]
+
+
+// Restore the context to what it was before this assembly.
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

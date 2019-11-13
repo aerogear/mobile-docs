@@ -1,7 +1,0 @@
-include::{partialsdir}/attributes.adoc[]
-
-:service-name: Identity Management
-
-include::./keycloak-setup.adoc[leveloffset=2]
-
-include::{partialsdir}/generic-obtaining-the-mobile-sdk-config-file.adoc[leveloffset=2]

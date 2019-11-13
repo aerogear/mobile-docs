@@ -1,0 +1,17 @@
+// tag::excludeDownstream[]
+include::_partials/attributes.adoc[]
+// end::excludeDownstream[]
+
+= Securing your mobile app
+:page-partial:
+
+This guide does not address all mobile security topics. See the link:https://www.owasp.org/index.php/OWASP_Mobile_Security_Project[OWASP Mobile Security Project] for an introduction to mobile security.
+{org-name} helps you achieve security:
+
+* xref:app-security[Using the {app-security-service} service] - remotely disable specific app variants
+* xref:device-checks[Adding {device-security-service} to your mobile app] - for example, disable app on rooted devices
+
+
+include::app-security.adoc[leveloffset=1]
+include::device-security.adoc[leveloffset=1]
+

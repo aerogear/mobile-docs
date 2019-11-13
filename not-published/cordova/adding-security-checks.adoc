@@ -38,7 +38,7 @@ You will also need to retrieve an instance of `SecurityService`:
 
 [source,javascript]
 ----
-const securityService = new SecurityService();
+const securityService = new SecurityService(app.metrics);
 ----
 
 === Provided Self Defence Checks

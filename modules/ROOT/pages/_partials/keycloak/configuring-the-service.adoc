@@ -1,0 +1,116 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+// tag::excludeDownstream[]
+:docs-create-user: https://www.keycloak.org/docs/3.3/server_admin/topics/users/create-user.html
+:docs-user-creds: https://www.keycloak.org/docs/3.3/server_admin/topics/users/credentials.html
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+:docs-create-user: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#create-new-user
+:docs-user-creds: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#user_credentials
+// end::excludeUpstream[]
+
+
+[id='configuring-{context}']
+= Configuring the {keycloak-service} Service
+
+This section guides you through configuring the redirect url and web origin for a client in {idm-name}.
+This is required to enable OpenID authentication.
+For an explanation of these terms, see link:{idm-docs-link}[{idm-name} Documentation].
+
+.Prerequisites
+
+* An understanding of link:https://openid.net/[OpenID^]
+
+.Procedure
+
+. Log into the {mobile-developer-console} and navigate to the {mobile-client} screen.
+
+. Select the *Mobile Services* tab.
+
+. If a binding to the {keycloak-service} service is in progress, a spinning icon is displayed to the right of the {keycloak-service} entry. Wait for the binding process to complete.
+
+. If the _{idm-name} Realm URL_ URL is not visible, expand the Identity Management Service by clicking the > icon.
+
+. Click on the *{idm-name} Realm URL* link to open the {idm-name} Administration Console.
++
+// tag::excludeDownstream[]
+. Log in to the Administration console using the credentials you specified when xref:provisioning-the-keycloak-service[Provisioning] the service (defaults to admin/admin).
+// end::excludeDownstream[]
+// tag::excludeUpstream[]
+. Log in to the Administration console (default admin/admin).
+// end::excludeUpstream[]
+
+
+. Select `Clients` from the left navigation menu.
++
+// TODO: with a cordova app, I didn't see mobile development platform
+. Select your client from the list of clients. The name of your client is derived from the name of the {mobile-client}, the name of the mobile development platform and the client type, for example `myapp-android-public`.
+
+
+. Add an additional entry to *Valid Redirect URIs*.
++
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+It is recommended to use the package name of the Android app as the schema of the redirect url to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+--
+iOS::
++
+--
+It is recommended to use the Bundle Identifier of the iOS app as the schema of the redirect url. (e.g. `org.aerogear.ios-showcase-template`)
+--
+Cordova::
++
+--
+// end::excludeDownstream[]
+Set the additional value to `http://localhost*`.
+// tag::excludeDownstream[]
+--
+Xamarin::
++
+--
+Depending on the platform, set the redirect URL as described in either the Android or the iOS tab.
+--
+// end::excludeDownstream[]
+====
+
+. Add an additional entry to *Web Origins*.
++
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+Use the package name of the Android app to avoid conflicts. (e.g. `com.aerogear.androidshowcase`)
+--
+iOS::
++
+--
+Use the Bundle Identifier of the iOS app. (e.g. `org.aerogear.ios-showcase-template`)
+--
+Cordova::
++
+--
+// end::excludeDownstream[]
+Set additional value to `http://localhost*`.
+// tag::excludeDownstream[]
+--
+Xamarin::
++
+--
+Depending on the target platform, set the additional value as described in either the Android or the iOS tab.
+--
+// end::excludeDownstream[]
+====
+
+
+. Save your changes.
+
+. Creating a new user account as described in link:{docs-create-user}[Creating a New User].
+
+. Set up credentials for the new user as described in link:{docs-user-creds}[User Credentials].

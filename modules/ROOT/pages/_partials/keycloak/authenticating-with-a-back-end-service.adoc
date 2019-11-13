@@ -1,0 +1,100 @@
+// For more information, see: https://redhat-documentation.github.io/modular-docs/
+
+// tag::excludeDownstream[]
+:docs-oicd: https://www.keycloak.org/docs/3.3/server_admin/topics/identity-broker/oidc.html
+// end::excludeDownstream[]
+
+// tag::excludeUpstream[]
+:docs-oicd: https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#openid_connect_v1_0_identity_providers
+// end::excludeUpstream[]
+
+[id='authenticating-with-a-back-end-service-{context}']
+= Authenticating with a back end service
+
+In a typical scenario, you not only want the user to authenticate on the mobile app, you also want that user to authenticate with a back end service.
+
+.Prerequisites
+
+*  A working mobile app that uses authentication with the {keycloak-service} service.
+
+.Procedure
+
+. Add an additional token:
++
+[source]
+----
+Authorization: BEARER Yourtoken
+----
+
+. Add code to authenticate with a back end service:
++
+[tabs]
+====
+// tag::excludeDownstream[]
+Android::
++
+--
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,java]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer. When using the `okhttp` library, this can be added to the list of request interceptors to automatically supply the required tokens:
++
+[source,java]
+----
+MobileCore.getInstance()
+          .getHttpLayer()
+          .requestHeaderInterceptor()
+          .add(authService.getAuthHeaderProvider());
+----
+--
+iOS::
++
+--
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,swift]
+----
+authService.getAuthHeaderProvider()
+----
+. Plug it into your networking layer.
+--
+Cordova::
++
+--
+// end::excludeDownstream[]
+The AeroGear Cordova SDK doesn't provide an HTTP layer, therefore it cannot provide an Auth Header Provider.
+You must manually attach the `Bearer` header to your HTTP requests.
+
+[source,javascript]
+----
+req.setRequestHeader('Accept', 'application/json');
+req.setRequestHeader('Authorization', 'Bearer ' + authService.extract().token);
+----
+--
+// tag::excludeDownstream[]
+Xamarin::
++
+--
+. Get the `AuthHeaderProvider` instance provided by the Aerogear SDK:
++
+[source,csharp]
+----
+var authHeaderProvider = authService.AuthHeaderProvider;
+----
+. Plug it into your networking layer.----
+--
+// end::excludeDownstream[]
+====
+
+.Additional resources
+
+// tag::excludeDownstream[]
+
+* xref:android-additional-configuration[Additional configuration for Android]
+
+// end::excludeDownstream[]
+
+* link:{docs-oicd}[{idm-name} OICD Providers^]

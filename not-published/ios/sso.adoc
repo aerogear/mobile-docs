@@ -17,7 +17,7 @@ For this guide, let's assume that your two iOS apps are called **Email App** and
 
 . Ensure the "Remember Me" option is turned on. Click on *Realm Settings* section on the left hand side, and then click on *Login*. Turn on *Remember Me*.
 
-include::https://raw.githubusercontent.com/aerogear/aerogear-android-sdk/master/docs/getting-started/sso/keycloak.adoc[]
+// include::https://raw.githubusercontent.com/aerogear/aerogear-android-sdk/master/docs/getting-started/sso/keycloak.adoc[]
 
 ==== Configuration File in the Mobile Apps
 

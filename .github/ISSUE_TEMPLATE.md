@@ -1,7 +1,3 @@
 ## Description
+Add a brief and meaningful description with a link to the page that has the issue.
 
-
-## Link to Page/Section where Issue was seen
-
-
-## Suggested edit
