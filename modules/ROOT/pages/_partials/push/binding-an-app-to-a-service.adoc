@@ -13,9 +13,11 @@ To bind a {mobile-client} with a mobile service:
 
 . Log in to the {mobile-developer-console}.
 
-. Click on the {mobile-client} on the Overview screen.
+. Click on *Create Mobile App* on the Overview screen.
 
-. Navigate to *Mobile Services* tab.
+. Give the app a name and click *Create*
+
+. Click on your app and navigate to *Mobile Services* tab.
 +
 // tag::excludeUpstream[]
 image::mobile-clients-services-all-unbound-down.png[]
