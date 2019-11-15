@@ -2,7 +2,7 @@
 
 .Prerequisites
 * You have Node.js and npm installed.
-* You have completed link:{data-sync-queries-link}[Queries section] and the server is still running.
+* You have completed the link:{data-sync-queries-link}[Queries section] and the server is still running.
 
 
 . Modify the client application to perform the mutation:
@@ -51,12 +51,48 @@ addPerson();
 +
 It should include an array similar to the following:
 +
+[source,json]
 ----
 {
   "data": {
     "post": {
       "id": "person-1"
     }
+  }
+}
+----
++
+. Browse http://localhost:4000/graphql and enter the playground query for the addressbook. For example:
++
+[source,json]
+----
+{
+  addressBook {
+    name
+    address
+
+}
+----
++
+Results should be similar to:
++
+[source,json]
+----
+{
+  "data": {
+    "addressBook": [
+      {
+        "name": "Alex Smith",
+        "address": "1 Square Place, City"
+      },
+      {
+        "name": "John Doe",
+        "address": "1 Red Hill"
+      }
+    ]
+  }
+}
+
   }
 }
 ----
