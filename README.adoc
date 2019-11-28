@@ -1,4 +1,7 @@
 = Mobile Docs
+
+WARNING: This repo is deprecated. Check the code repos for associated docs.
+
 :toc: 1
 This repository is used to build the documentation site for AeroGear Mobile Services. To view the documentation please visit link:https://docs.aerogear.org[docs.aerogear.org].
 
