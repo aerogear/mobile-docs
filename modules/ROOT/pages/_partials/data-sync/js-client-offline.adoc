@@ -59,37 +59,15 @@ setupClient();
 
 This client can replace an Apollo client as it supports the same functionality.
 
-
-
-= Detecting mutations while offline
-
-If a mutation occurs while the device is offline, the `client.mutate` function:
-
-- returns immediately
-- returns a promise with an error
-
-You can check the _error_ object to isolate errors relating to offline state.
-Invoking the `watchOfflineChange()` method on an _error_ object watches for when an offline change is synced with the server, and sends a notification when triggered.
-
-For example:
-[source, javascript]
-----
-  client.mutate(...).catch((error)=> {
-    // 1. Detect if this was an offline error
-   if(error.networkError && error.networkError.offline){
-     const offlineError: OfflineError =  error.networkError;
-     // 2. We can still track when offline change is going to be replicated.
-     offlineError.watchOfflineChange().then(...)
-   }
-  });
-----
-
-NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in xref:sync-client-offline-queue-listener[].
-
 = Performing mutations while offline
 
-The @aerogear/voyager-client module provides an `offlineMutate` method which extends Apollo's mutate function with some extra functionality. 
-This includes automatically adding some fields to each operation's context. 
+@aerogear/voyager-client extends a regular Apollo client with an `offlineMutate` function. 
+When an app is considered offline, `offlineMutate` queues mutations to be fulfilled later, once the app is considered online again.
+When online, `offlineMutate` works exactly the same way as link:https://www.apollographql.com/docs/react/essentials/mutations.html#props[Apollo's `mutate`] function.
+
+Offline mutations are also persisted to ensure changes are saved across app and device restarts.
+As offline mutations are performed, the expected results from the server, known as optimistic responses can be displayed to the user.
+This enables experiences where users can work offline for extended periods of time, making several changes which will be fulfilled at a later time.
 
 To set up the offline client, see xref:setup-offline-client[].
 
@@ -115,6 +93,30 @@ Note: The `offlineMutate` method accepts the same parameters as `mutate` with so
 <2> The type of operation being performed. Should be "add", "refresh" or "delete". Defaults to "add" if not provided.
 <3> The field on the object used to identify it. Defaults to "id" if not provided.
 <4> The type of object being operated on.
+
+= Handling mutations while offline
+
+If a mutation occurs while the device is offline, the `client.offlineMutate` function:
+
+- returns immediately
+- returns a promise with an error
+
+You can check the error object to isolate errors relating to offline state.
+Invoking the `watchOfflineChange()` method on an error object watches for when an offline change is synced with the server, and sends a notification when triggered.
+
+For example:
+[source, javascript]
+----
+  client.offlineMutate(...).catch((error)=> {
+    // 1. Detect if this was an offline error
+   if(error.offline){
+     // 2. We can still track when offline change is going to be replicated.
+     error.watchOfflineChange().then(...)
+   }
+  });
+----
+
+NOTE: In addition to watching individual mutations, you can add a global offline listener when creating a client as described in xref:sync-client-offline-queue-listener[].
 
 == Supporting app restarts while offline
 
@@ -170,14 +172,7 @@ let config = {
 
 == Ensuring specified mutations are performed online only
 
-If you wish to ensure certain mutations are only executed when the client is online, use the GraphQL directive `@onlineOnly`, for example:
-
-[source, graphql]
-----
-exampleMutation(...) @onlineOnly {
-  ...
-}
-----
+If you wish to ensure certain mutations are only executed when the client is online, use the regular `client.mutate` method.
 
 [#sync-client-offline-queue-listener]
 == Listening for events
@@ -186,10 +181,53 @@ To handle all notifications about offline related events, use the *offlineQueueL
 
 The following events are emitted:
 
-* `onOperationEnqueued` - Called when new operation is being added to offline queue
+* `onOperationEnqueued` - Called when a new operation is added to offline queue
 * `onOperationSuccess` - Called when back online and operation succeeds
 * `onOperationFailure` - Called when back online and operation fails with GraphQL error
+* `onOperationRequeued` - Called when an operation has been placed back on the offline queue from storage. This typically happens on application restarts.
 * `queueCleared` - Called when offline operation queue is cleared
+
+[source, javascript]
+----
+client.registerOfflineEventListener({
+  onOperationEnqueued(operation) {
+    // called when operation was placed on the queue
+  },
+  onOperationFailure: (operation) => {
+    // called when the operation failed
+  },
+  onOperationSuccess: (operation) => {
+    // called when the operation was fulfilled
+  },
+  onOperationRequeued: (operation) => {
+    // called when an operation was loaded in from storage and placed back on the queue
+    // This would happen across app restarts
+  },
+  queueCleared() {
+    // called when all operations are fulfilled and the queue is cleared
+  }
+});
+----
+
+Below shows an example `operation` object passed to the listener functions.
+
+[source, javascript]
+----
+{
+  qid: 'client:abc123'
+  op: { 
+    context: {
+      operationName: 'createItem',
+      conflictBase: undefined,
+      idField: 'id',
+      returnType: 'Item'
+    },
+    mutation: <mutation object parsed by gql>,
+    optimisticResponse: <optimistic response object>,
+    variables: <mutation variables>
+  }
+}
+----
 
 You can use this listener to build User Interfaces that show pending changes.
 

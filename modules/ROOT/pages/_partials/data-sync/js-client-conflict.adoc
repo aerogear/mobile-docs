@@ -189,7 +189,7 @@ return client.offlineMutate({
 }).then(result => {
   // handle the result
 }).catch(error => {
-  if (error.networkError && error.networkError.localConflict) {
+  if (error.localConflict) {
     // handle pre-conflict here by potentially
     // providing an alert with a chance to update data before pressing send again
   }
